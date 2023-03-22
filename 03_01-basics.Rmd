@@ -1,0 +1,7 @@
+# The Basics
+At its very basic, R is a calculator capable of performing simple mathematical operations, reading, manipulating writing data to and from files and plotting. Akin to a programmatic version of Microsoft's Excel. R, however, is a platform for complex analyses, statistical evaluations, predictive inferencing and machine learning. We'll start here with the simplest operations. 
+
+> At the end of this chapter you should be able to:
+>
+>- understand R's syntax, variables, operators and functions  
+>- create and edit a project in RStudio  

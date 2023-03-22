@@ -1,0 +1,8 @@
+## Open Access
+### mzXML (HUPO)
+### mzML (HUPO - most common)
+### mzH5 (HDF5)
+### MGF (Mascot, Comet)
+### PIN (Comet)
+
+

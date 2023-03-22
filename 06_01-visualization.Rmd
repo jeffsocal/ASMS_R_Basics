@@ -1,0 +1,13 @@
+# Data Visualization
+## GGPlot
+### Syntax
+### Points and Lines
+--> (11 break, assignment)
+### Bar and histograms
+--> (12 break, assignment)
+## Extended Syntax
+### Colors, Scales and Faceting
+### Labels and Annotations 
+--> (13 break, assignment)
+#### Install Package ggrepel
+--> (14 break, assignment)

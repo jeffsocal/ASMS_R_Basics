@@ -1,0 +1,11 @@
+# Data Tables
+## Tidy Data
+## Tibble, a new Data Structure
+--> (08 break, assignment)
+## Reading Data into R
+## Summarization
+--> (09 break, assignment)
+## Data Manipulation
+### dplyr
+### tidyr
+--> (10 break, assignment)

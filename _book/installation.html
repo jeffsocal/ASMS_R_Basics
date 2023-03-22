@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Installation | Introduction to R for Mass Spectrometrists</title>
+  <meta name="description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Installation | Introduction to R for Mass Spectrometrists" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  <meta name="github-repo" content="jeffsocal/ASMS_R_Basics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Installation | Introduction to R for Mass Spectrometrists" />
+  
+  <meta name="twitter:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  
+
+<meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
+
+
+<meta name="date" content="2023-03-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction-to-r.html"/>
+<link rel="next" href="the-basics.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>1</b> Introduction to R</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#why-choose-it"><i class="fa fa-check"></i>Why choose it?</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#what-you-can-do-with-it"><i class="fa fa-check"></i>What you can do with it</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-r-learning-curve"><i class="fa fa-check"></i>The R Learning Curve</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#thoughts-about-learning-r-and-how-to-code"><i class="fa fa-check"></i>Thoughts about learning R and how to code</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#alternatives"><i class="fa fa-check"></i>Alternatives</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#scripting-python-julia-matlab"><i class="fa fa-check"></i>Scripting: Python, Julia, Matlab</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#complied-c-c-java-rust-etc."><i class="fa fa-check"></i>Complied: C, C++, Java, Rust, etc.</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#did-you-know"><i class="fa fa-check"></i>Did you know</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>2</b> Installation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installation.html"><a href="installation.html#r-interpreter"><i class="fa fa-check"></i><b>2.1</b> R interpreter</a></li>
+<li class="chapter" data-level="2.2" data-path="installation.html"><a href="installation.html#rstudio"><i class="fa fa-check"></i><b>2.2</b> Rstudio</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="installation.html"><a href="installation.html#ide-layout"><i class="fa fa-check"></i><b>2.2.1</b> IDE Layout</a></li>
+<li class="chapter" data-level="2.2.2" data-path="installation.html"><a href="installation.html#usage-..-running-lines-of-code-in-rstudio"><i class="fa fa-check"></i><b>2.2.2</b> Usage .. Running lines of code in RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="installation.html"><a href="installation.html#packages"><i class="fa fa-check"></i><b>2.3</b> Packages</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="installation.html"><a href="installation.html#what-are-r-packages"><i class="fa fa-check"></i><b>2.3.1</b> What are R Packages?</a></li>
+<li class="chapter" data-level="2.3.2" data-path="installation.html"><a href="installation.html#where-to-get-r-packages"><i class="fa fa-check"></i><b>2.3.2</b> Where to get R packages</a></li>
+<li class="chapter" data-level="2.3.3" data-path="installation.html"><a href="installation.html#notes-on-rtools-and-command-line-tools"><i class="fa fa-check"></i><b>2.3.3</b> Notes on RTools and Command Line Tools</a></li>
+<li class="chapter" data-level="2.3.4" data-path="installation.html"><a href="installation.html#tidyverse---needed-for-this-book"><i class="fa fa-check"></i><b>2.3.4</b> tidyverse - Needed for this book</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="the-basics.html"><a href="the-basics.html"><i class="fa fa-check"></i><b>3</b> The Basics</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="the-basics.html"><a href="the-basics.html#syntax"><i class="fa fa-check"></i><b>3.1</b> Syntax</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="the-basics.html"><a href="the-basics.html#comments"><i class="fa fa-check"></i><b>3.1.1</b> Comments</a></li>
+<li class="chapter" data-level="3.1.2" data-path="the-basics.html"><a href="the-basics.html#numbers-integers-and-floats"><i class="fa fa-check"></i><b>3.1.2</b> Numbers (integers and floats)</a></li>
+<li class="chapter" data-level="3.1.3" data-path="the-basics.html"><a href="the-basics.html#operators"><i class="fa fa-check"></i><b>3.1.3</b> Operators</a></li>
+<li class="chapter" data-level="3.1.4" data-path="the-basics.html"><a href="the-basics.html#variables"><i class="fa fa-check"></i><b>3.1.4</b> Variables</a></li>
+<li class="chapter" data-level="3.1.5" data-path="the-basics.html"><a href="the-basics.html#statements"><i class="fa fa-check"></i><b>3.1.5</b> Statements</a></li>
+<li class="chapter" data-level="3.1.6" data-path="the-basics.html"><a href="the-basics.html#functions"><i class="fa fa-check"></i><b>3.1.6</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="the-basics.html"><a href="the-basics.html#projects"><i class="fa fa-check"></i><b>3.2</b> Projects</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="the-basics.html"><a href="the-basics.html#creating"><i class="fa fa-check"></i><b>3.2.1</b> Creating</a></li>
+<li class="chapter" data-level="3.2.2" data-path="the-basics.html"><a href="the-basics.html#editing"><i class="fa fa-check"></i><b>3.2.2</b> Editing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>4</b> Data Structures</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-structures.html"><a href="data-structures.html#variable"><i class="fa fa-check"></i><b>4.1</b> Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-tables.html"><a href="data-tables.html"><i class="fa fa-check"></i><b>5</b> Data Tables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-tables.html"><a href="data-tables.html#tidy-data"><i class="fa fa-check"></i><b>5.1</b> Tidy Data</a></li>
+<li class="chapter" data-level="5.2" data-path="data-tables.html"><a href="data-tables.html#tibble-a-new-data-structure"><i class="fa fa-check"></i><b>5.2</b> Tibble, a new Data Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>6</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="data-visualization.html"><a href="data-visualization.html#ggplot"><i class="fa fa-check"></i><b>6.1</b> GGPlot</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="data-visualization.html"><a href="data-visualization.html#syntax-1"><i class="fa fa-check"></i><b>6.1.1</b> Syntax</a></li>
+<li class="chapter" data-level="6.1.2" data-path="data-visualization.html"><a href="data-visualization.html#points-and-lines"><i class="fa fa-check"></i><b>6.1.2</b> Points and Lines</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html"><i class="fa fa-check"></i><b>7</b> Mass Spectrometry Data</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#commercial"><i class="fa fa-check"></i><b>7.1</b> Commercial</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#raw-thermo"><i class="fa fa-check"></i><b>7.1.1</b> RAW (Thermo)</a></li>
+<li class="chapter" data-level="7.1.2" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#wiff-sciex"><i class="fa fa-check"></i><b>7.1.2</b> WIFF (Sciex)</a></li>
+<li class="chapter" data-level="7.1.3" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#d-agilent"><i class="fa fa-check"></i><b>7.1.3</b> D (Agilent)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#open-access"><i class="fa fa-check"></i><b>7.2</b> Open Access</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#mzxml-hupo"><i class="fa fa-check"></i><b>7.2.1</b> mzXML (HUPO)</a></li>
+<li class="chapter" data-level="7.2.2" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#mzml-hupo---most-common"><i class="fa fa-check"></i><b>7.2.2</b> mzML (HUPO - most common)</a></li>
+<li class="chapter" data-level="7.2.3" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#mzh5-hdf5"><i class="fa fa-check"></i><b>7.2.3</b> mzH5 (HDF5)</a></li>
+<li class="chapter" data-level="7.2.4" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#mgf-mascot-comet"><i class="fa fa-check"></i><b>7.2.4</b> MGF (Mascot, Comet)</a></li>
+<li class="chapter" data-level="7.2.5" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#pin-comet"><i class="fa fa-check"></i><b>7.2.5</b> PIN (Comet)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="mass-spectrometry-r-packages.html"><a href="mass-spectrometry-r-packages.html"><i class="fa fa-check"></i><b>8</b> Mass Spectrometry R Packages</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="mass-spectrometry-r-packages.html"><a href="mass-spectrometry-r-packages.html#xcms"><i class="fa fa-check"></i><b>8.1</b> xcms</a></li>
+<li class="chapter" data-level="8.2" data-path="mass-spectrometry-r-packages.html"><a href="mass-spectrometry-r-packages.html#msstats"><i class="fa fa-check"></i><b>8.2</b> msStats</a></li>
+<li class="chapter" data-level="8.3" data-path="mass-spectrometry-r-packages.html"><a href="mass-spectrometry-r-packages.html#maldiquant"><i class="fa fa-check"></i><b>8.3</b> MALDIquant</a></li>
+<li class="chapter" data-level="8.4" data-path="mass-spectrometry-r-packages.html"><a href="mass-spectrometry-r-packages.html#tidyproteomics"><i class="fa fa-check"></i><b>8.4</b> tidyproteomics</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/jeffsocal/asms_r_intro" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to R for Mass Spectrometrists</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="installation" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Installation<a href="installation.html#installation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In the scope of this book, there are three main components that need to be installed, and periodically updated:</p>
+<ul>
+<li><p>The R interpreter - the software that understands math and plotting</p></li>
+<li><p>RStudio IDE - the software that makes it easy write code and visualize data</p></li>
+<li><p>R Packages - bits of R code that perform specalized operations</p></li>
+</ul>
+<p>In this book we will be utilizing the RStudio integrated development environment (IDE) to interact with R. Two separate components are required for this - the R interpreter and the RStudio IDE. Both are required as the RStudio IDE only provides an interface for the R interpreter, which reads the code and does all the mathematical operations. The R interpreter can be used alone, interacting through the command line (eg. Windows CMD, MacOS and Linux Terminal), a plain text editor or another IDE such as Xcode, VSCode, Eclipse, Notepad++, etc. Rstudio provides a comprehensive, R specific environment, with auto-complete, code syntax highlighting, in-editor function definitions along with package management and plot visualizations.</p>
+<div id="r-interpreter" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> R interpreter<a href="installation.html#r-interpreter" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The underlying “engine” for R programming language can be downloaded from <a href="https://www.r-project.org/">The R Project for Statistical Computing</a>. R is an open-source implementation of the S statistical computing language originally developed at Bell Laboratories. Both langauges contain a variety of statistical and graphical techniques, however, R has been continually extended by professional, academic and amateur contributors and remains the most active today. With the advent of open-source sharing platforms such as GitHub, R has become increasingly popular among data scientists because of its ease of use and flexibility in handling complex analyses on large datasets. Additionally, one of R’s strengths is the ease with which well-designed publication-quality plots can be produced.</p>
+<div id="steps" class="section level4 unnumbered hasAnchor">
+<h4>Steps<a href="installation.html#steps" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>Navigate to <a href="https://www.r-project.org/">The R Project</a></li>
+<li>Click on <a href="https://cran.r-project.org/mirrors.html">CRAN</a> under Download, left-hand side</li>
+<li>Click on <a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a> under 0-Cloud<br />
+<em>This will take you to the globally nearest up-to-date repository</em></li>
+<li>Click on <code>Download for ...</code> and choose the OS compatible with your device</li>
+</ol>
+</div>
+<div id="windows-os" class="section level4 unnumbered hasAnchor">
+<h4>Windows OS<a href="installation.html#windows-os" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Click on <code>base</code></p>
+</div>
+<div id="macos" class="section level4 unnumbered hasAnchor">
+<h4>MacOS<a href="installation.html#macos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>For an Intel CPU</strong>: click <code>R-4.x.x.pgk</code> to download<br />
+<strong>For an M1 CPU</strong>: click <code>R-4.x.x-arm64.pkg</code> to download</p>
+<p>After downloading, double-click the installer and follow the instructions</p>
+<div class="figure"><span style="display:block;" id="fig:2001"></span>
+<img src="images/02_001_r_installer_mac_m1.png" alt="\label{fig:2001}Mac Installer" width="366" />
+<p class="caption">
+Figure 2.1: Mac Installer
+</p>
+</div>
+</div>
+<div id="linux" class="section level4 unnumbered hasAnchor">
+<h4>Linux<a href="installation.html#linux" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Click on your distribution and follow the instructions provided. Most of these instructions require knowledge of the Terminal and command line interface for *unix systems.</p>
+
+</div>
+</div>
+<div id="rstudio" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Rstudio<a href="installation.html#rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>RStudio, prior to 2023, was an independent software provider for the ever-popular RStudio products, which included both the desktop and server based IDEs, along with the RShiny applications and servers that facilitate easy-to-build interactive web applications straight from R, and deployed on the web. The last chapter in this book will explore the <code>tidyproteomics</code> package which also has a Shiny web application. RStudio announced at the beginning of 2023 a soft pivot to Posit, which essentially is a rebranding of the RStudio company to encompass a larger data science audience, one that also provides integration with the Python programming language inside the RStudio IDE.</p>
+<blockquote>
+<p>The most trusted IDE for open source data science</p>
+<p>“RStudio is an integrated development environment (IDE) for R and Python. It includes a console, syntax-highlighting editor that supports direct code execution, and tools for plotting, history, debugging, and workspace management. RStudio is available in open source and commercial editions and runs on the desktop (Windows, Mac, and Linux).”</p>
+<p>— www.posit.co (Jan 2023)</p>
+</blockquote>
+<div id="steps-1" class="section level4 unnumbered hasAnchor">
+<h4>Steps<a href="installation.html#steps-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>Navigate to <a href="https://posit.co/">posit.co</a>, alternatively <a href="https://rstudio.com/">rstudio.com</a> redirects to the Posit website.</li>
+<li><strong>Click</strong> <code>Download RStudio</code> in the menu top right</li>
+<li>Select <code>RStudio Desktop</code></li>
+<li><strong>Click</strong> <code>Download RStudio</code><br />
+<em>skip 1: Install R</em></li>
+<li><strong>Click</strong> <code>Download RStudio Desktop for ..</code></li>
+</ol>
+<div id="windows-os-1" class="section level5 unnumbered hasAnchor">
+<h5>Windows OS<a href="installation.html#windows-os-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="macos-1" class="section level5 unnumbered hasAnchor">
+<h5>MacOS<a href="installation.html#macos-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+Opening the .dmg file shows the archive that can be copied into the Applications folder simply by click-dragging the application onto the Applications folder shortcut.
+<div class="figure"><span style="display:block;" id="fig:2011"></span>
+<img src="images/02_011_rstudio_installer_mac.png" alt="\label{fig:2011}RStudio IDE Install" width="489" />
+<p class="caption">
+Figure 2.2: RStudio IDE Install
+</p>
+</div>
+</div>
+<div id="linux-1" class="section level5 unnumbered hasAnchor">
+<h5>Linux<a href="installation.html#linux-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+</div>
+<div id="ide-layout" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> IDE Layout<a href="installation.html#ide-layout" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+The RStudio IDE consists of 4 individual panes each containing parts of the total environment, making it more manageable. For instance, having the text editor and console open and organized while creating and viewing a plot is delightfully easier than having three separate applications open on a desktop.
+<div class="figure"><span style="display:block;" id="fig:2021"></span>
+<img src="images/02_021_rstudio_panes.png" alt="\label{fig:2021}RStudio IDE in the default layout" width="691" />
+<p class="caption">
+Figure 2.3: RStudio IDE in the default layout
+</p>
+</div>
+<div id="the-editor" class="section level4 unnumbered hasAnchor">
+<h4>The Editor<a href="installation.html#the-editor" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<strong>Tabs</strong>: <code>All Open Files</code><br />
+Basically a text editor, but with the knowledge of R. The <em>Editor</em> automatically colors parts of the text based on what it is. Notice in the image below, comments (starting with a hash #) are a light green, operators (+ and the assignment operator &lt;-) are a light blue, variables (2 and four) are black and quoted text (called strings) are purple.
+<div class="figure"><span style="display:block;" id="fig:2022"></span>
+<img src="images/02_022_editor_highlighting.png" alt="\label{fig:2022}RStudio IDE syntax highlighting" width="1150" />
+<p class="caption">
+Figure 2.4: RStudio IDE syntax highlighting
+</p>
+</div>
+The <em>Editor</em> also has the ability to know what is available to use, such as variables and functions. In the image below, the editor has suggested that I might want to use the <code>mean()</code> function for calculating the average of a collection of values and provided a pop up which is selectable - there is even a popup description to accompany it. This occurs after typing in the first three letters of anything, the editor will try to guess what you want next.
+<div class="figure"><span style="display:block;" id="fig:2023"></span>
+<img src="images/02_023_editor_autocomplete.png" alt="\label{fig:2023}RStudio IDE auto complete" width="1150" />
+<p class="caption">
+Figure 2.5: RStudio IDE auto complete
+</p>
+</div>
+</div>
+<div id="files-and-plots" class="section level4 unnumbered hasAnchor">
+<h4>Files and Plots<a href="installation.html#files-and-plots" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<strong>Tabs</strong>: <code>Files</code> <code>Plots</code> <code>Packages</code> <code>Viewer</code> <code>Presentation</code><br />
+The script that is open in the editor has been saved to the current project, and is visable in the <em>Files</em> tab on the top right. Opening another file will open another tab in the <em>Editor</em>, allowing you to switch between open files. Also located in this pane is the <em>Plots</em> tab where any active plots can be viewed instantly. This is where RStudio begins to shine, with the ability to bring together editing and visualization all in one application.
+<div class="figure"><span style="display:block;" id="fig:2024"></span>
+<img src="images/02_024_qplot.png" alt="\label{fig:2024}RStudio IDE plot window" width="1150" />
+<p class="caption">
+Figure 2.6: RStudio IDE plot window
+</p>
+</div>
+</div>
+<div id="the-console" class="section level4 unnumbered hasAnchor">
+<h4>The Console<a href="installation.html#the-console" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Tabs</strong>: <code>Console</code> <code>Terminal</code>, <code>Background Jobs</code><br />
+This is where lines of code will be run from the editor You can also run code here
+Also gives access to the computer’s terminal</p>
+</div>
+<div id="environment" class="section level4 unnumbered hasAnchor">
+<h4>Environment<a href="installation.html#environment" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Tabs</strong>: <code>Environment</code> <code>History</code> <code>Connections</code> <code>Tutorial</code></p>
+</div>
+</div>
+<div id="usage-..-running-lines-of-code-in-rstudio" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Usage .. Running lines of code in RStudio<a href="installation.html#usage-..-running-lines-of-code-in-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="run-from-the-editor-recommended" class="section level4 hasAnchor" number="2.2.2.1">
+<h4><span class="header-section-number">2.2.2.1</span> Run from the editor (recommended)<a href="installation.html#run-from-the-editor-recommended" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>Type in the code in the Editor (top-left pane)</li>
+<li>Put editor cursor anywhere on that line</li>
+<li>Press Ctrl/CMD+Enter.</li>
+<li>Multiple lines: highlight multiple lines then press Ctrl/CMD+Enter
+#### Run from the onsole (occasionally)</li>
+<li>Type code into Console (bottom-left) after the ‘&gt;’</li>
+<li>Press Enter.</li>
+<li>Multiple lines, not advised, but copy and paste multiple lines into console then press Enter.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div id="packages" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Packages<a href="installation.html#packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="what-are-r-packages" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> What are R Packages?<a href="installation.html#what-are-r-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>R packages wrap-up code written by others so you can use it in your own projects</li>
+<li>Most R packages provide new functions to deal with specific problems, e.g.
+<ul>
+<li>ggplot2: helps you make plots</li>
+<li>mzR: read mass spectrometry data files</li>
+<li>twitteR: access twitter data</li>
+</ul></li>
+<li>Packages can be written by anyone, and quality can vary widely</li>
+<li>There are lots of high quality packages, but also be wary of random packages you come across on the internet</li>
+</ul>
+</div>
+<div id="where-to-get-r-packages" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Where to get R packages<a href="installation.html#where-to-get-r-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>CRAN (Comprehensive R Archive Network)
+<ul>
+<li>Main (and default) repository for R packages</li>
+<li>Maintainers review packages for basic structure and utility before they are approved
+(is the package structured properly? can it build and load without problems?)</li>
+<li>Don’t assume that just because a package is on CRAN that is “does the right/correct thing”</li>
+</ul></li>
+<li>Bioconductor
+<ul>
+<li>Alternative R package repository for bioinformatics related packages</li>
+<li>Lots of MS related packages</li>
+<li>Uses a different installation procedure than CRAN</li>
+</ul></li>
+<li>GitHub
+<ul>
+<li>Anyone can host an R package from GitHub – this is a Pro and a Con</li>
+<li>Faster way to get your code out to others (no review or submission process)</li>
+<li>Newer package versions are often on GitHub before they make it to CRAN</li>
+</ul></li>
+</ul>
+</div>
+<div id="notes-on-rtools-and-command-line-tools" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Notes on RTools and Command Line Tools<a href="installation.html#notes-on-rtools-and-command-line-tools" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Most R packages have binary versions that can be directly installed with no additional steps</li>
+<li>If binary versions are not available (e.g. the package is new or just been updated), it may need to be compiled before it can be installed</li>
+<li>RTools (Windows) and Command Line Tools (Mac) provide the necessary programs and libraries you’ll need to compile packages</li>
+<li>But… package compilation sometimes doesn’t work (for a variety of reasons) and can be frustrating!</li>
+<li>In general, stick with using binary packages</li>
+</ul>
+</div>
+<div id="tidyverse---needed-for-this-book" class="section level3 hasAnchor" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> tidyverse - Needed for this book<a href="installation.html#tidyverse---needed-for-this-book" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="tibble" class="section level4 unnumbered hasAnchor">
+<h4>tibble<a href="installation.html#tibble" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="readr" class="section level4 unnumbered hasAnchor">
+<h4>readr<a href="installation.html#readr" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="dplyr" class="section level4 unnumbered hasAnchor">
+<h4>dplyr<a href="installation.html#dplyr" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="tidyr" class="section level4 unnumbered hasAnchor">
+<h4>tidyr<a href="installation.html#tidyr" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="purrr" class="section level4 unnumbered hasAnchor">
+<h4>purrr<a href="installation.html#purrr" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="stringr" class="section level4 unnumbered hasAnchor">
+<h4>stringr<a href="installation.html#stringr" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="ggplot2" class="section level4 unnumbered hasAnchor">
+<h4>ggplot2<a href="installation.html#ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction-to-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="the-basics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/jeffsocal/asms_r_intro/edit/BRANCH/02_01-installation_r.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

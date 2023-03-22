@@ -1,0 +1,145 @@
+## Syntax
+
+R input consists of typing characters to represent various parts of a process or mathematical operation. There are several components to to R code, below are some examples of comments, variables, operators, numerics, strings, and functions.
+
+> **NOTE:** this is a code block, you can copy the code here and paste into RStudio
+
+```{r}
+# adding two numbers here and storing it as a variable
+four <- 2 + 2
+
+# using the function 'cat' to print out my variable along with some text
+cat("my number is ", four)
+```
+
+> **NOTE:** the \## at the beginning of the output is only present in the book, you will not see it in your interactions
+
+### Comments
+
+Comments are essential parts of the code you will write. They help explain why you are taking a certain approach to the problem, either for you to remember at a later time or for a colleague. Comments in other coding languages, including R package development, can become quite expressive, representing parts and structures to a larger documentation effort. Here, however, comments are just simple text that gets ignored by the R interpreter. You can put anything you want in comments.
+
+```{r, eval=FALSE}
+oops, not a comment
+```
+
+```{r}
+# This is a comment
+
+# and here a comment tag is used to ignore legitimate R code
+# four <- 2 + 2 
+four <- 2 * 2
+```
+
+### Numbers (integers and floats)
+
+Numbers are the building blocks of data and numerical analysis. In R there are two fundamental types of numbers, `integers` and `floats`.
+
+An integer is just a whole number with no fractional component.
+
+```{r, eval=FALSE}
+# integers
+1,  12345, -17, 0
+```
+
+A float refers to a real number with a fractional component (i.e. a decimal value), the name float comes from doing math with computers. In computing, a floating-point number can be represented using an integer with a fixed precision, called the significand, scaled by an integer exponent of a fixed base, such as 10. For example, 12.345 can be represented as a base-ten floating-point number.
+
+```{r, eval=FALSE}
+# floats
+significand <- 12345
+exponent <- -3
+base <- 10
+
+# 12.345 = 12345 * 10^-3
+significand * base ^ exponent
+```
+
+### Operators
+
+Operators are symbols that manipulate numbers and variables, perform operations between values and assign values to string variables.
+
+*At their very basic, operators allow you to perform **calculations** ..*
+
+```{r}
+1 + 2
+1 / 2
+```
+
+*.. **assign** values to string variables ..*
+
+```{r}
+myvar <- 1
+```
+
+*.. and **compare** values.*
+
+```{r}
+1 == myvar
+2 != myvar + myvar
+```
+
+Here is a table summarizing of some common operators in R.
+
++-------------+---------------------------------------------+-----------------------------------+
+| Operator    | Description                                 | Example                           |
++=============+=============================================+===================================+
+| `<-`        | assigns numerics and functions to variables | `x <- 1` x now has the value of 1 |
++-------------+---------------------------------------------+-----------------------------------+
+| `+`         | adds two numbers                            | `1 + 2` = `3`                     |
++-------------+---------------------------------------------+-----------------------------------+
+| `-`         | subtracts two numbers                       | `1 - 2` = `-1`                    |
++-------------+---------------------------------------------+-----------------------------------+
+| `*`         | multiplies two numbers                      | `1 * 2` = `2`                     |
++-------------+---------------------------------------------+-----------------------------------+
+| `/`         | divides two numbers                         | `1 / 2` = `0.5`                   |
++-------------+---------------------------------------------+-----------------------------------+
+| `^`         | raises one number to the power of the other | `1 ^ 2` = `1`                     |
++-------------+---------------------------------------------+-----------------------------------+
+| `=`         | also an assignment operator                 | `x = 1` x now has the value of 1  |
++-------------+---------------------------------------------+-----------------------------------+
+| `==`        | performs a comparison                       | `1 == 1` = `TRUE`                 |
++-------------+---------------------------------------------+-----------------------------------+
+| `!=`        | performs a negative comparison              | `1 != 2` = `TRUE`                 |
++-------------+---------------------------------------------+-----------------------------------+
+
+### Variables
+
+Variables are "things" (letters, words, text strings) that can hold information that can vary. In one instance it can hold a number and in another it can hold text. We can use variables to hold all kinds of information and then refer to that variable again and again to retrieve that information, manipulate it with an operation or replace it with an assignment.
+
+```{r}
+# create two viables and assign values to each
+var_a <- 1
+var_b <- 3.14
+
+var_a + var_b
+```
+
+R even has some intrinsic variables that come in handy, like *pi*.
+
+```{r}
+pi
+```
+
+> **NOTE:** in R it is easy to overwrite existing variables, causing error and confusion
+
+```{r}
+pi <- 9.87
+pi
+```
+
+### Statements
+
+Using a comparison operator, you can make logical comparisons called statements.
+
++---------------+-------------------------------------------------------------------------------+------------------------------+
+| Operator      | Description                                                                   | Example                      |
++===============+===============================================================================+==============================+
+| `|` and `||`  | an either **or** comparison, `TRUE` if both are true `FALSE` if one is false. | `1 == 1 || 1 != 2` = `TRUE`  |
+|               |                                                                               |                              |
+|               |                                                                               | `1 == 1 || 1 == 2` = `FALSE` |
++---------------+-------------------------------------------------------------------------------+------------------------------+
+| `&`           | a comparison where **both** must be `TRUE`                                    | `1 == 1 & 1 != 2` = `TRUE`   |
+|               |                                                                               |                              |
+|               |                                                                               | `1 == 1 & 1 != 2` = `FALSE`  |
++---------------+-------------------------------------------------------------------------------+------------------------------+
+
+### Functions

@@ -1,0 +1,9 @@
+# Data Structures
+## Variable
+--> (05 break, assignment)
+## Vector
+--> (06 break, assignment)
+## Matrix
+## Data Frame
+--> (07 break, assignment)
+## List

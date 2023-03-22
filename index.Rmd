@@ -1,0 +1,76 @@
+--- 
+title: "Introduction to R for Mass Spectrometrists"
+author: "Jeff Jones, Heath Patterson, Ryan Benz "
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: 
+# cover-image: 
+description: |
+  An introductory approach to using R in the analysis of mass spectrometry related data.
+link-citations: yes
+github-repo: jeffsocal/ASMS_R_Basics
+---
+
+# Preface {-}
+
+#### __Who__ {-}
+
+##### The Authors {-}
+
+Jeff Jones (PhD)
+
+Heath Patterson (PhD)
+
+Ryan Benz (PhD)
+
+##### The Audience {-}
+The topics covered in this book are detailed towards an absolute beginner in R and possibly to programming in general. They are intended to have little to no surprises, and taken from begging to end, one should be able to extend their towards developing analytically processes for their own research, providing means for others to accomplish analyses and begin to extend their skills with more advanced literature.
+
+This book is meant for individuals with no previous knowledge of R, although some experience with data and statistical analysis is recommended. Reading and understanding the chapters and exercises should impart the skills for basic data analysis and prepared you for more advanced concepts and skills.
+
+#### __What__ {-}
+
+##### Covered {-}
+Goals for the Short Course
+- Learn basic fundamentals of the R programming language
+- Learn how to use to the RStudio integrated development environment (IDE)
+- Learn about tidy data, what it is, and why it’s important for data analysis
+- Learn basic fundamentals of the tidyverse ecosystem of R packages and how they can be used to streamline the data analysis process
+- Learn how to make data visualizations using the ggplot2 R package
+
+At the end of the course, are you able to.
+- start-up RStudio and make an RStudio project?
+- read a formatted text file (e.g. csv file) into R?
+- understand basic properties about the data (e.g. # rows, cols)?
+- tell someone what tidy data is and why it’s important?
+- perform some basic data manipulations and operations on the data?
+- make a simple plot from the data?
+
+##### Not Covered {-}
+Not covered are the topics of statistical analysis, probability, regression, machine learning or any other advanced analytical topic. Additionally, this book does not cover constructing R packages, documentation, markdown or any other advanced R programming topic.
+
+#### __Why__ {-}
+This book serves as the basis for the Introduction to R course offered at the
+annual conference for the American Society for Mass Spectrometry (ASMS), and was 
+developed by the authors out of the need to create a more permanent, expandable and revisable
+reference document.
+
+#### __When__ {-}
+Started in 2017 as a series of workshops at the annual ASMS conference drawing between 200 and 300 attendees for three consecutive years. The presenters were offered a formal short course starting in 2020 (a remote COVID year). In 2023 it was decided to convert all the teaching materials into a formal book.
+
+#### __Where__ {-}
+##### Online {-}
+You can find the online version here [link].
+
+##### In Print {-}
+You can find a print version at XYZ-Press [link].
+
+##### In-Person {-}
+This book and it's contents are covered at the annual American Society for Mass Spectrometry (ASMS), typically the first week in June the weekend prior to the scientific meeting.
+
+#### __How__ {-}
+Persistence, sweat, tears, and bookdown, of'course.
+
+
