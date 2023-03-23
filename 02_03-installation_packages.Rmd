@@ -1,41 +1,50 @@
 ## Packages
 
 ### What are R Packages?
-- R packages wrap-up code written by others so you can use it in your own projects
-- Most R packages provide new functions to deal with specific problems, e.g.
-  - ggplot2: helps you make plots
-  - mzR: read mass spectrometry data files
-  - twitteR: access twitter data
-- Packages can be written by anyone, and quality can vary widely
-- There are lots of high quality packages, but also be wary of random packages you come across on the internet
+
+-   R packages wrap-up code written by others so you can use it in your own projects
+-   Most R packages provide new functions to deal with specific problems, e.g.
+    -   ggplot2: helps you make plots
+    -   mzR: read mass spectrometry data files
+    -   twitteR: access twitter data
+-   Packages can be written by anyone, and quality can vary widely
+-   There are lots of high quality packages, but also be wary of random packages you come across on the internet
 
 ### Where to get R packages
-- CRAN (Comprehensive R Archive Network)
-  - Main (and default) repository for R packages
-  - Maintainers review packages for basic structure and utility before they are approved
-(is the package structured properly? can it build and load without problems?)
-  - Don't assume that just because a package is on CRAN that is "does the right/correct thing"
-- Bioconductor
-  - Alternative R package repository for bioinformatics related packages
-  - Lots of MS related packages
-  - Uses a different installation procedure than CRAN
-- GitHub
-  - Anyone can host an R package from GitHub -- this is a Pro and a Con
-  - Faster way to get your code out to others (no review or submission process)
-  - Newer package versions are often on GitHub before they make it to CRAN
+
+-   CRAN (Comprehensive R Archive Network)
+    -   Main (and default) repository for R packages
+    -   Maintainers review packages for basic structure and utility before they are approved (is the package structured properly? can it build and load without problems?)
+    -   Don't assume that just because a package is on CRAN that is "does the right/correct thing"
+-   Bioconductor
+    -   Alternative R package repository for bioinformatics related packages
+    -   Lots of MS related packages
+    -   Uses a different installation procedure than CRAN
+-   GitHub
+    -   Anyone can host an R package from GitHub -- this is a Pro and a Con
+    -   Faster way to get your code out to others (no review or submission process)
+    -   Newer package versions are often on GitHub before they make it to CRAN
 
 ### Notes on RTools and Command Line Tools
-- Most R packages have binary versions that can be directly installed with no additional steps
-- If binary versions are not available (e.g. the package is new or just been updated), it may need to be compiled before it can be installed
-- RTools (Windows) and Command Line Tools (Mac) provide the necessary programs and libraries you'll need to compile packages
-- But... package compilation sometimes doesn't work (for a variety of reasons) and can be frustrating!
-- In general, stick with using binary packages
 
-### tidyverse - Needed for this book 
-#### tibble {-}
-#### readr {-}
-#### dplyr {-}
-#### tidyr {-}
-#### purrr {-}
-#### stringr {-}
-#### ggplot2 {-}
+-   Most R packages have binary versions that can be directly installed with no additional steps
+-   If binary versions are not available (e.g. the package is new or just been updated), it may need to be compiled before it can be installed
+-   RTools (Windows) and Command Line Tools (Mac) provide the necessary programs and libraries you'll need to compile packages
+-   But... package compilation sometimes doesn't work (for a variety of reasons) and can be frustrating!
+-   In general, stick with using binary packages
+
+### tidyverse - Needed for this book
+
+#### tibble {.unnumbered}
+
+#### readr {.unnumbered}
+
+#### dplyr {.unnumbered}
+
+#### tidyr {.unnumbered}
+
+#### purrr {.unnumbered}
+
+#### stringr {.unnumbered}
+
+#### ggplot2 {.unnumbered}

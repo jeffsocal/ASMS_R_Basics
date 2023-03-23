@@ -1,7 +1,40 @@
 # The Basics
-At its very basic, R is a calculator capable of performing simple mathematical operations, reading, manipulating writing data to and from files and plotting. Akin to a programmatic version of Microsoft's Excel. R, however, is a platform for complex analyses, statistical evaluations, predictive inferencing and machine learning. We'll start here with the simplest operations. 
+
+Welcome to the R Book! In this chapter, we will explore the basics of R, a powerful programming language used for statistical computing and graphics.
+
+At its most fundamental level, R is a calculator capable of performing simple, and complex, mathematical operations. It can read and write data to and from files, manipulate the data, calculate summaries and plot visual representations of the data. Essentially, it is a programmatic version of a spreadsheet program.
+
+However, R is much more than just a calculator. It is also a platform for conducting complex analyses, statistical evaluations, predictive inferencing, and machine learning. With R, you can explore and visualize data in a variety of ways, perform advanced statistical analyses, and build predictive models.
+
+In this chapter, we will start by examining the simplest operations of R. We will cover basic arithmetic, working with variables, and creating basic plots. By the end of this chapter, you will have a solid understanding of the fundamentals of R and be ready to tackle more complex topics.
+
+So, let's get started!
 
 > At the end of this chapter you should be able to:
 >
->- understand R's syntax, variables, operators and functions  
->- create and edit a project in RStudio  
+> -   understand R's syntax, variables, operators and functions
+> -   create and edit a project in RStudio
+
+### Reserved Words
+
+As we begin our journey, it's important to keep in mind that there are certain reserved words that carry a special meaning and cannot be used as identifiers. These words have been set aside by the R programming language, and using them as variable names or function names could lead to errors in your code.
+
+Therefore, before we dive too deeply into our R programming endeavors, let's take a moment to familiarize ourselves with these reserved words. This will help us avoid potential issues down the road and ensure that our code runs smoothly.
+
+```{r, eval=FALSE}
+# to read more about them type
+?reserved
+```
+
+| Word                                      | Use                                              |
+|--------------------------|------------------------------------|
+| `if`, `else`                              | flow control, part of the if-then-else statement |
+| `for`, `repeat`, `while`, `break`, `next` | flow control, part of the for-loop statement     |
+| `function`                                | basis for defining new algorithms                |
+| `TRUE`, `FALSE`                           | Boolean logic values                             |
+| `NULL`                                    | an undefined value                               |
+| `Inf` , `-Inf`                            | an infinite value (eg. `1/0` )                   |
+| `NaN`                                     | 'not a number'                                   |
+| `NA`                                      | a missing value indicator                        |
+
+> **NOTE:** a `Null` results when a value is missing and could be a *string* or a *numeric*, where as a NA results when a known value, such as in a column of numbers, is missing.

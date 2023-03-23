@@ -1,6 +1,19 @@
 ## Syntax
 
-R input consists of typing characters to represent various parts of a process or mathematical operation. There are several components to to R code, below are some examples of comments, variables, operators, numerics, strings, and functions.
+Welcome to the R Book! In this section, we will discuss the different components of R code that you should be familiar with.
+
+R input is composed of typing characters to represent various parts of a process or mathematical operation. These characters come together to form what we call R code. Understanding the different components of R code is essential to writing effective and efficient R programs. Below are some examples of the different components of R code:
+
+- Comments
+- Variables
+- Operators
+- Numerics
+- Strings
+- Functions
+
+Comments are used to add notes or explanations to your code. Variables are used to store data values that can be used later on in your program. Operators are used to perform mathematical operations, such as addition or subtraction. Numerics are values that represent numerical data, such as integers or decimals. Strings are values that represent text data. Functions are pre-defined sets of instructions that can be called upon to perform specific tasks in your program.
+
+By understanding these different components of R code, you will be able to write more effective and efficient R programs.
 
 > **NOTE:** this is a code block, you can copy the code here and paste into RStudio
 
@@ -32,16 +45,18 @@ four <- 2 * 2
 
 ### Numbers (integers and floats)
 
-Numbers are the building blocks of data and numerical analysis. In R there are two fundamental types of numbers, `integers` and `floats`.
+Numbers are the foundation upon which all data analysis is built. Without numbers, we would not be able to perform calculations, identify patterns, or draw conclusions from our data. In the programming language R, there are two main types of numbers: `integers` and `floats`. An integer is a whole number with no decimal places, while a float is a number with decimal places. Understanding the difference between these two types of numbers is essential for accurate numerical analysis.
 
-An integer is just a whole number with no fractional component.
+In R, integers are represented as whole numbers, such as 1, 2, 3, and so on, while floats are represented with a decimal point, such as 1.5, 2.75, and so on.  It is important to note that integers occupy less space in memory than floats, which can be a consideration when working with large datasets. This means that when possible, it is generally better to use integers over floats in R, as they are more efficient and can improve the overall performance of your code.
 
 ```{r, eval=FALSE}
 # integers
 1,  12345, -17, 0
 ```
 
-A float refers to a real number with a fractional component (i.e. a decimal value), the name float comes from doing math with computers. In computing, a floating-point number can be represented using an integer with a fixed precision, called the significand, scaled by an integer exponent of a fixed base, such as 10. For example, 12.345 can be represented as a base-ten floating-point number.
+A float is a real number with a fractional component, represented as a decimal value. The name "float" comes from the way computers do math. In computing, a floating-point number can be represented using an integer with a fixed precision, called the significand, scaled by an integer exponent of a fixed base, such as 10. For example, 12.345 can be represented as a base-ten floating-point number.
+
+Additionally, it's important to be aware of potential errors when working with floats. Due to the way floats are represented in binary, certain decimal numbers cannot be accurately represented. This can result in rounding errors and unexpected behavior in your code. Therefore, it's important to use caution when comparing floats, which is outside the scope of this book. For more information consider using packages, such as `decimal` or `Rmpfr`, that provide precise floating-point arithmetic. 
 
 ```{r, eval=FALSE}
 # floats
@@ -55,7 +70,9 @@ significand * base ^ exponent
 
 ### Operators
 
-Operators are symbols that manipulate numbers and variables, perform operations between values and assign values to string variables.
+In programming, operators are essential components that allow us to manipulate various data types. Operators are symbols that perform a specific action on one or more operands. The operands could be numeric values, variables, or even strings. These symbols allow us to add, subtract, multiply, and divide numeric values, as well as perform more complex mathematical operations such as exponentiation and modulus. In addition to numeric values, operators can also manipulate string variables. For example, we can use concatenation operators to join two or more strings together. By using operators, we can perform powerful operations that allow us to build complex programs and applications.
+
+> **NOTE:** Remember order of operations (PEMDAS): Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right).
 
 *At their very basic, operators allow you to perform **calculations** ..*
 
@@ -79,27 +96,27 @@ myvar <- 1
 
 Here is a table summarizing of some common operators in R.
 
-+-------------+---------------------------------------------+-----------------------------------+
-| Operator    | Description                                 | Example                           |
-+=============+=============================================+===================================+
-| `<-`        | assigns numerics and functions to variables | `x <- 1` x now has the value of 1 |
-+-------------+---------------------------------------------+-----------------------------------+
-| `+`         | adds two numbers                            | `1 + 2` = `3`                     |
-+-------------+---------------------------------------------+-----------------------------------+
-| `-`         | subtracts two numbers                       | `1 - 2` = `-1`                    |
-+-------------+---------------------------------------------+-----------------------------------+
-| `*`         | multiplies two numbers                      | `1 * 2` = `2`                     |
-+-------------+---------------------------------------------+-----------------------------------+
-| `/`         | divides two numbers                         | `1 / 2` = `0.5`                   |
-+-------------+---------------------------------------------+-----------------------------------+
-| `^`         | raises one number to the power of the other | `1 ^ 2` = `1`                     |
-+-------------+---------------------------------------------+-----------------------------------+
-| `=`         | also an assignment operator                 | `x = 1` x now has the value of 1  |
-+-------------+---------------------------------------------+-----------------------------------+
-| `==`        | performs a comparison                       | `1 == 1` = `TRUE`                 |
-+-------------+---------------------------------------------+-----------------------------------+
-| `!=`        | performs a negative comparison              | `1 != 2` = `TRUE`                 |
-+-------------+---------------------------------------------+-----------------------------------+
++--------------+---------------------------------------------+-----------------------------------+
+| Operator     | Description                                 | Example                           |
++==============+=============================================+===================================+
+| `<-`         | assigns numerics and functions to variables | `x <- 1` x now has the value of 1 |
++--------------+---------------------------------------------+-----------------------------------+
+| `+`          | adds two numbers                            | `1 + 2` = `3`                     |
++--------------+---------------------------------------------+-----------------------------------+
+| `-`          | subtracts two numbers                       | `1 - 2` = `-1`                    |
++--------------+---------------------------------------------+-----------------------------------+
+| `*`          | multiplies two numbers                      | `1 * 2` = `2`                     |
++--------------+---------------------------------------------+-----------------------------------+
+| `/`          | divides two numbers                         | `1 / 2` = `0.5`                   |
++--------------+---------------------------------------------+-----------------------------------+
+| `^`          | raises one number to the power of the other | `1 ^ 2` = `1`                     |
++--------------+---------------------------------------------+-----------------------------------+
+| `=`          | also an assignment operator                 | `x = 1` x now has the value of 1  |
++--------------+---------------------------------------------+-----------------------------------+
+| `==`         | performs a comparison (exactly equal)       | `1 == 1` = `TRUE`                 |
++--------------+---------------------------------------------+-----------------------------------+
+| `!=`         | performs a negative comparison (not equal)  | `1 != 2` = `TRUE`                 |
++--------------+---------------------------------------------+-----------------------------------+
 
 ### Variables
 
@@ -130,16 +147,49 @@ pi
 
 Using a comparison operator, you can make logical comparisons called statements.
 
-+---------------+-------------------------------------------------------------------------------+------------------------------+
-| Operator      | Description                                                                   | Example                      |
-+===============+===============================================================================+==============================+
-| `|` and `||`  | an either **or** comparison, `TRUE` if both are true `FALSE` if one is false. | `1 == 1 || 1 != 2` = `TRUE`  |
-|               |                                                                               |                              |
-|               |                                                                               | `1 == 1 || 1 == 2` = `FALSE` |
-+---------------+-------------------------------------------------------------------------------+------------------------------+
-| `&`           | a comparison where **both** must be `TRUE`                                    | `1 == 1 & 1 != 2` = `TRUE`   |
-|               |                                                                               |                              |
-|               |                                                                               | `1 == 1 & 1 != 2` = `FALSE`  |
-+---------------+-------------------------------------------------------------------------------+------------------------------+
++-------------+-------------------------------------------------------------------------------+-----------------------------+
+| Operator    | Description                                                                   | Example                     |
++=============+===============================================================================+=============================+
+| `|`         | an either **or** comparison, `TRUE` if both are true `FALSE` if one is false. | `1 == 1 | 1 != 2` = `TRUE`  |
+|             |                                                                               |                             |
+|             |                                                                               | `1 == 1 | 1 == 2` = `FALSE` |
++-------------+-------------------------------------------------------------------------------+-----------------------------+
+| `&`         | a comparison where **both** must be `TRUE`                                    | `1 == 1 & 1 != 2` = `TRUE`  |
+|             |                                                                               |                             |
+|             |                                                                               | `1 == 1 & 1 != 2` = `FALSE` |
++-------------+-------------------------------------------------------------------------------+-----------------------------+
+
+> **NOTE:** there are also the double operators \|\| and &&, these are intended to work as flow control operators and stop at the first condition met. In the most recent versions of R, the double operators will error out if a vector is applied.
 
 ### Functions
+
+In programming, a function is a type of operator that performs a specific task and can accept additional information or parameters. In fact, all operators are functions in a sense, as they take inputs and produce outputs.
+
+The R programming language has a special class of operators called "binary infix" operators. Infix means "in between," and these operators are placed in between two inputs. These operators have a unique syntax that may confuse beginners, but they are essential for more complex operations in R.
+
+Now, you may wonder why we are discussing these esoteric aspects of R in a beginner's book. The reason is that understanding these unique features of the language can give you a better understanding of what the R programming language is doing, how it is structured, and how you can relate to it. It is important to have a solid foundation in the basics of any language, but gaining a deeper understanding of its more complex elements can help you become a more proficient programmer.
+
+So, while binary infix operators may seem like an advanced topic, they are an essential part of the R language and can help you unlock its full potential.
+
+```{r}
+1 + 2          # as an infix operator 
+`+`(1,2)       # as the function
+sum(1,2)       # same result just using a named function
+sum(1,2,3,4,5) # this function however can take in more than 2 values
+```
+
+We can even create a user defined infix operator ...
+
+```{r}
+`%zyx%` <- function(a,b) { a + b }
+1 %zyx% 2
+```
+
+... or just a normal function.
+
+```{r}
+zyx <- function(a,b) { a + b }
+zyx(1,2)
+```
+
+The notion of an infix operator you and ignore for the most part. But, we will see it again when diving into the `tidyverse` - a collection of arguably the most powerful data manipulation packages you will encounter. For now, lets move on with more about `functions()`.

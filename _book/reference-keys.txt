@@ -6,6 +6,7 @@ fig:2021
 fig:2022
 fig:2023
 fig:2024
+fig:3201
 introduction-to-r
 installation
 r-interpreter
@@ -19,6 +20,7 @@ where-to-get-r-packages
 notes-on-rtools-and-command-line-tools
 tidyverse---needed-for-this-book
 the-basics
+reserved-words
 syntax
 comments
 numbers-integers-and-floats
@@ -26,9 +28,20 @@ operators
 variables
 statements
 functions
+flow-control
+if-else-statements
+loops
+for
+while
 projects
 creating
 editing
+organizing
+data
+scripts
+results
+tables
+plots
 data-structures
 variable
 data-tables
