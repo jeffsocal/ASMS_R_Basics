@@ -27,7 +27,7 @@ Therefore, before we dive too deeply into our R programming endeavors, let's tak
 ```
 
 | Word                                      | Use                                              |
-|--------------------------|------------------------------------|
+|------------------------------|------------------------------------------|
 | `if`, `else`                              | flow control, part of the if-then-else statement |
 | `for`, `repeat`, `while`, `break`, `next` | flow control, part of the for-loop statement     |
 | `function`                                | basis for defining new algorithms                |

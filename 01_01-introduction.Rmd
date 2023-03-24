@@ -2,66 +2,79 @@
 
 Before we get started, this book contains some basic cues to help facilitate your understanding of the current topic.
 
-1. We small notes and tips as a block quote, see below.
-2. At the beginning of each chapter there is a section on what you should be able to accomplish at the end.
-3. At the end of each chapter there are some exercises that extend what has been covered.
+1.  We small notes and tips as a block quote, see below.
+2.  At the beginning of each chapter there is a section on what you should be able to accomplish at the end.
+3.  At the end of each chapter there are some exercises that extend what has been covered.
 
 > At the end of this chapter you should be able to:
 >
->- understand why R is a good choice for data analysis
->- understand that you have just started the learning curve and all your efforts hence forth are worth it
+> -   understand why R is a good choice for data analysis
+> -   understand that you have just started the learning curve and all your efforts hence forth are worth it
 
-## Why choose it? {-}
+## Why choose it? {.unnumbered}
 
-R is a great language for data analysis!
-- Many programming languages are general purpose (can be used in any domain), e.g. C/C++, Java, Python
-- R is not a general purpose programming language, it’s a language specifically designed for working with data (that’s what scientists do!)
-- Because R is geared toward data, its design, structure and continued development is focused on making it easier to work with data
-- R has become one of the top languages for data science, and it’s popularity and usage continues to grow
-- For scientists, R is a great tool to learn
+R is a great language for data analysis! - Many programming languages are general purpose (can be used in any domain), e.g. C/C++, Java, Python - R is not a general purpose programming language, it's a language specifically designed for working with data (that's what scientists do!) - Because R is geared toward data, its design, structure and continued development is focused on making it easier to work with data - R has become one of the top languages for data science, and it's popularity and usage continues to grow - For scientists, R is a great tool to learn
 
-__Fast, nimble, forgiving__
+**Fast, nimble, forgiving**
 
-__Lots of specialty tools (CRAN, Github, Bioconductor)__
+**Lots of specialty tools (CRAN, Github, Bioconductor)**
 
-## What you can do with it {-}
-__Read and plot data__
+## What you can do with it {.unnumbered}
 
-__construct analysis pipelines__
+**Read and plot data**
 
-__prototype new algorithms__
+**construct analysis pipelines**
 
-__write packages to share__
+**prototype new algorithms**
 
-## The R Learning Curve {-}
+**write packages to share**
 
-The learning curve for R 10+ years ago was difficult as there where fewer R resources, it was less mature with not a lot of interest. Additionally, there were fewer people in the community and data science wasn’t “a thing” yet.
+## The R Learning Curve {.unnumbered}
 
-``` {r 1001, echo=FALSE, fig.cap="\\label{fig:1001}R learning curve past"}
+The learning curve for R 10+ years ago was difficult as there where fewer R resources, it was less mature with not a lot of interest. Additionally, there were fewer people in the community and data science wasn't "a thing" yet.
+
+```{r 1001, echo=FALSE, fig.cap="\\label{fig:1001}R learning curve past"}
 knitr::include_graphics("images/01_001_r_learning_curve_past.png")
 ```
 
 The R programming language is still challenging but worth it. With the introduction of packages encompassed in the tidyverse there are more high-quality resources, mature utilization with well documented explanations and examples. Currently there is lots of current interest in R with a large community of users and developers. Additionally, the data science "revolution has pushed R to develop and evolve, become more user-centric.
 
-``` {r 1002, echo=FALSE, fig.cap="\\label{fig:1002}R learning curve present"}
+```{r 1002, echo=FALSE, fig.cap="\\label{fig:1002}R learning curve present"}
 knitr::include_graphics("images/01_002_r_learning_curve_present.png")
 ```
 
+## Thoughts about learning R and how to code {.unnumbered}
 
-## Thoughts about learning R and how to code {-}
-The first step to learning a programming language is to learn its syntax (the set of rules and symbols that make up structurally correct code). Computers are really picky, and even the smallest violations of the syntax rules will result in code that doesn’t run (typos, incorrect names, missing spaces or too many spaces, wrong brackets, ...). Syntax errors are frustrating, and unfortunately, the most common mistake for beginners. Hang in there, start simple, try to understand very simple cases first, then build and expand on them
+The first step to learning a programming language is to learn its syntax (the set of rules and symbols that make up structurally correct code). Computers are really picky, and even the smallest violations of the syntax rules will result in code that doesn't run (typos, incorrect names, missing spaces or too many spaces, wrong brackets, ...). Syntax errors are frustrating, and unfortunately, the most common mistake for beginners. Hang in there, start simple, try to understand very simple cases first, then build and expand on them
 
+## Alternatives {.unnumbered}
 
-## Alternatives {-}
-### Scripting: Python, Julia, Matlab {-}
+### Scripting: Python, Julia, Matlab {.unnumbered}
 
-- Python is a great language, and is another top language for data science
-- If you want to become a data scientist or work heavily with data, learning both R and Python is a great idea – both have pros and cons
-- But, if you choose Python over R, that’s not a bad choice either
-- R might work better for some, Python for others
-- If R just isn’t working for you, give Python a shot
+-   Python is a great language, and is another top language for data science
+-   If you want to become a data scientist or work heavily with data, learning both R and Python is a great idea -- both have pros and cons
+-   But, if you choose Python over R, that's not a bad choice either
+-   R might work better for some, Python for others
+-   If R just isn't working for you, give Python a shot
 
-### Complied: C, C++, Java, Rust, etc. {-}
-### Did you know {-}
-__R can use functions from Python, C and Rust__
+### Complied: C, C++, Java, Rust, etc. {.unnumbered}
 
+### Did you know {.unnumbered}
+
+**R can use functions from Python, C and Rust**
+
+## Schedule
+
++-----------------+-------------------------+---+
+| Segment         | Chapters                | ? |
++=================+=========================+===+
+| Day 1 Morning   | Intro and Basics        |   |
++-----------------+-------------------------+---+
+| Day 1 Afternoon | tidyverse (w/ data set) |   |
++-----------------+-------------------------+---+
+| Day 2 Morning   | ggplots / mass spec-ish |   |
++-----------------+-------------------------+---+
+| Day 2 Afternoon | (tidyverse + ggplot)    |   |
+|                 |                         |   |
+|                 | mass spec data          |   |
++-----------------+-------------------------+---+

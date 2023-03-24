@@ -1,8 +1,18 @@
-## Open Access
+<!--# JEFF -->
+## Open Access Raw Data
 ### mzXML (HUPO)
 ### mzML (HUPO - most common)
 ### mzH5 (HDF5)
+## Derived|Processed|Translated Data Outputs
+
+<!--# Say Something about interacting with exiting tools -->
+### Common Utilities (Proteomics)
+PD, OpenMS, Skyline, TransPP, MSFragger, MaxQuant
+Comet, Mascot, XTandem
+
+### mzIdent, mzQuant, mzPeptides
 ### MGF (Mascot, Comet)
 ### PIN (Comet)
+### CSV (Search Engines)
 
 

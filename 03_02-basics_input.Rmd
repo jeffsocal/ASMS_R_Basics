@@ -4,12 +4,12 @@ Welcome to the R Book! In this section, we will discuss the different components
 
 R input is composed of typing characters to represent various parts of a process or mathematical operation. These characters come together to form what we call R code. Understanding the different components of R code is essential to writing effective and efficient R programs. Below are some examples of the different components of R code:
 
-- Comments
-- Variables
-- Operators
-- Numerics
-- Strings
-- Functions
+-   Comments
+-   Variables
+-   Operators
+-   Numerics
+-   Strings
+-   Functions
 
 Comments are used to add notes or explanations to your code. Variables are used to store data values that can be used later on in your program. Operators are used to perform mathematical operations, such as addition or subtraction. Numerics are values that represent numerical data, such as integers or decimals. Strings are values that represent text data. Functions are pre-defined sets of instructions that can be called upon to perform specific tasks in your program.
 
@@ -47,7 +47,7 @@ four <- 2 * 2
 
 Numbers are the foundation upon which all data analysis is built. Without numbers, we would not be able to perform calculations, identify patterns, or draw conclusions from our data. In the programming language R, there are two main types of numbers: `integers` and `floats`. An integer is a whole number with no decimal places, while a float is a number with decimal places. Understanding the difference between these two types of numbers is essential for accurate numerical analysis.
 
-In R, integers are represented as whole numbers, such as 1, 2, 3, and so on, while floats are represented with a decimal point, such as 1.5, 2.75, and so on.  It is important to note that integers occupy less space in memory than floats, which can be a consideration when working with large datasets. This means that when possible, it is generally better to use integers over floats in R, as they are more efficient and can improve the overall performance of your code.
+In R, integers are represented as whole numbers, such as 1, 2, 3, and so on, while floats are represented with a decimal point, such as 1.5, 2.75, and so on. It is important to note that integers occupy less space in memory than floats, which can be a consideration when working with large datasets. This means that when possible, it is generally better to use integers over floats in R, as they are more efficient and can improve the overall performance of your code.
 
 ```{r, eval=FALSE}
 # integers
@@ -56,7 +56,7 @@ In R, integers are represented as whole numbers, such as 1, 2, 3, and so on, whi
 
 A float is a real number with a fractional component, represented as a decimal value. The name "float" comes from the way computers do math. In computing, a floating-point number can be represented using an integer with a fixed precision, called the significand, scaled by an integer exponent of a fixed base, such as 10. For example, 12.345 can be represented as a base-ten floating-point number.
 
-Additionally, it's important to be aware of potential errors when working with floats. Due to the way floats are represented in binary, certain decimal numbers cannot be accurately represented. This can result in rounding errors and unexpected behavior in your code. Therefore, it's important to use caution when comparing floats, which is outside the scope of this book. For more information consider using packages, such as `decimal` or `Rmpfr`, that provide precise floating-point arithmetic. 
+Additionally, it's important to be aware of potential errors when working with floats. Due to the way floats are represented in binary, certain decimal numbers cannot be accurately represented. This can result in rounding errors and unexpected behavior in your code. Therefore, it's important to use caution when comparing floats, which is outside the scope of this book. For more information consider using packages, such as `decimal` or `Rmpfr`, that provide precise floating-point arithmetic.
 
 ```{r, eval=FALSE}
 # floats
@@ -161,6 +161,7 @@ Using a comparison operator, you can make logical comparisons called statements.
 
 > **NOTE:** there are also the double operators \|\| and &&, these are intended to work as flow control operators and stop at the first condition met. In the most recent versions of R, the double operators will error out if a vector is applied.
 
+<!--# HEATH -->
 ### Functions
 
 In programming, a function is a type of operator that performs a specific task and can accept additional information or parameters. In fact, all operators are functions in a sense, as they take inputs and produce outputs.

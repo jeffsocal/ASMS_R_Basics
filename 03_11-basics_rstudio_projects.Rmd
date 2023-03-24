@@ -1,3 +1,4 @@
+<!--# HEATH -->
 ## Projects
 Project are how RStudio organizes your work. Think of project as singular goal oriented collection. There are no rules but some basic organizational tips should help simplify your project.
 

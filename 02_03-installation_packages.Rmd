@@ -33,6 +33,8 @@
 -   But... package compilation sometimes doesn't work (for a variety of reasons) and can be frustrating!
 -   In general, stick with using binary packages
 
+<!--# JEFF -->
+
 ### tidyverse - Needed for this book
 
 #### tibble {.unnumbered}
