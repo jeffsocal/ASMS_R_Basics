@@ -31,7 +31,11 @@ knitr::include_graphics("images/02_011_rstudio_installer_mac.png")
 
 ### IDE Layout
 
-The RStudio IDE consists of 4 individual panes each containing parts of the total environment, making it more manageable. For instance, having the text editor and console open and organized while creating and viewing a plot is delightfully easier than having three separate applications open on a desktop.
+The RStudio Integrated Development Environment (IDE) is a powerful tool that can make your data analysis and coding tasks more manageable. One of the key features of the RStudio IDE is that it consists of four individual panes, each containing parts of the total environment. This makes it easier for you to navigate your coding and analysis tasks.
+
+For example, while creating and viewing a plot, you can have the text editor and console open and organized. This way, you can easily see how the code you are writing is impacting the plot you are creating. Having everything in one place can also help reduce the clutter on your desktop, as you don't need to have multiple applications open at the same time.
+
+Overall, the RStudio IDE is an excellent option for anyone looking to streamline their coding and data analysis workflows. By taking advantage of its various features, you can make your work more efficient and enjoyable.
 
 ```{r 2021, echo=FALSE, fig.cap="\\label{fig:2021}RStudio IDE in the default layout"}
 knitr::include_graphics("images/02_021_rstudio_panes.png")
@@ -39,14 +43,21 @@ knitr::include_graphics("images/02_021_rstudio_panes.png")
 
 #### The Editor {.unnumbered}
 
-**Tabs**: `All Open Files`\
-Basically a text editor, but with the knowledge of R. The *Editor* automatically colors parts of the text based on what it is. Notice in the image below, comments (starting with a hash \#) are a light green, operators (+ and the assignment operator \<-) are a light blue, variables (2 and four) are black and quoted text (called strings) are purple.
+> **Tabs**: `All Open Files`
+
+The *Editor* is a tool that allows you to write R code with ease. It is essentially a text editor, but with the added benefit of having knowledge of R. This means that it can automatically color different parts of your code based on their function. This can be a huge time saver, as it makes it easier to read and understand your code.
+
+For example, comments in R code start with a hash (\#) symbol. In the *Editor*, these comments are colored light green, making them easy to spot. Similarly, operators like the plus sign (+) and the assignment operator (\<-) are colored light blue. This makes it easy to identify where these operators are being used in your code.
+
+Variables are an important part of any programming language, and R is no exception. In the *Editor*, variables are colored black. This makes it easy to distinguish variable names from other parts of your code. Finally, quoted text (also known as strings) are colored purple. This makes it easy to identify where strings are being used in your code.
+
+In summary, the *Editor* is a powerful tool that can help you write R code more efficiently. By automatically coloring different parts of your code, it makes it easier to read and understand. Whether you are a beginner or an experienced R programmer, the *Editor* can help you write better code in less time.
 
 ```{r 2022, echo=FALSE, fig.cap="\\label{fig:2022}RStudio IDE syntax highlighting"}
 knitr::include_graphics("images/02_022_editor_highlighting.png")
 ```
 
-The *Editor* also has the ability to know what is available to use, such as variables and functions. In the image below, the editor has suggested that I might want to use the `mean()` function for calculating the average of a collection of values and provided a pop up which is selectable - there is even a popup description to accompany it. This occurs after typing in the first three letters of anything, the editor will try to guess what you want next.
+The Editor also has the ability to suggest available variables and functions. In the image provided, the editor suggests using the mean() function to calculate the average of a collection of values. A pop-up with a description accompanies the suggestion. This feature occurs after typing in the first three letters of anything, and the editor will try to guess what you want to type next. This is a helpful tool that can save you time and effort when writing R code.
 
 ```{r 2023, echo=FALSE, fig.cap="\\label{fig:2023}RStudio IDE auto complete"}
 knitr::include_graphics("images/02_023_editor_autocomplete.png")
@@ -54,8 +65,13 @@ knitr::include_graphics("images/02_023_editor_autocomplete.png")
 
 #### Files and Plots {.unnumbered}
 
-**Tabs**: `Files` `Plots` `Packages` `Viewer` `Presentation`\
-The script that is open in the editor has been saved to the current project, and is visable in the *Files* tab on the top right. Opening another file will open another tab in the *Editor*, allowing you to switch between open files. Also located in this pane is the *Plots* tab where any active plots can be viewed instantly. This is where RStudio begins to shine, with the ability to bring together editing and visualization all in one application.
+> **Tabs**: `Files`, `Plots`, `Packages`, `Viewer`, and `Presentation`
+
+When you're working in RStudio, your workflow is made simple with the various tabs and features available. For instance, the script that you're currently working on is saved to the current project and can be accessed via the *Files* tab located on the top right-hand side of the pane. This tab provides an overview of all the files in the working directory, and you can easily navigate between them.
+
+If you need to open another file, you can do so by clicking on the *File* menu or by using the shortcut key. When you open a new file, it will create a new tab in the *Editor* pane, which allows you to switch between open files. This feature is super helpful when you're working on multiple files simultaneously.
+
+Another useful tab located in the same pane is the *Plots* tab. This tab provides a quick way to view any active plots instantly. You don't need to export your plots or save them separately. Instead, you can view them right within RStudio. This is where RStudio truly shines, as it brings together editing and visualization in one application.
 
 ```{r 2024, echo=FALSE, fig.cap="\\label{fig:2024}RStudio IDE plot window"}
 knitr::include_graphics("images/02_024_qplot.png")
@@ -63,12 +79,23 @@ knitr::include_graphics("images/02_024_qplot.png")
 
 #### The Console {.unnumbered}
 
-**Tabs**: `Console` `Terminal`, `Background Jobs`\
-This is where lines of code will be run from the editor You can also run code here Also gives access to the computer's terminal
+> **Tabs**: `Console`, `Terminal`, and `Background Jobs`
+
+In the RStudio IDE, the *Console* pane is where lines of code are executed from the editor. It is a vital component of the RStudio interface that allows users to interact with R in real-time. The *Console* pane is not only where code is run, but it is also where users can view output and error messages. Additionally, the *Console* pane provides users access to the computer's terminal. This feature allows users to execute commands outside of the R environment, such as navigating files and directories or installing packages. Overall, the *Console* pane is an essential tool for any RStudio user and should be utilized to its full potential.
 
 #### Environment {.unnumbered}
 
-**Tabs**: `Environment` `History` `Connections` `Tutorial`
+> **Tabs**: `Environment`, `History`, `Connections`, and `Tutorial`
+
+When you're working on a project in R, it's essential to keep track of the variables and functions that you're using in your current session. The *Environment* tab, located at the top left of the RStudio interface, provides a concise summary of in-memory variables and functions that were created locally, as opposed to functions that were loaded from a package.
+
+This summary can be useful for new-comers to R because it allows you to quickly see what objects you are currently working with, without having to remember each or manually check. By having a clear overview of your current session, you can avoid mistakes or errors that might arise from using the wrong object or function.
+
+Overall, the *Environment* tab is a helpful feature of RStudio that can save you time and frustration. If you're new to R or just starting to use RStudio, make sure to keep an eye on the *Environment* tab and make use of its features as often as possible. As you become more versed in RStudio this tab may become less relevant.
+
+```{r 2025, echo=FALSE, fig.cap="\\label{fig:2025}RStudio IDE environment window"}
+knitr::include_graphics("images/02_025_environment.png")
+```
 
 ### Usage .. Running lines of code in RStudio
 
