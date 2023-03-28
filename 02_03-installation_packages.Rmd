@@ -2,51 +2,124 @@
 
 ### What are R Packages?
 
--   R packages wrap-up code written by others so you can use it in your own projects
--   Most R packages provide new functions to deal with specific problems, e.g.
-    -   ggplot2: helps you make plots
-    -   mzR: read mass spectrometry data files
-    -   twitteR: access twitter data
--   Packages can be written by anyone, and quality can vary widely
--   There are lots of high quality packages, but also be wary of random packages you come across on the internet
+R packages are a powerful tool in the R programming language that allow you to easily use code written by others in your own projects. They can save a lot of time and effort in the development of your own code, as they often provide new functions to deal with specific problems. For example, the popular ggplot2 package provides a variety of functions to help you create beautiful visualizations, while the mzR package allows you to read mass spectrometry data files with ease. Additionally, the twitteR package is a great tool for accessing Twitter data and conducting analysis.
 
-### Where to get R packages
+### Where to get R Packages
 
--   CRAN (Comprehensive R Archive Network)
-    -   Main (and default) repository for R packages
-    -   Maintainers review packages for basic structure and utility before they are approved (is the package structured properly? can it build and load without problems?)
-    -   Don't assume that just because a package is on CRAN that is "does the right/correct thing"
--   Bioconductor
-    -   Alternative R package repository for bioinformatics related packages
-    -   Lots of MS related packages
-    -   Uses a different installation procedure than CRAN
--   GitHub
-    -   Anyone can host an R package from GitHub -- this is a Pro and a Con
-    -   Faster way to get your code out to others (no review or submission process)
-    -   Newer package versions are often on GitHub before they make it to CRAN
+It's worth noting that packages can be written by anyone, which means that their quality can vary widely. While there are many high-quality packages available, it's important to be wary of randomly coming across packages on the internet. To ensure that you're working with trustworthy code, it's a good idea to stick with well-established and frequently updated packages from reputable sources such as the CRAN (The Comprehensive R Archive Network) and Bioconductor repositories. By doing so, you can ensure that your code is reliable, efficient, and secure.
 
-### Notes on RTools and Command Line Tools
+-   CRAN [cran.r-project.org](https://cran.r-project.org/)
+-   Bioconductor [bioconductor.org](https://bioconductor.org/)
+-   GitHub [github.com](https://github.com/)
 
--   Most R packages have binary versions that can be directly installed with no additional steps
--   If binary versions are not available (e.g. the package is new or just been updated), it may need to be compiled before it can be installed
--   RTools (Windows) and Command Line Tools (Mac) provide the necessary programs and libraries you'll need to compile packages
--   But... package compilation sometimes doesn't work (for a variety of reasons) and can be frustrating!
--   In general, stick with using binary packages
+In addition to using established packages, it's also possible to create your own packages in R. This is a great way to share your own code with others and make it accessible to a wider audience. When creating a package, it's important to follow a set of best practices to ensure that your code is well-documented, easy to use, and compatible with other packages. This includes providing clear and concise documentation, including examples and tutorials, and following established coding conventions.
 
-<!--# JEFF -->
+Another important consideration when working with R packages is version control. It's essential to keep track of the versions of the packages you're using, as updates can sometimes break existing code. By using a tool like Git or GitHub, you can easily manage different versions of your code and keep track of changes over time. This can be especially useful when collaborating with others on a project.
 
-### tidyverse - Needed for this book
+Overall, R packages are an essential tool for anyone working with R. By using established packages and following best practices when creating your own, you can ensure that your code is efficient, reliable, and easy to use. And by using version control, you can keep track of changes over time and collaborate effectively with others.
 
-#### tibble {.unnumbered}
+### Installing R Packages
 
-#### readr {.unnumbered}
+When working with R, it is important to understand how to install packages. R packages are collections of functions, data, and documentation that extend the capabilities of R. Most R packages have binary versions available for direct installation with no additional steps required. Binary packages are pre-compiled and ready-to-use packages that are platform-specific. They can be installed with the `install.packages()` function in R.
 
-#### dplyr {.unnumbered}
+> **NOTE**: Follow the examples below to install all the required packages used in this book. Jump to the following section if you run into any issues. Use the copy-paste button in the top-right of each code block.
 
-#### tidyr {.unnumbered}
+#### Installing from CRAN {.unnumbered}
 
-#### purrr {.unnumbered}
+```{r, eval=FALSE}
+# this installs all of the packages in the tidyverse collection
+install.packages('tidyverse')
+```
 
-#### stringr {.unnumbered}
+#### Installing from Bioconductor {.unnumbered}
 
-#### ggplot2 {.unnumbered}
+```{r, eval=FALSE}
+# do this once to install the Bioconductor Package Manager
+install.packages("BiocManager")
+# this installs the mzR package
+BiocManager::install(c("mzR", "xcms", "MSstats", "MSnbase"))
+```
+
+#### Installing from GitHub {.unnumbered}
+
+```{r, eval=FALSE}
+# do this once to install the devtools package 
+install.packages("devtools")
+# this installs the tidyproteomics package
+install_github("jeffsocal/tidyproteomics")
+```
+
+> **NOTE:** There maybe several additional packages to install including additional operating system level installs. Go to the [tidyproteomics](https://jeffsocal.github.io/tidyproteomics/) webpage for additional installation help.
+
+### Potential Gotchas
+
+However, there are cases where a binary version of a package may not be available. This could be because the package is new or has just been updated. In such cases, the package may need to be compiled before it can be installed. Compiling a package involves converting the source code into machine-readable code that can be executed.
+
+To compile R packages, you'll need to have the necessary programs and libraries installed on your computer. For Windows, you'll need to install RTools, which provides the necessary tools for package compilation. For Mac, you'll need to install Command Line Tools. Once these tools are installed, you can use them to compile packages that are not available as binaries.
+
+However, it's worth noting that package compilation can sometimes fail for various reasons. This can be frustrating, especially if you're new to R. Therefore, it is generally recommended to stick with using binary packages whenever possible. Binary packages are more stable and easier to install, making them the preferred option for most users.
+
+In summary, when working with R, it's important to understand how to install packages. Most packages have binary versions available for direct installation, but there may be cases where you need to compile a package yourself. While package compilation can be useful in some cases, it can also be frustrating and time-consuming. Therefore, it's generally recommended to stick with using binary packages whenever possible.
+
+## Packages Utilized in This Book
+
+### tidyverse
+
+The Tidyverse R package is a collection of data manipulation and visualization packages for the R programming language. It includes popular packages such as dplyr, ggplot2, and tidyr, among others. The Tidyverse R package is a powerful and versatile tool for data analysis in R. It includes a collection of data manipulation and visualization packages designed to work seamlessly together, making it easy to analyze and visualize data in R.
+
+```{r}
+library(tidyverse)
+```
+
+The **readr** package provides a versatile means of reading data from various formats, such as comma-separated (CSV) and tab-separated (TSV) delimitated flat files. In addition to its versatility, the **readr** package is also known for its speed and efficiency. It is designed to be faster than the base R functions for reading in data, making it an ideal choice for working with large datasets.
+
+```{r}
+tbl <- "./data/table_peptide_fragmnets.csv" %>% read_csv()
+```
+
+The **tibble** package embodies a modern, flexible take on the data table, making it a powerful tool for data analysis in R. This package includes a suite of functions that allow you to easily manipulate and reshape data. It also has a printing method that makes it easy to view and explore data, even when dealing with large datasets. Additionally, tibble objects are designed to work seamlessly with other Tidyverse packages, such as **dplyr** and **tidyr**, making it easy to switch between packages and maintain a consistent syntax.
+
+```{r}
+print(tbl)
+```
+
+The **readxl** package is a complement to **readr** providing a means to read Excel files, both legacy .xls and the current xml-based .xlsx. It is capable of reading many different types of data, including dates, times, and various numeric formats. The package also provides options for specifying sheet names, selecting specific columns and rows, and handling missing values.
+
+The **dplyr** package is widely known and used among data scientists and analysts for its interface that allows for easy and efficient data manipulation in *tibbles*. Providing a set of "verbs" that are designed to solve common tasks in data transformations and summaries, such as filtering, arranging, and summarizing data, all designed to work seamlessly with other Tidyverse packages making it easy to switch between packages and maintain a consistent syntax. One of the key benefits of the **dplyr** package is its ease of use, making it perfect for beginners and advanced users alike. It is widely used in the R community and is a valuable tool for anyone working with R and data tables.
+
+```{r}
+tbl %>% 
+  filter(type != 'precursor') %>% 
+  group_by(type) %>%
+  summarise(
+    num_ions = n(),
+    avg_mass = mean(mz)
+  )
+```
+
+The **tidyr** package contains a set of data table transformations, including pivotting rows to columns, splitting a single column into multiple ones, and tidying or cleaning up data tables for a more usable structure. These transformations are essential for dealing with real-world data tables, which are often messy and irregular. By using **tidyr**, you can quickly and easily manipulate data tables to extract the information you need and prepare them for further analysis.
+
+```{r}
+tbl %>% 
+  filter(type == 'precursor') %>% 
+  pivot_wider(z, names_from = 'type', values_from = 'mz')
+```
+
+The **ggplot2** package stands out as the most advanced and comprehensive package for transforming tabulated data into meaningful and informative graphics. With its wide range of visualization tools, this package allows you to create expressive and compelling graphics that not only look great but also convey detailed information in a clear and concise manner. Apart from other visualization tools, **ggplot2** takes a layered approach to creating graphics, allowing for the additive layering of additional data, labels, legends, and annotations, which helps to provide a more comprehensive view of your analysis.
+
+```{r}
+tbl %>%
+  mutate(int = rnorm(n(), mean = 1e5, sd=5e4),
+         relative_int = int/max(int) * 100) %>%
+  ggplot(aes(mz, relative_int, color=type)) +
+  geom_segment(aes(xend = mz, yend = 0)) +
+  labs(title = "Simulated MS/MS Spectrum")
+```
+
+One of the key benefits of using the Tidyverse is the standardization of syntax and functions across each package. This means that once you learn the basics of one package, you can easily switch to another package and be confident in your ability to use it. This makes it easier to create reproducible code and improves the efficiency of your data analysis.
+
+The Tidyverse is widely used in the R community and is a valuable tool for any data scientist or analyst working with R. It is especially useful for those who need to manipulate and visualize data quickly and efficiently, without sacrificing accuracy. Whether you are new to R or an experienced user, the Tidyverse is a must-have tool in your data analysis toolkit.
+
+### Mass Spectrometry Specific Packages
+
+This book, while providing a beginners level guide to R programming, also introduces several mass spectrometry-specific packages in many of the code examples. While these examples may only touch on some of their functions, the last chapter is dedicated to a more formal, albeit not comprehensive introduction to many of these packages. For example the `mzR` package, which enables users to read and process mass spectrometry data, as well as the `xcms` package, which is used for preprocessing and feature detection. Additionally, the book introduces the `MSnbase` package, which provides a framework for quantitative and qualitative analysis of mass spectrometry data, and the `MSstats` package, which is used for statistical analysis of quantitative proteomics experiments. Lastly, the book covers the `tidyproteomic`s package, which provides a collection of tools for analyzing post-analysis quantitative proteomics data using a framework similar to the `tidyverse`.
