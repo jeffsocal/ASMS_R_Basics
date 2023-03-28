@@ -15,7 +15,7 @@ So, let's get started!
 > -   understand R's syntax, variables, operators and functions
 > -   create and edit a project in RStudio
 
-### Reserved Words
+## Reserved Words
 
 As we begin our journey, it's important to keep in mind that there are certain reserved words that carry a special meaning and cannot be used as identifiers. These words have been set aside by the R programming language, and using them as variable names or function names could lead to errors in your code.
 

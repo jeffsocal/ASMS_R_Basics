@@ -132,14 +132,19 @@ var_a + var_b
 
 R even has some intrinsic variables that come in handy, like *pi*.
 
+```{r, echo=FALSE}
+# re-constitute R, gets lost when building the book
+pi <- 3.141593
+```
+
 ```{r}
 pi
 ```
 
-> **NOTE:** in R it is easy to overwrite existing variables, causing error and confusion
+> **NOTE:** in R it is easy to overwrite existing variables, either initalized by R or created by you, causing error and confusion
 
 ```{r}
-pi <- 9.87
+pi <- 9.876543
 pi
 ```
 
