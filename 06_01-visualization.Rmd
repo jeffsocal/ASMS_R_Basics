@@ -1,14 +1,84 @@
 <!--# JEFF -->
+
 # Data Visualization
-## GGPlot
-### Syntax
-### Points and Lines
---> (11 break, assignment)
-### Bar and histograms
---> (12 break, assignment)
-## Extended Syntax
-### Colors, Scales and Faceting
-### Labels and Annotations 
---> (13 break, assignment)
-#### Install Package ggrepel
---> (14 break, assignment)
+
+Visualizing your data is crucial because it helps you understand the patterns, trends, and relationships within the data. A well-designed visualization can make complex data easy to understand and convey insights that would be hard to discern from raw data.
+
+Anscombe's quartet is a classic example that demonstrates the importance of visualizing your data. This quartet comprises four datasets with nearly identical simple descriptive statistics. However, when graphed, they have very different distributions and appear very different from one another. This example shows that relying solely on summary statistics to understand data can be misleading and inadequate.
+
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(broom)
+
+# Anscombe's quartet
+tbl_ac <- tibble(
+  x = c(
+    rep(c(10, 8, 13, 9, 11, 14, 6, 4, 12, 7, 5), 3),
+    c(8, 8, 8, 8, 8, 8, 8, 19, 8, 8, 8)
+  ),
+  y = c(
+    c(8.04, 6.95, 7.58, 8.81, 8.33, 9.96, 7.24, 4.26, 10.84, 4.82, 5.68),
+    c(9.14, 8.14, 8.74, 8.77, 9.26, 8.10, 6.13, 3.10, 9.13, 7.26, 4.74),
+    c(7.46, 6.77, 12.74, 7.11, 7.81, 8.84, 6.08, 5.39, 8.15, 6.42, 5.73),
+    c(6.58, 5.75, 7.71 ,8.84, 8.47, 7.04, 5.25, 12.50, 5.56, 7.91, 6.89)
+  ),
+  set = c(rep('A', 11), rep('B', 11), rep('C', 11), rep('D', 11))
+)
+
+```
+
+```{r, echo=FALSE}
+model_trc <- function(data){
+  # generate a linear model
+  model_lm <- lm(data$y ~ data$x)
+  
+  # examine the model
+  model_lm_summary <- model_lm %>% summary()
+  
+  tibble(
+    mean_x = mean(data$x),
+    var_x = var(data$x),
+    mean_y = mean(data$y),
+    var_y = var(data$y),
+    intercept = model_lm_summary$coefficients[1],
+    slope = model_lm_summary$coefficients[2],
+    r.squared = model_lm_summary$r.squared
+  )
+}
+```
+
+```{r, echo=FALSE}
+tbl_ac %>%
+  group_by(set) %>%
+  nest() %>%
+  mutate(set_summary = map(data, model_trc)) %>%
+  unnest(set_summary) %>%
+  select(-data)
+```
+
+```{r, echo=FALSE, fig.height=4, fig.align='center'}
+tbl_ac %>%
+  ggplot(aes(x, y)) +
+  geom_point() +
+  geom_abline(slope = 0.500, intercept = 3.00, color='blue') +
+  facet_wrap(~set)
+```
+
+In data analysis, creating a plot to convey a message or demonstrate a result is a common endpoint. To achieve this, this book utilizes the `GGPlot2` package, which is part of the `Tidyverse`. This package complements the data pipelining demonstrated in the previous chapters, making it a perfect choice for creating a wide range of plots, from simple scatter plots to complex heat maps, making it ideal for data visualization.
+
+
+## Base: plot
+
+R comes standard with the fairly basic plotting function `plot()`. While this function forms the basis for all plotting interactions in R, it can be greatly extended with additional packages. Two such packages will be explored in this chapter, `GGplot2` and `Plotly`. The former is great for static publication quality plots, of which you will begin to recognize, while the latter provides stunning interactive graphics suitable for web development and Shiny applications.
+
+```{r}
+set.seed(1234)
+plot(sample(1:20),sample(1:20))
+```
+
+```{r}
+set.seed(1234)
+df <- data.frame( x1 = sample(1:20), y1 = sample(1:20) )
+df %>% plot()
+```

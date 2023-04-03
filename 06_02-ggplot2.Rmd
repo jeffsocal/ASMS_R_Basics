@@ -1,0 +1,73 @@
+<!--# JEFF -->
+## GGPlot
+
+```{r}
+library('tidyverse')
+```
+
+### Syntax
+
+The motivation behind GGplot is based on the grammar of graphics such that
+
+> *"the idea that you can build every graph from the same few components"*
+
+Ideally this accomplishes dual goals of allowing you to quickly construct plots for initial analyses and checking for oddities (as explained above) and following the logical process of the plot construction.
+
+To graph in GGPlot there are a few core embodiments that need to be considered.
+
+|            |                                                                  |                                 |
+|------------------|---------------------------|---------------------------|
+| data       | a table of numeric and/or categorical values                     | data.frame or tibble            |
+| geom       | a geometric object or visual representation, that can be layered | points, lines, bars, boxs, etc. |
+| aesthetics | how variables in the data are mapped to visual properties        | eg. *x = col_a, y = col_b*      |
+| coordinate | orientation of the data points                                   | eg. *cartesian (x,y), polar*    |
+
+```{r, eval=FALSE}
+# the basic structure
+ggplot(data, aes(x,y)) + geom_point() + coord_cartiesian()
+
+# combined with dplyr makes for a readable process
+data %>% ggplot(aes(x,y)) + geom_point()
+```
+
+In this example the `ggplot()` function contains the two components, the data table `data` and mapping function `aes()`. Since *GGPlot* follows a layered modality, the `ggplot()` function "sets" the canvas and passes the data table `data` and mapping function `aes()` to all the functions that follow with the `+` operator.
+
+Lets create some data ...
+```{r}
+set.seed(1234)
+tbl_mz <- tibble(
+  mz = sample(3500:20000/10, 100),
+  int = sample(1:1e6, 100),
+)
+```
+
+### Points and Lines
+
+```{r}
+tbl_mz %>% ggplot(aes(mz, int)) + geom_point()
+```
+```{r}
+tbl_mz %>% ggplot(aes(mz, int)) + geom_point() + geom_line()
+```
+
+### Bar
+
+### Histograms 
+
+### Density
+
+### Segments
+
+### Extended Syntax 
+
+#### Colors
+
+#### Scales
+
+#### Faceting 
+
+#### Labels
+
+#### Annotations 
+
+#### Package ggrepel

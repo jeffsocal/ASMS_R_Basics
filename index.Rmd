@@ -18,12 +18,7 @@ github-repo: jeffsocal/ASMS_R_Basics
 #### __Who__ {-}
 
 ##### The Authors {-}
-
-Jeff Jones (PhD)
-
-Heath Patterson (PhD)
-
-Ryan Benz (PhD)
+Jeff Jones (PhD)  |  Heath Patterson (PhD)  |  Ryan Benz (PhD)
 
 ##### The Audience {-}
 The topics covered in this book are detailed towards an absolute beginner in R and possibly to programming in general. They are intended to have little to no surprises, and taken from begging to end, one should be able to extend their towards developing analytically processes for their own research, providing means for others to accomplish analyses and begin to extend their skills with more advanced literature.
@@ -52,10 +47,7 @@ At the end of the course, are you able to.
 Not covered are the topics of statistical analysis, probability, regression, machine learning or any other advanced analytical topic. Additionally, this book does not cover constructing R packages, documentation, markdown or any other advanced R programming topic.
 
 #### __Why__ {-}
-This book serves as the basis for the Introduction to R course offered at the
-annual conference for the American Society for Mass Spectrometry (ASMS), and was 
-developed by the authors out of the need to create a more permanent, expandable and revisable
-reference document.
+This book serves as the basis for the Introduction to R course offered at the annual conference for the American Society for Mass Spectrometry (ASMS), and was developed by the authors out of the need to create a more permanent, expandable and revisable reference document. This book evolved from a 200+ slide presentation used as instruction materials in the "Getting Started with R" two-day short course. It quickly became evident that the amount of material covered in such a compressed time was both limiting in the topics covered and student retention of verbal instructions. Thus, the development of this tome, to specifically provide both a greater depth in topics covered and a record of the instructors nuanced approach to R. This is intended to be a living document, from which improvements are implemented in the explanations, and topics covered. Comments and suggestions from each instructional iteration are incorporated, additionally any external feedback is greatly appreciated.
 
 #### __When__ {-}
 Started in 2017 as a series of workshops at the annual ASMS conference drawing between 200 and 300 attendees for three consecutive years. The presenters were offered a formal short course starting in 2020 (a remote COVID year). In 2023 it was decided to convert all the teaching materials into a formal book.

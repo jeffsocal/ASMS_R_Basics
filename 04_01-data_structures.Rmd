@@ -1,10 +1,140 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
 <!--# JEFF -->
+
 # Data Structures
+
+The R programming environment includes four basic types of data structures that increase in complexity: `variable`, `vector`, `matrix`, and `list`. Additionally there is the `data.frame` while and independent data structure, it is essentially derived from the `matrix`.
+
+This book introduced variables briefly in \@ref(syntax). Here, we will expand on that introduction. At its simplest, a variable can be thought of as a container that holds only a single thing, like a single stick of gum. A vector is an ordered, finite collection of variables, like a pack of gum. A matrix consists of columns of equally-sized vectors, similar to a vending machine for several flavors of gum packs. Mentally, you can think of them as a point, a line, and a square, respectively.
+
+```{r 4001, echo=FALSE, fig.cap="\\label{fig:4001}R main data structures", fig.height=100}
+knitr::include_graphics("images/04_001_data_structures.png")
+```
+
 ## Variable
---> (05 break, assignment)
-## Vector
---> (06 break, assignment)
-## Matrix
+
+Again, a variable is the most basic information container, capable of
+holding only a single *numeric* or *string* value.
+
+```{r}
+a <- 1
+```
+
+## Vector 
+
+A vector is simply a collection of variables of all the same type. In other programming languages these are called arrays, and can be more permissive allowing for different types of values to be stored together. In R this is not permitted, as vectors can only contain either numbers or strings. If a vector contains a single string value, this "spoils" the numbers in the vector, thus making them all strings.
+
+```{r}
+# permitted
+a <- c(1, 2, 3)
+a
+```
+```{r}
+# the numerical values of 1 and 3 are lost, and now only represented as strings
+b <- c(1, 'two', 3)
+b
+```
+
+Vectors can be composed through various methods, either by concatenation with the `c()` function, as seen above, or using the range operator `:`. Note that the concatenation method allows for the non-sequential construction of variables, while the range operator constructs a vector of all sequential integers between the two values.
+
+```{r}
+1:3
+```
+There are also a handful of pre-populated vectors and functions for constructing patters.
+```{r}
+# all upper case letters
+LETTERS
+# all lower case letters
+letters
+# a repetitive vector of the letter "a"
+rep('a', 5)
+# a repetitive vector of a previous vector
+rep(b, 2)
+# a sequence of integers between two values, in this case reverse order
+seq(10, 5)
+# same as above
+10:5
+```
+While variables don't require a referencing scheme, because they only contain a single value, vectors need to have some kind of referencing sheme, shown in \@ref(4001) as `x[9]` and illistrated in the following example.
+
+> **NOTE:**\
+> _the use of an integer vector to sub-select another vector based on position._
+> _also ... R abides by the 1:N positional referencing, where as other programming languages refer to the first vector or array position as 0. A good topic for a lively discussion with a computer scientist._
+
+```{r}
+x <- LETTERS
+# 3rd letter in the alphabet
+x[3]
+# the 9th, 10th, 11th and 12th letters in the alphabet
+x[9:12]
+# the 1st, 5th, 10th letters in the alphabet
+x[c(1,5,10)]
+```
+
+Numerical vectors can be operated on simultaneously, using the same conventions as variables, imparting convenient utlity to calculating on collections of values.
+```{r}
+x <- 1:10
+x / 10
+```
+In addition, there are facile ways to extract information using a coonditional statement ...
+```{r}
+x <- 1:10 / 10
+x < .5
+```
+... the `which()` function returns the integer reference positions for the condition `x < 0.5` ...
+```{r}
+which(x < .5)
+```
+... and since the output of that function is a vector, we can use it to reference the original vector to extract the elements in the vector that satisfy our condition `x < 0.5`.
+```{r}
+x[which(x < .5)]
+```
+
+## Matrix 
+
+Building upon the vector, a matrix is simply composed of columns of either all numeric or string vectors. That statement is not completely accurate as matrices can be row based, however, if we mentally orient ourselves to column based organizations, then the following `data.frame` will make sense. Matrices are constructed using a function as shown in the following example.
+
+```{r}
+# taking the vector 1:4 and distributing it by 2 rows and 2 columns
+m <- matrix(1:4,2,2)
+```
+Elements within the matrix have a reference schema similar to vectors, with the first integer in the square brackets is the row and the second the column `[row,col]`.
+```{r, echo=FALSE}
+m
+```
+Just like a vector, a matrix can be used to compute operations on all elements simultaneously, apply a comparison and extract the variable(s) matching the condition ...
+```{r}
+m_half <- m / 2
+w_point5 <- which(m_half > 1)
+m[w_point5]
+```
+... or more sincintly.
+```{r}
+m[which(m/2 > 1)]
+```
 ## Data Frame
---> (07 break, assignment)
+Tables are one of the fundamental data structures encountered in data analysis, and what separates them from matrices is the mixed use of numerics and strings, and the orientation that `data.frames` are columns of vectors, with a row association. A table can be cinstructed with the `data.frame()` function as shown in the example.
+```{r}
+df <- data.frame(
+  let = LETTERS,
+  pos = 1:length(LETTERS)
+)
+```
+```{r, echo=FALSE}
+cat("   let pos
+1    A   1
+2    B   2
+3    C   3
+4    D   4
+5    E   5
+...")
+```
+Lets talk about the structure of what just happened in constructing the `data.frame` table. Note that we defined the column with _let_ and _pos_ referring to letter and position, respectively. Second, note the use of the single `=` to assign a vector to that column rather than the "out-of-function" assignment operator `<-` -- meaning that functions use the `=` assignment operator, while data structures use the `<-` assignment operator.
+The printed output of the `data.frame` shows the two column headers and also prints out the row names, in this case the integer value. Now, that this table is organized by column with row assiciations, we can perform an evalutaion on one column and reterive the value(s) in the other.
+
 ## List

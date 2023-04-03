@@ -1,21 +1,32 @@
 ## Syntax
 
-Welcome to the R Book! In this section, we will discuss the different components of R code that you should be familiar with.
+Welcome to the R Book! Whether you're just starting out or a seasoned pro, understanding the different components of R code is essential for writing high-quality, efficient R programs. In this section, we'll take a deep dive into the various components of R code that you should be familiar with.
 
-R input is composed of typing characters to represent various parts of a process or mathematical operation. These characters come together to form what we call R code. Understanding the different components of R code is essential to writing effective and efficient R programs. Below are some examples of the different components of R code:
+R input is composed of typed characters that represent different parts of a process or mathematical operation. These characters come together to form what we call R code. It's important to note that R code is not just a random collection of characters - each character serves a specific purpose and contributes to the larger structure of the code. As such, understanding the different components of R code is key to writing effective and efficient R programs.
 
--   Comments
--   Variables
--   Operators
--   Numerics
--   Strings
--   Functions
+So, what are these different components of R code? Below, we've provided some examples to help you get started:
 
-Comments are used to add notes or explanations to your code. Variables are used to store data values that can be used later on in your program. Operators are used to perform mathematical operations, such as addition or subtraction. Numerics are values that represent numerical data, such as integers or decimals. Strings are values that represent text data. Functions are pre-defined sets of instructions that can be called upon to perform specific tasks in your program.
++------------------------------+--------------------------------------------------+
+| \@ref(comments) comments     | `# this is an important note`                    |
++------------------------------+--------------------------------------------------+
+| \@ref(strings) strings       | `"letters"` or `"numbers"` in quotes             |
++------------------------------+--------------------------------------------------+
+| \@ref(numbers) numbers       | `1` integers or `1.000002` floats                |
++------------------------------+--------------------------------------------------+
+| \@ref(operators) operators   | `+`, `-`, `/`, `*`, ...                          |
++------------------------------+--------------------------------------------------+
+| \@ref(variables) variables   | `var <- 2` containers for information            |
++------------------------------+--------------------------------------------------+
+| \@ref(statements) statements | `==` exactly the same, `!=` not the same         |
++------------------------------+--------------------------------------------------+
+| \@ref(functions) functions   | `add(x, y)` complex code in a convenient wrapper |
++------------------------------+--------------------------------------------------+
 
-By understanding these different components of R code, you will be able to write more effective and efficient R programs.
+By understanding these different components of R code, you'll be well on your way to writing effective and efficient R programs. So let's dive in and get started!
 
-> **NOTE:** this is a code block, you can copy the code here and paste into RStudio
+> **NOTE**\
+> _The following is a code block, you can copy the code here and paste into RStudio_\
+> _also ... R does not have an line ending character such as `;` in java, PHP or C++_
 
 ```{r}
 # adding two numbers here and storing it as a variable
@@ -25,7 +36,8 @@ four <- 2 + 2
 cat("my number is ", four)
 ```
 
-> **NOTE:** the \## at the beginning of the output is only present in the book, you will not see it in your interactions
+> **NOTE**\
+> _the \## at the beginning of the output is only present in the book, you will not see it in your interactions_
 
 ### Comments
 
@@ -43,7 +55,51 @@ oops, not a comment
 four <- 2 * 2
 ```
 
-### Numbers (integers and floats)
+### Strings
+
+Strings are essentially a sequence of characters, consisting of letters or numbers. They are commonly used in programming languages and are used to represent text-based data. A string can be as simple as a single character, such as "A", or it can be a longer sequence of characters such as "Hello, World!". Strings are often used to store data that requires text manipulation, such as usernames, passwords, and email addresses. In contrast to words, which are made up of a specific combination of letters to represent a linguistic term, strings do not follow any specific rules of composition and can be a random or semi-random sequence of characters.
+
+```{r, eval=FALSE}
+# a string can be a word, this is a string variable
+three <- 1 + 2
+# or an abbreviation, this is a variable (thr) representing the string "three"
+thr <- "three" 
+# a mass spec reference
+peptide <- "QWERTK"
+# or an abbreviated variable
+pep <- "QWERTK"
+```
+
+When working with R programming language, it is essential to note that strings play a crucial role in the syntax used. Strings, which define text characters, are used to represent data in R, and they must be enclosed in quotes. Failure to do so will result in the interpreter assuming that you are referring to a variable that is not enclosed in quotes.
+
+For instance, in the example above, the `peptide` variable contains the string of letters representing the peptide amino acid sequence `"QWERTK"`. However, it is essential to note that there are no strict rules for how strings and variables are composed, except that variables **cannot** start with a number.
+
+```{r, eval=FALSE}
+# permitted
+b4 <- 1 + 3
+# not permitted
+4b <- 1 + 3. ## Error: unexpected symbol in "4b"
+```
+
+There are however, conventions that you can follow when constructing variable names that aid in the readability of the code and convey information about the contents. This is especially useful in long code blocks, or, when the code becomes more complex and divested across several files. For example:
+
+```{r, eval=FALSE}
+# a string containing a peptide sequence
+str_pep <- "QWERTK"
+
+# a data table of m/z values and their identifications
+tbl_mz_ids <- read_csv("somefile.csv")
+```
+
+To learn more about and follow specific conventions, explore the following resources:
+
+-   [Hadley Wickham's Style Guide](http://adv-r.had.co.nz/Style.html)
+
+-   [Google's style Guide](https://google.github.io/styleguide/Rguide.html)
+
+-   [The tidyverse style guide](https://style.tidyverse.org/)
+
+### Numbers
 
 Numbers are the foundation upon which all data analysis is built. Without numbers, we would not be able to perform calculations, identify patterns, or draw conclusions from our data. In the programming language R, there are two main types of numbers: `integers` and `floats`. An integer is a whole number with no decimal places, while a float is a number with decimal places. Understanding the difference between these two types of numbers is essential for accurate numerical analysis.
 
@@ -54,9 +110,13 @@ In R, integers are represented as whole numbers, such as 1, 2, 3, and so on, whi
 1,  12345, -17, 0
 ```
 
-A float is a real number with a fractional component, represented as a decimal value. The name "float" comes from the way computers do math. In computing, a floating-point number can be represented using an integer with a fixed precision, called the significand, scaled by an integer exponent of a fixed base, such as 10. For example, 12.345 can be represented as a base-ten floating-point number.
+Numbers are the foundation upon which all data analysis is built. Without numbers, we would not be able to perform calculations, identify patterns, or draw conclusions from our data. In the programming language R, there are two main types of numbers: `integers` and `floats`.
 
-Additionally, it's important to be aware of potential errors when working with floats. Due to the way floats are represented in binary, certain decimal numbers cannot be accurately represented. This can result in rounding errors and unexpected behavior in your code. Therefore, it's important to use caution when comparing floats, which is outside the scope of this book. For more information consider using packages, such as `decimal` or `Rmpfr`, that provide precise floating-point arithmetic.
+An integer is a whole number with no decimal places, while a float is a number with decimal places. In most programming languages, including R, integers are represented as whole numbers, such as 1, 2, 3, and so on, while floats are represented with a decimal point, such as 1.5, 2.75, and so on.
+
+It is essential to understand the difference between these two types of numbers for accurate numerical analysis. While integers can only represent whole numbers, floats can represent fractions and decimals. Thus, if you need to represent a number that is not a whole number, you should use a float.
+
+Moreover, it is important to note that integers occupy less space in memory than floats. This can be a consideration when working with large datasets, especially when the whole number is enough to represent the data. Therefore, when possible, it is generally better to use integers over floats in R, as they are more efficient and can improve the overall performance of your code. 
 
 ```{r, eval=FALSE}
 # floats
@@ -70,24 +130,27 @@ significand * base ^ exponent
 
 ### Operators
 
-In programming, operators are essential components that allow us to manipulate various data types. Operators are symbols that perform a specific action on one or more operands. The operands could be numeric values, variables, or even strings. These symbols allow us to add, subtract, multiply, and divide numeric values, as well as perform more complex mathematical operations such as exponentiation and modulus. In addition to numeric values, operators can also manipulate string variables. For example, we can use concatenation operators to join two or more strings together. By using operators, we can perform powerful operations that allow us to build complex programs and applications.
+Operators are fundamental components of programming that enable us to manipulate and process various data types. They are symbols that perform a specific action on one or more operands, which could be numeric values, variables, or even strings. Most commonly these symbols allow us to perform basic arithmetic operations such as addition, subtraction, multiplication, and division on numeric values, as well as more complex mathematical operations like exponentiation and modulus.
 
-> **NOTE:** Remember order of operations (PEMDAS): Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right).
+In addition to numeric values, operators can also manipulate string variables. For instance, we can use concatenation operators to join two or more strings together, which is particularly useful when working with text data. By utilizing operators, we can perform powerful operations that allow us to build complex programs and applications that can handle large amounts of data. Operators play a crucial role in programming, as they allow us to manipulate data in a way that would be difficult or impossible to achieve otherwise.
 
-*At their very basic, operators allow you to perform **calculations** ..*
+> **NOTE**\ 
+> _Remember order of operations (PEMDAS): Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)._
+
+At their very basic, operators allow you to perform **calculations** ..
 
 ```{r}
 1 + 2
 1 / 2
 ```
 
-*.. **assign** values to string variables ..*
+.. **assign** values to string variables ..
 
 ```{r}
 myvar <- 1
 ```
 
-*.. and **compare** values.*
+.. and **compare** values.
 
 ```{r}
 1 == myvar
@@ -96,31 +159,37 @@ myvar <- 1
 
 Here is a table summarizing of some common operators in R.
 
-+--------------+---------------------------------------------+-----------------------------------+
-| Operator     | Description                                 | Example                           |
-+==============+=============================================+===================================+
-| `<-`         | assigns numerics and functions to variables | `x <- 1` x now has the value of 1 |
-+--------------+---------------------------------------------+-----------------------------------+
-| `+`          | adds two numbers                            | `1 + 2` = `3`                     |
-+--------------+---------------------------------------------+-----------------------------------+
-| `-`          | subtracts two numbers                       | `1 - 2` = `-1`                    |
-+--------------+---------------------------------------------+-----------------------------------+
-| `*`          | multiplies two numbers                      | `1 * 2` = `2`                     |
-+--------------+---------------------------------------------+-----------------------------------+
-| `/`          | divides two numbers                         | `1 / 2` = `0.5`                   |
-+--------------+---------------------------------------------+-----------------------------------+
-| `^`          | raises one number to the power of the other | `1 ^ 2` = `1`                     |
-+--------------+---------------------------------------------+-----------------------------------+
-| `=`          | also an assignment operator                 | `x = 1` x now has the value of 1  |
-+--------------+---------------------------------------------+-----------------------------------+
-| `==`         | performs a comparison (exactly equal)       | `1 == 1` = `TRUE`                 |
-+--------------+---------------------------------------------+-----------------------------------+
-| `!=`         | performs a negative comparison (not equal)  | `1 != 2` = `TRUE`                 |
-+--------------+---------------------------------------------+-----------------------------------+
++------------+-------------------+---------------------------------------------+-----------------------------------+
+| Operator   | Name              | Description                                 | Example                           |
++============+===================+=============================================+===================================+
+| `<-`       | assignmnet        | assigns numerics and functions to variables | `x <- 1` x now has the value of 1 |
++------------+-------------------+---------------------------------------------+-----------------------------------+
+| `+`        | addition          | adds two numbers                            | `1 + 2` = `3`                     |
++------------+-------------------+---------------------------------------------+-----------------------------------+
+| `-`        | subtraction       | subtracts two numbers                       | `1 - 2` = `-1`                    |
++------------+-------------------+---------------------------------------------+-----------------------------------+
+| `*`        | multplication     | multiplies two numbers                      | `1 * 2` = `2`                     |
++------------+-------------------+---------------------------------------------+-----------------------------------+
+| `/`        | division          | divides two numbers                         | `1 / 2` = `0.5`                   |
++------------+-------------------+---------------------------------------------+-----------------------------------+
+| `^`        | power or exponent | raises one number to the power of the other | `1 ^ 2` = `1`                     |
++------------+-------------------+---------------------------------------------+-----------------------------------+
+| `=`        | equals            | also an assignment operator                 | `x = 1` x now has the value of 1  |
++------------+-------------------+---------------------------------------------+-----------------------------------+
+| `==`       | double equals     | performs a comparison (exactly equal)       | `1 == 1` = `TRUE`                 |
++------------+-------------------+---------------------------------------------+-----------------------------------+
+| `!=`       | not equals        | performs a negative comparison (not equal)  | `1 != 2` = `TRUE`                 |
++------------+-------------------+---------------------------------------------+-----------------------------------+
+| `%%`       | modulus           | provides the remainder after division       | `5 %% 2` = `1`                    |
++------------+-------------------+---------------------------------------------+-----------------------------------+
 
 ### Variables
 
-Variables are "things" (letters, words, text strings) that can hold information that can vary. In one instance it can hold a number and in another it can hold text. We can use variables to hold all kinds of information and then refer to that variable again and again to retrieve that information, manipulate it with an operation or replace it with an assignment.
+In programming, variables are essential elements used to store information that can in essence **vary**. They come in handy when we need to manipulate or retrieve the information stored in them.
+
+Variables can be thought of as containers that can store any kind of information, such as letters, words, numbers, or text strings. They are flexible enough to hold different types of data, and we can use them to store all sorts of information.
+
+One of the most significant advantages of using variables is that we can refer to them repeatedly to retrieve the information stored in them. We can also manipulate the information stored in them with an operation or replace it with an assignment. Variables are a powerful tool in programming that allows us to store and retrieve information, manipulate it, and perform various operations on it. 
 
 ```{r}
 # create two viables and assign values to each
@@ -141,11 +210,17 @@ pi <- 3.141593
 pi
 ```
 
-> **NOTE:** in R it is easy to overwrite existing variables, either initalized by R or created by you, causing error and confusion
+> **NOTE:**\
+> _in R it is easy to overwrite existing variables, either initalized by R or created by you, causing error and confusion_
 
 ```{r}
 pi <- 9.876543
 pi
+```
+
+```{r, echo=FALSE}
+# re-constitute R, gets lost when building the book
+pi <- 3.141593
 ```
 
 ### Statements
@@ -164,9 +239,11 @@ Using a comparison operator, you can make logical comparisons called statements.
 |             |                                                                               | `1 == 1 & 1 != 2` = `FALSE` |
 +-------------+-------------------------------------------------------------------------------+-----------------------------+
 
-> **NOTE:** there are also the double operators \|\| and &&, these are intended to work as flow control operators and stop at the first condition met. In the most recent versions of R, the double operators will error out if a vector is applied.
+> **NOTE**\
+> _there are also the double operators \|\| and &&, these are intended to work as flow control operators and stop at the first condition met. In the most recent versions of R, the double operators will error out if a vector is applied._
 
 <!--# HEATH -->
+
 ### Functions
 
 In programming, a function is a type of operator that performs a specific task and can accept additional information or parameters. In fact, all operators are functions in a sense, as they take inputs and produce outputs.

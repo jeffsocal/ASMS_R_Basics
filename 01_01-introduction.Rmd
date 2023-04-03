@@ -2,14 +2,23 @@
 
 Before we get started, this book contains some basic cues to help facilitate your understanding of the current topic.
 
-1.  We small notes and tips as a block quote, see below.
-2.  At the beginning of each chapter there is a section on what you should be able to accomplish at the end.
-3.  At the end of each chapter there are some exercises that extend what has been covered.
+> **NOTE**\
+> Some helpful explanatory notes and tips appear as a block quote.
 
-> At the end of this chapter you should be able to:
->
-> -   understand why R is a good choice for data analysis
-> -   understand that you have just started the learning curve and all your efforts hence forth are worth it
+> **SKILLS**\
+> At the beginning of each chapter there is a section on what you should be able to accomplish at the end.
+
+> **EXERCISES**\
+> At the end of each chapter there are some exercises that extend what has been covered.
+
+------------------------------------------------------------------------
+
+> **SKILLS**\
+> At the end of this chapter you should be able to:\
+> - understand why R is a good choice for data analysis\
+> - understand that you have just started the learning curve and all your efforts hence forth are worth it
+
+------------------------------------------------------------------------
 
 ## Why choose it? {.unnumbered}
 
@@ -65,16 +74,16 @@ The first step to learning a programming language is to learn its syntax (the se
 
 ## Schedule
 
-+-----------------+-------------------------+---+
-| Segment         | Chapters                | ? |
-+=================+=========================+===+
-| Day 1 Morning   | Intro and Basics        |   |
-+-----------------+-------------------------+---+
-| Day 1 Afternoon | tidyverse (w/ data set) |   |
-+-----------------+-------------------------+---+
-| Day 2 Morning   | ggplots / mass spec-ish |   |
-+-----------------+-------------------------+---+
-| Day 2 Afternoon | (tidyverse + ggplot)    |   |
-|                 |                         |   |
-|                 | mass spec data          |   |
-+-----------------+-------------------------+---+
++-----------------+-------------------------+----------------+
+| Segment         | Chapters                | ?              |
++=================+=========================+================+
+| Day 1 Morning   | Intro and Basics        |                |
++-----------------+-------------------------+----------------+
+| Day 1 Afternoon | tidyverse (w/ data set) |                |
++-----------------+-------------------------+----------------+
+| Day 2 Morning   | ggplots / mass spec-ish |                |
++-----------------+-------------------------+----------------+
+| Day 2 Afternoon | (tidyverse + ggplot)    |                |
+|                 |                         |                |
+|                 | mass spec data          |                |
++-----------------+-------------------------+----------------+
