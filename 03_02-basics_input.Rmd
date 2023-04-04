@@ -24,9 +24,6 @@ So, what are these different components of R code? Below, we've provided some ex
 
 By understanding these different components of R code, you'll be well on your way to writing effective and efficient R programs. So let's dive in and get started!
 
-> **NOTE**\
-> _The following is a code block, you can copy the code here and paste into RStudio_\
-> _also ... R does not have an line ending character such as `;` in java, PHP or C++_
 
 ```{r}
 # adding two numbers here and storing it as a variable
@@ -36,8 +33,9 @@ four <- 2 + 2
 cat("my number is ", four)
 ```
 
-> **NOTE**\
-> _the \## at the beginning of the output is only present in the book, you will not see it in your interactions_
+::: {.infobox .note data-latex="{note}"}
+R does not have an line ending character such as `;` in java, PHP or C++_
+:::
 
 ### Comments
 
@@ -134,9 +132,6 @@ Operators are fundamental components of programming that enable us to manipulate
 
 In addition to numeric values, operators can also manipulate string variables. For instance, we can use concatenation operators to join two or more strings together, which is particularly useful when working with text data. By utilizing operators, we can perform powerful operations that allow us to build complex programs and applications that can handle large amounts of data. Operators play a crucial role in programming, as they allow us to manipulate data in a way that would be difficult or impossible to achieve otherwise.
 
-> **NOTE**\ 
-> _Remember order of operations (PEMDAS): Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)._
-
 At their very basic, operators allow you to perform **calculations** ..
 
 ```{r}
@@ -183,6 +178,12 @@ Here is a table summarizing of some common operators in R.
 | `%%`       | modulus           | provides the remainder after division       | `5 %% 2` = `1`                    |
 +------------+-------------------+---------------------------------------------+-----------------------------------+
 
+
+::: {.infobox .note data-latex="{note}"}
+Remember order of operations (PEMDAS): Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right).
+:::
+
+
 ### Variables
 
 In programming, variables are essential elements used to store information that can in essence **vary**. They come in handy when we need to manipulate or retrieve the information stored in them.
@@ -210,8 +211,9 @@ pi <- 3.141593
 pi
 ```
 
-> **NOTE:**\
-> _in R it is easy to overwrite existing variables, either initalized by R or created by you, causing error and confusion_
+::: {.infobox .note data-latex="{note}"}
+In R it is easy to overwrite existing variables, either initalized by R or created by you, causing error and confusion
+:::
 
 ```{r}
 pi <- 9.876543

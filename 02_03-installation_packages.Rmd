@@ -22,7 +22,9 @@ Overall, R packages are an essential tool for anyone working with R. By using es
 
 When working with R, it is important to understand how to install packages. R packages are collections of functions, data, and documentation that extend the capabilities of R. Most R packages have binary versions available for direct installation with no additional steps required. Binary packages are pre-compiled and ready-to-use packages that are platform-specific. They can be installed with the `install.packages()` function in R.
 
-> **NOTE**: Follow the examples below to install all the required packages used in this book. Jump to the following section if you run into any issues. Use the copy-paste button in the top-right of each code block.
+::: {.infobox .note data-latex="{note}"}
+Follow the examples below to install all the required packages used in this book. Jump to the following section if you run into any issues. Use the copy-paste button in the top-right of each code block.
+:::
 
 #### Installing from CRAN {.unnumbered}
 
@@ -49,7 +51,9 @@ install.packages("devtools")
 install_github("jeffsocal/tidyproteomics")
 ```
 
-> **NOTE:** There maybe several additional packages to install including additional operating system level installs. Go to the [tidyproteomics](https://jeffsocal.github.io/tidyproteomics/) webpage for additional installation help.
+::: {.infobox .note data-latex="{note}"}
+There maybe several additional packages to install including additional operating system level installs. Go to the [tidyproteomics](https://jeffsocal.github.io/tidyproteomics/) webpage for additional installation help.
+:::
 
 ### Potential Gotchas
 

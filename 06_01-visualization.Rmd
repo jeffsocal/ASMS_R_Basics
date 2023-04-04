@@ -1,8 +1,15 @@
-<!--# JEFF -->
-
 # Data Visualization
 
 Visualizing your data is crucial because it helps you understand the patterns, trends, and relationships within the data. A well-designed visualization can make complex data easy to understand and convey insights that would be hard to discern from raw data.
+
+
+::: {.infobox .skill data-latex="{skill}"}
+At the end of this chapter you should be able to:\
+1.    Understand the need for visualization\
+2.    Create some simple plots of points, lines and bars\
+:::
+
+
 
 Anscombe's quartet is a classic example that demonstrates the importance of visualizing your data. This quartet comprises four datasets with nearly identical simple descriptive statistics. However, when graphed, they have very different distributions and appear very different from one another. This example shows that relying solely on summary statistics to understand data can be misleading and inadequate.
 
@@ -49,12 +56,16 @@ model_trc <- function(data){
 ```
 
 ```{r, echo=FALSE}
-tbl_ac %>%
+knitr::kable(
+  tbl_ac %>%
   group_by(set) %>%
   nest() %>%
   mutate(set_summary = map(data, model_trc)) %>%
   unnest(set_summary) %>%
-  select(-data)
+  select(-data),
+  caption = "Summary stats for Anscombe's quartet."
+)
+
 ```
 
 ```{r, echo=FALSE, fig.height=4, fig.align='center'}

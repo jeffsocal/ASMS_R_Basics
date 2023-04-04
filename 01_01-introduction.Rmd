@@ -2,31 +2,23 @@
 
 Before we get started, this book contains some basic cues to help facilitate your understanding of the current topic.
 
-> **NOTE**\
-> Some helpful explanatory notes and tips appear as a block quote.
-
-> **SKILLS**\
-> At the beginning of each chapter there is a section on what you should be able to accomplish at the end.
-
-> **EXERCISES**\
-> At the end of each chapter there are some exercises that extend what has been covered.
-
-------------------------------------------------------------------------
-
-> **SKILLS**\
-> At the end of this chapter you should be able to:\
-> - understand why R is a good choice for data analysis\
-> - understand that you have just started the learning curve and all your efforts hence forth are worth it
-
-------------------------------------------------------------------------
+::: {.infobox .skill data-latex="{skill}"}
+At the end of this chapter you should be able to:\
+1.    Understand why R is a good choice for data analysis.\
+2.    Understand that you have just started the learning curve and all your efforts hence forth are worth it.
+:::
 
 ## Why choose it? {.unnumbered}
 
 R is a great language for data analysis! - Many programming languages are general purpose (can be used in any domain), e.g. C/C++, Java, Python - R is not a general purpose programming language, it's a language specifically designed for working with data (that's what scientists do!) - Because R is geared toward data, its design, structure and continued development is focused on making it easier to work with data - R has become one of the top languages for data science, and it's popularity and usage continues to grow - For scientists, R is a great tool to learn
 
-**Fast, nimble, forgiving**
 
-**Lots of specialty tools (CRAN, Github, Bioconductor)**
+::: {.infobox .note data-latex="{note}"}
+_**NOTES** Some helpful explanatory notes and tips appear as a block quote._\
+\
+R can is a fast, nimble, forgiving scripting language with lots of specialty tools and resources (CRAN, Github, Bioconductor).
+:::
+
 
 ## What you can do with it {.unnumbered}
 

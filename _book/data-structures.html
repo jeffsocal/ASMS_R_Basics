@@ -294,9 +294,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="data-structures" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Data Structures<a href="data-structures.html#data-structures" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The R programming environment includes four basic types of data structures that increase in complexity: <code>variable</code>, <code>vector</code>, <code>matrix</code>, and <code>list</code>. Additionally there is the <code>data.frame</code> while and independent data structure, it is essentially derived from the <code>matrix</code>.</p>
-<p>This book introduced variables briefly in <a href="the-basics.html#syntax">3.2</a>. Here, we will expand on that introduction. At its simplest, a variable can be thought of as a container that holds only a single thing, like a single stick of gum. A vector is an ordered, finite collection of variables, like a pack of gum. A matrix consists of columns of equally-sized vectors, similar to a vending machine for several flavors of gum packs. Mentally, you can think of them as a point, a line, and a square, respectively.</p>
-<div class="figure"><span style="display:block;" id="fig:4001"></span>
-<img src="images/04_001_data_structures.png" alt="\label{fig:4001}R main data structures" width="779" />
+<div class="infobox skill">
+<p>At the end of this chapter you should be able to:<br />
+1. Understand the 5 most common data structures<br />
+2. Understand the data structure lineage<br />
+3. Access given subsets of a multi-variable data object<br />
+</p>
+</div>
+<p><br />
+This book introduced variables briefly in <a href="the-basics.html#syntax">3.2</a>. Here, we will expand on that introduction. At its simplest, a variable can be thought of as a container that holds only a single thing, like a single stick of gum. A vector is an ordered, finite collection of variables, like a pack of gum. A matrix consists of columns of equally-sized vectors, similar to a vending machine for several flavors of gum packs. Mentally, you can think of them as a point, a line, and a square, respectively.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:4001"></span>
+<img src="images/04_001_data_structures.png" alt="\label{fig:4001}R main data structures" width="67%" />
 <p class="caption">
 Figure 4.1: R main data structures
 </p>
@@ -324,12 +332,12 @@ holding only a single <em>numeric</em> or <em>string</em> value.</p>
 <p>There are also a handful of pre-populated vectors and functions for constructing patters.</p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="data-structures.html#cb65-1" tabindex="-1"></a><span class="co"># all upper case letters</span></span>
 <span id="cb65-2"><a href="data-structures.html#cb65-2" tabindex="-1"></a>LETTERS</span></code></pre></div>
-<pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot; &quot;I&quot; &quot;J&quot; &quot;K&quot; &quot;L&quot; &quot;M&quot; &quot;N&quot; &quot;O&quot; &quot;P&quot; &quot;Q&quot; &quot;R&quot; &quot;S&quot;
-## [20] &quot;T&quot; &quot;U&quot; &quot;V&quot; &quot;W&quot; &quot;X&quot; &quot;Y&quot; &quot;Z&quot;</code></pre>
+<pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot; &quot;I&quot; &quot;J&quot; &quot;K&quot; &quot;L&quot; &quot;M&quot; &quot;N&quot; &quot;O&quot; &quot;P&quot; &quot;Q&quot; &quot;R&quot; &quot;S&quot; &quot;T&quot;
+## [21] &quot;U&quot; &quot;V&quot; &quot;W&quot; &quot;X&quot; &quot;Y&quot; &quot;Z&quot;</code></pre>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="data-structures.html#cb67-1" tabindex="-1"></a><span class="co"># all lower case letters</span></span>
 <span id="cb67-2"><a href="data-structures.html#cb67-2" tabindex="-1"></a>letters</span></code></pre></div>
-<pre><code>##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot;
-## [20] &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
+<pre><code>##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot; &quot;t&quot;
+## [21] &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="data-structures.html#cb69-1" tabindex="-1"></a><span class="co"># a repetitive vector of the letter &quot;a&quot;</span></span>
 <span id="cb69-2"><a href="data-structures.html#cb69-2" tabindex="-1"></a><span class="fu">rep</span>(<span class="st">&#39;a&#39;</span>, <span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;a&quot;</code></pre>
@@ -343,11 +351,13 @@ holding only a single <em>numeric</em> or <em>string</em> value.</p>
 <span id="cb75-2"><a href="data-structures.html#cb75-2" tabindex="-1"></a><span class="dv">10</span><span class="sc">:</span><span class="dv">5</span></span></code></pre></div>
 <pre><code>## [1] 10  9  8  7  6  5</code></pre>
 <p>While variables don’t require a referencing scheme, because they only contain a single value, vectors need to have some kind of referencing sheme, shown in <a href="#4001"><strong>??</strong></a> as <code>x[9]</code> and illistrated in the following example.</p>
-<blockquote>
-<p><strong>NOTE:</strong><br />
-<em>the use of an integer vector to sub-select another vector based on position.</em>
-<em>also … R abides by the 1:N positional referencing, where as other programming languages refer to the first vector or array position as 0. A good topic for a lively discussion with a computer scientist.</em></p>
-</blockquote>
+<div class="infobox note">
+<p>Note the use of an integer vector to sub-select another vector based on position. R abides by the 1:N positional referencing, where as other programming languages refer to the first vector or array position as 0.<br />
+<br />
+<em>A good topic for a lively discussion with a computer scientist.</em></p>
+</div>
+<p><br />
+</p>
 <div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="data-structures.html#cb77-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> LETTERS</span>
 <span id="cb77-2"><a href="data-structures.html#cb77-2" tabindex="-1"></a><span class="co"># 3rd letter in the alphabet</span></span>
 <span id="cb77-3"><a href="data-structures.html#cb77-3" tabindex="-1"></a>x[<span class="dv">3</span>]</span></code></pre></div>

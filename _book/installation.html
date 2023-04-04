@@ -295,11 +295,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 2</span> Installation<a href="installation.html#installation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In the scope of this book, there are three main components that need to be installed, and periodically updated:</p>
 <ul>
-<li><p>The R interpreter - the software that understands math and plotting</p></li>
-<li><p>RStudio IDE - the software that makes it easy write code and visualize data</p></li>
-<li><p>R Packages - bits of R code that perform specalized operations</p></li>
+<li><p><strong>The R interpreter</strong> - the software that understands math and plotting</p></li>
+<li><p><strong>RStudio IDE</strong> - the software that makes it easy write code and visualize data</p></li>
+<li><p><strong>R Packages</strong> - bits of R code that perform specalized operations</p></li>
 </ul>
 <p>In this book we will be utilizing the RStudio integrated development environment (IDE) to interact with R. Two separate components are required for this - the R interpreter and the RStudio IDE. Both are required as the RStudio IDE only provides an interface for the R interpreter, which reads the code and does all the mathematical operations. The R interpreter can be used alone, interacting through the command line (eg. Windows CMD, MacOS and Linux Terminal), a plain text editor or another IDE such as Xcode, VSCode, Eclipse, Notepad++, etc. Rstudio provides a comprehensive, R specific environment, with auto-complete, code syntax highlighting, in-editor function definitions along with package management and plot visualizations.</p>
+<div class="infobox skill">
+<p>At the end of this chapter you should be able to:<br />
+1. Install R, RStudio and a few R packages<br />
+2. Understand the major components for working with R.</p>
+</div>
 <div id="r-interpreter" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> R interpreter<a href="installation.html#r-interpreter" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The underlying “engine” for R programming language can be downloaded from <a href="https://www.r-project.org/">The R Project for Statistical Computing</a>. R is an open-source implementation of the S statistical computing language originally developed at Bell Laboratories. Both langauges contain a variety of statistical and graphical techniques, however, R has been continually extended by professional, academic and amateur contributors and remains the most active today. With the advent of open-source sharing platforms such as GitHub, R has become increasingly popular among data scientists because of its ease of use and flexibility in handling complex analyses on large datasets. Additionally, one of R’s strengths is the ease with which well-designed publication-quality plots can be produced.</p>
@@ -480,9 +485,9 @@ Figure 2.7: RStudio IDE environment window
 <div id="installing-r-packages" class="section level3 hasAnchor" number="2.3.3">
 <h3><span class="header-section-number">2.3.3</span> Installing R Packages<a href="installation.html#installing-r-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When working with R, it is important to understand how to install packages. R packages are collections of functions, data, and documentation that extend the capabilities of R. Most R packages have binary versions available for direct installation with no additional steps required. Binary packages are pre-compiled and ready-to-use packages that are platform-specific. They can be installed with the <code>install.packages()</code> function in R.</p>
-<blockquote>
-<p><strong>NOTE</strong>: Follow the examples below to install all the required packages used in this book. Jump to the following section if you run into any issues. Use the copy-paste button in the top-right of each code block.</p>
-</blockquote>
+<div class="infobox note">
+<p>Follow the examples below to install all the required packages used in this book. Jump to the following section if you run into any issues. Use the copy-paste button in the top-right of each code block.</p>
+</div>
 <div id="installing-from-cran" class="section level4 unnumbered hasAnchor">
 <h4>Installing from CRAN<a href="installation.html#installing-from-cran" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="installation.html#cb1-1" tabindex="-1"></a><span class="co"># this installs all of the packages in the tidyverse collection</span></span>
@@ -501,9 +506,9 @@ Figure 2.7: RStudio IDE environment window
 <span id="cb3-2"><a href="installation.html#cb3-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
 <span id="cb3-3"><a href="installation.html#cb3-3" tabindex="-1"></a><span class="co"># this installs the tidyproteomics package</span></span>
 <span id="cb3-4"><a href="installation.html#cb3-4" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">&quot;jeffsocal/tidyproteomics&quot;</span>)</span></code></pre></div>
-<blockquote>
-<p><strong>NOTE:</strong> There maybe several additional packages to install including additional operating system level installs. Go to the <a href="https://jeffsocal.github.io/tidyproteomics/">tidyproteomics</a> webpage for additional installation help.</p>
-</blockquote>
+<div class="infobox note">
+<p>There maybe several additional packages to install including additional operating system level installs. Go to the <a href="https://jeffsocal.github.io/tidyproteomics/">tidyproteomics</a> webpage for additional installation help.</p>
+</div>
 </div>
 </div>
 <div id="potential-gotchas" class="section level3 hasAnchor" number="2.3.4">
@@ -523,7 +528,7 @@ Figure 2.7: RStudio IDE environment window
 <p>The <strong>readr</strong> package provides a versatile means of reading data from various formats, such as comma-separated (CSV) and tab-separated (TSV) delimitated flat files. In addition to its versatility, the <strong>readr</strong> package is also known for its speed and efficiency. It is designed to be faster than the base R functions for reading in data, making it an ideal choice for working with large datasets.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="installation.html#cb5-1" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="st">&quot;./data/table_peptide_fragmnets.csv&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_csv</span>()</span></code></pre></div>
 <pre><code>## Rows: 14 Columns: 7
-## ── Column specification ────────────────────────────────────────────────────────
+## ── Column specification ───────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (4): ion, seq, pair, type
 ## dbl (3): mz, z, pos

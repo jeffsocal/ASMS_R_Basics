@@ -2,13 +2,19 @@
 
 In the scope of this book, there are three main components that need to be installed, and periodically updated:
 
--   The R interpreter - the software that understands math and plotting
+-   **The R interpreter** - the software that understands math and plotting
 
--   RStudio IDE - the software that makes it easy write code and visualize data
+-   **RStudio IDE** - the software that makes it easy write code and visualize data
 
--   R Packages - bits of R code that perform specalized operations
+-   **R Packages** - bits of R code that perform specalized operations
 
 In this book we will be utilizing the RStudio integrated development environment (IDE) to interact with R. Two separate components are required for this - the R interpreter and the RStudio IDE. Both are required as the RStudio IDE only provides an interface for the R interpreter, which reads the code and does all the mathematical operations. The R interpreter can be used alone, interacting through the command line (eg. Windows CMD, MacOS and Linux Terminal), a plain text editor or another IDE such as Xcode, VSCode, Eclipse, Notepad++, etc. Rstudio provides a comprehensive, R specific environment, with auto-complete, code syntax highlighting, in-editor function definitions along with package management and plot visualizations.
+
+::: {.infobox .skill data-latex="{skill}"}
+At the end of this chapter you should be able to:\
+1.    Install R, RStudio and a few R packages\
+2.    Understand the major components for working with R.
+:::
 
 ## R interpreter
 
