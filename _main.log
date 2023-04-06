@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.24)  31 MAR 2023 14:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.24)  6 APR 2023 14:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -396,44 +396,8 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count301
 \l__pdf_internal_box=\box62
-) (./_main.aux
-
-LaTeX Warning: Label `fig:1001' multiply defined.
-
-
-LaTeX Warning: Label `fig:1002' multiply defined.
-
-
-LaTeX Warning: Label `fig:2001' multiply defined.
-
-
-LaTeX Warning: Label `fig:2011' multiply defined.
-
-
-LaTeX Warning: Label `fig:2021' multiply defined.
-
-
-LaTeX Warning: Label `fig:2022' multiply defined.
-
-
-LaTeX Warning: Label `fig:2023' multiply defined.
-
-
-LaTeX Warning: Label `fig:2024' multiply defined.
-
-
-LaTeX Warning: Label `fig:2025' multiply defined.
-
-
-LaTeX Warning: Label `fig:3201' multiply defined.
-
-
-LaTeX Warning: Label `fig:3202' multiply defined.
-
-
-LaTeX Warning: Label `fig:4001' multiply defined.
-
 )
+No file _main.aux.
 \openout1 = `_main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
@@ -509,39 +473,39 @@ LaTeX Info: Redefining \ref on input line 122.
 LaTeX Info: Redefining \pageref on input line 122.
 LaTeX Info: Redefining \nameref on input line 122.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-25.
+24.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-25.
+24.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-125.
+124.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-125.
+124.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 125.
+(Font)              <12> on input line 124.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 125.
+(Font)              <8> on input line 124.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 125.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 125
+(Font)              <6> on input line 124.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 124
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 125
+LaTeX Font Info:    Trying to load font information for U+msb on input line 124
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -550,318 +514,41 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
 
-
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-] [1
+]
+\tf@toc=\write4
+\openout4 = `_main.toc'.
 
-] [2] [3
-
-] [4
+[3] [4
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-75.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+37.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [5]
-<images/01_001_r_learning_curve_past.png, id=79, 810.02625pt x 454.69875pt>
-File: images/01_001_r_learning_curve_past.png Graphic file (type png)
-<use images/01_001_r_learning_curve_past.png>
-Package pdftex.def Info: images/01_001_r_learning_curve_past.png  used on input
- line 322.
-(pdftex.def)             Requested size: 810.03662pt x 454.70456pt.
+) [5] [6] [7] [8
 
-Overfull \hbox (465.03662pt too wide) in paragraph at lines 322--322
-[][] 
- []
-
-<images/01_002_r_learning_curve_present.png, id=81, 810.02625pt x 454.69875pt>
-File: images/01_002_r_learning_curve_present.png Graphic file (type png)
-<use images/01_002_r_learning_curve_present.png>
-Package pdftex.def Info: images/01_002_r_learning_curve_present.png  used on in
-put line 334.
-(pdftex.def)             Requested size: 810.03662pt x 454.70456pt.
-
-Overfull \hbox (465.03662pt too wide) in paragraph at lines 334--334
-[][] 
- []
-
-[6] [7 <./images/01_001_r_learning_curve_past.png>] [8 <./images/01_002_r_learn
-ing_curve_present.png>] [9] [10
-
-] [11]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 472.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 472.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 472.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
-76.
-(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-<images/02_001_r_installer_mac_m1.png, id=137, 734.745pt x 558.085pt>
-File: images/02_001_r_installer_mac_m1.png Graphic file (type png)
-<use images/02_001_r_installer_mac_m1.png>
-Package pdftex.def Info: images/02_001_r_installer_mac_m1.png  used on input li
-ne 497.
-(pdftex.def)             Requested size: 724.1261pt x 550.01929pt.
-
-Overfull \hbox (379.1261pt too wide) in paragraph at lines 497--497
-[][] 
- []
-
-
-LaTeX Warning: Float too large for page by 23.96371pt on input line 498.
-
-[12] [13 <./images/02_001_r_installer_mac_m1.png>]
-<images/02_011_rstudio_installer_mac.png, id=166, 490.83376pt x 369.38pt>
-File: images/02_011_rstudio_installer_mac.png Graphic file (type png)
-<use images/02_011_rstudio_installer_mac.png>
-Package pdftex.def Info: images/02_011_rstudio_installer_mac.png  used on input
- line 569.
-(pdftex.def)             Requested size: 490.83255pt x 369.37909pt.
-
-Overfull \hbox (145.83255pt too wide) in paragraph at lines 569--569
-[][] 
- []
-
-<images/02_021_rstudio_panes.png, id=167, 1387.1825pt x 1125.20375pt>
-File: images/02_021_rstudio_panes.png Graphic file (type png)
-<use images/02_021_rstudio_panes.png>
-Package pdftex.def Info: images/02_021_rstudio_panes.png  used on input line 59
-8.
-(pdftex.def)             Requested size: 678.05322pt x 549.9983pt.
-
-Overfull \hbox (333.05322pt too wide) in paragraph at lines 598--598
-[][] 
- []
-
-
-LaTeX Warning: Float too large for page by 23.94273pt on input line 599.
-
-[14] [15 <./images/02_011_rstudio_installer_mac.png>] [16 <./images/02_021_rstu
-dio_panes.png>]
-<images/02_022_editor_highlighting.png, id=200, 1154.3125pt x 680.5425pt>
-File: images/02_022_editor_highlighting.png Graphic file (type png)
-<use images/02_022_editor_highlighting.png>
-Package pdftex.def Info: images/02_022_editor_highlighting.png  used on input l
-ine 634.
-(pdftex.def)             Requested size: 932.94487pt x 550.03183pt.
-
-Overfull \hbox (587.94487pt too wide) in paragraph at lines 634--634
-[][] 
- []
-
-
-LaTeX Warning: Float too large for page by 23.97626pt on input line 635.
-
-<images/02_023_editor_autocomplete.png, id=201, 1154.3125pt x 680.5425pt>
-File: images/02_023_editor_autocomplete.png Graphic file (type png)
-<use images/02_023_editor_autocomplete.png>
-Package pdftex.def Info: images/02_023_editor_autocomplete.png  used on input l
-ine 646.
-(pdftex.def)             Requested size: 932.94487pt x 550.03183pt.
-
-Overfull \hbox (587.94487pt too wide) in paragraph at lines 646--646
-[][] 
- []
-
-
-LaTeX Warning: Float too large for page by 23.97626pt on input line 647.
-
-<images/02_024_qplot.png, id=202, 1154.3125pt x 680.5425pt>
-File: images/02_024_qplot.png Graphic file (type png)
-<use images/02_024_qplot.png>
-Package pdftex.def Info: images/02_024_qplot.png  used on input line 678.
-(pdftex.def)             Requested size: 932.94487pt x 550.03183pt.
-
-Overfull \hbox (587.94487pt too wide) in paragraph at lines 678--678
-[][] 
- []
-
-
-LaTeX Warning: Float too large for page by 23.97626pt on input line 679.
-
-[17] [18 <./images/02_022_editor_highlighting.png>] [19 <./images/02_023_editor
-_autocomplete.png>] [20 <./images/02_024_qplot.png>]
-<images/02_025_environment.png, id=230, 1154.3125pt x 680.5425pt>
-File: images/02_025_environment.png Graphic file (type png)
-<use images/02_025_environment.png>
-Package pdftex.def Info: images/02_025_environment.png  used on input line 730.
-
-(pdftex.def)             Requested size: 932.94487pt x 550.03183pt.
-
-Overfull \hbox (587.94487pt too wide) in paragraph at lines 730--730
-[][] 
- []
-
-
-LaTeX Warning: Float too large for page by 23.97626pt on input line 731.
-
-
-Underfull \vbox (badness 8189) has occurred while \output is active []
-
-[21] [22 <./images/02_025_environment.png>] [23]
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-847.
-(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmtt.fd
-File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [24]
-Overfull \hbox (48.74886pt too wide) in paragraph at lines 957--957
-[]\T1/lmtt/m/n/10 ## -- Column specification ----------------------------------
---------------[] 
- []
-
-
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 957--957
-[]\T1/lmtt/m/n/10 ## i Use \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 spec()\TS1/lmtt/m/
-n/10 ` \T1/lmtt/m/n/10 to retrieve the full column specification for this data.
-[] 
- []
-
-
-Overfull \hbox (95.99872pt too wide) in paragraph at lines 957--957
-[]\T1/lmtt/m/n/10 ## i Specify the column types or set \TS1/lmtt/m/n/10 `\T1/lm
-tt/m/n/10 show_col_types = FALSE\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 to quiet thi
-s message.[] 
- []
-
-[25]
-Overfull \vbox (0.33347pt too high) detected at line 1023
- []
-
-[26]
-<_main_files/figure-latex/unnamed-chunk-9-1.pdf, id=298, 453.695pt x 313.17pt>
-File: _main_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-9-1.pdf>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-9-1.pdf  used o
-n input line 1079.
-(pdftex.def)             Requested size: 344.9987pt x 238.14069pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[27] [28 <./_main_files/figure-latex/unnamed-chunk-9-1.pdf>] [29] [30
-
-] [31] [32] [33]
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1330.
-
-LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 1330.
-
-
-[34] [35] [36]
-Overfull \hbox (2.83626pt too wide) in paragraph at lines 1580--1581
-[]\T1/lmr/m/n/10 (-20) Operator  
- []
-
-[37] [38]
-<images/03_021_new_project_01.png, id=399, 1110.1475pt x 636.3775pt>
-File: images/03_021_new_project_01.png Graphic file (type png)
-<use images/03_021_new_project_01.png>
-Package pdftex.def Info: images/03_021_new_project_01.png  used on input line 1
-742.
-(pdftex.def)             Requested size: 959.4513pt x 549.99287pt.
-
-Overfull \hbox (614.4513pt too wide) in paragraph at lines 1742--1742
-[][] 
- []
-
-
-LaTeX Warning: Float too large for page by 23.9373pt on input line 1743.
-
-<images/03_021_new_project_02.png, id=400, 1154.3125pt x 680.5425pt>
-File: images/03_021_new_project_02.png Graphic file (type png)
-<use images/03_021_new_project_02.png>
-Package pdftex.def Info: images/03_021_new_project_02.png  used on input line 1
-745.
-(pdftex.def)             Requested size: 932.94487pt x 550.03183pt.
-
-Overfull \hbox (587.94487pt too wide) in paragraph at lines 1745--1745
-[][] 
- []
-
-
-LaTeX Warning: Float too large for page by 23.97626pt on input line 1746.
-
-[39] [40 <./images/03_021_new_project_01.png>] [41 <./images/03_021_new_project
-_02.png>] [42
+] [9] [10
 
 ]
-<images/04_001_data_structures.png, id=438, 781.92125pt x 309.155pt>
-File: images/04_001_data_structures.png Graphic file (type png)
-<use images/04_001_data_structures.png>
-Package pdftex.def Info: images/04_001_data_structures.png  used on input line 
-1786.
-(pdftex.def)             Requested size: 781.99092pt x 309.18253pt.
+Chapter 1.
 
-Overfull \hbox (436.99092pt too wide) in paragraph at lines 1786--1786
-[][] 
- []
+! LaTeX Error: Environment infobox undefined.
 
-[43] [44 <./images/04_001_data_structures.png>]
-Overfull \hbox (48.74886pt too wide) in paragraph at lines 1864--1864
-[]\T1/lmtt/m/n/10 ##  [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "
-N" "O" "P" "Q"[] 
- []
-
-
-Overfull \hbox (48.74886pt too wide) in paragraph at lines 1876--1876
-[]\T1/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
-n" "o" "p" "q"[] 
- []
-
-[45]
-Overfull \hbox (6.74898pt too wide) in paragraph at lines 1996--1996
-[]\T1/lmtt/m/n/10 ##  [1]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE
- FALSE[] 
- []
-
-[46] [47] [48
-
-] [49] [50
-
-] [51] [52
-
-] [53] [54
-
-] [55] [56
-
-] [57] [58
-
-] (./_main.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.205 \begin{infobox}
+                     {skill} 
 Here is how much of TeX's memory you used:
- 14504 strings out of 478268
- 230822 string characters out of 5846347
- 552046 words of memory out of 5000000
- 31952 multiletter control sequences out of 15000+600000
- 543848 words of font info for 172 fonts, out of 8000000 for 9000
+ 13600 strings out of 478268
+ 216407 string characters out of 5846347
+ 541715 words of memory out of 5000000
+ 31494 multiletter control sequences out of 15000+600000
+ 513543 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,7n,77p,1002b,449s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
-texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/
-texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist
-/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
-e1/public/lm/lmbxi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
-/lm/lmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.p
-fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/lo
-cal/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texliv
-e/2022/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2022/tex
-mf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2022/texmf-dist/fo
-nts/type1/public/lm/lmtko10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1
-/public/lm/lmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm
-/lmtti10.pfb>
-Output written on _main.pdf (60 pages, 2886759 bytes).
-PDF statistics:
- 936 PDF objects out of 1000 (max. 8388607)
- 811 compressed objects within 9 object streams
- 320 named destinations out of 1000 (max. 500000)
- 39586 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 74i,6n,77p,1008b,409s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
+!  ==> Fatal error occurred, no output PDF file produced!

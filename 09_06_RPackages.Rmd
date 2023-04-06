@@ -1,0 +1,46 @@
+## R Packages
+
+In R, packages are collections of R functions, data, and compiled code that can be easily shared and reused with others. They are an essential part of the R ecosystem and are used for a variety of purposes, such as data analysis, visualization, and statistical modeling.
+
+Creating a package in R is a straightforward process, and RStudio IDE provides several tools to simplify the package development process. Packages are a way of organizing your code and data into a single, self-contained unit that can be easily shared and distributed with other R users.
+
+### Creating a Package in RStudio {-}
+
+To create a package in RStudio, follow these simple steps:
+
+1. Create a new R Project. Go to "File" -> "New Project" -> "New Directory" -> "R Package"
+2. Choose a name for the package, such as my_new_rpackage and a directory location where it will be saved.
+3. Once the project is created, RStudio will generate a basic package structure with the following files:
+- DESCRIPTION: This file contains information about the package, such as its name, version, author, and dependencies.
+- NAMESPACE: This file defines the package's API, i.e., the set of functions and objects that are intended for public use.
+- R/: This directory contains the package's R source code files.
+- man/: This directory contains the package's documentation files.
+1. Now it's time to write some code. You can start by creating a simple function that outputs "Hello ASMS". Here's an example:
+
+```{r, eval=FALSE}
+#' Hello ASMS Function
+#'
+#' This function prints "Hello ASMS" to the console.
+#'
+#' @return A character vector with the message "Hello ASMS".
+#' @export
+say_hello <- function() {
+  return("Hello ASMS")
+}
+
+```
+
+1. Save the function in a new R script file called "hello_world.R" and place it in the package's R/ directory.
+2. Build the package by running "Build" -> "Build & Reload" from the "Build" tab. This will compile the package code and create a binary package file (.tar.gz) in the "build/" directory.
+3. Finally, install the package by running "Install and Restart" from the "Build" tab. This will install the package on your local machine, making it available for use.
+
+### Using the Package {-}
+
+Once the package is installed, you can load it into your R session using the `library()` function. Here's an example:
+
+```{r, eval=FALSE}
+library(my_new_rpackage)
+say_hello()
+```
+
+This will output "Hello ASMS" to the console.

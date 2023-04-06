@@ -1,14 +1,2 @@
 # Sharing
-This topic covers a wide range of applications towards sharing, weather it is your RStudio project, a distillation of your analysis that others can follow, developing a web based application for others to use, or ways to contain and disseminate reproducible analyses. 
-
-## PackRat(?)
-
-## Note Books
-
-## Shiny Apps
-
-## Docker
-
-## GitHub
-
-## Package Development`
+This topic covers a variety of ways to share R code with others. The goal is to make your work accessible and reproducible for others. Sharing can take many forms, including sharing your RStudio project, creating a distilled version of your analysis that others can follow, developing a web-based application for others to use, or finding ways to contain and disseminate reproducible analyses. By sharing your work, you enable others to learn from and build upon your research, making it more impactful and useful for the wider community.

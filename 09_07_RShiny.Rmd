@@ -1,0 +1,77 @@
+## R Shiny Applications
+
+R Shiny is an R package that allows users to create interactive web applications using R. With R Shiny, users can create and customize web-based dashboards, data visualization tools, and other interactive applications that can be easily shared with others.
+
+The benefits of using R Shiny include creating powerful data-driven web applications with ease and providing a user-friendly interface for data analysis. R Shiny is widely used in various industries, including finance, healthcare, and e-commerce. 
+
+### How to Create an R Shiny Application in the RStudio IDE {-}
+
+Creating an R Shiny application is relatively easy, and it can be done in the RStudio IDE. Here are the steps to follow:
+
+1. Open RStudio and create a new R script file.
+2. Install the 'shiny' R package by running the following command:
+    
+    `install.packages("shiny")`
+    
+3. Load the 'shiny' package by running the following command:
+    
+    `library(shiny)`
+    
+4. Create a new Shiny application by running the following command:
+    
+    `shinyApp(ui = ui, server = server)`
+    
+    The 'ui' argument should contain the user interface (UI) code for the application, while the 'server' argument should contain the server-side code for the application.
+    
+5. Write the UI code and server-side code for your application, and save the file with a '.R' extension.
+6. Run the application by clicking on the 'Run App' button in the RStudio IDE, or by running the following command:
+    
+    `runApp("path/to/your/app.R")`
+    
+
+### Example of an R Shiny Application for Plotting Points {-}
+
+Here's an example of an R Shiny application that allows users to plot points on a graph:
+
+```
+library(shiny)
+
+# Define UI for application
+ui <- fluidPage(
+  titlePanel("Plotting Points"),
+  sidebarLayout(
+    sidebarPanel(
+      numericInput("x", "X Coordinate:", 0),
+      numericInput("y", "Y Coordinate:", 0),
+      actionButton("plot", "Plot Point")
+    ),
+    mainPanel(
+      plotOutput("plot")
+    )
+  )
+)
+
+# Define server logic
+server <- function(input, output) {
+  coords <- reactiveValues(x = numeric(), y = numeric())
+
+  observeEvent(input$plot, {
+    coords$x <- c(coords$x, input$x)
+    coords$y <- c(coords$y, input$y)
+  })
+
+  output$plot <- renderPlot({
+    plot(coords$x, coords$y, xlim = c(0, 10), ylim = c(0, 10), pch = 19, col = "blue")
+  })
+}
+
+# Run the application
+shinyApp(ui = ui, server = server)
+
+```
+
+In this example, the UI code defines a sidebar panel with input fields for the X and Y coordinates of a point, as well as a button to plot the point. The main panel contains a plot that displays all of the points that have been plotted by the user.
+
+The server-side code defines a reactive variable called 'coords' which stores the X and Y coordinates of each plotted point. When the user clicks the 'Plot Point' button, an observer function is triggered that adds the new point to the 'coords' variable. The renderPlot function then plots all of the points on the graph.
+
+Check out the [R Shiny](https://shiny.rstudio.com/) web page for more information.

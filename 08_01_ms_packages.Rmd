@@ -1,8 +1,5 @@
 # Mass Spectrometry R Packages (work in progress)
-<!--# HEATH -->
-## xcms
-## MSstats
-<!--# JEFF -->
-## MALDIquant
-## tidyproteomics
 
+<!--# HEATH -->
+
+## xcms

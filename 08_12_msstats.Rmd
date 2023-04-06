@@ -1,0 +1,58 @@
+## MSstats
+
+The MSstats package is an R package designed for the analysis of label-free mass spectrometry data. It provides a wide range of statistical tools for the analysis of protein abundance data, including normalization, missing value imputation, quality control, and differential expression analysis. MSstats provides a powerful and flexible way to analyze mass spectrometry data, making it an essential tool for researchers in the field.
+
+|                   |                                                                                                                   |
+|----------------|--------------------------------------------------------|
+| **Documentation** | [web](https://msstats.org), [PDF](https://bioconductor.org/packages/release/bioc/manuals/MSstats/man/MSstats.pdf) |
+| **Code**          | [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/MSstats.html)                              |
+| **Literature**    | *Bioinformatics* 30.17 (2014): 2524-2526                                                                          |
+
+### Installation
+
+To install MSstats, you can use the following code:
+
+```{r, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("MSstats")
+```
+
+### Loading Data
+
+To load your data into MSstats, you can use the following code:
+
+```{r, eval=FALSE}
+library(MSstats)
+data("QCMAPData")
+data <- QCMAPData$data
+design <- QCMAPData$design
+head(data)
+```
+
+### Quality Control
+
+To perform quality control on your data, you can use the following code:
+
+```{r, eval=FALSE}
+QCmetrics <- MSstats:::calculateQCmetrics(data, featureLevel = "protein")
+MSstats:::plotQCmetrics(QCmetrics, plotType = "boxplot",
+                        ylim = c(0, 200000), ylab = "Total Ion Current")
+```
+
+### Differential Expression Analysis
+
+To perform differential expression analysis on your data, you can use the following code:
+
+```{r, eval=FALSE}
+MSstatsResult <- MSstats::MSstats(data, design,
+                                  normalizationMethod = "quantile",
+                                  normalization = "median",
+                                  msLevel = 1, verbose = TRUE)
+summary(MSstatsResult)
+```
+
+### Conclusion
+
+Overall, MSstats is a powerful and flexible R package for the analysis of label-free mass spectrometry data. It provides a wide range of statistical tools for the analysis of protein abundance data, making it an essential tool for researchers in the field. With its easy-to-use interface and comprehensive documentation, MSstats is a must-have tool for anyone working with mass spectrometry data.

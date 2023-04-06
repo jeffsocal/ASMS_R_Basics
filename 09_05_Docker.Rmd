@@ -1,0 +1,5 @@
+## Docker
+
+Docker is an open-source platform that allows developers to easily create, deploy, and run applications in containers. Containers are lightweight, portable, and self-contained environments that can run isolated applications. Docker helps to simplify the process of software development, testing, and deployment by providing a consistent environment that runs the same way on any machine, independent of the host operating system. 
+
+For more information check out the main [Docker](https://www.docker.com/) website in addition to the [Rocker R Project](https://rocker-project.org/).
