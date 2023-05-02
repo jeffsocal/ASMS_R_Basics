@@ -117,7 +117,7 @@
 
 \title{Introduction to R for Mass Spectrometrists}
 \author{Jeff Jones, Heath Patterson, Ryan Benz}
-\date{2023-04-06}
+\date{2023-04-26}
 
 \begin{document}
 \maketitle
@@ -652,7 +652,7 @@ The \textbf{readr} package provides a versatile means of reading data from vario
 
 \begin{verbatim}
 ## Rows: 14 Columns: 7
-## -- Column specification ---------------------------------------------------------------
+## -- Column specification -----------------------------------------------------------------------------------------------
 ## Delimiter: ","
 ## chr (4): ion, seq, pair, type
 ## dbl (3): mz, z, pos
@@ -1395,8 +1395,7 @@ This book introduced variables briefly in \ref{syntax}. Here, we will expand on 
 \hypertarget{variable}{%
 \section{Variable}\label{variable}}
 
-Again, a variable is the most basic information container, capable of
-holding only a single \emph{numeric} or \emph{string} value.
+Again, a variable is the most basic information container, capable of holding only a single \emph{numeric} or \emph{string} value.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1455,8 +1454,7 @@ There are also a handful of pre-populated vectors and functions for constructing
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T"
-## [21] "U" "V" "W" "X" "Y" "Z"
+##  [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1467,8 +1465,7 @@ There are also a handful of pre-populated vectors and functions for constructing
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t"
-## [21] "u" "v" "w" "x" "y" "z"
+##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1515,7 +1512,7 @@ There are also a handful of pre-populated vectors and functions for constructing
 ## [1] 10  9  8  7  6  5
 \end{verbatim}
 
-While variables don't require a referencing scheme, because they only contain a single value, vectors need to have some kind of referencing sheme, shown in \ref{4001} as \texttt{x{[}9{]}} and illistrated in the following example.
+While variables don't require a referencing scheme, because they only contain a single value, vectors need to have some kind of referencing scheme, shown in \ref{fig:4001} as \texttt{x{[}9{]}} and illustrated in the following example.
 
 \begin{infobox}{note}
 Note the use of an integer vector to sub-select another vector based on position. R abides by the 1:N positional referencing, where as other programming languages refer to the first vector or array position as 0.\\
@@ -1681,10 +1678,155 @@ Tables are one of the fundamental data structures encountered in data analysis, 
 \end{verbatim}
 
 Lets talk about the structure of what just happened in constructing the \texttt{data.frame} table. Note that we defined the column with \emph{let} and \emph{pos} referring to letter and position, respectively. Second, note the use of the single \texttt{=} to assign a vector to that column rather than the ``out-of-function'' assignment operator \texttt{\textless{}-} -- meaning that functions use the \texttt{=} assignment operator, while data structures use the \texttt{\textless{}-} assignment operator.
+
 The printed output of the \texttt{data.frame} shows the two column headers and also prints out the row names, in this case the integer value. Now, that this table is organized by column with row assiciations, we can perform an evalutaion on one column and reterive the value(s) in the other.
 
 \hypertarget{list}{%
 \section{List}\label{list}}
+
+In R programming, a `list' is a powerful and flexible collection of objects of different types. It can contain vectors, matrices, data frames, and even other lists, making it an extremely versatile tool in data analysis, modeling, and visualization.
+
+With its ability to store multiple data types, a list can be used to represent complex structures such as a database table, where each column can be a vector or a matrix. Furthermore, a list can be used to store multiple models for model comparison, or to store a set of parameters for a simulation study.
+
+In addition to its flexibility, a list is also efficient, as it allows for fast and easy data retrieval. It can be used to store large datasets, and its hierarchical structure makes it easy to navigate and manipulate.
+
+Here's an example of how to create a list in R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# create a list}
+\NormalTok{my\_list }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(}\AttributeTok{name =} \StringTok{"Janie R Programmer"}\NormalTok{,}
+                \AttributeTok{age =} \DecValTok{32}\NormalTok{,}
+                \AttributeTok{salary =} \DecValTok{100000}\NormalTok{,}
+                \AttributeTok{interests =} \FunctionTok{c}\NormalTok{(}\StringTok{"coding"}\NormalTok{, }\StringTok{"reading"}\NormalTok{, }\StringTok{"traveling"}\NormalTok{))}
+
+\FunctionTok{print}\NormalTok{(my\_list)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $name
+## [1] "Janie R Programmer"
+## 
+## $age
+## [1] 32
+## 
+## $salary
+## [1] 1e+05
+## 
+## $interests
+## [1] "coding"    "reading"   "traveling"
+\end{verbatim}
+
+In the above code, we have created a list `my\_list' with four elements, each having a different data type. The first element `name' is a character vector, the second element `age' is a numeric value, the third element `salary' is also a numeric value, and the fourth element `interests' is a character vector.
+
+We can access the elements of a list using the dollar sign `\$' or double brackets `{[}{[}{]}{]}'. For example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# accessing elements of a list}
+\FunctionTok{print}\NormalTok{(my\_list}\SpecialCharTok{$}\NormalTok{name)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Janie R Programmer"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(my\_list[[}\StringTok{"salary"}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1e+05
+\end{verbatim}
+
+Lists are also useful for storing and manipulating complex data structures such as data frames and tibbles.
+
+\hypertarget{how-to-tell-what-you-are-dealing-with}{%
+\section{How to tell what you are dealing with}\label{how-to-tell-what-you-are-dealing-with}}
+
+You can use the \texttt{str()} function to peak inside any data object to see how it is structured.
+
+The contents of a data.frame:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plant\_data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{age\_days =} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{40}\NormalTok{, }\DecValTok{50}\NormalTok{, }\DecValTok{60}\NormalTok{),}
+  \AttributeTok{height\_inch =} \FunctionTok{c}\NormalTok{(}\FloatTok{1.02}\NormalTok{, }\FloatTok{1.10}\NormalTok{, }\FloatTok{5.10}\NormalTok{, }\FloatTok{6.00}\NormalTok{, }\FloatTok{6.50}\NormalTok{, }\FloatTok{6.90}\NormalTok{)}
+\NormalTok{)}
+
+\FunctionTok{str}\NormalTok{(plant\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    6 obs. of  2 variables:
+##  $ age_days   : num  10 20 30 40 50 60
+##  $ height_inch: num  1.02 1.1 5.1 6 6.5 6.9
+\end{verbatim}
+
+The contents of a tible as very similar:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plant\_data }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(}
+  \AttributeTok{age\_days =} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{40}\NormalTok{, }\DecValTok{50}\NormalTok{, }\DecValTok{60}\NormalTok{),}
+  \AttributeTok{height\_inch =} \FunctionTok{c}\NormalTok{(}\FloatTok{1.02}\NormalTok{, }\FloatTok{1.10}\NormalTok{, }\FloatTok{5.10}\NormalTok{, }\FloatTok{6.00}\NormalTok{, }\FloatTok{6.50}\NormalTok{, }\FloatTok{6.90}\NormalTok{)}
+\NormalTok{)}
+
+\FunctionTok{str}\NormalTok{(plant\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## tibble [6 x 2] (S3: tbl_df/tbl/data.frame)
+##  $ age_days   : num [1:6] 10 20 30 40 50 60
+##  $ height_inch: num [1:6] 1.02 1.1 5.1 6 6.5 6.9
+\end{verbatim}
+
+The contents of a linear regression data object are quite different:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# linear prediction of salary based on age}
+\NormalTok{linear\_model }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(}\AttributeTok{data =}\NormalTok{ plant\_data, height\_inch }\SpecialCharTok{\textasciitilde{}}\NormalTok{ age\_days)}
+
+\NormalTok{linear\_model}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = height_inch ~ age_days, data = plant_data)
+## 
+## Coefficients:
+## (Intercept)     age_days  
+##     -0.2133       0.1329
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(linear\_model)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+List of 12
+ $ coefficients : Named num [1:2] -0.213 0.133
+  ..- attr(*, "names")= chr [1:2] "(Intercept)" "age_days"
+ $ residuals    : Named num [1:6] -0.0952 -1.3438 1.3276 0.899 0.0705 ...
+  ..- attr(*, "names")= chr [1:6] "1" "2" "3" "4" ...
+ $ effects      : Named num [1:6] -10.868 5.558 1.296 0.602 -0.492 ...
+  ..- attr(*, "names")= chr [1:6] "(Intercept)" "age_days" "" "" ...
+ $ rank         : int 2
+ $ fitted.values: Named num [1:6] 1.12 2.44 3.77 5.1 6.43 ...
+  ..- attr(*, "names")= chr [1:6] "1" "2" "3" "4" ...
+\end{verbatim}
 
 \hypertarget{exercises-1}{%
 \section*{Exercises}\label{exercises-1}}
@@ -1764,7 +1906,7 @@ Anscombe's quartet is a classic example that demonstrates the importance of visu
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-59}Summary stats for Anscombe's quartet.}
+\caption{\label{tab:unnamed-chunk-65}Summary stats for Anscombe's quartet.}
 \centering
 \begin{tabular}[t]{l|r|r|r|r|r|r|r}
 \hline
@@ -1781,7 +1923,7 @@ D & 9 & 11 & 7.500000 & 4.126740 & 3.000000 & 0.5000000 & 0.6663856\\
 \end{tabular}
 \end{table}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-60-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-66-1} \end{center}
 
 In data analysis, creating a plot to convey a message or demonstrate a result is a common endpoint. To achieve this, this book utilizes the \texttt{GGPlot2} package, which is part of the \texttt{Tidyverse}. This package complements the data pipelining demonstrated in the previous chapters, making it a perfect choice for creating a wide range of plots, from simple scatter plots to complex heat maps, making it ideal for data visualization.
 
@@ -1797,7 +1939,7 @@ R comes standard with the fairly basic plotting function \texttt{plot()}. While 
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-61-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-67-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1807,14 +1949,14 @@ R comes standard with the fairly basic plotting function \texttt{plot()}. While 
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-62-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-68-1.pdf}
 
 \hypertarget{ggplot}{%
 \section{GGPlot}\label{ggplot}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(}\StringTok{\textquotesingle{}tidyverse\textquotesingle{}}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1861,44 +2003,120 @@ Lets create some data \ldots{}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1234}\NormalTok{)}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{5}\NormalTok{)}
 \NormalTok{tbl\_mz }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(}
   \AttributeTok{mz =} \FunctionTok{sample}\NormalTok{(}\DecValTok{3500}\SpecialCharTok{:}\DecValTok{20000}\SpecialCharTok{/}\DecValTok{10}\NormalTok{, }\DecValTok{100}\NormalTok{),}
-  \AttributeTok{int =} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\FloatTok{1e6}\NormalTok{, }\DecValTok{100}\NormalTok{),}
+  \AttributeTok{int =} \FunctionTok{rlnorm}\NormalTok{(}\AttributeTok{meanlog =} \DecValTok{5}\NormalTok{, }\AttributeTok{sdlog =} \DecValTok{2}\NormalTok{, }\DecValTok{100}\NormalTok{),}
+  \AttributeTok{class =} \FunctionTok{sample}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}C\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}D\textquotesingle{}}\NormalTok{), }\DecValTok{100}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{) }
 \NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{basic-data-plotting}{%
+\subsection{Basic Data Plotting}\label{basic-data-plotting}}
+
 \hypertarget{points-and-lines}{%
-\subsection{Points and Lines}\label{points-and-lines}}
+\subsubsection*{Points and Lines}\label{points-and-lines}}
+\addcontentsline{toc}{subsubsection}{Points and Lines}
+
+Points and lines graphing is a simple way of representing data in a two-dimensional space. In this graph, we use points to represent individual data values, and lines to connect them. The x-axis usually represents the \textbf{independent} variable while the y-axis represents the \textbf{dependent} variable - or in other words, what \emph{y} was observed while measuring \emph{x}.
+
+To plot a point, we use an ordered pair of values (x, y) that correspond to the position of the point on the graph. For example, the point (2, 5) would be plotted 2 units to the right on the x-axis and 5 units up on the y-axis.
+
+We can also connect points with lines to show a trend or pattern in the data. These lines can be straight or curved, depending on the nature of the data. A straight line can be drawn to connect two points or to represent a linear relationship between the variables.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(mz, int)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{()}
+\NormalTok{p01 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(mz, int)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{()}
+\NormalTok{p02 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(mz, int)) }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{()}
+\NormalTok{p03 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(mz, int)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{color=}\StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{color=}\StringTok{\textquotesingle{}black\textquotesingle{}}\NormalTok{)}
+\NormalTok{p04 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(mz, int)) }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{color=}\StringTok{\textquotesingle{}black\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{color=}\StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-66-1.pdf}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(mz, int)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{_main_files/figure-latex/unnamed-chunk-67-1.pdf}
-
-\hypertarget{bar}{%
-\subsection{Bar}\label{bar}}
-
-\hypertarget{histograms}{%
-\subsection{Histograms}\label{histograms}}
-
-\hypertarget{density}{%
-\subsection{Density}\label{density}}
+It's important to take note of the difference between plots \emph{p03} and \emph{p04}. While both plots showcase a similar data representation, a closer look reveals a notable difference. Specifically, in the latter plot (\emph{p04}), we can see that the red points appear under the black line. This occurs because the points were layered first, and then the lines were layered over them. This is a crucial distinction to make as it highlights the importance of the order in which layers are applied in the plot.
+\includegraphics{_main_files/figure-latex/unnamed-chunk-74-1.pdf}
 
 \hypertarget{segments}{%
-\subsection{Segments}\label{segments}}
+\subsubsection*{Segments}\label{segments}}
+\addcontentsline{toc}{subsubsection}{Segments}
+
+Line segments are an important concept in geometry and are used in various applications. A line segment is a part of a line that is bounded by two distinct end points. It is also a default representation of centroided mass spectra. In this case the segment will start and end on the same \emph{x} (mz), while the \emph{y} (int) component will end at 0.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p05 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(mz, int)) }\SpecialCharTok{+} \FunctionTok{geom\_segment}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{xend =}\NormalTok{ mz, }\AttributeTok{yend =} \DecValTok{0}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-76-1} \end{center}
+
+\hypertarget{bar-chart}{%
+\subsubsection*{Bar Chart}\label{bar-chart}}
+\addcontentsline{toc}{subsubsection}{Bar Chart}
+
+When it comes to representing categorical data, bar charts are considered to be the most effective visualization tool. Bar charts are simple, yet powerful, and can be used to display data in a clear and concise way. They are easy to read and understand, and are a popular choice among data analysts, researchers, and business professionals. Whether you're trying to visualize sales data, survey results, or demographic information, bar charts are a great option to consider. So, if you're looking for a way to represent categorical data, consider using a bar chart for the most accurate and comprehensive representation.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p06 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(class)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-78-1} \end{center}
+
+\hypertarget{pie-chart}{%
+\subsubsection*{Pie Chart}\label{pie-chart}}
+\addcontentsline{toc}{subsubsection}{Pie Chart}
+
+You maybe considering a pie chart, which is a circular diagram divided into sectors, with each sector representing a proportion of the whole. It is commonly used to display percentages, where the sum of the sectors equals 100\%. There is no specific \texttt{geom} to build piechart with ggplot2. The trick is to build a barplot and use \texttt{coord\_polar()} to make it circular. However, interpreting pie charts can be challenging since humans are not very skilled at reading angles. For instance, it is often difficult to determine which group is the largest and to arrange them by value. As a result, it is advisable to refrain from using pie charts.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p07 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(class, }\AttributeTok{fill=}\NormalTok{class)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{()}
+\NormalTok{p08 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(class, }\AttributeTok{fill=}\NormalTok{class)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{coord\_flip}\NormalTok{()}
+\NormalTok{p09 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\DecValTok{1}\NormalTok{, }\AttributeTok{fill=}\NormalTok{class)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{\textquotesingle{}fill\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{coord\_polar}\NormalTok{(}\AttributeTok{theta =} \StringTok{\textquotesingle{}y\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-80-1} \end{center}
+
+Note how difficult it is in the pie chart to tell (by eye) that \emph{A} is the smallest.
+
+\hypertarget{data-distributions}{%
+\subsection{Data Distributions}\label{data-distributions}}
+
+In statistics, a distribution refers to the way in which a set of data is spread out or dispersed. It describes the pattern of values that a variable can take and how frequently each value occurs. A distribution can be characterized by its shape, center, and spread, and can be represented graphically using tools such as histograms, box plots, and density plots.
+
+\hypertarget{histograms}{%
+\subsubsection*{Histograms}\label{histograms}}
+\addcontentsline{toc}{subsubsection}{Histograms}
+
+A histogram is a graphical representation of the distribution of a dataset. It is a type of bar chart that displays the frequency of data values falling into specified intervals or ranges of values, known as bins. The x-axis of the histogram represents the bins or intervals, and the y-axis represents the frequency or count of values falling into each bin.
+
+Histograms are widely used to summarize large datasets and identify patterns or trends and to visualize the shape of a distribution, whether it is symmetric or skewed, and whether it has any outliers or gaps in the data. They can also be used to compare the distributions of two or more datasets, by plotting them on the same graph with different colors or patterns.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p10 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\FunctionTok{log}\NormalTok{(int))) }\SpecialCharTok{+} \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-82-1} \end{center}
+
+\hypertarget{density}{%
+\subsubsection*{Density}\label{density}}
+\addcontentsline{toc}{subsubsection}{Density}
+
+A density plot is a graphical representation of the distribution of a dataset. It is formed by smoothing the data values and representing them as a continuous probability density function. The density plot is a variation of the histogram that provides a smoother representation of the data, eliminating the need for binning. It is particularly useful when the data is continuous and the sample size is large. The density plot can be used to identify the shape of the distribution, the presence of multiple modes, and the presence of outliers. Again, it can also be used to compare the distributions of two or more datasets by overlaying them on the same plot.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p11 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\FunctionTok{log}\NormalTok{(int))) }\SpecialCharTok{+} \FunctionTok{geom\_density}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-84-1} \end{center}
 
 \hypertarget{extended-syntax}{%
 \subsection{Extended Syntax}\label{extended-syntax}}
@@ -1945,35 +2163,53 @@ Lets create some data \ldots{}
 \hypertarget{open-access-raw-data}{%
 \section{Open Access Raw Data}\label{open-access-raw-data}}
 
-\hypertarget{mzxml-hupo}{%
-\subsection{mzXML (HUPO)}\label{mzxml-hupo}}
+Mass spectrometry (MS) is a powerful analytical method that can be used to determine the mass-to-charge ratio (m/z) of ions in a sample. Mass spectrometry data is generated from MS experiments and can be stored in various formats, including mzXML, mzML, and mzH5.
 
-\hypertarget{mzml-hupo---most-common}{%
-\subsection{mzML (HUPO - most common)}\label{mzml-hupo---most-common}}
+\hypertarget{conversion-tools}{%
+\subsection*{Conversion Tools}\label{conversion-tools}}
+\addcontentsline{toc}{subsection}{Conversion Tools}
 
-\hypertarget{mzh5-hdf5}{%
-\subsection{mzH5 (HDF5)}\label{mzh5-hdf5}}
+ProteoWizard is an open-source software tool that provides a collection of open-source, cross-platform software libraries and tools for extracting raw mass spectrometry data from from various instrument vendor formats and converting it to the formats listed below.
 
-\hypertarget{derivedprocessedtranslated-data-outputs}{%
-\section{Derived\textbar Processed\textbar Translated Data Outputs}\label{derivedprocessedtranslated-data-outputs}}
+\begin{quote}
+\emph{Kessner, D., Chambers, M., Burke, R., Agus, D., \& Mallick, P. (2008). ProteoWizard: open source software for rapid proteomics tools development. Bioinformatics, 24(21), 2534--2536. \url{https://doi.org/10.1093/bioinformatics/btn323}}
 
-\hypertarget{common-utilities-proteomics}{%
-\subsection{Common Utilities (Proteomics)}\label{common-utilities-proteomics}}
+\url{https://proteowizard.sourceforge.io/}
+\end{quote}
 
-PD, OpenMS, Skyline, TransPP, MSFragger, MaxQuant
-Comet, Mascot, XTandem
+\hypertarget{mzxml}{%
+\subsection*{mzXML}\label{mzxml}}
+\addcontentsline{toc}{subsection}{mzXML}
 
-\hypertarget{mzident-mzquant-mzpeptides}{%
-\subsection{mzIdent, mzQuant, mzPeptides}\label{mzident-mzquant-mzpeptides}}
+mzXML is an open XML-based format for encoding MS data. It was developed by the Seattle Proteome Center and is widely used in the mass spectrometry community. mzXML files contain raw MS data, as well as metadata describing the instrument parameters used to acquire the data. mzXML files can be processed using a variety of software tools, such as the Trans-Proteomic Pipeline and ProteoWizard.
 
-\hypertarget{mgf-mascot-comet}{%
-\subsection{MGF (Mascot, Comet)}\label{mgf-mascot-comet}}
+The mzXML format has been shown to be effective in handling data from a wide range of instruments. It has a simple structure that makes it easy to parse and process, making it an attractive choice for many researchers. The format is also relatively lightweight, which makes it easy to transfer and store large amounts of data.
 
-\hypertarget{pin-comet}{%
-\subsection{PIN (Comet)}\label{pin-comet}}
+\begin{quote}
+\emph{Pedrioli, P.G., Eng, J.K., Hubley, R., Vogelzang, M., Deutsch, E.W., Raught, B., Pratt, B., Nilsson, E., Angeletti, R.H., Apweiler, R. and Cheung, K., 2004. A common open representation of mass spectrometry data and its application to proteomics research. Nature biotechnology, 22(11), pp.1459-1466.}
+\end{quote}
 
-\hypertarget{csv-search-engines}{%
-\subsection{CSV (Search Engines)}\label{csv-search-engines}}
+\hypertarget{mzml}{%
+\subsection*{mzML}\label{mzml}}
+\addcontentsline{toc}{subsection}{mzML}
+
+The mzML format is another open XML-based format for MS data, developed by the Proteomics Standards Initiative. It is designed to be more flexible than mzXML and includes more detailed metadata. mzML files can be processed using software tools such as OpenMS and mzR.
+
+The mzML format allows for more detailed and comprehensive data storage than mzXML. This is because mzML has a more complex structure, which enables the storage of a wider range of experimental metadata. The format is also more flexible, which means that it can be easily adapted to different types of experiments and instruments.
+
+\begin{quote}
+\emph{Martens, L., Chambers, M., Sturm, M., Kessner, D., Levander, F., Shofstahl, J., Tang, W.H., Römpp, A., Neumann, S., Pizarro, A.D. and Montecchi-Palazzi, L., 2011. mzML---a community standard for mass spectrometry data. Molecular \& cellular proteomics, 10(1), p.R110. 000133.}
+\end{quote}
+
+\hypertarget{mzmlb}{%
+\subsection*{mzMLb}\label{mzmlb}}
+\addcontentsline{toc}{subsection}{mzMLb}
+
+Recently proposed as a new file format based on HDF5 and NetCDF4 standards, mzMLb is faster and more flexible than existing approaches while preserving the XML encoding of metadata. Additionally, it is optimized for both read/write speed and storage efficiency. The format has a reference implementation provided within the ProteoWizard toolkit.
+
+\begin{quote}
+Bhamber, Ranjeet S., et al.~``mzMLb: A future-proof raw mass spectrometry data format based on standards-compliant mzML and optimized for speed and storage requirements.'' Journal of proteome research 20.1 (2020): 172-183.\_
+\end{quote}
 
 \hypertarget{mass-spectrometry-r-packages-work-in-progress}{%
 \chapter{Mass Spectrometry R Packages (work in progress)}\label{mass-spectrometry-r-packages-work-in-progress}}
@@ -2358,18 +2594,9 @@ This topic covers a variety of ways to share R code with others. The goal is to 
 
 Packrat is an R package that provides a way to manage R package dependencies for projects. It is a powerful tool for reproducible research, as it allows you to create a local library of packages specific to a project that can be shared with collaborators or moved to another machine. With Packrat, packages used in a project are kept at a specific version, ensuring that the same results can be obtained regardless of the version of the package used.
 
-\hypertarget{usage-of-the-r-package-packrat}{%
-\subsection{Usage of the R Package Packrat}\label{usage-of-the-r-package-packrat}}
-
-To use Packrat, you first need to initialize a project with Packrat by running the \texttt{packrat::init()} function in your R console. This will create a \texttt{packrat} directory in your project folder. You can then install packages into the project-specific library using \texttt{packrat::install.packages()}. Packrat will automatically detect package dependencies and install them as well.
-
-To use the packages in your project, you simply load them as usual with \texttt{library()}, and Packrat will ensure that the correct versions are used. If you need to update a package, you can do so with \texttt{packrat::update.packages()}, and Packrat will update the package and all its dependencies.
-
-\hypertarget{code-examples-for-the-r-package-packrat}{%
-\subsection{Code Examples for the R Package Packrat}\label{code-examples-for-the-r-package-packrat}}
-
 \hypertarget{initiating-a-packrat-project}{%
-\subsubsection{Initiating a Packrat Project}\label{initiating-a-packrat-project}}
+\subsection*{Initiating a Packrat Project}\label{initiating-a-packrat-project}}
+\addcontentsline{toc}{subsection}{Initiating a Packrat Project}
 
 To initiate a Packrat project, you need to run the \texttt{packrat::init()} function in your R console. This will create a \texttt{packrat} directory in your project folder, which will contain all the necessary files and information for Packrat to manage the package dependencies for your project.
 
@@ -2381,7 +2608,8 @@ To initiate a Packrat project, you need to run the \texttt{packrat::init()} func
 \end{Shaded}
 
 \hypertarget{installing-a-package-into-the-project-library}{%
-\subsubsection{Installing a Package into the Project Library}\label{installing-a-package-into-the-project-library}}
+\subsection*{Installing a Package into the Project Library}\label{installing-a-package-into-the-project-library}}
+\addcontentsline{toc}{subsection}{Installing a Package into the Project Library}
 
 To install a package into the project-specific library, you can use the \texttt{packrat::install.packages()} function. Packrat will automatically detect package dependencies and install them as well.
 
@@ -2392,7 +2620,8 @@ To install a package into the project-specific library, you can use the \texttt{
 \end{Shaded}
 
 \hypertarget{loading-a-package-from-the-project-library}{%
-\subsubsection{Loading a Package from the Project Library}\label{loading-a-package-from-the-project-library}}
+\subsection*{Loading a Package from the Project Library}\label{loading-a-package-from-the-project-library}}
+\addcontentsline{toc}{subsection}{Loading a Package from the Project Library}
 
 To load a package from the project library, you simply use the \texttt{library()} function as usual. Packrat will ensure that the correct versions are used.
 
@@ -2403,7 +2632,8 @@ To load a package from the project library, you simply use the \texttt{library()
 \end{Shaded}
 
 \hypertarget{updating-a-package-in-the-project-library}{%
-\subsubsection{Updating a Package in the Project Library}\label{updating-a-package-in-the-project-library}}
+\subsection*{Updating a Package in the Project Library}\label{updating-a-package-in-the-project-library}}
+\addcontentsline{toc}{subsection}{Updating a Package in the Project Library}
 
 To update a package in the project library, you can use the \texttt{packrat::update.packages()} function. Packrat will update the package and all its dependencies.
 
@@ -2418,10 +2648,11 @@ Overall, Packrat is a valuable tool for reproducible research, as it allows you 
 \hypertarget{notebooks}{%
 \section{Notebooks}\label{notebooks}}
 
-Notebooks in RStudio IDE are a powerful tool for data scientists. They are interactive documents that allow developers to create and share code, visualizations, and narrative text in a single document. R Notebooks provide an intuitive interface for data analysis, making it easy to explore data, create models, and communicate results.
+Notebooks in RStudio IDE are interactive documents that allow developers to create and share code, visualizations, and narrative text in a single document. R Notebooks provide an intuitive interface for data analysis, making it easy to explore data, create models, and communicate results.
 
-\hypertarget{using-notebooks-in-rstudio-ide}{%
-\subsection{Using Notebooks in RStudio IDE}\label{using-notebooks-in-rstudio-ide}}
+\hypertarget{using-notebooks}{%
+\subsection*{Using Notebooks}\label{using-notebooks}}
+\addcontentsline{toc}{subsection}{Using Notebooks}
 
 To use notebooks in RStudio IDE, follow these steps:
 
@@ -2452,39 +2683,20 @@ With R Notebooks, it is also possible to:
   Use HTML to display interactive widgets: You can use HTML code to create interactive widgets that allow users to interact with your code and data.
 \end{itemize}
 
-\hypertarget{sharing-projects-in-rstudio-ide}{%
-\subsection{Sharing Projects in RStudio IDE}\label{sharing-projects-in-rstudio-ide}}
+\hypertarget{sharing-a-notebook}{%
+\subsection*{Sharing A Notebook}\label{sharing-a-notebook}}
+\addcontentsline{toc}{subsection}{Sharing A Notebook}
 
-Sharing your projects in RStudio IDE is a straightforward process. By sharing your projects, you can collaborate with other data scientists and benefit from the insights and expertise of your colleagues. Here are the steps to share your projects:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Save your notebook and any associated data files in a local directory.
-\item
-  Create a new project in RStudio IDE by navigating to File \textgreater{} New Project.
-\item
-  Choose ``Existing Directory'' and select the directory where you saved the notebook and data files.
-\item
-  Use the ``Git'' version control system to track changes to your project.
-\item
-  Share your project with others by using a cloud-based repository hosting service like GitHub or Bitbucket.
-\end{enumerate}
-
-Using version control with Git ensures that you can keep track of changes to your project and revert to previous versions if necessary. Hosting your projects on a cloud-based repository hosting service like GitHub or Bitbucket makes it easy to share your work with others and collaborate with your colleagues.
-
-In summary, R Notebooks in RStudio IDE are a powerful tool for data scientists. They provide an intuitive interface for data analysis, make it easy to explore data, create models, and communicate results. By sharing your projects with others, you can collaborate on data analysis projects and benefit from the insights and expertise of your colleagues.
+Sharing your notebook project in RStudio IDE is a straightforward process. By sharing your projects, you can collaborate with other data scientists and benefit from the insights and expertise of your colleagues. Here are the steps to share your projects:
 
 \hypertarget{github}{%
 \section{GitHub}\label{github}}
 
-GitHub is an online platform that provides version control and collaboration features for software development projects. It is widely used by developers to store and manage their code repositories, track changes made to code over time, and collaborate with others on projects. It is a powerful tool that simplifies the process of managing code and makes it easier for developers to work together.
+GitHub is an online platform that provides version control and collaboration features for software development projects. It is widely used by developers to store and manage their code repositories, track changes made to code over time, and collaborate with others on projects. It is a powerful tool that simplifies the process of managing code and makes it easier for developers to work together. A key benefit of RStudio IDE is that it has built-in support for version control systems like GitHub, which makes it easy to manage and share code with others.
 
-RStudio IDE is an integrated development environment that is widely used by data scientists and statisticians for data analysis and visualization. It is a user-friendly platform that provides a range of features to help users organize their work and collaborate with others. One of the key benefits of RStudio IDE is that it has built-in support for version control systems like GitHub, which makes it easy to manage and share code with others.
-
-\hypertarget{how-to-use-github-within-rstudio-ide}{%
-\subsection{How to Use GitHub within RStudio IDE}\label{how-to-use-github-within-rstudio-ide}}
+\hypertarget{how-to-use-github}{%
+\subsection*{How to Use GitHub}\label{how-to-use-github}}
+\addcontentsline{toc}{subsection}{How to Use GitHub}
 
 To use GitHub within RStudio IDE, you need to first create a GitHub account and set up a repository. Once you have created a repository, you can follow these steps to use it within RStudio IDE:
 
@@ -2501,10 +2713,9 @@ To use GitHub within RStudio IDE, you need to first create a GitHub account and 
   Click ``Create Project'' to create a new RStudio project that is linked to your GitHub repository.
 \end{enumerate}
 
-By following these steps, you can easily set up your RStudio project to use GitHub as a version control system. This makes it easy to manage your code and collaborate with others.
-
-\hypertarget{how-to-share-code-with-others-using-github-and-rstudio-ide}{%
-\subsection{How to Share Code with Others using GitHub and RStudio IDE}\label{how-to-share-code-with-others-using-github-and-rstudio-ide}}
+\hypertarget{how-to-share-a-github-repository}{%
+\subsection*{How to Share A GitHub Repository}\label{how-to-share-a-github-repository}}
+\addcontentsline{toc}{subsection}{How to Share A GitHub Repository}
 
 Sharing code with others using GitHub and RStudio IDE is a straightforward process. Once you have set up your GitHub repository and linked it to your RStudio project, you can follow these steps to share code with others:
 
@@ -2521,95 +2732,12 @@ Sharing code with others using GitHub and RStudio IDE is a straightforward proce
   Share the URL of your GitHub repository with others so they can access your code.
 \end{enumerate}
 
-By following these steps, you can easily collaborate on code with others using GitHub and RStudio IDE. This is a powerful tool that can help you work together more efficiently and effectively. Whether you are working on a small project or a large one, GitHub and RStudio IDE can help you manage your code and collaborate with others to achieve your goals.
-
 \hypertarget{docker}{%
 \section{Docker}\label{docker}}
 
-Docker is an open-source platform that allows developers to easily create, deploy, and run applications in containers. Containers are lightweight, portable, and self-contained environments that can run isolated applications. Docker helps to simplify the process of software development, testing, and deployment by providing a consistent environment that runs the same way on any machine.
+Docker is an open-source platform that allows developers to easily create, deploy, and run applications in containers. Containers are lightweight, portable, and self-contained environments that can run isolated applications. Docker helps to simplify the process of software development, testing, and deployment by providing a consistent environment that runs the same way on any machine, independent of the host operating system.
 
-Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package.
-
-The benefits of using Docker are many. For example, Docker allows developers to create a consistent environment for their applications that can run on any machine, regardless of the underlying operating system. This is because Docker uses containerization to create isolated environments for applications that are completely independent of the host operating system.
-
-Another advantage of Docker is that it helps to simplify the process of software development, testing, and deployment by providing a consistent environment that runs the same way on any machine. This means that developers can develop and test their applications on their local machines, and then deploy them to production with confidence, knowing that they will work in the same way on any machine.
-
-\hypertarget{creating-a-docker-instance-for-r-code}{%
-\subsection{Creating a Docker Instance for R Code}\label{creating-a-docker-instance-for-r-code}}
-
-To create a Docker instance for R code, you will first need to create a Dockerfile. A Dockerfile is a script that contains instructions for building a Docker image. Here's an example Dockerfile for R code:
-
-\begin{verbatim}
-FROM rocker/r-base:latest
-
-RUN apt-get update && apt-get install -y \\
-    git-core \\
-    libssl-dev \\
-    libcurl4-gnutls-dev \\
-    libxml2-dev
-
-RUN R -e "install.packages('tidyverse')"
-
-COPY my_R_script.R .
-
-CMD ["Rscript", "my_R_script.R"]
-\end{verbatim}
-
-This Dockerfile uses the \texttt{rocker/r-base} image as a base and installs some necessary dependencies. It also installs the \texttt{tidyverse} package and copies the \texttt{my\_R\_script.R} file into the container. Finally, it sets \texttt{my\_R\_script.R} as the default command to be executed when the container starts.
-
-After you have created the Dockerfile, you can build the Docker image. To build the Docker image from this Dockerfile, navigate to the directory where the Dockerfile is located and run the following command:
-
-\begin{verbatim}
-docker build -t my_r_image .
-\end{verbatim}
-
-This will create a Docker image named \texttt{my\_r\_image}. You can then start a container from this image by running:
-
-\begin{verbatim}
-docker run --rm my_r_image
-\end{verbatim}
-
-This will start a container and execute the \texttt{my\_R\_script.R} file.
-
-\hypertarget{sharing-a-docker-image}{%
-\subsection{Sharing a Docker Image}\label{sharing-a-docker-image}}
-
-To share a Docker image, you can push it to a Docker registry like Docker Hub. First, you will need to create an account on Docker Hub. Once you have an account, log in to Docker Hub using the following command:
-
-\begin{verbatim}
-docker login
-\end{verbatim}
-
-Next, tag your Docker image with your Docker Hub username and the name of the repository you want to push it to:
-
-\begin{verbatim}
-docker tag my_r_image username/my_r_image
-\end{verbatim}
-
-Finally, push the image to Docker Hub:
-
-\begin{verbatim}
-docker push username/my_r_image
-\end{verbatim}
-
-Anyone with access to Docker Hub can then pull the image using:
-
-\begin{verbatim}
-docker pull username/my_r_image
-\end{verbatim}
-
-And run it using:
-
-\begin{verbatim}
-docker run --rm username/my_r_image
-\end{verbatim}
-
-Sharing your Docker image on Docker Hub allows others to easily access and use your code. This can be especially useful for collaborating with other developers or for sharing your work with the wider community.
-
-\hypertarget{summary}{%
-\subsection{Summary}\label{summary}}
-
-Docker is a powerful tool for creating, deploying, and running applications in containers. By creating a Docker instance for R code and sharing it on Docker Hub, you can make it easy for others to run your code in a consistent and isolated environment. Docker helps to simplify the process of software development, testing, and deployment by providing a consistent environment that runs the same way on any machine. It allows developers to package up their applications with all of the parts they need and ship it all out as one package, making the process of software development and deployment smoother and more efficient.
+For more information check out the main \href{https://www.docker.com/}{Docker} website in addition to the \href{https://rocker-project.org/}{Rocker R Project}.
 
 \hypertarget{r-packages}{%
 \section{R Packages}\label{r-packages}}
@@ -2619,7 +2747,8 @@ In R, packages are collections of R functions, data, and compiled code that can 
 Creating a package in R is a straightforward process, and RStudio IDE provides several tools to simplify the package development process. Packages are a way of organizing your code and data into a single, self-contained unit that can be easily shared and distributed with other R users.
 
 \hypertarget{creating-a-package-in-rstudio}{%
-\subsection{Creating a Package in RStudio}\label{creating-a-package-in-rstudio}}
+\subsection*{Creating a Package in RStudio}\label{creating-a-package-in-rstudio}}
+\addcontentsline{toc}{subsection}{Creating a Package in RStudio}
 
 To create a package in RStudio, follow these simple steps:
 
@@ -2629,7 +2758,7 @@ To create a package in RStudio, follow these simple steps:
 \item
   Create a new R Project. Go to ``File'' -\textgreater{} ``New Project'' -\textgreater{} ``New Directory'' -\textgreater{} ``R Package''
 \item
-  Choose a name for the package and a directory location where it will be saved.
+  Choose a name for the package, such as my\_new\_rpackage and a directory location where it will be saved.
 \item
   Once the project is created, RStudio will generate a basic package structure with the following files:
 \end{enumerate}
@@ -2650,20 +2779,19 @@ To create a package in RStudio, follow these simple steps:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Now it's time to write some code. You can start by creating a simple function that outputs ``Hello World''. Here's an example:
+  Now it's time to write some code. You can start by creating a simple function that outputs ``Hello ASMS''. Here's an example:
 \end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\#\textquotesingle{} Hello World Function}
+\CommentTok{\#\textquotesingle{} Hello ASMS Function}
 \CommentTok{\#\textquotesingle{}}
-\CommentTok{\#\textquotesingle{} This function prints "Hello World" to the console.}
+\CommentTok{\#\textquotesingle{} This function prints "Hello ASMS" to the console.}
 \CommentTok{\#\textquotesingle{}}
-\CommentTok{\#\textquotesingle{} @return A character vector with the message "Hello World".}
+\CommentTok{\#\textquotesingle{} @return A character vector with the message "Hello ASMS".}
 \CommentTok{\#\textquotesingle{} @export}
-\NormalTok{hello\_world }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{() \{}
-  \FunctionTok{message}\NormalTok{(}\StringTok{"Hello World"}\NormalTok{)}
-  \FunctionTok{return}\NormalTok{(}\StringTok{"Hello World"}\NormalTok{)}
+\NormalTok{say\_hello }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{() \{}
+  \FunctionTok{return}\NormalTok{(}\StringTok{"Hello ASMS"}\NormalTok{)}
 \NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
@@ -2680,27 +2808,19 @@ To create a package in RStudio, follow these simple steps:
 \end{enumerate}
 
 \hypertarget{using-the-package}{%
-\subsection{Using the Package}\label{using-the-package}}
+\subsection*{Using the Package}\label{using-the-package}}
+\addcontentsline{toc}{subsection}{Using the Package}
 
 Once the package is installed, you can load it into your R session using the \texttt{library()} function. Here's an example:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(\{package\_name\})}
-\FunctionTok{hello\_world}\NormalTok{()}
+\FunctionTok{library}\NormalTok{(my\_new\_rpackage)}
+\FunctionTok{say\_hello}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
-This will output ``Hello World'' to the console.
-
-\hypertarget{conclusion-1}{%
-\subsection{Conclusion}\label{conclusion-1}}
-
-Creating an R package is a straightforward process that can be easily accomplished using RStudio IDE's built-in tools. By creating packages, you can share your code and data with other R users, making it easier to collaborate and reproduce your work.
-
-R packages can be used to organize and share code and data for data analysis, visualization, statistical modeling, and much more. They can be shared with others, making it easier to collaborate and reproduce work. By following these simple steps, you can create your own R packages and start sharing your work with others.
-
-Overall, R packages are an essential part of the R ecosystem, and by mastering their use, you can become a more effective and efficient R user.
+This will output ``Hello ASMS'' to the console.
 
 \hypertarget{r-shiny-applications}{%
 \section{R Shiny Applications}\label{r-shiny-applications}}
@@ -2710,7 +2830,8 @@ R Shiny is an R package that allows users to create interactive web applications
 The benefits of using R Shiny include creating powerful data-driven web applications with ease and providing a user-friendly interface for data analysis. R Shiny is widely used in various industries, including finance, healthcare, and e-commerce.
 
 \hypertarget{how-to-create-an-r-shiny-application-in-the-rstudio-ide}{%
-\subsection{How to Create an R Shiny Application in the RStudio IDE}\label{how-to-create-an-r-shiny-application-in-the-rstudio-ide}}
+\subsection*{How to Create an R Shiny Application in the RStudio IDE}\label{how-to-create-an-r-shiny-application-in-the-rstudio-ide}}
+\addcontentsline{toc}{subsection}{How to Create an R Shiny Application in the RStudio IDE}
 
 Creating an R Shiny application is relatively easy, and it can be done in the RStudio IDE. Here are the steps to follow:
 
@@ -2741,7 +2862,8 @@ Creating an R Shiny application is relatively easy, and it can be done in the RS
 \end{enumerate}
 
 \hypertarget{example-of-an-r-shiny-application-for-plotting-points}{%
-\subsection{Example of an R Shiny Application for Plotting Points}\label{example-of-an-r-shiny-application-for-plotting-points}}
+\subsection*{Example of an R Shiny Application for Plotting Points}\label{example-of-an-r-shiny-application-for-plotting-points}}
+\addcontentsline{toc}{subsection}{Example of an R Shiny Application for Plotting Points}
 
 Here's an example of an R Shiny application that allows users to plot points on a graph:
 
@@ -2785,8 +2907,6 @@ In this example, the UI code defines a sidebar panel with input fields for the X
 
 The server-side code defines a reactive variable called `coords' which stores the X and Y coordinates of each plotted point. When the user clicks the `Plot Point' button, an observer function is triggered that adds the new point to the `coords' variable. The renderPlot function then plots all of the points on the graph.
 
-R Shiny applications offer a wide variety of possibilities for data visualization and analysis. Users can create interactive dashboards with different types of charts and tables that allow them to explore and analyze data in real-time. Moreover, R Shiny applications can be used to create web-based tools for data science and machine learning tasks, such as classification, regression, and clustering.
-
-In conclusion, R Shiny is a powerful tool for creating web-based applications that allow users to interact with data in various ways. The ease of use and flexibility of the package make it a popular choice for data scientists and analysts. By following the steps outlined in this article, you can start creating your own R Shiny applications today.
+Check out the \href{https://shiny.rstudio.com/}{R Shiny} web page for more information.
 
 \end{document}

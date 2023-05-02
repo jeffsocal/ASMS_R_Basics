@@ -7,6 +7,7 @@ Visualizing your data is crucial because it helps you understand the patterns, t
 At the end of this chapter you should be able to:\
 1.    Understand the need for visualization\
 2.    Create some simple plots of points, lines and bars\
+3.    Manipulate how a plot looks\
 :::
 
 
@@ -68,7 +69,7 @@ knitr::kable(
 
 ```
 
-```{r, echo=FALSE, fig.height=4, fig.align='center'}
+```{r, echo=FALSE, fig.width=6, fig.height=3, fig.align='center'}
 tbl_ac %>%
   ggplot(aes(x, y)) +
   geom_point() +
@@ -83,13 +84,11 @@ In data analysis, creating a plot to convey a message or demonstrate a result is
 
 R comes standard with the fairly basic plotting function `plot()`. While this function forms the basis for all plotting interactions in R, it can be greatly extended with additional packages. Two such packages will be explored in this chapter, `GGplot2` and `Plotly`. The former is great for static publication quality plots, of which you will begin to recognize, while the latter provides stunning interactive graphics suitable for web development and Shiny applications.
 
-```{r}
-set.seed(1234)
+```{r, fig.width=4, fig.height=3, fig.align='center'}
 plot(sample(1:20),sample(1:20))
 ```
 
-```{r}
-set.seed(1234)
+```{r, fig.width=4, fig.height=3, fig.align='center'}
 df <- data.frame( x1 = sample(1:20), y1 = sample(1:20) )
 df %>% plot()
 ```
