@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Data Wrangling | Introduction to R for Mass Spectrometrists</title>
+  <title>Chapter 7 Data Wrangling | Introduction to R for Mass Spectrometrists</title>
   <meta name="description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Data Wrangling | Introduction to R for Mass Spectrometrists" />
+  <meta property="og:title" content="Chapter 7 Data Wrangling | Introduction to R for Mass Spectrometrists" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
   <meta name="github-repo" content="jeffsocal/ASMS_R_Basics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Data Wrangling | Introduction to R for Mass Spectrometrists" />
+  <meta name="twitter:title" content="Chapter 7 Data Wrangling | Introduction to R for Mass Spectrometrists" />
   
   <meta name="twitter:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
   
@@ -23,14 +23,14 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2023-05-02" />
+<meta name="date" content="2023-05-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data-tables.html"/>
+<link rel="prev" href="tidyverse-1.html"/>
 <link rel="next" href="data-visualization.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -52,6 +52,13 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -166,142 +173,189 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="installation.html"><a href="installation.html#packages-utilized-in-this-book"><i class="fa fa-check"></i><b>2.4</b> Packages Utilized in This Book</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="installation.html"><a href="installation.html#tidyverse"><i class="fa fa-check"></i><b>2.4.1</b> tidyverse</a></li>
-<li class="chapter" data-level="2.4.2" data-path="installation.html"><a href="installation.html#mass-spectrometry-specific-packages"><i class="fa fa-check"></i><b>2.4.2</b> Mass Spectrometry Specific Packages</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#tidyverse"><i class="fa fa-check"></i>tidyverse</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#mass-spectrometry-specific-packages"><i class="fa fa-check"></i>Mass Spectrometry Specific Packages</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="the-basics.html"><a href="the-basics.html"><i class="fa fa-check"></i><b>3</b> The Basics</a>
+<li class="chapter" data-level="3" data-path="r-studio-projects.html"><a href="r-studio-projects.html"><i class="fa fa-check"></i><b>3</b> R Studio Projects</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="the-basics.html"><a href="the-basics.html#reserved-words"><i class="fa fa-check"></i><b>3.1</b> Reserved Words</a></li>
-<li class="chapter" data-level="3.2" data-path="the-basics.html"><a href="the-basics.html#syntax"><i class="fa fa-check"></i><b>3.2</b> Syntax</a>
+<li class="chapter" data-level="3.1" data-path="r-studio-projects.html"><a href="r-studio-projects.html#creating"><i class="fa fa-check"></i><b>3.1</b> Creating</a></li>
+<li class="chapter" data-level="3.2" data-path="r-studio-projects.html"><a href="r-studio-projects.html#editing"><i class="fa fa-check"></i><b>3.2</b> Editing</a></li>
+<li class="chapter" data-level="3.3" data-path="r-studio-projects.html"><a href="r-studio-projects.html#organizing"><i class="fa fa-check"></i><b>3.3</b> Organizing</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="the-basics.html"><a href="the-basics.html#comments"><i class="fa fa-check"></i><b>3.2.1</b> Comments</a></li>
-<li class="chapter" data-level="3.2.2" data-path="the-basics.html"><a href="the-basics.html#strings"><i class="fa fa-check"></i><b>3.2.2</b> Strings</a></li>
-<li class="chapter" data-level="3.2.3" data-path="the-basics.html"><a href="the-basics.html#numbers"><i class="fa fa-check"></i><b>3.2.3</b> Numbers</a></li>
-<li class="chapter" data-level="3.2.4" data-path="the-basics.html"><a href="the-basics.html#operators"><i class="fa fa-check"></i><b>3.2.4</b> Operators</a></li>
-<li class="chapter" data-level="3.2.5" data-path="the-basics.html"><a href="the-basics.html#variables"><i class="fa fa-check"></i><b>3.2.5</b> Variables</a></li>
-<li class="chapter" data-level="3.2.6" data-path="the-basics.html"><a href="the-basics.html#statements"><i class="fa fa-check"></i><b>3.2.6</b> Statements</a></li>
-<li class="chapter" data-level="3.2.7" data-path="the-basics.html"><a href="the-basics.html#functions"><i class="fa fa-check"></i><b>3.2.7</b> Functions</a></li>
+<li class="chapter" data-level="3.3.1" data-path="r-studio-projects.html"><a href="r-studio-projects.html#data"><i class="fa fa-check"></i><b>3.3.1</b> Data</a></li>
+<li class="chapter" data-level="3.3.2" data-path="r-studio-projects.html"><a href="r-studio-projects.html#scripts"><i class="fa fa-check"></i><b>3.3.2</b> Scripts</a></li>
+<li class="chapter" data-level="3.3.3" data-path="r-studio-projects.html"><a href="r-studio-projects.html#results"><i class="fa fa-check"></i><b>3.3.3</b> Results</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="the-basics.html"><a href="the-basics.html#flow-control"><i class="fa fa-check"></i><b>3.3</b> Flow-Control</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="the-basics.html"><a href="the-basics.html#if-else-statements"><i class="fa fa-check"></i><b>3.3.1</b> If-Else Statements</a></li>
-<li class="chapter" data-level="3.3.2" data-path="the-basics.html"><a href="the-basics.html#loops"><i class="fa fa-check"></i><b>3.3.2</b> Loops</a></li>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="the-basics.html"><a href="the-basics.html#projects"><i class="fa fa-check"></i><b>3.4</b> Projects</a>
+<li class="chapter" data-level="4" data-path="the-basics.html"><a href="the-basics.html"><i class="fa fa-check"></i><b>4</b> The Basics</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="the-basics.html"><a href="the-basics.html#creating"><i class="fa fa-check"></i><b>3.4.1</b> Creating</a></li>
-<li class="chapter" data-level="3.4.2" data-path="the-basics.html"><a href="the-basics.html#editing"><i class="fa fa-check"></i><b>3.4.2</b> Editing</a></li>
-<li class="chapter" data-level="3.4.3" data-path="the-basics.html"><a href="the-basics.html#organizing"><i class="fa fa-check"></i><b>3.4.3</b> Organizing</a></li>
+<li class="chapter" data-level="4.1" data-path="the-basics.html"><a href="the-basics.html#reserved-words"><i class="fa fa-check"></i><b>4.1</b> Reserved Words</a></li>
+<li class="chapter" data-level="4.2" data-path="the-basics.html"><a href="the-basics.html#syntax"><i class="fa fa-check"></i><b>4.2</b> Syntax</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="the-basics.html"><a href="the-basics.html#comments"><i class="fa fa-check"></i><b>4.2.1</b> Comments</a></li>
+<li class="chapter" data-level="4.2.2" data-path="the-basics.html"><a href="the-basics.html#strings"><i class="fa fa-check"></i><b>4.2.2</b> Strings</a></li>
+<li class="chapter" data-level="4.2.3" data-path="the-basics.html"><a href="the-basics.html#numbers"><i class="fa fa-check"></i><b>4.2.3</b> Numbers</a></li>
+<li class="chapter" data-level="4.2.4" data-path="the-basics.html"><a href="the-basics.html#operators"><i class="fa fa-check"></i><b>4.2.4</b> Operators</a></li>
+<li class="chapter" data-level="4.2.5" data-path="the-basics.html"><a href="the-basics.html#variables"><i class="fa fa-check"></i><b>4.2.5</b> Variables</a></li>
+<li class="chapter" data-level="4.2.6" data-path="the-basics.html"><a href="the-basics.html#statements"><i class="fa fa-check"></i><b>4.2.6</b> Statements</a></li>
+<li class="chapter" data-level="4.2.7" data-path="the-basics.html"><a href="the-basics.html#functions"><i class="fa fa-check"></i><b>4.2.7</b> Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="4.3" data-path="the-basics.html"><a href="the-basics.html#flow-control"><i class="fa fa-check"></i><b>4.3</b> Flow-Control</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="the-basics.html"><a href="the-basics.html#if-else-statements"><i class="fa fa-check"></i><b>4.3.1</b> If-Else Statements</a></li>
+<li class="chapter" data-level="4.3.2" data-path="the-basics.html"><a href="the-basics.html#loops"><i class="fa fa-check"></i><b>4.3.2</b> Loops</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>4</b> Data Structures</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="data-structures.html"><a href="data-structures.html#variable"><i class="fa fa-check"></i><b>4.1</b> Variable</a></li>
-<li class="chapter" data-level="4.2" data-path="data-structures.html"><a href="data-structures.html#vector"><i class="fa fa-check"></i><b>4.2</b> Vector</a></li>
-<li class="chapter" data-level="4.3" data-path="data-structures.html"><a href="data-structures.html#matrix"><i class="fa fa-check"></i><b>4.3</b> Matrix</a></li>
-<li class="chapter" data-level="4.4" data-path="data-structures.html"><a href="data-structures.html#data-frame"><i class="fa fa-check"></i><b>4.4</b> Data Frame</a></li>
-<li class="chapter" data-level="4.5" data-path="data-structures.html"><a href="data-structures.html#list"><i class="fa fa-check"></i><b>4.5</b> List</a></li>
-<li class="chapter" data-level="4.6" data-path="data-structures.html"><a href="data-structures.html#how-to-tell-what-you-are-dealing-with"><i class="fa fa-check"></i><b>4.6</b> How to tell what you are dealing with</a></li>
-<li class="chapter" data-level="" data-path="data-structures.html"><a href="data-structures.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="data-tables.html"><a href="data-tables.html"><i class="fa fa-check"></i><b>5</b> Data Tables</a>
+<li class="chapter" data-level="5" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>5</b> Data Structures</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="data-tables.html"><a href="data-tables.html#tibble-a-new-data-structure"><i class="fa fa-check"></i><b>5.1</b> Tibble, a new Data Structure</a></li>
+<li class="chapter" data-level="5.1" data-path="data-structures.html"><a href="data-structures.html#variable"><i class="fa fa-check"></i><b>5.1</b> Variable</a></li>
+<li class="chapter" data-level="5.2" data-path="data-structures.html"><a href="data-structures.html#vector"><i class="fa fa-check"></i><b>5.2</b> Vector</a></li>
+<li class="chapter" data-level="5.3" data-path="data-structures.html"><a href="data-structures.html#matrix"><i class="fa fa-check"></i><b>5.3</b> Matrix</a></li>
+<li class="chapter" data-level="5.4" data-path="data-structures.html"><a href="data-structures.html#data-frame"><i class="fa fa-check"></i><b>5.4</b> Data Frame</a></li>
+<li class="chapter" data-level="5.5" data-path="data-structures.html"><a href="data-structures.html#list"><i class="fa fa-check"></i><b>5.5</b> List</a></li>
+<li class="chapter" data-level="5.6" data-path="data-structures.html"><a href="data-structures.html#tibbles"><i class="fa fa-check"></i><b>5.6</b> Tibbles</a></li>
+<li class="chapter" data-level="" data-path="data-structures.html"><a href="data-structures.html#how-to-tell-what-you-are-dealing-with"><i class="fa fa-check"></i>How to tell what you are dealing with</a></li>
+<li class="chapter" data-level="" data-path="data-structures.html"><a href="data-structures.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>6</b> Data Wrangling</a>
+<li class="chapter" data-level="6" data-path="tidyverse-1.html"><a href="tidyverse-1.html"><i class="fa fa-check"></i><b>6</b> Tidyverse</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="data-wrangling.html"><a href="data-wrangling.html#tidy-data"><i class="fa fa-check"></i><b>6.1</b> Tidy Data</a></li>
+<li class="chapter" data-level="6.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#core-packages"><i class="fa fa-check"></i><b>6.1</b> Core Packages</a>
+<ul>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#magrittr"><i class="fa fa-check"></i>magrittr</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#tibble"><i class="fa fa-check"></i>tibble</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>7</b> Data Visualization</a>
+<li class="chapter" data-level="6.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#importing"><i class="fa fa-check"></i><b>6.2</b> Importing</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="data-visualization.html"><a href="data-visualization.html#base-plot"><i class="fa fa-check"></i><b>7.1</b> Base: plot</a></li>
-<li class="chapter" data-level="7.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot"><i class="fa fa-check"></i><b>7.2</b> GGPlot</a>
-<ul>
-<li class="chapter" data-level="7.2.1" data-path="data-visualization.html"><a href="data-visualization.html#syntax-1"><i class="fa fa-check"></i><b>7.2.1</b> Syntax</a></li>
-<li class="chapter" data-level="7.2.2" data-path="data-visualization.html"><a href="data-visualization.html#basic-data-plotting"><i class="fa fa-check"></i><b>7.2.2</b> Basic Data Plotting</a></li>
-<li class="chapter" data-level="7.2.3" data-path="data-visualization.html"><a href="data-visualization.html#data-distributions"><i class="fa fa-check"></i><b>7.2.3</b> Data Distributions</a></li>
-<li class="chapter" data-level="7.2.4" data-path="data-visualization.html"><a href="data-visualization.html#extended-syntax"><i class="fa fa-check"></i><b>7.2.4</b> Extended Syntax</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#readr"><i class="fa fa-check"></i>readr</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="data-visualization.html"><a href="data-visualization.html#plotly"><i class="fa fa-check"></i><b>7.3</b> Plotly</a></li>
+<li class="chapter" data-level="6.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#wrangling"><i class="fa fa-check"></i><b>6.3</b> Wrangling</a>
+<ul>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr"><i class="fa fa-check"></i>dplyr</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#tidyr"><i class="fa fa-check"></i>tidyr</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#purrr"><i class="fa fa-check"></i>purrr</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#glue"><i class="fa fa-check"></i>glue</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html"><i class="fa fa-check"></i><b>8</b> Mass Spectrometry Data</a>
+<li class="chapter" data-level="6.4" data-path="tidyverse-1.html"><a href="tidyverse-1.html#data-types"><i class="fa fa-check"></i><b>6.4</b> Data Types</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#commercial"><i class="fa fa-check"></i><b>8.1</b> Commercial</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#raw-thermo"><i class="fa fa-check"></i><b>8.1.1</b> RAW (Thermo)</a></li>
-<li class="chapter" data-level="8.1.2" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#wiff-sciex"><i class="fa fa-check"></i><b>8.1.2</b> WIFF (Sciex)</a></li>
-<li class="chapter" data-level="8.1.3" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#d-agilent"><i class="fa fa-check"></i><b>8.1.3</b> D (Agilent)</a></li>
-<li class="chapter" data-level="8.1.4" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#d-bruker"><i class="fa fa-check"></i><b>8.1.4</b> D (Bruker)</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#stringr"><i class="fa fa-check"></i>stringr</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#lubridate"><i class="fa fa-check"></i>lubridate</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#forcats"><i class="fa fa-check"></i>forcats</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#open-access-raw-data"><i class="fa fa-check"></i><b>8.2</b> Open Access Raw Data</a>
+<li class="chapter" data-level="6.5" data-path="tidyverse-1.html"><a href="tidyverse-1.html#summarizing"><i class="fa fa-check"></i><b>6.5</b> Summarizing</a>
 <ul>
-<li class="chapter" data-level="" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#conversion-tools"><i class="fa fa-check"></i>Conversion Tools</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr-1"><i class="fa fa-check"></i>dplyr</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#ggplot2"><i class="fa fa-check"></i>ggplot2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>7</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="data-wrangling.html"><a href="data-wrangling.html#tidy-data"><i class="fa fa-check"></i><b>7.1</b> Tidy Data</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#exercises-4"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>8</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="data-visualization.html"><a href="data-visualization.html#base-plot"><i class="fa fa-check"></i><b>8.1</b> Base: plot</a></li>
+<li class="chapter" data-level="8.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2-1"><i class="fa fa-check"></i><b>8.2</b> GGPlot2</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="data-visualization.html"><a href="data-visualization.html#syntax-1"><i class="fa fa-check"></i><b>8.2.1</b> Syntax</a></li>
+<li class="chapter" data-level="8.2.2" data-path="data-visualization.html"><a href="data-visualization.html#basic-data-plotting"><i class="fa fa-check"></i><b>8.2.2</b> Basic Data Plotting</a></li>
+<li class="chapter" data-level="8.2.3" data-path="data-visualization.html"><a href="data-visualization.html#data-distributions"><i class="fa fa-check"></i><b>8.2.3</b> Data Distributions</a></li>
+<li class="chapter" data-level="8.2.4" data-path="data-visualization.html"><a href="data-visualization.html#extended-syntax"><i class="fa fa-check"></i><b>8.2.4</b> Extended Syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="data-visualization.html"><a href="data-visualization.html#alternatives-1"><i class="fa fa-check"></i><b>8.3</b> Alternatives</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#lattice"><i class="fa fa-check"></i>lattice</a></li>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#plotly"><i class="fa fa-check"></i>plotly</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html"><i class="fa fa-check"></i><b>9</b> Mass Spectrometry Data</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#commercial"><i class="fa fa-check"></i><b>9.1</b> Commercial</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#raw-thermo"><i class="fa fa-check"></i><b>9.1.1</b> RAW (Thermo)</a></li>
+<li class="chapter" data-level="9.1.2" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#wiff-sciex"><i class="fa fa-check"></i><b>9.1.2</b> WIFF (Sciex)</a></li>
+<li class="chapter" data-level="9.1.3" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#d-agilent"><i class="fa fa-check"></i><b>9.1.3</b> D (Agilent)</a></li>
+<li class="chapter" data-level="9.1.4" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#d-bruker"><i class="fa fa-check"></i><b>9.1.4</b> D (Bruker)</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#open-access-raw-data"><i class="fa fa-check"></i><b>9.2</b> Open Access Raw Data</a>
+<ul>
 <li class="chapter" data-level="" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#mzxml"><i class="fa fa-check"></i>mzXML</a></li>
 <li class="chapter" data-level="" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#mzml"><i class="fa fa-check"></i>mzML</a></li>
 <li class="chapter" data-level="" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#mzmlb"><i class="fa fa-check"></i>mzMLb</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html"><i class="fa fa-check"></i><b>9</b> Mass Spectrometry R Packages (work in progress)</a>
+<li class="chapter" data-level="10" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html"><i class="fa fa-check"></i><b>10</b> Mass Spectrometry R Packages (work in progress)</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#xcms"><i class="fa fa-check"></i><b>9.1</b> xcms</a></li>
-<li class="chapter" data-level="9.2" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#deqms"><i class="fa fa-check"></i><b>9.2</b> deqms</a></li>
-<li class="chapter" data-level="9.3" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msempire"><i class="fa fa-check"></i><b>9.3</b> msempire</a></li>
-<li class="chapter" data-level="9.4" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msqrob"><i class="fa fa-check"></i><b>9.4</b> msqrob</a></li>
-<li class="chapter" data-level="9.5" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msstatstmt"><i class="fa fa-check"></i><b>9.5</b> MSstatsTMT</a></li>
-<li class="chapter" data-level="9.6" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msstats"><i class="fa fa-check"></i><b>9.6</b> MSstats</a>
+<li class="chapter" data-level="10.1" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#xcms"><i class="fa fa-check"></i><b>10.1</b> xcms</a></li>
+<li class="chapter" data-level="10.2" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#mzr"><i class="fa fa-check"></i><b>10.2</b> mzR</a></li>
+<li class="chapter" data-level="10.3" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#deqms"><i class="fa fa-check"></i><b>10.3</b> deqms</a></li>
+<li class="chapter" data-level="10.4" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msempire"><i class="fa fa-check"></i><b>10.4</b> msempire</a></li>
+<li class="chapter" data-level="10.5" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msqrob"><i class="fa fa-check"></i><b>10.5</b> msqrob</a></li>
+<li class="chapter" data-level="10.6" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msstats"><i class="fa fa-check"></i><b>10.6</b> MSstats</a>
 <ul>
-<li class="chapter" data-level="9.6.1" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#installation-1"><i class="fa fa-check"></i><b>9.6.1</b> Installation</a></li>
-<li class="chapter" data-level="9.6.2" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#loading-data"><i class="fa fa-check"></i><b>9.6.2</b> Loading Data</a></li>
-<li class="chapter" data-level="9.6.3" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#quality-control"><i class="fa fa-check"></i><b>9.6.3</b> Quality Control</a></li>
-<li class="chapter" data-level="9.6.4" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#differential-expression-analysis"><i class="fa fa-check"></i><b>9.6.4</b> Differential Expression Analysis</a></li>
-<li class="chapter" data-level="9.6.5" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#conclusion"><i class="fa fa-check"></i><b>9.6.5</b> Conclusion</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#installation-1"><i class="fa fa-check"></i>Installation</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#loading-data"><i class="fa fa-check"></i>Loading Data</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#quality-control"><i class="fa fa-check"></i>Quality Control</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#differential-expression-analysis"><i class="fa fa-check"></i>Differential Expression Analysis</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#conclusion"><i class="fa fa-check"></i>Conclusion</a></li>
 </ul></li>
-<li class="chapter" data-level="9.7" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msgrob2"><i class="fa fa-check"></i><b>9.7</b> msgrob2</a>
+<li class="chapter" data-level="10.7" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msgrob2"><i class="fa fa-check"></i><b>10.7</b> msgrob2</a>
 <ul>
-<li class="chapter" data-level="9.7.1" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#code-examples"><i class="fa fa-check"></i><b>9.7.1</b> Code Examples</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#installation-2"><i class="fa fa-check"></i>Installation</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#estimating-parameters"><i class="fa fa-check"></i>Estimating Parameters</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#estimating-covariance-matrix"><i class="fa fa-check"></i>Estimating Covariance Matrix</a></li>
 </ul></li>
-<li class="chapter" data-level="9.8" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#statspro-r-package"><i class="fa fa-check"></i><b>9.8</b> StatsPro R Package</a></li>
-<li class="chapter" data-level="9.9" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#tidyproteomics"><i class="fa fa-check"></i><b>9.9</b> Tidyproteomics</a>
+<li class="chapter" data-level="10.8" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#statspro-r-package"><i class="fa fa-check"></i><b>10.8</b> StatsPro R Package</a></li>
+<li class="chapter" data-level="10.9" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#tidyproteomics"><i class="fa fa-check"></i><b>10.9</b> Tidyproteomics</a>
 <ul>
-<li class="chapter" data-level="9.9.1" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#loading-data-1"><i class="fa fa-check"></i><b>9.9.1</b> Loading Data</a></li>
-<li class="chapter" data-level="9.9.2" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#data-summaries"><i class="fa fa-check"></i><b>9.9.2</b> Data Summaries</a></li>
-<li class="chapter" data-level="9.9.3" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#normalization-and-imputation"><i class="fa fa-check"></i><b>9.9.3</b> Normalization and Imputation</a></li>
-<li class="chapter" data-level="9.9.4" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#expression-analysis"><i class="fa fa-check"></i><b>9.9.4</b> Expression Analysis</a></li>
-<li class="chapter" data-level="9.9.5" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#advanced"><i class="fa fa-check"></i><b>9.9.5</b> Advanced</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#installation-3"><i class="fa fa-check"></i>Installation</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#loading-data-1"><i class="fa fa-check"></i>Loading Data</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#data-summaries"><i class="fa fa-check"></i>Data Summaries</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#normalization-and-imputation"><i class="fa fa-check"></i>Normalization and Imputation</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#expression-analysis"><i class="fa fa-check"></i>Expression Analysis</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>10</b> Sharing</a>
+<li class="chapter" data-level="11" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>11</b> Sharing</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>10.1</b> Packrat</a>
+<li class="chapter" data-level="11.1" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>11.1</b> Packrat</a>
 <ul>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#initiating-a-packrat-project"><i class="fa fa-check"></i>Initiating a Packrat Project</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#installing-a-package-into-the-project-library"><i class="fa fa-check"></i>Installing a Package into the Project Library</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#loading-a-package-from-the-project-library"><i class="fa fa-check"></i>Loading a Package from the Project Library</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#updating-a-package-in-the-project-library"><i class="fa fa-check"></i>Updating a Package in the Project Library</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="sharing.html"><a href="sharing.html#notebooks"><i class="fa fa-check"></i><b>10.2</b> Notebooks</a>
+<li class="chapter" data-level="11.2" data-path="sharing.html"><a href="sharing.html#notebooks"><i class="fa fa-check"></i><b>11.2</b> Notebooks</a>
 <ul>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-notebooks"><i class="fa fa-check"></i>Using Notebooks</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-a-notebook"><i class="fa fa-check"></i>Sharing A Notebook</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="sharing.html"><a href="sharing.html#github"><i class="fa fa-check"></i><b>10.3</b> GitHub</a>
+<li class="chapter" data-level="11.3" data-path="sharing.html"><a href="sharing.html#github"><i class="fa fa-check"></i><b>11.3</b> GitHub</a>
 <ul>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-use-github"><i class="fa fa-check"></i>How to Use GitHub</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-share-a-github-repository"><i class="fa fa-check"></i>How to Share A GitHub Repository</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>10.4</b> Docker</a></li>
-<li class="chapter" data-level="10.5" data-path="sharing.html"><a href="sharing.html#r-packages"><i class="fa fa-check"></i><b>10.5</b> R Packages</a>
+<li class="chapter" data-level="11.4" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>11.4</b> Docker</a></li>
+<li class="chapter" data-level="11.5" data-path="sharing.html"><a href="sharing.html#r-packages"><i class="fa fa-check"></i><b>11.5</b> R Packages</a>
 <ul>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-a-package-in-rstudio"><i class="fa fa-check"></i>Creating a Package in RStudio</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-the-package"><i class="fa fa-check"></i>Using the Package</a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>10.6</b> R Shiny Applications</a>
+<li class="chapter" data-level="11.6" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>11.6</b> R Shiny Applications</a>
 <ul>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-create-an-r-shiny-application-in-the-rstudio-ide"><i class="fa fa-check"></i>How to Create an R Shiny Application in the RStudio IDE</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#example-of-an-r-shiny-application-for-plotting-points"><i class="fa fa-check"></i>Example of an R Shiny Application for Plotting Points</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html"><i class="fa fa-check"></i>Answers to Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#the-basics-1"><i class="fa fa-check"></i><strong>4</strong> The Basics</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-structures-1"><i class="fa fa-check"></i><strong>5</strong> Data Structures</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#tidyverse-2"><i class="fa fa-check"></i><strong>6</strong> Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-1"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/jeffsocal/asms_r_intro" target="blank">Published with bookdown</a></li>
@@ -323,10 +377,81 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-wrangling" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Data Wrangling<a href="data-wrangling.html#data-wrangling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="tidy-data" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Tidy Data<a href="data-wrangling.html#tidy-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="data-wrangling" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Data Wrangling<a href="data-wrangling.html#data-wrangling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="tidy-data" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Tidy Data<a href="data-wrangling.html#tidy-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+<div id="exercises-4" class="section level2 unnumbered hasAnchor">
+<h2>Exercises<a href="data-wrangling.html#exercises-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Download <em>Denver Climate Data</em> to use as an example data file.</li>
+</ol>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="data-wrangling.html#cb148-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/ZenBrayn/asms-2022-r-shortcourse/main/exercises/intro_to_r/data/denver_climate.csv&quot;</span></span>
+<span id="cb148-2"><a href="data-wrangling.html#cb148-2" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/denver_climate.csv&quot;</span>)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Read in the dataset .csv using the <code>tidyverse</code> set of packages.</p></li>
+<li><p>How many rows does the table contain? Number of columns? What are the column names?</p></li>
+</ol>
+<pre><code>## [1] 48</code></pre>
+<pre><code>## [1] 6</code></pre>
+<pre><code>## [1] &quot;year&quot;          &quot;month&quot;         &quot;max_temp&quot;      &quot;min_temp&quot;      &quot;precipitation&quot; &quot;snowfall&quot;</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Find the month and year with the highest snowfall.</li>
+</ol>
+<pre><code>## # A tibble: 1 × 2
+##   month  year
+##   &lt;dbl&gt; &lt;dbl&gt;
+## 1     4  2016</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Find months where there was no snowfall.</li>
+</ol>
+<pre><code>## # A tibble: 5 × 1
+##   month
+##   &lt;dbl&gt;
+## 1     6
+## 2     7
+## 3     8
+## 4     9
+## 5    10</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Find average precipitation per year.</li>
+</ol>
+<pre><code>## # A tibble: 4 × 2
+##    year precipitation_avg
+##   &lt;dbl&gt;             &lt;dbl&gt;
+## 1  2016              1.32
+## 2  2017              1.43
+## 3  2018              1.03
+## 4  2019              1.37</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li>Convert temperatures to Celsius and add new columns with these to table. Reminder <code>F to C conversion -&gt; (F - 32) * (5/9)</code>.</li>
+</ol>
+<pre><code>## # A tibble: 48 × 8
+##     year month max_temp min_temp precipitation snowfall min_temp_C max_temp_C
+##    &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;         &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+##  1  2016     1     46.8     19.3          0.39      7.4     -7.06        8.22
+##  2  2016     2     49.8     22.5          0.47     14.7     -5.28        9.89
+##  3  2016     3     53.2     25.7          1.47     19       -3.5        11.8 
+##  4  2016     4     55.5     33.2          2.13     19.2      0.667      13.1 
+##  5  2016     5     64.6     39.6          1.95      0.7      4.22       18.1 
+##  6  2016     6     82.4     54.7          4.64      0       12.6        28   
+##  7  2016     7     87       57.4          2.08      0       14.1        30.6 
+##  8  2016     8     83.8     53.9          1.18      0       12.2        28.8 
+##  9  2016     9     79.8     48.5          0.12      0        9.17       26.6 
+## 10  2016    10     74.1     40.6          0.16      0        4.78       23.4 
+## # … with 38 more rows</code></pre>
+<ol start="8" style="list-style-type: decimal">
+<li>Find the month with the greatest difference in C between max and min temperature.</li>
+</ol>
+<pre><code>## # A tibble: 1 × 2
+##   month temp_diff_C_avg
+##   &lt;dbl&gt;           &lt;dbl&gt;
+## 1     9            16.9</code></pre>
+<ol start="9" style="list-style-type: decimal">
+<li>Write to file an .csv of the data.frame which contains the C data.</li>
+</ol>
 
 </div>
 </div>
@@ -335,7 +460,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="data-tables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tidyverse-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="data-visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -367,7 +492,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/jeffsocal/asms_r_intro/edit/BRANCH/05_02-data_wrangling.Rmd",
+"link": "https://github.com/jeffsocal/asms_r_intro/edit/BRANCH/07_02-data_wrangling.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Data Visualization | Introduction to R for Mass Spectrometrists</title>
+  <title>Chapter 8 Data Visualization | Introduction to R for Mass Spectrometrists</title>
   <meta name="description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Data Visualization | Introduction to R for Mass Spectrometrists" />
+  <meta property="og:title" content="Chapter 8 Data Visualization | Introduction to R for Mass Spectrometrists" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
   <meta name="github-repo" content="jeffsocal/ASMS_R_Basics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Data Visualization | Introduction to R for Mass Spectrometrists" />
+  <meta name="twitter:title" content="Chapter 8 Data Visualization | Introduction to R for Mass Spectrometrists" />
   
   <meta name="twitter:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2023-05-02" />
+<meta name="date" content="2023-05-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,13 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -166,142 +173,189 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="installation.html"><a href="installation.html#packages-utilized-in-this-book"><i class="fa fa-check"></i><b>2.4</b> Packages Utilized in This Book</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="installation.html"><a href="installation.html#tidyverse"><i class="fa fa-check"></i><b>2.4.1</b> tidyverse</a></li>
-<li class="chapter" data-level="2.4.2" data-path="installation.html"><a href="installation.html#mass-spectrometry-specific-packages"><i class="fa fa-check"></i><b>2.4.2</b> Mass Spectrometry Specific Packages</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#tidyverse"><i class="fa fa-check"></i>tidyverse</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#mass-spectrometry-specific-packages"><i class="fa fa-check"></i>Mass Spectrometry Specific Packages</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="the-basics.html"><a href="the-basics.html"><i class="fa fa-check"></i><b>3</b> The Basics</a>
+<li class="chapter" data-level="3" data-path="r-studio-projects.html"><a href="r-studio-projects.html"><i class="fa fa-check"></i><b>3</b> R Studio Projects</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="the-basics.html"><a href="the-basics.html#reserved-words"><i class="fa fa-check"></i><b>3.1</b> Reserved Words</a></li>
-<li class="chapter" data-level="3.2" data-path="the-basics.html"><a href="the-basics.html#syntax"><i class="fa fa-check"></i><b>3.2</b> Syntax</a>
+<li class="chapter" data-level="3.1" data-path="r-studio-projects.html"><a href="r-studio-projects.html#creating"><i class="fa fa-check"></i><b>3.1</b> Creating</a></li>
+<li class="chapter" data-level="3.2" data-path="r-studio-projects.html"><a href="r-studio-projects.html#editing"><i class="fa fa-check"></i><b>3.2</b> Editing</a></li>
+<li class="chapter" data-level="3.3" data-path="r-studio-projects.html"><a href="r-studio-projects.html#organizing"><i class="fa fa-check"></i><b>3.3</b> Organizing</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="the-basics.html"><a href="the-basics.html#comments"><i class="fa fa-check"></i><b>3.2.1</b> Comments</a></li>
-<li class="chapter" data-level="3.2.2" data-path="the-basics.html"><a href="the-basics.html#strings"><i class="fa fa-check"></i><b>3.2.2</b> Strings</a></li>
-<li class="chapter" data-level="3.2.3" data-path="the-basics.html"><a href="the-basics.html#numbers"><i class="fa fa-check"></i><b>3.2.3</b> Numbers</a></li>
-<li class="chapter" data-level="3.2.4" data-path="the-basics.html"><a href="the-basics.html#operators"><i class="fa fa-check"></i><b>3.2.4</b> Operators</a></li>
-<li class="chapter" data-level="3.2.5" data-path="the-basics.html"><a href="the-basics.html#variables"><i class="fa fa-check"></i><b>3.2.5</b> Variables</a></li>
-<li class="chapter" data-level="3.2.6" data-path="the-basics.html"><a href="the-basics.html#statements"><i class="fa fa-check"></i><b>3.2.6</b> Statements</a></li>
-<li class="chapter" data-level="3.2.7" data-path="the-basics.html"><a href="the-basics.html#functions"><i class="fa fa-check"></i><b>3.2.7</b> Functions</a></li>
+<li class="chapter" data-level="3.3.1" data-path="r-studio-projects.html"><a href="r-studio-projects.html#data"><i class="fa fa-check"></i><b>3.3.1</b> Data</a></li>
+<li class="chapter" data-level="3.3.2" data-path="r-studio-projects.html"><a href="r-studio-projects.html#scripts"><i class="fa fa-check"></i><b>3.3.2</b> Scripts</a></li>
+<li class="chapter" data-level="3.3.3" data-path="r-studio-projects.html"><a href="r-studio-projects.html#results"><i class="fa fa-check"></i><b>3.3.3</b> Results</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="the-basics.html"><a href="the-basics.html#flow-control"><i class="fa fa-check"></i><b>3.3</b> Flow-Control</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="the-basics.html"><a href="the-basics.html#if-else-statements"><i class="fa fa-check"></i><b>3.3.1</b> If-Else Statements</a></li>
-<li class="chapter" data-level="3.3.2" data-path="the-basics.html"><a href="the-basics.html#loops"><i class="fa fa-check"></i><b>3.3.2</b> Loops</a></li>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="the-basics.html"><a href="the-basics.html#projects"><i class="fa fa-check"></i><b>3.4</b> Projects</a>
+<li class="chapter" data-level="4" data-path="the-basics.html"><a href="the-basics.html"><i class="fa fa-check"></i><b>4</b> The Basics</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="the-basics.html"><a href="the-basics.html#creating"><i class="fa fa-check"></i><b>3.4.1</b> Creating</a></li>
-<li class="chapter" data-level="3.4.2" data-path="the-basics.html"><a href="the-basics.html#editing"><i class="fa fa-check"></i><b>3.4.2</b> Editing</a></li>
-<li class="chapter" data-level="3.4.3" data-path="the-basics.html"><a href="the-basics.html#organizing"><i class="fa fa-check"></i><b>3.4.3</b> Organizing</a></li>
+<li class="chapter" data-level="4.1" data-path="the-basics.html"><a href="the-basics.html#reserved-words"><i class="fa fa-check"></i><b>4.1</b> Reserved Words</a></li>
+<li class="chapter" data-level="4.2" data-path="the-basics.html"><a href="the-basics.html#syntax"><i class="fa fa-check"></i><b>4.2</b> Syntax</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="the-basics.html"><a href="the-basics.html#comments"><i class="fa fa-check"></i><b>4.2.1</b> Comments</a></li>
+<li class="chapter" data-level="4.2.2" data-path="the-basics.html"><a href="the-basics.html#strings"><i class="fa fa-check"></i><b>4.2.2</b> Strings</a></li>
+<li class="chapter" data-level="4.2.3" data-path="the-basics.html"><a href="the-basics.html#numbers"><i class="fa fa-check"></i><b>4.2.3</b> Numbers</a></li>
+<li class="chapter" data-level="4.2.4" data-path="the-basics.html"><a href="the-basics.html#operators"><i class="fa fa-check"></i><b>4.2.4</b> Operators</a></li>
+<li class="chapter" data-level="4.2.5" data-path="the-basics.html"><a href="the-basics.html#variables"><i class="fa fa-check"></i><b>4.2.5</b> Variables</a></li>
+<li class="chapter" data-level="4.2.6" data-path="the-basics.html"><a href="the-basics.html#statements"><i class="fa fa-check"></i><b>4.2.6</b> Statements</a></li>
+<li class="chapter" data-level="4.2.7" data-path="the-basics.html"><a href="the-basics.html#functions"><i class="fa fa-check"></i><b>4.2.7</b> Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="4.3" data-path="the-basics.html"><a href="the-basics.html#flow-control"><i class="fa fa-check"></i><b>4.3</b> Flow-Control</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="the-basics.html"><a href="the-basics.html#if-else-statements"><i class="fa fa-check"></i><b>4.3.1</b> If-Else Statements</a></li>
+<li class="chapter" data-level="4.3.2" data-path="the-basics.html"><a href="the-basics.html#loops"><i class="fa fa-check"></i><b>4.3.2</b> Loops</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>4</b> Data Structures</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="data-structures.html"><a href="data-structures.html#variable"><i class="fa fa-check"></i><b>4.1</b> Variable</a></li>
-<li class="chapter" data-level="4.2" data-path="data-structures.html"><a href="data-structures.html#vector"><i class="fa fa-check"></i><b>4.2</b> Vector</a></li>
-<li class="chapter" data-level="4.3" data-path="data-structures.html"><a href="data-structures.html#matrix"><i class="fa fa-check"></i><b>4.3</b> Matrix</a></li>
-<li class="chapter" data-level="4.4" data-path="data-structures.html"><a href="data-structures.html#data-frame"><i class="fa fa-check"></i><b>4.4</b> Data Frame</a></li>
-<li class="chapter" data-level="4.5" data-path="data-structures.html"><a href="data-structures.html#list"><i class="fa fa-check"></i><b>4.5</b> List</a></li>
-<li class="chapter" data-level="4.6" data-path="data-structures.html"><a href="data-structures.html#how-to-tell-what-you-are-dealing-with"><i class="fa fa-check"></i><b>4.6</b> How to tell what you are dealing with</a></li>
-<li class="chapter" data-level="" data-path="data-structures.html"><a href="data-structures.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="data-tables.html"><a href="data-tables.html"><i class="fa fa-check"></i><b>5</b> Data Tables</a>
+<li class="chapter" data-level="5" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>5</b> Data Structures</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="data-tables.html"><a href="data-tables.html#tibble-a-new-data-structure"><i class="fa fa-check"></i><b>5.1</b> Tibble, a new Data Structure</a></li>
+<li class="chapter" data-level="5.1" data-path="data-structures.html"><a href="data-structures.html#variable"><i class="fa fa-check"></i><b>5.1</b> Variable</a></li>
+<li class="chapter" data-level="5.2" data-path="data-structures.html"><a href="data-structures.html#vector"><i class="fa fa-check"></i><b>5.2</b> Vector</a></li>
+<li class="chapter" data-level="5.3" data-path="data-structures.html"><a href="data-structures.html#matrix"><i class="fa fa-check"></i><b>5.3</b> Matrix</a></li>
+<li class="chapter" data-level="5.4" data-path="data-structures.html"><a href="data-structures.html#data-frame"><i class="fa fa-check"></i><b>5.4</b> Data Frame</a></li>
+<li class="chapter" data-level="5.5" data-path="data-structures.html"><a href="data-structures.html#list"><i class="fa fa-check"></i><b>5.5</b> List</a></li>
+<li class="chapter" data-level="5.6" data-path="data-structures.html"><a href="data-structures.html#tibbles"><i class="fa fa-check"></i><b>5.6</b> Tibbles</a></li>
+<li class="chapter" data-level="" data-path="data-structures.html"><a href="data-structures.html#how-to-tell-what-you-are-dealing-with"><i class="fa fa-check"></i>How to tell what you are dealing with</a></li>
+<li class="chapter" data-level="" data-path="data-structures.html"><a href="data-structures.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>6</b> Data Wrangling</a>
+<li class="chapter" data-level="6" data-path="tidyverse-1.html"><a href="tidyverse-1.html"><i class="fa fa-check"></i><b>6</b> Tidyverse</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="data-wrangling.html"><a href="data-wrangling.html#tidy-data"><i class="fa fa-check"></i><b>6.1</b> Tidy Data</a></li>
+<li class="chapter" data-level="6.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#core-packages"><i class="fa fa-check"></i><b>6.1</b> Core Packages</a>
+<ul>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#magrittr"><i class="fa fa-check"></i>magrittr</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#tibble"><i class="fa fa-check"></i>tibble</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>7</b> Data Visualization</a>
+<li class="chapter" data-level="6.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#importing"><i class="fa fa-check"></i><b>6.2</b> Importing</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="data-visualization.html"><a href="data-visualization.html#base-plot"><i class="fa fa-check"></i><b>7.1</b> Base: plot</a></li>
-<li class="chapter" data-level="7.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot"><i class="fa fa-check"></i><b>7.2</b> GGPlot</a>
-<ul>
-<li class="chapter" data-level="7.2.1" data-path="data-visualization.html"><a href="data-visualization.html#syntax-1"><i class="fa fa-check"></i><b>7.2.1</b> Syntax</a></li>
-<li class="chapter" data-level="7.2.2" data-path="data-visualization.html"><a href="data-visualization.html#basic-data-plotting"><i class="fa fa-check"></i><b>7.2.2</b> Basic Data Plotting</a></li>
-<li class="chapter" data-level="7.2.3" data-path="data-visualization.html"><a href="data-visualization.html#data-distributions"><i class="fa fa-check"></i><b>7.2.3</b> Data Distributions</a></li>
-<li class="chapter" data-level="7.2.4" data-path="data-visualization.html"><a href="data-visualization.html#extended-syntax"><i class="fa fa-check"></i><b>7.2.4</b> Extended Syntax</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#readr"><i class="fa fa-check"></i>readr</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="data-visualization.html"><a href="data-visualization.html#plotly"><i class="fa fa-check"></i><b>7.3</b> Plotly</a></li>
+<li class="chapter" data-level="6.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#wrangling"><i class="fa fa-check"></i><b>6.3</b> Wrangling</a>
+<ul>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr"><i class="fa fa-check"></i>dplyr</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#tidyr"><i class="fa fa-check"></i>tidyr</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#purrr"><i class="fa fa-check"></i>purrr</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#glue"><i class="fa fa-check"></i>glue</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html"><i class="fa fa-check"></i><b>8</b> Mass Spectrometry Data</a>
+<li class="chapter" data-level="6.4" data-path="tidyverse-1.html"><a href="tidyverse-1.html#data-types"><i class="fa fa-check"></i><b>6.4</b> Data Types</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#commercial"><i class="fa fa-check"></i><b>8.1</b> Commercial</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#raw-thermo"><i class="fa fa-check"></i><b>8.1.1</b> RAW (Thermo)</a></li>
-<li class="chapter" data-level="8.1.2" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#wiff-sciex"><i class="fa fa-check"></i><b>8.1.2</b> WIFF (Sciex)</a></li>
-<li class="chapter" data-level="8.1.3" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#d-agilent"><i class="fa fa-check"></i><b>8.1.3</b> D (Agilent)</a></li>
-<li class="chapter" data-level="8.1.4" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#d-bruker"><i class="fa fa-check"></i><b>8.1.4</b> D (Bruker)</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#stringr"><i class="fa fa-check"></i>stringr</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#lubridate"><i class="fa fa-check"></i>lubridate</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#forcats"><i class="fa fa-check"></i>forcats</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#open-access-raw-data"><i class="fa fa-check"></i><b>8.2</b> Open Access Raw Data</a>
+<li class="chapter" data-level="6.5" data-path="tidyverse-1.html"><a href="tidyverse-1.html#summarizing"><i class="fa fa-check"></i><b>6.5</b> Summarizing</a>
 <ul>
-<li class="chapter" data-level="" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#conversion-tools"><i class="fa fa-check"></i>Conversion Tools</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr-1"><i class="fa fa-check"></i>dplyr</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#ggplot2"><i class="fa fa-check"></i>ggplot2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>7</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="data-wrangling.html"><a href="data-wrangling.html#tidy-data"><i class="fa fa-check"></i><b>7.1</b> Tidy Data</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#exercises-4"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>8</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="data-visualization.html"><a href="data-visualization.html#base-plot"><i class="fa fa-check"></i><b>8.1</b> Base: plot</a></li>
+<li class="chapter" data-level="8.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2-1"><i class="fa fa-check"></i><b>8.2</b> GGPlot2</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="data-visualization.html"><a href="data-visualization.html#syntax-1"><i class="fa fa-check"></i><b>8.2.1</b> Syntax</a></li>
+<li class="chapter" data-level="8.2.2" data-path="data-visualization.html"><a href="data-visualization.html#basic-data-plotting"><i class="fa fa-check"></i><b>8.2.2</b> Basic Data Plotting</a></li>
+<li class="chapter" data-level="8.2.3" data-path="data-visualization.html"><a href="data-visualization.html#data-distributions"><i class="fa fa-check"></i><b>8.2.3</b> Data Distributions</a></li>
+<li class="chapter" data-level="8.2.4" data-path="data-visualization.html"><a href="data-visualization.html#extended-syntax"><i class="fa fa-check"></i><b>8.2.4</b> Extended Syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="data-visualization.html"><a href="data-visualization.html#alternatives-1"><i class="fa fa-check"></i><b>8.3</b> Alternatives</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#lattice"><i class="fa fa-check"></i>lattice</a></li>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#plotly"><i class="fa fa-check"></i>plotly</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html"><i class="fa fa-check"></i><b>9</b> Mass Spectrometry Data</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#commercial"><i class="fa fa-check"></i><b>9.1</b> Commercial</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#raw-thermo"><i class="fa fa-check"></i><b>9.1.1</b> RAW (Thermo)</a></li>
+<li class="chapter" data-level="9.1.2" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#wiff-sciex"><i class="fa fa-check"></i><b>9.1.2</b> WIFF (Sciex)</a></li>
+<li class="chapter" data-level="9.1.3" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#d-agilent"><i class="fa fa-check"></i><b>9.1.3</b> D (Agilent)</a></li>
+<li class="chapter" data-level="9.1.4" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#d-bruker"><i class="fa fa-check"></i><b>9.1.4</b> D (Bruker)</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#open-access-raw-data"><i class="fa fa-check"></i><b>9.2</b> Open Access Raw Data</a>
+<ul>
 <li class="chapter" data-level="" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#mzxml"><i class="fa fa-check"></i>mzXML</a></li>
 <li class="chapter" data-level="" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#mzml"><i class="fa fa-check"></i>mzML</a></li>
 <li class="chapter" data-level="" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#mzmlb"><i class="fa fa-check"></i>mzMLb</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html"><i class="fa fa-check"></i><b>9</b> Mass Spectrometry R Packages (work in progress)</a>
+<li class="chapter" data-level="10" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html"><i class="fa fa-check"></i><b>10</b> Mass Spectrometry R Packages (work in progress)</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#xcms"><i class="fa fa-check"></i><b>9.1</b> xcms</a></li>
-<li class="chapter" data-level="9.2" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#deqms"><i class="fa fa-check"></i><b>9.2</b> deqms</a></li>
-<li class="chapter" data-level="9.3" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msempire"><i class="fa fa-check"></i><b>9.3</b> msempire</a></li>
-<li class="chapter" data-level="9.4" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msqrob"><i class="fa fa-check"></i><b>9.4</b> msqrob</a></li>
-<li class="chapter" data-level="9.5" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msstatstmt"><i class="fa fa-check"></i><b>9.5</b> MSstatsTMT</a></li>
-<li class="chapter" data-level="9.6" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msstats"><i class="fa fa-check"></i><b>9.6</b> MSstats</a>
+<li class="chapter" data-level="10.1" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#xcms"><i class="fa fa-check"></i><b>10.1</b> xcms</a></li>
+<li class="chapter" data-level="10.2" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#mzr"><i class="fa fa-check"></i><b>10.2</b> mzR</a></li>
+<li class="chapter" data-level="10.3" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#deqms"><i class="fa fa-check"></i><b>10.3</b> deqms</a></li>
+<li class="chapter" data-level="10.4" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msempire"><i class="fa fa-check"></i><b>10.4</b> msempire</a></li>
+<li class="chapter" data-level="10.5" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msqrob"><i class="fa fa-check"></i><b>10.5</b> msqrob</a></li>
+<li class="chapter" data-level="10.6" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msstats"><i class="fa fa-check"></i><b>10.6</b> MSstats</a>
 <ul>
-<li class="chapter" data-level="9.6.1" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#installation-1"><i class="fa fa-check"></i><b>9.6.1</b> Installation</a></li>
-<li class="chapter" data-level="9.6.2" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#loading-data"><i class="fa fa-check"></i><b>9.6.2</b> Loading Data</a></li>
-<li class="chapter" data-level="9.6.3" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#quality-control"><i class="fa fa-check"></i><b>9.6.3</b> Quality Control</a></li>
-<li class="chapter" data-level="9.6.4" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#differential-expression-analysis"><i class="fa fa-check"></i><b>9.6.4</b> Differential Expression Analysis</a></li>
-<li class="chapter" data-level="9.6.5" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#conclusion"><i class="fa fa-check"></i><b>9.6.5</b> Conclusion</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#installation-1"><i class="fa fa-check"></i>Installation</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#loading-data"><i class="fa fa-check"></i>Loading Data</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#quality-control"><i class="fa fa-check"></i>Quality Control</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#differential-expression-analysis"><i class="fa fa-check"></i>Differential Expression Analysis</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#conclusion"><i class="fa fa-check"></i>Conclusion</a></li>
 </ul></li>
-<li class="chapter" data-level="9.7" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msgrob2"><i class="fa fa-check"></i><b>9.7</b> msgrob2</a>
+<li class="chapter" data-level="10.7" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msgrob2"><i class="fa fa-check"></i><b>10.7</b> msgrob2</a>
 <ul>
-<li class="chapter" data-level="9.7.1" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#code-examples"><i class="fa fa-check"></i><b>9.7.1</b> Code Examples</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#installation-2"><i class="fa fa-check"></i>Installation</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#estimating-parameters"><i class="fa fa-check"></i>Estimating Parameters</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#estimating-covariance-matrix"><i class="fa fa-check"></i>Estimating Covariance Matrix</a></li>
 </ul></li>
-<li class="chapter" data-level="9.8" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#statspro-r-package"><i class="fa fa-check"></i><b>9.8</b> StatsPro R Package</a></li>
-<li class="chapter" data-level="9.9" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#tidyproteomics"><i class="fa fa-check"></i><b>9.9</b> Tidyproteomics</a>
+<li class="chapter" data-level="10.8" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#statspro-r-package"><i class="fa fa-check"></i><b>10.8</b> StatsPro R Package</a></li>
+<li class="chapter" data-level="10.9" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#tidyproteomics"><i class="fa fa-check"></i><b>10.9</b> Tidyproteomics</a>
 <ul>
-<li class="chapter" data-level="9.9.1" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#loading-data-1"><i class="fa fa-check"></i><b>9.9.1</b> Loading Data</a></li>
-<li class="chapter" data-level="9.9.2" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#data-summaries"><i class="fa fa-check"></i><b>9.9.2</b> Data Summaries</a></li>
-<li class="chapter" data-level="9.9.3" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#normalization-and-imputation"><i class="fa fa-check"></i><b>9.9.3</b> Normalization and Imputation</a></li>
-<li class="chapter" data-level="9.9.4" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#expression-analysis"><i class="fa fa-check"></i><b>9.9.4</b> Expression Analysis</a></li>
-<li class="chapter" data-level="9.9.5" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#advanced"><i class="fa fa-check"></i><b>9.9.5</b> Advanced</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#installation-3"><i class="fa fa-check"></i>Installation</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#loading-data-1"><i class="fa fa-check"></i>Loading Data</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#data-summaries"><i class="fa fa-check"></i>Data Summaries</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#normalization-and-imputation"><i class="fa fa-check"></i>Normalization and Imputation</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#expression-analysis"><i class="fa fa-check"></i>Expression Analysis</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>10</b> Sharing</a>
+<li class="chapter" data-level="11" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>11</b> Sharing</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>10.1</b> Packrat</a>
+<li class="chapter" data-level="11.1" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>11.1</b> Packrat</a>
 <ul>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#initiating-a-packrat-project"><i class="fa fa-check"></i>Initiating a Packrat Project</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#installing-a-package-into-the-project-library"><i class="fa fa-check"></i>Installing a Package into the Project Library</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#loading-a-package-from-the-project-library"><i class="fa fa-check"></i>Loading a Package from the Project Library</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#updating-a-package-in-the-project-library"><i class="fa fa-check"></i>Updating a Package in the Project Library</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="sharing.html"><a href="sharing.html#notebooks"><i class="fa fa-check"></i><b>10.2</b> Notebooks</a>
+<li class="chapter" data-level="11.2" data-path="sharing.html"><a href="sharing.html#notebooks"><i class="fa fa-check"></i><b>11.2</b> Notebooks</a>
 <ul>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-notebooks"><i class="fa fa-check"></i>Using Notebooks</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-a-notebook"><i class="fa fa-check"></i>Sharing A Notebook</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="sharing.html"><a href="sharing.html#github"><i class="fa fa-check"></i><b>10.3</b> GitHub</a>
+<li class="chapter" data-level="11.3" data-path="sharing.html"><a href="sharing.html#github"><i class="fa fa-check"></i><b>11.3</b> GitHub</a>
 <ul>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-use-github"><i class="fa fa-check"></i>How to Use GitHub</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-share-a-github-repository"><i class="fa fa-check"></i>How to Share A GitHub Repository</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>10.4</b> Docker</a></li>
-<li class="chapter" data-level="10.5" data-path="sharing.html"><a href="sharing.html#r-packages"><i class="fa fa-check"></i><b>10.5</b> R Packages</a>
+<li class="chapter" data-level="11.4" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>11.4</b> Docker</a></li>
+<li class="chapter" data-level="11.5" data-path="sharing.html"><a href="sharing.html#r-packages"><i class="fa fa-check"></i><b>11.5</b> R Packages</a>
 <ul>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-a-package-in-rstudio"><i class="fa fa-check"></i>Creating a Package in RStudio</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-the-package"><i class="fa fa-check"></i>Using the Package</a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>10.6</b> R Shiny Applications</a>
+<li class="chapter" data-level="11.6" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>11.6</b> R Shiny Applications</a>
 <ul>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-create-an-r-shiny-application-in-the-rstudio-ide"><i class="fa fa-check"></i>How to Create an R Shiny Application in the RStudio IDE</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#example-of-an-r-shiny-application-for-plotting-points"><i class="fa fa-check"></i>Example of an R Shiny Application for Plotting Points</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html"><i class="fa fa-check"></i>Answers to Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#the-basics-1"><i class="fa fa-check"></i><strong>4</strong> The Basics</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-structures-1"><i class="fa fa-check"></i><strong>5</strong> Data Structures</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#tidyverse-2"><i class="fa fa-check"></i><strong>6</strong> Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-1"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/jeffsocal/asms_r_intro" target="blank">Published with bookdown</a></li>
@@ -323,8 +377,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-visualization" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">Chapter 7</span> Data Visualization<a href="data-visualization.html#data-visualization" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="data-visualization" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Data Visualization<a href="data-visualization.html#data-visualization" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Visualizing your data is crucial because it helps you understand the patterns, trends, and relationships within the data. A well-designed visualization can make complex data easy to understand and convey insights that would be hard to discern from raw data.</p>
 <div class="infobox skill">
 <p>At the end of this chapter you should be able to:<br />
@@ -335,7 +389,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Anscombe’s quartet is a classic example that demonstrates the importance of visualizing your data. This quartet comprises four datasets with nearly identical simple descriptive statistics. However, when graphed, they have very different distributions and appear very different from one another. This example shows that relying solely on summary statistics to understand data can be misleading and inadequate.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-65">Table 7.1: </span>Summary stats for Anscombe’s quartet.</caption>
+<caption><span id="tab:unnamed-chunk-96">Table 8.1: </span>Summary stats for Anscombe’s quartet.</caption>
 <colgroup>
 <col width="6%" />
 <col width="10%" />
@@ -401,29 +455,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<p><img src="_main_files/figure-html/unnamed-chunk-66-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-97-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>In data analysis, creating a plot to convey a message or demonstrate a result is a common endpoint. To achieve this, this book utilizes the <code>GGPlot2</code> package, which is part of the <code>Tidyverse</code>. This package complements the data pipelining demonstrated in the previous chapters, making it a perfect choice for creating a wide range of plots, from simple scatter plots to complex heat maps, making it ideal for data visualization.</p>
-<div id="base-plot" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Base: plot<a href="data-visualization.html#base-plot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="base-plot" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Base: plot<a href="data-visualization.html#base-plot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>R comes standard with the fairly basic plotting function <code>plot()</code>. While this function forms the basis for all plotting interactions in R, it can be greatly extended with additional packages. Two such packages will be explored in this chapter, <code>GGplot2</code> and <code>Plotly</code>. The former is great for static publication quality plots, of which you will begin to recognize, while the latter provides stunning interactive graphics suitable for web development and Shiny applications.</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="data-visualization.html#cb116-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>),<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-67-1.png" width="384" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="data-visualization.html#cb117-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="at">x1 =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>), <span class="at">y1 =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) )</span>
-<span id="cb117-2"><a href="data-visualization.html#cb117-2" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">plot</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-68-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="data-visualization.html#cb157-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>),<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-98-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="data-visualization.html#cb158-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="at">x1 =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>), <span class="at">y1 =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) )</span>
+<span id="cb158-2"><a href="data-visualization.html#cb158-2" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">plot</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-99-1.png" width="384" style="display: block; margin: auto;" /></p>
 
 <!--# JEFF -->
 </div>
-<div id="ggplot" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> GGPlot<a href="data-visualization.html#ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="data-visualization.html#cb118-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-<div id="syntax-1" class="section level3 hasAnchor" number="7.2.1">
-<h3><span class="header-section-number">7.2.1</span> Syntax<a href="data-visualization.html#syntax-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="ggplot2-1" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> GGPlot2<a href="data-visualization.html#ggplot2-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The motivation behind GGplot is based on the grammar of graphics such that</p>
 <blockquote>
 <p><em>“the idea that you can build every graph from the same few components”</em></p>
 </blockquote>
 <p>Ideally this accomplishes dual goals of allowing you to quickly construct plots for initial analyses and checking for oddities (as explained above) and following the logical process of the plot construction.</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="data-visualization.html#cb159-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div id="syntax-1" class="section level3 hasAnchor" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> Syntax<a href="data-visualization.html#syntax-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To graph in GGPlot there are a few core embodiments that need to be considered.</p>
 <table>
 <colgroup>
@@ -454,115 +508,115 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="data-visualization.html#cb119-1" tabindex="-1"></a><span class="co"># the basic structure</span></span>
-<span id="cb119-2"><a href="data-visualization.html#cb119-2" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(x,y)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">coord_cartiesian</span>()</span>
-<span id="cb119-3"><a href="data-visualization.html#cb119-3" tabindex="-1"></a></span>
-<span id="cb119-4"><a href="data-visualization.html#cb119-4" tabindex="-1"></a><span class="co"># combined with dplyr makes for a readable process</span></span>
-<span id="cb119-5"><a href="data-visualization.html#cb119-5" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(x,y)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="data-visualization.html#cb160-1" tabindex="-1"></a><span class="co"># the basic structure</span></span>
+<span id="cb160-2"><a href="data-visualization.html#cb160-2" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(x,y)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">coord_cartiesian</span>()</span>
+<span id="cb160-3"><a href="data-visualization.html#cb160-3" tabindex="-1"></a></span>
+<span id="cb160-4"><a href="data-visualization.html#cb160-4" tabindex="-1"></a><span class="co"># combined with dplyr makes for a readable process</span></span>
+<span id="cb160-5"><a href="data-visualization.html#cb160-5" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(x,y)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
 <p>In this example the <code>ggplot()</code> function contains the two components, the data table <code>data</code> and mapping function <code>aes()</code>. Since <em>GGPlot</em> follows a layered modality, the <code>ggplot()</code> function “sets” the canvas and passes the data table <code>data</code> and mapping function <code>aes()</code> to all the functions that follow with the <code>+</code> operator.</p>
 <p>Lets create some data …</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="data-visualization.html#cb120-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">5</span>)</span>
-<span id="cb120-2"><a href="data-visualization.html#cb120-2" tabindex="-1"></a>n_peaks <span class="ot">&lt;-</span> <span class="dv">300</span></span>
-<span id="cb120-3"><a href="data-visualization.html#cb120-3" tabindex="-1"></a>tbl_mz <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb120-4"><a href="data-visualization.html#cb120-4" tabindex="-1"></a>  <span class="at">mz =</span> <span class="fu">sample</span>(<span class="dv">3500</span><span class="sc">:</span><span class="dv">20000</span><span class="sc">/</span><span class="dv">10</span>, n_peaks),</span>
-<span id="cb120-5"><a href="data-visualization.html#cb120-5" tabindex="-1"></a>  <span class="at">int =</span> <span class="fu">rlnorm</span>(<span class="at">meanlog =</span> <span class="dv">5</span>, <span class="at">sdlog =</span> <span class="dv">2</span>, n_peaks),</span>
-<span id="cb120-6"><a href="data-visualization.html#cb120-6" tabindex="-1"></a>  <span class="at">class =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&#39;A&#39;</span>,<span class="st">&#39;B&#39;</span>,<span class="st">&#39;C&#39;</span>,<span class="st">&#39;D&#39;</span>), n_peaks, <span class="at">replace =</span> <span class="cn">TRUE</span>) </span>
-<span id="cb120-7"><a href="data-visualization.html#cb120-7" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="data-visualization.html#cb161-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">5</span>)</span>
+<span id="cb161-2"><a href="data-visualization.html#cb161-2" tabindex="-1"></a>n_peaks <span class="ot">&lt;-</span> <span class="dv">300</span></span>
+<span id="cb161-3"><a href="data-visualization.html#cb161-3" tabindex="-1"></a>tbl_mz <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb161-4"><a href="data-visualization.html#cb161-4" tabindex="-1"></a>  <span class="at">mz =</span> <span class="fu">sample</span>(<span class="dv">3500</span><span class="sc">:</span><span class="dv">20000</span><span class="sc">/</span><span class="dv">10</span>, n_peaks),</span>
+<span id="cb161-5"><a href="data-visualization.html#cb161-5" tabindex="-1"></a>  <span class="at">int =</span> <span class="fu">rlnorm</span>(<span class="at">meanlog =</span> <span class="dv">5</span>, <span class="at">sdlog =</span> <span class="dv">2</span>, n_peaks),</span>
+<span id="cb161-6"><a href="data-visualization.html#cb161-6" tabindex="-1"></a>  <span class="at">class =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&#39;A&#39;</span>,<span class="st">&#39;B&#39;</span>,<span class="st">&#39;C&#39;</span>,<span class="st">&#39;D&#39;</span>), n_peaks, <span class="at">replace =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb161-7"><a href="data-visualization.html#cb161-7" tabindex="-1"></a>)</span></code></pre></div>
 </div>
-<div id="basic-data-plotting" class="section level3 hasAnchor" number="7.2.2">
-<h3><span class="header-section-number">7.2.2</span> Basic Data Plotting<a href="data-visualization.html#basic-data-plotting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="basic-data-plotting" class="section level3 hasAnchor" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> Basic Data Plotting<a href="data-visualization.html#basic-data-plotting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="points-and-lines" class="section level4 unnumbered hasAnchor">
 <h4>Points and Lines<a href="data-visualization.html#points-and-lines" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Points and lines graphing is a simple way of representing data in a two-dimensional space. In this graph, we use points to represent individual data values, and lines to connect them. The x-axis usually represents the <strong>independent</strong> variable while the y-axis represents the <strong>dependent</strong> variable - or in other words, what <em>y</em> was observed while measuring <em>x</em>.</p>
 <p>To plot a point, we use an ordered pair of values (x, y) that correspond to the position of the point on the graph. For example, the point (2, 5) would be plotted 2 units to the right on the x-axis and 5 units up on the y-axis.</p>
 <p>We can also connect points with lines to show a trend or pattern in the data. These lines can be straight or curved, depending on the nature of the data. A straight line can be drawn to connect two points or to represent a linear relationship between the variables.</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="data-visualization.html#cb121-1" tabindex="-1"></a>p01 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(mz, int)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
-<span id="cb121-2"><a href="data-visualization.html#cb121-2" tabindex="-1"></a>p02 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(mz, int)) <span class="sc">+</span> <span class="fu">geom_line</span>()</span>
-<span id="cb121-3"><a href="data-visualization.html#cb121-3" tabindex="-1"></a>p03 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(mz, int)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">&#39;red&#39;</span>) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&#39;black&#39;</span>)</span>
-<span id="cb121-4"><a href="data-visualization.html#cb121-4" tabindex="-1"></a>p04 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(mz, int)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&#39;black&#39;</span>) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">&#39;red&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="data-visualization.html#cb162-1" tabindex="-1"></a>p01 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(mz, int)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb162-2"><a href="data-visualization.html#cb162-2" tabindex="-1"></a>p02 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(mz, int)) <span class="sc">+</span> <span class="fu">geom_line</span>()</span>
+<span id="cb162-3"><a href="data-visualization.html#cb162-3" tabindex="-1"></a>p03 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(mz, int)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">&#39;red&#39;</span>) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&#39;black&#39;</span>)</span>
+<span id="cb162-4"><a href="data-visualization.html#cb162-4" tabindex="-1"></a>p04 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(mz, int)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&#39;black&#39;</span>) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">&#39;red&#39;</span>)</span></code></pre></div>
 <p>It’s important to take note of the difference between plots <em>p03</em> and <em>p04</em>. While both plots showcase a similar data representation, a closer look reveals a notable difference. Specifically, in the latter plot (<em>p04</em>), we can see that the red points appear under the black line. This occurs because the points were layered first, and then the lines were layered over them. This is a crucial distinction to make as it highlights the importance of the order in which layers are applied in the plot.
-<img src="_main_files/figure-html/unnamed-chunk-74-1.png" width="768" style="display: block; margin: auto;" /></p>
+<img src="_main_files/figure-html/unnamed-chunk-105-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="segments" class="section level4 unnumbered hasAnchor">
 <h4>Segments<a href="data-visualization.html#segments" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Line segments are an important concept in geometry and are used in various applications. A line segment is a part of a line that is bounded by two distinct end points. It is also a default representation of centroided mass spectra. In this case the segment will start and end on the same <em>x</em> (mz), while the <em>y</em> (int) component will end at 0.</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="data-visualization.html#cb122-1" tabindex="-1"></a>p05 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
-<span id="cb122-2"><a href="data-visualization.html#cb122-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(mz, int)) <span class="sc">+</span> </span>
-<span id="cb122-3"><a href="data-visualization.html#cb122-3" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">xend =</span> mz, <span class="at">yend =</span> <span class="dv">0</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-76-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="data-visualization.html#cb163-1" tabindex="-1"></a>p05 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
+<span id="cb163-2"><a href="data-visualization.html#cb163-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(mz, int)) <span class="sc">+</span> </span>
+<span id="cb163-3"><a href="data-visualization.html#cb163-3" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">xend =</span> mz, <span class="at">yend =</span> <span class="dv">0</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-107-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="bar-chart" class="section level4 unnumbered hasAnchor">
 <h4>Bar Chart<a href="data-visualization.html#bar-chart" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When it comes to representing categorical data, bar charts are considered to be the most effective visualization tool. Bar charts are simple, yet powerful, and can be used to display data in a clear and concise way. They are easy to read and understand, and are a popular choice among data analysts, researchers, and business professionals. Whether you’re trying to visualize sales data, survey results, or demographic information, bar charts are a great option to consider. So, if you’re looking for a way to represent categorical data, consider using a bar chart for the most accurate and comprehensive representation.</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="data-visualization.html#cb123-1" tabindex="-1"></a>p06 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
-<span id="cb123-2"><a href="data-visualization.html#cb123-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(class)) <span class="sc">+</span> </span>
-<span id="cb123-3"><a href="data-visualization.html#cb123-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-78-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="data-visualization.html#cb164-1" tabindex="-1"></a>p06 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
+<span id="cb164-2"><a href="data-visualization.html#cb164-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(class)) <span class="sc">+</span> </span>
+<span id="cb164-3"><a href="data-visualization.html#cb164-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-109-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="pie-chart" class="section level4 unnumbered hasAnchor">
 <h4>Pie Chart<a href="data-visualization.html#pie-chart" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>You maybe considering a pie chart, which is a circular diagram divided into sectors, with each sector representing a proportion of the whole. It is commonly used to display percentages, where the sum of the sectors equals 100%. There is no specific <code>geom</code> to build a pie-chart with ggplot2. The trick is to build a barplot and use <code>coord_polar()</code> to make it circular. However, interpreting pie charts can be challenging since humans are not very skilled at reading angles. For instance, it is often difficult to determine which group is the largest and to arrange them by value. As a result, it is advisable to refrain from using pie charts.</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="data-visualization.html#cb124-1" tabindex="-1"></a>p07 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(class, <span class="at">fill=</span>class)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span>
-<span id="cb124-2"><a href="data-visualization.html#cb124-2" tabindex="-1"></a>p08 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(class, <span class="at">fill=</span>class)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">coord_flip</span>()</span>
-<span id="cb124-3"><a href="data-visualization.html#cb124-3" tabindex="-1"></a>p09 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="dv">1</span>, <span class="at">fill=</span>class)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&#39;fill&#39;</span>) <span class="sc">+</span> <span class="fu">coord_polar</span>(<span class="at">theta =</span> <span class="st">&#39;y&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-80-1.png" width="1152" style="display: block; margin: auto;" />
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="data-visualization.html#cb165-1" tabindex="-1"></a>p07 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(class, <span class="at">fill=</span>class)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span>
+<span id="cb165-2"><a href="data-visualization.html#cb165-2" tabindex="-1"></a>p08 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(class, <span class="at">fill=</span>class)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">coord_flip</span>()</span>
+<span id="cb165-3"><a href="data-visualization.html#cb165-3" tabindex="-1"></a>p09 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="dv">1</span>, <span class="at">fill=</span>class)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&#39;fill&#39;</span>) <span class="sc">+</span> <span class="fu">coord_polar</span>(<span class="at">theta =</span> <span class="st">&#39;y&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-111-1.png" width="1152" style="display: block; margin: auto;" />
 Note how difficult it is in the pie chart to tell (by eye) that <em>A</em> is the smallest.</p>
 </div>
 </div>
-<div id="data-distributions" class="section level3 hasAnchor" number="7.2.3">
-<h3><span class="header-section-number">7.2.3</span> Data Distributions<a href="data-visualization.html#data-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="data-distributions" class="section level3 hasAnchor" number="8.2.3">
+<h3><span class="header-section-number">8.2.3</span> Data Distributions<a href="data-visualization.html#data-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In statistics, a distribution refers to the way in which a set of data is spread out or dispersed. It describes the pattern of values that a variable can take and how frequently each value occurs. A distribution can be characterized by its shape, center, and spread, and can be represented graphically using tools such as histograms, box plots, and density plots.</p>
 <div id="histograms" class="section level4 unnumbered hasAnchor">
 <h4>Histograms<a href="data-visualization.html#histograms" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>A histogram is a graphical representation of the distribution of a dataset. It is a type of bar chart that displays the frequency of data values falling into specified intervals or ranges of values, known as bins. The x-axis of the histogram represents the bins or intervals, and the y-axis represents the frequency or count of values falling into each bin.</p>
 <p>Histograms are widely used to summarize large datasets and identify patterns or trends and to visualize the shape of a distribution, whether it is symmetric or skewed, and whether it has any outliers or gaps in the data. They can also be used to compare the distributions of two or more datasets, by plotting them on the same graph with different colors or patterns.</p>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="data-visualization.html#cb125-1" tabindex="-1"></a>p10 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
-<span id="cb125-2"><a href="data-visualization.html#cb125-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">log10</span>(int))) <span class="sc">+</span> </span>
-<span id="cb125-3"><a href="data-visualization.html#cb125-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-82-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="data-visualization.html#cb166-1" tabindex="-1"></a>p10 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
+<span id="cb166-2"><a href="data-visualization.html#cb166-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">log10</span>(int))) <span class="sc">+</span> </span>
+<span id="cb166-3"><a href="data-visualization.html#cb166-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-113-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="density" class="section level4 unnumbered hasAnchor">
 <h4>Density<a href="data-visualization.html#density" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>A density plot is a graphical representation of the distribution of a dataset. It is formed by smoothing the data values and representing them as a continuous probability density function. The density plot is a variation of the histogram that provides a smoother representation of the data, eliminating the need for binning. It is particularly useful when the data is continuous and the sample size is large. The density plot can be used to identify the shape of the distribution, the presence of multiple modes, and the presence of outliers. Again, it can also be used to compare the distributions of two or more datasets by overlaying them on the same plot.</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="data-visualization.html#cb126-1" tabindex="-1"></a>p11 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
-<span id="cb126-2"><a href="data-visualization.html#cb126-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">log10</span>(int))) <span class="sc">+</span> </span>
-<span id="cb126-3"><a href="data-visualization.html#cb126-3" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-84-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="data-visualization.html#cb167-1" tabindex="-1"></a>p11 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
+<span id="cb167-2"><a href="data-visualization.html#cb167-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">log10</span>(int))) <span class="sc">+</span> </span>
+<span id="cb167-3"><a href="data-visualization.html#cb167-3" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-115-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="box-plot" class="section level4 unnumbered hasAnchor">
 <h4>Box-Plot<a href="data-visualization.html#box-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>One of the most commonly used types of plots in GGplot2 is the box plot. A box plot is used to display the distribution of a continuous variable. It shows the median, interquartile range, and any outliers present in the data.</p>
 <p>Box plots are useful in scientific analysis because they allow us to quickly see the distribution of a variable and identify any potential outliers. They are particularly useful when comparing the distribution of a variable across different groups or categories. For example, we may use a box plot to compare the distribution of values across different class levels.</p>
 <p>To create a box plot in GGplot2, we use the <code>geom_boxplot()</code> function. We specify the variable we want to plot on the y-axis and any grouping variables on the x-axis.</p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="data-visualization.html#cb127-1" tabindex="-1"></a>p12 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
-<span id="cb127-2"><a href="data-visualization.html#cb127-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(class, <span class="fu">log10</span>(int))) <span class="sc">+</span> </span>
-<span id="cb127-3"><a href="data-visualization.html#cb127-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-86-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="data-visualization.html#cb168-1" tabindex="-1"></a>p12 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
+<span id="cb168-2"><a href="data-visualization.html#cb168-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(class, <span class="fu">log10</span>(int))) <span class="sc">+</span> </span>
+<span id="cb168-3"><a href="data-visualization.html#cb168-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-117-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="extended-syntax" class="section level3 hasAnchor" number="7.2.4">
-<h3><span class="header-section-number">7.2.4</span> Extended Syntax<a href="data-visualization.html#extended-syntax" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="extended-syntax" class="section level3 hasAnchor" number="8.2.4">
+<h3><span class="header-section-number">8.2.4</span> Extended Syntax<a href="data-visualization.html#extended-syntax" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One way to enhance the functionality of ggplots is by using additional modifiers. These modifiers can help you to create more intricate and detailed visualizations that better represent your data. By tweaking the parameters of your ggplots, you can create visualizations that are more informative, aesthetically pleasing, and tailored to your specific needs. Whether you want to adjust the color scheme, add annotations, or modify the axis labels, additional modifiers can help you to achieve your desired outcome.</p>
 <div id="colors" class="section level4 unnumbered hasAnchor">
 <h4>Colors<a href="data-visualization.html#colors" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We saw a bit how to adjust colors in the previous plots. The two color arguments to consider are <code>color</code>, which modifies the point, line and edge color, and <code>fill</code>, which modifies the internal color of a shape for plots such as <code>geom_bar</code> and <code>geom_histogram</code>.</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="data-visualization.html#cb128-1" tabindex="-1"></a>p13 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
-<span id="cb128-2"><a href="data-visualization.html#cb128-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">log10</span>(int))) <span class="sc">+</span> </span>
-<span id="cb128-3"><a href="data-visualization.html#cb128-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">&#39;blue&#39;</span>, <span class="at">fill =</span> <span class="st">&#39;purple&#39;</span>, <span class="at">binwidth =</span> <span class="dv">1</span>)</span>
-<span id="cb128-4"><a href="data-visualization.html#cb128-4" tabindex="-1"></a></span>
-<span id="cb128-5"><a href="data-visualization.html#cb128-5" tabindex="-1"></a>p14 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
-<span id="cb128-6"><a href="data-visualization.html#cb128-6" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">log10</span>(int))) <span class="sc">+</span> </span>
-<span id="cb128-7"><a href="data-visualization.html#cb128-7" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">&#39;red&#39;</span>, <span class="at">fill =</span> <span class="st">&#39;orange&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-88-1.png" width="768" style="display: block; margin: auto;" />
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="data-visualization.html#cb169-1" tabindex="-1"></a>p13 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
+<span id="cb169-2"><a href="data-visualization.html#cb169-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">log10</span>(int))) <span class="sc">+</span> </span>
+<span id="cb169-3"><a href="data-visualization.html#cb169-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">&#39;blue&#39;</span>, <span class="at">fill =</span> <span class="st">&#39;purple&#39;</span>, <span class="at">binwidth =</span> <span class="dv">1</span>)</span>
+<span id="cb169-4"><a href="data-visualization.html#cb169-4" tabindex="-1"></a></span>
+<span id="cb169-5"><a href="data-visualization.html#cb169-5" tabindex="-1"></a>p14 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
+<span id="cb169-6"><a href="data-visualization.html#cb169-6" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">log10</span>(int))) <span class="sc">+</span> </span>
+<span id="cb169-7"><a href="data-visualization.html#cb169-7" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">&#39;red&#39;</span>, <span class="at">fill =</span> <span class="st">&#39;orange&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-119-1.png" width="768" style="display: block; margin: auto;" />
 Colors can also take on a transparency called <code>alpha</code>, which allows one layer to show through when two or more are plotted together.</p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="data-visualization.html#cb129-1" tabindex="-1"></a>p15 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
-<span id="cb129-2"><a href="data-visualization.html#cb129-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">log10</span>(int))) <span class="sc">+</span> </span>
-<span id="cb129-3"><a href="data-visualization.html#cb129-3" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">fill =</span> class))</span>
-<span id="cb129-4"><a href="data-visualization.html#cb129-4" tabindex="-1"></a></span>
-<span id="cb129-5"><a href="data-visualization.html#cb129-5" tabindex="-1"></a>p16 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
-<span id="cb129-6"><a href="data-visualization.html#cb129-6" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">log10</span>(int))) <span class="sc">+</span> </span>
-<span id="cb129-7"><a href="data-visualization.html#cb129-7" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">fill =</span> class), <span class="at">alpha =</span> .<span class="dv">25</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-90-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="data-visualization.html#cb170-1" tabindex="-1"></a>p15 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
+<span id="cb170-2"><a href="data-visualization.html#cb170-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">log10</span>(int))) <span class="sc">+</span> </span>
+<span id="cb170-3"><a href="data-visualization.html#cb170-3" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">fill =</span> class))</span>
+<span id="cb170-4"><a href="data-visualization.html#cb170-4" tabindex="-1"></a></span>
+<span id="cb170-5"><a href="data-visualization.html#cb170-5" tabindex="-1"></a>p16 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
+<span id="cb170-6"><a href="data-visualization.html#cb170-6" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">log10</span>(int))) <span class="sc">+</span> </span>
+<span id="cb170-7"><a href="data-visualization.html#cb170-7" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">fill =</span> class), <span class="at">alpha =</span> .<span class="dv">25</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-121-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="scales" class="section level4 unnumbered hasAnchor">
 <h4>Scales<a href="data-visualization.html#scales" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -571,28 +625,28 @@ Colors can also take on a transparency called <code>alpha</code>, which allows o
 <h5>Log10 Scale<a href="data-visualization.html#log10-scale" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Logarithmic scales are useful when the data spans several orders of magnitude. GGplot2 makes it easy to create log10 scales using the <code>scale_y_log10()</code> and <code>scale_x_log10()</code> functions.</p>
 <p>Using the same examples from above, yet instead of applying the <code>log10()</code> function directly to the variable, we can apply it to the scale instead.</p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="data-visualization.html#cb130-1" tabindex="-1"></a>p17 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
-<span id="cb130-2"><a href="data-visualization.html#cb130-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(int)) <span class="sc">+</span> </span>
-<span id="cb130-3"><a href="data-visualization.html#cb130-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">fill =</span> class), <span class="at">position =</span> <span class="st">&#39;identity&#39;</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb130-4"><a href="data-visualization.html#cb130-4" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span>
-<span id="cb130-5"><a href="data-visualization.html#cb130-5" tabindex="-1"></a></span>
-<span id="cb130-6"><a href="data-visualization.html#cb130-6" tabindex="-1"></a>p18 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
-<span id="cb130-7"><a href="data-visualization.html#cb130-7" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(int)) <span class="sc">+</span> </span>
-<span id="cb130-8"><a href="data-visualization.html#cb130-8" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">fill =</span> class), <span class="at">alpha =</span> .<span class="dv">25</span>) <span class="sc">+</span></span>
-<span id="cb130-9"><a href="data-visualization.html#cb130-9" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-92-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="data-visualization.html#cb171-1" tabindex="-1"></a>p17 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
+<span id="cb171-2"><a href="data-visualization.html#cb171-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(int)) <span class="sc">+</span> </span>
+<span id="cb171-3"><a href="data-visualization.html#cb171-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">fill =</span> class), <span class="at">position =</span> <span class="st">&#39;identity&#39;</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb171-4"><a href="data-visualization.html#cb171-4" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span>
+<span id="cb171-5"><a href="data-visualization.html#cb171-5" tabindex="-1"></a></span>
+<span id="cb171-6"><a href="data-visualization.html#cb171-6" tabindex="-1"></a>p18 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
+<span id="cb171-7"><a href="data-visualization.html#cb171-7" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(int)) <span class="sc">+</span> </span>
+<span id="cb171-8"><a href="data-visualization.html#cb171-8" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">fill =</span> class), <span class="at">alpha =</span> .<span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb171-9"><a href="data-visualization.html#cb171-9" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-123-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>This results in a plot where the y-axis is scaled logarithmically, making it easier to see the differences between the different car classes. Note, that when we specified the <code>binwidth = 1</code> in the <code>geom_histogram()</code>, GGplot2 applied that to the log10 space specified from the <code>scale_x_log10()</code>.</p>
 </div>
 <div id="manual-scales" class="section level5 unnumbered hasAnchor">
 <h5>Manual Scales<a href="data-visualization.html#manual-scales" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Sometimes, we may want to manually define the scale for our plots. For example, we may want to create a plot where the y-axis only shows values between 0 and 10. We can do this using the <code>scale_y_continuous()</code> function in GGplot2.</p>
 <p>Here is an example of how to use the <code>scale_y_continuous()</code> function to manually define the y-axis scale:</p>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="data-visualization.html#cb131-1" tabindex="-1"></a>p19 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
-<span id="cb131-2"><a href="data-visualization.html#cb131-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(mz, int)) <span class="sc">+</span> </span>
-<span id="cb131-3"><a href="data-visualization.html#cb131-3" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">xend =</span> mz, <span class="at">yend =</span> <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb131-4"><a href="data-visualization.html#cb131-4" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">n.breaks =</span> <span class="dv">13</span>) <span class="sc">+</span></span>
-<span id="cb131-5"><a href="data-visualization.html#cb131-5" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">n.breaks =</span> <span class="dv">5</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">500</span>,<span class="dv">1500</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-94-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="data-visualization.html#cb172-1" tabindex="-1"></a>p19 <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span> </span>
+<span id="cb172-2"><a href="data-visualization.html#cb172-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(mz, int)) <span class="sc">+</span> </span>
+<span id="cb172-3"><a href="data-visualization.html#cb172-3" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">xend =</span> mz, <span class="at">yend =</span> <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb172-4"><a href="data-visualization.html#cb172-4" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">n.breaks =</span> <span class="dv">13</span>) <span class="sc">+</span></span>
+<span id="cb172-5"><a href="data-visualization.html#cb172-5" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">n.breaks =</span> <span class="dv">5</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">500</span>,<span class="dv">1500</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-125-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>In this example, we added a manual scale to both the x- and y-axis using the <code>scale_x_continuous()</code> and <code>scale_y_continuous()</code> functions, respectively, and specifying the number of breaks <code>n.breaks =</code> and the limits <code>limits =</code>.</p>
 </div>
 <div id="faceting" class="section level5 unnumbered hasAnchor">
@@ -601,38 +655,38 @@ Colors can also take on a transparency called <code>alpha</code>, which allows o
 <div id="facet_wrap" class="section level6 unnumbered hasAnchor">
 <h6>facet_wrap<a href="data-visualization.html#facet_wrap" class="anchor-section" aria-label="Anchor link to header"></a></h6>
 <p><code>facet_wrap</code> creates a grid of plots by wrapping the facets from left-to-right and top-to-bottom in the plot. Each facet is displayed in a separate panel, and the panels are arranged in rows and columns based on the levels of the specified categorical variable.</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="data-visualization.html#cb132-1" tabindex="-1"></a>p20 <span class="ot">&lt;-</span> p17 <span class="sc">+</span> <span class="fu">facet_wrap</span>(. <span class="sc">~</span> class)</span>
-<span id="cb132-2"><a href="data-visualization.html#cb132-2" tabindex="-1"></a></span>
-<span id="cb132-3"><a href="data-visualization.html#cb132-3" tabindex="-1"></a>p21 <span class="ot">&lt;-</span> p17 <span class="sc">+</span> <span class="fu">facet_wrap</span>(. <span class="sc">~</span> class, <span class="at">scales =</span> <span class="st">&#39;free&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-96-1.png" width="768" style="display: block; margin: auto;" />
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="data-visualization.html#cb173-1" tabindex="-1"></a>p20 <span class="ot">&lt;-</span> p17 <span class="sc">+</span> <span class="fu">facet_wrap</span>(. <span class="sc">~</span> class)</span>
+<span id="cb173-2"><a href="data-visualization.html#cb173-2" tabindex="-1"></a></span>
+<span id="cb173-3"><a href="data-visualization.html#cb173-3" tabindex="-1"></a>p21 <span class="ot">&lt;-</span> p17 <span class="sc">+</span> <span class="fu">facet_wrap</span>(. <span class="sc">~</span> class, <span class="at">scales =</span> <span class="st">&#39;free&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-127-1.png" width="768" style="display: block; margin: auto;" />
 In this example, we are reused ggplot object <code>p17</code> and created two additional plots. The <code>facet_wrap</code> function is used to split the plot into multiple panels based on the categorical variable <code>class</code> using the tilde <code>. ~ class</code>. In this case, the dot <code>.</code> prior to the tilde <code>~</code> tells ggplot to consider only a single variable, <code>class</code> as we had defined it. You can think of the tilde as a type of function <code>this 'by' that</code> or <code>y ~ x</code>. This becomes more important in the <code>facet_grid()</code> function. Notice in the <code>p21</code> plot we set the scales <code>free</code>, allowing each facet to dictate <code>x</code> and <code>y</code> plot scales.</p>
 </div>
 <div id="facet_grid" class="section level6 unnumbered hasAnchor">
 <h6>facet_grid<a href="data-visualization.html#facet_grid" class="anchor-section" aria-label="Anchor link to header"></a></h6>
 <p><code>facet_grid</code> creates a grid of plots by specifying one or more categorical variables that define the rows and columns of the grid. It allows us to create more complex faceted plots than <code>facet_wrap</code>. In this example we will randomly add a new varaible called <code>group</code> that will allow us to create the <code>y</code> direction of the facet.</p>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="data-visualization.html#cb133-1" tabindex="-1"></a>tbl_new <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span></span>
-<span id="cb133-2"><a href="data-visualization.html#cb133-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&#39;positive&#39;</span>, <span class="st">&#39;negative&#39;</span>), n_peaks, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb133-3"><a href="data-visualization.html#cb133-3" tabindex="-1"></a></span>
-<span id="cb133-4"><a href="data-visualization.html#cb133-4" tabindex="-1"></a>p22 <span class="ot">&lt;-</span> tbl_new <span class="sc">%&gt;%</span> </span>
-<span id="cb133-5"><a href="data-visualization.html#cb133-5" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(int)) <span class="sc">+</span> </span>
-<span id="cb133-6"><a href="data-visualization.html#cb133-6" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb133-7"><a href="data-visualization.html#cb133-7" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb133-8"><a href="data-visualization.html#cb133-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(group <span class="sc">~</span> class)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-98-1.png" width="768" style="display: block; margin: auto;" />
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="data-visualization.html#cb174-1" tabindex="-1"></a>tbl_new <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span></span>
+<span id="cb174-2"><a href="data-visualization.html#cb174-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&#39;positive&#39;</span>, <span class="st">&#39;negative&#39;</span>), n_peaks, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb174-3"><a href="data-visualization.html#cb174-3" tabindex="-1"></a></span>
+<span id="cb174-4"><a href="data-visualization.html#cb174-4" tabindex="-1"></a>p22 <span class="ot">&lt;-</span> tbl_new <span class="sc">%&gt;%</span> </span>
+<span id="cb174-5"><a href="data-visualization.html#cb174-5" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(int)) <span class="sc">+</span> </span>
+<span id="cb174-6"><a href="data-visualization.html#cb174-6" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb174-7"><a href="data-visualization.html#cb174-7" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb174-8"><a href="data-visualization.html#cb174-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(group <span class="sc">~</span> class)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-129-1.png" width="768" style="display: block; margin: auto;" />
 To illistrate the difference between <code>facet_wrap()</code> and <code>facet_grid()</code> consider what happens when a set of data is missing. Note in <code>p24</code> it is not immediately intuitive in <code>facet_wrap()</code> that <code>c-negative</code> is missing, where as in <code>facet_grid()</code>, the layout highlights this realization.</p>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="data-visualization.html#cb134-1" tabindex="-1"></a>tbl_new <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span></span>
-<span id="cb134-2"><a href="data-visualization.html#cb134-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&#39;positive&#39;</span>, <span class="st">&#39;negative&#39;</span>), n_peaks, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb134-3"><a href="data-visualization.html#cb134-3" tabindex="-1"></a></span>
-<span id="cb134-4"><a href="data-visualization.html#cb134-4" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(tbl_new<span class="sc">$</span>class <span class="sc">==</span> <span class="st">&#39;C&#39;</span> <span class="sc">&amp;</span> tbl_new<span class="sc">$</span>group <span class="sc">==</span> <span class="st">&#39;negative&#39;</span>)</span>
-<span id="cb134-5"><a href="data-visualization.html#cb134-5" tabindex="-1"></a></span>
-<span id="cb134-6"><a href="data-visualization.html#cb134-6" tabindex="-1"></a>p23 <span class="ot">&lt;-</span> tbl_new[<span class="sc">-</span>w, ] <span class="sc">%&gt;%</span> </span>
-<span id="cb134-7"><a href="data-visualization.html#cb134-7" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(int)) <span class="sc">+</span> </span>
-<span id="cb134-8"><a href="data-visualization.html#cb134-8" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb134-9"><a href="data-visualization.html#cb134-9" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span>
-<span id="cb134-10"><a href="data-visualization.html#cb134-10" tabindex="-1"></a></span>
-<span id="cb134-11"><a href="data-visualization.html#cb134-11" tabindex="-1"></a>p24 <span class="ot">&lt;-</span> p23 <span class="sc">+</span> <span class="fu">facet_wrap</span>(group <span class="sc">~</span> class)</span>
-<span id="cb134-12"><a href="data-visualization.html#cb134-12" tabindex="-1"></a>p25 <span class="ot">&lt;-</span> p23 <span class="sc">+</span> <span class="fu">facet_grid</span>(group <span class="sc">~</span> class)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-100-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="data-visualization.html#cb175-1" tabindex="-1"></a>tbl_new <span class="ot">&lt;-</span> tbl_mz <span class="sc">%&gt;%</span></span>
+<span id="cb175-2"><a href="data-visualization.html#cb175-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&#39;positive&#39;</span>, <span class="st">&#39;negative&#39;</span>), n_peaks, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb175-3"><a href="data-visualization.html#cb175-3" tabindex="-1"></a></span>
+<span id="cb175-4"><a href="data-visualization.html#cb175-4" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(tbl_new<span class="sc">$</span>class <span class="sc">==</span> <span class="st">&#39;C&#39;</span> <span class="sc">&amp;</span> tbl_new<span class="sc">$</span>group <span class="sc">==</span> <span class="st">&#39;negative&#39;</span>)</span>
+<span id="cb175-5"><a href="data-visualization.html#cb175-5" tabindex="-1"></a></span>
+<span id="cb175-6"><a href="data-visualization.html#cb175-6" tabindex="-1"></a>p23 <span class="ot">&lt;-</span> tbl_new[<span class="sc">-</span>w, ] <span class="sc">%&gt;%</span> </span>
+<span id="cb175-7"><a href="data-visualization.html#cb175-7" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(int)) <span class="sc">+</span> </span>
+<span id="cb175-8"><a href="data-visualization.html#cb175-8" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb175-9"><a href="data-visualization.html#cb175-9" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span>
+<span id="cb175-10"><a href="data-visualization.html#cb175-10" tabindex="-1"></a></span>
+<span id="cb175-11"><a href="data-visualization.html#cb175-11" tabindex="-1"></a>p24 <span class="ot">&lt;-</span> p23 <span class="sc">+</span> <span class="fu">facet_wrap</span>(group <span class="sc">~</span> class)</span>
+<span id="cb175-12"><a href="data-visualization.html#cb175-12" tabindex="-1"></a>p25 <span class="ot">&lt;-</span> p23 <span class="sc">+</span> <span class="fu">facet_grid</span>(group <span class="sc">~</span> class)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-131-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 </div>
@@ -657,13 +711,13 @@ To illistrate the difference between <code>facet_wrap()</code> and <code>facet_g
 </ul>
 <p>You can also create your own custom themes by modifying various theme elements. For example, you can change the background color, font, and size of the plot elements. To do this, you can use the <code>element_*()</code> functions. For example, the <code>element_text()</code> function allows you to modify the font size, color, and family of your text.</p>
 <p>Another great feature of GGplot2 themes is that they allow you to maintain consistency across multiple visualizations. If you’re creating a series of plots, applying the same theme to each one will give your work a more polished and professional look.</p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="data-visualization.html#cb135-1" tabindex="-1"></a>p28 <span class="ot">&lt;-</span> p12 <span class="sc">+</span> <span class="fu">theme_gray</span>() <span class="co"># default</span></span>
-<span id="cb135-2"><a href="data-visualization.html#cb135-2" tabindex="-1"></a>p29 <span class="ot">&lt;-</span> p12 <span class="sc">+</span> <span class="fu">theme_dark</span>()</span>
-<span id="cb135-3"><a href="data-visualization.html#cb135-3" tabindex="-1"></a>p30 <span class="ot">&lt;-</span> p12 <span class="sc">+</span> <span class="fu">theme_light</span>()</span>
-<span id="cb135-4"><a href="data-visualization.html#cb135-4" tabindex="-1"></a>p31 <span class="ot">&lt;-</span> p12 <span class="sc">+</span> <span class="fu">theme_classic</span>()</span>
-<span id="cb135-5"><a href="data-visualization.html#cb135-5" tabindex="-1"></a>p32 <span class="ot">&lt;-</span> p12 <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
-<span id="cb135-6"><a href="data-visualization.html#cb135-6" tabindex="-1"></a>p33 <span class="ot">&lt;-</span> p12 <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-103-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="data-visualization.html#cb176-1" tabindex="-1"></a>p28 <span class="ot">&lt;-</span> p12 <span class="sc">+</span> <span class="fu">theme_gray</span>() <span class="co"># default</span></span>
+<span id="cb176-2"><a href="data-visualization.html#cb176-2" tabindex="-1"></a>p29 <span class="ot">&lt;-</span> p12 <span class="sc">+</span> <span class="fu">theme_dark</span>()</span>
+<span id="cb176-3"><a href="data-visualization.html#cb176-3" tabindex="-1"></a>p30 <span class="ot">&lt;-</span> p12 <span class="sc">+</span> <span class="fu">theme_light</span>()</span>
+<span id="cb176-4"><a href="data-visualization.html#cb176-4" tabindex="-1"></a>p31 <span class="ot">&lt;-</span> p12 <span class="sc">+</span> <span class="fu">theme_classic</span>()</span>
+<span id="cb176-5"><a href="data-visualization.html#cb176-5" tabindex="-1"></a>p32 <span class="ot">&lt;-</span> p12 <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
+<span id="cb176-6"><a href="data-visualization.html#cb176-6" tabindex="-1"></a>p33 <span class="ot">&lt;-</span> p12 <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-134-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="colors-1" class="section level5 unnumbered hasAnchor">
 <h5>Colors<a href="data-visualization.html#colors-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
@@ -678,25 +732,59 @@ To illistrate the difference between <code>facet_wrap()</code> and <code>facet_g
 <h6>Manual Color Scales<a href="data-visualization.html#manual-color-scales" class="anchor-section" aria-label="Anchor link to header"></a></h6>
 <p>In addition to the Brewer color scales, GGplot2 also allows users to specify custom color scales using the <code>scale_color_manual()</code> or <code>scale_fill_manual()</code> functions. These functions take a vector of colors as an argument, which can be specified using names, hex codes, or RGB values.</p>
 <p>Manual color scales are particularly useful when you want to use specific colors that are not included in the Brewer palettes. For example, if you are creating a visualization for a company and you want to use the company’s brand colors, you can specify the colors using a manual color scale.</p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="data-visualization.html#cb136-1" tabindex="-1"></a>p34 <span class="ot">&lt;-</span> p31</span>
-<span id="cb136-2"><a href="data-visualization.html#cb136-2" tabindex="-1"></a>p35 <span class="ot">&lt;-</span> p31 <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&#39;Set1&#39;</span>)</span>
-<span id="cb136-3"><a href="data-visualization.html#cb136-3" tabindex="-1"></a>p36 <span class="ot">&lt;-</span> p31 <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&#39;Blues&#39;</span>)</span>
-<span id="cb136-4"><a href="data-visualization.html#cb136-4" tabindex="-1"></a>p37 <span class="ot">&lt;-</span> p31 <span class="sc">+</span> <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#d97828&quot;</span>, <span class="st">&quot;#83992a&quot;</span>, <span class="st">&quot;#995d81&quot;</span>,<span class="st">&quot;#44709d&quot;</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-106-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="data-visualization.html#cb177-1" tabindex="-1"></a>p34 <span class="ot">&lt;-</span> p31</span>
+<span id="cb177-2"><a href="data-visualization.html#cb177-2" tabindex="-1"></a>p35 <span class="ot">&lt;-</span> p31 <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&#39;Set1&#39;</span>)</span>
+<span id="cb177-3"><a href="data-visualization.html#cb177-3" tabindex="-1"></a>p36 <span class="ot">&lt;-</span> p31 <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&#39;Blues&#39;</span>)</span>
+<span id="cb177-4"><a href="data-visualization.html#cb177-4" tabindex="-1"></a>p37 <span class="ot">&lt;-</span> p31 <span class="sc">+</span> <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#d97828&quot;</span>, <span class="st">&quot;#83992a&quot;</span>, <span class="st">&quot;#995d81&quot;</span>,<span class="st">&quot;#44709d&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-137-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 </div>
 <div id="package-ggrepel" class="section level4 unnumbered hasAnchor">
 <h4>Package ggrepel<a href="data-visualization.html#package-ggrepel" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 
-<!--# JEFF -->
 </div>
 </div>
 </div>
-<div id="plotly" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> Plotly<a href="data-visualization.html#plotly" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="alternatives-1" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Alternatives<a href="data-visualization.html#alternatives-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="lattice" class="section level3 unnumbered hasAnchor">
+<h3>lattice<a href="data-visualization.html#lattice" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The Lattice package is an R package that is used for plotting graphs, and is based on the grid graphics system. The package provides a high-level interface to grid graphics, which makes it easy to create complex visualizations with an emphasis on multivariate data. It is designed to meet most typical graphics needs with minimal tuning, but can also be easily extended to handle most nonstandard requirements.</p>
+<p>Trellis Graphics, originally developed for S and S-PLUS at the Bell Labs, is a framework for data visualization developed by <em>R. A. Becker, W. S. Cleveland, et al, extending ideas presented in Cleveland’s 1993 book Visualizing Data</em>. The Lattice API is based on the original design in S, but extends it in many ways.</p>
+<p>Various types of lattice plots available for data visualization. Among the different types of plots, <strong>univariate</strong> plots stand out as they utilize only a single variable for plotting. The different options available for univariate plots include bar plots, box-and-whisker plots, kernel density estimates, dot plots, histograms, quantile plots, and one-dimensional scatter plots. <strong>Bivariate</strong> plots involve plotting two variables against each other. Examples of bivariate plots include scatterplots and quantile plots. These types of plots are useful in analyzing the relationship between two variables and can provide valuable insights into the data. <strong>Trivariate</strong> plots, as the name implies, involve plotting three variables and provide a more complex visualization of the data. Options for trivariate plots include level plots, contour plots, three-dimensional scatter plots, and three-dimensional surface plots. These types of plots can be particularly helpful in analyzing complex data sets and identifying patterns in the data that may not be immediately apparent.</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="data-visualization.html#cb178-1" tabindex="-1"></a><span class="fu">library</span>(lattice)</span>
+<span id="cb178-2"><a href="data-visualization.html#cb178-2" tabindex="-1"></a></span>
+<span id="cb178-3"><a href="data-visualization.html#cb178-3" tabindex="-1"></a>p51 <span class="ot">&lt;-</span> <span class="fu">xyplot</span>(int <span class="sc">~</span> mz, <span class="at">data =</span> tbl_mz, <span class="at">main =</span> <span class="st">&quot;Scatter Plot&quot;</span>)</span>
+<span id="cb178-4"><a href="data-visualization.html#cb178-4" tabindex="-1"></a>p52 <span class="ot">&lt;-</span> <span class="fu">xyplot</span>(int <span class="sc">~</span> mz, <span class="at">data =</span> tbl_mz, <span class="at">type=</span><span class="st">&#39;a&#39;</span>, <span class="at">main =</span> <span class="st">&quot;Line Plot&quot;</span>)</span>
+<span id="cb178-5"><a href="data-visualization.html#cb178-5" tabindex="-1"></a>p53 <span class="ot">&lt;-</span> <span class="fu">histogram</span>(<span class="sc">~</span> <span class="fu">log10</span>(int) <span class="sc">|</span> class, <span class="at">data =</span> tbl_mz, <span class="at">main =</span> <span class="st">&quot;Histogram&quot;</span>)</span>
+<span id="cb178-6"><a href="data-visualization.html#cb178-6" tabindex="-1"></a>p54 <span class="ot">&lt;-</span> <span class="fu">densityplot</span>(<span class="sc">~</span> <span class="fu">log10</span>(int) <span class="sc">|</span> class, <span class="at">data =</span> tbl_mz, <span class="at">main =</span> <span class="st">&quot;Density Plot&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-139-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div id="plotly" class="section level3 unnumbered hasAnchor">
+<h3>plotly<a href="data-visualization.html#plotly" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Plotly is an open-source data visualization library that allows you to create interactive visualizations in R <a href="https://plotly.com/r/">plotly.com/r/</a>. It offers a wide range of graphs and charts, including line plots, scatter plots, area charts, bar charts, error bars, box plots, histograms, heatmaps, subplots, plots with multiple-axes, 3D plots, and more. The package is built on top of <strong>htmlwidgets</strong>, which means that you can easily embed your visualizations in web applications or other HTML documents.</p>
+<p>Plotly also nativity supports many data science languages such as R, Python, Julia, Java-script, MATLAB and F#.</p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="data-visualization.html#cb179-1" tabindex="-1"></a><span class="fu">library</span>(plotly)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;plotly&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
+## 
+##     last_plot</code></pre>
+<pre><code>## The following object is masked from &#39;package:stats&#39;:
+## 
+##     filter</code></pre>
+<pre><code>## The following object is masked from &#39;package:graphics&#39;:
+## 
+##     layout</code></pre>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="data-visualization.html#cb184-1" tabindex="-1"></a><span class="fu">plot_ly</span>(tbl_mz, <span class="at">x =</span> <span class="sc">~</span>mz, <span class="at">y =</span> <span class="sc">~</span>int, <span class="at">color =</span> <span class="sc">~</span>class,</span>
+<span id="cb184-2"><a href="data-visualization.html#cb184-2" tabindex="-1"></a>        <span class="at">mode =</span> <span class="st">&quot;markers&quot;</span>, <span class="at">type =</span> <span class="st">&quot;scatter&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb184-3"><a href="data-visualization.html#cb184-3" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="st">&#39;Scatter Plot&#39;</span>)</span></code></pre></div>
+<div id="htmlwidget-debbe8f0ccd12ffaaa3b" style="width:576px;height:288px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-debbe8f0ccd12ffaaa3b">{"x":{"visdat":{"54d126619611":["function () ","plotlyVisDat"]},"cur_data":"54d126619611","attrs":{"54d126619611":{"x":{},"y":{},"mode":"markers","color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Scatter Plot","xaxis":{"domain":[0,1],"automargin":true,"title":"mz"},"yaxis":{"domain":[0,1],"automargin":true,"title":"int"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[1563.8,533.2,444.9,973.5,798.9,1220.3,1374.7,950.5,1746,1171.8,837.9,1513.2,954.4,1569.9,1815.4,977,1645.8,1082,841.6,1483,1990.8,918.1,1826.2,1293.8,1378.2,1328.8,1559.4,1828.3,1358.5,678.7,1164,1097.9,969.7,1287.7,1406.8,1092.8,1621.6,1277.2,1934.3,1120.6,1830.1,925.5,1490.6,1392.8,510.1,866.2,378.6,647.3,1630.3,708.5,381.6,1883.3,724.5,1266,1187.4,403.8,1283.4,519.8,1969.1,1766.9,1496.1,1973.8,885.1,1463.9,456.2,1203.4,1853.7,818.1,1048.6,484.1,1392.7,1668.3],"y":[316.339396962678,43.0531555651166,230.99620712256,4753.74570800894,546.490360530442,0.641619733112295,4755.91653217067,281.583326557862,28.4230329492369,6.35795150217342,553.234632701204,42.7936673891039,291.490778644971,312.980263336391,1621.37962145664,11.3421566459644,123.887798819855,931.931609706924,28.3234157326495,5609.01197963556,38.637769252121,450.859090550323,433.337257705479,112.100725462424,135.693468149475,312.630478034618,70.2859432345316,2446.76203024958,2.09946169083369,149.430537017848,33.9128436209187,43.1563024294809,1637.76461173659,23.2080195447907,61.2771841711284,133.914944356224,1022.6700854748,7.26866554122981,33.8838185180388,379.020330064831,93.8173023421443,143.357638511232,1100.57249948277,368.394999580626,7250.75644622702,321.318076372201,76.6950750294759,10.6777944983854,2834.07295528223,157.642585009362,2379.54508428927,83.8691771690965,4225.7296712429,344.915947775921,125.421813492888,246.632681588529,29.606178892953,347.062128979212,197.155664031152,25.5629355653273,1519.79612669244,2200.00237102161,374.744596459451,931.89826023156,54.9214256381572,73.4921855740536,2652.98907223067,1535.9760206651,0.47756516069906,79.2835197295574,10392.6419241972,90.2801886104816],"mode":"markers","type":"scatter","name":"A","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1662.1,1035.8,1735,554.1,676.3,784.3,1640.3,1162.4,1381.1,1579,451.3,1596.3,466.4,1015.9,1239.4,877.3,1636.2,616.9,1734.4,1088.9,1454.8,1689.5,456,891.1,898.2,1520.3,487,541.2,1491.9,747.7,1625.3,1231.8,1494.2,506.8,1501.4,925.7,1911.6,1892.5,1569.3,836.2,610.8,860.8,1403.8,1600.1,1845.9,1703.2,1456.2,1932.1,606.4,833.8,504.2,522.3,1855.9,840.9,1920,1061,611.1,1801.8,1895.6,1608.6,810.3,1586,847.5,1025.2,901.6,431.3,1008.5,484.5,432.3,1286.5,1806.6,1489.3,630.5,564.6,1691.8,412.6,1786,1500,1349.5,1658.3,1257.6,1963,1616.7],"y":[976.064921042087,33.049033678444,117.893258916082,9542.01384389176,96.8812641977475,1642.97964481095,124.36251908233,180.443493855115,1370.92045939429,34.6316110558086,547.962239053928,8.83927327541216,2394.7608093764,85.6474474055958,203.99609468263,549.060809737898,342.22634138713,186.540488082018,71.8235005028725,369.107004614656,73.7052492506094,3635.1937267304,1577.94311221125,14.4656372607548,110.81402934164,49.045876783738,138.86450856578,4386.9340139696,41.2530931129694,402.990689579754,5232.70042935952,478.008429930017,1029.6059589632,147.920476783523,42.4140574929503,4827.23450191855,38.5397517606116,5201.45769901999,874.426024889437,127.359536270707,1212.64398844618,239.750751443866,104.832608011848,1581.35427573318,3390.47567580813,718.390696520016,31.4918626103281,47.523160578095,295.899616432911,268.138872762834,559.578509356414,211.840716863322,117.314533237309,2316.2552428255,693.557284386504,8.46453638182125,17.8591096885793,16.1923414764331,155.944137557006,1967.80032870898,317.007379986964,18.3222073243497,180.781643773931,567.71900488417,980.467022333278,83.422580095408,92.8540277756817,3.47392263319739,4103.78648805606,40.8009597732513,15.9763548469531,35.5576452914921,452.504790323448,30.4808952621382,72.0863012709346,45.4657717612983,1862.47566290523,25.382559579646,221.552604415902,267.936594264764,60.8702756915095,59.2306301453417,282.712415982258],"mode":"markers","type":"scatter","name":"B","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1667.6,1073.8,709.9,1796.3,1829.2,1267.3,1280,991.2,1891.3,569.3,1243.9,1774.3,498.9,605.7,1661.5,678,1025.9,1187.9,626.5,1512.4,1979.7,1816.9,434.6,665.8,627.5,954.6,500.7,1197.2,1069.3,463.6,929.2,1685.1,964.5,1097.2,1053.2,1716.8,469.3,829.6,1247.2,1524.1,1996.1,1437,1296.9,1681.2,864.4,987.7,1993.5,693.7,615.7,536.2,477.3,976.2,1121,758,1907.5,444.5,1851.1,1678.8,766.7,841.7,1402,907.4,1126.4,1145.1,990.8,1500.4,1164.3,1395.1,1441,1227.9,1062.2,844.8,1117.8,615.3,1985.1,644.5,1674.1,1809.5],"y":[421.366586558392,6.75771917932137,3466.59557543799,96.3105907486478,59.6071453677775,7.81858460072623,4.64092148690518,10906.457974418,595.827429104972,435.911485227864,206.804572085087,89.6653850606128,76.2739968459335,27.0180102726262,277.801205907089,1706.26422889263,1991.07208351096,338.640798418567,61.7564446565989,267.813279096122,244.955161852097,3851.73791640546,1200.85916374048,1634.00059455884,240.984107511011,47.7154324976051,4774.54392097972,227.713304207172,1226.88281253093,573.60681691792,7.75499186354404,10.2938332433096,1929.92686823944,123.343933726038,26.6851746138733,106.41572545138,18481.7985050108,31.5698940954731,2.99087287511884,99.8548120363577,24.3383007198782,230.422590545695,295.802920065314,6.15818436984155,301.123391362927,297.591310410638,11.4631670531544,83.759083164092,228.561843793045,15.8930049005228,27.2914051239238,332.620148851459,3.37282444658354,3.91799002859779,2.17823757528943,14.5154850442091,339.905903810708,2.92394900003927,185.571726643359,318.829892876569,1124.76820404783,1131.60961922328,212.455660125331,586.567468795123,944.240762654834,251.300297514615,114.011995162097,1928.91797588438,68.3092110252193,71.3168653630974,277.606553023986,1126.80215081712,406.87548280187,70.7438038186037,85.7796020986858,1325.55029599816,529.67186048474,31.1466636541553],"mode":"markers","type":"scatter","name":"C","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[737.7,1673,739,1488.6,1733.8,1080.6,1886.3,1796.5,477.9,386.2,1298.3,1401.1,1601.1,1325.7,1914.7,1807.8,511.6,1466.2,1903.6,713.9,1370.2,743,451.1,912.9,839.7,389.6,1187.6,537.9,1277,767.4,879.6,1203,506.6,1281.8,1229.6,593.9,1648.6,400.9,1276.7,1937,947.8,1220.7,1202.4,613.3,1642.8,1045.2,1892.9,503.2,1663.5,1272.2,379.4,699.2,1232.9,1396.7,890.3,755.7,1699.2,399.5,931.3,1406.4,1394.5,355,798,1474.8,903.1,1200.4,1477.3],"y":[1.13028183101442,4.85706914945726,536.911839357284,104.951628635971,0.669370888093889,12.3035589742534,8.58261109861717,170.398073758107,85.2177869436686,962.879847809714,115.757061199178,7891.69053971304,71.6170982128315,31.5854422885556,450.746655522678,2521.14311830679,84.110739841344,30.0727298925422,39.7832897799757,523.602230874283,609.159649527182,1417.31250472318,293.574087473547,25.4392943417999,101.34393184493,3.85320420326774,192.628837922946,371.62142286096,2.40541966111138,43.5794701536177,1837.59359264228,224.506406990801,28810.0690424921,123.208073033961,332.004267359919,163.722955141596,1000.77791592206,31.8455316728577,244.649019135026,125.280626009335,4.37244146925518,1922.55851622189,10.8230708922186,24.2330910834176,659.26208869622,92.9680735719791,297.040248172482,327.953745925116,3.24517997881949,148.099870520004,315.815971752864,28.5305241990304,53.8414400241618,764.585784350655,324.323587086717,61.9007725203961,836.558329041907,7.42431797285982,128.773704748324,1583.29499207549,117.917255965473,1337.10502039953,234.577167502372,2488.62024394622,14.2644349556145,7.16143774684378,33260.5844777559],"mode":"markers","type":"scatter","name":"D","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"textfont":{"color":"rgba(231,138,195,1)"},"error_y":{"color":"rgba(231,138,195,1)"},"error_x":{"color":"rgba(231,138,195,1)"},"line":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 
 <!--# HEATH -->
+</div>
 </div>
 </div>
             </section>
@@ -736,7 +824,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/jeffsocal/asms_r_intro/edit/BRANCH/06_01-visualization.Rmd",
+"link": "https://github.com/jeffsocal/asms_r_intro/edit/BRANCH/08_01-visualization.Rmd",
 "text": "Edit"
 },
 "history": {
