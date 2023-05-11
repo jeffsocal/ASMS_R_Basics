@@ -1,26 +1,23 @@
-## Exercises {.unnumbered}
+## Exercises {-}
 
 1.  Construct the following vector and store as a variable.
-
 ```{r, echo=FALSE}
 str_gbu <- c('red', 'green', 'blue')
 print(str_gbu)
 ```
 
 2.  Extract the 2nd element in the variable.
-
 ```{r, echo=FALSE}
 print(str_gbu[2])
 ```
 
 3.  Construct a numerical vector of length 5, containing the diameters of circles with integer circumferences 1 to 5. Remember PEMDAS.
-
 ```{r, echo=FALSE}
 cir <- (1:5) ^ 2 * pi
+print(cir)
 ```
 
 4.  Extract all circumferences greater than 50.
-
 ```{r, echo=FALSE}
-cir[which(cir > 50)]
+print(cir[which(cir > 50)])
 ```

@@ -1,10 +1,10 @@
 <!--# HEATH -->
 
-## Projects
+# R Studio Projects
 
 Project are how RStudio organizes your work. Think of project as singular goal oriented collection. There are no rules but some basic organizational tips should help simplify your project.
 
-### Creating
+## Creating
 
 Creating a new project is very forgiving, you can create a new directory with a project name, or create a project out of an existing directory.
 
@@ -19,16 +19,16 @@ knitr::include_graphics("images/03_021_new_project_01.png")
 knitr::include_graphics("images/03_021_new_project_02.png")
 ```
 
-### Editing
+## Editing
 
-### Organizing
+## Organizing
 
-#### Data
+### Data
 
-#### Scripts
+### Scripts
 
-#### Results
+### Results
 
-##### Tables
+#### Tables
 
-##### Plots
+#### Plots

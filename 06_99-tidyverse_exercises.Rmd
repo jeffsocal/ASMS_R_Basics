@@ -1,0 +1,46 @@
+## Exercises {-}
+
+1. Pipeline (eg. `%>%`) a data operation that provides the mean of following vector.
+```{r, echo=FALSE}
+set.seed(5)
+vec_data <- rnorm(10, mean = 10, sd = 3) %>% round(2)
+vec_data 
+```
+```{r, echo=FALSE}
+vec_data %>% mean()
+```
+
+2.  Employing a pipeline (eg. `%>%`), construct a tibble with columns named `circ` and `diam` which contains the diameters of circles with integer circumferences 1 to 5. Remember PEMDAS.
+```{r, echo=FALSE}
+library(tidyverse)
+
+tbl_cir <- tibble(
+  circ = 1:5
+) %>%
+  mutate(diam = circ ^ 2 * pi)
+
+tbl_cir
+```
+
+3.  Extract all circumferences greater than 50.
+```{r, echo=FALSE}
+tbl_cir %>% filter(diam > 50)
+```
+
+4. Add a column named `circ_type` where you assign the string *odd* or *even* depending on the column `circ`. Attempt to use the `purrr::map` function, along with the `oddeven()` function from the previous chapter, then compute the mean, standard deviation, and coefficient of variation of the diameters for each `circ_type`.
+```{r, echo=FALSE}
+oddeven <- function(x) { 
+  if(x %% 2 == 0) return('even')
+  else return('odd')
+}
+
+tbl_cir %>% 
+  mutate(circ_type = map(circ, oddeven)) %>%
+  mutate(circ_type = unlist(circ_type)) %>%
+  group_by(circ_type) %>%
+  summarise(
+    diam_mean = mean(diam),
+    diam_sd = sd(diam),
+    diam_cv = diam_sd / diam_mean
+  )
+```

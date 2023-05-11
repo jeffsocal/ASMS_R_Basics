@@ -10,9 +10,7 @@ The `msgrob2` package is particularly useful in situations where data is missing
 | **Code**          | [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/msqrob2.html)                                                                             |
 | **Literature**    | *Molecular & Cellular Proteomics*, **15**(2), 657-668., *Molecular & Cellular Proteomics*, **19**(7), 1209-1219., *Analytical Chemistry*, **92**(9), 6278--6287. |
 
-### Code Examples
-
-#### Installing Package
+### Installation {-}
 
 To install the `msgrob2` package, you can use the following code:
 
@@ -21,16 +19,7 @@ install.packages("msgrob2")
 
 ```
 
-#### Loading Package
-
-After installation, you can load the `msgrob2` package using the following code:
-
-```{r, eval=FALSE}
-library(msgrob2)
-
-```
-
-#### Estimating Parameters
+### Estimating Parameters {-}
 
 To estimate the parameters of a linear model with missing data using `msgrob2`, you can use the `msgrob()` function. The following code demonstrates how to use `msgrob()`:
 
@@ -44,7 +33,7 @@ msgrob(model)
 
 ```
 
-#### Estimating Covariance Matrix
+### Estimating Covariance Matrix {-}
 
 To estimate the covariance matrix using `msgrob2`, you can use the `covrob()` function. The following code demonstrates how to use `covrob()`:
 

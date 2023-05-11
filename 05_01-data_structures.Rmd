@@ -142,7 +142,7 @@ m[which(m/2 > 1)]
 
 Tables are one of the fundamental data structures encountered in data analysis, and what separates them from matrices is the mixed use of numerics and strings, and the orientation that `data.frames` are columns of vectors, with a row association. A table can be cinstructed with the `data.frame()` function as shown in the example.
 
-```{r}
+```{r, eval=FALSE}
 df <- data.frame(
   let = LETTERS,
   pos = 1:length(LETTERS)
@@ -196,7 +196,42 @@ print(my_list[["salary"]])
 
 Lists are also useful for storing and manipulating complex data structures such as data frames and tibbles.
 
-## How to tell what you are dealing with
+## Tibbles
+
+A tibble is a modern data frame in R programming language. Tibble is a part of tidyverse package that provides an efficient and user-friendly way to work with data frames. Tibbles are similar to data frames, but they have better printing capabilities, and they are designed to never alter your data.
+
+Tibbles are created using the `tibble()` function. You can create a tibble by passing vectors, lists, or data frames to the `tibble()` function. Once created, you can manipulate the tibble using the `dplyr` package.
+
+```{r, eval=FALSE}
+library(tidyverse)
+
+df <- tibble(
+  let = LETTERS,
+  pos = 1:length(LETTERS)
+)
+```
+
+```{r, echo=FALSE}
+cat("# A tibble: 26 × 2
+   let     pos
+   <chr> <int>
+ 1 A         1
+ 2 B         2
+ 3 C         3
+ 4 D         4
+ 5 E         5
+ 6 F         6
+ 7 G         7
+ 8 H         8
+ 9 I         9
+10 J        10
+# … with 16 more rows
+# ℹ Use `print(n = ...)` to see more rows")
+```
+
+Tibbles have several advantages over data frames. They print only the first 10 rows and all the columns that fit on the screen. This makes it easier to view and work with large datasets. Tibbles also have better error messages, which makes debugging easier. Additionally, tibbles are more consistent in handling columns with different types of data.
+
+## How to tell what you are dealing with {-}
 
 You can use the `str()` function to peak inside any data object to see how it is structured.
 
@@ -211,7 +246,7 @@ plant_data <- data.frame(
 str(plant_data)
 ```
 
-The contents of a tible as very similar:
+The contents of a tibble is very similar:
 
 ```{r}
 plant_data <- tibble(
@@ -225,7 +260,7 @@ str(plant_data)
 The contents of a linear regression data object are quite different:
 
 ```{r}
-# linear prediction of salary based on age
+# linear prediction of plant growth (eg. height) based on age
 linear_model <- lm(data = plant_data, height_inch ~ age_days)
 
 linear_model
