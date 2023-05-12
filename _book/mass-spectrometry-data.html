@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 Mass Spectrometry Data | Introduction to R for Mass Spectrometrists</title>
+  <title>Chapter 10 Mass Spectrometry Data | Introduction to R for Mass Spectrometrists</title>
   <meta name="description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 Mass Spectrometry Data | Introduction to R for Mass Spectrometrists" />
+  <meta property="og:title" content="Chapter 10 Mass Spectrometry Data | Introduction to R for Mass Spectrometrists" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
   <meta name="github-repo" content="jeffsocal/ASMS_R_Basics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Mass Spectrometry Data | Introduction to R for Mass Spectrometrists" />
+  <meta name="twitter:title" content="Chapter 10 Mass Spectrometry Data | Introduction to R for Mass Spectrometrists" />
   
   <meta name="twitter:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
   
@@ -23,14 +23,14 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2023-05-11" />
+<meta name="date" content="2023-05-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data-visualization.html"/>
+<link rel="prev" href="sharing.html"/>
 <link rel="next" href="mass-spectrometry-r-packages-work-in-progress.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -271,31 +271,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#lattice"><i class="fa fa-check"></i>lattice</a></li>
 <li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#plotly"><i class="fa fa-check"></i>plotly</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#exercises-5"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html"><i class="fa fa-check"></i><b>9</b> Mass Spectrometry Data</a>
+<li class="chapter" data-level="9" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>9</b> Sharing</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#commercial"><i class="fa fa-check"></i><b>9.1</b> Commercial</a>
+<li class="chapter" data-level="9.1" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>9.1</b> Packrat</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#raw-thermo"><i class="fa fa-check"></i><b>9.1.1</b> RAW (Thermo)</a></li>
-<li class="chapter" data-level="9.1.2" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#wiff-sciex"><i class="fa fa-check"></i><b>9.1.2</b> WIFF (Sciex)</a></li>
-<li class="chapter" data-level="9.1.3" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#d-agilent"><i class="fa fa-check"></i><b>9.1.3</b> D (Agilent)</a></li>
-<li class="chapter" data-level="9.1.4" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#d-bruker"><i class="fa fa-check"></i><b>9.1.4</b> D (Bruker)</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#initiating-a-packrat-project"><i class="fa fa-check"></i>Initiating a Packrat Project</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#installing-a-package-into-the-project-library"><i class="fa fa-check"></i>Installing a Package into the Project Library</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#loading-a-package-from-the-project-library"><i class="fa fa-check"></i>Loading a Package from the Project Library</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#updating-a-package-in-the-project-library"><i class="fa fa-check"></i>Updating a Package in the Project Library</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#open-access-raw-data"><i class="fa fa-check"></i><b>9.2</b> Open Access Raw Data</a>
+<li class="chapter" data-level="9.2" data-path="sharing.html"><a href="sharing.html#notebooks"><i class="fa fa-check"></i><b>9.2</b> Notebooks</a>
 <ul>
-<li class="chapter" data-level="" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#mzxml"><i class="fa fa-check"></i>mzXML</a></li>
-<li class="chapter" data-level="" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#mzml"><i class="fa fa-check"></i>mzML</a></li>
-<li class="chapter" data-level="" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#mzmlb"><i class="fa fa-check"></i>mzMLb</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-notebooks"><i class="fa fa-check"></i>Using Notebooks</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-a-notebook"><i class="fa fa-check"></i>Sharing A Notebook</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="sharing.html"><a href="sharing.html#github"><i class="fa fa-check"></i><b>9.3</b> GitHub</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-use-github"><i class="fa fa-check"></i>How to Use GitHub</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-share-a-github-repository"><i class="fa fa-check"></i>How to Share A GitHub Repository</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>9.4</b> Docker</a></li>
+<li class="chapter" data-level="9.5" data-path="sharing.html"><a href="sharing.html#r-packages"><i class="fa fa-check"></i><b>9.5</b> R Packages</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-a-package-in-rstudio"><i class="fa fa-check"></i>Creating a Package in RStudio</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-the-package"><i class="fa fa-check"></i>Using the Package</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>9.6</b> R Shiny Applications</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-create-an-r-shiny-application-in-the-rstudio-ide"><i class="fa fa-check"></i>How to Create an R Shiny Application in the RStudio IDE</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#example-of-an-r-shiny-application-for-plotting-points"><i class="fa fa-check"></i>Example of an R Shiny Application for Plotting Points</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html"><i class="fa fa-check"></i><b>10</b> Mass Spectrometry R Packages (work in progress)</a>
+<li class="chapter" data-level="10" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html"><i class="fa fa-check"></i><b>10</b> Mass Spectrometry Data</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#xcms"><i class="fa fa-check"></i><b>10.1</b> xcms</a></li>
-<li class="chapter" data-level="10.2" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#mzr"><i class="fa fa-check"></i><b>10.2</b> mzR</a></li>
-<li class="chapter" data-level="10.3" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#deqms"><i class="fa fa-check"></i><b>10.3</b> deqms</a></li>
-<li class="chapter" data-level="10.4" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msempire"><i class="fa fa-check"></i><b>10.4</b> msempire</a></li>
-<li class="chapter" data-level="10.5" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msqrob"><i class="fa fa-check"></i><b>10.5</b> msqrob</a></li>
-<li class="chapter" data-level="10.6" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msstats"><i class="fa fa-check"></i><b>10.6</b> MSstats</a>
+<li class="chapter" data-level="10.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#commercial"><i class="fa fa-check"></i><b>10.1</b> Commercial</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#raw-thermo"><i class="fa fa-check"></i><b>10.1.1</b> RAW (Thermo)</a></li>
+<li class="chapter" data-level="10.1.2" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#wiff-sciex"><i class="fa fa-check"></i><b>10.1.2</b> WIFF (Sciex)</a></li>
+<li class="chapter" data-level="10.1.3" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#d-agilent"><i class="fa fa-check"></i><b>10.1.3</b> D (Agilent)</a></li>
+<li class="chapter" data-level="10.1.4" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#d-bruker"><i class="fa fa-check"></i><b>10.1.4</b> D (Bruker)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html"><i class="fa fa-check"></i><b>11</b> Mass Spectrometry R Packages (work in progress)</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#xcms"><i class="fa fa-check"></i><b>11.1</b> xcms</a></li>
+<li class="chapter" data-level="11.2" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#mzr"><i class="fa fa-check"></i><b>11.2</b> mzR</a></li>
+<li class="chapter" data-level="11.3" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#open-access-raw-data"><i class="fa fa-check"></i><b>11.3</b> Open Access Raw Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#mzxml"><i class="fa fa-check"></i>mzXML</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#mzml"><i class="fa fa-check"></i>mzML</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#mzmlb"><i class="fa fa-check"></i>mzMLb</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#deqms"><i class="fa fa-check"></i><b>11.4</b> deqms</a></li>
+<li class="chapter" data-level="11.5" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msempire"><i class="fa fa-check"></i><b>11.5</b> msempire</a></li>
+<li class="chapter" data-level="11.6" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msqrob"><i class="fa fa-check"></i><b>11.6</b> msqrob</a></li>
+<li class="chapter" data-level="11.7" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msstats"><i class="fa fa-check"></i><b>11.7</b> MSstats</a>
 <ul>
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#installation-1"><i class="fa fa-check"></i>Installation</a></li>
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#loading-data"><i class="fa fa-check"></i>Loading Data</a></li>
@@ -303,14 +335,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#differential-expression-analysis"><i class="fa fa-check"></i>Differential Expression Analysis</a></li>
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#conclusion"><i class="fa fa-check"></i>Conclusion</a></li>
 </ul></li>
-<li class="chapter" data-level="10.7" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msgrob2"><i class="fa fa-check"></i><b>10.7</b> msgrob2</a>
+<li class="chapter" data-level="11.8" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msgrob2"><i class="fa fa-check"></i><b>11.8</b> msgrob2</a>
 <ul>
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#installation-2"><i class="fa fa-check"></i>Installation</a></li>
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#estimating-parameters"><i class="fa fa-check"></i>Estimating Parameters</a></li>
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#estimating-covariance-matrix"><i class="fa fa-check"></i>Estimating Covariance Matrix</a></li>
 </ul></li>
-<li class="chapter" data-level="10.8" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#statspro-r-package"><i class="fa fa-check"></i><b>10.8</b> StatsPro R Package</a></li>
-<li class="chapter" data-level="10.9" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#tidyproteomics"><i class="fa fa-check"></i><b>10.9</b> Tidyproteomics</a>
+<li class="chapter" data-level="11.9" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#statspro-r-package"><i class="fa fa-check"></i><b>11.9</b> StatsPro R Package</a></li>
+<li class="chapter" data-level="11.10" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#tidyproteomics"><i class="fa fa-check"></i><b>11.10</b> Tidyproteomics</a>
 <ul>
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#installation-3"><i class="fa fa-check"></i>Installation</a></li>
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#loading-data-1"><i class="fa fa-check"></i>Loading Data</a></li>
@@ -319,43 +351,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#expression-analysis"><i class="fa fa-check"></i>Expression Analysis</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>11</b> Sharing</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>11.1</b> Packrat</a>
-<ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#initiating-a-packrat-project"><i class="fa fa-check"></i>Initiating a Packrat Project</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#installing-a-package-into-the-project-library"><i class="fa fa-check"></i>Installing a Package into the Project Library</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#loading-a-package-from-the-project-library"><i class="fa fa-check"></i>Loading a Package from the Project Library</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#updating-a-package-in-the-project-library"><i class="fa fa-check"></i>Updating a Package in the Project Library</a></li>
-</ul></li>
-<li class="chapter" data-level="11.2" data-path="sharing.html"><a href="sharing.html#notebooks"><i class="fa fa-check"></i><b>11.2</b> Notebooks</a>
-<ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-notebooks"><i class="fa fa-check"></i>Using Notebooks</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-a-notebook"><i class="fa fa-check"></i>Sharing A Notebook</a></li>
-</ul></li>
-<li class="chapter" data-level="11.3" data-path="sharing.html"><a href="sharing.html#github"><i class="fa fa-check"></i><b>11.3</b> GitHub</a>
-<ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-use-github"><i class="fa fa-check"></i>How to Use GitHub</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-share-a-github-repository"><i class="fa fa-check"></i>How to Share A GitHub Repository</a></li>
-</ul></li>
-<li class="chapter" data-level="11.4" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>11.4</b> Docker</a></li>
-<li class="chapter" data-level="11.5" data-path="sharing.html"><a href="sharing.html#r-packages"><i class="fa fa-check"></i><b>11.5</b> R Packages</a>
-<ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-a-package-in-rstudio"><i class="fa fa-check"></i>Creating a Package in RStudio</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-the-package"><i class="fa fa-check"></i>Using the Package</a></li>
-</ul></li>
-<li class="chapter" data-level="11.6" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>11.6</b> R Shiny Applications</a>
-<ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-create-an-r-shiny-application-in-the-rstudio-ide"><i class="fa fa-check"></i>How to Create an R Shiny Application in the RStudio IDE</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#example-of-an-r-shiny-application-for-plotting-points"><i class="fa fa-check"></i>Example of an R Shiny Application for Plotting Points</a></li>
-</ul></li>
-</ul></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html"><i class="fa fa-check"></i>Answers to Exercises</a>
 <ul>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#the-basics-1"><i class="fa fa-check"></i><strong>4</strong> The Basics</a></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-structures-1"><i class="fa fa-check"></i><strong>5</strong> Data Structures</a></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#tidyverse-2"><i class="fa fa-check"></i><strong>6</strong> Tidyverse</a></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-1"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-visualization-1"><i class="fa fa-check"></i><strong>9</strong> Data Visualization</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/jeffsocal/asms_r_intro" target="blank">Published with bookdown</a></li>
@@ -377,54 +379,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="mass-spectrometry-data" class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">Chapter 9</span> Mass Spectrometry Data<a href="mass-spectrometry-data.html#mass-spectrometry-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="commercial" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> Commercial<a href="mass-spectrometry-data.html#commercial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="raw-thermo" class="section level3 hasAnchor" number="9.1.1">
-<h3><span class="header-section-number">9.1.1</span> RAW (Thermo)<a href="mass-spectrometry-data.html#raw-thermo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="mass-spectrometry-data" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Mass Spectrometry Data<a href="mass-spectrometry-data.html#mass-spectrometry-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="commercial" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Commercial<a href="mass-spectrometry-data.html#commercial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="raw-thermo" class="section level3 hasAnchor" number="10.1.1">
+<h3><span class="header-section-number">10.1.1</span> RAW (Thermo)<a href="mass-spectrometry-data.html#raw-thermo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="wiff-sciex" class="section level3 hasAnchor" number="9.1.2">
-<h3><span class="header-section-number">9.1.2</span> WIFF (Sciex)<a href="mass-spectrometry-data.html#wiff-sciex" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="wiff-sciex" class="section level3 hasAnchor" number="10.1.2">
+<h3><span class="header-section-number">10.1.2</span> WIFF (Sciex)<a href="mass-spectrometry-data.html#wiff-sciex" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="d-agilent" class="section level3 hasAnchor" number="9.1.3">
-<h3><span class="header-section-number">9.1.3</span> D (Agilent)<a href="mass-spectrometry-data.html#d-agilent" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="d-agilent" class="section level3 hasAnchor" number="10.1.3">
+<h3><span class="header-section-number">10.1.3</span> D (Agilent)<a href="mass-spectrometry-data.html#d-agilent" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="d-bruker" class="section level3 hasAnchor" number="9.1.4">
-<h3><span class="header-section-number">9.1.4</span> D (Bruker)<a href="mass-spectrometry-data.html#d-bruker" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-
-</div>
-</div>
-<div id="open-access-raw-data" class="section level2 hasAnchor" number="9.2">
-<h2><span class="header-section-number">9.2</span> Open Access Raw Data<a href="mass-spectrometry-data.html#open-access-raw-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Mass spectrometry (MS) is a powerful analytical method that can be used to determine the mass-to-charge ratio (m/z) of ions in a sample. Mass spectrometry data is generated from MS experiments and can be stored in various formats, including mzXML, mzML, and mzH5.</p>
-<p><em>ProteoWizard</em> is an open-source software suite that provides a collection of open-source, cross-platform software libraries and tools for extracting raw mass spectrometry data from from various instrument vendor formats and converting it to the formats listed below.</p>
-<blockquote>
-<p><em>Kessner, D., Chambers, M., Burke, R., Agus, D., &amp; Mallick, P. (2008). ProteoWizard: open source software for rapid proteomics tools development. Bioinformatics, 24(21), 2534–2536. <a href="https://doi.org/10.1093/bioinformatics/btn323">https://doi.org/10.1093/bioinformatics/btn323</a></em></p>
-<p><a href="https://proteowizard.sourceforge.io/" class="uri">https://proteowizard.sourceforge.io/</a></p>
-</blockquote>
-<div id="mzxml" class="section level3 unnumbered hasAnchor">
-<h3>mzXML<a href="mass-spectrometry-data.html#mzxml" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>mzXML is an open XML-based format for encoding MS data. It was developed by the Seattle Proteome Center and is widely used in the mass spectrometry community. mzXML files contain raw MS data, as well as metadata describing the instrument parameters used to acquire the data. mzXML files can be processed using a variety of software tools, such as the Trans-Proteomic Pipeline and ProteoWizard.</p>
-<p>The mzXML format has been shown to be effective in handling data from a wide range of instruments. It has a simple structure that makes it easy to parse and process, making it an attractive choice for many researchers. The format is also relatively lightweight, which makes it easy to transfer and store large amounts of data.</p>
-<blockquote>
-<p><em>Pedrioli, P.G., Eng, J.K., Hubley, R., Vogelzang, M., Deutsch, E.W., Raught, B., Pratt, B., Nilsson, E., Angeletti, R.H., Apweiler, R. and Cheung, K., 2004. A common open representation of mass spectrometry data and its application to proteomics research. Nature biotechnology, 22(11), pp.1459-1466.</em></p>
-</blockquote>
-</div>
-<div id="mzml" class="section level3 unnumbered hasAnchor">
-<h3>mzML<a href="mass-spectrometry-data.html#mzml" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The mzML format is another open XML-based format for MS data, developed by the Proteomics Standards Initiative. It is designed to be more flexible than mzXML and includes more detailed metadata. mzML files can be processed using software tools such as OpenMS and mzR.</p>
-<p>The mzML format allows for more detailed and comprehensive data storage than mzXML. This is because mzML has a more complex structure, which enables the storage of a wider range of experimental metadata. The format is also more flexible, which means that it can be easily adapted to different types of experiments and instruments.</p>
-<blockquote>
-<p><em>Martens, L., Chambers, M., Sturm, M., Kessner, D., Levander, F., Shofstahl, J., Tang, W.H., Römpp, A., Neumann, S., Pizarro, A.D. and Montecchi-Palazzi, L., 2011. mzML—a community standard for mass spectrometry data. Molecular &amp; cellular proteomics, 10(1), p.R110. 000133.</em></p>
-</blockquote>
-</div>
-<div id="mzmlb" class="section level3 unnumbered hasAnchor">
-<h3>mzMLb<a href="mass-spectrometry-data.html#mzmlb" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Recently proposed as a new file format based on HDF5 and NetCDF4 standards, mzMLb is faster and more flexible than existing approaches while preserving the XML encoding of metadata. Additionally, it is optimized for both read/write speed and storage efficiency. The format has a reference implementation provided within the ProteoWizard toolkit.</p>
-<blockquote>
-<p>Bhamber, Ranjeet S., et al. “mzMLb: A future-proof raw mass spectrometry data format based on standards-compliant mzML and optimized for speed and storage requirements.” Journal of proteome research 20.1 (2020): 172-183._</p>
-</blockquote>
+<div id="d-bruker" class="section level3 hasAnchor" number="10.1.4">
+<h3><span class="header-section-number">10.1.4</span> D (Bruker)<a href="mass-spectrometry-data.html#d-bruker" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
 </div>
 </div>
@@ -434,7 +403,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="data-visualization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sharing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="mass-spectrometry-r-packages-work-in-progress.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -466,7 +435,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/jeffsocal/asms_r_intro/edit/BRANCH/09_01-ms_data.Rmd",
+"link": "https://github.com/jeffsocal/asms_r_intro/edit/BRANCH/10_01_mass_spectrometry.Rmd",
 "text": "Edit"
 },
 "history": {

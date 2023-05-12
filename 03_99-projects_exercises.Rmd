@@ -1,6 +1,6 @@
 ## Exercises {-}
 
-1.  Create a new project using R Studio. Name it **001_new_project_YYYYMMMDD**.
+1.  Create a new project using R Studio. Name it **001_new_project**.
 2.  Create a data directory, named data
 3.  Create an R script file, write something (anything), and save it as **01_test**
 4.  Locate your new project on your PC

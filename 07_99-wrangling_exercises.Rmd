@@ -1,5 +1,9 @@
 ## Exercises {-}
 
+- Create a new R Studio Project and name it *005_data_wrangling*.
+- Create a new R script, add your name and date at the top as comments.
+- Locate and/or download the Tidyverse cheat-sheets and refer to them as needed.
+
 1. Download *Denver Climate Data* to use as an example data file.
 ```{r, message=FALSE, warning=FALSE}
 url <- "https://raw.githubusercontent.com/ZenBrayn/asms-2022-r-shortcourse/main/exercises/intro_to_r/data/denver_climate.csv"

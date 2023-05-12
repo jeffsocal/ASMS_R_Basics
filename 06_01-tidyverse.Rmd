@@ -24,6 +24,17 @@ The `tidyverse` packages are built around a common philosophy of data manipulati
 
 These packages work seamlessly together, allowing users to easily manipulate and visualize their data. The `tidyverse` also includes a set of conventions and best practices for data analysis, making it easy to follow a consistent workflow.
 
+::: {.infobox .note data-latex="{note}"}
+***NOTES** There are some handy cheat-sheets online that summarize the functions*\
+\
+[www.tidyverse.org/](https://www.tidyverse.org/)\
+- [readr.tidyverse.org/](https://readr.tidyverse.org/)\
+- [dplyr.tidyverse.org/](https://dplyr.tidyverse.org/)\
+- [tidyr.tidyverse.org/](https://tidyr.tidyverse.org/)\
+- [stringr.tidyverse.org/](https://stringr.tidyverse.org/)
+:::
+\
+\
 Consider the following workflow to read in data, calculate a linear regression and visualize the data using nine (9) of the underlying packages in the tidyverse.
 
 ```{r, message=FALSE, warning=FALSE, fig.width=6, fig.height=4, fig.align='center'}

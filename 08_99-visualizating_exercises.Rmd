@@ -1,0 +1,69 @@
+## Exercises {-}
+
+- Create a new R Studio Project and name it *006_data_visualizing*.
+- Create a new R script, add your name and date at the top as comments
+- Locate and/or download a GGplot2 cheat-sheet and refer to it as needed.
+
+1. If not already done, download *Denver Climate Data* to use as an example data file.
+```{r, message=FALSE, warning=FALSE}
+url <- "https://raw.githubusercontent.com/ZenBrayn/asms-2022-r-shortcourse/main/exercises/intro_to_r/data/denver_climate.csv"
+download.file(url, destfile = "./data/denver_climate.csv")
+```
+
+2. Read in the dataset .csv using the `tidyverse` set of packages.
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+tbl_den <- "./data/denver_climate.csv" %>% read_csv()
+```
+
+3. Plot precipitation ~ snowfall ...
+```{r, echo=FALSE, fig.width=4, fig.height=3, fig.align='center'}
+tbl_den %>% 
+  ggplot(aes(precipitation, snowfall)) + 
+  geom_point()
+```
+
+4. ... color by `min_temp`, creating a color scheme of low = "lightblue" and high = "orange", mid = "yellow"...
+```{r, echo=FALSE, fig.width=4, fig.height=3, fig.align='center'}
+tbl_den %>% 
+  ggplot(aes(precipitation, snowfall)) + 
+  geom_point(aes(color = min_temp)) +
+  scale_color_gradientn(colors = c('lightblue','yellow', 'orange'))
+```
+
+5. ... add a smoothed line under the points colored "grey", facet by `year` keeping all plots on a single line, and change the theme to have a dark background ...
+```{r, echo=FALSE, fig.width=8, fig.height=3, fig.align='center'}
+tbl_den %>% 
+  ggplot(aes(precipitation, snowfall)) + 
+  geom_smooth(method = lm, color = 'grey', fill = NA) +
+  geom_point(aes(color = min_temp)) +
+  scale_color_gradientn(colors = c('lightblue','yellow', 'orange')) +
+  facet_wrap(~year, nrow = 1) +
+  coord_cartesian(ylim = c(0, 20)) +
+  theme_dark()
+```
+
+6. Using the same data, construct a plot showing the distribution of min_ and max_temp for each month such that min_ and max_ are plotted separately for each month, add point values on top, gradient colored as above. Substitute the month number for the month 3-letter string (hint, use lubridate), remove the legend, remove the grid lines, remove the x-axis labels, add a title and fix the y-axis title. Use the internet to find answers if you need to.
+```{r, echo=FALSE, fig.width=8, fig.height=3, fig.align='center'}
+library(glue)
+
+tbl_den %>%
+  mutate(month = lubridate::month(month, label = TRUE, abbr = TRUE)) %>%
+  pivot_longer(cols = c('min_temp', 'max_temp'), names_to = 'temp_ends', values_to = 'temp') %>%
+  ggplot() +
+  geom_boxplot(aes(month, temp, group = temp_ends), fill=NA, color='grey30', position = 'identity') +
+  geom_point(aes(month, temp, group = temp_ends, color = temp)) +
+  facet_wrap(~month, nrow = 1, scales = 'free_x') +
+  scale_color_gradientn(colors = c('lightblue','yellow', 'orange')) +
+  labs(title = "Monthly Temperatures for Denver",
+       subtitle = glue("{min(tbl_den$year)} - {max(tbl_den$year)}"),
+       y = "Temperature (C)") +
+  theme_dark() +
+  theme(
+    legend.position = 'none',
+    axis.text.x = element_blank(),
+    axis.title.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    axis.line = element_blank(),
+    panel.grid = element_blank()
+  )
+```

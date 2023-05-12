@@ -1,7 +1,0 @@
-<!--# HEATH -->
-# Mass Spectrometry Data
-## Commercial
-### RAW (Thermo)
-### WIFF (Sciex)
-### D (Agilent)
-### D (Bruker)

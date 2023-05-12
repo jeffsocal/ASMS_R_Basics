@@ -1,4 +1,4 @@
-## Tidyproteomics
+### Tidyproteomics {-}
 
 The tidyproteomics R package is a tool that provides a set of functions to preprocess and analyze proteomics data using the tidy data framework. This package is built on top of the tidyverse and Bioconductor packages, which are widely used in the R community for data manipulation and analysis.
 
@@ -15,7 +15,7 @@ Some of the main features of the tidyproteomics package include:
 | **Web App**       | [tidyproteomics](bioinformatics.pel.caltech.edu/tidyproteomics/) |
 | **Literature**    |                                                                  |
 
-### Installation {-}
+#### Installation {-}
 
 To install the `tidyproteomics` package, you will need to install GitHub and Bioconductor repositories:
 
@@ -27,7 +27,7 @@ install.packages("BiocManager")
 BiocManager::install(c("limma","qvalue","fgsea","Biostrings"))
 ```
 
-### Loading Data {-}
+#### Loading Data {-}
 
 To load your data into tidyproteomics, you can use the following code:
 
@@ -48,7 +48,7 @@ library(tidyproteomics)
 data_proteins <- hela_proteins
 ```
 
-### Data Summaries {-}
+#### Data Summaries {-}
 Currently, tidyproteomics implements two summary quantitative visualizations. The first is a simple grouped bar chart that displays individual and grouped proteins, as well as all and unique peptides. The match-between-runs is shown as a margin above the MS2 evidenced identifications. In recent literature, a summary of protein quantitation has been visualized as a rank-based dot plot. This plot can be extended to highlight statistical differences via an unbiased all-pair-wise comparison, which gives an anticipated view on how to guide downstream analyses.
 ```{r, warning=FALSE, eval=FALSE}
 p01 <- data_proteins %>% plot_counts()
@@ -74,7 +74,7 @@ data_proteins <- data_proteins %>%
   subset(!description %like% "^CRAP")
 ```
 
-### Normalization and Imputation {-}
+#### Normalization and Imputation {-}
 Quantitative proteomics requires accurate normalization, which can be difficult to implement. The `normalize()` function in the tidyproteomics package is a wrapper for various normalization methods, while `select_normalization()` automatically selects the best method based on a weighted score. Both functions allow for downstream analyses such as `expression()` and `enrichment()`. The package attempts to apply each function universally to peptide and protein values using the `identifier` variable to identify the thing being measured.
 
 ```{r, warning=FALSE, message=FALSE, eval=FALSE}
@@ -112,7 +112,7 @@ grid.arrange(p07[[4]],
              nrow = 1)
 ```
 
-### Expression Analysis {-}
+#### Expression Analysis {-}
 
 ```{r, eval=FALSE, eval=FALSE}
 data_proteins <- data_proteins %>%

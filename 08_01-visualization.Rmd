@@ -2,16 +2,6 @@
 
 Visualizing your data is crucial because it helps you understand the patterns, trends, and relationships within the data. A well-designed visualization can make complex data easy to understand and convey insights that would be hard to discern from raw data.
 
-
-::: {.infobox .skill data-latex="{skill}"}
-At the end of this chapter you should be able to:\
-1.    Understand the need for visualization\
-2.    Create some simple plots of points, lines and bars\
-3.    Manipulate how a plot looks\
-:::
-
-
-
 Anscombe's quartet is a classic example that demonstrates the importance of visualizing your data. This quartet comprises four datasets with nearly identical simple descriptive statistics. However, when graphed, they have very different distributions and appear very different from one another. This example shows that relying solely on summary statistics to understand data can be misleading and inadequate.
 
 
@@ -78,6 +68,14 @@ tbl_ac %>%
 ```
 
 In data analysis, creating a plot to convey a message or demonstrate a result is a common endpoint. To achieve this, this book utilizes the `GGPlot2` package, which is part of the `Tidyverse`. This package complements the data pipelining demonstrated in the previous chapters, making it a perfect choice for creating a wide range of plots, from simple scatter plots to complex heat maps, making it ideal for data visualization.
+
+
+::: {.infobox .skill data-latex="{skill}"}
+At the end of this chapter you should be able to:\
+1.    Understand the need for visualization\
+2.    Create some simple plots of points, lines and bars\
+3.    Manipulate how a plot looks\
+:::
 
 
 ## Base: plot

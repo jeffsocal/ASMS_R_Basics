@@ -1,4 +1,4 @@
-## Open Access Raw Data
+## Open Access Data
 
 Mass spectrometry (MS) is a powerful analytical method that can be used to determine the mass-to-charge ratio (m/z) of ions in a sample. Mass spectrometry data is generated from MS experiments and can be stored in various formats, including mzXML, mzML, and mzH5.
 

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 10 Mass Spectrometry R Packages (work in progress) | Introduction to R for Mass Spectrometrists</title>
+  <title>Chapter 11 Mass Spectrometry R Packages (work in progress) | Introduction to R for Mass Spectrometrists</title>
   <meta name="description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 10 Mass Spectrometry R Packages (work in progress) | Introduction to R for Mass Spectrometrists" />
+  <meta property="og:title" content="Chapter 11 Mass Spectrometry R Packages (work in progress) | Introduction to R for Mass Spectrometrists" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
   <meta name="github-repo" content="jeffsocal/ASMS_R_Basics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 10 Mass Spectrometry R Packages (work in progress) | Introduction to R for Mass Spectrometrists" />
+  <meta name="twitter:title" content="Chapter 11 Mass Spectrometry R Packages (work in progress) | Introduction to R for Mass Spectrometrists" />
   
   <meta name="twitter:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2023-05-11" />
+<meta name="date" content="2023-05-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="mass-spectrometry-data.html"/>
-<link rel="next" href="sharing.html"/>
+<link rel="next" href="answers-to-exercises.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -271,31 +271,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#lattice"><i class="fa fa-check"></i>lattice</a></li>
 <li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#plotly"><i class="fa fa-check"></i>plotly</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#exercises-5"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html"><i class="fa fa-check"></i><b>9</b> Mass Spectrometry Data</a>
+<li class="chapter" data-level="9" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>9</b> Sharing</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#commercial"><i class="fa fa-check"></i><b>9.1</b> Commercial</a>
+<li class="chapter" data-level="9.1" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>9.1</b> Packrat</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#raw-thermo"><i class="fa fa-check"></i><b>9.1.1</b> RAW (Thermo)</a></li>
-<li class="chapter" data-level="9.1.2" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#wiff-sciex"><i class="fa fa-check"></i><b>9.1.2</b> WIFF (Sciex)</a></li>
-<li class="chapter" data-level="9.1.3" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#d-agilent"><i class="fa fa-check"></i><b>9.1.3</b> D (Agilent)</a></li>
-<li class="chapter" data-level="9.1.4" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#d-bruker"><i class="fa fa-check"></i><b>9.1.4</b> D (Bruker)</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#initiating-a-packrat-project"><i class="fa fa-check"></i>Initiating a Packrat Project</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#installing-a-package-into-the-project-library"><i class="fa fa-check"></i>Installing a Package into the Project Library</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#loading-a-package-from-the-project-library"><i class="fa fa-check"></i>Loading a Package from the Project Library</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#updating-a-package-in-the-project-library"><i class="fa fa-check"></i>Updating a Package in the Project Library</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#open-access-raw-data"><i class="fa fa-check"></i><b>9.2</b> Open Access Raw Data</a>
+<li class="chapter" data-level="9.2" data-path="sharing.html"><a href="sharing.html#notebooks"><i class="fa fa-check"></i><b>9.2</b> Notebooks</a>
 <ul>
-<li class="chapter" data-level="" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#mzxml"><i class="fa fa-check"></i>mzXML</a></li>
-<li class="chapter" data-level="" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#mzml"><i class="fa fa-check"></i>mzML</a></li>
-<li class="chapter" data-level="" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#mzmlb"><i class="fa fa-check"></i>mzMLb</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-notebooks"><i class="fa fa-check"></i>Using Notebooks</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-a-notebook"><i class="fa fa-check"></i>Sharing A Notebook</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="sharing.html"><a href="sharing.html#github"><i class="fa fa-check"></i><b>9.3</b> GitHub</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-use-github"><i class="fa fa-check"></i>How to Use GitHub</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-share-a-github-repository"><i class="fa fa-check"></i>How to Share A GitHub Repository</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>9.4</b> Docker</a></li>
+<li class="chapter" data-level="9.5" data-path="sharing.html"><a href="sharing.html#r-packages"><i class="fa fa-check"></i><b>9.5</b> R Packages</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-a-package-in-rstudio"><i class="fa fa-check"></i>Creating a Package in RStudio</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-the-package"><i class="fa fa-check"></i>Using the Package</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>9.6</b> R Shiny Applications</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-create-an-r-shiny-application-in-the-rstudio-ide"><i class="fa fa-check"></i>How to Create an R Shiny Application in the RStudio IDE</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#example-of-an-r-shiny-application-for-plotting-points"><i class="fa fa-check"></i>Example of an R Shiny Application for Plotting Points</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html"><i class="fa fa-check"></i><b>10</b> Mass Spectrometry R Packages (work in progress)</a>
+<li class="chapter" data-level="10" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html"><i class="fa fa-check"></i><b>10</b> Mass Spectrometry Data</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#xcms"><i class="fa fa-check"></i><b>10.1</b> xcms</a></li>
-<li class="chapter" data-level="10.2" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#mzr"><i class="fa fa-check"></i><b>10.2</b> mzR</a></li>
-<li class="chapter" data-level="10.3" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#deqms"><i class="fa fa-check"></i><b>10.3</b> deqms</a></li>
-<li class="chapter" data-level="10.4" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msempire"><i class="fa fa-check"></i><b>10.4</b> msempire</a></li>
-<li class="chapter" data-level="10.5" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msqrob"><i class="fa fa-check"></i><b>10.5</b> msqrob</a></li>
-<li class="chapter" data-level="10.6" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msstats"><i class="fa fa-check"></i><b>10.6</b> MSstats</a>
+<li class="chapter" data-level="10.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#commercial"><i class="fa fa-check"></i><b>10.1</b> Commercial</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#raw-thermo"><i class="fa fa-check"></i><b>10.1.1</b> RAW (Thermo)</a></li>
+<li class="chapter" data-level="10.1.2" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#wiff-sciex"><i class="fa fa-check"></i><b>10.1.2</b> WIFF (Sciex)</a></li>
+<li class="chapter" data-level="10.1.3" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#d-agilent"><i class="fa fa-check"></i><b>10.1.3</b> D (Agilent)</a></li>
+<li class="chapter" data-level="10.1.4" data-path="mass-spectrometry-data.html"><a href="mass-spectrometry-data.html#d-bruker"><i class="fa fa-check"></i><b>10.1.4</b> D (Bruker)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html"><i class="fa fa-check"></i><b>11</b> Mass Spectrometry R Packages (work in progress)</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#xcms"><i class="fa fa-check"></i><b>11.1</b> xcms</a></li>
+<li class="chapter" data-level="11.2" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#mzr"><i class="fa fa-check"></i><b>11.2</b> mzR</a></li>
+<li class="chapter" data-level="11.3" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#open-access-raw-data"><i class="fa fa-check"></i><b>11.3</b> Open Access Raw Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#mzxml"><i class="fa fa-check"></i>mzXML</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#mzml"><i class="fa fa-check"></i>mzML</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#mzmlb"><i class="fa fa-check"></i>mzMLb</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#deqms"><i class="fa fa-check"></i><b>11.4</b> deqms</a></li>
+<li class="chapter" data-level="11.5" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msempire"><i class="fa fa-check"></i><b>11.5</b> msempire</a></li>
+<li class="chapter" data-level="11.6" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msqrob"><i class="fa fa-check"></i><b>11.6</b> msqrob</a></li>
+<li class="chapter" data-level="11.7" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msstats"><i class="fa fa-check"></i><b>11.7</b> MSstats</a>
 <ul>
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#installation-1"><i class="fa fa-check"></i>Installation</a></li>
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#loading-data"><i class="fa fa-check"></i>Loading Data</a></li>
@@ -303,14 +335,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#differential-expression-analysis"><i class="fa fa-check"></i>Differential Expression Analysis</a></li>
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#conclusion"><i class="fa fa-check"></i>Conclusion</a></li>
 </ul></li>
-<li class="chapter" data-level="10.7" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msgrob2"><i class="fa fa-check"></i><b>10.7</b> msgrob2</a>
+<li class="chapter" data-level="11.8" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#msgrob2"><i class="fa fa-check"></i><b>11.8</b> msgrob2</a>
 <ul>
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#installation-2"><i class="fa fa-check"></i>Installation</a></li>
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#estimating-parameters"><i class="fa fa-check"></i>Estimating Parameters</a></li>
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#estimating-covariance-matrix"><i class="fa fa-check"></i>Estimating Covariance Matrix</a></li>
 </ul></li>
-<li class="chapter" data-level="10.8" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#statspro-r-package"><i class="fa fa-check"></i><b>10.8</b> StatsPro R Package</a></li>
-<li class="chapter" data-level="10.9" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#tidyproteomics"><i class="fa fa-check"></i><b>10.9</b> Tidyproteomics</a>
+<li class="chapter" data-level="11.9" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#statspro-r-package"><i class="fa fa-check"></i><b>11.9</b> StatsPro R Package</a></li>
+<li class="chapter" data-level="11.10" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#tidyproteomics"><i class="fa fa-check"></i><b>11.10</b> Tidyproteomics</a>
 <ul>
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#installation-3"><i class="fa fa-check"></i>Installation</a></li>
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#loading-data-1"><i class="fa fa-check"></i>Loading Data</a></li>
@@ -319,43 +351,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="mass-spectrometry-r-packages-work-in-progress.html"><a href="mass-spectrometry-r-packages-work-in-progress.html#expression-analysis"><i class="fa fa-check"></i>Expression Analysis</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>11</b> Sharing</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>11.1</b> Packrat</a>
-<ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#initiating-a-packrat-project"><i class="fa fa-check"></i>Initiating a Packrat Project</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#installing-a-package-into-the-project-library"><i class="fa fa-check"></i>Installing a Package into the Project Library</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#loading-a-package-from-the-project-library"><i class="fa fa-check"></i>Loading a Package from the Project Library</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#updating-a-package-in-the-project-library"><i class="fa fa-check"></i>Updating a Package in the Project Library</a></li>
-</ul></li>
-<li class="chapter" data-level="11.2" data-path="sharing.html"><a href="sharing.html#notebooks"><i class="fa fa-check"></i><b>11.2</b> Notebooks</a>
-<ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-notebooks"><i class="fa fa-check"></i>Using Notebooks</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-a-notebook"><i class="fa fa-check"></i>Sharing A Notebook</a></li>
-</ul></li>
-<li class="chapter" data-level="11.3" data-path="sharing.html"><a href="sharing.html#github"><i class="fa fa-check"></i><b>11.3</b> GitHub</a>
-<ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-use-github"><i class="fa fa-check"></i>How to Use GitHub</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-share-a-github-repository"><i class="fa fa-check"></i>How to Share A GitHub Repository</a></li>
-</ul></li>
-<li class="chapter" data-level="11.4" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>11.4</b> Docker</a></li>
-<li class="chapter" data-level="11.5" data-path="sharing.html"><a href="sharing.html#r-packages"><i class="fa fa-check"></i><b>11.5</b> R Packages</a>
-<ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-a-package-in-rstudio"><i class="fa fa-check"></i>Creating a Package in RStudio</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-the-package"><i class="fa fa-check"></i>Using the Package</a></li>
-</ul></li>
-<li class="chapter" data-level="11.6" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>11.6</b> R Shiny Applications</a>
-<ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-create-an-r-shiny-application-in-the-rstudio-ide"><i class="fa fa-check"></i>How to Create an R Shiny Application in the RStudio IDE</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#example-of-an-r-shiny-application-for-plotting-points"><i class="fa fa-check"></i>Example of an R Shiny Application for Plotting Points</a></li>
-</ul></li>
-</ul></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html"><i class="fa fa-check"></i>Answers to Exercises</a>
 <ul>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#the-basics-1"><i class="fa fa-check"></i><strong>4</strong> The Basics</a></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-structures-1"><i class="fa fa-check"></i><strong>5</strong> Data Structures</a></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#tidyverse-2"><i class="fa fa-check"></i><strong>6</strong> Tidyverse</a></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-1"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-visualization-1"><i class="fa fa-check"></i><strong>9</strong> Data Visualization</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/jeffsocal/asms_r_intro" target="blank">Published with bookdown</a></li>
@@ -377,28 +379,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="mass-spectrometry-r-packages-work-in-progress" class="section level1 hasAnchor" number="10">
-<h1><span class="header-section-number">Chapter 10</span> Mass Spectrometry R Packages (work in progress)<a href="mass-spectrometry-r-packages-work-in-progress.html#mass-spectrometry-r-packages-work-in-progress" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="mass-spectrometry-r-packages-work-in-progress" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Chapter 11</span> Mass Spectrometry R Packages (work in progress)<a href="mass-spectrometry-r-packages-work-in-progress.html#mass-spectrometry-r-packages-work-in-progress" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <!--# HEATH -->
-<div id="xcms" class="section level2 hasAnchor" number="10.1">
-<h2><span class="header-section-number">10.1</span> xcms<a href="mass-spectrometry-r-packages-work-in-progress.html#xcms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="xcms" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> xcms<a href="mass-spectrometry-r-packages-work-in-progress.html#xcms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="mzr" class="section level2 hasAnchor" number="10.2">
-<h2><span class="header-section-number">10.2</span> mzR<a href="mass-spectrometry-r-packages-work-in-progress.html#mzr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="mzr" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> mzR<a href="mass-spectrometry-r-packages-work-in-progress.html#mzr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
-<div id="deqms" class="section level2 hasAnchor" number="10.3">
-<h2><span class="header-section-number">10.3</span> deqms<a href="mass-spectrometry-r-packages-work-in-progress.html#deqms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="open-access-raw-data" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Open Access Raw Data<a href="mass-spectrometry-r-packages-work-in-progress.html#open-access-raw-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Mass spectrometry (MS) is a powerful analytical method that can be used to determine the mass-to-charge ratio (m/z) of ions in a sample. Mass spectrometry data is generated from MS experiments and can be stored in various formats, including mzXML, mzML, and mzH5.</p>
+<p><em>ProteoWizard</em> is an open-source software suite that provides a collection of open-source, cross-platform software libraries and tools for extracting raw mass spectrometry data from from various instrument vendor formats and converting it to the formats listed below.</p>
+<blockquote>
+<p><em>Kessner, D., Chambers, M., Burke, R., Agus, D., &amp; Mallick, P. (2008). ProteoWizard: open source software for rapid proteomics tools development. Bioinformatics, 24(21), 2534–2536. <a href="https://doi.org/10.1093/bioinformatics/btn323">https://doi.org/10.1093/bioinformatics/btn323</a></em></p>
+<p><a href="https://proteowizard.sourceforge.io/" class="uri">https://proteowizard.sourceforge.io/</a></p>
+</blockquote>
+<div id="mzxml" class="section level3 unnumbered hasAnchor">
+<h3>mzXML<a href="mass-spectrometry-r-packages-work-in-progress.html#mzxml" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>mzXML is an open XML-based format for encoding MS data. It was developed by the Seattle Proteome Center and is widely used in the mass spectrometry community. mzXML files contain raw MS data, as well as metadata describing the instrument parameters used to acquire the data. mzXML files can be processed using a variety of software tools, such as the Trans-Proteomic Pipeline and ProteoWizard.</p>
+<p>The mzXML format has been shown to be effective in handling data from a wide range of instruments. It has a simple structure that makes it easy to parse and process, making it an attractive choice for many researchers. The format is also relatively lightweight, which makes it easy to transfer and store large amounts of data.</p>
+<blockquote>
+<p><em>Pedrioli, P.G., Eng, J.K., Hubley, R., Vogelzang, M., Deutsch, E.W., Raught, B., Pratt, B., Nilsson, E., Angeletti, R.H., Apweiler, R. and Cheung, K., 2004. A common open representation of mass spectrometry data and its application to proteomics research. Nature biotechnology, 22(11), pp.1459-1466.</em></p>
+</blockquote>
 </div>
-<div id="msempire" class="section level2 hasAnchor" number="10.4">
-<h2><span class="header-section-number">10.4</span> msempire<a href="mass-spectrometry-r-packages-work-in-progress.html#msempire" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="mzml" class="section level3 unnumbered hasAnchor">
+<h3>mzML<a href="mass-spectrometry-r-packages-work-in-progress.html#mzml" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The mzML format is another open XML-based format for MS data, developed by the Proteomics Standards Initiative. It is designed to be more flexible than mzXML and includes more detailed metadata. mzML files can be processed using software tools such as OpenMS and mzR.</p>
+<p>The mzML format allows for more detailed and comprehensive data storage than mzXML. This is because mzML has a more complex structure, which enables the storage of a wider range of experimental metadata. The format is also more flexible, which means that it can be easily adapted to different types of experiments and instruments.</p>
+<blockquote>
+<p><em>Martens, L., Chambers, M., Sturm, M., Kessner, D., Levander, F., Shofstahl, J., Tang, W.H., Römpp, A., Neumann, S., Pizarro, A.D. and Montecchi-Palazzi, L., 2011. mzML—a community standard for mass spectrometry data. Molecular &amp; cellular proteomics, 10(1), p.R110. 000133.</em></p>
+</blockquote>
 </div>
-<div id="msqrob" class="section level2 hasAnchor" number="10.5">
-<h2><span class="header-section-number">10.5</span> msqrob<a href="mass-spectrometry-r-packages-work-in-progress.html#msqrob" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="mzmlb" class="section level3 unnumbered hasAnchor">
+<h3>mzMLb<a href="mass-spectrometry-r-packages-work-in-progress.html#mzmlb" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Recently proposed as a new file format based on HDF5 and NetCDF4 standards, mzMLb is faster and more flexible than existing approaches while preserving the XML encoding of metadata. Additionally, it is optimized for both read/write speed and storage efficiency. The format has a reference implementation provided within the ProteoWizard toolkit.</p>
+<blockquote>
+<p>Bhamber, Ranjeet S., et al. “mzMLb: A future-proof raw mass spectrometry data format based on standards-compliant mzML and optimized for speed and storage requirements.” Journal of proteome research 20.1 (2020): 172-183._</p>
+</blockquote>
 
 </div>
-<div id="msstats" class="section level2 hasAnchor" number="10.6">
-<h2><span class="header-section-number">10.6</span> MSstats<a href="mass-spectrometry-r-packages-work-in-progress.html#msstats" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="deqms" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> deqms<a href="mass-spectrometry-r-packages-work-in-progress.html#deqms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="msempire" class="section level2 hasAnchor" number="11.5">
+<h2><span class="header-section-number">11.5</span> msempire<a href="mass-spectrometry-r-packages-work-in-progress.html#msempire" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="msqrob" class="section level2 hasAnchor" number="11.6">
+<h2><span class="header-section-number">11.6</span> msqrob<a href="mass-spectrometry-r-packages-work-in-progress.html#msqrob" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+<div id="msstats" class="section level2 hasAnchor" number="11.7">
+<h2><span class="header-section-number">11.7</span> MSstats<a href="mass-spectrometry-r-packages-work-in-progress.html#msstats" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The MSstats package is an R package designed for the analysis of label-free mass spectrometry data. It provides a wide range of statistical tools for the analysis of protein abundance data, including normalization, missing value imputation, quality control, and differential expression analysis. MSstats provides a powerful and flexible way to analyze mass spectrometry data, making it an essential tool for researchers in the field.</p>
 <table>
 <colgroup>
@@ -423,35 +458,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="installation-1" class="section level3 unnumbered hasAnchor">
 <h3>Installation<a href="mass-spectrometry-r-packages-work-in-progress.html#installation-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To install MSstats, you can use the following code:</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb185-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">&quot;BiocManager&quot;</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb185-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb185-2" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">&quot;BiocManager&quot;</span>)</span>
-<span id="cb185-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb185-3" tabindex="-1"></a></span>
-<span id="cb185-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb185-4" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">&quot;MSstats&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb190-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">&quot;BiocManager&quot;</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb190-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb190-2" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">&quot;BiocManager&quot;</span>)</span>
+<span id="cb190-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb190-3" tabindex="-1"></a></span>
+<span id="cb190-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb190-4" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">&quot;MSstats&quot;</span>)</span></code></pre></div>
 </div>
 <div id="loading-data" class="section level3 unnumbered hasAnchor">
 <h3>Loading Data<a href="mass-spectrometry-r-packages-work-in-progress.html#loading-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To load your data into MSstats, you can use the following code:</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb186-1" tabindex="-1"></a><span class="fu">library</span>(MSstats)</span>
-<span id="cb186-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb186-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;QCMAPData&quot;</span>)</span>
-<span id="cb186-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb186-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> QCMAPData<span class="sc">$</span>data</span>
-<span id="cb186-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb186-4" tabindex="-1"></a>design <span class="ot">&lt;-</span> QCMAPData<span class="sc">$</span>design</span>
-<span id="cb186-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb186-5" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb191-1" tabindex="-1"></a><span class="fu">library</span>(MSstats)</span>
+<span id="cb191-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb191-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;QCMAPData&quot;</span>)</span>
+<span id="cb191-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb191-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> QCMAPData<span class="sc">$</span>data</span>
+<span id="cb191-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb191-4" tabindex="-1"></a>design <span class="ot">&lt;-</span> QCMAPData<span class="sc">$</span>design</span>
+<span id="cb191-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb191-5" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
 </div>
 <div id="quality-control" class="section level3 unnumbered hasAnchor">
 <h3>Quality Control<a href="mass-spectrometry-r-packages-work-in-progress.html#quality-control" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To perform quality control on your data, you can use the following code:</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb187-1" tabindex="-1"></a>QCmetrics <span class="ot">&lt;-</span> MSstats<span class="sc">:::</span><span class="fu">calculateQCmetrics</span>(data, <span class="at">featureLevel =</span> <span class="st">&quot;protein&quot;</span>)</span>
-<span id="cb187-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb187-2" tabindex="-1"></a>MSstats<span class="sc">:::</span><span class="fu">plotQCmetrics</span>(QCmetrics, <span class="at">plotType =</span> <span class="st">&quot;boxplot&quot;</span>,</span>
-<span id="cb187-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb187-3" tabindex="-1"></a>                        <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">200000</span>), <span class="at">ylab =</span> <span class="st">&quot;Total Ion Current&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb192-1" tabindex="-1"></a>QCmetrics <span class="ot">&lt;-</span> MSstats<span class="sc">:::</span><span class="fu">calculateQCmetrics</span>(data, <span class="at">featureLevel =</span> <span class="st">&quot;protein&quot;</span>)</span>
+<span id="cb192-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb192-2" tabindex="-1"></a>MSstats<span class="sc">:::</span><span class="fu">plotQCmetrics</span>(QCmetrics, <span class="at">plotType =</span> <span class="st">&quot;boxplot&quot;</span>,</span>
+<span id="cb192-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb192-3" tabindex="-1"></a>                        <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">200000</span>), <span class="at">ylab =</span> <span class="st">&quot;Total Ion Current&quot;</span>)</span></code></pre></div>
 </div>
 <div id="differential-expression-analysis" class="section level3 unnumbered hasAnchor">
 <h3>Differential Expression Analysis<a href="mass-spectrometry-r-packages-work-in-progress.html#differential-expression-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To perform differential expression analysis on your data, you can use the following code:</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb188-1" tabindex="-1"></a>MSstatsResult <span class="ot">&lt;-</span> MSstats<span class="sc">::</span><span class="fu">MSstats</span>(data, design,</span>
-<span id="cb188-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb188-2" tabindex="-1"></a>                                  <span class="at">normalizationMethod =</span> <span class="st">&quot;quantile&quot;</span>,</span>
-<span id="cb188-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb188-3" tabindex="-1"></a>                                  <span class="at">normalization =</span> <span class="st">&quot;median&quot;</span>,</span>
-<span id="cb188-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb188-4" tabindex="-1"></a>                                  <span class="at">msLevel =</span> <span class="dv">1</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb188-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb188-5" tabindex="-1"></a><span class="fu">summary</span>(MSstatsResult)</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb193-1" tabindex="-1"></a>MSstatsResult <span class="ot">&lt;-</span> MSstats<span class="sc">::</span><span class="fu">MSstats</span>(data, design,</span>
+<span id="cb193-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb193-2" tabindex="-1"></a>                                  <span class="at">normalizationMethod =</span> <span class="st">&quot;quantile&quot;</span>,</span>
+<span id="cb193-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb193-3" tabindex="-1"></a>                                  <span class="at">normalization =</span> <span class="st">&quot;median&quot;</span>,</span>
+<span id="cb193-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb193-4" tabindex="-1"></a>                                  <span class="at">msLevel =</span> <span class="dv">1</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb193-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb193-5" tabindex="-1"></a><span class="fu">summary</span>(MSstatsResult)</span></code></pre></div>
 </div>
 <div id="conclusion" class="section level3 unnumbered hasAnchor">
 <h3>Conclusion<a href="mass-spectrometry-r-packages-work-in-progress.html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -459,8 +494,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
-<div id="msgrob2" class="section level2 hasAnchor" number="10.7">
-<h2><span class="header-section-number">10.7</span> msgrob2<a href="mass-spectrometry-r-packages-work-in-progress.html#msgrob2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="msgrob2" class="section level2 hasAnchor" number="11.8">
+<h2><span class="header-section-number">11.8</span> msgrob2<a href="mass-spectrometry-r-packages-work-in-progress.html#msgrob2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>msgrob2</code> is an R package that provides functions to perform robust estimation in linear models with missing data. With the help of the Expectation-Maximization (EM) algorithm, the package estimates the parameters of the linear model and imputes the missing data. Additionally, the package offers robust methods for estimating the covariance matrix, including the Minimum Covariance Determinant (MCD) estimator and the S-estimator.</p>
 <p>The <code>msgrob2</code> package is particularly useful in situations where data is missing from a linear model. The EM algorithm implemented in the package is a powerful tool for imputing missing data, and the robust covariance estimators allow for a better understanding of the data. The package is designed to provide efficient and accurate results when working with incomplete data, making it an essential tool for researchers and data analysts.</p>
 <table>
@@ -486,32 +521,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="installation-2" class="section level3 unnumbered hasAnchor">
 <h3>Installation<a href="mass-spectrometry-r-packages-work-in-progress.html#installation-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To install the <code>msgrob2</code> package, you can use the following code:</p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb189-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;msgrob2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb194-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;msgrob2&quot;</span>)</span></code></pre></div>
 </div>
 <div id="estimating-parameters" class="section level3 unnumbered hasAnchor">
 <h3>Estimating Parameters<a href="mass-spectrometry-r-packages-work-in-progress.html#estimating-parameters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To estimate the parameters of a linear model with missing data using <code>msgrob2</code>, you can use the <code>msgrob()</code> function. The following code demonstrates how to use <code>msgrob()</code>:</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb190-1" tabindex="-1"></a><span class="co"># Loading Example Data</span></span>
-<span id="cb190-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb190-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;exMiss&quot;</span>)</span>
-<span id="cb190-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb190-3" tabindex="-1"></a></span>
-<span id="cb190-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb190-4" tabindex="-1"></a><span class="co"># Estimating Parameters</span></span>
-<span id="cb190-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb190-5" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2 <span class="sc">+</span> x3, <span class="at">data =</span> exMiss)</span>
-<span id="cb190-6"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb190-6" tabindex="-1"></a><span class="fu">msgrob</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb195-1" tabindex="-1"></a><span class="co"># Loading Example Data</span></span>
+<span id="cb195-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb195-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;exMiss&quot;</span>)</span>
+<span id="cb195-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb195-3" tabindex="-1"></a></span>
+<span id="cb195-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb195-4" tabindex="-1"></a><span class="co"># Estimating Parameters</span></span>
+<span id="cb195-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb195-5" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2 <span class="sc">+</span> x3, <span class="at">data =</span> exMiss)</span>
+<span id="cb195-6"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb195-6" tabindex="-1"></a><span class="fu">msgrob</span>(model)</span></code></pre></div>
 </div>
 <div id="estimating-covariance-matrix" class="section level3 unnumbered hasAnchor">
 <h3>Estimating Covariance Matrix<a href="mass-spectrometry-r-packages-work-in-progress.html#estimating-covariance-matrix" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To estimate the covariance matrix using <code>msgrob2</code>, you can use the <code>covrob()</code> function. The following code demonstrates how to use <code>covrob()</code>:</p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb191-1" tabindex="-1"></a><span class="co"># Loading Example Data</span></span>
-<span id="cb191-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb191-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;exMiss&quot;</span>)</span>
-<span id="cb191-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb191-3" tabindex="-1"></a></span>
-<span id="cb191-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb191-4" tabindex="-1"></a><span class="co"># Estimating Covariance Matrix</span></span>
-<span id="cb191-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb191-5" tabindex="-1"></a><span class="fu">covrob</span>(exMiss[,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>], <span class="at">method =</span> <span class="st">&quot;MCD&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb196-1" tabindex="-1"></a><span class="co"># Loading Example Data</span></span>
+<span id="cb196-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb196-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;exMiss&quot;</span>)</span>
+<span id="cb196-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb196-3" tabindex="-1"></a></span>
+<span id="cb196-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb196-4" tabindex="-1"></a><span class="co"># Estimating Covariance Matrix</span></span>
+<span id="cb196-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb196-5" tabindex="-1"></a><span class="fu">covrob</span>(exMiss[,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>], <span class="at">method =</span> <span class="st">&quot;MCD&quot;</span>)</span></code></pre></div>
 <p>In summary, <code>msgrob2</code> is a comprehensive R package that provides an array of functions for robust estimation in linear models with missing data. The package’s implementation of the EM algorithm and robust covariance estimators make it an essential tool for researchers and data analysts working with incomplete data. The package is easy to install and use, with code examples readily available for reference.</p>
 
 </div>
 </div>
-<div id="statspro-r-package" class="section level2 hasAnchor" number="10.8">
-<h2><span class="header-section-number">10.8</span> StatsPro R Package<a href="mass-spectrometry-r-packages-work-in-progress.html#statspro-r-package" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="statspro-r-package" class="section level2 hasAnchor" number="11.9">
+<h2><span class="header-section-number">11.9</span> StatsPro R Package<a href="mass-spectrometry-r-packages-work-in-progress.html#statspro-r-package" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
 <colgroup>
 <col width="22%" />
@@ -534,8 +569,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 
 </div>
-<div id="tidyproteomics" class="section level2 hasAnchor" number="10.9">
-<h2><span class="header-section-number">10.9</span> Tidyproteomics<a href="mass-spectrometry-r-packages-work-in-progress.html#tidyproteomics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="tidyproteomics" class="section level2 hasAnchor" number="11.10">
+<h2><span class="header-section-number">11.10</span> Tidyproteomics<a href="mass-spectrometry-r-packages-work-in-progress.html#tidyproteomics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The tidyproteomics R package is a tool that provides a set of functions to preprocess and analyze proteomics data using the tidy data framework. This package is built on top of the tidyverse and Bioconductor packages, which are widely used in the R community for data manipulation and analysis.</p>
 <p>Some of the main features of the tidyproteomics package include:</p>
 <ul>
@@ -570,63 +605,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="installation-3" class="section level3 unnumbered hasAnchor">
 <h3>Installation<a href="mass-spectrometry-r-packages-work-in-progress.html#installation-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To install the <code>tidyproteomics</code> package, you will need to install GitHub and Bioconductor repositories:</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb192-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
-<span id="cb192-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb192-2" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;jeffsocal/tidyproteomics&quot;</span>)</span>
-<span id="cb192-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb192-3" tabindex="-1"></a></span>
-<span id="cb192-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb192-4" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;BiocManager&quot;</span>)</span>
-<span id="cb192-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb192-5" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="fu">c</span>(<span class="st">&quot;limma&quot;</span>,<span class="st">&quot;qvalue&quot;</span>,<span class="st">&quot;fgsea&quot;</span>,<span class="st">&quot;Biostrings&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb197-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
+<span id="cb197-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb197-2" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;jeffsocal/tidyproteomics&quot;</span>)</span>
+<span id="cb197-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb197-3" tabindex="-1"></a></span>
+<span id="cb197-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb197-4" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;BiocManager&quot;</span>)</span>
+<span id="cb197-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb197-5" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="fu">c</span>(<span class="st">&quot;limma&quot;</span>,<span class="st">&quot;qvalue&quot;</span>,<span class="st">&quot;fgsea&quot;</span>,<span class="st">&quot;Biostrings&quot;</span>))</span></code></pre></div>
 </div>
 <div id="loading-data-1" class="section level3 unnumbered hasAnchor">
 <h3>Loading Data<a href="mass-spectrometry-r-packages-work-in-progress.html#loading-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To load your data into tidyproteomics, you can use the following code:</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb193-1" tabindex="-1"></a><span class="co"># Load the tidyproteomics package</span></span>
-<span id="cb193-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb193-2" tabindex="-1"></a><span class="fu">library</span>(tidyproteomics)</span>
-<span id="cb193-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb193-3" tabindex="-1"></a></span>
-<span id="cb193-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb193-4" tabindex="-1"></a><span class="co"># Import data</span></span>
-<span id="cb193-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb193-5" tabindex="-1"></a>data_proteins <span class="ot">&lt;-</span> <span class="st">&quot;path_to_data.xlsx&quot;</span> <span class="sc">%&gt;%</span></span>
-<span id="cb193-6"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb193-6" tabindex="-1"></a>  <span class="fu">import</span>(<span class="st">&quot;ProteomeDiscoverer&quot;</span>, <span class="st">&quot;proteins&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb198-1" tabindex="-1"></a><span class="co"># Load the tidyproteomics package</span></span>
+<span id="cb198-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb198-2" tabindex="-1"></a><span class="fu">library</span>(tidyproteomics)</span>
+<span id="cb198-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb198-3" tabindex="-1"></a></span>
+<span id="cb198-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb198-4" tabindex="-1"></a><span class="co"># Import data</span></span>
+<span id="cb198-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb198-5" tabindex="-1"></a>data_proteins <span class="ot">&lt;-</span> <span class="st">&quot;path_to_data.xlsx&quot;</span> <span class="sc">%&gt;%</span></span>
+<span id="cb198-6"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb198-6" tabindex="-1"></a>  <span class="fu">import</span>(<span class="st">&quot;ProteomeDiscoverer&quot;</span>, <span class="st">&quot;proteins&quot;</span>) </span></code></pre></div>
 </div>
 <div id="data-summaries" class="section level3 unnumbered hasAnchor">
 <h3>Data Summaries<a href="mass-spectrometry-r-packages-work-in-progress.html#data-summaries" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Currently, tidyproteomics implements two summary quantitative visualizations. The first is a simple grouped bar chart that displays individual and grouped proteins, as well as all and unique peptides. The match-between-runs is shown as a margin above the MS2 evidenced identifications. In recent literature, a summary of protein quantitation has been visualized as a rank-based dot plot. This plot can be extended to highlight statistical differences via an unbiased all-pair-wise comparison, which gives an anticipated view on how to guide downstream analyses.</p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb194-1" tabindex="-1"></a>p01 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_counts</span>()</span>
-<span id="cb194-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb194-2" tabindex="-1"></a>p02 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_quantrank</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb199-1" tabindex="-1"></a>p01 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_counts</span>()</span>
+<span id="cb199-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb199-2" tabindex="-1"></a>p02 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_quantrank</span>()</span></code></pre></div>
 <p>Summary Stats {-}
 Summarizing proteomics data is vital to understanding the bigger picture and conveying summary stats that set the tone for the larger analysis. The results of each summary can be directed to via the destination option to “print” on screen, “save” to a file or “return” as a tibble.</p>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb195-1" tabindex="-1"></a>data_proteins <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span></span>
-<span id="cb195-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb195-2" tabindex="-1"></a>  <span class="co"># save a table of simple summary stats</span></span>
-<span id="cb195-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb195-3" tabindex="-1"></a>  <span class="fu">summary</span>(<span class="st">&quot;sample&quot;</span>, <span class="at">destination =</span> <span class="st">&quot;save&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb195-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb195-4" tabindex="-1"></a>  <span class="co"># save a report on contamination</span></span>
-<span id="cb195-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb195-5" tabindex="-1"></a>  <span class="fu">summary</span>(<span class="at">contamination =</span> <span class="st">&quot;CRAP&quot;</span>, <span class="at">destination =</span> <span class="st">&quot;save&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb195-6"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb195-6" tabindex="-1"></a>  <span class="co"># remove contamination</span></span>
-<span id="cb195-7"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb195-7" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="sc">!</span>description <span class="sc">%like%</span> <span class="st">&quot;^CRAP&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb200-1" tabindex="-1"></a>data_proteins <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span></span>
+<span id="cb200-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb200-2" tabindex="-1"></a>  <span class="co"># save a table of simple summary stats</span></span>
+<span id="cb200-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb200-3" tabindex="-1"></a>  <span class="fu">summary</span>(<span class="st">&quot;sample&quot;</span>, <span class="at">destination =</span> <span class="st">&quot;save&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb200-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb200-4" tabindex="-1"></a>  <span class="co"># save a report on contamination</span></span>
+<span id="cb200-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb200-5" tabindex="-1"></a>  <span class="fu">summary</span>(<span class="at">contamination =</span> <span class="st">&quot;CRAP&quot;</span>, <span class="at">destination =</span> <span class="st">&quot;save&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb200-6"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb200-6" tabindex="-1"></a>  <span class="co"># remove contamination</span></span>
+<span id="cb200-7"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb200-7" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="sc">!</span>description <span class="sc">%like%</span> <span class="st">&quot;^CRAP&quot;</span>)</span></code></pre></div>
 </div>
 <div id="normalization-and-imputation" class="section level3 unnumbered hasAnchor">
 <h3>Normalization and Imputation<a href="mass-spectrometry-r-packages-work-in-progress.html#normalization-and-imputation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Quantitative proteomics requires accurate normalization, which can be difficult to implement. The <code>normalize()</code> function in the tidyproteomics package is a wrapper for various normalization methods, while <code>select_normalization()</code> automatically selects the best method based on a weighted score. Both functions allow for downstream analyses such as <code>expression()</code> and <code>enrichment()</code>. The package attempts to apply each function universally to peptide and protein values using the <code>identifier</code> variable to identify the thing being measured.</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb196-1" tabindex="-1"></a>data_proteins <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span></span>
-<span id="cb196-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb196-2" tabindex="-1"></a>  <span class="co"># normalize via several methods, best method will be automatically selected</span></span>
-<span id="cb196-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb196-3" tabindex="-1"></a>  <span class="fu">normalize</span>(<span class="at">.method =</span> <span class="fu">c</span>(<span class="st">&quot;median&quot;</span>,<span class="st">&quot;linear&quot;</span>,<span class="st">&quot;limma&quot;</span>,<span class="st">&quot;randomforest&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb196-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb196-4" tabindex="-1"></a>  <span class="co"># impute with a minimum value (this is a knock-out)</span></span>
-<span id="cb196-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb196-5" tabindex="-1"></a>  <span class="fu">impute</span>(base<span class="sc">::</span>min)</span>
-<span id="cb196-6"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb196-6" tabindex="-1"></a></span>
-<span id="cb196-7"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb196-7" tabindex="-1"></a><span class="co"># plot visualizations comparing normalization methods</span></span>
-<span id="cb196-8"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb196-8" tabindex="-1"></a>p03 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_normalization</span>()</span>
-<span id="cb196-9"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb196-9" tabindex="-1"></a>p04 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_variation_cv</span>()</span>
-<span id="cb196-10"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb196-10" tabindex="-1"></a>p05 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_variation_pca</span>()</span>
-<span id="cb196-11"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb196-11" tabindex="-1"></a>p06 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_dynamic_range</span>()</span></code></pre></div>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb197-1" tabindex="-1"></a><span class="co"># plot visualizations of unbiased clustering</span></span>
-<span id="cb197-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb197-2" tabindex="-1"></a>p07 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_heatmap</span>()</span>
-<span id="cb197-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb197-3" tabindex="-1"></a>p08 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_pca</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb201-1" tabindex="-1"></a>data_proteins <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span></span>
+<span id="cb201-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb201-2" tabindex="-1"></a>  <span class="co"># normalize via several methods, best method will be automatically selected</span></span>
+<span id="cb201-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb201-3" tabindex="-1"></a>  <span class="fu">normalize</span>(<span class="at">.method =</span> <span class="fu">c</span>(<span class="st">&quot;median&quot;</span>,<span class="st">&quot;linear&quot;</span>,<span class="st">&quot;limma&quot;</span>,<span class="st">&quot;randomforest&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb201-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb201-4" tabindex="-1"></a>  <span class="co"># impute with a minimum value (this is a knock-out)</span></span>
+<span id="cb201-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb201-5" tabindex="-1"></a>  <span class="fu">impute</span>(base<span class="sc">::</span>min)</span>
+<span id="cb201-6"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb201-6" tabindex="-1"></a></span>
+<span id="cb201-7"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb201-7" tabindex="-1"></a><span class="co"># plot visualizations comparing normalization methods</span></span>
+<span id="cb201-8"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb201-8" tabindex="-1"></a>p03 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_normalization</span>()</span>
+<span id="cb201-9"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb201-9" tabindex="-1"></a>p04 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_variation_cv</span>()</span>
+<span id="cb201-10"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb201-10" tabindex="-1"></a>p05 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_variation_pca</span>()</span>
+<span id="cb201-11"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb201-11" tabindex="-1"></a>p06 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_dynamic_range</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb202-1" tabindex="-1"></a><span class="co"># plot visualizations of unbiased clustering</span></span>
+<span id="cb202-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb202-2" tabindex="-1"></a>p07 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_heatmap</span>()</span>
+<span id="cb202-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb202-3" tabindex="-1"></a>p08 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_pca</span>()</span></code></pre></div>
 </div>
 <div id="expression-analysis" class="section level3 unnumbered hasAnchor">
 <h3>Expression Analysis<a href="mass-spectrometry-r-packages-work-in-progress.html#expression-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb198-1" tabindex="-1"></a>data_proteins <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span></span>
-<span id="cb198-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb198-2" tabindex="-1"></a>  <span class="co"># calculate the expression between experiment: ko and control: wt</span></span>
-<span id="cb198-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb198-3" tabindex="-1"></a>  <span class="fu">expression</span>(kndw<span class="sc">/</span>ctrl) <span class="sc">%&gt;%</span></span>
-<span id="cb198-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb198-4" tabindex="-1"></a>  <span class="co"># plot the expression analysis</span></span>
-<span id="cb198-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb198-5" tabindex="-1"></a>  <span class="fu">plot_volcano</span>(kndw<span class="sc">/</span>ctrl, <span class="at">destination =</span> <span class="st">&quot;png&quot;</span>, <span class="at">significance_column =</span> <span class="st">&quot;p_value&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb198-6"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb198-6" tabindex="-1"></a>  <span class="fu">plot_proportion</span>(kndw<span class="sc">/</span>ctrl, <span class="at">destination =</span> <span class="st">&quot;png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb203-1" tabindex="-1"></a>data_proteins <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span></span>
+<span id="cb203-2"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb203-2" tabindex="-1"></a>  <span class="co"># calculate the expression between experiment: ko and control: wt</span></span>
+<span id="cb203-3"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb203-3" tabindex="-1"></a>  <span class="fu">expression</span>(kndw<span class="sc">/</span>ctrl) <span class="sc">%&gt;%</span></span>
+<span id="cb203-4"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb203-4" tabindex="-1"></a>  <span class="co"># plot the expression analysis</span></span>
+<span id="cb203-5"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb203-5" tabindex="-1"></a>  <span class="fu">plot_volcano</span>(kndw<span class="sc">/</span>ctrl, <span class="at">destination =</span> <span class="st">&quot;png&quot;</span>, <span class="at">significance_column =</span> <span class="st">&quot;p_value&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb203-6"><a href="mass-spectrometry-r-packages-work-in-progress.html#cb203-6" tabindex="-1"></a>  <span class="fu">plot_proportion</span>(kndw<span class="sc">/</span>ctrl, <span class="at">destination =</span> <span class="st">&quot;png&quot;</span>)</span></code></pre></div>
 <p>Overall, the tidyproteomics package provides a useful set of tools for preprocessing and analyzing proteomics data using the tidy data framework in R. There are several more workable examples in the online documentation.</p>
 
 </div>
@@ -638,7 +673,7 @@ Summarizing proteomics data is vital to understanding the bigger picture and con
         </div>
       </div>
 <a href="mass-spectrometry-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sharing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="answers-to-exercises.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

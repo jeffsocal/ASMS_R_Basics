@@ -1,6 +1,6 @@
 ## Exercises {-}
 
-1.  Create a new R Studio Project and name it *02_basics_YYYYMMDD*.
+1.  Create a new R Studio Project and name it *002_basics*.
 2.  Create a new R script, add your name and date at the top as comments
 ```{r, eval=FALSE}
 # Your Name
@@ -31,7 +31,9 @@
 6.  Create a function to test if a value is even resulting in `TRUE` or `FALSE`.
 
 ```{r, echo=FALSE}
-even <- function(x) { x %% 2 == 0 }
+even <- function(x) { 
+  x %% 2 == 0 
+}
 ```
 
 ```{r}
@@ -42,8 +44,11 @@ even(3)
 
 ```{r, echo=FALSE}
 oddeven <- function(x) { 
-  if(x %% 2 == 0) return('even')
-  else return('odd')
+  if(x %% 2 == 0) {
+    return('even')
+  } else {
+    return('odd')
+  }
 }
 ```
 

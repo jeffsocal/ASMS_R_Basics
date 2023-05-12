@@ -8,7 +8,7 @@ Trellis Graphics, originally developed for S and S-PLUS at the Bell Labs, is a f
 Various types of lattice plots available for data visualization. Among the different types of plots, **univariate** plots stand out as they utilize only a single variable for plotting. The different options available for univariate plots include bar plots, box-and-whisker plots, kernel density estimates, dot plots, histograms, quantile plots, and one-dimensional scatter plots. **Bivariate** plots involve plotting two variables against each other. Examples of bivariate plots include scatterplots and quantile plots. These types of plots are useful in analyzing the relationship between two variables and can provide valuable insights into the data. **Trivariate** plots, as the name implies, involve plotting three variables and provide a more complex visualization of the data. Options for trivariate plots include level plots, contour plots, three-dimensional scatter plots, and three-dimensional surface plots. These types of plots can be particularly helpful in analyzing complex data sets and identifying patterns in the data that may not be immediately apparent.
 
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 library(lattice)
 
 p51 <- xyplot(int ~ mz, data = tbl_mz, main = "Scatter Plot")
@@ -26,8 +26,10 @@ Plotly is an open-source data visualization library that allows you to create in
 
 Plotly also nativity supports many data science languages such as R, Python, Julia, Java-script, MATLAB and F#.
 
-```{r, fig.width=6, fig.height=3, fig.align='center'}
+```{r, message=FALSE, warning=FALSE}
 library(plotly)
+```
+```{r, fig.width=6, fig.height=3, fig.align='center'}
 
 plot_ly(tbl_mz, x = ~mz, y = ~int, color = ~class,
         mode = "markers", type = "scatter") %>% 

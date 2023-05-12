@@ -1,0 +1,181 @@
+culture,dose_mg,metabolite,time_min,abundance
+e coli,0,glutamate,0,1375837
+e coli,0,glutamate,10,1910358
+e coli,0,glutamate,20,391392
+e coli,0,glutamate,50,354182
+e coli,0,glutamate,120,1115669
+staph aureus,0,glutamate,0,118996
+staph aureus,0,glutamate,10,139249
+staph aureus,0,glutamate,20,114691
+staph aureus,0,glutamate,50,135509
+staph aureus,0,glutamate,120,137167
+p aeruginosa,0,glutamate,0,2001145
+p aeruginosa,0,glutamate,10,1674016
+p aeruginosa,0,glutamate,20,1624757
+p aeruginosa,0,glutamate,50,1121142
+p aeruginosa,0,glutamate,120,8877
+e coli,10,glutamate,0,172133
+e coli,10,glutamate,10,487160
+e coli,10,glutamate,20,19789176
+e coli,10,glutamate,50,2578244
+e coli,10,glutamate,120,256209
+staph aureus,10,glutamate,0,11146
+staph aureus,10,glutamate,10,113729
+staph aureus,10,glutamate,20,1376654
+staph aureus,10,glutamate,50,130332
+staph aureus,10,glutamate,120,12993
+p aeruginosa,10,glutamate,0,293679
+p aeruginosa,10,glutamate,10,1055770
+p aeruginosa,10,glutamate,20,7803139
+p aeruginosa,10,glutamate,50,1758114
+p aeruginosa,10,glutamate,120,70609
+e coli,20,glutamate,0,133960
+e coli,20,glutamate,10,130580
+e coli,20,glutamate,20,125333
+e coli,20,glutamate,50,1568
+e coli,20,glutamate,120,10
+staph aureus,20,glutamate,0,10683
+staph aureus,20,glutamate,10,11929
+staph aureus,20,glutamate,20,11531
+staph aureus,20,glutamate,50,117
+staph aureus,20,glutamate,120,1
+p aeruginosa,20,glutamate,0,47979
+p aeruginosa,20,glutamate,10,45085
+p aeruginosa,20,glutamate,20,385748
+p aeruginosa,20,glutamate,50,1352
+p aeruginosa,20,glutamate,120,27
+e coli,0,lysine,0,527
+e coli,0,lysine,10,1698
+e coli,0,lysine,20,706
+e coli,0,lysine,50,2184
+e coli,0,lysine,120,902
+staph aureus,0,lysine,0,144
+staph aureus,0,lysine,10,137
+staph aureus,0,lysine,20,126
+staph aureus,0,lysine,50,115
+staph aureus,0,lysine,120,118
+p aeruginosa,0,lysine,0,94
+p aeruginosa,0,lysine,10,330
+p aeruginosa,0,lysine,20,142
+p aeruginosa,0,lysine,50,935
+p aeruginosa,0,lysine,120,920
+e coli,10,lysine,0,207
+e coli,10,lysine,10,10879
+e coli,10,lysine,20,122834
+e coli,10,lysine,50,2699
+e coli,10,lysine,120,87041
+staph aureus,10,lysine,0,112
+staph aureus,10,lysine,10,1362
+staph aureus,10,lysine,20,15091
+staph aureus,10,lysine,50,12389
+staph aureus,10,lysine,120,12105
+p aeruginosa,10,lysine,0,1744
+p aeruginosa,10,lysine,10,7796
+p aeruginosa,10,lysine,20,116676
+p aeruginosa,10,lysine,50,184145
+p aeruginosa,10,lysine,120,113604
+e coli,20,lysine,0,942
+e coli,20,lysine,10,206935
+e coli,20,lysine,20,707462
+e coli,20,lysine,50,21395106
+e coli,20,lysine,120,17504989
+staph aureus,20,lysine,0,116
+staph aureus,20,lysine,10,11096
+staph aureus,20,lysine,20,109347
+staph aureus,20,lysine,50,1355347
+staph aureus,20,lysine,120,1489131
+p aeruginosa,20,lysine,0,552
+p aeruginosa,20,lysine,10,37826
+p aeruginosa,20,lysine,20,652934
+p aeruginosa,20,lysine,50,23564208
+p aeruginosa,20,lysine,120,9114020
+e coli,0,succinic acid,0,1437012
+e coli,0,succinic acid,10,954454
+e coli,0,succinic acid,20,1315077
+e coli,0,succinic acid,50,701899
+e coli,0,succinic acid,120,1755846
+staph aureus,0,succinic acid,0,137308
+staph aureus,0,succinic acid,10,115874
+staph aureus,0,succinic acid,20,132167
+staph aureus,0,succinic acid,50,119773
+staph aureus,0,succinic acid,120,137503
+p aeruginosa,0,succinic acid,0,2593646
+p aeruginosa,0,succinic acid,10,810102
+p aeruginosa,0,succinic acid,20,71894
+p aeruginosa,0,succinic acid,50,1807854
+p aeruginosa,0,succinic acid,120,1651818
+e coli,10,succinic acid,0,261657
+e coli,10,succinic acid,10,776714
+e coli,10,succinic acid,20,20076674
+e coli,10,succinic acid,50,1009823
+e coli,10,succinic acid,120,24786
+staph aureus,10,succinic acid,0,11381
+staph aureus,10,succinic acid,10,134212
+staph aureus,10,succinic acid,20,1210957
+staph aureus,10,succinic acid,50,124377
+staph aureus,10,succinic acid,120,10746
+p aeruginosa,10,succinic acid,0,237666
+p aeruginosa,10,succinic acid,10,1119833
+p aeruginosa,10,succinic acid,20,20354370
+p aeruginosa,10,succinic acid,50,2560322
+p aeruginosa,10,succinic acid,120,153076
+e coli,20,succinic acid,0,219049
+e coli,20,succinic acid,10,131966
+e coli,20,succinic acid,20,32404
+e coli,20,succinic acid,50,1738
+e coli,20,succinic acid,120,6
+staph aureus,20,succinic acid,0,11857
+staph aureus,20,succinic acid,10,12801
+staph aureus,20,succinic acid,20,11986
+staph aureus,20,succinic acid,50,129
+staph aureus,20,succinic acid,120,1
+p aeruginosa,20,succinic acid,0,192943
+p aeruginosa,20,succinic acid,10,24239
+p aeruginosa,20,succinic acid,20,7159
+p aeruginosa,20,succinic acid,50,1109
+p aeruginosa,20,succinic acid,120,8
+e coli,0,phosphatidylcholine,0,125196620
+e coli,0,phosphatidylcholine,10,20303583
+e coli,0,phosphatidylcholine,20,85259472
+e coli,0,phosphatidylcholine,50,119703977
+e coli,0,phosphatidylcholine,120,28364136
+staph aureus,0,phosphatidylcholine,0,15160585
+staph aureus,0,phosphatidylcholine,10,9476846
+staph aureus,0,phosphatidylcholine,20,12661367
+staph aureus,0,phosphatidylcholine,50,12007467
+staph aureus,0,phosphatidylcholine,120,11492831
+p aeruginosa,0,phosphatidylcholine,0,51206448
+p aeruginosa,0,phosphatidylcholine,10,129056188
+p aeruginosa,0,phosphatidylcholine,20,193334656
+p aeruginosa,0,phosphatidylcholine,50,156148257
+p aeruginosa,0,phosphatidylcholine,120,24133947
+e coli,10,phosphatidylcholine,0,139836613
+e coli,10,phosphatidylcholine,10,8221056
+e coli,10,phosphatidylcholine,20,1088267
+e coli,10,phosphatidylcholine,50,115355
+e coli,10,phosphatidylcholine,120,219749
+staph aureus,10,phosphatidylcholine,0,14102149
+staph aureus,10,phosphatidylcholine,10,1162472
+staph aureus,10,phosphatidylcholine,20,115926
+staph aureus,10,phosphatidylcholine,50,13180
+staph aureus,10,phosphatidylcholine,120,13936
+p aeruginosa,10,phosphatidylcholine,0,56895876
+p aeruginosa,10,phosphatidylcholine,10,22733918
+p aeruginosa,10,phosphatidylcholine,20,1901798
+p aeruginosa,10,phosphatidylcholine,50,83108
+p aeruginosa,10,phosphatidylcholine,120,317809
+e coli,20,phosphatidylcholine,0,191386707
+e coli,20,phosphatidylcholine,10,12914547
+e coli,20,phosphatidylcholine,20,17762
+e coli,20,phosphatidylcholine,50,1214
+e coli,20,phosphatidylcholine,120,12
+staph aureus,20,phosphatidylcholine,0,14789219
+staph aureus,20,phosphatidylcholine,10,1026298
+staph aureus,20,phosphatidylcholine,20,12484
+staph aureus,20,phosphatidylcholine,50,137
+staph aureus,20,phosphatidylcholine,120,1
+p aeruginosa,20,phosphatidylcholine,0,74535677
+p aeruginosa,20,phosphatidylcholine,10,20310417
+p aeruginosa,20,phosphatidylcholine,20,185691
+p aeruginosa,20,phosphatidylcholine,50,3037
+p aeruginosa,20,phosphatidylcholine,120,11

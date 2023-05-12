@@ -7,14 +7,6 @@ The motivation behind GGplot is based on the grammar of graphics such that
 
 Ideally this accomplishes dual goals of allowing you to quickly construct plots for initial analyses and checking for oddities (as explained above) and following the logical process of the plot construction.
 
-```{r, message=FALSE, warning=FALSE}
-library(tidyverse)
-```
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-library(gridExtra)
-```
-
 ### Syntax
 
 To graph in GGPlot there are a few core embodiments that need to be considered.
@@ -36,6 +28,14 @@ data %>% ggplot(aes(x,y)) + geom_point()
 
 In this example the `ggplot()` function contains the two components, the data table `data` and mapping function `aes()`. Since *GGPlot* follows a layered modality, the `ggplot()` function "sets" the canvas and passes the data table `data` and mapping function `aes()` to all the functions that follow with the `+` operator.
 
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(gridExtra)
+```
+
 Lets create some data ...
 ```{r}
 set.seed(5)
@@ -48,6 +48,12 @@ tbl_mz <- tibble(
 ```
 
 ### Basic Data Plotting
+
+::: {.infobox .note data-latex="{note}"}
+***NOTES** There are some handy cheat-sheets online that summarize all the functions*\
+\
+[ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/)
+:::
 
 #### Points and Lines {-}
 Points and lines graphing is a simple way of representing data in a two-dimensional space. In this graph, we use points to represent individual data values, and lines to connect them. The x-axis usually represents the **independent** variable while the y-axis represents the **dependent** variable - or in other words, what _y_ was observed while measuring _x_.

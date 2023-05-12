@@ -1,6 +1,12 @@
 ## **6** Tidyverse {-}
 
 ```{r, eval=FALSE}
+# John Doe
+# 2023-06-02
+# Institution Inc.
+#
+# Tidyverse Exercises
+
 # 1. Pipeline (eg. `%>%`) a data operation that provides the mean of following vector.
 
 c(7.48, 14.15, 6.23, 10.21, 15.13, 8.19, 8.58, 8.09, 9.14, 10.41) %>% mean()
@@ -45,4 +51,5 @@ tbl_cir %>%
     diam_sd = sd(diam),
     diam_cv = diam_sd / diam_mean
   )
+
 ```

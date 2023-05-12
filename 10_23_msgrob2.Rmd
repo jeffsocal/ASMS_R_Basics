@@ -1,4 +1,4 @@
-## msgrob2
+### msgrob2 {-}
 
 `msgrob2` is an R package that provides functions to perform robust estimation in linear models with missing data. With the help of the Expectation-Maximization (EM) algorithm, the package estimates the parameters of the linear model and imputes the missing data. Additionally, the package offers robust methods for estimating the covariance matrix, including the Minimum Covariance Determinant (MCD) estimator and the S-estimator.
 
@@ -10,7 +10,7 @@ The `msgrob2` package is particularly useful in situations where data is missing
 | **Code**          | [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/msqrob2.html)                                                                             |
 | **Literature**    | *Molecular & Cellular Proteomics*, **15**(2), 657-668., *Molecular & Cellular Proteomics*, **19**(7), 1209-1219., *Analytical Chemistry*, **92**(9), 6278--6287. |
 
-### Installation {-}
+#### Installation {-}
 
 To install the `msgrob2` package, you can use the following code:
 
@@ -19,7 +19,7 @@ install.packages("msgrob2")
 
 ```
 
-### Estimating Parameters {-}
+#### Estimating Parameters {-}
 
 To estimate the parameters of a linear model with missing data using `msgrob2`, you can use the `msgrob()` function. The following code demonstrates how to use `msgrob()`:
 
@@ -33,7 +33,7 @@ msgrob(model)
 
 ```
 
-### Estimating Covariance Matrix {-}
+#### Estimating Covariance Matrix {-}
 
 To estimate the covariance matrix using `msgrob2`, you can use the `covrob()` function. The following code demonstrates how to use `covrob()`:
 
