@@ -7,10 +7,13 @@ At the end of this chapter you should be able to:
 
 - Understand why R is a good choice for data analysis.
 
-- Understand that you have just started the learning curve and all your efforts hence forth are worth it.
+- Realize that you have just started the learning curve and all your efforts hence forth are worth it.
+
+- Know where to find additional educational resources.
+
 :::
 
-## Why choose it? {.unnumbered}
+## Why choose it? {-}
 
 In recent years, R has gained a lot of popularity among data scientists and analysts. The reason for this is simple: R is a language that is specifically designed for working with data. While other programming languages like C/C++, Java, and Python are general purpose languages that can be used in any domain, R is geared towards data analysis and manipulation.
 
@@ -22,7 +25,17 @@ Despite its many advantages, R does have a few limitations. For example, it is n
 
 Overall, R is an excellent language for anyone who wants to work with data. Its specialized features and wide range of capabilities make it a top choice for data scientists and analysts everywhere.
 
-## What you can do with it? {.unnumbered}
+The Stack Overflow blog post  [The Impressive Growth of R](https://stackoverflow.blog/2017/10/10/impressive-growth-r/) by David Robinson, discusses the growth and popularity of the programming language R. The post highlights the increase in R's usage on Stack Overflow, as well as the growing interest in R from various industries.
+
+> We found in a previous post that Python has a solid claim to being the 
+> fastest-growing programming language in terms of Stack Overflow visits. 
+> The same analysis showed that the R programming language has shown remarkable 
+> growth in the last five years as well. In fact, R is growing at a similar rate to Python…
+
+The post provides an overview of R's history, its advantages and disadvantages, and its current position in the programming world. The author notes that R's popularity is due to its ability to handle large datasets, its flexibility for data analysis and in increase in popularity of data science and the growing number of companies using R for data analysis. Overall, the post concludes that R's growth and popularity are likely to continue in the future, as more industries recognize the value of data analysis and turn to R as a solution.
+
+
+## What you can do with it? {-}
 The potential of what you can achieve with R is vast and ultimately depends on the level of dedication you have towards learning and expanding your skill set. By utilizing R, you can analyze data through various methods such as reading and plotting data, constructing analysis pipelines, prototyping new algorithms, and even writing your analysis code into shareable packages. With these abilities, you can not only perform data analysis, but also create a more efficient and reproducible workflow. The more you learn and experiment with R, the more you can discover and unlock its full potential.
 
 ::: {.infobox .note data-latex="{note}"}
@@ -31,21 +44,21 @@ The potential of what you can achieve with R is vast and ultimately depends on t
 R can be a fast, nimble, forgiving scripting language with lots of ready-made tools and resources (CRAN, Github, Bioconductor).
 :::
 
-## The R Learning Curve {.unnumbered}
+## The R Learning Curve {-}
 
 The learning curve for R 10+ years ago was difficult as there where fewer R resources, it was less mature with not a lot of interest. Additionally, there were fewer people in the community and data science wasn't "a thing" yet.
 
-```{r 1001, echo=FALSE, fig.cap="\\label{fig:1001}R learning curve past", fig.align='center'}
+```{r 1001, echo=FALSE, fig.cap="\\label{fig:1001}R learning curve past", fig.align='center', fig.width=6}
 knitr::include_graphics("images/01_001_r_learning_curve_past.png")
 ```
 
 The R programming language is still challenging but worth it. With the introduction of packages encompassed in the tidyverse there are more high-quality resources, mature utilization with well documented explanations and examples. Currently there is lots of current interest in R with a large community of users and developers. Additionally, the data science "revolution has pushed R to develop and evolve, become more user-centric.
 
-```{r 1002, echo=FALSE, fig.cap="\\label{fig:1002}R learning curve present", fig.align='center'}
+```{r 1002, echo=FALSE, fig.cap="\\label{fig:1002}R learning curve present", fig.align='center', fig.width=6}
 knitr::include_graphics("images/01_002_r_learning_curve_present.png")
 ```
 
-## Thoughts about learning R and how to code {.unnumbered}
+## Thoughts about learning R and how to code {-}
 
 When it comes to learning a programming language, it can be daunting to know where to start. However, the first step to learning any programming language is to understand its syntax. Syntax refers to the set of rules and symbols that make up structurally correct code. Without proper syntax, even the smallest of errors can result in code that doesn't run. These errors could be as simple as a typo, an incorrect name, missing spaces or too many spaces, or even wrong brackets. Syntax errors can be frustrating, especially for beginners, but it's important to hang in there and start simple.
 
@@ -53,7 +66,7 @@ It's best to begin by trying to understand very simple cases first, before build
 
 In short, when learning R, it's important to remember that syntax is key. By taking the time to understand the syntax rules, you can avoid frustrating syntax errors and build a solid foundation for your future coding endeavors
 
-## Alternatives {.unnumbered}
+## Alternatives {-}
 
 When it comes to data science, R is a popular programming language among statisticians and data analysts. However, there are several data science alternatives to R that are also gaining popularity.
 
@@ -65,9 +78,7 @@ Matlab is another alternative to R that is widely used in the scientific communi
 
 In conclusion, while R is a popular language for data science, it is not the only option available. Python, Julia, and Matlab are all viable alternatives with their own strengths and weaknesses. It is important to consider the specific needs of your project and choose the programming language that best suits your requirements.
 
-### Did you know {.unnumbered}
-
-While R on its own is a powerful scripting language, some analytical tasks might require the use of other programming languages such as Python, C++ or Rust. Luckily, R provides different packages that allow us to use these languages within R code. These packages provide a seamless integration between these languages and R, allowing you to leverage the strengths of each language to perform complex tasks.
+**Did you know**, that while R on its own is a powerful scripting language, some analytical tasks might require the use of other programming languages such as Python, C++ or Rust. Luckily, R provides different packages that allow us to use these languages within R code. These packages provide a seamless integration between these languages and R, allowing you to leverage the strengths of each language to perform complex tasks.
 
 The `reticulate` package enables the integration of Python code in R. This package allows you to import Python modules and functions directly into R and also allows you to call Python functions from R code. This is especially useful when you need to use Python's machine learning libraries such as TensorFlow or PyTorch, which are not yet available in R.
 

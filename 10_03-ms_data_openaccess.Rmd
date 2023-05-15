@@ -4,11 +4,9 @@ Mass spectrometry (MS) is a powerful analytical method that can be used to deter
 
 *ProteoWizard* is an open-source software suite that provides a collection of open-source, cross-platform software libraries and tools for extracting raw mass spectrometry data from from various instrument vendor formats and converting it to the formats listed below.
 
+> _Kessner, D., Chambers, M., Burke, R., Agus, D., & Mallick, P. (2008). ProteoWizard: open source software for rapid proteomics tools development. Bioinformatics, 24(21), 2534–2536.
 >
-> _Kessner, D., Chambers, M., Burke, R., Agus, D., & Mallick, P. (2008). ProteoWizard: open source software for rapid proteomics tools development. Bioinformatics, 24(21), 2534–2536. [https://doi.org/10.1093/bioinformatics/btn323](https://doi.org/10.1093/bioinformatics/btn323)_
->
-> https://proteowizard.sourceforge.io/
->
+> [proteowizard.sourceforge.io/](https://proteowizard.sourceforge.io/)
 
 ### mzXML {-}
 
@@ -35,5 +33,5 @@ The mzML format allows for more detailed and comprehensive data storage than mzX
 Recently proposed as a new file format based on HDF5 and NetCDF4 standards, mzMLb is faster and more flexible than existing approaches while preserving the XML encoding of metadata. Additionally, it is optimized for both read/write speed and storage efficiency. The format has a reference implementation provided within the ProteoWizard toolkit.
 
 >
-> Bhamber, Ranjeet S., et al. "mzMLb: A future-proof raw mass spectrometry data format based on standards-compliant mzML and optimized for speed and storage requirements." Journal of proteome research 20.1 (2020): 172-183._
+> _Bhamber, Ranjeet S., et al. "mzMLb: A future-proof raw mass spectrometry data format based on standards-compliant mzML and optimized for speed and storage requirements." Journal of proteome research 20.1 (2020): 172-183._
 >

@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2023-05-12" />
+<meta name="date" content="2023-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,9 +151,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#what-you-can-do-with-it"><i class="fa fa-check"></i>What you can do with it?</a></li>
 <li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-r-learning-curve"><i class="fa fa-check"></i>The R Learning Curve</a></li>
 <li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#thoughts-about-learning-r-and-how-to-code"><i class="fa fa-check"></i>Thoughts about learning R and how to code</a></li>
-<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#alternatives"><i class="fa fa-check"></i>Alternatives</a>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#alternatives"><i class="fa fa-check"></i>Alternatives</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#resources"><i class="fa fa-check"></i>Resources</a>
 <ul>
-<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#did-you-know"><i class="fa fa-check"></i>Did you know</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#online"><i class="fa fa-check"></i>Online</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#in-print"><i class="fa fa-check"></i>In Print</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#organizations"><i class="fa fa-check"></i>Organizations</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>2</b> Installation</a>
@@ -319,12 +322,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzml"><i class="fa fa-check"></i>mzML</a></li>
 <li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzmlb"><i class="fa fa-check"></i>mzMLb</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-packages-for-data"><i class="fa fa-check"></i><b>10.3</b> R Packages for Data</a>
+<li class="chapter" data-level="10.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-calculate-mass"><i class="fa fa-check"></i><b>10.3</b> R Calculate Mass</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#brain"><i class="fa fa-check"></i>BRAIN</a></li>
+<li class="chapter" data-level="10.3.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#envipat"><i class="fa fa-check"></i><b>10.3.1</b> enviPat</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-ms-data"><i class="fa fa-check"></i><b>10.4</b> R MS Data</a>
 <ul>
 <li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#xcms"><i class="fa fa-check"></i>xcms</a></li>
 <li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzr"><i class="fa fa-check"></i>mzR</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-packages-for-analysis"><i class="fa fa-check"></i><b>10.4</b> R packages for Analysis</a>
+<li class="chapter" data-level="10.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-ms-analysis"><i class="fa fa-check"></i><b>10.5</b> R MS Analysis</a>
 <ul>
 <li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#deqms"><i class="fa fa-check"></i>deqms</a></li>
 <li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msempire"><i class="fa fa-check"></i>msempire</a></li>
@@ -368,272 +376,272 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="the-basics-1" class="section level2 unnumbered hasAnchor">
 <h2><strong>4</strong> The Basics<a href="answers-to-exercises.html#the-basics-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="answers-to-exercises.html#cb204-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
-<span id="cb204-2"><a href="answers-to-exercises.html#cb204-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
-<span id="cb204-3"><a href="answers-to-exercises.html#cb204-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
-<span id="cb204-4"><a href="answers-to-exercises.html#cb204-4" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb204-5"><a href="answers-to-exercises.html#cb204-5" tabindex="-1"></a><span class="co"># Some basic R practice</span></span>
-<span id="cb204-6"><a href="answers-to-exercises.html#cb204-6" tabindex="-1"></a></span>
-<span id="cb204-7"><a href="answers-to-exercises.html#cb204-7" tabindex="-1"></a><span class="co"># 3.  Calculate the sum of 2 and 3.</span></span>
-<span id="cb204-8"><a href="answers-to-exercises.html#cb204-8" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span></span>
-<span id="cb204-9"><a href="answers-to-exercises.html#cb204-9" tabindex="-1"></a></span>
-<span id="cb204-10"><a href="answers-to-exercises.html#cb204-10" tabindex="-1"></a><span class="co"># 4.  Evaluate if 0.5 is equal to 1 divided by 2.</span></span>
-<span id="cb204-11"><a href="answers-to-exercises.html#cb204-11" tabindex="-1"></a></span>
-<span id="cb204-12"><a href="answers-to-exercises.html#cb204-12" tabindex="-1"></a><span class="fl">0.5</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">2</span></span>
-<span id="cb204-13"><a href="answers-to-exercises.html#cb204-13" tabindex="-1"></a></span>
-<span id="cb204-14"><a href="answers-to-exercises.html#cb204-14" tabindex="-1"></a><span class="co"># 5.  Test if 3 is an even number. </span></span>
-<span id="cb204-15"><a href="answers-to-exercises.html#cb204-15" tabindex="-1"></a><span class="co">#     Hint, use the modulus operator and a comparison operator.</span></span>
-<span id="cb204-16"><a href="answers-to-exercises.html#cb204-16" tabindex="-1"></a></span>
-<span id="cb204-17"><a href="answers-to-exercises.html#cb204-17" tabindex="-1"></a><span class="dv">3</span> <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span></span>
-<span id="cb204-18"><a href="answers-to-exercises.html#cb204-18" tabindex="-1"></a></span>
-<span id="cb204-19"><a href="answers-to-exercises.html#cb204-19" tabindex="-1"></a><span class="co"># 6.  Create a function to test if a value is even resulting in `TRUE` or `FALSE`.</span></span>
-<span id="cb204-20"><a href="answers-to-exercises.html#cb204-20" tabindex="-1"></a></span>
-<span id="cb204-21"><a href="answers-to-exercises.html#cb204-21" tabindex="-1"></a>even <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span> }</span>
-<span id="cb204-22"><a href="answers-to-exercises.html#cb204-22" tabindex="-1"></a></span>
-<span id="cb204-23"><a href="answers-to-exercises.html#cb204-23" tabindex="-1"></a><span class="fu">even</span>(<span class="dv">3</span>)</span>
-<span id="cb204-24"><a href="answers-to-exercises.html#cb204-24" tabindex="-1"></a></span>
-<span id="cb204-25"><a href="answers-to-exercises.html#cb204-25" tabindex="-1"></a><span class="co"># 7.  Create a function to test or *even* or *odd* by returning a string.</span></span>
-<span id="cb204-26"><a href="answers-to-exercises.html#cb204-26" tabindex="-1"></a></span>
-<span id="cb204-27"><a href="answers-to-exercises.html#cb204-27" tabindex="-1"></a>oddeven <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { </span>
-<span id="cb204-28"><a href="answers-to-exercises.html#cb204-28" tabindex="-1"></a>  <span class="cf">if</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) <span class="fu">return</span>(<span class="st">&#39;even&#39;</span>)</span>
-<span id="cb204-29"><a href="answers-to-exercises.html#cb204-29" tabindex="-1"></a>  <span class="cf">else</span> <span class="fu">return</span>(<span class="st">&#39;odd&#39;</span>)</span>
-<span id="cb204-30"><a href="answers-to-exercises.html#cb204-30" tabindex="-1"></a>}</span>
-<span id="cb204-31"><a href="answers-to-exercises.html#cb204-31" tabindex="-1"></a></span>
-<span id="cb204-32"><a href="answers-to-exercises.html#cb204-32" tabindex="-1"></a><span class="fu">oddeven</span>(<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="answers-to-exercises.html#cb211-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
+<span id="cb211-2"><a href="answers-to-exercises.html#cb211-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
+<span id="cb211-3"><a href="answers-to-exercises.html#cb211-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
+<span id="cb211-4"><a href="answers-to-exercises.html#cb211-4" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb211-5"><a href="answers-to-exercises.html#cb211-5" tabindex="-1"></a><span class="co"># Some basic R practice</span></span>
+<span id="cb211-6"><a href="answers-to-exercises.html#cb211-6" tabindex="-1"></a></span>
+<span id="cb211-7"><a href="answers-to-exercises.html#cb211-7" tabindex="-1"></a><span class="co"># 3.  Calculate the sum of 2 and 3.</span></span>
+<span id="cb211-8"><a href="answers-to-exercises.html#cb211-8" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span></span>
+<span id="cb211-9"><a href="answers-to-exercises.html#cb211-9" tabindex="-1"></a></span>
+<span id="cb211-10"><a href="answers-to-exercises.html#cb211-10" tabindex="-1"></a><span class="co"># 4.  Evaluate if 0.5 is equal to 1 divided by 2.</span></span>
+<span id="cb211-11"><a href="answers-to-exercises.html#cb211-11" tabindex="-1"></a></span>
+<span id="cb211-12"><a href="answers-to-exercises.html#cb211-12" tabindex="-1"></a><span class="fl">0.5</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb211-13"><a href="answers-to-exercises.html#cb211-13" tabindex="-1"></a></span>
+<span id="cb211-14"><a href="answers-to-exercises.html#cb211-14" tabindex="-1"></a><span class="co"># 5.  Test if 3 is an even number. </span></span>
+<span id="cb211-15"><a href="answers-to-exercises.html#cb211-15" tabindex="-1"></a><span class="co">#     Hint, use the modulus operator and a comparison operator.</span></span>
+<span id="cb211-16"><a href="answers-to-exercises.html#cb211-16" tabindex="-1"></a></span>
+<span id="cb211-17"><a href="answers-to-exercises.html#cb211-17" tabindex="-1"></a><span class="dv">3</span> <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span></span>
+<span id="cb211-18"><a href="answers-to-exercises.html#cb211-18" tabindex="-1"></a></span>
+<span id="cb211-19"><a href="answers-to-exercises.html#cb211-19" tabindex="-1"></a><span class="co"># 6.  Create a function to test if a value is even resulting in `TRUE` or `FALSE`.</span></span>
+<span id="cb211-20"><a href="answers-to-exercises.html#cb211-20" tabindex="-1"></a></span>
+<span id="cb211-21"><a href="answers-to-exercises.html#cb211-21" tabindex="-1"></a>even <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span> }</span>
+<span id="cb211-22"><a href="answers-to-exercises.html#cb211-22" tabindex="-1"></a></span>
+<span id="cb211-23"><a href="answers-to-exercises.html#cb211-23" tabindex="-1"></a><span class="fu">even</span>(<span class="dv">3</span>)</span>
+<span id="cb211-24"><a href="answers-to-exercises.html#cb211-24" tabindex="-1"></a></span>
+<span id="cb211-25"><a href="answers-to-exercises.html#cb211-25" tabindex="-1"></a><span class="co"># 7.  Create a function to test or *even* or *odd* by returning a string.</span></span>
+<span id="cb211-26"><a href="answers-to-exercises.html#cb211-26" tabindex="-1"></a></span>
+<span id="cb211-27"><a href="answers-to-exercises.html#cb211-27" tabindex="-1"></a>oddeven <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { </span>
+<span id="cb211-28"><a href="answers-to-exercises.html#cb211-28" tabindex="-1"></a>  <span class="cf">if</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) <span class="fu">return</span>(<span class="st">&#39;even&#39;</span>)</span>
+<span id="cb211-29"><a href="answers-to-exercises.html#cb211-29" tabindex="-1"></a>  <span class="cf">else</span> <span class="fu">return</span>(<span class="st">&#39;odd&#39;</span>)</span>
+<span id="cb211-30"><a href="answers-to-exercises.html#cb211-30" tabindex="-1"></a>}</span>
+<span id="cb211-31"><a href="answers-to-exercises.html#cb211-31" tabindex="-1"></a></span>
+<span id="cb211-32"><a href="answers-to-exercises.html#cb211-32" tabindex="-1"></a><span class="fu">oddeven</span>(<span class="dv">3</span>)</span></code></pre></div>
 
 </div>
 <div id="data-structures-1" class="section level2 unnumbered hasAnchor">
 <h2><strong>5</strong> Data Structures<a href="answers-to-exercises.html#data-structures-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="answers-to-exercises.html#cb205-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
-<span id="cb205-2"><a href="answers-to-exercises.html#cb205-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
-<span id="cb205-3"><a href="answers-to-exercises.html#cb205-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
-<span id="cb205-4"><a href="answers-to-exercises.html#cb205-4" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb205-5"><a href="answers-to-exercises.html#cb205-5" tabindex="-1"></a><span class="co"># Data Structures Exercises</span></span>
-<span id="cb205-6"><a href="answers-to-exercises.html#cb205-6" tabindex="-1"></a></span>
-<span id="cb205-7"><a href="answers-to-exercises.html#cb205-7" tabindex="-1"></a><span class="co"># 1.  Construct the following vector and store as a variable.</span></span>
-<span id="cb205-8"><a href="answers-to-exercises.html#cb205-8" tabindex="-1"></a></span>
-<span id="cb205-9"><a href="answers-to-exercises.html#cb205-9" tabindex="-1"></a>str_gbu <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;red&#39;</span>, <span class="st">&#39;green&#39;</span>, <span class="st">&#39;blue&#39;</span>)</span>
-<span id="cb205-10"><a href="answers-to-exercises.html#cb205-10" tabindex="-1"></a><span class="fu">print</span>(str_gbu)</span>
-<span id="cb205-11"><a href="answers-to-exercises.html#cb205-11" tabindex="-1"></a></span>
-<span id="cb205-12"><a href="answers-to-exercises.html#cb205-12" tabindex="-1"></a></span>
-<span id="cb205-13"><a href="answers-to-exercises.html#cb205-13" tabindex="-1"></a><span class="co"># 2.  Extract the 2nd element in the variable.</span></span>
-<span id="cb205-14"><a href="answers-to-exercises.html#cb205-14" tabindex="-1"></a></span>
-<span id="cb205-15"><a href="answers-to-exercises.html#cb205-15" tabindex="-1"></a><span class="fu">print</span>(str_gbu[<span class="dv">2</span>])</span>
-<span id="cb205-16"><a href="answers-to-exercises.html#cb205-16" tabindex="-1"></a></span>
-<span id="cb205-17"><a href="answers-to-exercises.html#cb205-17" tabindex="-1"></a></span>
-<span id="cb205-18"><a href="answers-to-exercises.html#cb205-18" tabindex="-1"></a><span class="co"># 3.  Construct a numerical vector of length 5, containing the diameters of </span></span>
-<span id="cb205-19"><a href="answers-to-exercises.html#cb205-19" tabindex="-1"></a><span class="co">#     circles with integer circumferences 1 to 5. Remember PEMDAS.</span></span>
-<span id="cb205-20"><a href="answers-to-exercises.html#cb205-20" tabindex="-1"></a></span>
-<span id="cb205-21"><a href="answers-to-exercises.html#cb205-21" tabindex="-1"></a>cir <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi</span>
-<span id="cb205-22"><a href="answers-to-exercises.html#cb205-22" tabindex="-1"></a></span>
-<span id="cb205-23"><a href="answers-to-exercises.html#cb205-23" tabindex="-1"></a></span>
-<span id="cb205-24"><a href="answers-to-exercises.html#cb205-24" tabindex="-1"></a><span class="co"># 4.  Extract all circumferences greater than 50.</span></span>
-<span id="cb205-25"><a href="answers-to-exercises.html#cb205-25" tabindex="-1"></a></span>
-<span id="cb205-26"><a href="answers-to-exercises.html#cb205-26" tabindex="-1"></a>cir[<span class="fu">which</span>(cir <span class="sc">&gt;</span> <span class="dv">50</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="answers-to-exercises.html#cb212-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
+<span id="cb212-2"><a href="answers-to-exercises.html#cb212-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
+<span id="cb212-3"><a href="answers-to-exercises.html#cb212-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
+<span id="cb212-4"><a href="answers-to-exercises.html#cb212-4" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb212-5"><a href="answers-to-exercises.html#cb212-5" tabindex="-1"></a><span class="co"># Data Structures Exercises</span></span>
+<span id="cb212-6"><a href="answers-to-exercises.html#cb212-6" tabindex="-1"></a></span>
+<span id="cb212-7"><a href="answers-to-exercises.html#cb212-7" tabindex="-1"></a><span class="co"># 1.  Construct the following vector and store as a variable.</span></span>
+<span id="cb212-8"><a href="answers-to-exercises.html#cb212-8" tabindex="-1"></a></span>
+<span id="cb212-9"><a href="answers-to-exercises.html#cb212-9" tabindex="-1"></a>str_gbu <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;red&#39;</span>, <span class="st">&#39;green&#39;</span>, <span class="st">&#39;blue&#39;</span>)</span>
+<span id="cb212-10"><a href="answers-to-exercises.html#cb212-10" tabindex="-1"></a><span class="fu">print</span>(str_gbu)</span>
+<span id="cb212-11"><a href="answers-to-exercises.html#cb212-11" tabindex="-1"></a></span>
+<span id="cb212-12"><a href="answers-to-exercises.html#cb212-12" tabindex="-1"></a></span>
+<span id="cb212-13"><a href="answers-to-exercises.html#cb212-13" tabindex="-1"></a><span class="co"># 2.  Extract the 2nd element in the variable.</span></span>
+<span id="cb212-14"><a href="answers-to-exercises.html#cb212-14" tabindex="-1"></a></span>
+<span id="cb212-15"><a href="answers-to-exercises.html#cb212-15" tabindex="-1"></a><span class="fu">print</span>(str_gbu[<span class="dv">2</span>])</span>
+<span id="cb212-16"><a href="answers-to-exercises.html#cb212-16" tabindex="-1"></a></span>
+<span id="cb212-17"><a href="answers-to-exercises.html#cb212-17" tabindex="-1"></a></span>
+<span id="cb212-18"><a href="answers-to-exercises.html#cb212-18" tabindex="-1"></a><span class="co"># 3.  Construct a numerical vector of length 5, containing the diameters of </span></span>
+<span id="cb212-19"><a href="answers-to-exercises.html#cb212-19" tabindex="-1"></a><span class="co">#     circles with integer circumferences 1 to 5. Remember PEMDAS.</span></span>
+<span id="cb212-20"><a href="answers-to-exercises.html#cb212-20" tabindex="-1"></a></span>
+<span id="cb212-21"><a href="answers-to-exercises.html#cb212-21" tabindex="-1"></a>cir <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi</span>
+<span id="cb212-22"><a href="answers-to-exercises.html#cb212-22" tabindex="-1"></a></span>
+<span id="cb212-23"><a href="answers-to-exercises.html#cb212-23" tabindex="-1"></a></span>
+<span id="cb212-24"><a href="answers-to-exercises.html#cb212-24" tabindex="-1"></a><span class="co"># 4.  Extract all circumferences greater than 50.</span></span>
+<span id="cb212-25"><a href="answers-to-exercises.html#cb212-25" tabindex="-1"></a></span>
+<span id="cb212-26"><a href="answers-to-exercises.html#cb212-26" tabindex="-1"></a>cir[<span class="fu">which</span>(cir <span class="sc">&gt;</span> <span class="dv">50</span>)]</span></code></pre></div>
 
 </div>
 <div id="tidyverse-2" class="section level2 unnumbered hasAnchor">
 <h2><strong>6</strong> Tidyverse<a href="answers-to-exercises.html#tidyverse-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="answers-to-exercises.html#cb206-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
-<span id="cb206-2"><a href="answers-to-exercises.html#cb206-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
-<span id="cb206-3"><a href="answers-to-exercises.html#cb206-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
-<span id="cb206-4"><a href="answers-to-exercises.html#cb206-4" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb206-5"><a href="answers-to-exercises.html#cb206-5" tabindex="-1"></a><span class="co"># Tidyverse Exercises</span></span>
-<span id="cb206-6"><a href="answers-to-exercises.html#cb206-6" tabindex="-1"></a></span>
-<span id="cb206-7"><a href="answers-to-exercises.html#cb206-7" tabindex="-1"></a><span class="co"># 1. Pipeline (eg. `%&gt;%`) a data operation that provides the mean of following vector.</span></span>
-<span id="cb206-8"><a href="answers-to-exercises.html#cb206-8" tabindex="-1"></a></span>
-<span id="cb206-9"><a href="answers-to-exercises.html#cb206-9" tabindex="-1"></a><span class="fu">c</span>(<span class="fl">7.48</span>, <span class="fl">14.15</span>, <span class="fl">6.23</span>, <span class="fl">10.21</span>, <span class="fl">15.13</span>, <span class="fl">8.19</span>, <span class="fl">8.58</span>, <span class="fl">8.09</span>, <span class="fl">9.14</span>, <span class="fl">10.41</span>) <span class="sc">%&gt;%</span> <span class="fu">mean</span>()</span>
-<span id="cb206-10"><a href="answers-to-exercises.html#cb206-10" tabindex="-1"></a></span>
-<span id="cb206-11"><a href="answers-to-exercises.html#cb206-11" tabindex="-1"></a></span>
-<span id="cb206-12"><a href="answers-to-exercises.html#cb206-12" tabindex="-1"></a><span class="co"># 2.  Employing a pipeline (eg. `%&gt;%`), construct a tibble with columns named </span></span>
-<span id="cb206-13"><a href="answers-to-exercises.html#cb206-13" tabindex="-1"></a><span class="co">#     `circ` and `diam` which contains the diameters of circles with integer </span></span>
-<span id="cb206-14"><a href="answers-to-exercises.html#cb206-14" tabindex="-1"></a><span class="co">#     circumferences 1 to 5. Remember PEMDAS.</span></span>
-<span id="cb206-15"><a href="answers-to-exercises.html#cb206-15" tabindex="-1"></a></span>
-<span id="cb206-16"><a href="answers-to-exercises.html#cb206-16" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb206-17"><a href="answers-to-exercises.html#cb206-17" tabindex="-1"></a></span>
-<span id="cb206-18"><a href="answers-to-exercises.html#cb206-18" tabindex="-1"></a>tbl_cir <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb206-19"><a href="answers-to-exercises.html#cb206-19" tabindex="-1"></a>  <span class="at">circ =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
-<span id="cb206-20"><a href="answers-to-exercises.html#cb206-20" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb206-21"><a href="answers-to-exercises.html#cb206-21" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">diam =</span> circ <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi)</span>
-<span id="cb206-22"><a href="answers-to-exercises.html#cb206-22" tabindex="-1"></a></span>
-<span id="cb206-23"><a href="answers-to-exercises.html#cb206-23" tabindex="-1"></a>tbl_cir</span>
-<span id="cb206-24"><a href="answers-to-exercises.html#cb206-24" tabindex="-1"></a></span>
-<span id="cb206-25"><a href="answers-to-exercises.html#cb206-25" tabindex="-1"></a></span>
-<span id="cb206-26"><a href="answers-to-exercises.html#cb206-26" tabindex="-1"></a><span class="co"># 3.  Extract all circumferences greater than 50.</span></span>
-<span id="cb206-27"><a href="answers-to-exercises.html#cb206-27" tabindex="-1"></a></span>
-<span id="cb206-28"><a href="answers-to-exercises.html#cb206-28" tabindex="-1"></a>tbl_cir <span class="sc">%&gt;%</span> <span class="fu">filter</span>(diam <span class="sc">&gt;</span> <span class="dv">50</span>)</span>
-<span id="cb206-29"><a href="answers-to-exercises.html#cb206-29" tabindex="-1"></a></span>
-<span id="cb206-30"><a href="answers-to-exercises.html#cb206-30" tabindex="-1"></a></span>
-<span id="cb206-31"><a href="answers-to-exercises.html#cb206-31" tabindex="-1"></a><span class="co"># 4. Add a column named `circ_type` where you assign the string *odd* or *even* </span></span>
-<span id="cb206-32"><a href="answers-to-exercises.html#cb206-32" tabindex="-1"></a><span class="co">#     depending on the column `circ`. Attempt to use the `purrr::map` function, </span></span>
-<span id="cb206-33"><a href="answers-to-exercises.html#cb206-33" tabindex="-1"></a><span class="co">#     along with the `oddeven()` function from the previous chapter, then compute </span></span>
-<span id="cb206-34"><a href="answers-to-exercises.html#cb206-34" tabindex="-1"></a><span class="co">#     the mean, standard deviation, and coefficient of variation of the diameters </span></span>
-<span id="cb206-35"><a href="answers-to-exercises.html#cb206-35" tabindex="-1"></a><span class="co">#     for each `circ_type`.</span></span>
-<span id="cb206-36"><a href="answers-to-exercises.html#cb206-36" tabindex="-1"></a></span>
-<span id="cb206-37"><a href="answers-to-exercises.html#cb206-37" tabindex="-1"></a>oddeven <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { </span>
-<span id="cb206-38"><a href="answers-to-exercises.html#cb206-38" tabindex="-1"></a>  <span class="cf">if</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) <span class="fu">return</span>(<span class="st">&#39;even&#39;</span>)</span>
-<span id="cb206-39"><a href="answers-to-exercises.html#cb206-39" tabindex="-1"></a>  <span class="cf">else</span> <span class="fu">return</span>(<span class="st">&#39;odd&#39;</span>)</span>
-<span id="cb206-40"><a href="answers-to-exercises.html#cb206-40" tabindex="-1"></a>}</span>
-<span id="cb206-41"><a href="answers-to-exercises.html#cb206-41" tabindex="-1"></a></span>
-<span id="cb206-42"><a href="answers-to-exercises.html#cb206-42" tabindex="-1"></a>tbl_cir <span class="sc">%&gt;%</span> </span>
-<span id="cb206-43"><a href="answers-to-exercises.html#cb206-43" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">circ_type =</span> <span class="fu">map</span>(circ, oddeven)) <span class="sc">%&gt;%</span></span>
-<span id="cb206-44"><a href="answers-to-exercises.html#cb206-44" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">circ_type =</span> <span class="fu">unlist</span>(circ_type)) <span class="sc">%&gt;%</span></span>
-<span id="cb206-45"><a href="answers-to-exercises.html#cb206-45" tabindex="-1"></a>  <span class="fu">group_by</span>(circ_type) <span class="sc">%&gt;%</span></span>
-<span id="cb206-46"><a href="answers-to-exercises.html#cb206-46" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb206-47"><a href="answers-to-exercises.html#cb206-47" tabindex="-1"></a>    <span class="at">diam_mean =</span> <span class="fu">mean</span>(diam),</span>
-<span id="cb206-48"><a href="answers-to-exercises.html#cb206-48" tabindex="-1"></a>    <span class="at">diam_sd =</span> <span class="fu">sd</span>(diam),</span>
-<span id="cb206-49"><a href="answers-to-exercises.html#cb206-49" tabindex="-1"></a>    <span class="at">diam_cv =</span> diam_sd <span class="sc">/</span> diam_mean</span>
-<span id="cb206-50"><a href="answers-to-exercises.html#cb206-50" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="answers-to-exercises.html#cb213-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
+<span id="cb213-2"><a href="answers-to-exercises.html#cb213-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
+<span id="cb213-3"><a href="answers-to-exercises.html#cb213-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
+<span id="cb213-4"><a href="answers-to-exercises.html#cb213-4" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb213-5"><a href="answers-to-exercises.html#cb213-5" tabindex="-1"></a><span class="co"># Tidyverse Exercises</span></span>
+<span id="cb213-6"><a href="answers-to-exercises.html#cb213-6" tabindex="-1"></a></span>
+<span id="cb213-7"><a href="answers-to-exercises.html#cb213-7" tabindex="-1"></a><span class="co"># 1. Pipeline (eg. `%&gt;%`) a data operation that provides the mean of following vector.</span></span>
+<span id="cb213-8"><a href="answers-to-exercises.html#cb213-8" tabindex="-1"></a></span>
+<span id="cb213-9"><a href="answers-to-exercises.html#cb213-9" tabindex="-1"></a><span class="fu">c</span>(<span class="fl">7.48</span>, <span class="fl">14.15</span>, <span class="fl">6.23</span>, <span class="fl">10.21</span>, <span class="fl">15.13</span>, <span class="fl">8.19</span>, <span class="fl">8.58</span>, <span class="fl">8.09</span>, <span class="fl">9.14</span>, <span class="fl">10.41</span>) <span class="sc">%&gt;%</span> <span class="fu">mean</span>()</span>
+<span id="cb213-10"><a href="answers-to-exercises.html#cb213-10" tabindex="-1"></a></span>
+<span id="cb213-11"><a href="answers-to-exercises.html#cb213-11" tabindex="-1"></a></span>
+<span id="cb213-12"><a href="answers-to-exercises.html#cb213-12" tabindex="-1"></a><span class="co"># 2.  Employing a pipeline (eg. `%&gt;%`), construct a tibble with columns named </span></span>
+<span id="cb213-13"><a href="answers-to-exercises.html#cb213-13" tabindex="-1"></a><span class="co">#     `circ` and `diam` which contains the diameters of circles with integer </span></span>
+<span id="cb213-14"><a href="answers-to-exercises.html#cb213-14" tabindex="-1"></a><span class="co">#     circumferences 1 to 5. Remember PEMDAS.</span></span>
+<span id="cb213-15"><a href="answers-to-exercises.html#cb213-15" tabindex="-1"></a></span>
+<span id="cb213-16"><a href="answers-to-exercises.html#cb213-16" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb213-17"><a href="answers-to-exercises.html#cb213-17" tabindex="-1"></a></span>
+<span id="cb213-18"><a href="answers-to-exercises.html#cb213-18" tabindex="-1"></a>tbl_cir <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb213-19"><a href="answers-to-exercises.html#cb213-19" tabindex="-1"></a>  <span class="at">circ =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb213-20"><a href="answers-to-exercises.html#cb213-20" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb213-21"><a href="answers-to-exercises.html#cb213-21" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">diam =</span> circ <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi)</span>
+<span id="cb213-22"><a href="answers-to-exercises.html#cb213-22" tabindex="-1"></a></span>
+<span id="cb213-23"><a href="answers-to-exercises.html#cb213-23" tabindex="-1"></a>tbl_cir</span>
+<span id="cb213-24"><a href="answers-to-exercises.html#cb213-24" tabindex="-1"></a></span>
+<span id="cb213-25"><a href="answers-to-exercises.html#cb213-25" tabindex="-1"></a></span>
+<span id="cb213-26"><a href="answers-to-exercises.html#cb213-26" tabindex="-1"></a><span class="co"># 3.  Extract all circumferences greater than 50.</span></span>
+<span id="cb213-27"><a href="answers-to-exercises.html#cb213-27" tabindex="-1"></a></span>
+<span id="cb213-28"><a href="answers-to-exercises.html#cb213-28" tabindex="-1"></a>tbl_cir <span class="sc">%&gt;%</span> <span class="fu">filter</span>(diam <span class="sc">&gt;</span> <span class="dv">50</span>)</span>
+<span id="cb213-29"><a href="answers-to-exercises.html#cb213-29" tabindex="-1"></a></span>
+<span id="cb213-30"><a href="answers-to-exercises.html#cb213-30" tabindex="-1"></a></span>
+<span id="cb213-31"><a href="answers-to-exercises.html#cb213-31" tabindex="-1"></a><span class="co"># 4. Add a column named `circ_type` where you assign the string *odd* or *even* </span></span>
+<span id="cb213-32"><a href="answers-to-exercises.html#cb213-32" tabindex="-1"></a><span class="co">#     depending on the column `circ`. Attempt to use the `purrr::map` function, </span></span>
+<span id="cb213-33"><a href="answers-to-exercises.html#cb213-33" tabindex="-1"></a><span class="co">#     along with the `oddeven()` function from the previous chapter, then compute </span></span>
+<span id="cb213-34"><a href="answers-to-exercises.html#cb213-34" tabindex="-1"></a><span class="co">#     the mean, standard deviation, and coefficient of variation of the diameters </span></span>
+<span id="cb213-35"><a href="answers-to-exercises.html#cb213-35" tabindex="-1"></a><span class="co">#     for each `circ_type`.</span></span>
+<span id="cb213-36"><a href="answers-to-exercises.html#cb213-36" tabindex="-1"></a></span>
+<span id="cb213-37"><a href="answers-to-exercises.html#cb213-37" tabindex="-1"></a>oddeven <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { </span>
+<span id="cb213-38"><a href="answers-to-exercises.html#cb213-38" tabindex="-1"></a>  <span class="cf">if</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) <span class="fu">return</span>(<span class="st">&#39;even&#39;</span>)</span>
+<span id="cb213-39"><a href="answers-to-exercises.html#cb213-39" tabindex="-1"></a>  <span class="cf">else</span> <span class="fu">return</span>(<span class="st">&#39;odd&#39;</span>)</span>
+<span id="cb213-40"><a href="answers-to-exercises.html#cb213-40" tabindex="-1"></a>}</span>
+<span id="cb213-41"><a href="answers-to-exercises.html#cb213-41" tabindex="-1"></a></span>
+<span id="cb213-42"><a href="answers-to-exercises.html#cb213-42" tabindex="-1"></a>tbl_cir <span class="sc">%&gt;%</span> </span>
+<span id="cb213-43"><a href="answers-to-exercises.html#cb213-43" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">circ_type =</span> <span class="fu">map</span>(circ, oddeven)) <span class="sc">%&gt;%</span></span>
+<span id="cb213-44"><a href="answers-to-exercises.html#cb213-44" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">circ_type =</span> <span class="fu">unlist</span>(circ_type)) <span class="sc">%&gt;%</span></span>
+<span id="cb213-45"><a href="answers-to-exercises.html#cb213-45" tabindex="-1"></a>  <span class="fu">group_by</span>(circ_type) <span class="sc">%&gt;%</span></span>
+<span id="cb213-46"><a href="answers-to-exercises.html#cb213-46" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb213-47"><a href="answers-to-exercises.html#cb213-47" tabindex="-1"></a>    <span class="at">diam_mean =</span> <span class="fu">mean</span>(diam),</span>
+<span id="cb213-48"><a href="answers-to-exercises.html#cb213-48" tabindex="-1"></a>    <span class="at">diam_sd =</span> <span class="fu">sd</span>(diam),</span>
+<span id="cb213-49"><a href="answers-to-exercises.html#cb213-49" tabindex="-1"></a>    <span class="at">diam_cv =</span> diam_sd <span class="sc">/</span> diam_mean</span>
+<span id="cb213-50"><a href="answers-to-exercises.html#cb213-50" tabindex="-1"></a>  )</span></code></pre></div>
 
 </div>
 <div id="data-wrangling-1" class="section level2 unnumbered hasAnchor">
 <h2><strong>7</strong> Data Wrangling<a href="answers-to-exercises.html#data-wrangling-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="answers-to-exercises.html#cb207-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
-<span id="cb207-2"><a href="answers-to-exercises.html#cb207-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
-<span id="cb207-3"><a href="answers-to-exercises.html#cb207-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
-<span id="cb207-4"><a href="answers-to-exercises.html#cb207-4" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb207-5"><a href="answers-to-exercises.html#cb207-5" tabindex="-1"></a><span class="co"># Data Wrangling Exercises</span></span>
-<span id="cb207-6"><a href="answers-to-exercises.html#cb207-6" tabindex="-1"></a></span>
-<span id="cb207-7"><a href="answers-to-exercises.html#cb207-7" tabindex="-1"></a><span class="co"># 1. Download *Denver Climate Data* to use as an example data file.</span></span>
-<span id="cb207-8"><a href="answers-to-exercises.html#cb207-8" tabindex="-1"></a></span>
-<span id="cb207-9"><a href="answers-to-exercises.html#cb207-9" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/ZenBrayn/asms-2022-r-shortcourse/main/exercises/intro_to_r/data/denver_climate.csv&quot;</span></span>
-<span id="cb207-10"><a href="answers-to-exercises.html#cb207-10" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/denver_climate.csv&quot;</span>)</span>
-<span id="cb207-11"><a href="answers-to-exercises.html#cb207-11" tabindex="-1"></a></span>
-<span id="cb207-12"><a href="answers-to-exercises.html#cb207-12" tabindex="-1"></a></span>
-<span id="cb207-13"><a href="answers-to-exercises.html#cb207-13" tabindex="-1"></a><span class="co"># 2. Read in the dataset .csv using the `tidyverse` set of packages.</span></span>
-<span id="cb207-14"><a href="answers-to-exercises.html#cb207-14" tabindex="-1"></a></span>
-<span id="cb207-15"><a href="answers-to-exercises.html#cb207-15" tabindex="-1"></a>tbl_den <span class="ot">&lt;-</span> <span class="st">&quot;./data/denver_climate.csv&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_csv</span>()</span>
-<span id="cb207-16"><a href="answers-to-exercises.html#cb207-16" tabindex="-1"></a></span>
-<span id="cb207-17"><a href="answers-to-exercises.html#cb207-17" tabindex="-1"></a></span>
-<span id="cb207-18"><a href="answers-to-exercises.html#cb207-18" tabindex="-1"></a><span class="co"># 3. How many rows does the table contain? Number of columns? What are the column names?</span></span>
-<span id="cb207-19"><a href="answers-to-exercises.html#cb207-19" tabindex="-1"></a></span>
-<span id="cb207-20"><a href="answers-to-exercises.html#cb207-20" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> <span class="fu">nrow</span>()</span>
-<span id="cb207-21"><a href="answers-to-exercises.html#cb207-21" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> <span class="fu">ncol</span>()</span>
-<span id="cb207-22"><a href="answers-to-exercises.html#cb207-22" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> <span class="fu">colnames</span>()</span>
-<span id="cb207-23"><a href="answers-to-exercises.html#cb207-23" tabindex="-1"></a></span>
-<span id="cb207-24"><a href="answers-to-exercises.html#cb207-24" tabindex="-1"></a></span>
-<span id="cb207-25"><a href="answers-to-exercises.html#cb207-25" tabindex="-1"></a><span class="co"># 4. Find the month and year with the highest snowfall.</span></span>
-<span id="cb207-26"><a href="answers-to-exercises.html#cb207-26" tabindex="-1"></a></span>
-<span id="cb207-27"><a href="answers-to-exercises.html#cb207-27" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> </span>
-<span id="cb207-28"><a href="answers-to-exercises.html#cb207-28" tabindex="-1"></a>  <span class="fu">filter</span>(snowfall <span class="sc">==</span> <span class="fu">max</span>(snowfall)) <span class="sc">%&gt;%</span> </span>
-<span id="cb207-29"><a href="answers-to-exercises.html#cb207-29" tabindex="-1"></a>  <span class="fu">select</span>(month, year)</span>
-<span id="cb207-30"><a href="answers-to-exercises.html#cb207-30" tabindex="-1"></a></span>
-<span id="cb207-31"><a href="answers-to-exercises.html#cb207-31" tabindex="-1"></a></span>
-<span id="cb207-32"><a href="answers-to-exercises.html#cb207-32" tabindex="-1"></a><span class="co"># 5. Find months where there was no snowfall.</span></span>
-<span id="cb207-33"><a href="answers-to-exercises.html#cb207-33" tabindex="-1"></a></span>
-<span id="cb207-34"><a href="answers-to-exercises.html#cb207-34" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> </span>
-<span id="cb207-35"><a href="answers-to-exercises.html#cb207-35" tabindex="-1"></a>  <span class="fu">filter</span>(snowfall <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb207-36"><a href="answers-to-exercises.html#cb207-36" tabindex="-1"></a>  <span class="fu">select</span>(month) <span class="sc">%&gt;%</span> </span>
-<span id="cb207-37"><a href="answers-to-exercises.html#cb207-37" tabindex="-1"></a>  <span class="fu">unique</span>()</span>
-<span id="cb207-38"><a href="answers-to-exercises.html#cb207-38" tabindex="-1"></a></span>
-<span id="cb207-39"><a href="answers-to-exercises.html#cb207-39" tabindex="-1"></a></span>
-<span id="cb207-40"><a href="answers-to-exercises.html#cb207-40" tabindex="-1"></a><span class="co"># 6. Find average precipitation per year.</span></span>
-<span id="cb207-41"><a href="answers-to-exercises.html#cb207-41" tabindex="-1"></a></span>
-<span id="cb207-42"><a href="answers-to-exercises.html#cb207-42" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> </span>
-<span id="cb207-43"><a href="answers-to-exercises.html#cb207-43" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
-<span id="cb207-44"><a href="answers-to-exercises.html#cb207-44" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">precipitation_avg =</span> <span class="fu">mean</span>(precipitation))</span>
-<span id="cb207-45"><a href="answers-to-exercises.html#cb207-45" tabindex="-1"></a></span>
-<span id="cb207-46"><a href="answers-to-exercises.html#cb207-46" tabindex="-1"></a></span>
-<span id="cb207-47"><a href="answers-to-exercises.html#cb207-47" tabindex="-1"></a><span class="co"># 7. Convert temperatures to Celsius and add new columns with these to table. </span></span>
-<span id="cb207-48"><a href="answers-to-exercises.html#cb207-48" tabindex="-1"></a><span class="co">#    Reminder `F to C conversion -&gt; (F - 32) * (5/9)`.</span></span>
-<span id="cb207-49"><a href="answers-to-exercises.html#cb207-49" tabindex="-1"></a></span>
-<span id="cb207-50"><a href="answers-to-exercises.html#cb207-50" tabindex="-1"></a>tbl_den <span class="ot">&lt;-</span> tbl_den <span class="sc">%&gt;%</span></span>
-<span id="cb207-51"><a href="answers-to-exercises.html#cb207-51" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">min_temp_C =</span> <span class="fu">signif</span>((min_temp <span class="sc">-</span> <span class="dv">32</span>) <span class="sc">*</span> (<span class="dv">5</span><span class="sc">/</span><span class="dv">9</span>), <span class="dv">3</span>),</span>
-<span id="cb207-52"><a href="answers-to-exercises.html#cb207-52" tabindex="-1"></a>         <span class="at">max_temp_C =</span> <span class="fu">signif</span>((max_temp <span class="sc">-</span> <span class="dv">32</span>) <span class="sc">*</span> (<span class="dv">5</span><span class="sc">/</span><span class="dv">9</span>), <span class="dv">3</span>))</span>
-<span id="cb207-53"><a href="answers-to-exercises.html#cb207-53" tabindex="-1"></a></span>
-<span id="cb207-54"><a href="answers-to-exercises.html#cb207-54" tabindex="-1"></a>tbl_den</span>
-<span id="cb207-55"><a href="answers-to-exercises.html#cb207-55" tabindex="-1"></a></span>
-<span id="cb207-56"><a href="answers-to-exercises.html#cb207-56" tabindex="-1"></a></span>
-<span id="cb207-57"><a href="answers-to-exercises.html#cb207-57" tabindex="-1"></a><span class="co"># 8. Find the month with the greatest difference in C between max and min temperature.</span></span>
-<span id="cb207-58"><a href="answers-to-exercises.html#cb207-58" tabindex="-1"></a></span>
-<span id="cb207-59"><a href="answers-to-exercises.html#cb207-59" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span></span>
-<span id="cb207-60"><a href="answers-to-exercises.html#cb207-60" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">temp_diff_C =</span> max_temp_C <span class="sc">-</span> min_temp_C) <span class="sc">%&gt;%</span></span>
-<span id="cb207-61"><a href="answers-to-exercises.html#cb207-61" tabindex="-1"></a>  <span class="fu">group_by</span>(month) <span class="sc">%&gt;%</span></span>
-<span id="cb207-62"><a href="answers-to-exercises.html#cb207-62" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">temp_diff_C_avg =</span> <span class="fu">mean</span>(temp_diff_C)) <span class="sc">%&gt;%</span></span>
-<span id="cb207-63"><a href="answers-to-exercises.html#cb207-63" tabindex="-1"></a>  <span class="fu">filter</span>(temp_diff_C_avg <span class="sc">==</span> <span class="fu">max</span>(temp_diff_C_avg))</span>
-<span id="cb207-64"><a href="answers-to-exercises.html#cb207-64" tabindex="-1"></a></span>
-<span id="cb207-65"><a href="answers-to-exercises.html#cb207-65" tabindex="-1"></a></span>
-<span id="cb207-66"><a href="answers-to-exercises.html#cb207-66" tabindex="-1"></a><span class="co"># 9. Write to file an .csv of the data.frame which contains the C data.</span></span>
-<span id="cb207-67"><a href="answers-to-exercises.html#cb207-67" tabindex="-1"></a></span>
-<span id="cb207-68"><a href="answers-to-exercises.html#cb207-68" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> <span class="fu">write_csv</span>(<span class="st">&quot;data/denver_climate.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="answers-to-exercises.html#cb214-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
+<span id="cb214-2"><a href="answers-to-exercises.html#cb214-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
+<span id="cb214-3"><a href="answers-to-exercises.html#cb214-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
+<span id="cb214-4"><a href="answers-to-exercises.html#cb214-4" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb214-5"><a href="answers-to-exercises.html#cb214-5" tabindex="-1"></a><span class="co"># Data Wrangling Exercises</span></span>
+<span id="cb214-6"><a href="answers-to-exercises.html#cb214-6" tabindex="-1"></a></span>
+<span id="cb214-7"><a href="answers-to-exercises.html#cb214-7" tabindex="-1"></a><span class="co"># 1. Download *Denver Climate Data* to use as an example data file.</span></span>
+<span id="cb214-8"><a href="answers-to-exercises.html#cb214-8" tabindex="-1"></a></span>
+<span id="cb214-9"><a href="answers-to-exercises.html#cb214-9" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/ZenBrayn/asms-2022-r-shortcourse/main/exercises/intro_to_r/data/denver_climate.csv&quot;</span></span>
+<span id="cb214-10"><a href="answers-to-exercises.html#cb214-10" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/denver_climate.csv&quot;</span>)</span>
+<span id="cb214-11"><a href="answers-to-exercises.html#cb214-11" tabindex="-1"></a></span>
+<span id="cb214-12"><a href="answers-to-exercises.html#cb214-12" tabindex="-1"></a></span>
+<span id="cb214-13"><a href="answers-to-exercises.html#cb214-13" tabindex="-1"></a><span class="co"># 2. Read in the dataset .csv using the `tidyverse` set of packages.</span></span>
+<span id="cb214-14"><a href="answers-to-exercises.html#cb214-14" tabindex="-1"></a></span>
+<span id="cb214-15"><a href="answers-to-exercises.html#cb214-15" tabindex="-1"></a>tbl_den <span class="ot">&lt;-</span> <span class="st">&quot;./data/denver_climate.csv&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_csv</span>()</span>
+<span id="cb214-16"><a href="answers-to-exercises.html#cb214-16" tabindex="-1"></a></span>
+<span id="cb214-17"><a href="answers-to-exercises.html#cb214-17" tabindex="-1"></a></span>
+<span id="cb214-18"><a href="answers-to-exercises.html#cb214-18" tabindex="-1"></a><span class="co"># 3. How many rows does the table contain? Number of columns? What are the column names?</span></span>
+<span id="cb214-19"><a href="answers-to-exercises.html#cb214-19" tabindex="-1"></a></span>
+<span id="cb214-20"><a href="answers-to-exercises.html#cb214-20" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> <span class="fu">nrow</span>()</span>
+<span id="cb214-21"><a href="answers-to-exercises.html#cb214-21" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> <span class="fu">ncol</span>()</span>
+<span id="cb214-22"><a href="answers-to-exercises.html#cb214-22" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> <span class="fu">colnames</span>()</span>
+<span id="cb214-23"><a href="answers-to-exercises.html#cb214-23" tabindex="-1"></a></span>
+<span id="cb214-24"><a href="answers-to-exercises.html#cb214-24" tabindex="-1"></a></span>
+<span id="cb214-25"><a href="answers-to-exercises.html#cb214-25" tabindex="-1"></a><span class="co"># 4. Find the month and year with the highest snowfall.</span></span>
+<span id="cb214-26"><a href="answers-to-exercises.html#cb214-26" tabindex="-1"></a></span>
+<span id="cb214-27"><a href="answers-to-exercises.html#cb214-27" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> </span>
+<span id="cb214-28"><a href="answers-to-exercises.html#cb214-28" tabindex="-1"></a>  <span class="fu">filter</span>(snowfall <span class="sc">==</span> <span class="fu">max</span>(snowfall)) <span class="sc">%&gt;%</span> </span>
+<span id="cb214-29"><a href="answers-to-exercises.html#cb214-29" tabindex="-1"></a>  <span class="fu">select</span>(month, year)</span>
+<span id="cb214-30"><a href="answers-to-exercises.html#cb214-30" tabindex="-1"></a></span>
+<span id="cb214-31"><a href="answers-to-exercises.html#cb214-31" tabindex="-1"></a></span>
+<span id="cb214-32"><a href="answers-to-exercises.html#cb214-32" tabindex="-1"></a><span class="co"># 5. Find months where there was no snowfall.</span></span>
+<span id="cb214-33"><a href="answers-to-exercises.html#cb214-33" tabindex="-1"></a></span>
+<span id="cb214-34"><a href="answers-to-exercises.html#cb214-34" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> </span>
+<span id="cb214-35"><a href="answers-to-exercises.html#cb214-35" tabindex="-1"></a>  <span class="fu">filter</span>(snowfall <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb214-36"><a href="answers-to-exercises.html#cb214-36" tabindex="-1"></a>  <span class="fu">select</span>(month) <span class="sc">%&gt;%</span> </span>
+<span id="cb214-37"><a href="answers-to-exercises.html#cb214-37" tabindex="-1"></a>  <span class="fu">unique</span>()</span>
+<span id="cb214-38"><a href="answers-to-exercises.html#cb214-38" tabindex="-1"></a></span>
+<span id="cb214-39"><a href="answers-to-exercises.html#cb214-39" tabindex="-1"></a></span>
+<span id="cb214-40"><a href="answers-to-exercises.html#cb214-40" tabindex="-1"></a><span class="co"># 6. Find average precipitation per year.</span></span>
+<span id="cb214-41"><a href="answers-to-exercises.html#cb214-41" tabindex="-1"></a></span>
+<span id="cb214-42"><a href="answers-to-exercises.html#cb214-42" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> </span>
+<span id="cb214-43"><a href="answers-to-exercises.html#cb214-43" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
+<span id="cb214-44"><a href="answers-to-exercises.html#cb214-44" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">precipitation_avg =</span> <span class="fu">mean</span>(precipitation))</span>
+<span id="cb214-45"><a href="answers-to-exercises.html#cb214-45" tabindex="-1"></a></span>
+<span id="cb214-46"><a href="answers-to-exercises.html#cb214-46" tabindex="-1"></a></span>
+<span id="cb214-47"><a href="answers-to-exercises.html#cb214-47" tabindex="-1"></a><span class="co"># 7. Convert temperatures to Celsius and add new columns with these to table. </span></span>
+<span id="cb214-48"><a href="answers-to-exercises.html#cb214-48" tabindex="-1"></a><span class="co">#    Reminder `F to C conversion -&gt; (F - 32) * (5/9)`.</span></span>
+<span id="cb214-49"><a href="answers-to-exercises.html#cb214-49" tabindex="-1"></a></span>
+<span id="cb214-50"><a href="answers-to-exercises.html#cb214-50" tabindex="-1"></a>tbl_den <span class="ot">&lt;-</span> tbl_den <span class="sc">%&gt;%</span></span>
+<span id="cb214-51"><a href="answers-to-exercises.html#cb214-51" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">min_temp_C =</span> <span class="fu">signif</span>((min_temp <span class="sc">-</span> <span class="dv">32</span>) <span class="sc">*</span> (<span class="dv">5</span><span class="sc">/</span><span class="dv">9</span>), <span class="dv">3</span>),</span>
+<span id="cb214-52"><a href="answers-to-exercises.html#cb214-52" tabindex="-1"></a>         <span class="at">max_temp_C =</span> <span class="fu">signif</span>((max_temp <span class="sc">-</span> <span class="dv">32</span>) <span class="sc">*</span> (<span class="dv">5</span><span class="sc">/</span><span class="dv">9</span>), <span class="dv">3</span>))</span>
+<span id="cb214-53"><a href="answers-to-exercises.html#cb214-53" tabindex="-1"></a></span>
+<span id="cb214-54"><a href="answers-to-exercises.html#cb214-54" tabindex="-1"></a>tbl_den</span>
+<span id="cb214-55"><a href="answers-to-exercises.html#cb214-55" tabindex="-1"></a></span>
+<span id="cb214-56"><a href="answers-to-exercises.html#cb214-56" tabindex="-1"></a></span>
+<span id="cb214-57"><a href="answers-to-exercises.html#cb214-57" tabindex="-1"></a><span class="co"># 8. Find the month with the greatest difference in C between max and min temperature.</span></span>
+<span id="cb214-58"><a href="answers-to-exercises.html#cb214-58" tabindex="-1"></a></span>
+<span id="cb214-59"><a href="answers-to-exercises.html#cb214-59" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span></span>
+<span id="cb214-60"><a href="answers-to-exercises.html#cb214-60" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">temp_diff_C =</span> max_temp_C <span class="sc">-</span> min_temp_C) <span class="sc">%&gt;%</span></span>
+<span id="cb214-61"><a href="answers-to-exercises.html#cb214-61" tabindex="-1"></a>  <span class="fu">group_by</span>(month) <span class="sc">%&gt;%</span></span>
+<span id="cb214-62"><a href="answers-to-exercises.html#cb214-62" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">temp_diff_C_avg =</span> <span class="fu">mean</span>(temp_diff_C)) <span class="sc">%&gt;%</span></span>
+<span id="cb214-63"><a href="answers-to-exercises.html#cb214-63" tabindex="-1"></a>  <span class="fu">filter</span>(temp_diff_C_avg <span class="sc">==</span> <span class="fu">max</span>(temp_diff_C_avg))</span>
+<span id="cb214-64"><a href="answers-to-exercises.html#cb214-64" tabindex="-1"></a></span>
+<span id="cb214-65"><a href="answers-to-exercises.html#cb214-65" tabindex="-1"></a></span>
+<span id="cb214-66"><a href="answers-to-exercises.html#cb214-66" tabindex="-1"></a><span class="co"># 9. Write to file an .csv of the data.frame which contains the C data.</span></span>
+<span id="cb214-67"><a href="answers-to-exercises.html#cb214-67" tabindex="-1"></a></span>
+<span id="cb214-68"><a href="answers-to-exercises.html#cb214-68" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> <span class="fu">write_csv</span>(<span class="st">&quot;data/denver_climate.csv&quot;</span>)</span></code></pre></div>
 
 </div>
 <div id="data-visualization-1" class="section level2 unnumbered hasAnchor">
 <h2><strong>9</strong> Data Visualization<a href="answers-to-exercises.html#data-visualization-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="answers-to-exercises.html#cb208-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
-<span id="cb208-2"><a href="answers-to-exercises.html#cb208-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
-<span id="cb208-3"><a href="answers-to-exercises.html#cb208-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
-<span id="cb208-4"><a href="answers-to-exercises.html#cb208-4" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb208-5"><a href="answers-to-exercises.html#cb208-5" tabindex="-1"></a><span class="co"># Data Visualization Exercises</span></span>
-<span id="cb208-6"><a href="answers-to-exercises.html#cb208-6" tabindex="-1"></a></span>
-<span id="cb208-7"><a href="answers-to-exercises.html#cb208-7" tabindex="-1"></a><span class="co"># 1. If not already done, download *Denver Climate Data* to use as an example data file.</span></span>
-<span id="cb208-8"><a href="answers-to-exercises.html#cb208-8" tabindex="-1"></a></span>
-<span id="cb208-9"><a href="answers-to-exercises.html#cb208-9" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/ZenBrayn/asms-2022-r-shortcourse/main/exercises/intro_to_r/data/denver_climate.csv&quot;</span></span>
-<span id="cb208-10"><a href="answers-to-exercises.html#cb208-10" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/denver_climate.csv&quot;</span>)</span>
-<span id="cb208-11"><a href="answers-to-exercises.html#cb208-11" tabindex="-1"></a></span>
-<span id="cb208-12"><a href="answers-to-exercises.html#cb208-12" tabindex="-1"></a></span>
-<span id="cb208-13"><a href="answers-to-exercises.html#cb208-13" tabindex="-1"></a><span class="co"># 2. Read in the dataset .csv using the `tidyverse` set of packages.</span></span>
-<span id="cb208-14"><a href="answers-to-exercises.html#cb208-14" tabindex="-1"></a></span>
-<span id="cb208-15"><a href="answers-to-exercises.html#cb208-15" tabindex="-1"></a>tbl_den <span class="ot">&lt;-</span> <span class="st">&quot;./data/denver_climate.csv&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_csv</span>()</span>
-<span id="cb208-16"><a href="answers-to-exercises.html#cb208-16" tabindex="-1"></a></span>
-<span id="cb208-17"><a href="answers-to-exercises.html#cb208-17" tabindex="-1"></a></span>
-<span id="cb208-18"><a href="answers-to-exercises.html#cb208-18" tabindex="-1"></a><span class="co"># 3. Plot precipitation ~ snowfall ...</span></span>
-<span id="cb208-19"><a href="answers-to-exercises.html#cb208-19" tabindex="-1"></a></span>
-<span id="cb208-20"><a href="answers-to-exercises.html#cb208-20" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> </span>
-<span id="cb208-21"><a href="answers-to-exercises.html#cb208-21" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(precipitation, snowfall)) <span class="sc">+</span> </span>
-<span id="cb208-22"><a href="answers-to-exercises.html#cb208-22" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb208-23"><a href="answers-to-exercises.html#cb208-23" tabindex="-1"></a></span>
-<span id="cb208-24"><a href="answers-to-exercises.html#cb208-24" tabindex="-1"></a></span>
-<span id="cb208-25"><a href="answers-to-exercises.html#cb208-25" tabindex="-1"></a><span class="co"># 4. ... color by `min_temp`, creating a color scheme of low = &quot;lightblue&quot; and </span></span>
-<span id="cb208-26"><a href="answers-to-exercises.html#cb208-26" tabindex="-1"></a><span class="co">#    high = &quot;orange&quot;, mid = &quot;yellow&quot;...</span></span>
-<span id="cb208-27"><a href="answers-to-exercises.html#cb208-27" tabindex="-1"></a></span>
-<span id="cb208-28"><a href="answers-to-exercises.html#cb208-28" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> </span>
-<span id="cb208-29"><a href="answers-to-exercises.html#cb208-29" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(precipitation, snowfall)) <span class="sc">+</span> </span>
-<span id="cb208-30"><a href="answers-to-exercises.html#cb208-30" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> min_temp)) <span class="sc">+</span></span>
-<span id="cb208-31"><a href="answers-to-exercises.html#cb208-31" tabindex="-1"></a>  <span class="fu">scale_color_gradientn</span>(<span class="at">colors =</span> <span class="fu">c</span>(<span class="st">&#39;lightblue&#39;</span>,<span class="st">&#39;yellow&#39;</span>, <span class="st">&#39;orange&#39;</span>))</span>
-<span id="cb208-32"><a href="answers-to-exercises.html#cb208-32" tabindex="-1"></a></span>
-<span id="cb208-33"><a href="answers-to-exercises.html#cb208-33" tabindex="-1"></a></span>
-<span id="cb208-34"><a href="answers-to-exercises.html#cb208-34" tabindex="-1"></a><span class="co"># 5. ... add a smoothed line under the points colored grey, facet by `year` </span></span>
-<span id="cb208-35"><a href="answers-to-exercises.html#cb208-35" tabindex="-1"></a><span class="co">#    keeping all plots on a single line, and change the theme to have a dark </span></span>
-<span id="cb208-36"><a href="answers-to-exercises.html#cb208-36" tabindex="-1"></a><span class="co">#    background ...</span></span>
-<span id="cb208-37"><a href="answers-to-exercises.html#cb208-37" tabindex="-1"></a></span>
-<span id="cb208-38"><a href="answers-to-exercises.html#cb208-38" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> </span>
-<span id="cb208-39"><a href="answers-to-exercises.html#cb208-39" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(precipitation, snowfall)) <span class="sc">+</span> </span>
-<span id="cb208-40"><a href="answers-to-exercises.html#cb208-40" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">color =</span> <span class="st">&#39;grey&#39;</span>, <span class="at">fill =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb208-41"><a href="answers-to-exercises.html#cb208-41" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> min_temp)) <span class="sc">+</span></span>
-<span id="cb208-42"><a href="answers-to-exercises.html#cb208-42" tabindex="-1"></a>  <span class="fu">scale_color_gradientn</span>(<span class="at">colors =</span> <span class="fu">c</span>(<span class="st">&#39;lightblue&#39;</span>,<span class="st">&#39;yellow&#39;</span>, <span class="st">&#39;orange&#39;</span>)) <span class="sc">+</span></span>
-<span id="cb208-43"><a href="answers-to-exercises.html#cb208-43" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>year, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb208-44"><a href="answers-to-exercises.html#cb208-44" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">20</span>)) <span class="sc">+</span></span>
-<span id="cb208-45"><a href="answers-to-exercises.html#cb208-45" tabindex="-1"></a>  <span class="fu">theme_dark</span>()</span>
-<span id="cb208-46"><a href="answers-to-exercises.html#cb208-46" tabindex="-1"></a></span>
-<span id="cb208-47"><a href="answers-to-exercises.html#cb208-47" tabindex="-1"></a></span>
-<span id="cb208-48"><a href="answers-to-exercises.html#cb208-48" tabindex="-1"></a><span class="co"># 6. Using the same data, construct a plot showing the distribution of min_ and </span></span>
-<span id="cb208-49"><a href="answers-to-exercises.html#cb208-49" tabindex="-1"></a><span class="co">#    max_temp for each month such that min_ and max_ are plotted separately for </span></span>
-<span id="cb208-50"><a href="answers-to-exercises.html#cb208-50" tabindex="-1"></a><span class="co">#    each month, add point values on top, gradient colored as above. Substitute </span></span>
-<span id="cb208-51"><a href="answers-to-exercises.html#cb208-51" tabindex="-1"></a><span class="co">#    the month number for the month 3-letter string (hint, use lubridate), remove </span></span>
-<span id="cb208-52"><a href="answers-to-exercises.html#cb208-52" tabindex="-1"></a><span class="co">#    the legend, remove the grid lines, remove the x-axis labels, add a title and </span></span>
-<span id="cb208-53"><a href="answers-to-exercises.html#cb208-53" tabindex="-1"></a><span class="co">#    fix the y-axis title. Use the internet to find answers if you need to.</span></span>
-<span id="cb208-54"><a href="answers-to-exercises.html#cb208-54" tabindex="-1"></a></span>
-<span id="cb208-55"><a href="answers-to-exercises.html#cb208-55" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
-<span id="cb208-56"><a href="answers-to-exercises.html#cb208-56" tabindex="-1"></a></span>
-<span id="cb208-57"><a href="answers-to-exercises.html#cb208-57" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span></span>
-<span id="cb208-58"><a href="answers-to-exercises.html#cb208-58" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">month =</span> lubridate<span class="sc">::</span><span class="fu">month</span>(month, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb208-59"><a href="answers-to-exercises.html#cb208-59" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&#39;min_temp&#39;</span>, <span class="st">&#39;max_temp&#39;</span>), <span class="at">names_to =</span> <span class="st">&#39;temp_ends&#39;</span>, <span class="at">values_to =</span> <span class="st">&#39;temp&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb208-60"><a href="answers-to-exercises.html#cb208-60" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb208-61"><a href="answers-to-exercises.html#cb208-61" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(month, temp, <span class="at">group =</span> temp_ends), <span class="at">fill=</span><span class="cn">NA</span>, <span class="at">color=</span><span class="st">&#39;grey40&#39;</span>, <span class="at">position =</span> <span class="st">&#39;identity&#39;</span>) <span class="sc">+</span></span>
-<span id="cb208-62"><a href="answers-to-exercises.html#cb208-62" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(month, temp, <span class="at">group =</span> temp_ends, <span class="at">color =</span> temp)) <span class="sc">+</span></span>
-<span id="cb208-63"><a href="answers-to-exercises.html#cb208-63" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>month, <span class="at">nrow =</span> <span class="dv">1</span>, <span class="at">scales =</span> <span class="st">&#39;free_x&#39;</span>) <span class="sc">+</span></span>
-<span id="cb208-64"><a href="answers-to-exercises.html#cb208-64" tabindex="-1"></a>  <span class="fu">scale_color_gradientn</span>(<span class="at">colors =</span> <span class="fu">c</span>(<span class="st">&#39;lightblue&#39;</span>,<span class="st">&#39;yellow&#39;</span>, <span class="st">&#39;orange&#39;</span>)) <span class="sc">+</span></span>
-<span id="cb208-65"><a href="answers-to-exercises.html#cb208-65" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Monthly Temperatures for Denver&quot;</span>,</span>
-<span id="cb208-66"><a href="answers-to-exercises.html#cb208-66" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">glue</span>(<span class="st">&quot;{min(tbl_den$year)} - {max(tbl_den$year)}&quot;</span>),</span>
-<span id="cb208-67"><a href="answers-to-exercises.html#cb208-67" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Temperature (C)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb208-68"><a href="answers-to-exercises.html#cb208-68" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb208-69"><a href="answers-to-exercises.html#cb208-69" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb208-70"><a href="answers-to-exercises.html#cb208-70" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&#39;none&#39;</span>,</span>
-<span id="cb208-71"><a href="answers-to-exercises.html#cb208-71" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb208-72"><a href="answers-to-exercises.html#cb208-72" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb208-73"><a href="answers-to-exercises.html#cb208-73" tabindex="-1"></a>    <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb208-74"><a href="answers-to-exercises.html#cb208-74" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="answers-to-exercises.html#cb215-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
+<span id="cb215-2"><a href="answers-to-exercises.html#cb215-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
+<span id="cb215-3"><a href="answers-to-exercises.html#cb215-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
+<span id="cb215-4"><a href="answers-to-exercises.html#cb215-4" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb215-5"><a href="answers-to-exercises.html#cb215-5" tabindex="-1"></a><span class="co"># Data Visualization Exercises</span></span>
+<span id="cb215-6"><a href="answers-to-exercises.html#cb215-6" tabindex="-1"></a></span>
+<span id="cb215-7"><a href="answers-to-exercises.html#cb215-7" tabindex="-1"></a><span class="co"># 1. If not already done, download *Denver Climate Data* to use as an example data file.</span></span>
+<span id="cb215-8"><a href="answers-to-exercises.html#cb215-8" tabindex="-1"></a></span>
+<span id="cb215-9"><a href="answers-to-exercises.html#cb215-9" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/ZenBrayn/asms-2022-r-shortcourse/main/exercises/intro_to_r/data/denver_climate.csv&quot;</span></span>
+<span id="cb215-10"><a href="answers-to-exercises.html#cb215-10" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/denver_climate.csv&quot;</span>)</span>
+<span id="cb215-11"><a href="answers-to-exercises.html#cb215-11" tabindex="-1"></a></span>
+<span id="cb215-12"><a href="answers-to-exercises.html#cb215-12" tabindex="-1"></a></span>
+<span id="cb215-13"><a href="answers-to-exercises.html#cb215-13" tabindex="-1"></a><span class="co"># 2. Read in the dataset .csv using the `tidyverse` set of packages.</span></span>
+<span id="cb215-14"><a href="answers-to-exercises.html#cb215-14" tabindex="-1"></a></span>
+<span id="cb215-15"><a href="answers-to-exercises.html#cb215-15" tabindex="-1"></a>tbl_den <span class="ot">&lt;-</span> <span class="st">&quot;./data/denver_climate.csv&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_csv</span>()</span>
+<span id="cb215-16"><a href="answers-to-exercises.html#cb215-16" tabindex="-1"></a></span>
+<span id="cb215-17"><a href="answers-to-exercises.html#cb215-17" tabindex="-1"></a></span>
+<span id="cb215-18"><a href="answers-to-exercises.html#cb215-18" tabindex="-1"></a><span class="co"># 3. Plot precipitation ~ snowfall ...</span></span>
+<span id="cb215-19"><a href="answers-to-exercises.html#cb215-19" tabindex="-1"></a></span>
+<span id="cb215-20"><a href="answers-to-exercises.html#cb215-20" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> </span>
+<span id="cb215-21"><a href="answers-to-exercises.html#cb215-21" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(precipitation, snowfall)) <span class="sc">+</span> </span>
+<span id="cb215-22"><a href="answers-to-exercises.html#cb215-22" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb215-23"><a href="answers-to-exercises.html#cb215-23" tabindex="-1"></a></span>
+<span id="cb215-24"><a href="answers-to-exercises.html#cb215-24" tabindex="-1"></a></span>
+<span id="cb215-25"><a href="answers-to-exercises.html#cb215-25" tabindex="-1"></a><span class="co"># 4. ... color by `min_temp`, creating a color scheme of low = &quot;lightblue&quot; and </span></span>
+<span id="cb215-26"><a href="answers-to-exercises.html#cb215-26" tabindex="-1"></a><span class="co">#    high = &quot;orange&quot;, mid = &quot;yellow&quot;...</span></span>
+<span id="cb215-27"><a href="answers-to-exercises.html#cb215-27" tabindex="-1"></a></span>
+<span id="cb215-28"><a href="answers-to-exercises.html#cb215-28" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> </span>
+<span id="cb215-29"><a href="answers-to-exercises.html#cb215-29" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(precipitation, snowfall)) <span class="sc">+</span> </span>
+<span id="cb215-30"><a href="answers-to-exercises.html#cb215-30" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> min_temp)) <span class="sc">+</span></span>
+<span id="cb215-31"><a href="answers-to-exercises.html#cb215-31" tabindex="-1"></a>  <span class="fu">scale_color_gradientn</span>(<span class="at">colors =</span> <span class="fu">c</span>(<span class="st">&#39;lightblue&#39;</span>,<span class="st">&#39;yellow&#39;</span>, <span class="st">&#39;orange&#39;</span>))</span>
+<span id="cb215-32"><a href="answers-to-exercises.html#cb215-32" tabindex="-1"></a></span>
+<span id="cb215-33"><a href="answers-to-exercises.html#cb215-33" tabindex="-1"></a></span>
+<span id="cb215-34"><a href="answers-to-exercises.html#cb215-34" tabindex="-1"></a><span class="co"># 5. ... add a smoothed line under the points colored grey, facet by `year` </span></span>
+<span id="cb215-35"><a href="answers-to-exercises.html#cb215-35" tabindex="-1"></a><span class="co">#    keeping all plots on a single line, and change the theme to have a dark </span></span>
+<span id="cb215-36"><a href="answers-to-exercises.html#cb215-36" tabindex="-1"></a><span class="co">#    background ...</span></span>
+<span id="cb215-37"><a href="answers-to-exercises.html#cb215-37" tabindex="-1"></a></span>
+<span id="cb215-38"><a href="answers-to-exercises.html#cb215-38" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span> </span>
+<span id="cb215-39"><a href="answers-to-exercises.html#cb215-39" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(precipitation, snowfall)) <span class="sc">+</span> </span>
+<span id="cb215-40"><a href="answers-to-exercises.html#cb215-40" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">color =</span> <span class="st">&#39;grey&#39;</span>, <span class="at">fill =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb215-41"><a href="answers-to-exercises.html#cb215-41" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> min_temp)) <span class="sc">+</span></span>
+<span id="cb215-42"><a href="answers-to-exercises.html#cb215-42" tabindex="-1"></a>  <span class="fu">scale_color_gradientn</span>(<span class="at">colors =</span> <span class="fu">c</span>(<span class="st">&#39;lightblue&#39;</span>,<span class="st">&#39;yellow&#39;</span>, <span class="st">&#39;orange&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb215-43"><a href="answers-to-exercises.html#cb215-43" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>year, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb215-44"><a href="answers-to-exercises.html#cb215-44" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb215-45"><a href="answers-to-exercises.html#cb215-45" tabindex="-1"></a>  <span class="fu">theme_dark</span>()</span>
+<span id="cb215-46"><a href="answers-to-exercises.html#cb215-46" tabindex="-1"></a></span>
+<span id="cb215-47"><a href="answers-to-exercises.html#cb215-47" tabindex="-1"></a></span>
+<span id="cb215-48"><a href="answers-to-exercises.html#cb215-48" tabindex="-1"></a><span class="co"># 6. Using the same data, construct a plot showing the distribution of min_ and </span></span>
+<span id="cb215-49"><a href="answers-to-exercises.html#cb215-49" tabindex="-1"></a><span class="co">#    max_temp for each month such that min_ and max_ are plotted separately for </span></span>
+<span id="cb215-50"><a href="answers-to-exercises.html#cb215-50" tabindex="-1"></a><span class="co">#    each month, add point values on top, gradient colored as above. Substitute </span></span>
+<span id="cb215-51"><a href="answers-to-exercises.html#cb215-51" tabindex="-1"></a><span class="co">#    the month number for the month 3-letter string (hint, use lubridate), remove </span></span>
+<span id="cb215-52"><a href="answers-to-exercises.html#cb215-52" tabindex="-1"></a><span class="co">#    the legend, remove the grid lines, remove the x-axis labels, add a title and </span></span>
+<span id="cb215-53"><a href="answers-to-exercises.html#cb215-53" tabindex="-1"></a><span class="co">#    fix the y-axis title. Use the internet to find answers if you need to.</span></span>
+<span id="cb215-54"><a href="answers-to-exercises.html#cb215-54" tabindex="-1"></a></span>
+<span id="cb215-55"><a href="answers-to-exercises.html#cb215-55" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
+<span id="cb215-56"><a href="answers-to-exercises.html#cb215-56" tabindex="-1"></a></span>
+<span id="cb215-57"><a href="answers-to-exercises.html#cb215-57" tabindex="-1"></a>tbl_den <span class="sc">%&gt;%</span></span>
+<span id="cb215-58"><a href="answers-to-exercises.html#cb215-58" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">month =</span> lubridate<span class="sc">::</span><span class="fu">month</span>(month, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb215-59"><a href="answers-to-exercises.html#cb215-59" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&#39;min_temp&#39;</span>, <span class="st">&#39;max_temp&#39;</span>), <span class="at">names_to =</span> <span class="st">&#39;temp_ends&#39;</span>, <span class="at">values_to =</span> <span class="st">&#39;temp&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb215-60"><a href="answers-to-exercises.html#cb215-60" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb215-61"><a href="answers-to-exercises.html#cb215-61" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(month, temp, <span class="at">group =</span> temp_ends), <span class="at">fill=</span><span class="cn">NA</span>, <span class="at">color=</span><span class="st">&#39;grey40&#39;</span>, <span class="at">position =</span> <span class="st">&#39;identity&#39;</span>) <span class="sc">+</span></span>
+<span id="cb215-62"><a href="answers-to-exercises.html#cb215-62" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(month, temp, <span class="at">group =</span> temp_ends, <span class="at">color =</span> temp)) <span class="sc">+</span></span>
+<span id="cb215-63"><a href="answers-to-exercises.html#cb215-63" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>month, <span class="at">nrow =</span> <span class="dv">1</span>, <span class="at">scales =</span> <span class="st">&#39;free_x&#39;</span>) <span class="sc">+</span></span>
+<span id="cb215-64"><a href="answers-to-exercises.html#cb215-64" tabindex="-1"></a>  <span class="fu">scale_color_gradientn</span>(<span class="at">colors =</span> <span class="fu">c</span>(<span class="st">&#39;lightblue&#39;</span>,<span class="st">&#39;yellow&#39;</span>, <span class="st">&#39;orange&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb215-65"><a href="answers-to-exercises.html#cb215-65" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Monthly Temperatures for Denver&quot;</span>,</span>
+<span id="cb215-66"><a href="answers-to-exercises.html#cb215-66" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">glue</span>(<span class="st">&quot;{min(tbl_den$year)} - {max(tbl_den$year)}&quot;</span>),</span>
+<span id="cb215-67"><a href="answers-to-exercises.html#cb215-67" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Temperature (C)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb215-68"><a href="answers-to-exercises.html#cb215-68" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb215-69"><a href="answers-to-exercises.html#cb215-69" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb215-70"><a href="answers-to-exercises.html#cb215-70" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&#39;none&#39;</span>,</span>
+<span id="cb215-71"><a href="answers-to-exercises.html#cb215-71" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb215-72"><a href="answers-to-exercises.html#cb215-72" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb215-73"><a href="answers-to-exercises.html#cb215-73" tabindex="-1"></a>    <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb215-74"><a href="answers-to-exercises.html#cb215-74" tabindex="-1"></a>  )</span></code></pre></div>
 
 </div>
 </div>

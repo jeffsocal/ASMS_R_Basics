@@ -10,49 +10,33 @@ The MSstats package is an R package designed for the analysis of label-free mass
 
 #### Installation {-}
 
-To install MSstats, you can use the following code:
-
+Install MSstats from Bioconductor:
 ```{r, eval=FALSE}
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-
 BiocManager::install("MSstats")
 ```
 
 #### Loading Data {-}
 
-To load your data into MSstats, you can use the following code:
+The preferred data structure for use in MSstats is a .csv file in a "long" format with 10 columns representing the following variables: _ProteinName, PeptideSequence, PrecursorCharge, FragmentIon, ProductCharge, IsotopeLabelType, Condition, BioReplicate, Run, and Intensity_. Note that the variable names are fixed and case-insensitive.
 
-```{r, eval=FALSE}
-library(MSstats)
-data("QCMAPData")
-data <- QCMAPData$data
-design <- QCMAPData$design
-head(data)
+```{r, eval=FALSE, warning=FALSE, message=FALSE}
+# example data provided by the MSstats package
+head(SRMRawData)
 ```
 
-#### Quality Control {-}
-
-To perform quality control on your data, you can use the following code:
-
-```{r, eval=FALSE}
-QCmetrics <- MSstats:::calculateQCmetrics(data, featureLevel = "protein")
-MSstats:::plotQCmetrics(QCmetrics, plotType = "boxplot",
-                        ylim = c(0, 200000), ylab = "Total Ion Current")
 ```
-
-#### Differential Expression Analysis {-}
-
-To perform differential expression analysis on your data, you can use the following code:
-
-```{r, eval=FALSE}
-MSstatsResult <- MSstats::MSstats(data, design,
-                                  normalizationMethod = "quantile",
-                                  normalization = "median",
-                                  msLevel = 1, verbose = TRUE)
-summary(MSstatsResult)
+    ProteinName PeptideSequence PrecursorCharge FragmentIon ProductCharge IsotopeLabelType Condition
+243        IDHC   ATDVIVPEEGELR               2          y7            NA                H         1
+244        IDHC   ATDVIVPEEGELR               2          y7            NA                L         1
+245        IDHC   ATDVIVPEEGELR               2          y8            NA                H         1
+246        IDHC   ATDVIVPEEGELR               2          y8            NA                L         1
+247        IDHC   ATDVIVPEEGELR               2          y9            NA                H         1
+248        IDHC   ATDVIVPEEGELR               2          y9            NA                L         1
+    BioReplicate Run   Intensity
+243        ReplA   1 84361.08350
+244        ReplA   1   215.13526
+245        ReplA   1 29778.10188
+246        ReplA   1    98.02134
+247        ReplA   1 17921.29255
+248        ReplA   1    60.47029
 ```
-
-#### Conclusion {-}
-
-Overall, MSstats is a powerful and flexible R package for the analysis of label-free mass spectrometry data. It provides a wide range of statistical tools for the analysis of protein abundance data, making it an essential tool for researchers in the field. With its easy-to-use interface and comprehensive documentation, MSstats is a must-have tool for anyone working with mass spectrometry data.

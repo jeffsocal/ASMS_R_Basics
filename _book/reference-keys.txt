@@ -11,6 +11,7 @@ fig:3201
 fig:3202
 fig:4001
 tab:unnamed-chunk-97
+fig:10001
 introduction-to-r
 installation
 r-interpreter
@@ -81,5 +82,7 @@ r-shiny-applications
 mass-spectrometry
 data-formats
 open-access-data
-r-packages-for-data
-r-packages-for-analysis
+r-calculate-mass
+envipat
+r-ms-data
+r-ms-analysis

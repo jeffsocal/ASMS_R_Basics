@@ -4,66 +4,59 @@
 - Create a new R script, add your name and date at the top as comments
 - Locate and/or download a GGplot2 cheat-sheet and refer to it as needed.
 
-1. If not already done, download *Denver Climate Data* to use as an example data file.
-```{r, message=FALSE, warning=FALSE}
-url <- "https://raw.githubusercontent.com/ZenBrayn/asms-2022-r-shortcourse/main/exercises/intro_to_r/data/denver_climate.csv"
-download.file(url, destfile = "./data/denver_climate.csv")
+1. If not already done, download *Bacterial Metabolite Data* to use as an example data file.
+```{r, eval=FALSE}
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
+download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
 ```
 
 2. Read in the dataset .csv using the `tidyverse` set of packages.
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-tbl_den <- "./data/denver_climate.csv" %>% read_csv()
+library(tidyverse)
+
+tbl_bac <- "./data/bacterial-metabolites_dose-simicillin_tidy.csv" %>% read_csv()
 ```
 
-3. Plot precipitation ~ snowfall ...
+3. Create a metabolite `abundance` by `time_min` ...
 ```{r, echo=FALSE, fig.width=4, fig.height=3, fig.align='center'}
-tbl_den %>% 
-  ggplot(aes(precipitation, snowfall)) + 
+tbl_bac %>% 
+  ggplot(aes(time_min, abundance)) + 
   geom_point()
 ```
 
-4. ... color by `min_temp`, creating a color scheme of low = "lightblue" and high = "orange", mid = "yellow"...
-```{r, echo=FALSE, fig.width=4, fig.height=3, fig.align='center'}
-tbl_den %>% 
-  ggplot(aes(precipitation, snowfall)) + 
-  geom_point(aes(color = min_temp)) +
-  scale_color_gradientn(colors = c('lightblue','yellow', 'orange'))
+4. ... facet by `culture` and `metabolite`...
+```{r, echo=FALSE, fig.width=6, fig.height=6, fig.align='center'}
+tbl_bac %>% 
+  ggplot(aes(time_min, abundance)) + 
+  geom_point() + 
+  facet_grid(metabolite ~ culture)
 ```
 
-5. ... add a smoothed line under the points colored "grey", facet by `year` keeping all plots on a single line, and change the theme to have a dark background ...
-```{r, echo=FALSE, fig.width=8, fig.height=3, fig.align='center'}
-tbl_den %>% 
-  ggplot(aes(precipitation, snowfall)) + 
-  geom_smooth(method = lm, color = 'grey', fill = NA) +
-  geom_point(aes(color = min_temp)) +
-  scale_color_gradientn(colors = c('lightblue','yellow', 'orange')) +
-  facet_wrap(~year, nrow = 1) +
-  coord_cartesian(ylim = c(0, 20)) +
-  theme_dark()
+4. ... adjust the y-axis to log10, color by `dose_mg`, and add a 50% transparent line ...
+```{r, echo=FALSE, fig.width=8, fig.height=6, fig.align='center'}
+tbl_bac %>% 
+  mutate(dose_mg = dose_mg %>% as.factor()) %>%
+  ggplot(aes(time_min, abundance)) + 
+  geom_point(aes(color = dose_mg)) +
+  geom_line(aes(color = dose_mg), alpha = .5) +
+  facet_grid(metabolite ~ culture) +
+  scale_y_log10()
 ```
 
-6. Using the same data, construct a plot showing the distribution of min_ and max_temp for each month such that min_ and max_ are plotted separately for each month, add point values on top, gradient colored as above. Substitute the month number for the month 3-letter string (hint, use lubridate), remove the legend, remove the grid lines, remove the x-axis labels, add a title and fix the y-axis title. Use the internet to find answers if you need to.
-```{r, echo=FALSE, fig.width=8, fig.height=3, fig.align='center'}
-library(glue)
-
-tbl_den %>%
-  mutate(month = lubridate::month(month, label = TRUE, abbr = TRUE)) %>%
-  pivot_longer(cols = c('min_temp', 'max_temp'), names_to = 'temp_ends', values_to = 'temp') %>%
-  ggplot() +
-  geom_boxplot(aes(month, temp, group = temp_ends), fill=NA, color='grey30', position = 'identity') +
-  geom_point(aes(month, temp, group = temp_ends, color = temp)) +
-  facet_wrap(~month, nrow = 1, scales = 'free_x') +
-  scale_color_gradientn(colors = c('lightblue','yellow', 'orange')) +
-  labs(title = "Monthly Temperatures for Denver",
-       subtitle = glue("{min(tbl_den$year)} - {max(tbl_den$year)}"),
-       y = "Temperature (C)") +
-  theme_dark() +
-  theme(
-    legend.position = 'none',
-    axis.text.x = element_blank(),
-    axis.title.x = element_blank(),
-    axis.ticks.x = element_blank(),
-    axis.line = element_blank(),
-    panel.grid = element_blank()
-  )
+5. ... change the theme to something publishable, add a title, modify the x- and y-axis label, modify the legend title, adjust the y-axis ticks to show the actually measured time values, and pick a color scheme that highlights the dose value...
+```{r, echo=FALSE, fig.width=8, fig.height=6, fig.align='center'}
+tbl_bac %>% 
+  mutate(dose_mg = dose_mg %>% as.factor()) %>%
+  ggplot(aes(time_min, abundance)) + 
+  geom_point(aes(color = dose_mg)) +
+  geom_line(aes(color = dose_mg), alpha = .5) +
+  facet_grid(metabolite ~ culture) +
+  scale_color_manual(values = c("grey", "orange", "red")) +
+  scale_y_log10() +
+  scale_x_continuous(breaks = unique(tbl_bac$time_min)) +
+  labs(title = 'Bacterial metabolite monitoring by LCMS in response to antibiotic',
+       subtitle = 'Conditions: metered dose of similicillin',
+       x = "Time (min)", y = "LCMS Abundance",
+       color = "Dose (mg)") +
+  theme_classic()
 ```

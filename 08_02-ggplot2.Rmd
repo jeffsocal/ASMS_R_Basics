@@ -50,8 +50,7 @@ tbl_mz <- tibble(
 ### Basic Data Plotting
 
 ::: {.infobox .note data-latex="{note}"}
-***NOTES** There are some handy cheat-sheets online that summarize all the functions*\
-\
+***Cheat-sheets** can be found online that summarize all the functions*\
 [ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/)
 :::
 

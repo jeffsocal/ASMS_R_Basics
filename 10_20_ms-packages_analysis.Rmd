@@ -1,4 +1,6 @@
-## R packages for Analysis
+## R MS Analysis
+
+Finally, there are numerous R packages that implement methods, common and advanced, in statistical post analysis of quantitative data. Explored here are only a few of the available packages.
 
 ### deqms {-}
 ### msempire {-}

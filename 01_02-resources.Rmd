@@ -1,0 +1,128 @@
+## Resources {-}
+When working with R, it is important to understand the basics and terms so that you can ask the right questions when seeking help. In the next two sections, we will provide an overview of these concepts to ensure that you have a solid foundation. It is worth noting that while googling your issue can be a great starting point, it is also important to seek out additional resources to help you solve your problem. For instance, you might consider joining an R community or forum where you can ask questions and receive feedback from other users. Additionally, many universities and organizations offer R workshops or training programs that can help you build your skills and knowledge. By taking advantage of these resources, you can develop a deeper understanding of R and become more confident in your ability to use it for data analysis and visualization.
+
+
+### Online {-}
+In addition to Googling to find how to do something in R, there are several online resources available for individuals learning R programming and needing assistance with concepts or coding issues. These resources include CRAN, Bioconductor, RStudio Community, R-bloggers, and Stack Overflow. Each of these resources offers different benefits, such as packages, forums, blogs, and Q&A communities, to help R users.
+
+Locating available packages (pre-built algorithms):
+
+ - The Comprehensive R Archive Network: [cran.r-project.org/](https://cran.r-project.org/)
+ 
+ - Bioconductor: [bioconductor.org/](https://bioconductor.org/)
+
+
+Ways to ask for help, or find answers to a similar question:
+
+ - The RStudio Community: [community.rstudio.com/](https://community.rstudio.com/)
+
+ - R Community Explorer: [r-community.org/rstudio/](https://r-community.org/rstudio/)
+
+ - R bloggers: [r-bloggers.com/](https://www.r-bloggers.com/)
+
+ - Stack Overflow: [stackoverflow.com/](https://stackoverflow.com/questions/tagged/r)
+
+
+More ways to search and find what you are looking for:
+
+ - R-Seek: [rseek.org/](https://rseek.org/)
+
+ - R-universe: [r-universe.dev/search/](https://r-universe.dev/search/)
+
+
+Cheat-sheets (condensed help):
+
+ - Tidyverse: [www.tidyverse.org/](https://www.tidyverse.org/)
+
+    - reading data: [readr.tidyverse.org/](https://readr.tidyverse.org/)
+
+    - manipulating data :[dplyr.tidyverse.org/](https://dplyr.tidyverse.org/)
+
+    - arranging table data: [tidyr.tidyverse.org/](https://tidyr.tidyverse.org/)
+
+    - visualizing data [ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/)
+
+    - working with strings: [stringr.tidyverse.org/](https://stringr.tidyverse.org/)
+ 
+    - working with date and time: [lubridate.tidyverse.org/](https://lubridate.tidyverse.org/)
+
+
+### In Print {-}
+R books in print are becoming increasingly popular due to the growing demand for R programming and data analysis. These books offer several benefits that make them an excellent resource for anyone who wants to learn R programming or improve their data analysis skills. One of the key advantages of R books in print is that they are easy to read and navigate. The authors of these books take into consideration that not everyone who reads their books is an expert in programming. They use simple language and examples to explain concepts from the basics, making it easy for readers to understand. They can be used as a quick reference guide when working on a project or when facing a programming challenge. R books in print are cost-effective. While online resources are free, they are not always reliable, and it can be time-consuming to find the information you need. R books in print, on the other hand, are written and edited by experts who have years of experience in the field making them a reliable source of information.
+
+**R for Data Science: Import, Tidy, Transform, Visualize, and Model Data 1st Edition**
+*by Garrett Grolemund, Hadley Wickham*
+
+> Learn how to use R to turn raw data into insight, knowledge, and understanding. 
+> This book introduces you to R, RStudio, and the tidyverse, a collection of R 
+> packages designed to work together to make data science fast, fluent, and fun. 
+> Suitable for readers with no previous programming experience, R for Data 
+> Science is designed to get you doing data science as quickly as possible.
+
+**Use R!**, a collection of 67 print books.
+
+The Use R! collection of print books is a series of books aimed at helping people learn and use the R programming language. The books in this series cover a wide range of topics related to R, including data analysis, statistical modeling, and data visualization.
+
+Each book in the collection is written by a different author or group of authors, and provides a unique perspective on how to use R for different tasks. The books are targeted at a range of audiences, from beginners who are just starting to learn R, to more advanced users who are looking to expand their skills and knowledge.
+
+Some of the popular books in the Use R! collection include:
+
+- **An Introduction to R** by Venables and Smith: This book provides a comprehensive introduction to the R programming language, covering topics such as data types, control structures, and functions.
+- **Data Manipulation with R** by Spector: This book covers how to use R to manipulate data, including topics such as data cleaning, merging, and reshaping.
+- **ggplot2: Elegant Graphics for Data Analysis** by Wickham: This book provides an in-depth introduction to the ggplot2 package in R, which is used for creating high-quality data visualizations.
+- **Applied Regression Analysis** by Fox: This book covers how to use R to perform regression analysis, including topics such as linear regression, logistic regression, and mixed-effects models.
+
+In summary, the Use R! collection of print books is a valuable resource for anyone looking to learn or improve their skills in the R programming language. With a wide range of topics and authors, there is something for everyone in this collection.
+
+
+### Organizations {-}
+Many R organizations offer individuals an opportunity for training and support, networking, access to resources, and help building a reputation. These benefits make R organizations a valuable resource to consider for both individuals and organizations using R for statistical computing and graphics.
+
+::: {.infobox .note data-latex="{note}"}
+***R User Groups** (RUGs) are a relaxed and friendly way to broaden your contacts, scope and understanding of R*. 
+:::
+
+
+#### R User Groups {-}
+R User Groups are communities of people who are interested in using R, a programming language and software environment for statistical computing and graphics. These groups are formed to provide a platform for individuals to learn, share knowledge, and collaborate on projects related to R programming.
+
+R User Groups usually meet on a regular basis, either virtually or in person, and organize events such as talks, workshops, and hackathons. These events are designed to provide members with opportunities to improve their skills, network with like-minded individuals, and work on projects that are of mutual interest.
+
+R User Groups are open to anyone who is interested in using R, regardless of their level of expertise. Members can range from beginners who are just starting to learn R, to experienced professionals who use R on a daily basis. This diversity of membership allows for a rich exchange of ideas and perspectives on the use of R in various fields, such as data science, finance, and healthcare.
+
+Joining an R User Group can be a great way to stay up-to-date with the latest developments in R programming, as well as to learn from and collaborate with other members. Many R User Groups also have online forums or discussion boards where members can ask questions, share resources, and seek feedback on their work.
+
+**Where to find a RUG**
+
+ - [R Community](https://r-community.org/usergroups/)
+ 
+ - [Another list of RUGs](https://jumpingrivers.github.io/meetingsR/r-user-groups.html)\
+
+
+#### R Specific Confrences {-}
+
+[The R Confrence](https://rstats.ai/gov)
+
+The *R Conference* currently takes place in New York, Washington D.C., and soon Dublin, Ireland. They were created to foster the local R communities and serve as gathering places for people to learn from their peers. The *R Conference* hosts one of the most elite gatherings of data scientists and data professionals who come together to explore, share, inspire and to promote the growth of open source ideals.
+
+
+[D4 Confrence](https://d4con.io/)
+
+*Innovation and Entrepreneurship in Data, Design, Development and Discovery*
+
+The D4 conference exists to bring creative communities together and to bolster the exchange of ideas. Data professionals, software developers, and other creatives can meet and collaborate.
+
+#### R Education at Confrences {-}
+
+[ASMS](https://ASMS.org/)
+
+*American Society for Mass Spectrometry*
+
+The American Society for Mass Spectrometry (ASMS) was created in 1969 to promote and share knowledge of mass spectrometry. Membership includes over 8,500 scientists from academia, industry, and government labs. Members focus on technique and instrument advancements, as well as research in various sciences. ASMS offers several short-courses (1 or 2-day) covering a myriad of topics, including using R for data analysis.
+
+[MSACL](https://www.msacl.org/)
+
+*Mass Spectrometry & Advances in the Clinical Lab*
+
+MSACL aims to advance mass spectrometry and other advanced technologies in clinical laboratory medicine through education and training of practitioners, physicians, and other healthcare professionals. They also support the development of new technologies for diagnosis, treatment, and prognosis of clinical disorders. MSACL offers resources through their Learning Center on several topics, including using R in clinical data analysis.
+
