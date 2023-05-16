@@ -1,4 +1,4 @@
-# The Basics
+# R Syntax
 
 Welcome to the R Book! In this chapter, we will explore the basics of R, a powerful programming language used for statistical computing and graphics.
 
@@ -10,11 +10,17 @@ In this chapter, we will start by examining the simplest operations of R. We wil
 
 So, let's get started!
 
-::: {.infobox .skill data-latex="{skill}"}
-At the end of this chapter you should be able to:\
-1.    Understand R's syntax, variables, operators and functions\
-2.    Create and edit a project in RStudio\
-:::
+\
+
++---------------------------------+----------------------------------------------------------------+
+| ![](images/03.png){height="68"} | **At the end of this chapter you should be able to**           |
+|                                 |                                                                |
+|                                 | -   Understand R's syntax, variables, operators and functions. |
+|                                 |                                                                |
+|                                 | -   Create and edit a project in RStudio.                      |
++---------------------------------+----------------------------------------------------------------+
+
+\
 
 ## Reserved Words
 
@@ -38,6 +44,10 @@ Therefore, before we dive too deeply into our R programming endeavors, let's tak
 | `NaN`                                     | 'not a number'                                   |
 | `NA`                                      | a missing value indicator                        |
 
-::: {.infobox .note data-latex="{note}"}
-A `Null` results when a value is missing and could be a *string* or a *numeric*, where as a NA results when a known value, such as in a column of numbers, is missing.
-:::
+\
+
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](images/01.png){height="68"} | A `Null` results when a value is missing and could be a *string* or a *numeric*, where as a NA results when a known value, such as in a column of numbers, is missing. |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+\

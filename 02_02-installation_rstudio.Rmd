@@ -8,7 +8,7 @@ RStudio, prior to 2023, was an independent software provider for the ever-popula
 >
 > --- www.posit.co (Jan 2023)
 
-#### Steps {.unnumbered}
+#### Steps {-}
 
 1.  Navigate to [posit.co](https://posit.co/), alternatively [rstudio.com](https://rstudio.com/) redirects to the Posit website.
 2.  **Click** `Download RStudio` in the menu top right
@@ -17,9 +17,9 @@ RStudio, prior to 2023, was an independent software provider for the ever-popula
     *skip 1: Install R*
 5.  **Click** `Download RStudio Desktop for ..`
 
-##### Windows OS {.unnumbered}
+##### Windows OS {-}
 
-##### MacOS {.unnumbered}
+##### MacOS {-}
 
 Opening the .dmg file shows the archive that can be copied into the Applications folder simply by click-dragging the application onto the Applications folder shortcut.
 
@@ -27,7 +27,7 @@ Opening the .dmg file shows the archive that can be copied into the Applications
 knitr::include_graphics("images/02_011_rstudio_installer_mac.png")
 ```
 
-##### Linux {.unnumbered}
+##### Linux {-}
 
 ### IDE Layout
 
@@ -41,7 +41,7 @@ Overall, the RStudio IDE is an excellent option for anyone looking to streamline
 knitr::include_graphics("images/02_021_rstudio_panes.png")
 ```
 
-#### The Editor {.unnumbered}
+#### The Editor {-}
 
 > **Tabs**: `All Open Files`
 
@@ -63,7 +63,7 @@ The Editor also has the ability to suggest available variables and functions. In
 knitr::include_graphics("images/02_023_editor_autocomplete.png")
 ```
 
-#### Files and Plots {.unnumbered}
+#### Files and Plots {-}
 
 > **Tabs**: `Files`, `Plots`, `Packages`, `Viewer`, and `Presentation`
 
@@ -77,13 +77,13 @@ Another useful tab located in the same pane is the *Plots* tab. This tab provide
 knitr::include_graphics("images/02_024_qplot.png")
 ```
 
-#### The Console {.unnumbered}
+#### The Console {-}
 
 > **Tabs**: `Console`, `Terminal`, and `Background Jobs`
 
 In the RStudio IDE, the *Console* pane is where lines of code are executed from the editor. It is a vital component of the RStudio interface that allows users to interact with R in real-time. The *Console* pane is not only where code is run, but it is also where users can view output and error messages. Additionally, the *Console* pane provides users access to the computer's terminal. This feature allows users to execute commands outside of the R environment, such as navigating files and directories or installing packages. Overall, the *Console* pane is an essential tool for any RStudio user and should be utilized to its full potential.
 
-#### Environment {.unnumbered}
+#### Environment {-}
 
 > **Tabs**: `Environment`, `History`, `Connections`, and `Tutorial`
 

@@ -4,11 +4,21 @@
 
 The `msgrob2` package is particularly useful in situations where data is missing from a linear model. The EM algorithm implemented in the package is a powerful tool for imputing missing data, and the robust covariance estimators allow for a better understanding of the data. The package is designed to provide efficient and accurate results when working with incomplete data, making it an essential tool for researchers and data analysts.
 
-|                   |                                                                                                                                                                  |
-|------------------|------------------------------------------------------|
-| **Documentation** | [PDF](https://www.bioconductor.org/packages/release/bioc/manuals/msqrob2/man/msqrob2.pdf)                                                                        |
-| **Code**          | [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/msqrob2.html)                                                                             |
-| **Literature**    | *Molecular & Cellular Proteomics*, **15**(2), 657-668., *Molecular & Cellular Proteomics*, **19**(7), 1209-1219., *Analytical Chemistry*, **92**(9), 6278--6287. |
+\
+
++---------------------------------+---------------------------------------------------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | **Documentation** | [PDF](https://www.bioconductor.org/packages/release/bioc/manuals/msqrob2/man/msqrob2.pdf) |
+|                                 |                                                                                                               |
+|                                 | **Code**          | [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/msqrob2.html)      |
+|                                 |                                                                                                               |
+|                                 | **Literature**    | *Molecular & Cellular Proteomics*, **15**(2), 657-668.                                    |
+|                                 |                                                                                                               |
+|                                 | **Literature**    | *Molecular & Cellular Proteomics*, **19**(7), 1209-1219.                                  |
+|                                 |                                                                                                               |
+|                                 | **Literature**    | *Analytical Chemistry*, **92**(9), 6278--6287.                                            |
++---------------------------------+---------------------------------------------------------------------------------------------------------------+
+
+\
 
 #### Installation {-}
 

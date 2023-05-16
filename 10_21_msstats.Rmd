@@ -2,11 +2,17 @@
 
 The MSstats package is an R package designed for the analysis of label-free mass spectrometry data. It provides a wide range of statistical tools for the analysis of protein abundance data, including normalization, missing value imputation, quality control, and differential expression analysis. MSstats provides a powerful and flexible way to analyze mass spectrometry data, making it an essential tool for researchers in the field.
 
-|                   |                                                                                                                   |
-|----------------|--------------------------------------------------------|
-| **Documentation** | [web](https://msstats.org), [PDF](https://bioconductor.org/packages/release/bioc/manuals/MSstats/man/MSstats.pdf) |
-| **Code**          | [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/MSstats.html)                              |
-| **Literature**    | *Bioinformatics* 30.17 (2014): 2524-2526                                                                          |
+\
+
++---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | **Documentation** | [web](https://msstats.org), [PDF](https://bioconductor.org/packages/release/bioc/manuals/MSstats/man/MSstats.pdf) |
+|                                 |                                                                                                                                       |
+|                                 | **Code** | [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/MSstats.html)                                       |
+|                                 |                                                                                                                                       |
+|                                 | **Literature** | *Bioinformatics* 30.17 (2014): 2524-2526                                                                             |
++---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+
+\
 
 #### Installation {-}
 

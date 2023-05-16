@@ -1,8 +1,14 @@
 ### StatsPro R Package {-}
 
-|                   |                                                                                                                   |
-|----------------|--------------------------------------------------------|
-| **Documentation** | [github](https://github.com/YanglabWCH/StatsPro#Readme), [PDF](https://github.com/YanglabWCH/StatsPro/blob/main/StatsPro_Manual.pdf)                               |
-| **Code**          | [github](https://github.com/YanglabWCH/StatsPro)                              |
-| **Literature**    | *Journal of Proteomics* 250 (2022): 104386.                                                                          |
+\
+
++---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | **Documentation** | [github](https://github.com/YanglabWCH/StatsPro#Readme), [PDF](https://github.com/YanglabWCH/StatsPro/blob/main/StatsPro_Manual.pdf) |
+|                                 |                                                                                                                                                          |
+|                                 | **Code** | [github](https://github.com/YanglabWCH/StatsPro)                                                                                              |
+|                                 |                                                                                                                                                          |
+|                                 | **Literature** | *Journal of Proteomics* 250 (2022): 104386.                                                                                             |
++---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+\
 

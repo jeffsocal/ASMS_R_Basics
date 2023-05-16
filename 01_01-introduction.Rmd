@@ -2,16 +2,19 @@
 
 Before we get started, this book contains some basic cues to help facilitate your understanding of the current topic.
 
-::: {.infobox .skill data-latex="{skill}"}
-At the end of this chapter you should be able to:
+\
 
-- Understand why R is a good choice for data analysis.
++---------------------------------+----------------------------------------------------------------------------------------------------------+
+| ![](images/03.png){height="68"} | **At the end of this chapter you should be able to**                                                     |
+|                                 |                                                                                                          |
+|                                 | -   Understand why R is a good choice for data analysis.                                                 |
+|                                 |                                                                                                          |
+|                                 | -   Realize that you have just started the learning curve and all your efforts hence forth are worth it. |
+|                                 |                                                                                                          |
+|                                 | -   Know where to find additional educational resources.                                                 |
++---------------------------------+----------------------------------------------------------------------------------------------------------+
 
-- Realize that you have just started the learning curve and all your efforts hence forth are worth it.
-
-- Know where to find additional educational resources.
-
-:::
+\
 
 ## Why choose it? {-}
 
@@ -25,24 +28,25 @@ Despite its many advantages, R does have a few limitations. For example, it is n
 
 Overall, R is an excellent language for anyone who wants to work with data. Its specialized features and wide range of capabilities make it a top choice for data scientists and analysts everywhere.
 
-The Stack Overflow blog post  [The Impressive Growth of R](https://stackoverflow.blog/2017/10/10/impressive-growth-r/) by David Robinson, discusses the growth and popularity of the programming language R. The post highlights the increase in R's usage on Stack Overflow, as well as the growing interest in R from various industries.
+The Stack Overflow blog post [The Impressive Growth of R](https://stackoverflow.blog/2017/10/10/impressive-growth-r/) by David Robinson, discusses the growth and popularity of the programming language R. The post highlights the increase in R's usage on Stack Overflow, as well as the growing interest in R from various industries.
 
-> We found in a previous post that Python has a solid claim to being the 
-> fastest-growing programming language in terms of Stack Overflow visits. 
-> The same analysis showed that the R programming language has shown remarkable 
-> growth in the last five years as well. In fact, R is growing at a similar rate to Python…
+> We found in a previous post that Python has a solid claim to being the fastest-growing programming language in terms of Stack Overflow visits. The same analysis showed that the R programming language has shown remarkable growth in the last five years as well. In fact, R is growing at a similar rate to Python...
 
 The post provides an overview of R's history, its advantages and disadvantages, and its current position in the programming world. The author notes that R's popularity is due to its ability to handle large datasets, its flexibility for data analysis and in increase in popularity of data science and the growing number of companies using R for data analysis. Overall, the post concludes that R's growth and popularity are likely to continue in the future, as more industries recognize the value of data analysis and turn to R as a solution.
 
-
 ## What you can do with it? {-}
+
 The potential of what you can achieve with R is vast and ultimately depends on the level of dedication you have towards learning and expanding your skill set. By utilizing R, you can analyze data through various methods such as reading and plotting data, constructing analysis pipelines, prototyping new algorithms, and even writing your analysis code into shareable packages. With these abilities, you can not only perform data analysis, but also create a more efficient and reproducible workflow. The more you learn and experiment with R, the more you can discover and unlock its full potential.
 
-::: {.infobox .note data-latex="{note}"}
-***NOTES** Some helpful explanatory notes and tips appear as a block quote.*\
 \
-R can be a fast, nimble, forgiving scripting language with lots of ready-made tools and resources (CRAN, Github, Bioconductor).
-:::
+
++---------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| ![](images/01.png){height="68"} | **NOTES** Some helpful explanatory notes and tips appear as a block quote.                                                      |
+|                                 |                                                                                                                                 |
+|                                 | - R can be a fast, nimble, forgiving scripting language with lots of ready-made tools and resources (CRAN, Github, Bioconductor).|
++---------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+
+\
 
 ## The R Learning Curve {-}
 

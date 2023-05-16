@@ -1,15 +1,21 @@
-# Data Structures
+# R Objects
 
 The R programming environment includes four basic types of data structures that increase in complexity: `variable`, `vector`, `matrix`, and `list`. Additionally there is the `data.frame` while and independent data structure, it is essentially derived from the `matrix`.
 
-::: {.infobox .skill data-latex="{skill}"}
-At the end of this chapter you should be able to:\
-1. Understand the 5 most common data structures\
-2. Understand the data structure lineage\
-3. Access given subsets of a multi-variable data object\
-:::
+\
+
++---------------------------------+-----------------------------------------------------------+
+| ![](images/03.png){height="68"} | **At the end of this chapter you should be able to**      |
+|                                 |                                                           |
+|                                 | -   Understand the 5 most common data structures.         |
+|                                 |                                                           |
+|                                 | -   Understand the data structure lineage.                |
+|                                 |                                                           |
+|                                 | -   Access given subsets of a multi-variable data object. |
++---------------------------------+-----------------------------------------------------------+
 
 \
+
 This book introduced variables briefly in \@ref(syntax). Here, we will expand on that introduction. At its simplest, a variable can be thought of as a container that holds only a single thing, like a single stick of gum. A vector is an ordered, finite collection of variables, like a pack of gum. A matrix consists of columns of equally-sized vectors, similar to a vending machine for several flavors of gum packs. Mentally, you can think of them as a point, a line, and a square, respectively.
 
 ```{r 4001, echo=FALSE, fig.cap="\\label{fig:4001}R main data structures", out.width="67%", fig.align='center'}
@@ -65,13 +71,14 @@ seq(10, 5)
 
 While variables don't require a referencing scheme, because they only contain a single value, vectors need to have some kind of referencing scheme, shown in \@ref(fig:4001) as `x[9]` and illustrated in the following example.
 
-::: {.infobox .note data-latex="{note}"}
-Note the use of an integer vector to sub-select another vector based on position. R abides by the 1:N positional referencing, where as other programming languages refer to the first vector or array position as 0.\
 \
-*A good topic for a lively discussion with a computer scientist.*
-:::
+
++---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](images/01.png){height="68"} | The use of an integer vector to sub-select another vector based on position. R abides by the 1:N positional referencing, where as other programming languages refer to the first vector or array position as 0. *A good topic for a lively discussion with a computer scientist.* |
++---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 \
+
 
 ```{r}
 x <- LETTERS

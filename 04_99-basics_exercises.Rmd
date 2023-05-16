@@ -1,7 +1,11 @@
 ## Exercises {-}
 
-1.  Create a new R Studio Project and name it *002_basics*.
-2.  Create a new R script, add your name and date at the top as comments
++---------------------------------+-----------------------------------------------------------------------------+
+| ![](images/07.png){height="68"} | - Create a new R Studio Project and name it **002_basics**.                 |
+|                                 |                                                                             |
+|                                 | - Create a new R script, add your name and date at the top as comments.     |
++---------------------------------+-----------------------------------------------------------------------------+
+
 ```{r, eval=FALSE}
 # Your Name
 # YYYY-MM-DD

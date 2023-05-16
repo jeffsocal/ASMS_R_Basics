@@ -1,8 +1,12 @@
 ## Exercises {-}
 
-- Create a new R Studio Project and name it *006_data_visualizing*.
-- Create a new R script, add your name and date at the top as comments
-- Locate and/or download a GGplot2 cheat-sheet and refer to it as needed.
++---------------------------------+---------------------------------------------------------------------------+
+| ![](images/07.png){height="68"} | - Create a new R Studio Project and name it **006_data_visualizing**.     |
+|                                 |                                                                           |
+|                                 | - Create a new R script, add your name and date at the top as comments.   |
+|                                 |                                                                           |
+|                                 | - Locate and/or download a GGplot2 cheat-sheet and refer to it as needed. |
++---------------------------------+---------------------------------------------------------------------------+
 
 1. If not already done, download *Bacterial Metabolite Data* to use as an example data file.
 ```{r, eval=FALSE}

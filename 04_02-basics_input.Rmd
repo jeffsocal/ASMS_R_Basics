@@ -33,9 +33,13 @@ four <- 2 + 2
 cat("my number is ", four)
 ```
 
-::: {.infobox .note data-latex="{note}"}
-R does not have an line ending character such as `;` in java, PHP or C++_
-:::
+\
+
++---------------------------------+--------------------------------------------------------------------------+
+| ![](images/01.png){height="68"} | R does not have an line ending character such as `;` in java, PHP or C++ |
++---------------------------------+--------------------------------------------------------------------------+
+
+\
 
 ### Comments
 
@@ -178,11 +182,13 @@ Here is a table summarizing of some common operators in R.
 | `%%`       | modulus           | provides the remainder after division       | `5 %% 2` = `1`                    |
 +------------+-------------------+---------------------------------------------+-----------------------------------+
 
+\
 
-::: {.infobox .note data-latex="{note}"}
-Remember order of operations (PEMDAS): Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right).
-:::
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](images/02.png){height="68"} | Remember order of operations (PEMDAS): Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right). |
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+\
 
 ### Variables
 
@@ -211,9 +217,13 @@ pi <- 3.141593
 pi
 ```
 
-::: {.infobox .note data-latex="{note}"}
-In R it is easy to overwrite existing variables, either initalized by R or created by you, causing error and confusion
-:::
+\
+
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| ![](images/02.png){height="68"} | In R it is easy to overwrite existing variables, either initialized by R or created by you, causing error and confusion. |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+
+\
 
 ```{r}
 pi <- 9.876543
@@ -241,8 +251,13 @@ Using a comparison operator, you can make logical comparisons called statements.
 |             |                                                                               | `1 == 1 & 1 != 2` = `FALSE` |
 +-------------+-------------------------------------------------------------------------------+-----------------------------+
 
-> **NOTE**\
-> _there are also the double operators \|\| and &&, these are intended to work as flow control operators and stop at the first condition met. In the most recent versions of R, the double operators will error out if a vector is applied._
+\
+
++---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](images/01.png){height="68"} | There are also the double operators **\|\|** and **&&**, these are intended to work as flow control operators and stop at the first condition met. In the most recent versions of R, the double operators will error out if a vector is applied. |
++---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+\
 
 <!--# HEATH -->
 

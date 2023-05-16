@@ -1,4 +1,4 @@
-## **9** Data Visualization {-}
+## **8** Data Visualization {-}
 
 ```{r, eval=FALSE}
 # John Doe

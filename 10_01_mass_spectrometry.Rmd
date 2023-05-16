@@ -1,3 +1,17 @@
 <!--# HEATH -->
 # Mass Spectrometry
 
+\
+
++---------------------------------+---------------------------------------------------------------------+
+| ![](images/03.png){height="68"} | **At the end of this chapter you should be able to**                |
+|                                 |                                                                     |
+|                                 | -   Understand commercially proprietary raw data.                   |
+|                                 |                                                                     |
+|                                 | -   How to convert raw data to an open access format.               |
+|                                 |                                                                     |
+|                                 | -   Be familiar with some R packages specific to mass spectrometry. |
++---------------------------------+---------------------------------------------------------------------+
+
+\
+

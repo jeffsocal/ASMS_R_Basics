@@ -117,7 +117,7 @@
 
 \title{Introduction to R for Mass Spectrometrists}
 \author{Jeff Jones, Heath Patterson, Ryan Benz}
-\date{2023-04-26}
+\date{2023-05-16}
 
 \begin{document}
 \maketitle
@@ -197,6 +197,14 @@ Following the positive response to the short course, in 2023, it was decided to 
 
 A special thanks to the American Society of Mass Spectrometry for allowing us to provide an annual basic R introductory course.
 
+\hypertarget{contents}{%
+\chapter*{Contents}\label{contents}}
+\addcontentsline{toc}{chapter}{Contents}
+
+This book is organized in a manner such that each chapter builds upon the previous. There are three main sections to this book, where the first section covers the introduction to R and the Integrated Development Environment (IDE) called R Studio. The middle section is the most extensive, basically covering the R programming language its nuances and the main data science packages that will cover the majority of your day-to-day analyses. These chapters all have example exercises to work on that should help sharpen your skills. The last section covers mass spectrometry specific data and some packages you can use to work with that data. This section on mass spectrometry is not meant to be comprehensive, but rather a smaple showcase for what is possible.
+
+\begin{center}\includegraphics[width=15in]{images/01_000_book_contents} \end{center}
+
 \hypertarget{introduction-to-r}{%
 \chapter{Introduction to R}\label{introduction-to-r}}
 
@@ -210,7 +218,9 @@ At the end of this chapter you should be able to:
 \item
   Understand why R is a good choice for data analysis.
 \item
-  Understand that you have just started the learning curve and all your efforts hence forth are worth it.
+  Realize that you have just started the learning curve and all your efforts hence forth are worth it.
+\item
+  Know where to find additional educational resources.
 \end{itemize}
 
 \end{infobox}
@@ -228,6 +238,17 @@ Another reason why R is so popular among data scientists is that it is an open-s
 Despite its many advantages, R does have a few limitations. For example, it is not as fast as some other programming languages, and it can be difficult for beginners to learn. However, there are many resources available online to help users learn R, and once they get the hang of it, they will find that it is a powerful tool for data analysis and visualization.
 
 Overall, R is an excellent language for anyone who wants to work with data. Its specialized features and wide range of capabilities make it a top choice for data scientists and analysts everywhere.
+
+The Stack Overflow blog post \href{https://stackoverflow.blog/2017/10/10/impressive-growth-r/}{The Impressive Growth of R} by David Robinson, discusses the growth and popularity of the programming language R. The post highlights the increase in R's usage on Stack Overflow, as well as the growing interest in R from various industries.
+
+\begin{quote}
+We found in a previous post that Python has a solid claim to being the
+fastest-growing programming language in terms of Stack Overflow visits.
+The same analysis showed that the R programming language has shown remarkable
+growth in the last five years as well. In fact, R is growing at a similar rate to Python\ldots{}
+\end{quote}
+
+The post provides an overview of R's history, its advantages and disadvantages, and its current position in the programming world. The author notes that R's popularity is due to its ability to handle large datasets, its flexibility for data analysis and in increase in popularity of data science and the growing number of companies using R for data analysis. Overall, the post concludes that R's growth and popularity are likely to continue in the future, as more industries recognize the value of data analysis and turn to R as a solution.
 
 \hypertarget{what-you-can-do-with-it}{%
 \section*{What you can do with it?}\label{what-you-can-do-with-it}}
@@ -292,17 +313,179 @@ Matlab is another alternative to R that is widely used in the scientific communi
 
 In conclusion, while R is a popular language for data science, it is not the only option available. Python, Julia, and Matlab are all viable alternatives with their own strengths and weaknesses. It is important to consider the specific needs of your project and choose the programming language that best suits your requirements.
 
-\hypertarget{did-you-know}{%
-\subsection*{Did you know}\label{did-you-know}}
-\addcontentsline{toc}{subsection}{Did you know}
-
-While R on its own is a powerful scripting language, some analytical tasks might require the use of other programming languages such as Python, C++ or Rust. Luckily, R provides different packages that allow us to use these languages within R code. These packages provide a seamless integration between these languages and R, allowing you to leverage the strengths of each language to perform complex tasks.
+\textbf{Did you know}, that while R on its own is a powerful scripting language, some analytical tasks might require the use of other programming languages such as Python, C++ or Rust. Luckily, R provides different packages that allow us to use these languages within R code. These packages provide a seamless integration between these languages and R, allowing you to leverage the strengths of each language to perform complex tasks.
 
 The \texttt{reticulate} package enables the integration of Python code in R. This package allows you to import Python modules and functions directly into R and also allows you to call Python functions from R code. This is especially useful when you need to use Python's machine learning libraries such as TensorFlow or PyTorch, which are not yet available in R.
 
 Similarly, the \texttt{Rcpp} package provides a smooth integration between R and C++. With this package, you can easily write C++ functions and use them directly in your R code. This is useful when you need to perform computationally-intensive tasks, such as simulations or optimization, that require the speed of C++.
 
 Finally, the \texttt{extendr} package provides an interface between R and Rust, allowing you to use Rust functions in R code and vice versa. Rust is a relatively new programming language that provides a balance between performance and safety. It is especially useful when you need to develop high-performance and low-level code, such as in systems programming or hardware development.
+
+\hypertarget{resources}{%
+\section*{Resources}\label{resources}}
+\addcontentsline{toc}{section}{Resources}
+
+When working with R, it is important to understand the basics and terms so that you can ask the right questions when seeking help. In the next two sections, we will provide an overview of these concepts to ensure that you have a solid foundation. It is worth noting that while googling your issue can be a great starting point, it is also important to seek out additional resources to help you solve your problem. For instance, you might consider joining an R community or forum where you can ask questions and receive feedback from other users. Additionally, many universities and organizations offer R workshops or training programs that can help you build your skills and knowledge. By taking advantage of these resources, you can develop a deeper understanding of R and become more confident in your ability to use it for data analysis and visualization.
+
+\hypertarget{online}{%
+\subsection*{Online}\label{online}}
+\addcontentsline{toc}{subsection}{Online}
+
+In addition to Googling to find how to do something in R, there are several online resources available for individuals learning R programming and needing assistance with concepts or coding issues. These resources include CRAN, Bioconductor, RStudio Community, R-bloggers, and Stack Overflow. Each of these resources offers different benefits, such as packages, forums, blogs, and Q\&A communities, to help R users.
+
+Locating available packages (pre-built algorithms):
+
+\begin{itemize}
+\item
+  The Comprehensive R Archive Network: \href{https://cran.r-project.org/}{cran.r-project.org/}
+\item
+  Bioconductor: \href{https://bioconductor.org/}{bioconductor.org/}
+\end{itemize}
+
+Ways to ask for help, or find answers to a similar question:
+
+\begin{itemize}
+\item
+  The RStudio Community: \href{https://community.rstudio.com/}{community.rstudio.com/}
+\item
+  R Community Explorer: \href{https://r-community.org/rstudio/}{r-community.org/rstudio/}
+\item
+  R bloggers: \href{https://www.r-bloggers.com/}{r-bloggers.com/}
+\item
+  Stack Overflow: \href{https://stackoverflow.com/questions/tagged/r}{stackoverflow.com/}
+\end{itemize}
+
+More ways to search and find what you are looking for:
+
+\begin{itemize}
+\item
+  R-Seek: \href{https://rseek.org/}{rseek.org/}
+\item
+  R-universe: \href{https://r-universe.dev/search/}{r-universe.dev/search/}
+\end{itemize}
+
+Cheat-sheets (condensed help):
+
+\begin{itemize}
+\item
+  Tidyverse: \href{https://www.tidyverse.org/}{www.tidyverse.org/}
+
+  \begin{itemize}
+  \item
+    reading data: \href{https://readr.tidyverse.org/}{readr.tidyverse.org/}
+  \item
+    manipulating data :\href{https://dplyr.tidyverse.org/}{dplyr.tidyverse.org/}
+  \item
+    arranging table data: \href{https://tidyr.tidyverse.org/}{tidyr.tidyverse.org/}
+  \item
+    visualizing data \href{https://ggplot2.tidyverse.org/}{ggplot2.tidyverse.org/}
+  \item
+    working with strings: \href{https://stringr.tidyverse.org/}{stringr.tidyverse.org/}
+  \item
+    working with date and time: \href{https://lubridate.tidyverse.org/}{lubridate.tidyverse.org/}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{in-print}{%
+\subsection*{In Print}\label{in-print}}
+\addcontentsline{toc}{subsection}{In Print}
+
+R books in print are becoming increasingly popular due to the growing demand for R programming and data analysis. These books offer several benefits that make them an excellent resource for anyone who wants to learn R programming or improve their data analysis skills. One of the key advantages of R books in print is that they are easy to read and navigate. The authors of these books take into consideration that not everyone who reads their books is an expert in programming. They use simple language and examples to explain concepts from the basics, making it easy for readers to understand. They can be used as a quick reference guide when working on a project or when facing a programming challenge. R books in print are cost-effective. While online resources are free, they are not always reliable, and it can be time-consuming to find the information you need. R books in print, on the other hand, are written and edited by experts who have years of experience in the field making them a reliable source of information.
+
+\textbf{R for Data Science: Import, Tidy, Transform, Visualize, and Model Data 1st Edition}
+\emph{by Garrett Grolemund, Hadley Wickham}
+
+\begin{quote}
+Learn how to use R to turn raw data into insight, knowledge, and understanding.
+This book introduces you to R, RStudio, and the tidyverse, a collection of R
+packages designed to work together to make data science fast, fluent, and fun.
+Suitable for readers with no previous programming experience, R for Data
+Science is designed to get you doing data science as quickly as possible.
+\end{quote}
+
+\textbf{Use R!}, a collection of 67 print books.
+
+The Use R! collection of print books is a series of books aimed at helping people learn and use the R programming language. The books in this series cover a wide range of topics related to R, including data analysis, statistical modeling, and data visualization.
+
+Each book in the collection is written by a different author or group of authors, and provides a unique perspective on how to use R for different tasks. The books are targeted at a range of audiences, from beginners who are just starting to learn R, to more advanced users who are looking to expand their skills and knowledge.
+
+Some of the popular books in the Use R! collection include:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{An Introduction to R} by Venables and Smith: This book provides a comprehensive introduction to the R programming language, covering topics such as data types, control structures, and functions.
+\item
+  \textbf{Data Manipulation with R} by Spector: This book covers how to use R to manipulate data, including topics such as data cleaning, merging, and reshaping.
+\item
+  \textbf{ggplot2: Elegant Graphics for Data Analysis} by Wickham: This book provides an in-depth introduction to the ggplot2 package in R, which is used for creating high-quality data visualizations.
+\item
+  \textbf{Applied Regression Analysis} by Fox: This book covers how to use R to perform regression analysis, including topics such as linear regression, logistic regression, and mixed-effects models.
+\end{itemize}
+
+In summary, the Use R! collection of print books is a valuable resource for anyone looking to learn or improve their skills in the R programming language. With a wide range of topics and authors, there is something for everyone in this collection.
+
+\hypertarget{organizations}{%
+\subsection*{Organizations}\label{organizations}}
+\addcontentsline{toc}{subsection}{Organizations}
+
+Many R organizations offer individuals an opportunity for training and support, networking, access to resources, and help building a reputation. These benefits make R organizations a valuable resource to consider for both individuals and organizations using R for statistical computing and graphics.
+
+\begin{infobox}{note}
+\emph{\textbf{R User Groups} (RUGs) are a relaxed and friendly way to broaden your contacts, scope and understanding of R}.
+
+\end{infobox}
+
+\hypertarget{r-user-groups}{%
+\subsubsection*{R User Groups}\label{r-user-groups}}
+\addcontentsline{toc}{subsubsection}{R User Groups}
+
+R User Groups are communities of people who are interested in using R, a programming language and software environment for statistical computing and graphics. These groups are formed to provide a platform for individuals to learn, share knowledge, and collaborate on projects related to R programming.
+
+R User Groups usually meet on a regular basis, either virtually or in person, and organize events such as talks, workshops, and hackathons. These events are designed to provide members with opportunities to improve their skills, network with like-minded individuals, and work on projects that are of mutual interest.
+
+R User Groups are open to anyone who is interested in using R, regardless of their level of expertise. Members can range from beginners who are just starting to learn R, to experienced professionals who use R on a daily basis. This diversity of membership allows for a rich exchange of ideas and perspectives on the use of R in various fields, such as data science, finance, and healthcare.
+
+Joining an R User Group can be a great way to stay up-to-date with the latest developments in R programming, as well as to learn from and collaborate with other members. Many R User Groups also have online forums or discussion boards where members can ask questions, share resources, and seek feedback on their work.
+
+\textbf{Where to find a RUG}
+
+\begin{itemize}
+\item
+  \href{https://r-community.org/usergroups/}{R Community}
+\item
+  \href{https://jumpingrivers.github.io/meetingsR/r-user-groups.html}{Another list of RUGs}\\
+\end{itemize}
+
+\hypertarget{r-specific-confrences}{%
+\subsubsection*{R Specific Confrences}\label{r-specific-confrences}}
+\addcontentsline{toc}{subsubsection}{R Specific Confrences}
+
+\href{https://rstats.ai/gov}{The R Confrence}
+
+The \emph{R Conference} currently takes place in New York, Washington D.C., and soon Dublin, Ireland. They were created to foster the local R communities and serve as gathering places for people to learn from their peers. The \emph{R Conference} hosts one of the most elite gatherings of data scientists and data professionals who come together to explore, share, inspire and to promote the growth of open source ideals.
+
+\href{https://d4con.io/}{D4 Confrence}
+
+\emph{Innovation and Entrepreneurship in Data, Design, Development and Discovery}
+
+The D4 conference exists to bring creative communities together and to bolster the exchange of ideas. Data professionals, software developers, and other creatives can meet and collaborate.
+
+\hypertarget{r-education-at-confrences}{%
+\subsubsection*{R Education at Confrences}\label{r-education-at-confrences}}
+\addcontentsline{toc}{subsubsection}{R Education at Confrences}
+
+\href{https://ASMS.org/}{ASMS}
+
+\emph{American Society for Mass Spectrometry}
+
+The American Society for Mass Spectrometry (ASMS) was created in 1969 to promote and share knowledge of mass spectrometry. Membership includes over 8,500 scientists from academia, industry, and government labs. Members focus on technique and instrument advancements, as well as research in various sciences. ASMS offers several short-courses (1 or 2-day) covering a myriad of topics, including using R for data analysis.
+
+\href{https://www.msacl.org/}{MSACL}
+
+\emph{Mass Spectrometry \& Advances in the Clinical Lab}
+
+MSACL aims to advance mass spectrometry and other advanced technologies in clinical laboratory medicine through education and training of practitioners, physicians, and other healthcare professionals. They also support the development of new technologies for diagnosis, treatment, and prognosis of clinical disorders. MSACL offers resources through their Learning Center on several topics, including using R in clinical data analysis.
 
 \hypertarget{installation}{%
 \chapter{Installation}\label{installation}}
@@ -632,7 +815,8 @@ In summary, when working with R, it's important to understand how to install pac
 \section{Packages Utilized in This Book}\label{packages-utilized-in-this-book}}
 
 \hypertarget{tidyverse}{%
-\subsection{tidyverse}\label{tidyverse}}
+\subsection*{tidyverse}\label{tidyverse}}
+\addcontentsline{toc}{subsection}{tidyverse}
 
 The Tidyverse R package is a collection of data manipulation and visualization packages for the R programming language. It includes popular packages such as dplyr, ggplot2, and tidyr, among others. The Tidyverse R package is a powerful and versatile tool for data analysis in R. It includes a collection of data manipulation and visualization packages designed to work seamlessly together, making it easy to analyze and visualize data in R.
 
@@ -652,7 +836,7 @@ The \textbf{readr} package provides a versatile means of reading data from vario
 
 \begin{verbatim}
 ## Rows: 14 Columns: 7
-## -- Column specification -----------------------------------------------------------------------------------------------
+## -- Column specification -------------------------------------------------------------------------------------------------
 ## Delimiter: ","
 ## chr (4): ion, seq, pair, type
 ## dbl (3): mz, z, pos
@@ -751,9 +935,69 @@ One of the key benefits of using the Tidyverse is the standardization of syntax 
 The Tidyverse is widely used in the R community and is a valuable tool for any data scientist or analyst working with R. It is especially useful for those who need to manipulate and visualize data quickly and efficiently, without sacrificing accuracy. Whether you are new to R or an experienced user, the Tidyverse is a must-have tool in your data analysis toolkit.
 
 \hypertarget{mass-spectrometry-specific-packages}{%
-\subsection{Mass Spectrometry Specific Packages}\label{mass-spectrometry-specific-packages}}
+\subsection*{Mass Spectrometry Specific Packages}\label{mass-spectrometry-specific-packages}}
+\addcontentsline{toc}{subsection}{Mass Spectrometry Specific Packages}
 
-This book, while providing a beginners level guide to R programming, also introduces several mass spectrometry-specific packages in many of the code examples. While these examples may only touch on some of their functions, the last chapter is dedicated to a more formal, albeit not comprehensive introduction to many of these packages. For example the \texttt{mzR} package, which enables users to read and process mass spectrometry data, as well as the \texttt{xcms} package, which is used for preprocessing and feature detection. Additionally, the book introduces the \texttt{MSnbase} package, which provides a framework for quantitative and qualitative analysis of mass spectrometry data, and the \texttt{MSstats} package, which is used for statistical analysis of quantitative proteomics experiments. Lastly, the book covers the \texttt{tidyproteomic}s package, which provides a collection of tools for analyzing post-analysis quantitative proteomics data using a framework similar to the \texttt{tidyverse}.
+This book, while providing a beginners level guide to R programming, also introduces several mass spectrometry-specific packages in many of the code examples. While these examples may only touch on some of their functions, the last chapter is dedicated to a more formal, albeit not comprehensive introduction to many of these packages. For example the \texttt{mzR} package, which enables users to read and process mass spectrometry data, as well as the \texttt{xcms} package, which is used for preprocessing and feature detection. Additionally, the book introduces the \texttt{MSnbase} package, which provides a framework for quantitative and qualitative analysis of mass spectrometry data, and the \texttt{MSstats} package, which is used for statistical analysis of quantitative proteomics experiments. Lastly, the book covers the \texttt{tidyproteomics} package, which provides a collection of tools for analyzing post-analysis quantitative proteomics data using a framework similar to the \texttt{tidyverse}.
+
+\hypertarget{r-studio-projects}{%
+\chapter{R Studio Projects}\label{r-studio-projects}}
+
+Project are how RStudio organizes your work. Think of project as singular goal oriented collection. There are no rules but some basic organizational tips should help simplify your project.
+
+\hypertarget{creating}{%
+\section{Creating}\label{creating}}
+
+Creating a new project is very forgiving, you can create a new directory with a project name, or create a project out of an existing directory.
+
+Either 1. Click on the drop down in the top right 2. OR: Under the menu item select \texttt{File\ \textgreater{}\ New\ Project}
+
+In the \texttt{New\ Project\ Wizard} select \texttt{New\ Directory\ \textgreater{}\ New\ Project}, enter the name of the project and click \texttt{Create\ Project}.
+
+\begin{figure}
+\includegraphics[width=30.72in]{images/03_021_new_project_01} \caption{\label{fig:3201}RStudio Create New Project}\label{fig:3201}
+\end{figure}
+\begin{figure}
+\includegraphics[width=31.94in]{images/03_021_new_project_02} \caption{\label{fig:3202}RStudio Create New Project}\label{fig:3202}
+\end{figure}
+
+\hypertarget{editing}{%
+\section{Editing}\label{editing}}
+
+\hypertarget{organizing}{%
+\section{Organizing}\label{organizing}}
+
+\hypertarget{data}{%
+\subsection{Data}\label{data}}
+
+\hypertarget{scripts}{%
+\subsection{Scripts}\label{scripts}}
+
+\hypertarget{results}{%
+\subsection{Results}\label{results}}
+
+\hypertarget{tables}{%
+\subsubsection{Tables}\label{tables}}
+
+\hypertarget{plots}{%
+\subsubsection{Plots}\label{plots}}
+
+\hypertarget{exercises}{%
+\section*{Exercises}\label{exercises}}
+\addcontentsline{toc}{section}{Exercises}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Create a new project using R Studio. Name it \textbf{001\_new\_project}.
+\item
+  Create a data directory, named data
+\item
+  Create an R script file, write something (anything), and save it as \textbf{01\_test}
+\item
+  Locate your new project on your PC
+\end{enumerate}
 
 \hypertarget{the-basics}{%
 \chapter{The Basics}\label{the-basics}}
@@ -1249,54 +1493,32 @@ The notion of an infix operator you and ignore for the most part. But, we will s
 \hypertarget{while}{%
 \subsubsection{While}\label{while}}
 
-\hypertarget{projects}{%
-\section{Projects}\label{projects}}
-
-Project are how RStudio organizes your work. Think of project as singular goal oriented collection. There are no rules but some basic organizational tips should help simplify your project.
-
-\hypertarget{creating}{%
-\subsection{Creating}\label{creating}}
-
-Creating a new project is very forgiving, you can create a new directory with a project name, or create a project out of an existing directory.
-
-Either 1. Click on the drop down in the top right 2. OR: Under the menu item select \texttt{File\ \textgreater{}\ New\ Project}
-
-In the \texttt{New\ Project\ Wizard} select \texttt{New\ Directory\ \textgreater{}\ New\ Project}, enter the name of the project and click \texttt{Create\ Project}.
-
-\begin{figure}
-\includegraphics[width=30.72in]{images/03_021_new_project_01} \caption{\label{fig:3201}RStudio Create New Project}\label{fig:3201}
-\end{figure}
-\begin{figure}
-\includegraphics[width=31.94in]{images/03_021_new_project_02} \caption{\label{fig:3202}RStudio Create New Project}\label{fig:3202}
-\end{figure}
-
-\hypertarget{editing}{%
-\subsection{Editing}\label{editing}}
-
-\hypertarget{organizing}{%
-\subsection{Organizing}\label{organizing}}
-
-\hypertarget{data}{%
-\subsubsection{Data}\label{data}}
-
-\hypertarget{scripts}{%
-\subsubsection{Scripts}\label{scripts}}
-
-\hypertarget{results}{%
-\subsubsection{Results}\label{results}}
-
-\hypertarget{tables}{%
-\paragraph{Tables}\label{tables}}
-
-\hypertarget{plots}{%
-\paragraph{Plots}\label{plots}}
-
-\hypertarget{exercises}{%
-\section*{Exercises}\label{exercises}}
+\hypertarget{exercises-1}{%
+\section*{Exercises}\label{exercises-1}}
 \addcontentsline{toc}{section}{Exercises}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Create a new R Studio Project and name it \emph{002\_basics}.
+\item
+  Create a new R script, add your name and date at the top as comments
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Your Name}
+\CommentTok{\# YYYY{-}MM{-}DD}
+\CommentTok{\# Institution}
+\CommentTok{\#}
+\CommentTok{\# Description}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
 \tightlist
 \item
   Calculate the sum of 2 and 3.
@@ -1308,7 +1530,7 @@ In the \texttt{New\ Project\ Wizard} select \texttt{New\ Directory\ \textgreater
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
+\setcounter{enumi}{3}
 \tightlist
 \item
   Evaluate if 0.5 is equal to 1 divided by 2.
@@ -1320,7 +1542,7 @@ In the \texttt{New\ Project\ Wizard} select \texttt{New\ Directory\ \textgreater
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
+\setcounter{enumi}{4}
 \tightlist
 \item
   Test if 3 is an even number. Hint, use the modulus operator and a comparison operator.
@@ -1332,7 +1554,7 @@ In the \texttt{New\ Project\ Wizard} select \texttt{New\ Directory\ \textgreater
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
+\setcounter{enumi}{5}
 \tightlist
 \item
   Create a function to test if a value is even resulting in \texttt{TRUE} or \texttt{FALSE}.
@@ -1350,7 +1572,7 @@ In the \texttt{New\ Project\ Wizard} select \texttt{New\ Directory\ \textgreater
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
+\setcounter{enumi}{6}
 \tightlist
 \item
   Create a function to test or \emph{even} or \emph{odd} by returning a string.
@@ -1745,8 +1967,47 @@ We can access the elements of a list using the dollar sign `\$' or double bracke
 
 Lists are also useful for storing and manipulating complex data structures such as data frames and tibbles.
 
+\hypertarget{tibbles}{%
+\section{Tibbles}\label{tibbles}}
+
+A tibble is a modern data frame in R programming language. Tibble is a part of tidyverse package that provides an efficient and user-friendly way to work with data frames. Tibbles are similar to data frames, but they have better printing capabilities, and they are designed to never alter your data.
+
+Tibbles are created using the \texttt{tibble()} function. You can create a tibble by passing vectors, lists, or data frames to the \texttt{tibble()} function. Once created, you can manipulate the tibble using the \texttt{dplyr} package.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(}
+  \AttributeTok{let =}\NormalTok{ LETTERS,}
+  \AttributeTok{pos =} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(LETTERS)}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 26 × 2
+##    let     pos
+##    <chr> <int>
+##  1 A         1
+##  2 B         2
+##  3 C         3
+##  4 D         4
+##  5 E         5
+##  6 F         6
+##  7 G         7
+##  8 H         8
+##  9 I         9
+## 10 J        10
+## # … with 16 more rows
+## # ℹ Use `print(n = ...)` to see more rows
+\end{verbatim}
+
+Tibbles have several advantages over data frames. They print only the first 10 rows and all the columns that fit on the screen. This makes it easier to view and work with large datasets. Tibbles also have better error messages, which makes debugging easier. Additionally, tibbles are more consistent in handling columns with different types of data.
+
 \hypertarget{how-to-tell-what-you-are-dealing-with}{%
-\section{How to tell what you are dealing with}\label{how-to-tell-what-you-are-dealing-with}}
+\section*{How to tell what you are dealing with}\label{how-to-tell-what-you-are-dealing-with}}
+\addcontentsline{toc}{section}{How to tell what you are dealing with}
 
 You can use the \texttt{str()} function to peak inside any data object to see how it is structured.
 
@@ -1769,7 +2030,7 @@ The contents of a data.frame:
 ##  $ height_inch: num  1.02 1.1 5.1 6 6.5 6.9
 \end{verbatim}
 
-The contents of a tible as very similar:
+The contents of a tibble is very similar:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1792,7 +2053,7 @@ The contents of a linear regression data object are quite different:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# linear prediction of salary based on age}
+\CommentTok{\# linear prediction of plant growth (eg. height) based on age}
 \NormalTok{linear\_model }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(}\AttributeTok{data =}\NormalTok{ plant\_data, height\_inch }\SpecialCharTok{\textasciitilde{}}\NormalTok{ age\_days)}
 
 \NormalTok{linear\_model}
@@ -1828,9 +2089,17 @@ List of 12
   ..- attr(*, "names")= chr [1:6] "1" "2" "3" "4" ...
 \end{verbatim}
 
-\hypertarget{exercises-1}{%
-\section*{Exercises}\label{exercises-1}}
+\hypertarget{exercises-2}{%
+\section*{Exercises}\label{exercises-2}}
 \addcontentsline{toc}{section}{Exercises}
+
+\begin{itemize}
+\tightlist
+\item
+  Create a new R Studio Project and name it \emph{003\_data\_structures}.
+\item
+  Create a new R script, add your name and date at the top as comments
+\end{itemize}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1858,8 +2127,19 @@ List of 12
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{2}
+\tightlist
 \item
   Construct a numerical vector of length 5, containing the diameters of circles with integer circumferences 1 to 5. Remember PEMDAS.
+\end{enumerate}
+
+\begin{verbatim}
+## [1]  3.141593 12.566372 28.274337 50.265488 78.539825
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
 \item
   Extract all circumferences greater than 50.
 \end{enumerate}
@@ -1868,20 +2148,577 @@ List of 12
 ## [1] 50.26549 78.53982
 \end{verbatim}
 
-\hypertarget{data-tables}{%
-\chapter{Data Tables}\label{data-tables}}
+\hypertarget{tidyverse-1}{%
+\chapter{Tidyverse}\label{tidyverse-1}}
 
-\hypertarget{tibble-a-new-data-structure}{%
-\section{Tibble, a new Data Structure}\label{tibble-a-new-data-structure}}
+The \texttt{tidyverse} is actually a collection of R packages designed for data analysis and visualization. It is an essential tool for data scientists and statisticians who work with large datasets.
 
---\textgreater{} (08 break, assignment)
-\#\# Reading Data into R
-\#\# Summarization
---\textgreater{} (09 break, assignment)
-\#\# Data Manipulation
-\#\#\# dplyr
-\#\#\# tidyr
---\textgreater{} (10 break, assignment)
+\begin{infobox}{skill}
+At the end of this chapter you should be able to:\\
+1. Grasp the importance of teh tidyverse\\
+2. Understand how to construct a data pipeline\\
+3. Composed a simple workflow
+
+\end{infobox}
+
+The \texttt{tidyverse} packages are built around a common philosophy of data manipulation. The goal is to provide a consistent and intuitive syntax for data analysis that is easy to learn and use. The packages in the \texttt{tidyverse} include:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{magrittr}: provides the pipe, \%\textgreater\% used throughout the tidyverse.
+\item
+  \textbf{tibble}: creates the main data object.
+\item
+  \textbf{readr}: reading and writing data in various formats.
+\item
+  \textbf{dplyr}: data manipulation.
+\item
+  \textbf{tidyr}: transforming messy data into a tidy format.
+\item
+  \textbf{purrr}: functional programming with vectors and lists.
+\item
+  \textbf{stringr}: working with strings.
+\item
+  \textbf{lubridate}: working with dates and date strings.
+\item
+  \textbf{ggplot2}: graphical plotting and data visualization.
+\end{itemize}
+
+These packages work seamlessly together, allowing users to easily manipulate and visualize their data. The \texttt{tidyverse} also includes a set of conventions and best practices for data analysis, making it easy to follow a consistent workflow.
+
+\begin{infobox}{note}
+\emph{\textbf{Cheat-Sheets} that summarize the all the functions}\\
+\href{https://www.tidyverse.org/}{tidyverse}: \href{https://readr.tidyverse.org/}{readr},
+\href{https://dplyr.tidyverse.org/}{dplyr}, \href{https://tidyr.tidyverse.org/}{tidyr},
+\href{https://stringr.tidyverse.org/}{stringr}
+
+\end{infobox}
+
+\hfill\break
+\hfill\break
+Consider the following workflow to read in data, calculate a linear regression and visualize the data using nine (9) of the underlying packages in the tidyverse.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+
+\CommentTok{\# readr, tibble, magrittr: read in a table of comma separate values}
+\NormalTok{tbl\_csv }\OtherTok{\textless{}{-}} \StringTok{"data/denver\_climate.csv"} \SpecialCharTok{\%\textgreater{}\%} \FunctionTok{read\_csv}\NormalTok{()}
+
+\CommentTok{\# define a function to fit a linear regression model}
+\NormalTok{lm\_func }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(data) \{}
+  \FunctionTok{lm}\NormalTok{(snowfall }\SpecialCharTok{\textasciitilde{}}\NormalTok{ min\_temp, }\AttributeTok{data =}\NormalTok{ data)}
+\NormalTok{\}}
+
+\CommentTok{\# readr, tibble, magrittr: using the data imported from above}
+\NormalTok{tbl\_csv\_lm }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_csv }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# dplyr}
+  \FunctionTok{group\_by}\NormalTok{(year) }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# tidyr}
+  \FunctionTok{nest}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# dplyr, purrr: apply the function to each nested data frame}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{model =} \FunctionTok{map}\NormalTok{(data, lm\_func)) }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# dplyr, broom, purrr: extract the coefficients from each model}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{tidy =} \FunctionTok{map}\NormalTok{(model, broom}\SpecialCharTok{::}\NormalTok{tidy)) }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# tidyr}
+  \FunctionTok{unnest}\NormalTok{(tidy) }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# dplyr, stringr}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{term =}\NormalTok{ term }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{str\_replace\_all}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{(|}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{)"}\NormalTok{, }\StringTok{""}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# dplyr: retain only specific columns}
+  \FunctionTok{select}\NormalTok{(year, term, estimate) }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# tidyr: convert from a long table to a wide table}
+  \FunctionTok{pivot\_wider}\NormalTok{(}\AttributeTok{names\_from =} \StringTok{\textquotesingle{}term\textquotesingle{}}\NormalTok{, }\AttributeTok{values\_from =} \StringTok{\textquotesingle{}estimate\textquotesingle{}}\NormalTok{)}
+
+
+\CommentTok{\#ggplot2}
+\NormalTok{tbl\_csv }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(min\_temp, snowfall)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \CommentTok{\# use the linear model data to plot regression lines}
+  \FunctionTok{geom\_abline}\NormalTok{(}\AttributeTok{data =}\NormalTok{ tbl\_csv\_lm,}
+              \FunctionTok{aes}\NormalTok{(}\AttributeTok{slope =}\NormalTok{ min\_temp, }\AttributeTok{intercept =}\NormalTok{ Intercept)) }\SpecialCharTok{+}
+  \CommentTok{\# plot each year separately }
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{year)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-66-1} \end{center}
+
+To get started with the \texttt{tidyverse}, you can install the package using the following command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"tidyverse"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Once installed, users can load the package and begin using the individual packages within the tidyverse:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+Overall, the tidyverse is an essential tool for data analysis and visualization in R. Its user-friendly syntax and consistent conventions make it easy for data scientists and statisticians to work with large datasets.
+
+\hypertarget{core-packages}{%
+\section{Core Packages}\label{core-packages}}
+
+Two important packages in the tidyverse are tibble and magrittr. These core packages enable other data manipulation operations to work seamlessly, improving efficiency and ease of use when working with data in R. Despite their importance, they are often taken for granted.
+
+\hypertarget{magrittr}{%
+\subsection*{magrittr}\label{magrittr}}
+\addcontentsline{toc}{subsection}{magrittr}
+
+The tidyverse package \texttt{magrittr} is a popular R package that provides a set of operators for chaining operations in a sequence. The package was developed by Stefan Milton Bache and Hadley Wickham. The main goal of \texttt{magrittr} is to make code more readable and easier to maintain.
+
+The pipe operator, \texttt{\%\textgreater{}\%}, is the most famous operator provided by \texttt{magrittr.} It allows you to chain multiple operations without the need to use intermediate variables. The pipe operator takes the output of the previous function and passes it as the first argument to the next function. This chaining of operations allows for more concise and readable code.
+
+Here is an example of how to use the pipe operator with \texttt{magrittr}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# create a vector of numbers}
+\NormalTok{numbers }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+
+\CommentTok{\# use the pipe operator to chain operations}
+\NormalTok{numbers }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{sum}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{sqrt}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.872983
+\end{verbatim}
+
+In this example, we create a vector of numbers and use the pipe operator to chain the \texttt{sum()} and \texttt{sqrt()} functions. The output of the \texttt{sum()} function is passed as the first argument to the \texttt{sqrt()} function. This allows us to calculate the sum and square root of the vector in a single line of code.
+
+Magrittr also provides other useful operators, such as the assignment pipe \texttt{\%\textless{}\textgreater{}\%}, which allows you to update a variable in place, and the tee operator \texttt{\%T\textgreater{}\%}, which allows you to inspect the output of an operation without interrupting the chain.
+
+\hypertarget{tibble}{%
+\subsection*{tibble}\label{tibble}}
+\addcontentsline{toc}{subsection}{tibble}
+
+R \texttt{tibble} is a class of data frame in the R programming language. It is an improved alternative to the traditional data frame and is part of the tidyverse package. Tibbles are data frames with stricter requirements, and they provide a streamlined and more efficient way to work with data.
+
+One of the main advantages of tibbles is that they provide a cleaner and more consistent way to display data. Tibbles only show the first 10 rows and all the columns that fit on the screen, making it easier to work with large datasets. Additionally, tibbles automatically convert character vectors to factors, preventing common errors that can occur when working with data frames.
+
+Another important feature of tibbles is the way they handle column names. Tibbles will not allow spaces in column names, and they use backticks to reference columns with non-standard names. This makes it easier to work with datasets that have complex column names. Tibbles also provide a more consistent way to handle missing values. In data frames, missing values can be represented in different ways, such as NA, NaN, or NULL. Tibbles, on the other hand, only use NA to represent missing values, making it easier to work with missing data.
+
+\hypertarget{importing}{%
+\section{Importing}\label{importing}}
+
+\hypertarget{readr}{%
+\subsection*{readr}\label{readr}}
+\addcontentsline{toc}{subsection}{readr}
+
+R \texttt{readr} is a package in the R language that is used to read structured data files into R. The package is an efficient and user-friendly toolkit that allows for the reading of different types of flat files such as CSV, TSV, and fixed-width files. It is part of the tidyverse collection of packages, which is popular among data scientists and statisticians.
+
+One of the key features of \texttt{readr} is its ability to quickly read data into R, making it an ideal package for data analysis and data cleaning. \texttt{readr} is designed to handle various types of data, including numeric, date, and character data. The package also has advanced features such as automatic guessing of column types, encoding detection, and parsing of dates and times.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# read comma separated values}
+\NormalTok{tbl\_csv }\OtherTok{\textless{}{-}} \StringTok{"data/denver\_climate.csv"} \SpecialCharTok{\%\textgreater{}\%} \FunctionTok{read\_csv}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+One of the best things about \texttt{readr} is its consistency in dealing with file formats, which allows for easy and fast data manipulation. The package provides a high level of control over the import process, allowing you to specify the location of the data file, the delimiter, and the encoding type. Additionally, \texttt{readr} can handle large datasets with ease, making it one of the most efficient packages for data handling.
+
+\hypertarget{wrangling}{%
+\section{Wrangling}\label{wrangling}}
+
+\hypertarget{dplyr}{%
+\subsection*{dplyr}\label{dplyr}}
+\addcontentsline{toc}{subsection}{dplyr}
+
+R \texttt{dplyr} is perhaps pne of the most powerful libraries in the \texttt{tidyverse}, providing a set of tools for data manipulation and transformation. It is designed to work seamlessly with data stored in data frames.
+
+The library comes with a set of functions that can be used to filter, arrange, group, mutate, and summarize data. These functions are optimized for speed and memory efficiency, allowing users to work with large datasets easily.
+
+Some of the most commonly used functions in \texttt{dplyr} are:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{filter}: used to extract specific rows from a data frame based on certain conditions.
+\item
+  \textbf{arrange}: used to sort the rows of a data frame based on one or more columns.
+\item
+  \textbf{select}: used to select specific columns from a data frame.
+\item
+  \textbf{mutate}: used to add new columns to a data frame.
+\end{itemize}
+
+In addition to these functions, dplyr also includes a set of convenient shortcuts and helpers, such as the pipe operator (\%\textgreater\%) which allows users to chain multiple operations together in a more intuitive and readable way.
+
+\hypertarget{tidyr}{%
+\subsection*{tidyr}\label{tidyr}}
+\addcontentsline{toc}{subsection}{tidyr}
+
+R \texttt{tidyr} is a package in R that helps to reshape data frames. It is an essential tool for data cleaning and analysis. Tidyr is used to convert data from wide to long format and vice versa, and it also helps to separate and unite columns.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{pivot\_longer}: used to reshape data from a column-based wide format to a row-based long format.
+\item
+  \textbf{pivot\_wider}: used to reshape data from a row-based long format to a column-based wide format.
+\end{itemize}
+
+The package \texttt{tidyr} also has functions to separate and unite columns. The ``separate'' function is used when you have a column that contains multiple variables. For example, if you have a column that contains both the first and last name of a person, you can separate them into two columns. The ``unite'' function is the opposite of separate. It is used when you want to combine two or more columns into one column.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{seperate}: used to separate a column with multiple values into two or more columns.
+\item
+  \textbf{seperate\_row}: used to duplicate a row with multiple values from a given column.
+\end{itemize}
+
+\hypertarget{purrr}{%
+\subsection*{purrr}\label{purrr}}
+\addcontentsline{toc}{subsection}{purrr}
+
+The \texttt{purrr} package is a functional programming toolkit for R that enables users to easily and rapidly apply a function to a set of inputs, returning a list or vector of outputs. It is designed to work seamlessly with the tidyverse ecosystem of packages, but can also be used with base R functions.
+
+The most important feature in \texttt{purrr} is its ability to replace loops with functions that save time and effort. The package has a collection of functions that allow you to work with functions that take one or more arguments. Some of these functions include \texttt{map}, \texttt{map2}, \texttt{pmap}, and \texttt{imap.}
+
+The map function is purrr's flagship function and is used to apply a function to each element of a list or vector, returning a list of outputs. The \texttt{map2} function applies a function to two lists or vectors in parallel, returning a list of outputs. The \texttt{pmap} function applies a function to an arbitrary number of lists or vectors in parallel, returning a list of outputs. The \texttt{imap} function is similar to map, but also provides the index of the current element in the input vector.
+
+Purrr also includes features such as the possibility of mapping over nested lists, using \texttt{map} and variants to iterate over grouped data, and using \texttt{map} and variants to modify data in place.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numbers }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+
+\CommentTok{\# define a function to square a number}
+\NormalTok{square }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{ x }\SpecialCharTok{\^{}} \DecValTok{2}\NormalTok{ \}}
+
+\CommentTok{\# use map to apply the function to each element of the list}
+\NormalTok{squared\_numbers }\OtherTok{\textless{}{-}} \FunctionTok{map}\NormalTok{(numbers, square)}
+
+\CommentTok{\# print the result}
+\NormalTok{squared\_numbers}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 4
+## 
+## [[3]]
+## [1] 9
+## 
+## [[4]]
+## [1] 16
+## 
+## [[5]]
+## [1] 25
+\end{verbatim}
+
+\hypertarget{glue}{%
+\subsection*{glue}\label{glue}}
+\addcontentsline{toc}{subsection}{glue}
+
+R \texttt{glue} is a tidyverse package that provides a simple way to interpolate values into strings. It allows users to combine multiple strings or variables together into a single string with minimum efforts, simpler than using base R fuctions.
+
+The \texttt{glue} function can handle various types of inputs, including vectors, lists, and expressions. It also supports user-defined formats and allows users to specify separators between the values.
+
+One of the significant advantages of using \texttt{glue} is that it provides a more readable and concise way to create strings in R. It eliminates the need for multiple \texttt{paste()} or \texttt{paste0()} statements, which can be cumbersome and error-prone.
+
+For example, instead of writing:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{paste0}\NormalTok{(}\StringTok{"The value of x is: "}\NormalTok{, x, }\StringTok{", and the value of y is: "}\NormalTok{, y)}
+\end{Highlighting}
+\end{Shaded}
+
+we can use R glue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{glue}\NormalTok{(}\StringTok{"The value of x is: \{x\}, and the value of y is: \{y\}"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+This code will produce the same output, but it's more readable and easier to modify.
+
+\hypertarget{data-types}{%
+\section{Data Types}\label{data-types}}
+
+\hypertarget{stringr}{%
+\subsection*{stringr}\label{stringr}}
+\addcontentsline{toc}{subsection}{stringr}
+
+The tidyverse package \texttt{stringr} provides a cohesive set of functions designed to make working with strings more efficient. It is especially useful when dealing with messy or unstructured data that needs to be cleaned and transformed into a more structured format.
+
+Several functions in \texttt{stringr} provides methods working with strings, for example:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{str\_replace}: replaces a pattern with another pattern in a string.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str\_replace}\NormalTok{(}\StringTok{"Hello World"}\NormalTok{, }\StringTok{"W.+"}\NormalTok{, }\StringTok{"Everyone"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Hello Everyone"
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{str\_extract}: extracts the first occurrence of a pattern from a string.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str\_extract}\NormalTok{(}\StringTok{"Hello World"}\NormalTok{, }\StringTok{"W.+"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "World"
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{str\_split}: splits a string into pieces based on a specified pattern.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str\_split}\NormalTok{(}\StringTok{"Hello World"}\NormalTok{, }\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{s"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] "Hello" "World"
+\end{verbatim}
+
+\hypertarget{lubridate}{%
+\subsection*{lubridate}\label{lubridate}}
+\addcontentsline{toc}{subsection}{lubridate}
+
+The tidyverse package \texttt{lubridate} helps with the handling of dates and times. The package has several functions that make it easier to work with dates and times, especially when dealing with data that has different formats.
+
+Some of the functions in \texttt{lubridate} package include:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{ymd} - this is used to convert dates in the format of year, month, and day to the date format in R. For example, \texttt{ymd("20220101")} will return the date in R format.
+\item
+  \textbf{dmy} - this is used to convert dates in the format of day, month, and year to the date format in R. For example, \texttt{dmy("01-01-2022")} will return the date in R format.
+\item
+  \textbf{hms} - this is used to convert time in the format of hours, minutes, and seconds to the time format in R. For example, \texttt{hms("12:30:15")} will return the time in R format.
+\item
+  \textbf{ymd\_hms} - this is used to convert dates and times in the format of year, month, day, hours, minutes, and seconds to the date and time format in R. For example, \texttt{ymd\_hms("2022-01-01\ 12:30:15")} will return the date and time in R format.
+\end{itemize}
+
+There are also functions for extracting information from dates and times such as \texttt{year()}, \texttt{month()}, \texttt{day()}, \texttt{hour()}, \texttt{minute()}, and \texttt{second()}.
+
+\hypertarget{forcats}{%
+\subsection*{forcats}\label{forcats}}
+\addcontentsline{toc}{subsection}{forcats}
+
+R \texttt{forcats} is a tidyverse package that provides a set of tools for working with categorical data. It is designed to make it easier to work with factors in R, which are used to represent categorical data.
+
+The \texttt{forcats} package provides several functions that can be used to manipulate factors, including reordering levels, combining levels, and handling missing values. It also provides functions for working with ordered factors, which are used to represent data that has a natural ordering, such as age groups or ratings.
+
+One of the key benefits of using \texttt{forcats} is that it allows you to easily visualize and analyze categorical data. The package provides functions for creating categorical plots, such as bar charts and pie charts, as well as for calculating summary statistics for categorical data.
+
+In addition to its core functionality, \texttt{forcats} is also highly customizable. It provides a wide range of options for controlling the appearance of plots and for customizing the behavior of factor manipulation functions.
+
+\hypertarget{summarizing}{%
+\section{Summarizing}\label{summarizing}}
+
+\hypertarget{dplyr-1}{%
+\subsection*{dplyr}\label{dplyr-1}}
+\addcontentsline{toc}{subsection}{dplyr}
+
+In the R tidyverse package, summarizing data is a common task performed on data frames. The dplyr package provides a set of functions that makes it easy to summarize data based on one or more variables.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{group\_by}: used to group rows of a data frame by one or more columns.
+\item
+  \textbf{summarize}: used to summarize the data based on one or more aggregate functions.
+\end{itemize}
+
+The summarise() function is used to perform simple summary statistics on data frames. It takes the name of the new variable as well as the summary function that should be used to calculate its value. For example, to calculate the mean and standard deviation of a variable named `x' in a data frame named `df', we can use the following code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tbl\_csv }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mean =} \FunctionTok{mean}\NormalTok{(precipitation), }
+            \AttributeTok{sd =} \FunctionTok{sd}\NormalTok{(precipitation))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 2
+##    mean    sd
+##   <dbl> <dbl>
+## 1  1.29  1.32
+\end{verbatim}
+
+The group\_by() function is used to group data frames by one or more variables. This is useful when we want to summarize data by different categories. For example, to calculate the mean and standard deviation of `x' by `group', we can use the following code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tbl\_csv }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(year) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mean =} \FunctionTok{mean}\NormalTok{(precipitation), }
+            \AttributeTok{sd =} \FunctionTok{sd}\NormalTok{(precipitation))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 4 x 3
+##    year  mean    sd
+##   <dbl> <dbl> <dbl>
+## 1  2016  1.32 1.29 
+## 2  2017  1.43 1.85 
+## 3  2018  1.03 1.16 
+## 4  2019  1.37 0.945
+\end{verbatim}
+
+The summarize\_at() and summarize\_all() functions are used to perform summary statistics on multiple variables at once. The summarize\_at() function takes a list of variables to summarize, while the summarize\_all() function summarizes all variables in the data frame. For example, to calculate the mean and standard deviation of all numeric variables in a data frame named `df', we can use the following code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tbl\_csv }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise\_all}\NormalTok{(}\FunctionTok{list}\NormalTok{(}\AttributeTok{mean =}\NormalTok{ mean, }\AttributeTok{sd =}\NormalTok{ sd))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 12
+##   year_mean month_mean max_temp_mean min_temp_mean precipitatio~1 snowf~2 year_sd month~3 max_t~4 min_t~5 preci~6 snowf~7
+##       <dbl>      <dbl>         <dbl>         <dbl>          <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+## 1     2018.        6.5          64.6          36.6           1.29    4.09    1.13    3.49    15.2    14.2    1.32    5.75
+## # ... with abbreviated variable names 1: precipitation_mean, 2: snowfall_mean, 3: month_sd, 4: max_temp_sd,
+## #   5: min_temp_sd, 6: precipitation_sd, 7: snowfall_sd
+\end{verbatim}
+
+Summarizing data is an essential task that can be performed using several functions. These functions make it easy to calculate summary statistics based on one or more variables, group data frames by different categories, and summarize multiple variables at once.
+
+\hypertarget{ggplot2}{%
+\subsection*{ggplot2}\label{ggplot2}}
+\addcontentsline{toc}{subsection}{ggplot2}
+
+The tidyverse package \texttt{ggplot2}, demonstrated at the onset of this chapter, is a data visualization package in R programming language that provides a flexible and powerful framework for creating graphs and charts. It is built on the grammar of graphics, which is a systematic way of mapping data to visual elements like points, lines, and bars.
+
+With \texttt{ggplot2}, you can create a wide range of graphs including scatterplots, bar charts, line charts, and more. The package offers a variety of customization options, such as color schemes, themes, and annotations, allowing you to create professional-looking visualizations with ease.
+
+One of the key benefits of \texttt{ggplot2} is that it allows you to quickly explore and analyze your data visually. You can easily create multiple graphs with different variables and subsets of your data, and compare them side by side to identify patterns and trends.
+
+\hypertarget{exercises-3}{%
+\section*{Exercises}\label{exercises-3}}
+\addcontentsline{toc}{section}{Exercises}
+
+\begin{itemize}
+\tightlist
+\item
+  Create a new R Studio Project and name it \emph{004\_tidyverse}.
+\item
+  Create a new R script, add your name and date at the top as comments
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Calculate the mean of following vector.
+\end{enumerate}
+
+\begin{verbatim}
+##  [1]  7.48 14.15  6.23 10.21 15.13  8.19  8.58  8.09  9.14 10.41
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 9.761
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Pipeline (eg. \texttt{\%\textgreater{}\%}) a data operation that provides the mean of following vector.
+\end{enumerate}
+
+\begin{verbatim}
+## [1] 9.761
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Employing a pipeline (eg. \texttt{\%\textgreater{}\%}), construct a tibble with columns named \texttt{circ} and \texttt{diam} which contains the diameters of circles with integer circumferences 1 to 5. Remember PEMDAS.
+\end{enumerate}
+
+\begin{verbatim}
+## # A tibble: 5 x 2
+##    circ  diam
+##   <int> <dbl>
+## 1     1  3.14
+## 2     2 12.6 
+## 3     3 28.3 
+## 4     4 50.3 
+## 5     5 78.5
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Extract all circumferences greater than 50.
+\end{enumerate}
+
+\begin{verbatim}
+## # A tibble: 2 x 2
+##    circ  diam
+##   <int> <dbl>
+## 1     4  50.3
+## 2     5  78.5
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Add a column named \texttt{circ\_type} where you assign the string \emph{odd} or \emph{even} depending on the column \texttt{circ}. Attempt to use the \texttt{purrr::map} function, along with the \texttt{oddeven()} function from the previous chapter, then compute the mean, standard deviation, and coefficient of variation of the diameters for each \texttt{circ\_type}.
+\end{enumerate}
+
+\begin{verbatim}
+## # A tibble: 2 x 4
+##   circ_type diam_mean diam_sd diam_cv
+##   <chr>         <dbl>   <dbl>   <dbl>
+## 1 even           31.4    26.7   0.849
+## 2 odd            36.7    38.4   1.05
+\end{verbatim}
 
 \hypertarget{data-wrangling}{%
 \chapter{Data Wrangling}\label{data-wrangling}}
@@ -1889,24 +2726,165 @@ List of 12
 \hypertarget{tidy-data}{%
 \section{Tidy Data}\label{tidy-data}}
 
+\hypertarget{exercises-4}{%
+\section*{Exercises}\label{exercises-4}}
+\addcontentsline{toc}{section}{Exercises}
+
+\begin{itemize}
+\tightlist
+\item
+  Create a new R Studio Project and name it \emph{005\_data\_wrangling}.
+\item
+  Create a new R script, add your name and date at the top as comments.
+\item
+  Locate and/or download the Tidyverse cheat-sheets and refer to them as needed.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Download \emph{Denver Climate Data} to use as an example data file.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{url }\OtherTok{\textless{}{-}} \StringTok{"https://raw.githubusercontent.com/ZenBrayn/asms{-}2022{-}r{-}shortcourse/main/exercises/intro\_to\_r/data/denver\_climate.csv"}
+\FunctionTok{download.file}\NormalTok{(url, }\AttributeTok{destfile =} \StringTok{"./data/denver\_climate.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Read in the dataset .csv using the \texttt{tidyverse} set of packages.
+\item
+  How many rows does the table contain? Number of columns? What are the column names?
+\end{enumerate}
+
+\begin{verbatim}
+## [1] 48
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 6
+\end{verbatim}
+
+\begin{verbatim}
+## [1] "year"          "month"         "max_temp"      "min_temp"      "precipitation" "snowfall"
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Find the month and year with the highest snowfall.
+\end{enumerate}
+
+\begin{verbatim}
+## # A tibble: 1 x 2
+##   month  year
+##   <dbl> <dbl>
+## 1     4  2016
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Find months where there was no snowfall.
+\end{enumerate}
+
+\begin{verbatim}
+## # A tibble: 5 x 1
+##   month
+##   <dbl>
+## 1     6
+## 2     7
+## 3     8
+## 4     9
+## 5    10
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Find average precipitation per year.
+\end{enumerate}
+
+\begin{verbatim}
+## # A tibble: 4 x 2
+##    year precipitation_avg
+##   <dbl>             <dbl>
+## 1  2016              1.32
+## 2  2017              1.43
+## 3  2018              1.03
+## 4  2019              1.37
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Convert temperatures to Celsius and add new columns with these to table. Reminder \texttt{F\ to\ C\ conversion\ -\textgreater{}\ (F\ -\ 32)\ *\ (5/9)}.
+\end{enumerate}
+
+\begin{verbatim}
+## # A tibble: 48 x 8
+##     year month max_temp min_temp precipitation snowfall min_temp_C max_temp_C
+##    <dbl> <dbl>    <dbl>    <dbl>         <dbl>    <dbl>      <dbl>      <dbl>
+##  1  2016     1     46.8     19.3          0.39      7.4     -7.06        8.22
+##  2  2016     2     49.8     22.5          0.47     14.7     -5.28        9.89
+##  3  2016     3     53.2     25.7          1.47     19       -3.5        11.8 
+##  4  2016     4     55.5     33.2          2.13     19.2      0.667      13.1 
+##  5  2016     5     64.6     39.6          1.95      0.7      4.22       18.1 
+##  6  2016     6     82.4     54.7          4.64      0       12.6        28   
+##  7  2016     7     87       57.4          2.08      0       14.1        30.6 
+##  8  2016     8     83.8     53.9          1.18      0       12.2        28.8 
+##  9  2016     9     79.8     48.5          0.12      0        9.17       26.6 
+## 10  2016    10     74.1     40.6          0.16      0        4.78       23.4 
+## # ... with 38 more rows
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  Find the month with the greatest difference in C between max and min temperature.
+\end{enumerate}
+
+\begin{verbatim}
+## # A tibble: 1 x 2
+##   month temp_diff_C_avg
+##   <dbl>           <dbl>
+## 1     9            16.9
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  Write to file an .csv of the data.frame which contains the C data.
+\end{enumerate}
+
 \hypertarget{data-visualization}{%
 \chapter{Data Visualization}\label{data-visualization}}
 
 Visualizing your data is crucial because it helps you understand the patterns, trends, and relationships within the data. A well-designed visualization can make complex data easy to understand and convey insights that would be hard to discern from raw data.
 
-\begin{infobox}{skill}
-At the end of this chapter you should be able to:\\
-1. Understand the need for visualization\\
-2. Create some simple plots of points, lines and bars\\
-
-
-\end{infobox}
-
 Anscombe's quartet is a classic example that demonstrates the importance of visualizing your data. This quartet comprises four datasets with nearly identical simple descriptive statistics. However, when graphed, they have very different distributions and appear very different from one another. This example shows that relying solely on summary statistics to understand data can be misleading and inadequate.
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-65}Summary stats for Anscombe's quartet.}
+\caption{\label{tab:unnamed-chunk-97}Summary stats for Anscombe's quartet.}
 \centering
 \begin{tabular}[t]{l|r|r|r|r|r|r|r}
 \hline
@@ -1923,45 +2901,43 @@ D & 9 & 11 & 7.500000 & 4.126740 & 3.000000 & 0.5000000 & 0.6663856\\
 \end{tabular}
 \end{table}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-66-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-98-1} \end{center}
 
 In data analysis, creating a plot to convey a message or demonstrate a result is a common endpoint. To achieve this, this book utilizes the \texttt{GGPlot2} package, which is part of the \texttt{Tidyverse}. This package complements the data pipelining demonstrated in the previous chapters, making it a perfect choice for creating a wide range of plots, from simple scatter plots to complex heat maps, making it ideal for data visualization.
+
+\hfill\break
+::: \{.infobox .skill data-latex=``\{skill\}''\}
+At the end of this chapter you should be able to:\\
+1. Understand the need for visualization\\
+2. Create some simple plots of points, lines and bars\\
+3. Manipulate how a plot looks\\
+:::\\
+\strut \\
 
 \hypertarget{base-plot}{%
 \section{Base: plot}\label{base-plot}}
 
-R comes standard with the fairly basic plotting function \texttt{plot()}. While this function forms the basis for all plotting interactions in R, it can be greatly extended with additional packages. Two such packages will be explored in this chapter, \texttt{GGplot2} and \texttt{Plotly}. The former is great for static publication quality plots, of which you will begin to recognize, while the latter provides stunning interactive graphics suitable for web development and Shiny applications.
+R comes standard with the fairly basic plotting function \texttt{plot()}. While this function forms the basis for all plotting interactions in R, it can be greatly extended with additional packages. Three such packages widely used are \texttt{lattice}, \texttt{GGplot2}, \texttt{Plotly}. This chapter will dive into \texttt{GGplot2} which is integrated with the tidyverse, and is great for static publication quality plots. The other two will briefly be covered as suitable alternatives.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1234}\NormalTok{)}
 \FunctionTok{plot}\NormalTok{(}\FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{20}\NormalTok{),}\FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{20}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-67-1.pdf}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-99-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1234}\NormalTok{)}
 \NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{( }\AttributeTok{x1 =} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{20}\NormalTok{), }\AttributeTok{y1 =} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{20}\NormalTok{) )}
 \NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{plot}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-68-1.pdf}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-100-1} \end{center}
 
-\hypertarget{ggplot}{%
-\section{GGPlot}\label{ggplot}}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(tidyverse)}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{syntax-1}{%
-\subsection{Syntax}\label{syntax-1}}
+\hypertarget{ggplot2-1}{%
+\section{GGPlot2}\label{ggplot2-1}}
 
 The motivation behind GGplot is based on the grammar of graphics such that
 
@@ -1970,6 +2946,9 @@ The motivation behind GGplot is based on the grammar of graphics such that
 \end{quote}
 
 Ideally this accomplishes dual goals of allowing you to quickly construct plots for initial analyses and checking for oddities (as explained above) and following the logical process of the plot construction.
+
+\hypertarget{syntax-1}{%
+\subsection{Syntax}\label{syntax-1}}
 
 To graph in GGPlot there are a few core embodiments that need to be considered.
 
@@ -1999,21 +2978,34 @@ coordinate & orientation of the data points & eg. \emph{cartesian (x,y), polar} 
 
 In this example the \texttt{ggplot()} function contains the two components, the data table \texttt{data} and mapping function \texttt{aes()}. Since \emph{GGPlot} follows a layered modality, the \texttt{ggplot()} function ``sets'' the canvas and passes the data table \texttt{data} and mapping function \texttt{aes()} to all the functions that follow with the \texttt{+} operator.
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
 Lets create some data \ldots{}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{set.seed}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\NormalTok{n\_peaks }\OtherTok{\textless{}{-}} \DecValTok{300}
 \NormalTok{tbl\_mz }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(}
-  \AttributeTok{mz =} \FunctionTok{sample}\NormalTok{(}\DecValTok{3500}\SpecialCharTok{:}\DecValTok{20000}\SpecialCharTok{/}\DecValTok{10}\NormalTok{, }\DecValTok{100}\NormalTok{),}
-  \AttributeTok{int =} \FunctionTok{rlnorm}\NormalTok{(}\AttributeTok{meanlog =} \DecValTok{5}\NormalTok{, }\AttributeTok{sdlog =} \DecValTok{2}\NormalTok{, }\DecValTok{100}\NormalTok{),}
-  \AttributeTok{class =} \FunctionTok{sample}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}C\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}D\textquotesingle{}}\NormalTok{), }\DecValTok{100}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{) }
+  \AttributeTok{mz =} \FunctionTok{sample}\NormalTok{(}\DecValTok{3500}\SpecialCharTok{:}\DecValTok{20000}\SpecialCharTok{/}\DecValTok{10}\NormalTok{, n\_peaks),}
+  \AttributeTok{int =} \FunctionTok{rlnorm}\NormalTok{(}\AttributeTok{meanlog =} \DecValTok{5}\NormalTok{, }\AttributeTok{sdlog =} \DecValTok{2}\NormalTok{, n\_peaks),}
+  \AttributeTok{class =} \FunctionTok{sample}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}C\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}D\textquotesingle{}}\NormalTok{), n\_peaks, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{) }
 \NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \hypertarget{basic-data-plotting}{%
 \subsection{Basic Data Plotting}\label{basic-data-plotting}}
+
+\begin{infobox}{note}
+\emph{\textbf{Cheat-sheets} can be found online that summarize all the functions}\\
+\href{https://ggplot2.tidyverse.org/}{ggplot2.tidyverse.org/}
+
+\end{infobox}
 
 \hypertarget{points-and-lines}{%
 \subsubsection*{Points and Lines}\label{points-and-lines}}
@@ -2035,7 +3027,8 @@ We can also connect points with lines to show a trend or pattern in the data. Th
 \end{Shaded}
 
 It's important to take note of the difference between plots \emph{p03} and \emph{p04}. While both plots showcase a similar data representation, a closer look reveals a notable difference. Specifically, in the latter plot (\emph{p04}), we can see that the red points appear under the black line. This occurs because the points were layered first, and then the lines were layered over them. This is a crucial distinction to make as it highlights the importance of the order in which layers are applied in the plot.
-\includegraphics{_main_files/figure-latex/unnamed-chunk-74-1.pdf}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-106-1} \end{center}
 
 \hypertarget{segments}{%
 \subsubsection*{Segments}\label{segments}}
@@ -2045,11 +3038,13 @@ Line segments are an important concept in geometry and are used in various appli
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p05 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(mz, int)) }\SpecialCharTok{+} \FunctionTok{geom\_segment}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{xend =}\NormalTok{ mz, }\AttributeTok{yend =} \DecValTok{0}\NormalTok{))}
+\NormalTok{p05 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(mz, int)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_segment}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{xend =}\NormalTok{ mz, }\AttributeTok{yend =} \DecValTok{0}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-76-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-108-1} \end{center}
 
 \hypertarget{bar-chart}{%
 \subsubsection*{Bar Chart}\label{bar-chart}}
@@ -2059,17 +3054,19 @@ When it comes to representing categorical data, bar charts are considered to be 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p06 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(class)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{()}
+\NormalTok{p06 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(class)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-78-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-110-1} \end{center}
 
 \hypertarget{pie-chart}{%
 \subsubsection*{Pie Chart}\label{pie-chart}}
 \addcontentsline{toc}{subsubsection}{Pie Chart}
 
-You maybe considering a pie chart, which is a circular diagram divided into sectors, with each sector representing a proportion of the whole. It is commonly used to display percentages, where the sum of the sectors equals 100\%. There is no specific \texttt{geom} to build piechart with ggplot2. The trick is to build a barplot and use \texttt{coord\_polar()} to make it circular. However, interpreting pie charts can be challenging since humans are not very skilled at reading angles. For instance, it is often difficult to determine which group is the largest and to arrange them by value. As a result, it is advisable to refrain from using pie charts.
+You maybe considering a pie chart, which is a circular diagram divided into sectors, with each sector representing a proportion of the whole. It is commonly used to display percentages, where the sum of the sectors equals 100\%. There is no specific \texttt{geom} to build a pie-chart with ggplot2. The trick is to build a barplot and use \texttt{coord\_polar()} to make it circular. However, interpreting pie charts can be challenging since humans are not very skilled at reading angles. For instance, it is often difficult to determine which group is the largest and to arrange them by value. As a result, it is advisable to refrain from using pie charts.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2079,7 +3076,7 @@ You maybe considering a pie chart, which is a circular diagram divided into sect
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-80-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-112-1} \end{center}
 
 Note how difficult it is in the pie chart to tell (by eye) that \emph{A} is the smallest.
 
@@ -2098,11 +3095,13 @@ Histograms are widely used to summarize large datasets and identify patterns or 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p10 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\FunctionTok{log}\NormalTok{(int))) }\SpecialCharTok{+} \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{1}\NormalTok{)}
+\NormalTok{p10 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\FunctionTok{log10}\NormalTok{(int))) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{1}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-82-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-114-1} \end{center}
 
 \hypertarget{density}{%
 \subsubsection*{Density}\label{density}}
@@ -2112,482 +3111,458 @@ A density plot is a graphical representation of the distribution of a dataset. I
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p11 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\FunctionTok{log}\NormalTok{(int))) }\SpecialCharTok{+} \FunctionTok{geom\_density}\NormalTok{()}
+\NormalTok{p11 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\FunctionTok{log10}\NormalTok{(int))) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_density}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-84-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-116-1} \end{center}
+
+\hypertarget{box-plot}{%
+\subsubsection*{Box-Plot}\label{box-plot}}
+\addcontentsline{toc}{subsubsection}{Box-Plot}
+
+One of the most commonly used types of plots in GGplot2 is the box plot. A box plot is used to display the distribution of a continuous variable. It shows the median, interquartile range, and any outliers present in the data.
+
+Box plots are useful in scientific analysis because they allow us to quickly see the distribution of a variable and identify any potential outliers. They are particularly useful when comparing the distribution of a variable across different groups or categories. For example, we may use a box plot to compare the distribution of values across different class levels.
+
+To create a box plot in GGplot2, we use the \texttt{geom\_boxplot()} function. We specify the variable we want to plot on the y-axis and any grouping variables on the x-axis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p12 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(class, }\FunctionTok{log10}\NormalTok{(int))) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_boxplot}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-118-1} \end{center}
 
 \hypertarget{extended-syntax}{%
 \subsection{Extended Syntax}\label{extended-syntax}}
 
+One way to enhance the functionality of ggplots is by using additional modifiers. These modifiers can help you to create more intricate and detailed visualizations that better represent your data. By tweaking the parameters of your ggplots, you can create visualizations that are more informative, aesthetically pleasing, and tailored to your specific needs. Whether you want to adjust the color scheme, add annotations, or modify the axis labels, additional modifiers can help you to achieve your desired outcome.
+
 \hypertarget{colors}{%
-\subsubsection{Colors}\label{colors}}
+\subsubsection*{Colors}\label{colors}}
+\addcontentsline{toc}{subsubsection}{Colors}
+
+We saw a bit how to adjust colors in the previous plots. The two color arguments to consider are \texttt{color}, which modifies the point, line and edge color, and \texttt{fill}, which modifies the internal color of a shape for plots such as \texttt{geom\_bar} and \texttt{geom\_histogram}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p13 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\FunctionTok{log10}\NormalTok{(int))) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{color =} \StringTok{\textquotesingle{}blue\textquotesingle{}}\NormalTok{, }\AttributeTok{fill =} \StringTok{\textquotesingle{}purple\textquotesingle{}}\NormalTok{, }\AttributeTok{binwidth =} \DecValTok{1}\NormalTok{)}
+
+\NormalTok{p14 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\FunctionTok{log10}\NormalTok{(int))) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_density}\NormalTok{(}\AttributeTok{color =} \StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{, }\AttributeTok{fill =} \StringTok{\textquotesingle{}orange\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-120-1} \end{center}
+
+Colors can also take on a transparency called \texttt{alpha}, which allows one layer to show through when two or more are plotted together.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p15 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\FunctionTok{log10}\NormalTok{(int))) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_density}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ class))}
+
+\NormalTok{p16 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\FunctionTok{log10}\NormalTok{(int))) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_density}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ class), }\AttributeTok{alpha =}\NormalTok{ .}\DecValTok{25}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-122-1} \end{center}
 
 \hypertarget{scales}{%
-\subsubsection{Scales}\label{scales}}
+\subsubsection*{Scales}\label{scales}}
+\addcontentsline{toc}{subsubsection}{Scales}
+
+GGplot2 is a popular data visualization package in R that allows users to create stunning and insightful visualizations. One of the key features of GGplot2 is its ability to handle scales, which are critical for displaying data accurately and effectively. In this document, we will explore how to use scales in GGplot2, specifically for log10 and manual scales.
+
+\hypertarget{log10-scale}{%
+\paragraph*{Log10 Scale}\label{log10-scale}}
+\addcontentsline{toc}{paragraph}{Log10 Scale}
+
+Logarithmic scales are useful when the data spans several orders of magnitude. GGplot2 makes it easy to create log10 scales using the \texttt{scale\_y\_log10()} and \texttt{scale\_x\_log10()} functions.
+
+Using the same examples from above, yet instead of applying the \texttt{log10()} function directly to the variable, we can apply it to the scale instead.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p17 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(int)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_histogram}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ class), }\AttributeTok{position =} \StringTok{\textquotesingle{}identity\textquotesingle{}}\NormalTok{, }\AttributeTok{alpha =}\NormalTok{ .}\DecValTok{5}\NormalTok{, }\AttributeTok{binwidth =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_log10}\NormalTok{()}
+
+\NormalTok{p18 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(int)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_density}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ class), }\AttributeTok{alpha =}\NormalTok{ .}\DecValTok{25}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_log10}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-124-1} \end{center}
+
+This results in a plot where the y-axis is scaled logarithmically, making it easier to see the differences between the different car classes. Note, that when we specified the \texttt{binwidth\ =\ 1} in the \texttt{geom\_histogram()}, GGplot2 applied that to the log10 space specified from the \texttt{scale\_x\_log10()}.
+
+\hypertarget{manual-scales}{%
+\paragraph*{Manual Scales}\label{manual-scales}}
+\addcontentsline{toc}{paragraph}{Manual Scales}
+
+Sometimes, we may want to manually define the scale for our plots. For example, we may want to create a plot where the y-axis only shows values between 0 and 10. We can do this using the \texttt{scale\_y\_continuous()} function in GGplot2.
+
+Here is an example of how to use the \texttt{scale\_y\_continuous()} function to manually define the y-axis scale:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p19 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(mz, int)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_segment}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{xend =}\NormalTok{ mz, }\AttributeTok{yend =} \DecValTok{0}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{n.breaks =} \DecValTok{13}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{n.breaks =} \DecValTok{5}\NormalTok{, }\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{500}\NormalTok{,}\DecValTok{1500}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-126-1} \end{center}
+
+In this example, we added a manual scale to both the x- and y-axis using the \texttt{scale\_x\_continuous()} and \texttt{scale\_y\_continuous()} functions, respectively, and specifying the number of breaks \texttt{n.breaks\ =} and the limits \texttt{limits\ =}.
 
 \hypertarget{faceting}{%
-\subsubsection{Faceting}\label{faceting}}
+\paragraph*{Faceting}\label{faceting}}
+\addcontentsline{toc}{paragraph}{Faceting}
+
+Faceting is a powerful feature in ggplot2 that allows us to split a single plot into multiple small plots based on a categorical variable. It enables us to visualize complex data patterns and relationships in a more understandable way. There are two types of faceting in ggplot2: facet\_wrap and facet\_grid.
+
+\hypertarget{facet_wrap}{%
+\subparagraph*{facet\_wrap}\label{facet_wrap}}
+\addcontentsline{toc}{subparagraph}{facet\_wrap}
+
+\texttt{facet\_wrap} creates a grid of plots by wrapping the facets from left-to-right and top-to-bottom in the plot. Each facet is displayed in a separate panel, and the panels are arranged in rows and columns based on the levels of the specified categorical variable.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p20 }\OtherTok{\textless{}{-}}\NormalTok{ p17 }\SpecialCharTok{+} \FunctionTok{facet\_wrap}\NormalTok{(. }\SpecialCharTok{\textasciitilde{}}\NormalTok{ class)}
+
+\NormalTok{p21 }\OtherTok{\textless{}{-}}\NormalTok{ p17 }\SpecialCharTok{+} \FunctionTok{facet\_wrap}\NormalTok{(. }\SpecialCharTok{\textasciitilde{}}\NormalTok{ class, }\AttributeTok{scales =} \StringTok{\textquotesingle{}free\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-128-1} \end{center}
+
+In this example, we are reused ggplot object \texttt{p17} and created two additional plots. The \texttt{facet\_wrap} function is used to split the plot into multiple panels based on the categorical variable \texttt{class} using the tilde \texttt{.\ \textasciitilde{}\ class}. In this case, the dot \texttt{.} prior to the tilde \texttt{\textasciitilde{}} tells ggplot to consider only a single variable, \texttt{class} as we had defined it. You can think of the tilde as a type of function \texttt{this\ \textquotesingle{}by\textquotesingle{}\ that} or \texttt{y\ \textasciitilde{}\ x}. This becomes more important in the \texttt{facet\_grid()} function. Notice in the \texttt{p21} plot we set the scales \texttt{free}, allowing each facet to dictate \texttt{x} and \texttt{y} plot scales.
+
+\hypertarget{facet_grid}{%
+\subparagraph*{facet\_grid}\label{facet_grid}}
+\addcontentsline{toc}{subparagraph}{facet\_grid}
+
+\texttt{facet\_grid} creates a grid of plots by specifying one or more categorical variables that define the rows and columns of the grid. It allows us to create more complex faceted plots than \texttt{facet\_wrap}. In this example we will randomly add a new varaible called \texttt{group} that will allow us to create the \texttt{y} direction of the facet.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tbl\_new }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{group =} \FunctionTok{sample}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}positive\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}negative\textquotesingle{}}\NormalTok{), n\_peaks, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{))}
+
+\NormalTok{p22 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_new }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(int)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_log10}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(group }\SpecialCharTok{\textasciitilde{}}\NormalTok{ class)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-130-1} \end{center}
+
+To illistrate the difference between \texttt{facet\_wrap()} and \texttt{facet\_grid()} consider what happens when a set of data is missing. Note in \texttt{p24} it is not immediately intuitive in \texttt{facet\_wrap()} that \texttt{c-negative} is missing, where as in \texttt{facet\_grid()}, the layout highlights this realization.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tbl\_new }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_mz }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{group =} \FunctionTok{sample}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}positive\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}negative\textquotesingle{}}\NormalTok{), n\_peaks, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{))}
+
+\NormalTok{w }\OtherTok{\textless{}{-}} \FunctionTok{which}\NormalTok{(tbl\_new}\SpecialCharTok{$}\NormalTok{class }\SpecialCharTok{==} \StringTok{\textquotesingle{}C\textquotesingle{}} \SpecialCharTok{\&}\NormalTok{ tbl\_new}\SpecialCharTok{$}\NormalTok{group }\SpecialCharTok{==} \StringTok{\textquotesingle{}negative\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{p23 }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_new[}\SpecialCharTok{{-}}\NormalTok{w, ] }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(int)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_log10}\NormalTok{()}
+
+\NormalTok{p24 }\OtherTok{\textless{}{-}}\NormalTok{ p23 }\SpecialCharTok{+} \FunctionTok{facet\_wrap}\NormalTok{(group }\SpecialCharTok{\textasciitilde{}}\NormalTok{ class)}
+\NormalTok{p25 }\OtherTok{\textless{}{-}}\NormalTok{ p23 }\SpecialCharTok{+} \FunctionTok{facet\_grid}\NormalTok{(group }\SpecialCharTok{\textasciitilde{}}\NormalTok{ class)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-132-1} \end{center}
 
 \hypertarget{labels}{%
-\subsubsection{Labels}\label{labels}}
+\subsubsection*{Labels}\label{labels}}
+\addcontentsline{toc}{subsubsection}{Labels}
 
 \hypertarget{annotations}{%
-\subsubsection{Annotations}\label{annotations}}
+\subsubsection*{Annotations}\label{annotations}}
+\addcontentsline{toc}{subsubsection}{Annotations}
 
-\hypertarget{package-ggrepel}{%
-\subsubsection{Package ggrepel}\label{package-ggrepel}}
+\hypertarget{style}{%
+\subsubsection*{Style}\label{style}}
+\addcontentsline{toc}{subsubsection}{Style}
 
-\hypertarget{plotly}{%
-\section{Plotly}\label{plotly}}
+Creating a plotting style can help you to quickly improve the appearance of your plots and make them more consistent with your brand. When working with data visualization, it's important to keep in mind that the appearance of your plots can significantly impact the way your audience interprets your data. GGplot2 themes and colors offer an easy way to create professional-looking visualizations that will make your data stand out.
 
-\hypertarget{mass-spectrometry-data}{%
-\chapter{Mass Spectrometry Data}\label{mass-spectrometry-data}}
+\hypertarget{themes}{%
+\paragraph*{Themes}\label{themes}}
+\addcontentsline{toc}{paragraph}{Themes}
 
-\hypertarget{commercial}{%
-\section{Commercial}\label{commercial}}
-
-\hypertarget{raw-thermo}{%
-\subsection{RAW (Thermo)}\label{raw-thermo}}
-
-\hypertarget{wiff-sciex}{%
-\subsection{WIFF (Sciex)}\label{wiff-sciex}}
-
-\hypertarget{d-agilent}{%
-\subsection{D (Agilent)}\label{d-agilent}}
-
-\hypertarget{d-bruker}{%
-\subsection{D (Bruker)}\label{d-bruker}}
-
-\hypertarget{open-access-raw-data}{%
-\section{Open Access Raw Data}\label{open-access-raw-data}}
-
-Mass spectrometry (MS) is a powerful analytical method that can be used to determine the mass-to-charge ratio (m/z) of ions in a sample. Mass spectrometry data is generated from MS experiments and can be stored in various formats, including mzXML, mzML, and mzH5.
-
-\hypertarget{conversion-tools}{%
-\subsection*{Conversion Tools}\label{conversion-tools}}
-\addcontentsline{toc}{subsection}{Conversion Tools}
-
-ProteoWizard is an open-source software tool that provides a collection of open-source, cross-platform software libraries and tools for extracting raw mass spectrometry data from from various instrument vendor formats and converting it to the formats listed below.
-
-\begin{quote}
-\emph{Kessner, D., Chambers, M., Burke, R., Agus, D., \& Mallick, P. (2008). ProteoWizard: open source software for rapid proteomics tools development. Bioinformatics, 24(21), 2534--2536. \url{https://doi.org/10.1093/bioinformatics/btn323}}
-
-\url{https://proteowizard.sourceforge.io/}
-\end{quote}
-
-\hypertarget{mzxml}{%
-\subsection*{mzXML}\label{mzxml}}
-\addcontentsline{toc}{subsection}{mzXML}
-
-mzXML is an open XML-based format for encoding MS data. It was developed by the Seattle Proteome Center and is widely used in the mass spectrometry community. mzXML files contain raw MS data, as well as metadata describing the instrument parameters used to acquire the data. mzXML files can be processed using a variety of software tools, such as the Trans-Proteomic Pipeline and ProteoWizard.
-
-The mzXML format has been shown to be effective in handling data from a wide range of instruments. It has a simple structure that makes it easy to parse and process, making it an attractive choice for many researchers. The format is also relatively lightweight, which makes it easy to transfer and store large amounts of data.
-
-\begin{quote}
-\emph{Pedrioli, P.G., Eng, J.K., Hubley, R., Vogelzang, M., Deutsch, E.W., Raught, B., Pratt, B., Nilsson, E., Angeletti, R.H., Apweiler, R. and Cheung, K., 2004. A common open representation of mass spectrometry data and its application to proteomics research. Nature biotechnology, 22(11), pp.1459-1466.}
-\end{quote}
-
-\hypertarget{mzml}{%
-\subsection*{mzML}\label{mzml}}
-\addcontentsline{toc}{subsection}{mzML}
-
-The mzML format is another open XML-based format for MS data, developed by the Proteomics Standards Initiative. It is designed to be more flexible than mzXML and includes more detailed metadata. mzML files can be processed using software tools such as OpenMS and mzR.
-
-The mzML format allows for more detailed and comprehensive data storage than mzXML. This is because mzML has a more complex structure, which enables the storage of a wider range of experimental metadata. The format is also more flexible, which means that it can be easily adapted to different types of experiments and instruments.
-
-\begin{quote}
-\emph{Martens, L., Chambers, M., Sturm, M., Kessner, D., Levander, F., Shofstahl, J., Tang, W.H., Römpp, A., Neumann, S., Pizarro, A.D. and Montecchi-Palazzi, L., 2011. mzML---a community standard for mass spectrometry data. Molecular \& cellular proteomics, 10(1), p.R110. 000133.}
-\end{quote}
-
-\hypertarget{mzmlb}{%
-\subsection*{mzMLb}\label{mzmlb}}
-\addcontentsline{toc}{subsection}{mzMLb}
-
-Recently proposed as a new file format based on HDF5 and NetCDF4 standards, mzMLb is faster and more flexible than existing approaches while preserving the XML encoding of metadata. Additionally, it is optimized for both read/write speed and storage efficiency. The format has a reference implementation provided within the ProteoWizard toolkit.
-
-\begin{quote}
-Bhamber, Ranjeet S., et al.~``mzMLb: A future-proof raw mass spectrometry data format based on standards-compliant mzML and optimized for speed and storage requirements.'' Journal of proteome research 20.1 (2020): 172-183.\_
-\end{quote}
-
-\hypertarget{mass-spectrometry-r-packages-work-in-progress}{%
-\chapter{Mass Spectrometry R Packages (work in progress)}\label{mass-spectrometry-r-packages-work-in-progress}}
-
-\hypertarget{xcms}{%
-\section{xcms}\label{xcms}}
-
-\hypertarget{deqms}{%
-\section{deqms}\label{deqms}}
-
-\hypertarget{msempire}{%
-\section{msempire}\label{msempire}}
-
-\hypertarget{msqrob}{%
-\section{msqrob}\label{msqrob}}
-
-\hypertarget{msstatstmt}{%
-\section{MSstatsTMT}\label{msstatstmt}}
-
-\hypertarget{msstats}{%
-\section{MSstats}\label{msstats}}
-
-The MSstats package is an R package designed for the analysis of label-free mass spectrometry data. It provides a wide range of statistical tools for the analysis of protein abundance data, including normalization, missing value imputation, quality control, and differential expression analysis. MSstats provides a powerful and flexible way to analyze mass spectrometry data, making it an essential tool for researchers in the field.
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2222}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7778}}@{}}
-\toprule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\textbf{Documentation} & \href{https://msstats.org}{web}, \href{https://bioconductor.org/packages/release/bioc/manuals/MSstats/man/MSstats.pdf}{PDF} \\
-\textbf{Code} & \href{https://www.bioconductor.org/packages/release/bioc/html/MSstats.html}{Bioconductor} \\
-\textbf{Literature} & \emph{Bioinformatics} 30.17 (2014): 2524-2526 \\
-\end{longtable}
-
-\hypertarget{installation-1}{%
-\subsection{Installation}\label{installation-1}}
-
-To install MSstats, you can use the following code:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{requireNamespace}\NormalTok{(}\StringTok{"BiocManager"}\NormalTok{, }\AttributeTok{quietly =} \ConstantTok{TRUE}\NormalTok{))}
-    \FunctionTok{install.packages}\NormalTok{(}\StringTok{"BiocManager"}\NormalTok{)}
-
-\NormalTok{BiocManager}\SpecialCharTok{::}\FunctionTok{install}\NormalTok{(}\StringTok{"MSstats"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{loading-data}{%
-\subsection{Loading Data}\label{loading-data}}
-
-To load your data into MSstats, you can use the following code:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(MSstats)}
-\FunctionTok{data}\NormalTok{(}\StringTok{"QCMAPData"}\NormalTok{)}
-\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ QCMAPData}\SpecialCharTok{$}\NormalTok{data}
-\NormalTok{design }\OtherTok{\textless{}{-}}\NormalTok{ QCMAPData}\SpecialCharTok{$}\NormalTok{design}
-\FunctionTok{head}\NormalTok{(data)}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{quality-control}{%
-\subsection{Quality Control}\label{quality-control}}
-
-To perform quality control on your data, you can use the following code:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{QCmetrics }\OtherTok{\textless{}{-}}\NormalTok{ MSstats}\SpecialCharTok{:::}\FunctionTok{calculateQCmetrics}\NormalTok{(data, }\AttributeTok{featureLevel =} \StringTok{"protein"}\NormalTok{)}
-\NormalTok{MSstats}\SpecialCharTok{:::}\FunctionTok{plotQCmetrics}\NormalTok{(QCmetrics, }\AttributeTok{plotType =} \StringTok{"boxplot"}\NormalTok{,}
-                        \AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{200000}\NormalTok{), }\AttributeTok{ylab =} \StringTok{"Total Ion Current"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{differential-expression-analysis}{%
-\subsection{Differential Expression Analysis}\label{differential-expression-analysis}}
-
-To perform differential expression analysis on your data, you can use the following code:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{MSstatsResult }\OtherTok{\textless{}{-}}\NormalTok{ MSstats}\SpecialCharTok{::}\FunctionTok{MSstats}\NormalTok{(data, design,}
-                                  \AttributeTok{normalizationMethod =} \StringTok{"quantile"}\NormalTok{,}
-                                  \AttributeTok{normalization =} \StringTok{"median"}\NormalTok{,}
-                                  \AttributeTok{msLevel =} \DecValTok{1}\NormalTok{, }\AttributeTok{verbose =} \ConstantTok{TRUE}\NormalTok{)}
-\FunctionTok{summary}\NormalTok{(MSstatsResult)}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{conclusion}{%
-\subsection{Conclusion}\label{conclusion}}
-
-Overall, MSstats is a powerful and flexible R package for the analysis of label-free mass spectrometry data. It provides a wide range of statistical tools for the analysis of protein abundance data, making it an essential tool for researchers in the field. With its easy-to-use interface and comprehensive documentation, MSstats is a must-have tool for anyone working with mass spectrometry data.
-
-\hypertarget{msgrob2}{%
-\section{msgrob2}\label{msgrob2}}
-
-\texttt{msgrob2} is an R package that provides functions to perform robust estimation in linear models with missing data. With the help of the Expectation-Maximization (EM) algorithm, the package estimates the parameters of the linear model and imputes the missing data. Additionally, the package offers robust methods for estimating the covariance matrix, including the Minimum Covariance Determinant (MCD) estimator and the S-estimator.
-
-The \texttt{msgrob2} package is particularly useful in situations where data is missing from a linear model. The EM algorithm implemented in the package is a powerful tool for imputing missing data, and the robust covariance estimators allow for a better understanding of the data. The package is designed to provide efficient and accurate results when working with incomplete data, making it an essential tool for researchers and data analysts.
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7500}}@{}}
-\toprule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\textbf{Documentation} & \href{https://www.bioconductor.org/packages/release/bioc/manuals/msqrob2/man/msqrob2.pdf}{PDF} \\
-\textbf{Code} & \href{https://www.bioconductor.org/packages/release/bioc/html/msqrob2.html}{Bioconductor} \\
-\textbf{Literature} & \emph{Molecular \& Cellular Proteomics}, \textbf{15}(2), 657-668., \emph{Molecular \& Cellular Proteomics}, \textbf{19}(7), 1209-1219., \emph{Analytical Chemistry}, \textbf{92}(9), 6278--6287. \\
-\end{longtable}
-
-\hypertarget{code-examples}{%
-\subsection{Code Examples}\label{code-examples}}
-
-\hypertarget{installing-package}{%
-\subsubsection{Installing Package}\label{installing-package}}
-
-To install the \texttt{msgrob2} package, you can use the following code:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{install.packages}\NormalTok{(}\StringTok{"msgrob2"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{loading-package}{%
-\subsubsection{Loading Package}\label{loading-package}}
-
-After installation, you can load the \texttt{msgrob2} package using the following code:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(msgrob2)}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{estimating-parameters}{%
-\subsubsection{Estimating Parameters}\label{estimating-parameters}}
-
-To estimate the parameters of a linear model with missing data using \texttt{msgrob2}, you can use the \texttt{msgrob()} function. The following code demonstrates how to use \texttt{msgrob()}:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Loading Example Data}
-\FunctionTok{data}\NormalTok{(}\StringTok{"exMiss"}\NormalTok{)}
-
-\CommentTok{\# Estimating Parameters}
-\NormalTok{model }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ x1 }\SpecialCharTok{+}\NormalTok{ x2 }\SpecialCharTok{+}\NormalTok{ x3, }\AttributeTok{data =}\NormalTok{ exMiss)}
-\FunctionTok{msgrob}\NormalTok{(model)}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{estimating-covariance-matrix}{%
-\subsubsection{Estimating Covariance Matrix}\label{estimating-covariance-matrix}}
-
-To estimate the covariance matrix using \texttt{msgrob2}, you can use the \texttt{covrob()} function. The following code demonstrates how to use \texttt{covrob()}:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Loading Example Data}
-\FunctionTok{data}\NormalTok{(}\StringTok{"exMiss"}\NormalTok{)}
-
-\CommentTok{\# Estimating Covariance Matrix}
-\FunctionTok{covrob}\NormalTok{(exMiss[,}\DecValTok{2}\SpecialCharTok{:}\DecValTok{4}\NormalTok{], }\AttributeTok{method =} \StringTok{"MCD"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-In summary, \texttt{msgrob2} is a comprehensive R package that provides an array of functions for robust estimation in linear models with missing data. The package's implementation of the EM algorithm and robust covariance estimators make it an essential tool for researchers and data analysts working with incomplete data. The package is easy to install and use, with code examples readily available for reference.
-
-\hypertarget{statspro-r-package}{%
-\section{StatsPro R Package}\label{statspro-r-package}}
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2222}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7778}}@{}}
-\toprule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\textbf{Documentation} & \href{https://github.com/YanglabWCH/StatsPro\#Readme}{github}, \href{https://github.com/YanglabWCH/StatsPro/blob/main/StatsPro_Manual.pdf}{PDF} \\
-\textbf{Code} & \href{https://github.com/YanglabWCH/StatsPro}{github} \\
-\textbf{Literature} & \emph{Journal of Proteomics} 250 (2022): 104386. \\
-\end{longtable}
-
-\hypertarget{tidyproteomics}{%
-\section{Tidyproteomics}\label{tidyproteomics}}
-
-The tidyproteomics R package is a tool that provides a set of functions to preprocess and analyze proteomics data using the tidy data framework. This package is built on top of the tidyverse and Bioconductor packages, which are widely used in the R community for data manipulation and analysis.
-
-Some of the main features of the tidyproteomics package include:
+To apply a theme to your plot, you simply need to call the \texttt{theme()} function and specify the name of the theme you want to use. Some of the most popular themes include:
 
 \begin{itemize}
 \tightlist
 \item
-  Data preprocessing functions for common tasks such as filtering, normalization, and imputation.
+  \texttt{theme\_gray()}: A simple, gray background with white gridlines.
 \item
-  Functions for quality assessment and visualization of proteomics data.
+  \texttt{theme\_dark()}: A simple, gray background with white gridlines.
 \item
-  Integration with other Bioconductor packages for downstream analysis such as differential expression analysis and pathway analysis.
+  \texttt{theme\_classic()}: A classic black and white theme with no gridlines.
+\item
+  \texttt{theme\_minimal()}: A minimalistic theme with no background or gridlines.
+\item
+  \texttt{theme\_bw()}: A black and white theme with gray gridlines.
 \end{itemize}
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2222}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7778}}@{}}
-\toprule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\textbf{Documentation} & \href{https://jeffsocal.github.io/tidyproteomics/}{github} \\
-\textbf{Code} & \href{https://github.com/jeffsocal/tidyproteomics}{github} \\
-\textbf{Literature} & \\
-\end{longtable}
+You can also create your own custom themes by modifying various theme elements. For example, you can change the background color, font, and size of the plot elements. To do this, you can use the \texttt{element\_*()} functions. For example, the \texttt{element\_text()} function allows you to modify the font size, color, and family of your text.
 
-\hypertarget{loading-data-1}{%
-\subsection{Loading Data}\label{loading-data-1}}
-
-To load your data into tidyproteomics, you can use the following code:
+Another great feature of GGplot2 themes is that they allow you to maintain consistency across multiple visualizations. If you're creating a series of plots, applying the same theme to each one will give your work a more polished and professional look.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# Load the tidyproteomics package}
-\FunctionTok{library}\NormalTok{(tidyproteomics)}
-
-\CommentTok{\# Import data}
-\NormalTok{data\_proteins }\OtherTok{\textless{}{-}} \StringTok{"path\_to\_data.xlsx"} \SpecialCharTok{\%\textgreater{}\%}
-   \FunctionTok{import}\NormalTok{(}\StringTok{"ProteomeDiscoverer"}\NormalTok{, }\StringTok{"proteins"}\NormalTok{) }
+\NormalTok{p28 }\OtherTok{\textless{}{-}}\NormalTok{ p12 }\SpecialCharTok{+} \FunctionTok{theme\_gray}\NormalTok{() }\CommentTok{\# default}
+\NormalTok{p29 }\OtherTok{\textless{}{-}}\NormalTok{ p12 }\SpecialCharTok{+} \FunctionTok{theme\_dark}\NormalTok{()}
+\NormalTok{p30 }\OtherTok{\textless{}{-}}\NormalTok{ p12 }\SpecialCharTok{+} \FunctionTok{theme\_light}\NormalTok{()}
+\NormalTok{p31 }\OtherTok{\textless{}{-}}\NormalTok{ p12 }\SpecialCharTok{+} \FunctionTok{theme\_classic}\NormalTok{()}
+\NormalTok{p32 }\OtherTok{\textless{}{-}}\NormalTok{ p12 }\SpecialCharTok{+} \FunctionTok{theme\_minimal}\NormalTok{()}
+\NormalTok{p33 }\OtherTok{\textless{}{-}}\NormalTok{ p12 }\SpecialCharTok{+} \FunctionTok{theme\_bw}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{data-summaries}{%
-\subsection{Data Summaries}\label{data-summaries}}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-135-1} \end{center}
+
+\hypertarget{colors-1}{%
+\paragraph*{Colors}\label{colors-1}}
+\addcontentsline{toc}{paragraph}{Colors}
+
+In addition to applying a theme to your layout, you can should also consider the color scheme. GGplot2 is a powerful data visualization package in R that allows users to create beautiful and informative graphs. The package is highly customizable, and one of its most important features is the ability to customize colors using Brewer and manual color scales.
+
+\hypertarget{brewer-color-scales}{%
+\subparagraph*{Brewer Color Scales}\label{brewer-color-scales}}
+\addcontentsline{toc}{subparagraph}{Brewer Color Scales}
+
+The Brewer color scales in GGplot2 are color palettes that have been specifically designed to be distinguishable by people with color vision deficiencies. These color scales are useful when creating visualizations where color is used to convey information.
+
+The Brewer palettes are particularly useful because they are carefully curated to ensure that the colors are distinguishable from one another, even for individuals with color vision deficiencies. This makes them a great option for creating informative data visualizations.
+
+To use Brewer color scales in GGplot2, you can simply specify the name of the color scale as an argument to the \texttt{scale\_color\_brewer()} or \texttt{scale\_fill\_brewer()} functions. Other popular Brewer color scales include Blues, Greens, Oranges, and Purples. By using these scales, you can create beautiful visualizations that are both aesthetically pleasing and informative.
+
+\hypertarget{manual-color-scales}{%
+\subparagraph*{Manual Color Scales}\label{manual-color-scales}}
+\addcontentsline{toc}{subparagraph}{Manual Color Scales}
+
+In addition to the Brewer color scales, GGplot2 also allows users to specify custom color scales using the \texttt{scale\_color\_manual()} or \texttt{scale\_fill\_manual()} functions. These functions take a vector of colors as an argument, which can be specified using names, hex codes, or RGB values.
+
+Manual color scales are particularly useful when you want to use specific colors that are not included in the Brewer palettes. For example, if you are creating a visualization for a company and you want to use the company's brand colors, you can specify the colors using a manual color scale.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{rdata }\OtherTok{\textless{}{-}}\NormalTok{ rdata }\SpecialCharTok{\%\textgreater{}\%}
-  \CommentTok{\# plot some simple summary stats}
-  \FunctionTok{plot\_counts}\NormalTok{(}\AttributeTok{destination =} \StringTok{"png"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{plot\_quantrank}\NormalTok{(}\AttributeTok{destination =} \StringTok{"png"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{plot\_venn}\NormalTok{(}\AttributeTok{destination =} \StringTok{"png"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{plot\_euler}\NormalTok{(}\AttributeTok{destination =} \StringTok{"png"}\NormalTok{)}
+\NormalTok{p34 }\OtherTok{\textless{}{-}}\NormalTok{ p31}
+\NormalTok{p35 }\OtherTok{\textless{}{-}}\NormalTok{ p31 }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{\textquotesingle{}Set1\textquotesingle{}}\NormalTok{)}
+\NormalTok{p36 }\OtherTok{\textless{}{-}}\NormalTok{ p31 }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{\textquotesingle{}Blues\textquotesingle{}}\NormalTok{)}
+\NormalTok{p37 }\OtherTok{\textless{}{-}}\NormalTok{ p31 }\SpecialCharTok{+} \FunctionTok{scale\_fill\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"\#d97828"}\NormalTok{, }\StringTok{"\#83992a"}\NormalTok{, }\StringTok{"\#995d81"}\NormalTok{,}\StringTok{"\#44709d"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
-Summary Stats
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-138-1} \end{center}
+
+\hypertarget{package-ggrepel}{%
+\subsubsection*{Package ggrepel}\label{package-ggrepel}}
+\addcontentsline{toc}{subsubsection}{Package ggrepel}
+
+\hypertarget{alternatives-1}{%
+\section{Alternatives}\label{alternatives-1}}
+
+\hypertarget{lattice}{%
+\subsection*{lattice}\label{lattice}}
+\addcontentsline{toc}{subsection}{lattice}
+
+The Lattice package is an R package that is used for plotting graphs, and is based on the grid graphics system. The package provides a high-level interface to grid graphics, which makes it easy to create complex visualizations with an emphasis on multivariate data. It is designed to meet most typical graphics needs with minimal tuning, but can also be easily extended to handle most nonstandard requirements.
+
+Trellis Graphics, originally developed for S and S-PLUS at the Bell Labs, is a framework for data visualization developed by \emph{R. A. Becker, W. S. Cleveland, et al, extending ideas presented in Cleveland's 1993 book Visualizing Data}. The Lattice API is based on the original design in S, but extends it in many ways.
+
+Various types of lattice plots available for data visualization. Among the different types of plots, \textbf{univariate} plots stand out as they utilize only a single variable for plotting. The different options available for univariate plots include bar plots, box-and-whisker plots, kernel density estimates, dot plots, histograms, quantile plots, and one-dimensional scatter plots. \textbf{Bivariate} plots involve plotting two variables against each other. Examples of bivariate plots include scatterplots and quantile plots. These types of plots are useful in analyzing the relationship between two variables and can provide valuable insights into the data. \textbf{Trivariate} plots, as the name implies, involve plotting three variables and provide a more complex visualization of the data. Options for trivariate plots include level plots, contour plots, three-dimensional scatter plots, and three-dimensional surface plots. These types of plots can be particularly helpful in analyzing complex data sets and identifying patterns in the data that may not be immediately apparent.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{rdata }\OtherTok{\textless{}{-}}\NormalTok{ rdata }\SpecialCharTok{\%\textgreater{}\%}
-  \CommentTok{\# save a table of simple summary stats}
-  \FunctionTok{summary}\NormalTok{(}\StringTok{"sample"}\NormalTok{, }\AttributeTok{destination =} \StringTok{"save"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \CommentTok{\# save a report on contamination}
-  \FunctionTok{summary}\NormalTok{(}\AttributeTok{contamination =} \StringTok{"CRAP"}\NormalTok{, }\AttributeTok{destination =} \StringTok{"save"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \CommentTok{\# remove contamination}
-  \FunctionTok{subset}\NormalTok{(}\SpecialCharTok{!}\NormalTok{description }\SpecialCharTok{\%like\%} \StringTok{"\^{}CRAP"}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(lattice)}
+
+\NormalTok{p51 }\OtherTok{\textless{}{-}} \FunctionTok{xyplot}\NormalTok{(int }\SpecialCharTok{\textasciitilde{}}\NormalTok{ mz, }\AttributeTok{data =}\NormalTok{ tbl\_mz, }\AttributeTok{main =} \StringTok{"Scatter Plot"}\NormalTok{)}
+\NormalTok{p52 }\OtherTok{\textless{}{-}} \FunctionTok{xyplot}\NormalTok{(int }\SpecialCharTok{\textasciitilde{}}\NormalTok{ mz, }\AttributeTok{data =}\NormalTok{ tbl\_mz, }\AttributeTok{type=}\StringTok{\textquotesingle{}a\textquotesingle{}}\NormalTok{, }\AttributeTok{main =} \StringTok{"Line Plot"}\NormalTok{)}
+\NormalTok{p53 }\OtherTok{\textless{}{-}} \FunctionTok{histogram}\NormalTok{(}\SpecialCharTok{\textasciitilde{}} \FunctionTok{log10}\NormalTok{(int) }\SpecialCharTok{|}\NormalTok{ class, }\AttributeTok{data =}\NormalTok{ tbl\_mz, }\AttributeTok{main =} \StringTok{"Histogram"}\NormalTok{)}
+\NormalTok{p54 }\OtherTok{\textless{}{-}} \FunctionTok{densityplot}\NormalTok{(}\SpecialCharTok{\textasciitilde{}} \FunctionTok{log10}\NormalTok{(int) }\SpecialCharTok{|}\NormalTok{ class, }\AttributeTok{data =}\NormalTok{ tbl\_mz, }\AttributeTok{main =} \StringTok{"Density Plot"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{normalization-and-imputation}{%
-\subsection{Normalization and Imputation}\label{normalization-and-imputation}}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-140-1} \end{center}
+
+\hypertarget{plotly}{%
+\subsection*{plotly}\label{plotly}}
+\addcontentsline{toc}{subsection}{plotly}
+
+Plotly is an open-source data visualization library that allows you to create interactive visualizations in R \href{https://plotly.com/r/}{plotly.com/r/}. It offers a wide range of graphs and charts, including line plots, scatter plots, area charts, bar charts, error bars, box plots, histograms, heatmaps, subplots, plots with multiple-axes, 3D plots, and more. The package is built on top of \textbf{htmlwidgets}, which means that you can easily embed your visualizations in web applications or other HTML documents.
+
+Plotly also nativity supports many data science languages such as R, Python, Julia, Java-script, MATLAB and F\#.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{rdata }\OtherTok{\textless{}{-}}\NormalTok{ rdata }\SpecialCharTok{\%\textgreater{}\%}
-  \CommentTok{\# normalize via several methods, best method will be automatically selected}
-  \FunctionTok{normalize}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"median"}\NormalTok{,}\StringTok{"linear"}\NormalTok{,}\StringTok{"limma"}\NormalTok{,}\StringTok{"randomforest"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
-  \CommentTok{\# impute with a minimum value (this is a knock{-}out)}
-  \FunctionTok{impute}\NormalTok{(base}\SpecialCharTok{::}\NormalTok{min)}
-  \CommentTok{\# plot visualizations comparing normalization methods}
-  \FunctionTok{plot\_normalization}\NormalTok{(}\AttributeTok{destination =} \StringTok{"png"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{plot\_variation\_cv}\NormalTok{(}\AttributeTok{destination =} \StringTok{"png"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{plot\_variation\_pca}\NormalTok{(}\AttributeTok{destination =} \StringTok{"png"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{plot\_dynamic\_range}\NormalTok{(}\AttributeTok{destination =} \StringTok{"png"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \CommentTok{\# plot visualizations of unbiased clustering}
-  \FunctionTok{plot\_heatmap}\NormalTok{(}\AttributeTok{destination =} \StringTok{"png"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{plot\_pca}\NormalTok{(}\AttributeTok{destination =} \StringTok{"png"}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(plotly)}
 \end{Highlighting}
 \end{Shaded}
-
-\hypertarget{expression-analysis}{%
-\subsection{Expression Analysis}\label{expression-analysis}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{rdata }\OtherTok{\textless{}{-}}\NormalTok{ rdata }\SpecialCharTok{\%\textgreater{}\%}
-  \CommentTok{\# calculate the expression between experiment: ko and control: wt}
-  \FunctionTok{expression}\NormalTok{(kndw}\SpecialCharTok{/}\NormalTok{ctrl) }\SpecialCharTok{\%\textgreater{}\%}
-  \CommentTok{\# plot the expression analysis}
-  \FunctionTok{plot\_volcano}\NormalTok{(kndw}\SpecialCharTok{/}\NormalTok{ctrl, }\AttributeTok{destination =} \StringTok{"png"}\NormalTok{, }\AttributeTok{significance\_column =} \StringTok{"p\_value"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{plot\_proportion}\NormalTok{(kndw}\SpecialCharTok{/}\NormalTok{ctrl, }\AttributeTok{destination =} \StringTok{"png"}\NormalTok{)}
+\FunctionTok{plot\_ly}\NormalTok{(tbl\_mz, }\AttributeTok{x =} \SpecialCharTok{\textasciitilde{}}\NormalTok{mz, }\AttributeTok{y =} \SpecialCharTok{\textasciitilde{}}\NormalTok{int, }\AttributeTok{color =} \SpecialCharTok{\textasciitilde{}}\NormalTok{class,}
+        \AttributeTok{mode =} \StringTok{"markers"}\NormalTok{, }\AttributeTok{type =} \StringTok{"scatter"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{layout}\NormalTok{(}\AttributeTok{title =} \StringTok{\textquotesingle{}Scatter Plot\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-Enrichment Analysis
+\hypertarget{exercises-5}{%
+\section*{Exercises}\label{exercises-5}}
+\addcontentsline{toc}{section}{Exercises}
+
+\begin{itemize}
+\tightlist
+\item
+  Create a new R Studio Project and name it \emph{006\_data\_visualizing}.
+\item
+  Create a new R script, add your name and date at the top as comments
+\item
+  Locate and/or download a GGplot2 cheat-sheet and refer to it as needed.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  If not already done, download \emph{Bacterial Metabolite Data} to use as an example data file.
+\end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{rdata }\OtherTok{\textless{}{-}}\NormalTok{ rdata }\SpecialCharTok{\%\textgreater{}\%}
-  \CommentTok{\# calculate the enrichment of the GO term(s) using the results}
-  \CommentTok{\# from the expression analysis}
-  \FunctionTok{enrichment}\NormalTok{(kndw}\SpecialCharTok{/}\NormalTok{ctrl, }\AttributeTok{.term =} \StringTok{"biological\_process"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{enrichment}\NormalTok{(kndw}\SpecialCharTok{/}\NormalTok{ctrl, }\AttributeTok{.term =} \StringTok{"cellular\_component"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{enrichment}\NormalTok{(kndw}\SpecialCharTok{/}\NormalTok{ctrl, }\AttributeTok{.term =} \StringTok{"molecular\_function"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \CommentTok{\# plot the enrichment analysis}
-  \FunctionTok{plot\_enrichment}\NormalTok{(kndw}\SpecialCharTok{/}\NormalTok{ctrl, }\AttributeTok{.term =} \StringTok{"biological\_process"}\NormalTok{, }\AttributeTok{destination =} \StringTok{"png"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{plot\_enrichment}\NormalTok{(kndw}\SpecialCharTok{/}\NormalTok{ctrl, }\AttributeTok{.term =} \StringTok{"cellular\_component"}\NormalTok{, }\AttributeTok{destination =} \StringTok{"png"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{plot\_enrichment}\NormalTok{(kndw}\SpecialCharTok{/}\NormalTok{ctrl, }\AttributeTok{.term =} \StringTok{"molecular\_function"}\NormalTok{, }\AttributeTok{destination =} \StringTok{"png"}\NormalTok{) }
+\NormalTok{url }\OtherTok{\textless{}{-}} \StringTok{"https://raw.githubusercontent.com/jeffsocal/ASMS\_R\_Basics/main/data/bacterial{-}metabolites\_dose{-}simicillin\_tidy.csv"}
+\FunctionTok{download.file}\NormalTok{(url, }\AttributeTok{destfile =} \StringTok{"./data/bacterial{-}metabolites\_dose{-}simicillin\_tidy.csv"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{advanced}{%
-\subsection{Advanced}\label{advanced}}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Read in the dataset .csv using the \texttt{tidyverse} set of packages.
+\item
+  Create a metabolite \texttt{abundance} by \texttt{time\_min} \ldots{}
+\end{enumerate}
 
-\hypertarget{plot-quantitation-rank-with-log2-cutoff}{%
-\subsubsection{Plot Quantitation-Rank with Log2 Cutoff}\label{plot-quantitation-rank-with-log2-cutoff}}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-145-1} \end{center}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# SUPPLEMENTAL FIGURES}
-\CommentTok{\# plot an alternate quantitative ranking}
-\NormalTok{rdata }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{plot\_quantrank}\NormalTok{(}\AttributeTok{display\_filter =} \StringTok{"log2\_foldchange"}\NormalTok{,}
-                 \AttributeTok{display\_cutoff =} \DecValTok{5}\NormalTok{)}
-\FunctionTok{ggsave}\NormalTok{(}\StringTok{"plot\_proteins\_quantitation\_rank\_filtered.png"}\NormalTok{,}
-       \AttributeTok{width =} \DecValTok{6}\NormalTok{, }\AttributeTok{h =} \DecValTok{4}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  \ldots{} facet by \texttt{culture} and \texttt{metabolite}\ldots{}
+\end{enumerate}
 
-\hypertarget{plot-comparison-of-two-expressions}{%
-\subsubsection{Plot Comparison of Two Expressions}\label{plot-comparison-of-two-expressions}}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-146-1} \end{center}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# import the data again to now avoid imputation}
-\NormalTok{rdata }\OtherTok{\textless{}{-}} \FunctionTok{path\_to\_package\_data}\NormalTok{(}\StringTok{"p97KD\_HCT116"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \CommentTok{\# import the data set}
-  \FunctionTok{import}\NormalTok{(}\StringTok{\textquotesingle{}ProteomeDiscoverer\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}proteins\textquotesingle{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \CommentTok{\# change the labels on the samples containing \textquotesingle{}ko\textquotesingle{}}
-  \FunctionTok{reassign}\NormalTok{(}\StringTok{"sample"}\NormalTok{, }\StringTok{"ctl"}\NormalTok{, }\StringTok{"ctrl"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{reassign}\NormalTok{(}\StringTok{"sample"}\NormalTok{, }\StringTok{"p97"}\NormalTok{, }\StringTok{"kndw"}\NormalTok{)}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  \ldots{} adjust the y-axis to log10, color by \texttt{dose\_mg}, and add a 50\% transparent line \ldots{}
+\end{enumerate}
 
-\CommentTok{\# run a an expression analysis using a t.test statistical comparison}
-\NormalTok{tbl\_expression\_ttest }\OtherTok{\textless{}{-}}\NormalTok{ rdata }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{expression}\NormalTok{(kndw}\SpecialCharTok{/}\NormalTok{ctrl, }\AttributeTok{.method =}\NormalTok{ stats}\SpecialCharTok{::}\NormalTok{t.test) }\SpecialCharTok{\%\textgreater{}\%}
-  \CommentTok{\# export the results table to the assigned object}
-  \FunctionTok{export\_analysis}\NormalTok{(kndw}\SpecialCharTok{/}\NormalTok{ctrl, }\AttributeTok{.analysis =} \StringTok{"expression"}\NormalTok{)}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-147-1} \end{center}
 
-\CommentTok{\# run a an expression analysis using the limma statistical method}
-\NormalTok{tbl\_expression\_limma }\OtherTok{\textless{}{-}}\NormalTok{ rdata }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{expression}\NormalTok{(kndw}\SpecialCharTok{/}\NormalTok{ctrl, }\AttributeTok{.method =} \StringTok{"limma"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \CommentTok{\# export the results table to the assigned object}
-  \FunctionTok{export\_analysis}\NormalTok{(kndw}\SpecialCharTok{/}\NormalTok{ctrl, }\AttributeTok{.analysis =} \StringTok{"expression"}\NormalTok{)}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  \ldots{} change the theme to something publishable, add a title, modify the x- and y-axis label, modify the legend title, adjust the y-axis ticks to show the actually measured time values, and pick a color scheme that highlights the dose value\ldots{}
+\end{enumerate}
 
-\CommentTok{\# plot the two expression tables two compare similarities between methods}
-\FunctionTok{plot\_compexp}\NormalTok{(tbl\_expression\_ttest,}
-\NormalTok{             tbl\_expression\_limma,}
-             \AttributeTok{labels\_column =} \StringTok{"gene\_name"}\NormalTok{,}
-             \AttributeTok{log2fc\_min =} \DecValTok{1}\NormalTok{, }\AttributeTok{significance\_column =} \StringTok{"p\_value"}\NormalTok{) }\SpecialCharTok{+}
-\NormalTok{  ggplot2}\SpecialCharTok{::}\FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"(log2 FC) Wilcoxon Rank Sum"}\NormalTok{,}
-                \AttributeTok{y =} \StringTok{"(log2 FC) Emperical Bayes (limma)"}\NormalTok{,}
-                \AttributeTok{title =} \StringTok{"Hela p97 KD \textasciitilde{} Ctrl"}\NormalTok{)}
-
-\FunctionTok{ggsave}\NormalTok{(}\StringTok{"plot\_enrichment\_comparison.png"}\NormalTok{,}
-       \AttributeTok{width =} \DecValTok{6}\NormalTok{, }\AttributeTok{h =} \DecValTok{4}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-Overall, the tidyproteomics package provides a useful set of tools for preprocessing and analyzing proteomics data using the tidy data framework in R.
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-148-1} \end{center}
 
 \hypertarget{sharing}{%
 \chapter{Sharing}\label{sharing}}
 
 This topic covers a variety of ways to share R code with others. The goal is to make your work accessible and reproducible for others. Sharing can take many forms, including sharing your RStudio project, creating a distilled version of your analysis that others can follow, developing a web-based application for others to use, or finding ways to contain and disseminate reproducible analyses. By sharing your work, you enable others to learn from and build upon your research, making it more impactful and useful for the wider community.
+
+\hfill\break
+::: \{.infobox .skill data-latex=``\{skill\}''\}
+At the end of this chapter you should be able to:\\
+1. Understand the options for sharing analyses\\
+2. Start an R Notebook project to share\\
+:::\\
+\strut \\
+
+\hypertarget{notebooks}{%
+\section{Notebooks}\label{notebooks}}
+
+Notebooks in RStudio IDE are interactive documents that allow developers to create and share code, visualizations, and narrative text in a single document. R Notebooks provide an intuitive interface for data analysis, making it easy to explore data, create models, and communicate results.
+
+\hypertarget{using-notebooks}{%
+\subsection*{Using Notebooks}\label{using-notebooks}}
+\addcontentsline{toc}{subsection}{Using Notebooks}
+
+To use notebooks in RStudio IDE, follow these steps:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Open RStudio IDE and create a new R Notebook by navigating to File \textgreater{} New File \textgreater{} R Notebook.
+\item
+  Add code chunks by clicking the ``Insert a new code chunk'' button in the toolbar or by using the keyboard shortcut ``Ctrl + Alt + I''.
+\item
+  Write R code in the code chunks and run them by clicking the ``Run'' button in the toolbar or by using the keyboard shortcut ``Ctrl + Enter''.
+\item
+  Add markdown text to the notebook by typing in markdown cells.
+\end{enumerate}
+
+One of the most significant benefits of R Notebooks is that they allow you to mix code and narrative text. You can add markdown cells to your notebook to provide context for your code, explain your thought process and methodology, and document your findings. This feature makes it easy for others to understand your work and reproduce your analysis.
+
+With R Notebooks, it is also possible to:
+
+\begin{itemize}
+\tightlist
+\item
+  Insert tables and images: You can add tables and images to your notebooks using markdown syntax or by using the ``Insert'' menu in the toolbar.
+\item
+  Use LaTeX to display formulas: You can use LaTeX syntax to display mathematical formulas in your notebooks.
+\item
+  Use HTML to display interactive widgets: You can use HTML code to create interactive widgets that allow users to interact with your code and data.
+\end{itemize}
+
+\hypertarget{sharing-a-notebook}{%
+\subsection*{Sharing A Notebook}\label{sharing-a-notebook}}
+\addcontentsline{toc}{subsection}{Sharing A Notebook}
+
+Sharing your notebook project in RStudio IDE is a straightforward process. By sharing your projects, you can collaborate with other data scientists and benefit from the insights and expertise of your colleagues. Here are the steps to share your projects:
 
 \hypertarget{packrat}{%
 \section{Packrat}\label{packrat}}
@@ -2644,50 +3619,6 @@ To update a package in the project library, you can use the \texttt{packrat::upd
 \end{Shaded}
 
 Overall, Packrat is a valuable tool for reproducible research, as it allows you to manage package dependencies for your projects and ensure that the same results can be obtained regardless of the version of the package used.
-
-\hypertarget{notebooks}{%
-\section{Notebooks}\label{notebooks}}
-
-Notebooks in RStudio IDE are interactive documents that allow developers to create and share code, visualizations, and narrative text in a single document. R Notebooks provide an intuitive interface for data analysis, making it easy to explore data, create models, and communicate results.
-
-\hypertarget{using-notebooks}{%
-\subsection*{Using Notebooks}\label{using-notebooks}}
-\addcontentsline{toc}{subsection}{Using Notebooks}
-
-To use notebooks in RStudio IDE, follow these steps:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Open RStudio IDE and create a new R Notebook by navigating to File \textgreater{} New File \textgreater{} R Notebook.
-\item
-  Add code chunks by clicking the ``Insert a new code chunk'' button in the toolbar or by using the keyboard shortcut ``Ctrl + Alt + I''.
-\item
-  Write R code in the code chunks and run them by clicking the ``Run'' button in the toolbar or by using the keyboard shortcut ``Ctrl + Enter''.
-\item
-  Add markdown text to the notebook by typing in markdown cells.
-\end{enumerate}
-
-One of the most significant benefits of R Notebooks is that they allow you to mix code and narrative text. You can add markdown cells to your notebook to provide context for your code, explain your thought process and methodology, and document your findings. This feature makes it easy for others to understand your work and reproduce your analysis.
-
-With R Notebooks, it is also possible to:
-
-\begin{itemize}
-\tightlist
-\item
-  Insert tables and images: You can add tables and images to your notebooks using markdown syntax or by using the ``Insert'' menu in the toolbar.
-\item
-  Use LaTeX to display formulas: You can use LaTeX syntax to display mathematical formulas in your notebooks.
-\item
-  Use HTML to display interactive widgets: You can use HTML code to create interactive widgets that allow users to interact with your code and data.
-\end{itemize}
-
-\hypertarget{sharing-a-notebook}{%
-\subsection*{Sharing A Notebook}\label{sharing-a-notebook}}
-\addcontentsline{toc}{subsection}{Sharing A Notebook}
-
-Sharing your notebook project in RStudio IDE is a straightforward process. By sharing your projects, you can collaborate with other data scientists and benefit from the insights and expertise of your colleagues. Here are the steps to share your projects:
 
 \hypertarget{github}{%
 \section{GitHub}\label{github}}
@@ -2908,5 +3839,853 @@ In this example, the UI code defines a sidebar panel with input fields for the X
 The server-side code defines a reactive variable called `coords' which stores the X and Y coordinates of each plotted point. When the user clicks the `Plot Point' button, an observer function is triggered that adds the new point to the `coords' variable. The renderPlot function then plots all of the points on the graph.
 
 Check out the \href{https://shiny.rstudio.com/}{R Shiny} web page for more information.
+
+\hypertarget{mass-spectrometry}{%
+\chapter{Mass Spectrometry}\label{mass-spectrometry}}
+
+\hfill\break
+::: \{.infobox .skill data-latex=``\{skill\}''\}
+At the end of this chapter you should be able to:\\
+1. Understand commercially proprietary raw data\\
+2. How to convert raw data to an open access format\\
+2. Be familiar with some R packages specific to mass spectrometry\\
+:::\\
+\strut \\
+
+\hypertarget{data-formats}{%
+\section{Data Formats}\label{data-formats}}
+
+\hypertarget{raw-thermo}{%
+\subsection*{RAW (Thermo)}\label{raw-thermo}}
+\addcontentsline{toc}{subsection}{RAW (Thermo)}
+
+\hypertarget{wiff-sciex}{%
+\subsection*{WIFF (Sciex)}\label{wiff-sciex}}
+\addcontentsline{toc}{subsection}{WIFF (Sciex)}
+
+\hypertarget{d-agilent}{%
+\subsection*{D (Agilent)}\label{d-agilent}}
+\addcontentsline{toc}{subsection}{D (Agilent)}
+
+\hypertarget{d-bruker}{%
+\subsection*{D (Bruker)}\label{d-bruker}}
+\addcontentsline{toc}{subsection}{D (Bruker)}
+
+\hypertarget{open-access-data}{%
+\section{Open Access Data}\label{open-access-data}}
+
+Mass spectrometry (MS) is a powerful analytical method that can be used to determine the mass-to-charge ratio (m/z) of ions in a sample. Mass spectrometry data is generated from MS experiments and can be stored in various formats, including mzXML, mzML, and mzH5.
+
+\emph{ProteoWizard} is an open-source software suite that provides a collection of open-source, cross-platform software libraries and tools for extracting raw mass spectrometry data from from various instrument vendor formats and converting it to the formats listed below.
+
+\begin{quote}
+\_Kessner, D., Chambers, M., Burke, R., Agus, D., \& Mallick, P. (2008). ProteoWizard: open source software for rapid proteomics tools development. Bioinformatics, 24(21), 2534--2536.
+
+\href{https://proteowizard.sourceforge.io/}{proteowizard.sourceforge.io/}
+\end{quote}
+
+\hypertarget{mzxml}{%
+\subsection*{mzXML}\label{mzxml}}
+\addcontentsline{toc}{subsection}{mzXML}
+
+mzXML is an open XML-based format for encoding MS data. It was developed by the Seattle Proteome Center and is widely used in the mass spectrometry community. mzXML files contain raw MS data, as well as metadata describing the instrument parameters used to acquire the data. mzXML files can be processed using a variety of software tools, such as the Trans-Proteomic Pipeline and ProteoWizard.
+
+The mzXML format has been shown to be effective in handling data from a wide range of instruments. It has a simple structure that makes it easy to parse and process, making it an attractive choice for many researchers. The format is also relatively lightweight, which makes it easy to transfer and store large amounts of data.
+
+\begin{quote}
+\emph{Pedrioli, P.G., Eng, J.K., Hubley, R., Vogelzang, M., Deutsch, E.W., Raught, B., Pratt, B., Nilsson, E., Angeletti, R.H., Apweiler, R. and Cheung, K., 2004. A common open representation of mass spectrometry data and its application to proteomics research. Nature biotechnology, 22(11), pp.1459-1466.}
+\end{quote}
+
+\hypertarget{mzml}{%
+\subsection*{mzML}\label{mzml}}
+\addcontentsline{toc}{subsection}{mzML}
+
+The mzML format is another open XML-based format for MS data, developed by the Proteomics Standards Initiative. It is designed to be more flexible than mzXML and includes more detailed metadata. mzML files can be processed using software tools such as OpenMS and mzR.
+
+The mzML format allows for more detailed and comprehensive data storage than mzXML. This is because mzML has a more complex structure, which enables the storage of a wider range of experimental metadata. The format is also more flexible, which means that it can be easily adapted to different types of experiments and instruments.
+
+\begin{quote}
+\emph{Martens, L., Chambers, M., Sturm, M., Kessner, D., Levander, F., Shofstahl, J., Tang, W.H., Römpp, A., Neumann, S., Pizarro, A.D. and Montecchi-Palazzi, L., 2011. mzML---a community standard for mass spectrometry data. Molecular \& cellular proteomics, 10(1), p.R110. 000133.}
+\end{quote}
+
+\hypertarget{mzmlb}{%
+\subsection*{mzMLb}\label{mzmlb}}
+\addcontentsline{toc}{subsection}{mzMLb}
+
+Recently proposed as a new file format based on HDF5 and NetCDF4 standards, mzMLb is faster and more flexible than existing approaches while preserving the XML encoding of metadata. Additionally, it is optimized for both read/write speed and storage efficiency. The format has a reference implementation provided within the ProteoWizard toolkit.
+
+\begin{quote}
+\emph{Bhamber, Ranjeet S., et al.~``mzMLb: A future-proof raw mass spectrometry data format based on standards-compliant mzML and optimized for speed and storage requirements.'' Journal of proteome research 20.1 (2020): 172-183.}
+\end{quote}
+
+\hypertarget{r-calculate-mass}{%
+\section{R Calculate Mass}\label{r-calculate-mass}}
+
+Molecular mass is the sum of the atomic masses of all the atoms in a molecule. It is an important parameter used in various fields of chemistry. The molecular mass of a molecule is usually expressed in atomic mass units (amu) or daltons (Da). Mass spectrometry based measurements require a charge and are expressed as mass-to-charge (m/z) or as Thompsons (Th).
+
+Isotopic probabilities are also important in determining molecular mass. Isotopes are atoms of the same element that have different numbers of neutrons in their nuclei. Isotopes of an element have different atomic masses. The isotopic probability of an element is the probability that a given isotope of that element will occur in nature. For example, carbon (C) has two stable isotopes, carbon-12 (12C) and carbon-13 (13C), with atomic masses of 12.000 amu and 13.003 amu, respectively. The isotopic probability of carbon-12 is 98.9\%, while that of carbon-13 is 1.1\%. Therefore, the average atomic mass of carbon in nature is 12.011 amu.
+
+There are several measures of a molecular mass that can be reported. The \emph{average mass} is that of the weighted average of all isotopes and likely to be reported for small molecules. While the \emph{nominal mass} of a molecule is defined as the sum of the integer masses of the most abundant isotopes in a molecule. The \emph{monoisotopic mass} is commonly considered the as the sum of the exact masses of the lightest isotopes, and this value is considered in all peptide-based proteomics applications.
+
+\hypertarget{brain}{%
+\subsection*{BRAIN}\label{brain}}
+\addcontentsline{toc}{subsection}{BRAIN}
+
+\textbf{Baffling Recursive Algorithm for Isotope distributioN calculations}
+
+R BRAIN is an isotopic abundance calculator implemented in R programming language and is especially useful for chemists and researchers who deal with complex molecules and need to calculate their isotopic composition accurately. In addition, it has a handy function for calculating the mass directly from an amino acid sequence.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1712}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8288}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Documentation} & \href{https://bioconductor.org/packages/release/bioc/manuals/BRAIN/man/BRAIN.pdf}{Bioconductor} \\
+\textbf{Literature} & \emph{Analytical chemistry} 2013 85(4), 1991-1994 \\
+\end{longtable}
+
+\hypertarget{installation-1}{%
+\subsubsection*{Installation}\label{installation-1}}
+\addcontentsline{toc}{subsubsection}{Installation}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{BiocManager}\SpecialCharTok{::}\FunctionTok{install}\NormalTok{(}\StringTok{"BRAIN"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{use}{%
+\subsubsection*{Use}\label{use}}
+\addcontentsline{toc}{subsubsection}{Use}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(BRAIN)}
+
+\CommentTok{\# Human insulin amino acid sequence}
+\NormalTok{str\_seq }\OtherTok{\textless{}{-}} \StringTok{"MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN"}
+
+\CommentTok{\# get a list{-}object of atoms}
+\NormalTok{lst\_atm }\OtherTok{\textless{}{-}} \FunctionTok{getAtomsFromSeq}\NormalTok{(str\_seq) }
+\end{Highlighting}
+\end{Shaded}
+
+Calculate the average mass.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{calculateAverageMass}\NormalTok{(lst\_atm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 11980.82
+\end{verbatim}
+
+Calculate the monoisotopic mass.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{calculateMonoisotopicMass}\NormalTok{(lst\_atm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 11973.02
+\end{verbatim}
+
+Calculate the isotopic abundances (probabilities) mass.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Probability }\OtherTok{\textless{}{-}} \FunctionTok{calculateIsotopicProbabilities}\NormalTok{(lst\_atm, }\AttributeTok{nrPeaks =} \DecValTok{25}\NormalTok{)}
+\NormalTok{Mass }\OtherTok{\textless{}{-}} \FunctionTok{calculateMonoisotopicMass}\NormalTok{(lst\_atm) }\SpecialCharTok{+} \DecValTok{0}\SpecialCharTok{:}\NormalTok{(}\FunctionTok{length}\NormalTok{(Probability) }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{)}
+
+\FunctionTok{plot}\NormalTok{(Mass, Probability)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-159-1} \end{center}
+
+\hypertarget{envipat}{%
+\subsection{enviPat}\label{envipat}}
+
+\textbf{Isotope Pattern, Profile and Centroid Calculation for Mass Spectrometry}
+
+A new method (year 2022) for calculating theoretical isotope patterns in mass spectrometry. This method uses a treelike structure to derive sets of subisotopologues for each element in a molecule. By doing so, it allows for early pruning of low-probability isotopologues and the detection of the most probable isotopologue. The method was validated in a large-scale benchmark simulation.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1712}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8288}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Documentation} & \href{https://cran.r-project.org/web/packages/enviPat/enviPat.pdf}{CRAN} \\
+\textbf{Literature} & \emph{Anal. Chem.} 2015, 87, 11, 5738--5744. \\
+\end{longtable}
+
+\hypertarget{installation-2}{%
+\subsubsection*{Installation}\label{installation-2}}
+\addcontentsline{toc}{subsubsection}{Installation}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"enviPat"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{use-1}{%
+\subsubsection*{Use}\label{use-1}}
+\addcontentsline{toc}{subsubsection}{Use}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(enviPat)}
+
+\FunctionTok{data}\NormalTok{(}\StringTok{"isotopes"}\NormalTok{)}
+
+\NormalTok{pattern }\OtherTok{\textless{}{-}} \FunctionTok{isopattern}\NormalTok{(}
+\NormalTok{  isotopes,}
+  \StringTok{"C100H200S2Cl5"}\NormalTok{,}
+  \AttributeTok{threshold=}\FloatTok{0.1}\NormalTok{,}
+  \AttributeTok{plotit=}\ConstantTok{TRUE}\NormalTok{,}
+  \AttributeTok{charge=}\ConstantTok{FALSE}\NormalTok{,}
+  \AttributeTok{emass=}\FloatTok{0.00054858}\NormalTok{,}
+  \AttributeTok{algo=}\DecValTok{1}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-161-1} \end{center}
+
+\hypertarget{r-ms-data}{%
+\section{R MS Data}\label{r-ms-data}}
+
+\hypertarget{xcms}{%
+\subsection*{xcms}\label{xcms}}
+\addcontentsline{toc}{subsection}{xcms}
+
+\hypertarget{mzr}{%
+\subsection*{mzR}\label{mzr}}
+\addcontentsline{toc}{subsection}{mzR}
+
+\hypertarget{r-ms-analysis}{%
+\section{R MS Analysis}\label{r-ms-analysis}}
+
+Finally, there are numerous R packages that implement methods, common and advanced, in statistical post analysis of quantitative data. Explored here are only a few of the available packages.
+
+\hypertarget{deqms}{%
+\subsection*{deqms}\label{deqms}}
+\addcontentsline{toc}{subsection}{deqms}
+
+\hypertarget{msempire}{%
+\subsection*{msempire}\label{msempire}}
+\addcontentsline{toc}{subsection}{msempire}
+
+\hypertarget{msqrob}{%
+\subsection*{msqrob}\label{msqrob}}
+\addcontentsline{toc}{subsection}{msqrob}
+
+\hypertarget{msstats}{%
+\subsection*{MSstats}\label{msstats}}
+\addcontentsline{toc}{subsection}{MSstats}
+
+The MSstats package is an R package designed for the analysis of label-free mass spectrometry data. It provides a wide range of statistical tools for the analysis of protein abundance data, including normalization, missing value imputation, quality control, and differential expression analysis. MSstats provides a powerful and flexible way to analyze mass spectrometry data, making it an essential tool for researchers in the field.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2222}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7778}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Documentation} & \href{https://msstats.org}{web}, \href{https://bioconductor.org/packages/release/bioc/manuals/MSstats/man/MSstats.pdf}{PDF} \\
+\textbf{Code} & \href{https://www.bioconductor.org/packages/release/bioc/html/MSstats.html}{Bioconductor} \\
+\textbf{Literature} & \emph{Bioinformatics} 30.17 (2014): 2524-2526 \\
+\end{longtable}
+
+\hypertarget{installation-3}{%
+\subsubsection*{Installation}\label{installation-3}}
+\addcontentsline{toc}{subsubsection}{Installation}
+
+Install MSstats from Bioconductor:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{BiocManager}\SpecialCharTok{::}\FunctionTok{install}\NormalTok{(}\StringTok{"MSstats"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{loading-data}{%
+\subsubsection*{Loading Data}\label{loading-data}}
+\addcontentsline{toc}{subsubsection}{Loading Data}
+
+The preferred data structure for use in MSstats is a .csv file in a ``long'' format with 10 columns representing the following variables: \emph{ProteinName, PeptideSequence, PrecursorCharge, FragmentIon, ProductCharge, IsotopeLabelType, Condition, BioReplicate, Run, and Intensity}. Note that the variable names are fixed and case-insensitive.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# example data provided by the MSstats package}
+\FunctionTok{head}\NormalTok{(SRMRawData)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    ProteinName PeptideSequence PrecursorCharge FragmentIon ProductCharge IsotopeLabelType Condition
+243        IDHC   ATDVIVPEEGELR               2          y7            NA                H         1
+244        IDHC   ATDVIVPEEGELR               2          y7            NA                L         1
+245        IDHC   ATDVIVPEEGELR               2          y8            NA                H         1
+246        IDHC   ATDVIVPEEGELR               2          y8            NA                L         1
+247        IDHC   ATDVIVPEEGELR               2          y9            NA                H         1
+248        IDHC   ATDVIVPEEGELR               2          y9            NA                L         1
+    BioReplicate Run   Intensity
+243        ReplA   1 84361.08350
+244        ReplA   1   215.13526
+245        ReplA   1 29778.10188
+246        ReplA   1    98.02134
+247        ReplA   1 17921.29255
+248        ReplA   1    60.47029
+\end{verbatim}
+
+\hypertarget{statspro-r-package}{%
+\subsection*{StatsPro R Package}\label{statspro-r-package}}
+\addcontentsline{toc}{subsection}{StatsPro R Package}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2222}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7778}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Documentation} & \href{https://github.com/YanglabWCH/StatsPro\#Readme}{github}, \href{https://github.com/YanglabWCH/StatsPro/blob/main/StatsPro_Manual.pdf}{PDF} \\
+\textbf{Code} & \href{https://github.com/YanglabWCH/StatsPro}{github} \\
+\textbf{Literature} & \emph{Journal of Proteomics} 250 (2022): 104386. \\
+\end{longtable}
+
+\hypertarget{msgrob2}{%
+\subsection*{msgrob2}\label{msgrob2}}
+\addcontentsline{toc}{subsection}{msgrob2}
+
+\texttt{msgrob2} is an R package that provides functions to perform robust estimation in linear models with missing data. With the help of the Expectation-Maximization (EM) algorithm, the package estimates the parameters of the linear model and imputes the missing data. Additionally, the package offers robust methods for estimating the covariance matrix, including the Minimum Covariance Determinant (MCD) estimator and the S-estimator.
+
+The \texttt{msgrob2} package is particularly useful in situations where data is missing from a linear model. The EM algorithm implemented in the package is a powerful tool for imputing missing data, and the robust covariance estimators allow for a better understanding of the data. The package is designed to provide efficient and accurate results when working with incomplete data, making it an essential tool for researchers and data analysts.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7500}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Documentation} & \href{https://www.bioconductor.org/packages/release/bioc/manuals/msqrob2/man/msqrob2.pdf}{PDF} \\
+\textbf{Code} & \href{https://www.bioconductor.org/packages/release/bioc/html/msqrob2.html}{Bioconductor} \\
+\textbf{Literature} & \emph{Molecular \& Cellular Proteomics}, \textbf{15}(2), 657-668., \emph{Molecular \& Cellular Proteomics}, \textbf{19}(7), 1209-1219., \emph{Analytical Chemistry}, \textbf{92}(9), 6278--6287. \\
+\end{longtable}
+
+\hypertarget{installation-4}{%
+\subsubsection*{Installation}\label{installation-4}}
+\addcontentsline{toc}{subsubsection}{Installation}
+
+To install the \texttt{msgrob2} package, you can use the following code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"msgrob2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{estimating-parameters}{%
+\subsubsection*{Estimating Parameters}\label{estimating-parameters}}
+\addcontentsline{toc}{subsubsection}{Estimating Parameters}
+
+To estimate the parameters of a linear model with missing data using \texttt{msgrob2}, you can use the \texttt{msgrob()} function. The following code demonstrates how to use \texttt{msgrob()}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Loading Example Data}
+\FunctionTok{data}\NormalTok{(}\StringTok{"exMiss"}\NormalTok{)}
+
+\CommentTok{\# Estimating Parameters}
+\NormalTok{model }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ x1 }\SpecialCharTok{+}\NormalTok{ x2 }\SpecialCharTok{+}\NormalTok{ x3, }\AttributeTok{data =}\NormalTok{ exMiss)}
+\FunctionTok{msgrob}\NormalTok{(model)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{estimating-covariance-matrix}{%
+\subsubsection*{Estimating Covariance Matrix}\label{estimating-covariance-matrix}}
+\addcontentsline{toc}{subsubsection}{Estimating Covariance Matrix}
+
+To estimate the covariance matrix using \texttt{msgrob2}, you can use the \texttt{covrob()} function. The following code demonstrates how to use \texttt{covrob()}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Loading Example Data}
+\FunctionTok{data}\NormalTok{(}\StringTok{"exMiss"}\NormalTok{)}
+
+\CommentTok{\# Estimating Covariance Matrix}
+\FunctionTok{covrob}\NormalTok{(exMiss[,}\DecValTok{2}\SpecialCharTok{:}\DecValTok{4}\NormalTok{], }\AttributeTok{method =} \StringTok{"MCD"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+In summary, \texttt{msgrob2} is a comprehensive R package that provides an array of functions for robust estimation in linear models with missing data. The package's implementation of the EM algorithm and robust covariance estimators make it an essential tool for researchers and data analysts working with incomplete data. The package is easy to install and use, with code examples readily available for reference.
+
+\hypertarget{tidyproteomics}{%
+\subsection*{Tidyproteomics}\label{tidyproteomics}}
+\addcontentsline{toc}{subsection}{Tidyproteomics}
+
+The tidyproteomics R package is a tool that provides a set of functions to preprocess and analyze proteomics data using the tidy data framework. This package is built on top of the tidyverse and Bioconductor packages, which are widely used in the R community for data manipulation and analysis.
+
+Some of the main features of the tidyproteomics package include:
+
+\begin{itemize}
+\tightlist
+\item
+  Data preprocessing functions for common tasks such as filtering, normalization, and imputation.
+\item
+  Functions for quality assessment and visualization of proteomics data.
+\item
+  Integration with other Bioconductor packages for downstream analysis such as differential expression analysis and pathway analysis.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=9.17in]{images/10_001_tidyproteomics} 
+
+}
+
+\caption{\label{fig:10001}tidyproteomics workflow}\label{fig:10001}
+\end{figure}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2235}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7765}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Documentation} & \href{https://jeffsocal.github.io/tidyproteomics/}{github} \\
+\textbf{Code} & \href{https://github.com/jeffsocal/tidyproteomics}{github} \\
+\textbf{Web App} & \href{bioinformatics.pel.caltech.edu/tidyproteomics/}{tidyproteomics} \\
+\textbf{Literature} & \\
+\end{longtable}
+
+\hypertarget{installation-5}{%
+\subsubsection*{Installation}\label{installation-5}}
+\addcontentsline{toc}{subsubsection}{Installation}
+
+To install the \texttt{tidyproteomics} package, you will need to install GitHub and Bioconductor repositories:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"devtools"}\NormalTok{)}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"jeffsocal/tidyproteomics"}\NormalTok{)}
+
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"BiocManager"}\NormalTok{)}
+\NormalTok{BiocManager}\SpecialCharTok{::}\FunctionTok{install}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"limma"}\NormalTok{,}\StringTok{"qvalue"}\NormalTok{,}\StringTok{"fgsea"}\NormalTok{,}\StringTok{"Biostrings"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{loading-data-1}{%
+\subsubsection*{Loading Data}\label{loading-data-1}}
+\addcontentsline{toc}{subsubsection}{Loading Data}
+
+To load your data into tidyproteomics, you can use the following code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load the tidyproteomics package}
+\FunctionTok{library}\NormalTok{(tidyproteomics)}
+
+\CommentTok{\# Import data}
+\NormalTok{data\_proteins }\OtherTok{\textless{}{-}} \StringTok{"path\_to\_data.xlsx"} \SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{import}\NormalTok{(}\StringTok{"ProteomeDiscoverer"}\NormalTok{, }\StringTok{"proteins"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{data-summaries}{%
+\subsubsection*{Data Summaries}\label{data-summaries}}
+\addcontentsline{toc}{subsubsection}{Data Summaries}
+
+Currently, tidyproteomics implements two summary quantitative visualizations. The first is a simple grouped bar chart that displays individual and grouped proteins, as well as all and unique peptides. The match-between-runs is shown as a margin above the MS2 evidenced identifications. In recent literature, a summary of protein quantitation has been visualized as a rank-based dot plot. This plot can be extended to highlight statistical differences via an unbiased all-pair-wise comparison, which gives an anticipated view on how to guide downstream analyses.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p01 }\OtherTok{\textless{}{-}}\NormalTok{ data\_proteins }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{plot\_counts}\NormalTok{()}
+\NormalTok{p02 }\OtherTok{\textless{}{-}}\NormalTok{ data\_proteins }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{plot\_quantrank}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-171-1} \end{center}
+
+Summary Stats \{-\}
+Summarizing proteomics data is vital to understanding the bigger picture and conveying summary stats that set the tone for the larger analysis. The results of each summary can be directed to via the destination option to ``print'' on screen, ``save'' to a file or ``return'' as a tibble.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data\_proteins }\OtherTok{\textless{}{-}}\NormalTok{ data\_proteins }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# save a table of simple summary stats}
+  \FunctionTok{summary}\NormalTok{(}\StringTok{"sample"}\NormalTok{, }\AttributeTok{destination =} \StringTok{"save"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# save a report on contamination}
+  \FunctionTok{summary}\NormalTok{(}\AttributeTok{contamination =} \StringTok{"CRAP"}\NormalTok{, }\AttributeTok{destination =} \StringTok{"save"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# remove contamination}
+  \FunctionTok{subset}\NormalTok{(}\SpecialCharTok{!}\NormalTok{description }\SpecialCharTok{\%like\%} \StringTok{"\^{}CRAP"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{normalization-and-imputation}{%
+\subsubsection*{Normalization and Imputation}\label{normalization-and-imputation}}
+\addcontentsline{toc}{subsubsection}{Normalization and Imputation}
+
+Quantitative proteomics requires accurate normalization, which can be difficult to implement. The \texttt{normalize()} function in the tidyproteomics package is a wrapper for various normalization methods, while \texttt{select\_normalization()} automatically selects the best method based on a weighted score. Both functions allow for downstream analyses such as \texttt{expression()} and \texttt{enrichment()}. The package attempts to apply each function universally to peptide and protein values using the \texttt{identifier} variable to identify the thing being measured.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data\_proteins }\OtherTok{\textless{}{-}}\NormalTok{ data\_proteins }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# normalize via several methods, best method will be automatically selected}
+  \FunctionTok{normalize}\NormalTok{(}\AttributeTok{.method =} \FunctionTok{c}\NormalTok{(}\StringTok{"median"}\NormalTok{,}\StringTok{"linear"}\NormalTok{,}\StringTok{"limma"}\NormalTok{,}\StringTok{"randomforest"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# impute with a minimum value (this is a knock{-}out)}
+  \FunctionTok{impute}\NormalTok{(base}\SpecialCharTok{::}\NormalTok{min)}
+
+\CommentTok{\# plot visualizations comparing normalization methods}
+\NormalTok{p03 }\OtherTok{\textless{}{-}}\NormalTok{ data\_proteins }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{plot\_normalization}\NormalTok{()}
+\NormalTok{p04 }\OtherTok{\textless{}{-}}\NormalTok{ data\_proteins }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{plot\_variation\_cv}\NormalTok{()}
+\NormalTok{p05 }\OtherTok{\textless{}{-}}\NormalTok{ data\_proteins }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{plot\_variation\_pca}\NormalTok{()}
+\NormalTok{p06 }\OtherTok{\textless{}{-}}\NormalTok{ data\_proteins }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{plot\_dynamic\_range}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-174-1} \end{center}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-175-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# plot visualizations of unbiased clustering}
+\NormalTok{p07 }\OtherTok{\textless{}{-}}\NormalTok{ data\_proteins }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{plot\_heatmap}\NormalTok{()}
+\NormalTok{p08 }\OtherTok{\textless{}{-}}\NormalTok{ data\_proteins }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{plot\_pca}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-177-1} \end{center}
+
+\hypertarget{expression-analysis}{%
+\subsubsection*{Expression Analysis}\label{expression-analysis}}
+\addcontentsline{toc}{subsubsection}{Expression Analysis}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data\_proteins }\OtherTok{\textless{}{-}}\NormalTok{ data\_proteins }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# calculate the expression between experiment: ko and control: wt}
+  \FunctionTok{expression}\NormalTok{(kndw}\SpecialCharTok{/}\NormalTok{ctrl) }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# plot the expression analysis}
+  \FunctionTok{plot\_volcano}\NormalTok{(kndw}\SpecialCharTok{/}\NormalTok{ctrl, }\AttributeTok{destination =} \StringTok{"png"}\NormalTok{, }\AttributeTok{significance\_column =} \StringTok{"p\_value"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{plot\_proportion}\NormalTok{(kndw}\SpecialCharTok{/}\NormalTok{ctrl, }\AttributeTok{destination =} \StringTok{"png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Overall, the tidyproteomics package provides a useful set of tools for preprocessing and analyzing proteomics data using the tidy data framework in R. There are several more workable examples in the online documentation.
+
+\hypertarget{answers-to-exercises}{%
+\chapter*{Answers to Exercises}\label{answers-to-exercises}}
+\addcontentsline{toc}{chapter}{Answers to Exercises}
+
+\hypertarget{the-basics-1}{%
+\section*{\texorpdfstring{\textbf{4} The Basics}{4 The Basics}}\label{the-basics-1}}
+\addcontentsline{toc}{section}{\textbf{4} The Basics}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# John Doe}
+\CommentTok{\# 2023{-}06{-}02}
+\CommentTok{\# Institution Inc.}
+\CommentTok{\#}
+\CommentTok{\# Some basic R practice}
+
+\CommentTok{\# 3.  Calculate the sum of 2 and 3.}
+\DecValTok{2} \SpecialCharTok{+} \DecValTok{3}
+
+\CommentTok{\# 4.  Evaluate if 0.5 is equal to 1 divided by 2.}
+
+\FloatTok{0.5} \SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{/} \DecValTok{2}
+
+\CommentTok{\# 5.  Test if 3 is an even number. }
+\CommentTok{\#     Hint, use the modulus operator and a comparison operator.}
+
+\DecValTok{3} \SpecialCharTok{\%\%} \DecValTok{2} \SpecialCharTok{==} \DecValTok{0}
+
+\CommentTok{\# 6.  Create a function to test if a value is even resulting in \textasciigrave{}TRUE\textasciigrave{} or \textasciigrave{}FALSE\textasciigrave{}.}
+
+\NormalTok{even }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{ x }\SpecialCharTok{\%\%} \DecValTok{2} \SpecialCharTok{==} \DecValTok{0}\NormalTok{ \}}
+
+\FunctionTok{even}\NormalTok{(}\DecValTok{3}\NormalTok{)}
+
+\CommentTok{\# 7.  Create a function to test or *even* or *odd* by returning a string.}
+
+\NormalTok{oddeven }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{ }
+  \ControlFlowTok{if}\NormalTok{(x }\SpecialCharTok{\%\%} \DecValTok{2} \SpecialCharTok{==} \DecValTok{0}\NormalTok{) }\FunctionTok{return}\NormalTok{(}\StringTok{\textquotesingle{}even\textquotesingle{}}\NormalTok{)}
+  \ControlFlowTok{else} \FunctionTok{return}\NormalTok{(}\StringTok{\textquotesingle{}odd\textquotesingle{}}\NormalTok{)}
+\NormalTok{\}}
+
+\FunctionTok{oddeven}\NormalTok{(}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{data-structures-1}{%
+\section*{\texorpdfstring{\textbf{5} Data Structures}{5 Data Structures}}\label{data-structures-1}}
+\addcontentsline{toc}{section}{\textbf{5} Data Structures}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# John Doe}
+\CommentTok{\# 2023{-}06{-}02}
+\CommentTok{\# Institution Inc.}
+\CommentTok{\#}
+\CommentTok{\# Data Structures Exercises}
+
+\CommentTok{\# 1.  Construct the following vector and store as a variable.}
+
+\NormalTok{str\_gbu }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}green\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}blue\textquotesingle{}}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(str\_gbu)}
+
+
+\CommentTok{\# 2.  Extract the 2nd element in the variable.}
+
+\FunctionTok{print}\NormalTok{(str\_gbu[}\DecValTok{2}\NormalTok{])}
+
+
+\CommentTok{\# 3.  Construct a numerical vector of length 5, containing the diameters of }
+\CommentTok{\#     circles with integer circumferences 1 to 5. Remember PEMDAS.}
+
+\NormalTok{cir }\OtherTok{\textless{}{-}}\NormalTok{ (}\DecValTok{1}\SpecialCharTok{:}\DecValTok{5}\NormalTok{) }\SpecialCharTok{\^{}} \DecValTok{2} \SpecialCharTok{*}\NormalTok{ pi}
+
+
+\CommentTok{\# 4.  Extract all circumferences greater than 50.}
+
+\NormalTok{cir[}\FunctionTok{which}\NormalTok{(cir }\SpecialCharTok{\textgreater{}} \DecValTok{50}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{tidyverse-2}{%
+\section*{\texorpdfstring{\textbf{6} Tidyverse}{6 Tidyverse}}\label{tidyverse-2}}
+\addcontentsline{toc}{section}{\textbf{6} Tidyverse}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# John Doe}
+\CommentTok{\# 2023{-}06{-}02}
+\CommentTok{\# Institution Inc.}
+\CommentTok{\#}
+\CommentTok{\# Tidyverse Exercises}
+
+\CommentTok{\# 1. Pipeline (eg. \textasciigrave{}\%\textgreater{}\%\textasciigrave{}) a data operation that provides the mean of following vector.}
+
+\FunctionTok{c}\NormalTok{(}\FloatTok{7.48}\NormalTok{, }\FloatTok{14.15}\NormalTok{, }\FloatTok{6.23}\NormalTok{, }\FloatTok{10.21}\NormalTok{, }\FloatTok{15.13}\NormalTok{, }\FloatTok{8.19}\NormalTok{, }\FloatTok{8.58}\NormalTok{, }\FloatTok{8.09}\NormalTok{, }\FloatTok{9.14}\NormalTok{, }\FloatTok{10.41}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mean}\NormalTok{()}
+
+
+\CommentTok{\# 2.  Employing a pipeline (eg. \textasciigrave{}\%\textgreater{}\%\textasciigrave{}), construct a tibble with columns named }
+\CommentTok{\#     \textasciigrave{}circ\textasciigrave{} and \textasciigrave{}diam\textasciigrave{} which contains the diameters of circles with integer }
+\CommentTok{\#     circumferences 1 to 5. Remember PEMDAS.}
+
+\FunctionTok{library}\NormalTok{(tidyverse)}
+
+\NormalTok{tbl\_cir }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(}
+  \AttributeTok{circ =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{5}
+\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{diam =}\NormalTok{ circ }\SpecialCharTok{\^{}} \DecValTok{2} \SpecialCharTok{*}\NormalTok{ pi)}
+
+\NormalTok{tbl\_cir}
+
+
+\CommentTok{\# 3.  Extract all circumferences greater than 50.}
+
+\NormalTok{tbl\_cir }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(diam }\SpecialCharTok{\textgreater{}} \DecValTok{50}\NormalTok{)}
+
+
+\CommentTok{\# 4. Add a column named \textasciigrave{}circ\_type\textasciigrave{} where you assign the string *odd* or *even* }
+\CommentTok{\#     depending on the column \textasciigrave{}circ\textasciigrave{}. Attempt to use the \textasciigrave{}purrr::map\textasciigrave{} function, }
+\CommentTok{\#     along with the \textasciigrave{}oddeven()\textasciigrave{} function from the previous chapter, then compute }
+\CommentTok{\#     the mean, standard deviation, and coefficient of variation of the diameters }
+\CommentTok{\#     for each \textasciigrave{}circ\_type\textasciigrave{}.}
+
+\NormalTok{oddeven }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{ }
+  \ControlFlowTok{if}\NormalTok{(x }\SpecialCharTok{\%\%} \DecValTok{2} \SpecialCharTok{==} \DecValTok{0}\NormalTok{) }\FunctionTok{return}\NormalTok{(}\StringTok{\textquotesingle{}even\textquotesingle{}}\NormalTok{)}
+  \ControlFlowTok{else} \FunctionTok{return}\NormalTok{(}\StringTok{\textquotesingle{}odd\textquotesingle{}}\NormalTok{)}
+\NormalTok{\}}
+
+\NormalTok{tbl\_cir }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{circ\_type =} \FunctionTok{map}\NormalTok{(circ, oddeven)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{circ\_type =} \FunctionTok{unlist}\NormalTok{(circ\_type)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(circ\_type) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}
+    \AttributeTok{diam\_mean =} \FunctionTok{mean}\NormalTok{(diam),}
+    \AttributeTok{diam\_sd =} \FunctionTok{sd}\NormalTok{(diam),}
+    \AttributeTok{diam\_cv =}\NormalTok{ diam\_sd }\SpecialCharTok{/}\NormalTok{ diam\_mean}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{data-wrangling-1}{%
+\section*{\texorpdfstring{\textbf{7} Data Wrangling}{7 Data Wrangling}}\label{data-wrangling-1}}
+\addcontentsline{toc}{section}{\textbf{7} Data Wrangling}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# John Doe}
+\CommentTok{\# 2023{-}06{-}02}
+\CommentTok{\# Institution Inc.}
+\CommentTok{\#}
+\CommentTok{\# Data Wrangling Exercises}
+
+\CommentTok{\# 1. Download *Denver Climate Data* to use as an example data file.}
+
+\NormalTok{url }\OtherTok{\textless{}{-}} \StringTok{"https://raw.githubusercontent.com/ZenBrayn/asms{-}2022{-}r{-}shortcourse/main/exercises/intro\_to\_r/data/denver\_climate.csv"}
+\FunctionTok{download.file}\NormalTok{(url, }\AttributeTok{destfile =} \StringTok{"./data/denver\_climate.csv"}\NormalTok{)}
+
+
+\CommentTok{\# 2. Read in the dataset .csv using the \textasciigrave{}tidyverse\textasciigrave{} set of packages.}
+
+\NormalTok{tbl\_den }\OtherTok{\textless{}{-}} \StringTok{"./data/denver\_climate.csv"} \SpecialCharTok{\%\textgreater{}\%} \FunctionTok{read\_csv}\NormalTok{()}
+
+
+\CommentTok{\# 3. How many rows does the table contain? Number of columns? What are the column names?}
+
+\NormalTok{tbl\_den }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{nrow}\NormalTok{()}
+\NormalTok{tbl\_den }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ncol}\NormalTok{()}
+\NormalTok{tbl\_den }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{colnames}\NormalTok{()}
+
+
+\CommentTok{\# 4. Find the month and year with the highest snowfall.}
+
+\NormalTok{tbl\_den }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(snowfall }\SpecialCharTok{==} \FunctionTok{max}\NormalTok{(snowfall)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(month, year)}
+
+
+\CommentTok{\# 5. Find months where there was no snowfall.}
+
+\NormalTok{tbl\_den }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(snowfall }\SpecialCharTok{==} \DecValTok{0}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(month) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{unique}\NormalTok{()}
+
+
+\CommentTok{\# 6. Find average precipitation per year.}
+
+\NormalTok{tbl\_den }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(year) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{precipitation\_avg =} \FunctionTok{mean}\NormalTok{(precipitation))}
+
+
+\CommentTok{\# 7. Convert temperatures to Celsius and add new columns with these to table. }
+\CommentTok{\#    Reminder \textasciigrave{}F to C conversion {-}\textgreater{} (F {-} 32) * (5/9)\textasciigrave{}.}
+
+\NormalTok{tbl\_den }\OtherTok{\textless{}{-}}\NormalTok{ tbl\_den }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{min\_temp\_C =} \FunctionTok{signif}\NormalTok{((min\_temp }\SpecialCharTok{{-}} \DecValTok{32}\NormalTok{) }\SpecialCharTok{*}\NormalTok{ (}\DecValTok{5}\SpecialCharTok{/}\DecValTok{9}\NormalTok{), }\DecValTok{3}\NormalTok{),}
+         \AttributeTok{max\_temp\_C =} \FunctionTok{signif}\NormalTok{((max\_temp }\SpecialCharTok{{-}} \DecValTok{32}\NormalTok{) }\SpecialCharTok{*}\NormalTok{ (}\DecValTok{5}\SpecialCharTok{/}\DecValTok{9}\NormalTok{), }\DecValTok{3}\NormalTok{))}
+
+\NormalTok{tbl\_den}
+
+
+\CommentTok{\# 8. Find the month with the greatest difference in C between max and min temperature.}
+
+\NormalTok{tbl\_den }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{temp\_diff\_C =}\NormalTok{ max\_temp\_C }\SpecialCharTok{{-}}\NormalTok{ min\_temp\_C) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(month) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{temp\_diff\_C\_avg =} \FunctionTok{mean}\NormalTok{(temp\_diff\_C)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(temp\_diff\_C\_avg }\SpecialCharTok{==} \FunctionTok{max}\NormalTok{(temp\_diff\_C\_avg))}
+
+
+\CommentTok{\# 9. Write to file an .csv of the data.frame which contains the C data.}
+
+\NormalTok{tbl\_den }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{write\_csv}\NormalTok{(}\StringTok{"data/denver\_climate.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{data-visualization-1}{%
+\section*{\texorpdfstring{\textbf{8} Data Visualization}{8 Data Visualization}}\label{data-visualization-1}}
+\addcontentsline{toc}{section}{\textbf{8} Data Visualization}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# John Doe}
+\CommentTok{\# 2023{-}06{-}02}
+\CommentTok{\# Institution Inc.}
+\CommentTok{\#}
+\CommentTok{\# Data Visualization Exercises}
+
+\CommentTok{\# 1. If not already done, download *Denver Climate Data* to use as an example data file.}
+
+\NormalTok{url }\OtherTok{\textless{}{-}} \StringTok{"https://raw.githubusercontent.com/ZenBrayn/asms{-}2022{-}r{-}shortcourse/main/exercises/intro\_to\_r/data/denver\_climate.csv"}
+\FunctionTok{download.file}\NormalTok{(url, }\AttributeTok{destfile =} \StringTok{"./data/denver\_climate.csv"}\NormalTok{)}
+
+
+\CommentTok{\# 2. Read in the dataset .csv using the \textasciigrave{}tidyverse\textasciigrave{} set of packages.}
+
+\NormalTok{tbl\_den }\OtherTok{\textless{}{-}} \StringTok{"./data/denver\_climate.csv"} \SpecialCharTok{\%\textgreater{}\%} \FunctionTok{read\_csv}\NormalTok{()}
+
+
+\CommentTok{\# 3. Plot precipitation \textasciitilde{} snowfall ...}
+
+\NormalTok{tbl\_den }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(precipitation, snowfall)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{()}
+
+
+\CommentTok{\# 4. ... color by \textasciigrave{}min\_temp\textasciigrave{}, creating a color scheme of low = "lightblue" and }
+\CommentTok{\#    high = "orange", mid = "yellow"...}
+
+\NormalTok{tbl\_den }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(precipitation, snowfall)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{color =}\NormalTok{ min\_temp)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_gradientn}\NormalTok{(}\AttributeTok{colors =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}lightblue\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}yellow\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}orange\textquotesingle{}}\NormalTok{))}
+
+
+\CommentTok{\# 5. ... add a smoothed line under the points colored grey, facet by \textasciigrave{}year\textasciigrave{} }
+\CommentTok{\#    keeping all plots on a single line, and change the theme to have a dark }
+\CommentTok{\#    background ...}
+
+\NormalTok{tbl\_den }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(precipitation, snowfall)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =}\NormalTok{ lm, }\AttributeTok{color =} \StringTok{\textquotesingle{}grey\textquotesingle{}}\NormalTok{, }\AttributeTok{fill =} \ConstantTok{NA}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{color =}\NormalTok{ min\_temp)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_gradientn}\NormalTok{(}\AttributeTok{colors =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}lightblue\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}yellow\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}orange\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{year, }\AttributeTok{nrow =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_cartesian}\NormalTok{(}\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{20}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{theme\_dark}\NormalTok{()}
+
+
+\CommentTok{\# 6. Using the same data, construct a plot showing the distribution of min\_ and }
+\CommentTok{\#    max\_temp for each month such that min\_ and max\_ are plotted separately for }
+\CommentTok{\#    each month, add point values on top, gradient colored as above. Substitute }
+\CommentTok{\#    the month number for the month 3{-}letter string (hint, use lubridate), remove }
+\CommentTok{\#    the legend, remove the grid lines, remove the x{-}axis labels, add a title and }
+\CommentTok{\#    fix the y{-}axis title. Use the internet to find answers if you need to.}
+
+\FunctionTok{library}\NormalTok{(glue)}
+
+\NormalTok{tbl\_den }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{month =}\NormalTok{ lubridate}\SpecialCharTok{::}\FunctionTok{month}\NormalTok{(month, }\AttributeTok{label =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{abbr =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{cols =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}min\_temp\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}max\_temp\textquotesingle{}}\NormalTok{), }\AttributeTok{names\_to =} \StringTok{\textquotesingle{}temp\_ends\textquotesingle{}}\NormalTok{, }\AttributeTok{values\_to =} \StringTok{\textquotesingle{}temp\textquotesingle{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(month, temp, }\AttributeTok{group =}\NormalTok{ temp\_ends), }\AttributeTok{fill=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{color=}\StringTok{\textquotesingle{}grey40\textquotesingle{}}\NormalTok{, }\AttributeTok{position =} \StringTok{\textquotesingle{}identity\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(month, temp, }\AttributeTok{group =}\NormalTok{ temp\_ends, }\AttributeTok{color =}\NormalTok{ temp)) }\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{month, }\AttributeTok{nrow =} \DecValTok{1}\NormalTok{, }\AttributeTok{scales =} \StringTok{\textquotesingle{}free\_x\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_gradientn}\NormalTok{(}\AttributeTok{colors =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}lightblue\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}yellow\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}orange\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Monthly Temperatures for Denver"}\NormalTok{,}
+       \AttributeTok{subtitle =} \FunctionTok{glue}\NormalTok{(}\StringTok{"\{min(tbl\_den$year)\} {-} \{max(tbl\_den$year)\}"}\NormalTok{),}
+       \AttributeTok{y =} \StringTok{"Temperature (C)"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_classic}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}
+    \AttributeTok{legend.position =} \StringTok{\textquotesingle{}none\textquotesingle{}}\NormalTok{,}
+    \AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{(),}
+    \AttributeTok{axis.title.x =} \FunctionTok{element\_blank}\NormalTok{(),}
+    \AttributeTok{axis.ticks.x =} \FunctionTok{element\_blank}\NormalTok{()}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
 
 \end{document}

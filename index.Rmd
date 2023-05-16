@@ -1,5 +1,5 @@
 ---
-title: "Introduction to R for Mass Spectrometrists"
+title: "Learning R for Mass Spectrometry"
 author: "Jeff Jones, Heath Patterson, Ryan Benz "
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -11,9 +11,10 @@ description: |
   An introductory approach to using R in the analysis of mass spectrometry related data.
 link-citations: yes
 github-repo: jeffsocal/ASMS_R_Basics
+always_allow_html: true
 ---
 
-# Preface {.unnumbered}
+# Preface {-}
 
 **Who** are the authors:
 

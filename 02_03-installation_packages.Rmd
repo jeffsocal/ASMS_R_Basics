@@ -22,18 +22,22 @@ Overall, R packages are an essential tool for anyone working with R. By using es
 
 When working with R, it is important to understand how to install packages. R packages are collections of functions, data, and documentation that extend the capabilities of R. Most R packages have binary versions available for direct installation with no additional steps required. Binary packages are pre-compiled and ready-to-use packages that are platform-specific. They can be installed with the `install.packages()` function in R.
 
-::: {.infobox .note data-latex="{note}"}
-Follow the examples below to install all the required packages used in this book. Jump to the following section if you run into any issues. Use the copy-paste button in the top-right of each code block.
-:::
+\
 
-#### Installing from CRAN {.unnumbered}
+|                                 |                                                                                                                                                                                                            |
+|---------------|---------------------------------------------------------|
+| ![](images/01.png){height="68"} | Follow the examples below to install all the required packages used in this book. Jump to the following section if you run into any issues. Use the copy-paste button in the top-right of each code block. |
+
+\
+
+#### Installing from CRAN {-}
 
 ```{r, eval=FALSE}
 # this installs all of the packages in the tidyverse collection
 install.packages('tidyverse')
 ```
 
-#### Installing from Bioconductor {.unnumbered}
+#### Installing from Bioconductor {-}
 
 ```{r, eval=FALSE}
 # do this once to install the Bioconductor Package Manager
@@ -42,7 +46,7 @@ install.packages("BiocManager")
 BiocManager::install(c("mzR", "xcms", "MSstats", "MSnbase"))
 ```
 
-#### Installing from GitHub {.unnumbered}
+#### Installing from GitHub {-}
 
 ```{r, eval=FALSE}
 # do this once to install the devtools package 
@@ -51,9 +55,13 @@ install.packages("devtools")
 install_github("jeffsocal/tidyproteomics")
 ```
 
-::: {.infobox .note data-latex="{note}"}
-There maybe several additional packages to install including additional operating system level installs. Go to the [tidyproteomics](https://jeffsocal.github.io/tidyproteomics/) webpage for additional installation help.
-:::
+\
+
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](images/01.png){height="68"} | There maybe several additional packages to install including additional operating system level installs. Go to the [tidyproteomics](https://jeffsocal.github.io/tidyproteomics/) webpage for additional installation help. |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+\
 
 ### Potential Gotchas
 

@@ -2,36 +2,52 @@
 
 The `tidyverse` is actually a collection of R packages designed for data analysis and visualization. It is an essential tool for data scientists and statisticians who work with large datasets.
 
-::: {.infobox .skill data-latex="{skill}"}
-At the end of this chapter you should be able to:\
-1.    Grasp the importance of teh tidyverse\
-2.    Understand how to construct a data pipeline\
-3.    Composed a simple workflow
-:::
+\
 
++---------------------------------+-----------------------------------------------------------+
+| ![](images/03.png){height="68"} | **At the end of this chapter you should be able to**      |
+|                                 |                                                           |
+|                                 | -   Grasp the utility of the tidyverse.                   |
+|                                 |                                                           |
+|                                 | -   Understand how to construct a data pipeline.          |
+|                                 |                                                           |
+|                                 | -   Composed a simple workflow.                           |
++---------------------------------+-----------------------------------------------------------+
+
+\
 
 The `tidyverse` packages are built around a common philosophy of data manipulation. The goal is to provide a consistent and intuitive syntax for data analysis that is easy to learn and use. The packages in the `tidyverse` include:
 
-- **magrittr**: provides the pipe, %>% used throughout the tidyverse.
-- **tibble**: creates the main data object.
-- **readr**: reading and writing data in various formats.
-- **dplyr**: data manipulation.
-- **tidyr**: transforming messy data into a tidy format.
-- **purrr**: functional programming with vectors and lists.
-- **stringr**: working with strings.
-- **lubridate**: working with dates and date strings.
-- **ggplot2**: graphical plotting and data visualization.
++------------------------------+-------------------------------------------------------+
+| \@ref(magrittr) magrittr     | provides the pipe, %>% used throughout the tidyverse. |
++------------------------------+-------------------------------------------------------+
+| \@ref(tibble) tibble         | creates the main data object.                         |
++------------------------------+-------------------------------------------------------+
+| \@ref(readr) readr           | reading and writing data in various formats.          |
++------------------------------+-------------------------------------------------------+
+| \@ref(dplyr) dplyr           | data manipulation.                                    |
++------------------------------+-------------------------------------------------------+
+| \@ref(tidyr) tidyr           | transforming messy data into a tidy format.           |
++------------------------------+-------------------------------------------------------+
+| \@ref(purrr) purrr           | functional programming with vectors and lists.        |
++------------------------------+-------------------------------------------------------+
+| \@ref(stringr) stringr       | working with strings.                                 |
++------------------------------+-------------------------------------------------------+
+| \@ref(lubridate) lubridate   | working with dates and date strings.                  |
++------------------------------+-------------------------------------------------------+
+| \@ref(ggplot2) ggplot2       | graphical plotting and data visualization.            |
++------------------------------+-------------------------------------------------------+
 
 These packages work seamlessly together, allowing users to easily manipulate and visualize their data. The `tidyverse` also includes a set of conventions and best practices for data analysis, making it easy to follow a consistent workflow.
 
-::: {.infobox .note data-latex="{note}"}
-***Cheat-Sheets** that summarize the all the functions*\
-[tidyverse](https://www.tidyverse.org/): [readr](https://readr.tidyverse.org/), 
-[dplyr](https://dplyr.tidyverse.org/), [tidyr](https://tidyr.tidyverse.org/), 
-[stringr](https://stringr.tidyverse.org/)
-:::
 \
+
++---------------------------------+-----------------------------------------------------------+
+| ![](images/01.png){height="68"} | **Cheat-sheets** \@ref(cheat-sheets)                      |
++---------------------------------+-----------------------------------------------------------+
+
 \
+
 Consider the following workflow to read in data, calculate a linear regression and visualize the data using nine (9) of the underlying packages in the tidyverse.
 
 ```{r, message=FALSE, warning=FALSE, fig.width=6, fig.height=4, fig.align='center'}
@@ -95,7 +111,7 @@ Overall, the tidyverse is an essential tool for data analysis and visualization 
 ## Core Packages
 Two important packages in the tidyverse are tibble and magrittr. These core packages enable other data manipulation operations to work seamlessly, improving efficiency and ease of use when working with data in R. Despite their importance, they are often taken for granted.
 
-### magrittr {-}
+### magrittr
 The tidyverse package `magrittr` is a popular R package that provides a set of operators for chaining operations in a sequence. The package was developed by Stefan Milton Bache and Hadley Wickham. The main goal of `magrittr` is to make code more readable and easier to maintain.
 
 The pipe operator, `%>%`, is the most famous operator provided by `magrittr.` It allows you to chain multiple operations without the need to use intermediate variables. The pipe operator takes the output of the previous function and passes it as the first argument to the next function. This chaining of operations allows for more concise and readable code.
@@ -117,7 +133,7 @@ In this example, we create a vector of numbers and use the pipe operator to chai
 
 Magrittr also provides other useful operators, such as the assignment pipe `%<>%`, which allows you to update a variable in place, and the tee operator `%T>%`, which allows you to inspect the output of an operation without interrupting the chain.
 
-### tibble {-}
+### tibble
 R `tibble` is a class of data frame in the R programming language. It is an improved alternative to the traditional data frame and is part of the tidyverse package. Tibbles are data frames with stricter requirements, and they provide a streamlined and more efficient way to work with data.
 
 One of the main advantages of tibbles is that they provide a cleaner and more consistent way to display data. Tibbles only show the first 10 rows and all the columns that fit on the screen, making it easier to work with large datasets. Additionally, tibbles automatically convert character vectors to factors, preventing common errors that can occur when working with data frames.
@@ -125,7 +141,7 @@ One of the main advantages of tibbles is that they provide a cleaner and more co
 Another important feature of tibbles is the way they handle column names. Tibbles will not allow spaces in column names, and they use backticks to reference columns with non-standard names. This makes it easier to work with datasets that have complex column names. Tibbles also provide a more consistent way to handle missing values. In data frames, missing values can be represented in different ways, such as NA, NaN, or NULL. Tibbles, on the other hand, only use NA to represent missing values, making it easier to work with missing data.
 
 ## Importing
-### readr {-}
+### readr
 R `readr` is a package in the R language that is used to read structured data files into R. The package is an efficient and user-friendly toolkit that allows for the reading of different types of flat files such as CSV, TSV, and fixed-width files. It is part of the tidyverse collection of packages, which is popular among data scientists and statisticians.
 
 One of the key features of `readr` is its ability to quickly read data into R, making it an ideal package for data analysis and data cleaning. `readr` is designed to handle various types of data, including numeric, date, and character data. The package also has advanced features such as automatic guessing of column types, encoding detection, and parsing of dates and times.
@@ -138,7 +154,7 @@ tbl_csv <- "data/denver_climate.csv" %>% read_csv()
 One of the best things about `readr` is its consistency in dealing with file formats, which allows for easy and fast data manipulation. The package provides a high level of control over the import process, allowing you to specify the location of the data file, the delimiter, and the encoding type. Additionally, `readr` can handle large datasets with ease, making it one of the most efficient packages for data handling.
 
 ## Wrangling
-### dplyr {-}
+### dplyr
 R `dplyr` is perhaps pne of the most powerful libraries in the `tidyverse`, providing a set of tools for data manipulation and transformation. It is designed to work seamlessly with data stored in data frames.
 
 The library comes with a set of functions that can be used to filter, arrange, group, mutate, and summarize data. These functions are optimized for speed and memory efficiency, allowing users to work with large datasets easily.
@@ -152,7 +168,7 @@ Some of the most commonly used functions in `dplyr` are:
 
 In addition to these functions, dplyr also includes a set of convenient shortcuts and helpers, such as the pipe operator (%>%) which allows users to chain multiple operations together in a more intuitive and readable way.
 
-### tidyr {-}
+### tidyr
 R `tidyr` is a package in R that helps to reshape data frames. It is an essential tool for data cleaning and analysis. Tidyr is used to convert data from wide to long format and vice versa, and it also helps to separate and unite columns.
 
 - **pivot_longer**: used to reshape data from a column-based wide format to a row-based long format.
@@ -163,7 +179,7 @@ The package `tidyr` also has functions to separate and unite columns. The "separ
 - **seperate**: used to separate a column with multiple values into two or more columns.
 - **seperate_row**: used to duplicate a row with multiple values from a given column.
 
-### purrr {-}
+### purrr
 The `purrr` package is a functional programming toolkit for R that enables users to easily and rapidly apply a function to a set of inputs, returning a list or vector of outputs. It is designed to work seamlessly with the tidyverse ecosystem of packages, but can also be used with base R functions.
 
 The most important feature in `purrr` is its ability to replace loops with functions that save time and effort. The package has a collection of functions that allow you to work with functions that take one or more arguments. Some of these functions include `map`, `map2`, `pmap`, and `imap.`
@@ -185,7 +201,7 @@ squared_numbers <- map(numbers, square)
 squared_numbers
 ```
 
-### glue {-}
+### glue
 R `glue` is a tidyverse package that provides a simple way to interpolate values into strings. It allows users to combine multiple strings or variables together into a single string with minimum efforts, simpler than using base R fuctions.
 
 The `glue` function can handle various types of inputs, including vectors, lists, and expressions. It also supports user-defined formats and allows users to specify separators between the values.
@@ -207,7 +223,7 @@ glue("The value of x is: {x}, and the value of y is: {y}")
 This code will produce the same output, but it's more readable and easier to modify.
 
 ## Data Types
-### stringr {-}
+### stringr
 The tidyverse package `stringr`  provides a cohesive set of functions designed to make working with strings more efficient. It is especially useful when dealing with messy or unstructured data that needs to be cleaned and transformed into a more structured format.
 
 Several functions in `stringr` provides methods working with strings, for example:
@@ -225,7 +241,7 @@ str_extract("Hello World", "W.+")
 str_split("Hello World", "\\s")
 ```
 
-### lubridate {-}
+### lubridate
 The tidyverse package `lubridate` helps with the handling of dates and times. The package has several functions that make it easier to work with dates and times, especially when dealing with data that has different formats.
 
 Some of the functions in `lubridate` package include:
@@ -237,7 +253,7 @@ Some of the functions in `lubridate` package include:
 
 There are also functions for extracting information from dates and times such as `year()`, `month()`, `day()`, `hour()`, `minute()`, and `second()`.
 
-### forcats {-}
+### forcats
 R `forcats` is a tidyverse package that provides a set of tools for working with categorical data. It is designed to make it easier to work with factors in R, which are used to represent categorical data.
 
 The `forcats` package provides several functions that can be used to manipulate factors, including reordering levels, combining levels, and handling missing values. It also provides functions for working with ordered factors, which are used to represent data that has a natural ordering, such as age groups or ratings.
@@ -247,7 +263,7 @@ One of the key benefits of using `forcats` is that it allows you to easily visua
 In addition to its core functionality, `forcats` is also highly customizable. It provides a wide range of options for controlling the appearance of plots and for customizing the behavior of factor manipulation functions.
 
 ## Summarizing
-### dplyr {-}
+### dplyr
 In the R tidyverse package, summarizing data is a common task performed on data frames. The dplyr package provides a set of functions that makes it easy to summarize data based on one or more variables.
 
 - **group_by**: used to group rows of a data frame by one or more columns.
@@ -279,7 +295,7 @@ tbl_csv %>%
 
 Summarizing data is an essential task that can be performed using several functions. These functions make it easy to calculate summary statistics based on one or more variables, group data frames by different categories, and summarize multiple variables at once.
 
-### ggplot2 {-}
+### ggplot2
 The tidyverse package `ggplot2`, demonstrated at the onset of this chapter, is a data visualization package in R programming language that provides a flexible and powerful framework for creating graphs and charts. It is built on the grammar of graphics, which is a systematic way of mapping data to visual elements like points, lines, and bars.
 
 With `ggplot2`, you can create a wide range of graphs including scatterplots, bar charts, line charts, and more. The package offers a variety of customization options, such as color schemes, themes, and annotations, allowing you to create professional-looking visualizations with ease.

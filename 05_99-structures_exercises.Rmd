@@ -1,7 +1,10 @@
 ## Exercises {-}
 
-- Create a new R Studio Project and name it *003_data_structures*.
-- Create a new R script, add your name and date at the top as comments
++---------------------------------+-----------------------------------------------------------------------------+
+| ![](images/07.png){height="68"} | - Create a new R Studio Project and name it **003_data_structures**.        |
+|                                 |                                                                             |
+|                                 | - Create a new R script, add your name and date at the top as comments.     |
++---------------------------------+-----------------------------------------------------------------------------+
 
 1.  Construct the following vector and store as a variable.
 ```{r, echo=FALSE}

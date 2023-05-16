@@ -49,10 +49,13 @@ tbl_mz <- tibble(
 
 ### Basic Data Plotting
 
-::: {.infobox .note data-latex="{note}"}
-***Cheat-sheets** can be found online that summarize all the functions*\
-[ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/)
-:::
+\
+
++---------------------------------+-----------------------------------------------------------+
+| ![](images/01.png){height="68"} | **Cheat-sheets** \@ref(cheat-sheets)                      |
++---------------------------------+-----------------------------------------------------------+
+
+\
 
 #### Points and Lines {-}
 Points and lines graphing is a simple way of representing data in a two-dimensional space. In this graph, we use points to represent individual data values, and lines to connect them. The x-axis usually represents the **independent** variable while the y-axis represents the **dependent** variable - or in other words, what _y_ was observed while measuring _x_.

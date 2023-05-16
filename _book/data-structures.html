@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2023-05-15" />
+<meta name="date" content="2023-05-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -140,11 +140,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Introduction to R</a></li>
+<li><a href="./">Introduction to R for Mass Spectrometry</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="contents.html"><a href="contents.html"><i class="fa fa-check"></i>Contents</a></li>
 <li class="chapter" data-level="1" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>1</b> Introduction to R</a>
 <ul>
 <li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#why-choose-it"><i class="fa fa-check"></i>Why choose it?</a></li>
@@ -278,17 +279,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>9</b> Sharing</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>9.1</b> Packrat</a>
+<li class="chapter" data-level="9.1" data-path="sharing.html"><a href="sharing.html#notebooks"><i class="fa fa-check"></i><b>9.1</b> Notebooks</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-notebooks"><i class="fa fa-check"></i>Using Notebooks</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-a-notebook"><i class="fa fa-check"></i>Sharing A Notebook</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>9.2</b> Packrat</a>
 <ul>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#initiating-a-packrat-project"><i class="fa fa-check"></i>Initiating a Packrat Project</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#installing-a-package-into-the-project-library"><i class="fa fa-check"></i>Installing a Package into the Project Library</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#loading-a-package-from-the-project-library"><i class="fa fa-check"></i>Loading a Package from the Project Library</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#updating-a-package-in-the-project-library"><i class="fa fa-check"></i>Updating a Package in the Project Library</a></li>
-</ul></li>
-<li class="chapter" data-level="9.2" data-path="sharing.html"><a href="sharing.html#notebooks"><i class="fa fa-check"></i><b>9.2</b> Notebooks</a>
-<ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-notebooks"><i class="fa fa-check"></i>Using Notebooks</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-a-notebook"><i class="fa fa-check"></i>Sharing A Notebook</a></li>
 </ul></li>
 <li class="chapter" data-level="9.3" data-path="sharing.html"><a href="sharing.html#github"><i class="fa fa-check"></i><b>9.3</b> GitHub</a>
 <ul>
@@ -349,7 +350,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-structures-1"><i class="fa fa-check"></i><strong>5</strong> Data Structures</a></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#tidyverse-2"><i class="fa fa-check"></i><strong>6</strong> Tidyverse</a></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-1"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
-<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-visualization-1"><i class="fa fa-check"></i><strong>9</strong> Data Visualization</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-visualization-1"><i class="fa fa-check"></i><strong>8</strong> Data Visualization</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/jeffsocal/asms_r_intro" target="blank">Published with bookdown</a></li>
@@ -374,15 +375,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="data-structures" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">Chapter 5</span> Data Structures<a href="data-structures.html#data-structures" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The R programming environment includes four basic types of data structures that increase in complexity: <code>variable</code>, <code>vector</code>, <code>matrix</code>, and <code>list</code>. Additionally there is the <code>data.frame</code> while and independent data structure, it is essentially derived from the <code>matrix</code>.</p>
-<div class="infobox skill">
-<p>At the end of this chapter you should be able to:<br />
-1. Understand the 5 most common data structures<br />
-2. Understand the data structure lineage<br />
-3. Access given subsets of a multi-variable data object<br />
-</p>
-</div>
 <p><br />
-This book introduced variables briefly in <a href="the-basics.html#syntax">4.2</a>. Here, we will expand on that introduction. At its simplest, a variable can be thought of as a container that holds only a single thing, like a single stick of gum. A vector is an ordered, finite collection of variables, like a pack of gum. A matrix consists of columns of equally-sized vectors, similar to a vending machine for several flavors of gum packs. Mentally, you can think of them as a point, a line, and a square, respectively.</p>
+</p>
+<table>
+<colgroup>
+<col width="35%" />
+<col width="64%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/03.png" width="75" /></td>
+<td><p><strong>At the end of this chapter you should be able to</strong></p>
+<ul>
+<li><p>Understand the 5 most common data structures.</p></li>
+<li><p>Understand the data structure lineage.</p></li>
+<li><p>Access given subsets of a multi-variable data object.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>This book introduced variables briefly in <a href="the-basics.html#syntax">4.2</a>. Here, we will expand on that introduction. At its simplest, a variable can be thought of as a container that holds only a single thing, like a single stick of gum. A vector is an ordered, finite collection of variables, like a pack of gum. A matrix consists of columns of equally-sized vectors, similar to a vending machine for several flavors of gum packs. Mentally, you can think of them as a point, a line, and a square, respectively.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:4001"></span>
 <img src="images/04_001_data_structures.png" alt="\label{fig:4001}R main data structures" width="67%" />
 <p class="caption">
@@ -411,10 +425,12 @@ Figure 5.1: R main data structures
 <p>There are also a handful of pre-populated vectors and functions for constructing patters.</p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="data-structures.html#cb66-1" tabindex="-1"></a><span class="co"># all upper case letters</span></span>
 <span id="cb66-2"><a href="data-structures.html#cb66-2" tabindex="-1"></a>LETTERS</span></code></pre></div>
-<pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot; &quot;I&quot; &quot;J&quot; &quot;K&quot; &quot;L&quot; &quot;M&quot; &quot;N&quot; &quot;O&quot; &quot;P&quot; &quot;Q&quot; &quot;R&quot; &quot;S&quot; &quot;T&quot; &quot;U&quot; &quot;V&quot; &quot;W&quot; &quot;X&quot; &quot;Y&quot; &quot;Z&quot;</code></pre>
+<pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot; &quot;I&quot; &quot;J&quot; &quot;K&quot; &quot;L&quot; &quot;M&quot; &quot;N&quot; &quot;O&quot; &quot;P&quot; &quot;Q&quot; &quot;R&quot; &quot;S&quot; &quot;T&quot; &quot;U&quot; &quot;V&quot;
+## [23] &quot;W&quot; &quot;X&quot; &quot;Y&quot; &quot;Z&quot;</code></pre>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="data-structures.html#cb68-1" tabindex="-1"></a><span class="co"># all lower case letters</span></span>
 <span id="cb68-2"><a href="data-structures.html#cb68-2" tabindex="-1"></a>letters</span></code></pre></div>
-<pre><code>##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
+<pre><code>##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot;
+## [23] &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="data-structures.html#cb70-1" tabindex="-1"></a><span class="co"># a repetitive vector of the letter &quot;a&quot;</span></span>
 <span id="cb70-2"><a href="data-structures.html#cb70-2" tabindex="-1"></a><span class="fu">rep</span>(<span class="st">&#39;a&#39;</span>, <span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;a&quot;</code></pre>
@@ -428,11 +444,20 @@ Figure 5.1: R main data structures
 <span id="cb76-2"><a href="data-structures.html#cb76-2" tabindex="-1"></a><span class="dv">10</span><span class="sc">:</span><span class="dv">5</span></span></code></pre></div>
 <pre><code>## [1] 10  9  8  7  6  5</code></pre>
 <p>While variables don’t require a referencing scheme, because they only contain a single value, vectors need to have some kind of referencing scheme, shown in <a href="data-structures.html#fig:4001">5.1</a> as <code>x[9]</code> and illustrated in the following example.</p>
-<div class="infobox note">
-<p>Note the use of an integer vector to sub-select another vector based on position. R abides by the 1:N positional referencing, where as other programming languages refer to the first vector or array position as 0.<br />
-<br />
-<em>A good topic for a lively discussion with a computer scientist.</em></p>
-</div>
+<p><br />
+</p>
+<table>
+<colgroup>
+<col width="10%" />
+<col width="89%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/03.png" width="75" /></td>
+<td>The use of an integer vector to sub-select another vector based on position. R abides by the 1:N positional referencing, where as other programming languages refer to the first vector or array position as 0. <em>A good topic for a lively discussion with a computer scientist.</em></td>
+</tr>
+</tbody>
+</table>
 <p><br />
 </p>
 <div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="data-structures.html#cb78-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> LETTERS</span>
@@ -676,7 +701,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf", "_main.epub"],
+"download": ["_main.pdf"],
 "search": {
 "engine": "fuse",
 "options": null

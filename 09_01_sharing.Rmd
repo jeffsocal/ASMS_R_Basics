@@ -1,2 +1,14 @@
 # Sharing
 This topic covers a variety of ways to share R code with others. The goal is to make your work accessible and reproducible for others. Sharing can take many forms, including sharing your RStudio project, creating a distilled version of your analysis that others can follow, developing a web-based application for others to use, or finding ways to contain and disseminate reproducible analyses. By sharing your work, you enable others to learn from and build upon your research, making it more impactful and useful for the wider community.
+
+\
+
++---------------------------------+----------------------------------------------------------+
+| ![](images/03.png){height="68"} | **At the end of this chapter you should be able to**     |
+|                                 |                                                          |
+|                                 | -   Understand the options for sharing analyses.         |
+|                                 |                                                          |
+|                                 | -   Start an R Notebook project to share.                |
++---------------------------------+----------------------------------------------------------+
+
+\
