@@ -38,7 +38,7 @@ We can see multiple columns, some expanded excel columns for metabolites. A lot 
 
 Our goal will be to:
 * Read excel data with `readxl` library
-* Have `Bacteria`, `Dosage`, `Metabolite`, `Time_Point`, `Response` be our columns
+* Have `culture`, `dose_mg`, `metabolite`, `time_min`, `abundance` be our columns
 
 Let's start with the read-in.
 
@@ -53,7 +53,7 @@ met_df
 
 Let's `separate` Culture into two new variables: Species and Dose.
 
-```{r 7202, echo=FALSE, fig.cap="\\label{fig:7203}Separating columns in a tibble."}
+```{r 7204, echo=FALSE, fig.cap="\\label{fig:7203}Separating columns in a tibble."}
 knitr::include_graphics("images/separate-vis.png")
 ```
 
@@ -67,7 +67,7 @@ met_df %>%
 Still some issues here. We managed a separation but out dose column isn't numeric!
 We need to remove the "mg".
 
-```{r 7202, echo=FALSE, fig.cap="\\label{fig:7204}Mutate:Making new columns or changing existing ones."}
+```{r 7205, echo=FALSE, fig.cap="\\label{fig:7204}Mutate:Making new columns or changing existing ones."}
 knitr::include_graphics("images/mutate-vis.png")
 ```
 
@@ -88,7 +88,7 @@ met_df %>%
 Now, we have a bigger problem... multiple pieces of information encoded into each column!
 We need this tibble to be **long** rather than **wide** to by tidy. We can use `pivot_longer` from `tidyr`.
 
-```{r 7202, echo=FALSE, fig.cap="\\label{fig:7205} Pivoting longer from wide data."}
+```{r 7206, echo=FALSE, fig.cap="\\label{fig:7205} Pivoting longer from wide data."}
 knitr::include_graphics("images/pivot-longer-vis.png")
 ```
 

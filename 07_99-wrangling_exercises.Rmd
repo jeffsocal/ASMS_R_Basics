@@ -8,65 +8,71 @@
 |                                 | - Locate and/or download a Tidyverse cheat-sheet and refer to it as needed. |
 +---------------------------------+-----------------------------------------------------------------------------+
 
-1. Download *Denver Climate Data* to use as an example data file.
-```{r, message=FALSE, warning=FALSE}
-url <- "https://raw.githubusercontent.com/ZenBrayn/asms-2022-r-shortcourse/main/exercises/intro_to_r/data/denver_climate.csv"
-download.file(url, destfile = "./data/denver_climate.csv")
-```
+1. Download the data.
 
-2. Read in the dataset .csv using the `tidyverse` set of packages.
+2. Read in the messy bacteria data and store it as a variable.
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-tbl_den <- "./data/denver_climate.csv" %>% read_csv()
+library(tidyverse)
+
+met_df <- "data/messy-bacteria-data.xlsx" %>% read_excel(col_names = TRUE)
 ```
 
-3. How many rows does the table contain? Number of columns? What are the column names?
-```{r, echo=FALSE}
-tbl_den %>% nrow()
-tbl_den %>% ncol()
-tbl_den %>% colnames()
+*In all proceed exercises, pipe results from previous exercise into current exercise creating a single lone pipe for data processing*
+
+3. Separate `Culture` column containing culture and dose into `culture` and `dose_mg_ml` columns.
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+met_df %>%
+  separate(Culture, c("culture", "dose_mg_ml"), sep = " dose--")
 ```
 
-4. Find the month and year with the highest snowfall.
-```{r, echo=FALSE}
-tbl_den %>% 
-  filter(snowfall == max(snowfall)) %>% 
-  select(month, year)
+4. Make `dose_mg_ml` column numeric by removing the text and change the column data type from character to numeric.
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+met_df %>%
+  separate(Culture, c("culture", "dose_mg_ml"), sep = " dose--") %>%
+  mutate(dose_mg_ml = gsub("-mg/ml","", dose_mg_ml)) %>%
+  mutate(dose_mg_ml = as.numeric(dose_mg_ml))
 ```
 
-5. Find months where there was no snowfall.
-```{r, echo=FALSE}
-tbl_den %>% 
-  filter(snowfall == 0) %>% 
-  select(month) %>% 
-  unique()
+5. Pivot the table from wide to long creating `metabolite`, `time_hr` & `abundance` columns.
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+met_df %>%
+  separate(Culture, c("culture", "dose_mg_ml"), sep = " dose--") %>%
+  mutate(dose_mg_ml = gsub("-mg/ml","", dose_mg_ml)) %>%
+  mutate(dose_mg_ml = as.numeric(dose_mg_ml)) %>%
+  pivot_longer(cols = 4:13, names_to = "metabolite_time", values_to = "abundance") %>%
+  separate(metabolite_time, c("metabolite","time_hr"), sep="_runtime_")
 ```
 
-6. Find average precipitation per year.
-```{r, echo=FALSE}
-tbl_den %>% 
-  group_by(year) %>% 
-  summarise(precipitation_avg = mean(precipitation))
+6. Make sure `time_hr` contains just hours and not a mixture of days and hours.
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+met_df %>%
+  separate(Culture, c("culture", "dose_mg_ml"), sep = " dose--") %>%
+  mutate(dose_mg_ml = gsub("-mg/ml","", dose_mg_ml)) %>%
+  mutate(dose_mg_ml = as.numeric(dose_mg_ml)) %>%
+  pivot_longer(cols = 4:13, names_to = "metabolite_time", values_to = "abundance") %>%
+  separate(metabolite_time, c("metabolite","time_hr"), sep="_runtime_") %>%
+    mutate(
+    time_hr = case_when(
+      grepl("hr", time_hr, ignore.case = TRUE) ~ as.numeric(gsub("hr", "", time_hr)),
+      grepl("day", time_hr, ignore.case = TRUE) ~ as.numeric(gsub("day", "", time_hr)) * 24
+    )
+  )
 ```
 
-7. Convert temperatures to Celsius and add new columns with these to table. Reminder `F to C conversion -> (F - 32) * (5/9)`.
-```{r, echo=FALSE}
-tbl_den <- tbl_den %>%
-  mutate(min_temp_C = signif((min_temp - 32) * (5/9), 3),
-         max_temp_C = signif((max_temp - 32) * (5/9), 3))
+7. Remove the `User` column. See cheatsheet here: https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf or consult internet.
 
-tbl_den
-```
-
-8. Find the month with the greatest difference in C between max and min temperature.
-```{r, echo=FALSE}
-tbl_den %>%
-  mutate(temp_diff_C = max_temp_C - min_temp_C) %>%
-  group_by(month) %>%
-  summarise(temp_diff_C_avg = mean(temp_diff_C)) %>%
-  filter(temp_diff_C_avg == max(temp_diff_C_avg))
-```
-
-9. Write to file an .csv of the data.frame which contains the C data.
-```{r, echo=FALSE, eval=FALSE}
-tbl_den %>% write_csv("data/denver_climate.csv")
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+met_df %>%
+  separate(Culture, c("culture", "dose_mg_ml"), sep = " dose--") %>%
+  mutate(dose_mg_ml = gsub("-mg/ml","", dose_mg_ml)) %>%
+  mutate(dose_mg_ml = as.numeric(dose_mg_ml)) %>%
+  pivot_longer(cols = 4:13, names_to = "metabolite_time", values_to = "abundance") %>%
+  separate(metabolite_time, c("metabolite","time_hr"), sep="_runtime_") %>%
+    mutate(
+    time_hr = case_when(
+      grepl("hr", time_hr, ignore.case = TRUE) ~ as.numeric(gsub("hr", "", time_hr)),
+      grepl("day", time_hr, ignore.case = TRUE) ~ as.numeric(gsub("day", "", time_hr)) * 24
+    )
+  ) %>%
+  select(-User)
 ```
