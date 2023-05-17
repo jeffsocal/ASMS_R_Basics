@@ -42,16 +42,16 @@ knitr::include_graphics("images/07_002_tidy-data-vis.png")
 
 ## Example Walkthrough
 
-We have a processed MS dataset of analytes measured for different bacteria at different time-points with different dosages of an antibiotic. 
+We have a processed MS data set of metabolites measured for different bacteria at different time-points with different dosages of an antibiotic. 
 
 ```{r 7203, echo=FALSE, fig.cap="\\label{fig:7203}Checking our messy data table.", fig.align='center'}
 knitr::include_graphics("images/07_003_bacteria-table.png")
 ```
-We can see multiple columns, some expanded excel columns for metabolites. A lot of messiness.
+Having a look at the data, we can see definitely that it is not tidy.
 
 Our goal will be to:
-* Read excel data with `readxl` library
-* Have `Bacteria`, `Dosage`, `Metabolite`, `Time_Point`, `Response` be our columns
+* Read excel data with `readxl` library.
+* In a single *dplyr* pipe create a tidy with `culture`, `dose_mg`, `metabolite`, `time_min`, `abundance` as our columns.
 
 ### read_ {-}
 
@@ -236,6 +236,8 @@ Now we have a tidy tibble, we can summarize very rapidly.
 
 ```{r, message=FALSE, warning=FALSE}
 tbl_met_tidy %>%
-  group_by(culture, dose_mg, metabolite, time_min) %>%
+  group_by(culture, metabolite) %>%
   summarize(mean = mean(abundance))
 ```
+
+What other questions can we ask???

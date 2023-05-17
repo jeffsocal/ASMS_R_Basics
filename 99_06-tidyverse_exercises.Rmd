@@ -38,8 +38,11 @@ tbl_cir %>% filter(diam > 50)
 #     for each `circ_type`.
 
 oddeven <- function(x) { 
-  if(x %% 2 == 0) return('even')
-  else return('odd')
+  if(x %% 2 == 0){
+    return('even')
+    } else {
+      return('odd')
+    }
 }
 
 tbl_cir %>% 
