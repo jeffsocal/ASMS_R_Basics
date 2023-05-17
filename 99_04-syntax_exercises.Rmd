@@ -1,0 +1,37 @@
+## **4** R Syntax {-}
+
+```{r, eval=FALSE}
+# John Doe
+# 2023-06-02
+# Institution Inc.
+#
+# Some basic R practice
+
+# 3.  Calculate the sum of 2 and 3.
+2 + 3
+
+# 4.  Evaluate if 0.5 is equal to 1 divided by 2.
+
+0.5 == 1 / 2
+
+# 5.  Test if 3 is an even number. 
+#     Hint, use the modulus operator and a comparison operator.
+
+3 %% 2 == 0
+
+# 6.  Create a function to test if a value is even resulting in `TRUE` or `FALSE`.
+
+even <- function(x) { x %% 2 == 0 }
+
+even(3)
+
+# 7.  Create a function to test or *even* or *odd* by returning a string.
+
+oddeven <- function(x) { 
+  if(x %% 2 == 0) return('even')
+  else return('odd')
+}
+
+oddeven(3)
+
+```

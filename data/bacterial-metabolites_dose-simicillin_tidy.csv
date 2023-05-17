@@ -1,4 +1,4 @@
-culture,dose_mg,metabolite,time_min,abundance
+Organism,Dose_mg,Metabolite,Time_min,Abundance
 e coli,0,glutamate,0,191666
 e coli,0,glutamate,10,2082823
 e coli,0,glutamate,20,1796910

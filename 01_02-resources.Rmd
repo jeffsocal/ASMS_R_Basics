@@ -50,12 +50,9 @@ In addition to Googling to find how to do something in R, there are several onli
 ### In Print {-}
 R books in print are becoming increasingly popular due to the growing demand for R programming and data analysis. These books offer several benefits that make them an excellent resource for anyone who wants to learn R programming or improve their data analysis skills. One of the key advantages of R books in print is that they are easy to read and navigate. The authors of these books take into consideration that not everyone who reads their books is an expert in programming. They use simple language and examples to explain concepts from the basics, making it easy for readers to understand. They can be used as a quick reference guide when working on a project or when facing a programming challenge. R books in print are cost-effective. While online resources are free, they are not always reliable, and it can be time-consuming to find the information you need. R books in print, on the other hand, are written and edited by experts who have years of experience in the field making them a reliable source of information.
 
+---
 
-+---------------------------------+----------------------------------------------------------------------------------------+
-| ![](images/05.png){height="68"} | **R for Data Science: Import, Tidy, Transform, Visualize, and Model Data 1st Edition** |
-|                                 | *by Garrett Grolemund, Hadley Wickham*                                                 |
-+---------------------------------+----------------------------------------------------------------------------------------+
-
+**R for Data Science: Import, Tidy, Transform, Visualize, and Model Data 1st Edition** *by Garrett Grolemund, Hadley Wickham*
 
 > Learn how to use R to turn raw data into insight, knowledge, and understanding. 
 > This book introduces you to R, RStudio, and the tidyverse, a collection of R 
@@ -63,10 +60,9 @@ R books in print are becoming increasingly popular due to the growing demand for
 > Suitable for readers with no previous programming experience, R for Data 
 > Science is designed to get you doing data science as quickly as possible.
 
-+---------------------------------+---------------------------------------------+
-| ![](images/05.png){height="68"} | **Use R!**, a collection of 67 print books. |
-+---------------------------------+---------------------------------------------+
+---
 
+**Use R!**, a collection of 67 print books.
 
 The Use R! collection of print books is a series of books aimed at helping people learn and use the R programming language. The books in this series cover a wide range of topics related to R, including data analysis, statistical modeling, and data visualization.
 

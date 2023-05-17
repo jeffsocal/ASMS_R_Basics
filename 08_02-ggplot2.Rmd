@@ -11,12 +11,16 @@ Ideally this accomplishes dual goals of allowing you to quickly construct plots 
 
 To graph in GGPlot there are a few core embodiments that need to be considered.
 
-|            |                                                                  |                                 |
-|------------------|---------------------------|---------------------------|
+\
+
++------------+------------------------------------------------------------------+---------------------------------+
 | data       | a table of numeric and/or categorical values                     | data.frame or tibble            |
 | geom       | a geometric object or visual representation, that can be layered | points, lines, bars, boxs, etc. |
 | aesthetics | how variables in the data are mapped to visual properties        | eg. *x = col_a, y = col_b*      |
 | coordinate | orientation of the data points                                   | eg. *cartesian (x,y), polar*    |
++------------+------------------------------------------------------------------+---------------------------------+
+
+\
 
 ```{r, eval=FALSE}
 # the basic structure
@@ -112,11 +116,11 @@ p08 <- tbl_mz %>% ggplot(aes(class, fill=class)) + geom_bar() + coord_flip()
 p09 <- tbl_mz %>% ggplot(aes(1, fill=class)) + geom_bar(position = 'fill') + coord_polar(theta = 'y')
 ```
 
-```{r, echo=FALSE, fig.width=12, fig.height=3, fig.align='center'}
+```{r, echo=FALSE, fig.width=8, fig.height=2, fig.align='center'}
 grid.arrange(p07 + labs(subtitle = 'p07'), p08 + labs(subtitle = 'p08'), 
              p09 + labs(subtitle = 'p09'), nrow = 1)
 ```
-Note how difficult it is in the pie chart to tell (by eye) that _A_ is the smallest.
+Note how difficult it is in the pie chart to tell (by eye) which is the smallest.
 
 ### Data Distributions
 In statistics, a distribution refers to the way in which a set of data is spread out or dispersed. It describes the pattern of values that a variable can take and how frequently each value occurs. A distribution can be characterized by its shape, center, and spread, and can be represented graphically using tools such as histograms, box plots, and density plots.
@@ -240,10 +244,10 @@ p19 <- tbl_mz %>%
   ggplot(aes(mz, int)) + 
   geom_segment(aes(xend = mz, yend = 0)) +
   scale_y_continuous(n.breaks = 13) +
-  scale_x_continuous(n.breaks = 5, limits = c(500,1500))
+  scale_x_continuous(n.breaks = 5)
 ```
 
-```{r, echo=FALSE, warning=FALSE, fig.width=4, fig.height=3, fig.align='center'}
+```{r, echo=FALSE, warning=FALSE, fig.width=6, fig.height=3, fig.align='center'}
 p19 + labs(subtitle = 'p19')
 ```
 
@@ -309,8 +313,73 @@ grid.arrange(p24 + labs(subtitle = 'p24'), p25 + labs(subtitle = 'p25'), nrow = 
 ```
 
 #### Labels {-}
+Adding text to plots to enhance the visualization is an important aspect of data analysis. Labels help to identify the variables being plotted and provide context for the audience.
+
+When adding labels to a plot, it is important to consider the type of plot being used and the information being displayed. For example, in a scatter plot, labels can be added to each point to indicate the value of each variable. In a line chart, labels can be added to the x and y axes to indicate the units of measurement.
+
+```{r}
+p26 <- tbl_mz %>% 
+  ggplot(aes(mz, int)) + 
+  geom_segment(aes(xend = mz, yend = 0)) +
+  geom_text(data = tbl_mz %>% slice_max(int, n = 10),
+            aes(label = mz),
+            vjust = 0)
+
+p27 <- tbl_mz %>% 
+  ggplot(aes(mz, int)) + 
+  geom_segment(aes(xend = mz, yend = 0)) +
+  geom_label(data = tbl_mz %>% slice_max(int, n = 10),
+             aes(label = mz),
+             vjust = 0)
+```
+
+```{r, echo=FALSE, fig.width=8, fig.height=3, fig.align='center'}
+grid.arrange(p26 + labs(subtitle = 'p26') + ylim(0,35000), 
+             p27 + labs(subtitle = 'p27') + ylim(0,35000), 
+             nrow = 1)
+```
+
+A handy package not in the tidyverse, is `ggrepel`, which allows for the labels to rearrange themselves such that none of them overlap.
+```{r}
+library(ggrepel)
+
+p28 <- tbl_mz %>% 
+  ggplot(aes(mz, int)) + 
+  geom_segment(aes(xend = mz, yend = 0)) +
+  geom_text_repel(data = tbl_mz %>% slice_max(int, n = 10),
+                  aes(label = mz), 
+                  box.padding = .5, color = 'dodgerblue')
+
+p29 <- tbl_mz %>% 
+  ggplot(aes(mz, int)) + 
+  geom_segment(aes(xend = mz, yend = 0)) +
+  geom_label_repel(data = tbl_mz %>% slice_max(int, n = 10),
+                   aes(label = mz), 
+                   box.padding = .5, color = 'dodgerblue')
+```
+
+```{r, echo=FALSE, fig.width=8, fig.height=3, fig.align='center'}
+grid.arrange(p28 + labs(subtitle = 'p28') + ylim(0,35000), 
+             p29 + labs(subtitle = 'p29') + ylim(0,35000), 
+             nrow = 1)
+```
+
 
 #### Annotations  {-}
+Annotations add explanatory text or labels to a plot, providing additional information to the reader. Adding annotations to a plot can help convey the message behind the data and make the plot more understandable. 
+
+```{r}
+p30 <- p12 + 
+  ggplot2::annotate('text', x = Inf,  y = Inf,  label = 'Top-Right',    hjust = 1, vjust = 1) +
+  ggplot2::annotate("text", x = -Inf, y = Inf,  label = "Top-left",     hjust = 0, vjust = 1) + 
+  ggplot2::annotate('text', x = Inf,  y = -Inf, label = 'Bottom-Right', hjust = 1, vjust = -0.5) +
+  ggplot2::annotate("text", x = -Inf, y = -Inf, label = "Bottom-left",  hjust = 0, vjust = -0.5)
+
+```
+
+```{r, echo=FALSE, fig.width=6, fig.height=3, fig.align='center'}
+p30 + labs(subtitle = 'p30')
+```
 
 #### Style  {-}
 Creating a plotting style can help you to quickly improve the appearance of your plots and make them more consistent with your brand. When working with data visualization, it’s important to keep in mind that the appearance of your plots can significantly impact the way your audience interprets your data. GGplot2 themes and colors offer an easy way to create professional-looking visualizations that will make your data stand out.
@@ -333,21 +402,21 @@ p12 <- tbl_mz %>% ggplot(aes(class, int)) + geom_boxplot() + scale_y_log10()
 ```
 
 ```{r}
-p28 <- p12 + theme_gray() # default
-p29 <- p12 + theme_dark()
-p30 <- p12 + theme_light()
-p31 <- p12 + theme_classic()
-p32 <- p12 + theme_minimal()
-p33 <- p12 + theme_bw()
+p31 <- p12 + theme_gray() # default
+p32 <- p12 + theme_dark()
+p33 <- p12 + theme_light()
+p34 <- p12 + theme_classic()
+p35 <- p12 + theme_minimal()
+p36 <- p12 + theme_bw()
 ```
 
 ```{r, echo=FALSE, fig.width=8, fig.height=4, fig.align='center'}
-grid.arrange(p28 + labs(subtitle = 'p28 - gray (default)'), 
-             p29 + labs(subtitle = 'p29 - dark'),
-             p30 + labs(subtitle = 'p30 - light'),
-             p31 + labs(subtitle = 'p31 - classic'),
-             p32 + labs(subtitle = 'p32 - minimal'),
-             p33 + labs(subtitle = 'p33 - bw'),
+grid.arrange(p31 + labs(subtitle = 'p31 - gray (default)'), 
+             p32 + labs(subtitle = 'p32 - dark'),
+             p33 + labs(subtitle = 'p33 - light'),
+             p34 + labs(subtitle = 'p34 - classic'),
+             p35 + labs(subtitle = 'p35 - minimal'),
+             p36 + labs(subtitle = 'p36 - bw'),
              nrow = 2)
 ```
 
@@ -375,18 +444,16 @@ p31 <- tbl_new %>% ggplot(aes(group, int)) + geom_boxplot(aes(fill=class)) + sca
 ```
 
 ```{r}
-p34 <- p31
-p35 <- p31 + scale_fill_brewer(palette = 'Set1')
-p36 <- p31 + scale_fill_brewer(palette = 'Blues')
-p37 <- p31 + scale_fill_manual(values = c("#d97828", "#83992a", "#995d81","#44709d"))
+p37 <- p34
+p38 <- p34 + scale_fill_brewer(palette = 'Set1')
+p39 <- p34 + scale_fill_brewer(palette = 'Blues')
+p40 <- p34 + scale_fill_manual(values = c("#d97828", "#83992a", "#995d81","#44709d"))
 ```
 
 ```{r, echo=FALSE, fig.width=7, fig.height=3.5, fig.align='center'}
-grid.arrange(p34 + labs(subtitle = 'p34 - (default)'), 
-             p35 + labs(subtitle = 'p35 - Brewer:Set1'),
-             p36 + labs(subtitle = 'p35 - Brewer:Blues'),
-             p37 + labs(subtitle = 'p36 - Manual'),
+grid.arrange(p37 + labs(subtitle = 'p37 - (default)'), 
+             p38 + labs(subtitle = 'p38 - Brewer:Set1'),
+             p39 + labs(subtitle = 'p39 - Brewer:Blues'),
+             p40 + labs(subtitle = 'p40 - Manual'),
              nrow = 2)
 ```
-
-#### Package ggrepel {-}
