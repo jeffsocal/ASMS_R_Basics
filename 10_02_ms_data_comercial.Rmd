@@ -1,6 +1,29 @@
-<!--# HEATH -->
 ## Data Formats
-### RAW (Thermo) {-}
-### WIFF (Sciex) {-}
-### D (Agilent) {-}
-### D (Bruker) {-}
+Accessing mass spectrometry data has some barriers due to vendors proprietary file formats. In recent years, vendors have been providing software development kits (SDKs) that allow programmers to provide direct access to the raw data. This is essential when developing fundamental workflows that require such data and also can enable analysis tools to bypass sometimes time consuming file format conversions to open formats. There are some means to access such raw data through R, allowing end-to-end pipelines to be developed directly from vendor data.
+
+## Commercial
+### RAW (Thermo)
+
+![rawrr R package](https://github.com/fgcz/rawrr/raw/devel/rawrr_logo.png)
+
+**rawrr** : https://github.com/fgcz/rawrr
+The package provides access to proprietary Thermo Fisher Scientific Orbitrap instrument data as a stand-alone R package or serves as MsRawFileReaderBackend for the Bioconductor Spectra package. rawrr wraps the functionality of the RawFileReader .NET assembly. Test files are provided by the tartare ExperimentData package.
+
+**rawReadeR** : https://github.com/wilsontom/rawReadeR
+rawReadeR is an R/C++ API to the MSFileReader.dll. rawReadeR allows for m/z profiles and scan header data to be extracted from .RAW files without the need for manual extraction using Xcalibur or conversion to a more universal format (.mzML, .mZXML, etc...)
+
+### WIFF (Sciex)
+
+None known at the moment.
+
+### D (Agilent)
+
+Convert from raw using vendor software.
+
+### .d (Bruker) timsTOF data
+
+Bruker has released an SDK that has now been ported to python and R.
+
+*timsR* : https://github.com/MatteoLacki/timsr
+
+
