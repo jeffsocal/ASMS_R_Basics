@@ -1,7 +1,10 @@
-## R Calculate Mass
+## R Mass
 
 Molecular mass is the sum of the atomic masses of all the atoms in a molecule. It is an important parameter used in various fields of chemistry. The molecular mass of a molecule is usually expressed in atomic mass units (amu) or daltons (Da). Mass spectrometry based measurements require a charge and are expressed as mass-to-charge (m/z) or as Thompsons (Th).
 
 Isotopic probabilities are also important in determining molecular mass. Isotopes are atoms of the same element that have different numbers of neutrons in their nuclei. Isotopes of an element have different atomic masses. The isotopic probability of an element is the probability that a given isotope of that element will occur in nature. For example, carbon (C) has two stable isotopes, carbon-12 (12C) and carbon-13 (13C), with atomic masses of 12.000 amu and 13.003 amu, respectively. The isotopic probability of carbon-12 is 98.9%, while that of carbon-13 is 1.1%. Therefore, the average atomic mass of carbon in nature is 12.011 amu. 
 
 There are several measures of a molecular mass that can be reported. The _average mass_ is that of the weighted average of all isotopes and likely to be reported for small molecules. While the _nominal mass_ of a molecule is defined as the sum of the integer masses of the most abundant isotopes in a molecule. The _monoisotopic mass_ is commonly considered the as the sum of the exact masses of the lightest isotopes, and this value is considered in all peptide-based proteomics applications.
+
+---
+

@@ -1,1 +1,50 @@
 ## R MS Data
+
+### RforMassSpectrometry
+
+The RforMassSpectrometry initiative is a collaborative project aimed at developing efficient, documented, and flexible R software for analyzing high throughput mass spectrometry assays. The project formalizes the long-time collaborative development efforts of its core members under the RforMassSpectrometry organization to facilitate dissemination and accessibility of their work.
+
+\
+
++---------------------------------------------------+----------------------------------------------------------------------------------------------+
+| ![](images/90_logo_rformassspec.png){height="99"} | [WEB tutorial](https://rformassspectrometry.github.io/docs/)                                 |
+|                                                   |                                                                                              |
+|                                                   | [Packages](https://www.rformassspectrometry.org/pkgs/)                                       |
++---------------------------------------------------+----------------------------------------------------------------------------------------------+
+
+\
+
+The suite of packages developed by the initiative is available on GitHub under the RforMassSpectrometry organization. This platform serves as the main development and collaboration area of the project. Once the packages have reached a satisfactory level of maturity and stability, they are submitted to the Bioconductor project to integrate with existing and broader infrastructure for high throughput biology data.
+
+The RforMassSpectrometry initiative focuses on co-developing and maintaining interoperable software to tackle a wide range of needs in computational mass spectrometry using the R language and environment. The goal is not to address all possible needs, but rather to provide a set of software that work together efficiently, rather than maximizing the number of packages.
+
+#### Packages {-}
+##### MsExperiment {-}
+
+The MsExperiment package provides the infrastructure to store and manage all aspects related to a complete proteomics or metabolomics mass spectrometry experiment. It relies on the other RforMassSpectrometry core packages for the data crunching.
+
+##### Spectra {-}
+
+The Spectra package provides base classes and processing methods for raw mass spectrometry data. It is designed with efficiency, both in terms of memory footprint and processing time in mind, and can manage data in different types of formats.
+
+##### QFeatures {-}
+
+The QFeatures package offers the infrastructure to manage and process quantitative features for high-throughput mass spectrometry assays, including proteomics and metabolomics experiments.
+
+##### PSMatch {-}
+
+The PSMatch package allows to read, process and analyse peptide-spectrum matches.
+
+##### Chromatograms {-}
+
+The Chromatograms package provides base classes and processing methods for chromatographic data. It is designed with efficiency, both in terms of memory footprint and processing time in mind, and can manage data in different types of formats.
+
+##### MsCoreUtils {-}
+
+The MsCoreUtils package defines low-level functions for mass spectrometry data processing and is independent of any high-level data structures.
+
+##### MetaboCoreUtils {-}
+
+The MetaboCoreUtils package defines low-level functions for common operations in metabolomics and is independent of any high-level data structures.
+
+---

@@ -1,4 +1,4 @@
-### MSstats {-}
+### MSstats
 
 The MSstats package is an R package designed for the analysis of label-free mass spectrometry data. It provides a wide range of statistical tools for the analysis of protein abundance data, including normalization, missing value imputation, quality control, and differential expression analysis. MSstats provides a powerful and flexible way to analyze mass spectrometry data, making it an essential tool for researchers in the field.
 
@@ -16,3 +16,4 @@ The MSstats package is an R package designed for the analysis of label-free mass
 
 \
 
+---

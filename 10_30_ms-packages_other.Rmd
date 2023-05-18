@@ -1,4 +1,4 @@
-### AssayR {-}
+### AssayR
 
 *Wills, Jimi, Joy Edwards-Hicks, and Andrew J. Finch. "AssayR: a simple mass spectrometry software tool for targeted metabolic and stable isotope tracer analyses." Analytical chemistry 89.18 (2017): 9616-9619.*
 
@@ -8,7 +8,9 @@
 
 `AssayR` is an R package that tailors peak detection for each metabolite in high resolution wide-scan liquid chromatography-mass spectrometry data sets. It integrates peak areas for all isotopologues and outputs extracted ion chromatograms, stacked bar charts, and a .csv data file. `AssayR` provides easy and robust targeted metabolite and stable isotope analyses on wide-scan data sets from high resolution mass spectrometers, and is shown to provide more accurate and robust quantitation than XCMS.
 
-### DEqMS {-}
+---
+
+### DEqMS
 
 *Zhu, Yafeng, et al. "DEqMS: a method for accurate variance estimation in differential protein expression analysis." Molecular & Cellular Proteomics 19.6 (2020): 1047-1057.*
 
@@ -18,7 +20,9 @@
 
 `DEqMS` is built on top of Limma, which assumes the same prior variance for all genes. However, protein abundance estimates in proteomics depend on the number of peptides/PSMs quantified, with proteins quantified by multiple peptides or PSMs being more accurately measured. To achieve better accuracy, the `DEqMS` package estimates different prior variances for proteins quantified by different numbers of PSMs/peptides. This package is suitable for analyzing both label-free and labelled proteomics data.
 
-### MS-EmpiRe {-}
+---
+
+### MS-EmpiRe
 
 *Ammar, Constantin, et al. "MS-EmpiRe Utilizes Peptide-level Noise Distributions for Ultra-sensitive Detection of Differentially Expressed Proteins [S]." Molecular & Cellular Proteomics 18.9 (2019): 1880-1892.*
 
@@ -26,7 +30,9 @@
 
 `MS-EmpiRe` is a new method for mass spectrometry based proteomics that explicitly accounts for the noise underlying peptide fold changes. It derives data set-specific, intensity-dependent empirical error fold change distributions, which are used for individual weighing of peptide fold changes to detect differentially expressed proteins (DEPs). `MS-EmpiRe` doubles the number of correctly identified DEPs compared to state-of-the-art tools and can be applied to any common quantitative proteomics setup.
 
-### msgrob2 {-}
+---
+
+### msgrob2
 
 *Goeminne L, Gevaert K, Clement L (2016). “Peptide-level Robust Ridge Regression Improves Estimation, Sensitivity, and Specificity in Data-dependent Quantitative Label-free Shotgun Proteomics.” Molecular & Cellular Proteomics, 15(2), 657-668.*
 

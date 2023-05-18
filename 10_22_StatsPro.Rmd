@@ -1,4 +1,4 @@
-### StatsPro R Package {-}
+### StatsPro R Package
 
 \
 
@@ -14,3 +14,4 @@
 
 \
 
+---

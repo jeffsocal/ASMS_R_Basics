@@ -1,4 +1,4 @@
-### mzR {-}
+### mzR
 
 The `mzR` package is a powerful tool for analyzing large raw data files in proteomics research. It offers a direct interface to the [proteowizard](http://proteowizard.sourceforge.net/) code base, which is a widely-used software framework for mass spectrometry data analysis. By leveraging a substantial proportion of *pwiz*'s C/C++ code, `mzR` is able to provide fast and efficient parsing of these complex data files.
 
@@ -16,4 +16,39 @@ The `mzR` package is a powerful tool for analyzing large raw data files in prote
 
 \
 
+
+Read in an \@ref(mzml) mzML converted LCMS data file and check its contents.
+```{r, eval=FALSE, warning=FALSE, message=FALSE}
+library(mzR)
+
+ms_dat <- openMSfile("~/Local/QC_20230214_QE_Hela200ng_Aur2hr.mzML")
+
+ms_dat
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(mzR)
+
+ms_dat <- openMSfile("~/Local/gitdata/QC_20230214_QE_Hela200ng_Aur2hr.mzML")
+
+ms_dat
+```
+
+Extract out a specific spectrum.
+```{r, warning=FALSE, message=FALSE}
+library(tidyverse)
+
+tbl_spec <- peaks(ms_dat, 1234) %>% as_tibble()
+
+tbl_spec
+```
+
+```{r, warning=FALSE, message=FALSE, fig.width=8, fig.height=3, fig.align='center'}
+tbl_spec %>% 
+  ggplot(aes(mz, intensity)) + 
+  geom_segment(aes(xend = mz, yend = 0))
+```
+
 In addition to its parsing capabilities, `mzR` includes a range of useful functions for working with mass spectrometry data. This package supports a wide variety of file formats, and provides functions for reading, writing, and manipulating data in these formats. Furthermore, `mzR` includes features for working with tandem mass spectrometry (MS/MS) data, including functions for spectral processing and peak picking.
+
+---

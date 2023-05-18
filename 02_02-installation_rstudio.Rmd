@@ -1,4 +1,4 @@
-## Rstudio
+## R Studio IDE
 
 RStudio, prior to 2023, was an independent software provider for the ever-popular RStudio products, which included both the desktop and server based IDEs, along with the RShiny applications and servers that facilitate easy-to-build interactive web applications straight from R, and deployed on the web. The last chapter in this book will explore the `tidyproteomics` package which also has a Shiny web application. RStudio announced at the beginning of 2023 a soft pivot to Posit, which essentially is a rebranding of the RStudio company to encompass a larger data science audience, one that also provides integration with the Python programming language inside the RStudio IDE.
 
@@ -8,7 +8,7 @@ RStudio, prior to 2023, was an independent software provider for the ever-popula
 >
 > --- www.posit.co (Jan 2023)
 
-#### Steps {-}
+### Steps {-}
 
 1.  Navigate to [posit.co](https://posit.co/), alternatively [rstudio.com](https://rstudio.com/) redirects to the Posit website.
 2.  **Click** `Download RStudio` in the menu top right
@@ -17,19 +17,27 @@ RStudio, prior to 2023, was an independent software provider for the ever-popula
     *skip 1: Install R*
 5.  **Click** `Download RStudio Desktop for ..`
 
-##### Windows OS {-}
+#### Windows OS {-}
 
-##### MacOS {-}
+2.  Click on "Download RStudio Desktop for Windows"
+    *This prompt you to save RStudio-2023.x.x-xxx.exe file*
+3.  Locate and Double Click on the RStudio-2023.x.x-xxx.exe file.
+    - Click "Next" 3 times (accepting the defaults)
+    - Install should be complete
+    
+```{r 2011, echo=FALSE, fig.cap="\\label{fig:2011}Windows10 RStudio IDE Install"}
+knitr::include_graphics("images/02_015_rstudio_installer_win.png")
+```
+
+#### MacOS {-}
 
 Opening the .dmg file shows the archive that can be copied into the Applications folder simply by click-dragging the application onto the Applications folder shortcut.
 
-```{r 2011, echo=FALSE, fig.cap="\\label{fig:2011}RStudio IDE Install"}
+```{r 2012, echo=FALSE, fig.cap="\\label{fig:2012}MacOS RStudio IDE Install"}
 knitr::include_graphics("images/02_011_rstudio_installer_mac.png")
 ```
 
-##### Linux {-}
-
-### IDE Layout
+### IDE Layout {-}
 
 The RStudio Integrated Development Environment (IDE) is a powerful tool that can make your data analysis and coding tasks more manageable. One of the key features of the RStudio IDE is that it consists of four individual panes, each containing parts of the total environment. This makes it easier for you to navigate your coding and analysis tasks.
 
@@ -97,9 +105,9 @@ Overall, the *Environment* tab is a helpful feature of RStudio that can save you
 knitr::include_graphics("images/02_025_environment.png")
 ```
 
-### Usage .. Running lines of code in RStudio
+### Usage  {-}
 
-#### Run from the editor (recommended)
+#### Run from the editor (recommended)  {-}
 
 1.  Type in the code in the Editor (top-left pane)
 2.  Put editor cursor anywhere on that line

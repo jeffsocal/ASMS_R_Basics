@@ -2,7 +2,7 @@
 
 Mass spectrometry (MS) is a powerful analytical method that can be used to determine the mass-to-charge ratio (m/z) of ions in a sample. Mass spectrometry data is generated from MS experiments and can be stored in various formats, including mzXML, mzML, and mzH5.
 
-### ProteoWizard {-}
+### ProteoWizard
 
 An open-source software suite that provides a collection of open-source, cross-platform software libraries and tools for extracting raw mass spectrometry data from from various instrument vendor formats and converting it to the formats listed below.
 
@@ -10,7 +10,9 @@ An open-source software suite that provides a collection of open-source, cross-p
 >
 > [proteowizard.sourceforge.io/](https://proteowizard.sourceforge.io/)
 
-### mzXML {-}
+---
+
+### mzXML
 
 mzXML is an open XML-based format for encoding MS data. It was developed by the Seattle Proteome Center and is widely used in the mass spectrometry community. mzXML files contain raw MS data, as well as metadata describing the instrument parameters used to acquire the data. mzXML files can be processed using a variety of software tools, such as the Trans-Proteomic Pipeline and ProteoWizard.
 
@@ -20,7 +22,9 @@ The mzXML format has been shown to be effective in handling data from a wide ran
 > _Pedrioli, P.G., Eng, J.K., Hubley, R., Vogelzang, M., Deutsch, E.W., Raught, B., Pratt, B., Nilsson, E., Angeletti, R.H., Apweiler, R. and Cheung, K., 2004. A common open representation of mass spectrometry data and its application to proteomics research. Nature biotechnology, 22(11), pp.1459-1466._
 >
 
-### mzML {-}
+---
+
+### mzML
 
 The mzML format is another open XML-based format for MS data, developed by the Proteomics Standards Initiative. It is designed to be more flexible than mzXML and includes more detailed metadata. mzML files can be processed using software tools such as OpenMS and mzR.
 
@@ -30,10 +34,14 @@ The mzML format allows for more detailed and comprehensive data storage than mzX
 > _Martens, L., Chambers, M., Sturm, M., Kessner, D., Levander, F., Shofstahl, J., Tang, W.H., Römpp, A., Neumann, S., Pizarro, A.D. and Montecchi-Palazzi, L., 2011. mzML—a community standard for mass spectrometry data. Molecular & cellular proteomics, 10(1), p.R110. 000133._
 >
 
-### mzMLb {-}
+---
+
+### mzMLb
 
 Recently proposed as a new file format based on HDF5 and NetCDF4 standards, mzMLb is faster and more flexible than existing approaches while preserving the XML encoding of metadata. Additionally, it is optimized for both read/write speed and storage efficiency. The format has a reference implementation provided within the ProteoWizard toolkit.
 
 >
 > _Bhamber, Ranjeet S., et al. "mzMLb: A future-proof raw mass spectrometry data format based on standards-compliant mzML and optimized for speed and storage requirements." Journal of proteome research 20.1 (2020): 172-183._
 >
+
+---

@@ -1,11 +1,11 @@
-### Tidyproteomics {-}
+### Tidyproteomics
 
 The tidyproteomics R package is a tool that provides a set of functions to preprocess and analyze proteomics data using the tidy data framework. This package is built on top of the tidyverse and Bioconductor packages, which are widely used in the R community for data manipulation and analysis.
 
 \
 
 +-----------------------------------------------------+-------------------------------------------------------------------+
-| ![](images/90_logo_tidyproteomics.png){height="68"} | [WEB manual](https://jeffsocal.github.io/tidyproteomics/)         |
+| ![](images/90_logo_tidyproteomics.png){height="99"} | [WEB manual](https://jeffsocal.github.io/tidyproteomics/)         |
 |                                                     |                                                                   |
 |                                                     | [github](https://github.com/jeffsocal/tidyproteomics)             |
 |                                                     |                                                                   |
@@ -138,3 +138,5 @@ data_proteins <- data_proteins %>%
 ```
 
 Overall, the tidyproteomics package provides a useful set of tools for preprocessing and analyzing proteomics data using the tidy data framework in R. There are several more workable examples in the online documentation.
+
+---

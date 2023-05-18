@@ -4,7 +4,7 @@ Sometimes in the course of data analysis we have to make decisions or branch dec
 The logic of how this done within the programming language is called `flow control`. More generally, `flow control` is an essential aspect of programming that allows you to control the order in which statements and functions are executed.
 
 
-### For Loop {-}
+### For Loop
 In R, a loop is a programming construct that allows you to execute a block of code repeatedly. Loops are used when you want to perform a set of instructions repeatedly, such as when you want to iterate over a set of data and perform a particular operation on each element.
 
 There are several types of loops available in R, including the `for` loop, the `while` loop, and the `repeat` loop.
@@ -30,7 +30,7 @@ for (num in numbers) {
 ```
 This code first creates some example data, numbers 1 to 5 increasing by 1, then we go every number and `print` the value. Translating the synatx to english we can say `for` every `num` in `numbers` vector, `print` the `num`. 
 
-### If-Else {-}
+### If-Else
 
 When we have data that needs to be treated based on a condition of the data, we have a branching decision. In this case, our flow control is an If-Else statement. In plain english, `if` a condition is met, we do something, `else` we do something else. The brackets between these statements determine what is done.
 

@@ -1,6 +1,6 @@
 ## Alternatives
 
-### lattice {-}
+### lattice
 The Lattice package is an R package that is used for plotting graphs, and is based on the grid graphics system. The package provides a high-level interface to grid graphics, which makes it easy to create complex visualizations with an emphasis on multivariate data. It is designed to meet most typical graphics needs with minimal tuning, but can also be easily extended to handle most nonstandard requirements.
 
 Trellis Graphics, originally developed for S and S-PLUS at the Bell Labs, is a framework for data visualization developed by *R. A. Becker, W. S. Cleveland, et al, extending ideas presented in Cleveland’s 1993 book Visualizing Data*. The Lattice API is based on the original design in S, but extends it in many ways. 
@@ -21,7 +21,7 @@ p54 <- densityplot(~ log10(int) | class, data = tbl_mz, main = "Density Plot")
 grid.arrange(p51, p52, p53, p54, nrow = 2)
 ```
 
-### plotly {-}
+### plotly
 Plotly is an open-source data visualization library that allows you to create interactive visualizations in R [plotly.com/r/](https://plotly.com/r/). It offers a wide range of graphs and charts, including line plots, scatter plots, area charts, bar charts, error bars, box plots, histograms, heatmaps, subplots, plots with multiple-axes, 3D plots, and more. The package is built on top of **htmlwidgets**, which means that you can easily embed your visualizations in web applications or other HTML documents.
 
 Plotly also nativity supports many data science languages such as R, Python, Julia, Java-script, MATLAB and F#.

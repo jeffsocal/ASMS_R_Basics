@@ -35,6 +35,14 @@ More specifically, tidy data should have the following properties:
 
 By organizing data in a tidy format, it becomes easier to analyze and visualize the data using tools like R and Python. Additionally, tidy data is more robust and less prone to errors than other types of data formats, making it easier to work with and share with others.
 
+\
+
++---------------------------------+---------------------------------------+
+| ![](images/01.png){height="68"} | \@ref(online) **Online Cheat-sheets** |
++---------------------------------+---------------------------------------+
+
+\
+
 Tidy data visualized:
 ```{r 7202, echo=FALSE, fig.cap="\\label{fig:7202}Visualizing tidy data concepts.", fig.align='center'}
 knitr::include_graphics("images/07_002_tidy-data-vis.png")

@@ -2,7 +2,7 @@
 When working with R, it is important to understand the basics and terms so that you can ask the right questions when seeking help. In the next two sections, we will provide an overview of these concepts to ensure that you have a solid foundation. It is worth noting that while googling your issue can be a great starting point, it is also important to seek out additional resources to help you solve your problem. For instance, you might consider joining an R community or forum where you can ask questions and receive feedback from other users. Additionally, many universities and organizations offer R workshops or training programs that can help you build your skills and knowledge. By taking advantage of these resources, you can develop a deeper understanding of R and become more confident in your ability to use it for data analysis and visualization.
 
 
-### Online {-}
+### Online
 In addition to Googling to find how to do something in R, there are several online resources available for individuals learning R programming and needing assistance with concepts or coding issues. These resources include CRAN, Bioconductor, RStudio Community, R-bloggers, and Stack Overflow. Each of these resources offers different benefits, such as packages, forums, blogs, and Q&A communities, to help R users.
 
 #### Locating available packages (pre-built algorithms) {-}
@@ -11,6 +11,7 @@ In addition to Googling to find how to do something in R, there are several onli
  
  - Bioconductor: [bioconductor.org/](https://bioconductor.org/)
 
+ - RforMassSpectrometry: [rformassspectrometry.org/](https://www.rformassspectrometry.org/)
 
 #### Ways to ask for help, or find answers to a similar question {-}
 
@@ -47,7 +48,7 @@ In addition to Googling to find how to do something in R, there are several onli
     - working with date and time: [lubridate.tidyverse.org/](https://lubridate.tidyverse.org/)
 
 
-### In Print {-}
+### In Print
 R books in print are becoming increasingly popular due to the growing demand for R programming and data analysis. These books offer several benefits that make them an excellent resource for anyone who wants to learn R programming or improve their data analysis skills. One of the key advantages of R books in print is that they are easy to read and navigate. The authors of these books take into consideration that not everyone who reads their books is an expert in programming. They use simple language and examples to explain concepts from the basics, making it easy for readers to understand. They can be used as a quick reference guide when working on a project or when facing a programming challenge. R books in print are cost-effective. While online resources are free, they are not always reliable, and it can be time-consuming to find the information you need. R books in print, on the other hand, are written and edited by experts who have years of experience in the field making them a reliable source of information.
 
 ---
@@ -78,7 +79,7 @@ Some of the popular books in the Use R! collection include:
 In summary, the Use R! collection of print books is a valuable resource for anyone looking to learn or improve their skills in the R programming language. With a wide range of topics and authors, there is something for everyone in this collection.
 
 
-### Organizations {-}
+### Organizations
 Many R organizations offer individuals an opportunity for training and support, networking, access to resources, and help building a reputation. These benefits make R organizations a valuable resource to consider for both individuals and organizations using R for statistical computing and graphics.
 
 \

@@ -4,7 +4,7 @@ R Shiny is an R package that allows users to create interactive web applications
 
 The benefits of using R Shiny include creating powerful data-driven web applications with ease and providing a user-friendly interface for data analysis. R Shiny is widely used in various industries, including finance, healthcare, and e-commerce. 
 
-### How to Create an R Shiny Application in the RStudio IDE {-}
+### Creating {-}
 
 Creating an R Shiny application is relatively easy, and it can be done in the RStudio IDE. Here are the steps to follow:
 
@@ -29,7 +29,7 @@ Creating an R Shiny application is relatively easy, and it can be done in the RS
     `runApp("path/to/your/app.R")`
     
 
-### Example of an R Shiny Application for Plotting Points {-}
+### Example {-}
 
 Here's an example of an R Shiny application that allows users to plot points on a graph:
 

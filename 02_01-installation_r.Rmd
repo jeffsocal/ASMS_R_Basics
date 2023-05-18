@@ -26,7 +26,7 @@ In this book we will be utilizing the RStudio integrated development environment
 
 The underlying "engine" for R programming language can be downloaded from [The R Project for Statistical Computing](https://www.r-project.org/). R is an open-source implementation of the S statistical computing language originally developed at Bell Laboratories. Both langauges contain a variety of statistical and graphical techniques, however, R has been continually extended by professional, academic and amateur contributors and remains the most active today. With the advent of open-source sharing platforms such as GitHub, R has become increasingly popular among data scientists because of its ease of use and flexibility in handling complex analyses on large datasets. Additionally, one of R's strengths is the ease with which well-designed publication-quality plots can be produced.
 
-#### Steps {-}
+### Steps {-}
 
 1.  Navigate to [The R Project](https://www.r-project.org/)
 2.  Click on [CRAN](https://cran.r-project.org/mirrors.html) under Download, left-hand side
@@ -36,7 +36,24 @@ The underlying "engine" for R programming language can be downloaded from [The R
 
 #### Windows OS {-}
 
-Click on `base`
+1.  Click on `base` Binaries for base distribution. This is what you want ...
+2.  Click on "Download R-4.x.x for Windows"
+    *This prompt you to save R-4.x.x-win.exe file*
+3.  Locate and Double Click on the R-4.x.x-win.exe file.
+    - In the popup select your language
+    
+```{r 2001, echo=FALSE, fig.cap="\\label{fig:2001}Windows10 R Installer"}
+knitr::include_graphics("images/02_005_r_installer_win.png")
+```
+
+4.  Click "OK"
+    - Click "Next" 3 times, accept defaults for Startup options
+    - Click "Next" 3 more times
+    - Install should be complete
+
+```{r 2002, echo=FALSE, fig.cap="\\label{fig:2002}Windows10 R Installer"}
+knitr::include_graphics("images/02_006_r_installer_win.png")
+```
 
 #### MacOS {-}
 
@@ -45,10 +62,6 @@ Click on `base`
 
 After downloading, double-click the installer and follow the instructions
 
-```{r 2001, echo=FALSE, fig.cap="\\label{fig:2001}Mac Installer"}
+```{r 2003, echo=FALSE, fig.cap="\\label{fig:2003}Mac R Installer"}
 knitr::include_graphics("images/02_001_r_installer_mac_m1.png")
 ```
-
-#### Linux {-}
-
-Click on your distribution and follow the instructions provided. Most of these instructions require knowledge of the Terminal and command line interface for \*unix systems.

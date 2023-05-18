@@ -2,7 +2,7 @@
 
 GitHub is an online platform that provides version control and collaboration features for software development projects. It is widely used by developers to store and manage their code repositories, track changes made to code over time, and collaborate with others on projects. It is a powerful tool that simplifies the process of managing code and makes it easier for developers to work together. A key benefit of RStudio IDE is that it has built-in support for version control systems like GitHub, which makes it easy to manage and share code with others.
 
-### How to Use GitHub {-}
+### Sharing {-}
 
 To use GitHub within RStudio IDE, you need to first create a GitHub account and set up a repository. Once you have created a repository, you can follow these steps to use it within RStudio IDE:
 
@@ -11,7 +11,7 @@ To use GitHub within RStudio IDE, you need to first create a GitHub account and 
 3. Enter the URL of your GitHub repository and choose a project directory.
 4. Click "Create Project" to create a new RStudio project that is linked to your GitHub repository.
 
-### How to Share A GitHub Repository {-}
+### Sharing {-}
 
 Sharing code with others using GitHub and RStudio IDE is a straightforward process. Once you have set up your GitHub repository and linked it to your RStudio project, you can follow these steps to share code with others:
 

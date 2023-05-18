@@ -2,7 +2,7 @@
 
 Packrat is an R package that provides a way to manage R package dependencies for projects. It is a powerful tool for reproducible research, as it allows you to create a local library of packages specific to a project that can be shared with collaborators or moved to another machine. With Packrat, packages used in a project are kept at a specific version, ensuring that the same results can be obtained regardless of the version of the package used.
 
-### Initiating a Packrat Project {-}
+### Initiating {-}
 
 To initiate a Packrat project, you need to run the `packrat::init()` function in your R console. This will create a `packrat` directory in your project folder, which will contain all the necessary files and information for Packrat to manage the package dependencies for your project.
 
@@ -12,7 +12,7 @@ packrat::init()
 
 ```
 
-### Installing a Package into the Project Library {-}
+### Installing {-}
 
 To install a package into the project-specific library, you can use the `packrat::install.packages()` function. Packrat will automatically detect package dependencies and install them as well.
 
@@ -21,7 +21,7 @@ packrat::install.packages("dplyr")
 
 ```
 
-### Loading a Package from the Project Library {-}
+### Loading {-}
 
 To load a package from the project library, you simply use the `library()` function as usual. Packrat will ensure that the correct versions are used.
 
@@ -30,7 +30,7 @@ library(dplyr)
 
 ```
 
-### Updating a Package in the Project Library {-}
+### Updating {-}
 
 To update a package in the project library, you can use the `packrat::update.packages()` function. Packrat will update the package and all its dependencies.
 

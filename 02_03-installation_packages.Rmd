@@ -1,10 +1,8 @@
-## Packages
-
-### What are R Packages?
+## R Packages
 
 R packages are a powerful tool in the R programming language that allow you to easily use code written by others in your own projects. They can save a lot of time and effort in the development of your own code, as they often provide new functions to deal with specific problems. For example, the popular ggplot2 package provides a variety of functions to help you create beautiful visualizations, while the mzR package allows you to read mass spectrometry data files with ease. Additionally, the twitteR package is a great tool for accessing Twitter data and conducting analysis.
 
-### Where to get R Packages
+### Exploring
 
 It's worth noting that packages can be written by anyone, which means that their quality can vary widely. While there are many high-quality packages available, it's important to be wary of randomly coming across packages on the internet. To ensure that you're working with trustworthy code, it's a good idea to stick with well-established and frequently updated packages from reputable sources such as the CRAN (The Comprehensive R Archive Network) and Bioconductor repositories. By doing so, you can ensure that your code is reliable, efficient, and secure.
 
@@ -18,7 +16,7 @@ Another important consideration when working with R packages is version control.
 
 Overall, R packages are an essential tool for anyone working with R. By using established packages and following best practices when creating your own, you can ensure that your code is efficient, reliable, and easy to use. And by using version control, you can keep track of changes over time and collaborate effectively with others.
 
-### Installing R Packages
+### Installing
 
 When working with R, it is important to understand how to install packages. R packages are collections of functions, data, and documentation that extend the capabilities of R. Most R packages have binary versions available for direct installation with no additional steps required. Binary packages are pre-compiled and ready-to-use packages that are platform-specific. They can be installed with the `install.packages()` function in R.
 
@@ -30,14 +28,14 @@ When working with R, it is important to understand how to install packages. R pa
 
 \
 
-#### Installing from CRAN {-}
+#### CRAN {-}
 
 ```{r, eval=FALSE}
 # this installs all of the packages in the tidyverse collection
 install.packages('tidyverse')
 ```
 
-#### Installing from Bioconductor {-}
+#### Bioconductor {-}
 
 ```{r, eval=FALSE}
 # do this once to install the Bioconductor Package Manager
@@ -46,7 +44,7 @@ install.packages("BiocManager")
 BiocManager::install(c("mzR", "xcms", "MSstats", "MSnbase"))
 ```
 
-#### Installing from GitHub {-}
+#### GitHub {-}
 
 ```{r, eval=FALSE}
 # do this once to install the devtools package 
@@ -63,7 +61,7 @@ install_github("jeffsocal/tidyproteomics")
 
 \
 
-### Potential Gotchas
+### Gotchas {-}
 
 However, there are cases where a binary version of a package may not be available. This could be because the package is new or has just been updated. In such cases, the package may need to be compiled before it can be installed. Compiling a package involves converting the source code into machine-readable code that can be executed.
 
@@ -119,7 +117,7 @@ tbl %>%
 
 The **ggplot2** package stands out as the most advanced and comprehensive package for transforming tabulated data into meaningful and informative graphics. With its wide range of visualization tools, this package allows you to create expressive and compelling graphics that not only look great but also convey detailed information in a clear and concise manner. Apart from other visualization tools, **ggplot2** takes a layered approach to creating graphics, allowing for the additive layering of additional data, labels, legends, and annotations, which helps to provide a more comprehensive view of your analysis.
 
-```{r, fig.width=6, fig.height=3, fig.align='center'}
+```{r, fig.width=6, fig.height=2.5, fig.align='center'}
 tbl %>%
   mutate(int = rnorm(n(), mean = 1e5, sd=5e4),
          relative_int = int/max(int) * 100) %>%
@@ -135,4 +133,4 @@ The Tidyverse is widely used in the R community and is a valuable tool for any d
 
 ### MS Packages {-}
 
-This book, while providing a beginners level guide to R programming, also introduces several mass spectrometry-specific packages in many of the code examples. While these examples may only touch on some of their functions, the last chapter is dedicated to a more formal, albeit not comprehensive introduction to many of these packages. For example the \@ref(mzr) `mzR` package, which enables users to read and process mass spectrometry data, as well as the \@ref(xcms) `xcms` package, which is used for preprocessing and feature detection. Additionally, the book introduces the \@ref(msnbase) `MSnbase` package, which provides a framework for quantitative and qualitative analysis of mass spectrometry data, and the \@ref(mstats) `MSstats` package, which is used for statistical analysis of quantitative proteomics experiments. Lastly, the book covers the `tidyproteomics` package, which provides a collection of tools for analyzing post-analysis quantitative proteomics data using a framework similar to the `tidyverse`.
+This book, while providing a beginners level guide to R programming, also introduces several mass spectrometry-specific packages in many of the code examples. While these examples may only touch on some of their functions, the last chapter is dedicated to a more formal, albeit not comprehensive introduction to many of these packages. For example the \@ref(mzr) `mzR` package, which enables users to read and process mass spectrometry data, as well as the \@ref(xcms) `xcms` package, which is used for preprocessing and feature detection. Additionally, the book introduces the \@ref(msnbase) `MSnbase` package, which provides a framework for quantitative and qualitative analysis of mass spectrometry data, and the \@ref(msstats) `MSstats` package, which is used for statistical analysis of quantitative proteomics experiments. Lastly, the book covers the `tidyproteomics` package, which provides a collection of tools for analyzing post-analysis quantitative proteomics data using a framework similar to the `tidyverse`.

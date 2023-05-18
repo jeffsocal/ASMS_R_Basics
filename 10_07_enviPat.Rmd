@@ -1,4 +1,4 @@
-### enviPat {-}
+### enviPat
 **Isotope Pattern, Profile and Centroid Calculation for Mass Spectrometry**
 
 A new method (year 2022) for calculating theoretical isotope patterns in mass spectrometry. This method uses a treelike structure to derive sets of subisotopologues for each element in a molecule. By doing so, it allows for early pruning of low-probability isotopologues and the detection of the most probable isotopologue. The method was validated in a large-scale benchmark simulation.

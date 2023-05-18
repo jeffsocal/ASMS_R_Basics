@@ -4,7 +4,7 @@ In R, packages are collections of R functions, data, and compiled code that can 
 
 Creating a package in R is a straightforward process, and RStudio IDE provides several tools to simplify the package development process. Packages are a way of organizing your code and data into a single, self-contained unit that can be easily shared and distributed with other R users.
 
-### Creating a Package in RStudio {-}
+### Creating {-}
 
 To create a package in RStudio, follow these simple steps:
 
@@ -34,7 +34,7 @@ say_hello <- function() {
 2. Build the package by running "Build" -> "Build & Reload" from the "Build" tab. This will compile the package code and create a binary package file (.tar.gz) in the "build/" directory.
 3. Finally, install the package by running "Install and Restart" from the "Build" tab. This will install the package on your local machine, making it available for use.
 
-### Using the Package {-}
+### Using {-}
 
 Once the package is installed, you can load it into your R session using the `library()` function. Here's an example:
 

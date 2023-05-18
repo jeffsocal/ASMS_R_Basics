@@ -2,7 +2,7 @@
 
 Notebooks in RStudio IDE are interactive documents that allow developers to create and share code, visualizations, and narrative text in a single document. R Notebooks provide an intuitive interface for data analysis, making it easy to explore data, create models, and communicate results.
 
-### Using Notebooks {-}
+### Creating {-}
 
 To use notebooks in RStudio IDE, follow these steps:
 
@@ -19,7 +19,7 @@ With R Notebooks, it is also possible to:
 - Use LaTeX to display formulas: You can use LaTeX syntax to display mathematical formulas in your notebooks.
 - Use HTML to display interactive widgets: You can use HTML code to create interactive widgets that allow users to interact with your code and data.
 
-### Sharing A Notebook {-}
+### Sharing {-}
 
 Sharing your notebook project in RStudio IDE is a straightforward process. By sharing your projects, you can collaborate with other data scientists and benefit from the insights and expertise of your colleagues. Here are the steps to share your projects:
 

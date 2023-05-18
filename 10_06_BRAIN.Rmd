@@ -1,4 +1,4 @@
-### BRAIN {-}
+### BRAIN
 **Baffling Recursive Algorithm for Isotope distributioN calculations**
 
 R BRAIN is an isotopic abundance calculator implemented in R programming language and is especially useful for chemists and researchers who deal with complex molecules and need to calculate their isotopic composition accurately. In addition, it has a handy function for calculating the mass directly from an amino acid sequence.
@@ -56,3 +56,5 @@ plot(x = lst_isotopes$masses,
      y = lst_isotopes$isoDistr / max(lst_isotopes$isoDistr) * 100, 
      xlab='Mass', ylab='Relative abundance', type = 'h')
 ```
+
+---
