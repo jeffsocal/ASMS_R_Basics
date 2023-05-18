@@ -19,6 +19,8 @@ fig:7206
 tab:unnamed-chunk-119
 fig:10001
 introduction-to-r
+alternatives
+resources
 installation
 r-interpreter
 rstudio
@@ -30,7 +32,7 @@ what-are-r-packages
 where-to-get-r-packages
 installing-r-packages
 potential-gotchas
-packages-utilized-in-this-book
+for-this-book
 r-studio-projects
 creating
 organizing

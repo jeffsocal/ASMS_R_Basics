@@ -4,13 +4,13 @@ The tidyproteomics R package is a tool that provides a set of functions to prepr
 
 \
 
-+---------------------------------+------------------------------------------------------------------------------------+
-| ![](images/05.png){height="68"} | **Docs** | [github](https://jeffsocal.github.io/tidyproteomics/)                   |
-|                                 |                                                                                    |
-|                                 | **Code** | [github](https://github.com/jeffsocal/tidyproteomics)                   |
-|                                 |                                                                                    |
-|                                 | **App** | [tidyproteomics](https://bioinformatics.pel.caltech.edu/tidyproteomics/) |
-+---------------------------------+------------------------------------------------------------------------------------+
++-----------------------------------------------------+-------------------------------------------------------------------+
+| ![](images/90_logo_tidyproteomics.png){height="68"} | [WEB manual](https://jeffsocal.github.io/tidyproteomics/)         |
+|                                                     |                                                                   |
+|                                                     | [github](https://github.com/jeffsocal/tidyproteomics)             |
+|                                                     |                                                                   |
+|                                                     | [WEB App](https://bioinformatics.pel.caltech.edu/tidyproteomics/) |
++-----------------------------------------------------+-------------------------------------------------------------------+
 
 \
 

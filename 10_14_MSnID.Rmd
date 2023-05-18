@@ -1,0 +1,17 @@
+### MSnID {-}
+
+This tool extracts MS/MS ID data from mzIdentML files (using the mzID package) or text files. After collating search results from multiple datasets, it assesses identification quality and optimizes filtering criteria to achieve the maximum number of identifications while not exceeding a specified false discovery rate. It also includes utilities to explore MS/MS results and assess missed and irregular enzymatic cleavages, mass measurement accuracy, and other factors.
+
+\
+
++---------------------------------+----------------------------------------------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | [PDF manual](https://www.bioconductor.org/packages/release/bioc/manuals/MSnID/man/MSnID.pdf)             |
+|                                 |                                                                                                          |
+|                                 | [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/MSnID.html)                       |
++---------------------------------+----------------------------------------------------------------------------------------------------------+
+
+\
+
+`MSnID` is a powerful tool for anyone working with MS/MS data. It not only extracts the necessary information from files, but it also helps to ensure that the quality of the results is high. By optimizing filtering criteria, `MSnID` can provide the maximum number of identifications possible without exceeding a specified false discovery rate.
+
+Additionally, `MSnID` includes various utilities that allow users to explore MS/MS results and assess factors that may affect the accuracy of the data. For example, it can identify missed and irregular enzymatic cleavages, and it can check mass measurement accuracy.

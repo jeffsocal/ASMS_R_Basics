@@ -7,81 +7,80 @@
 #
 # Data Wrangling Exercises
 
-# 1. Download *Bacterial Metabolite Data (long)* to use as an example data file.
+# 1. Download the data.
 
-url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_long.csv"
-download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_long.csv")
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-Metabolites_dose-simicillin_messy.xlsx"
+download.file(url, destfile = "./data/bacterial-Metabolites_dose-simicillin_messy.xlsx")
 
 
-# 2. Read in the dataset .csv using the `tidyverse` set of packages.
+# 2. Read in the messy bacteria data and store it as a variable.
 
 library(tidyverse)
 library(readxl)
 
-tbl_met <- "./data/bacterial-metabolites_dose-simicillin_long.xlsx" %>% read_xlsx()
+tbl_bac <- "data/bacterial-Metabolites_dose-simicillin_messy.xlsx" %>% read_excel(col_names = TRUE)
 
 
-# 3. How many rows does the table contain? Number of columns? What are the column 
-#    names?
+# *In all proceeding exercises, pipe results from previous exercise into current 
+#    exercise creating a single lone pipe for data processing*
 
-tbl_met %>% nrow()
-tbl_met %>% ncol()
-tbl_met %>% colnames()
+# 3. Separate `Culture` column containing culture and dose into `culture` and 
+#    `dose_mg_ml` columns.
 
-
-# 4. Tidy the data such that culture is separated into *Organism <chr>* and 
-#    *Dose_mg <dbl>*. Reshape the *Time_* variables such that there is one 
-#    per row and we have a *Time_min <dbl>* and *Abundance <dbl>* variable. 
-#    Store the wrangled table as a new object.
-
-tbl_met_tidy <- tbl_met %>% 
-  separate(Culture, into = c('Organism', 'Dose_mg'), sep="dose:") %>%
-  mutate(Dose_mg = str_extract(Dose_mg, "[0-9]+") %>% as.numeric()) %>%
-  pivot_longer(matches('Time'), names_to = 'Time_min', values_to = 'Abundance') %>%
-  mutate(Time_min = str_extract(Time_min, "[0-9]+") %>% as.numeric()) %>%
-  mutate(Time_min = ifelse(Time_min == 2, Time_min * 60, Time_min))
+tbl_bac %>%
+  separate(Culture, c("culture", "dose_mg_ml"), sep = " dose--")
 
 
-# 5. Write the *tidy* file to a .csv.
+# 4. Make `dose_mg_ml` column numeric by removing the text and change the column 
+#    data type from character to numeric.
 
-tbl_met_tidy %>% write_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
-
-
-# 6. Find the initial conditions for *glutamate*.
-
-tbl_met_tidy %>% 
-  filter(Metabolite == 'glutamate' & Time_min == 0 & Dose_mg == 0)
+tbl_bac %>%
+  separate(Culture, c("culture", "dose_mg_ml"), sep = " dose--") %>%
+  mutate(dose_mg_ml = gsub("-mg/ml","", dose_mg_ml)) %>%
+  mutate(dose_mg_ml = as.numeric(dose_mg_ml))
 
 
-# 7. Find the average initial condition for each *Metabolite*.
+# 5. Pivot the table from wide to long creating `metabolite`, `time_hr` & `abundance` columns.
 
-tbl_met_tidy %>% 
-  filter(Time_min == 0 & Dose_mg == 0) %>%
-  group_by(Metabolite) %>% 
-  summarise(Abundance_avg = mean(Abundance))
-
-
-# 8. Convert *Abundance* to *Log10 Abundance* and add it as a new column, 
-#    keeping only 3 significant figures.
-
-tbl_met_tidy <- tbl_met_tidy %>%
-  mutate(Abundance_log10 = signif(log10(Abundance), 3))
+tbl_bac %>%
+  separate(Culture, c("culture", "dose_mg_ml"), sep = " dose--") %>%
+  mutate(dose_mg_ml = gsub("-mg/ml","", dose_mg_ml)) %>%
+  mutate(dose_mg_ml = as.numeric(dose_mg_ml)) %>%
+  pivot_longer(cols = 4:13, names_to = "metabolite_time", values_to = "abundance") %>%
+  separate(metabolite_time, c("metabolite","time_hr"), sep="_runtime_")
 
 
-# 9. Create a summary table for the delta change in *Metabolite log10 Abundance*
-#    between initial conditions and the last time point, for each *Organism* and
-#    *Dose_mg*, arranged by *Organism*. See example below.
+# 6. Make sure `time_hr` contains just hours and not a mixture of days and hours.
 
-library(glue)
+tbl_bac %>%
+  separate(Culture, c("culture", "dose_mg_ml"), sep = " dose--") %>%
+  mutate(dose_mg_ml = gsub("-mg/ml","", dose_mg_ml)) %>%
+  mutate(dose_mg_ml = as.numeric(dose_mg_ml)) %>%
+  pivot_longer(cols = 4:13, names_to = "metabolite_time", values_to = "abundance") %>%
+  separate(metabolite_time, c("metabolite","time_hr"), sep="_runtime_") %>%
+    mutate(
+    time_hr = case_when(
+      grepl("hr", time_hr, ignore.case = TRUE) ~ as.numeric(gsub("hr", "", time_hr)),
+      grepl("day", time_hr, ignore.case = TRUE) ~ as.numeric(gsub("day", "", time_hr)) * 24
+    )
+  )
 
-tbl_met_tidy %>%
-  filter(Time_min %in% range(Time_min)) %>%
-  select(-Abundance) %>%
-  mutate(Time_min = glue('Time_{Time_min}min')) %>%
-  pivot_wider(names_from = Time_min, values_from = 'Abundance_log10') %>%
-  mutate(Delta_log10_Abundance = Time_0min - Time_120min) %>%
-  select(!matches('Time')) %>%
-  pivot_wider(names_from = 'Metabolite', values_from = 'Delta_log10_Abundance') %>%
-  arrange(Organism)
+
+# 7. Remove the `User` column. See the cheat-sheet here: 
+#    https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf
+
+tbl_bac %>%
+  separate(Culture, c("culture", "dose_mg_ml"), sep = " dose--") %>%
+  mutate(dose_mg_ml = gsub("-mg/ml","", dose_mg_ml)) %>%
+  mutate(dose_mg_ml = as.numeric(dose_mg_ml)) %>%
+  pivot_longer(cols = 4:13, names_to = "metabolite_time", values_to = "abundance") %>%
+  separate(metabolite_time, c("metabolite","time_hr"), sep="_runtime_") %>%
+    mutate(
+    time_hr = case_when(
+      grepl("hr", time_hr, ignore.case = TRUE) ~ as.numeric(gsub("hr", "", time_hr)),
+      grepl("day", time_hr, ignore.case = TRUE) ~ as.numeric(gsub("day", "", time_hr)) * 24
+    )
+  ) %>%
+  select(-User)
 
 ```

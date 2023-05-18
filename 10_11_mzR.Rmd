@@ -1,0 +1,19 @@
+### mzR {-}
+
+The `mzR` package is a powerful tool for analyzing large raw data files in proteomics research. It offers a direct interface to the [proteowizard](http://proteowizard.sourceforge.net/) code base, which is a widely-used software framework for mass spectrometry data analysis. By leveraging a substantial proportion of *pwiz*'s C/C++ code, `mzR` is able to provide fast and efficient parsing of these complex data files.
+
+\
+
++---------------------------------+---------------------------------------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | [WEB tutorial](https://lgatto.github.io/2020-02-17-RProt-Berlin/raw-ms-data-mzr-and-msnbase.html) | 
+|                                 |                                                                                                   |
+|                                 | [PDF manual](https://bioconductor.org/packages/release/bioc/manuals/mzR/man/mzR.pdf)              |
+|                                 |                                                                                                   |
+|                                 | [Bioconductor](https://bioconductor.org/packages/release/bioc/html/mzR.html)                      |
+|                                 |                                                                                                   |
+|                                 | *Nat Biotech* 2012, 30(10), 918–920                                                               |
++---------------------------------+---------------------------------------------------------------------------------------------------+
+
+\
+
+In addition to its parsing capabilities, `mzR` includes a range of useful functions for working with mass spectrometry data. This package supports a wide variety of file formats, and provides functions for reading, writing, and manipulating data in these formats. Furthermore, `mzR` includes features for working with tandem mass spectrometry (MS/MS) data, including functions for spectral processing and peak picking.

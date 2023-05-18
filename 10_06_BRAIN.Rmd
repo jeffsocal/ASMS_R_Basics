@@ -1,0 +1,58 @@
+### BRAIN {-}
+**Baffling Recursive Algorithm for Isotope distributioN calculations**
+
+R BRAIN is an isotopic abundance calculator implemented in R programming language and is especially useful for chemists and researchers who deal with complex molecules and need to calculate their isotopic composition accurately. In addition, it has a handy function for calculating the mass directly from an amino acid sequence.
+
+\
+
++---------------------------------+--------------------------------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | [Bioconductor](https://bioconductor.org/packages/release/bioc/manuals/BRAIN/man/BRAIN.pdf) |
+|                                 |                                                                                            |
+|                                 | *Analytical Chemistry* 2013, 85(4), 1991-1994                                              |
++---------------------------------+--------------------------------------------------------------------------------------------+
+
+\
+
+#### Installation {-}
+```{r, eval=FALSE}
+BiocManager::install("BRAIN")
+```
+
+#### Useage {-}
+```{r, message=FALSE, warning=FALSE}
+library(BRAIN)
+
+# Human insulin amino acid sequence
+str_seq <- "MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN"
+
+# get a list-object of atoms
+lst_atm <- getAtomsFromSeq(str_seq) 
+```
+
+Calculate the average mass.
+```{r}
+calculateAverageMass(lst_atm)
+```
+
+Calculate the monoisotopic mass.
+```{r}
+calculateMonoisotopicMass(lst_atm)
+```
+
+Calculate the isotopic abundances (probabilities) mass.
+```{r, fig.width=6, fig.height=3, fig.align='center'}
+lst_isotopes <- useBRAIN(lst_atm, nrPeaks = 20)
+
+plot(lst_isotopes$masses, lst_isotopes$isoDistr, xlab='Mass', ylab='Probability', type = 'h')
+```
+Calculate the isotopic abundances (probabilities) mass for a metabolite [C100H200S2Cl5].
+```{r, fig.width=6, fig.height=3, fig.align='center'}
+
+lst_atm <- list(C=100, H=200, S=2, Cl=5)
+
+lst_isotopes <- useBRAIN(lst_atm, nrPeaks = 13)
+
+plot(x = lst_isotopes$masses, 
+     y = lst_isotopes$isoDistr / max(lst_isotopes$isoDistr) * 100, 
+     xlab='Mass', ylab='Relative abundance', type = 'h')
+```

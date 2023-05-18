@@ -1,0 +1,18 @@
+### MSnbase {-}
+
+Often, the full access to raw data provides a complete sense of control. However, there are times when attempting to achieve mundane tasks can be extremely tedious and repetitive. This is where the concept of abstraction comes in. It is unnecessary to be aware of every detail that is exposed by mzR to work with and manipulate raw data. This is where `MSnbase` and the `MSnExp` data structure come in. These tools provide a smoother and more efficient approach to handle and annotate raw data.
+
+\
+
++---------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | [WEB tutorial](https://bioconductor.org/packages/release/bioc/vignettes/MSnbase/inst/doc/v05-MSnbase-development.html) |
+|                                 |                                                                                                                        |
+|                                 | [PDF manual](https://bioconductor.org/packages/release/bioc/manuals/MSnbase/man/MSnbase.pdf)                           |
+|                                 |                                                                                                                        |
+|                                 | [Bioconductor](https://bioconductor.org/packages/release/bioc/html/MSnbase.html)                                       |
+|                                 |                                                                                                                        |
+|                                 | *Bioinformatics* 2012, 28, 288-289.                                                                                    |
++---------------------------------+------------------------------------------------------------------------------------------------------------------------+
+
+\
+

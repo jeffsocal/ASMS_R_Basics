@@ -1,4 +1,3 @@
-
 ## Commercial
 
 Accessing mass spectrometry data has some barriers due to vendors proprietary file formats. In recent years, vendors have been providing software development kits (SDKs) that allow programmers to provide direct access to the raw data. This is essential when developing fundamental workflows that require such data and also can enable analysis tools to bypass sometimes time consuming file format conversions to open formats. There are some means to access such raw data through R, allowing end-to-end pipelines to be developed directly from vendor data.

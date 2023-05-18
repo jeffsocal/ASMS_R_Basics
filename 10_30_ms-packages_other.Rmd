@@ -1,0 +1,39 @@
+### AssayR {-}
+
+*Wills, Jimi, Joy Edwards-Hicks, and Andrew J. Finch. "AssayR: a simple mass spectrometry software tool for targeted metabolic and stable isotope tracer analyses." Analytical chemistry 89.18 (2017): 9616-9619.*
+
+- [WEB tutorial](https://bioinformaticshome.com/db/tool/AssayR)
+
+- [WEB manual](https://gitlab.com/jimiwills/assay.R/-/blob/master/README.md)
+
+`AssayR` is an R package that tailors peak detection for each metabolite in high resolution wide-scan liquid chromatography-mass spectrometry data sets. It integrates peak areas for all isotopologues and outputs extracted ion chromatograms, stacked bar charts, and a .csv data file. `AssayR` provides easy and robust targeted metabolite and stable isotope analyses on wide-scan data sets from high resolution mass spectrometers, and is shown to provide more accurate and robust quantitation than XCMS.
+
+### DEqMS {-}
+
+*Zhu, Yafeng, et al. "DEqMS: a method for accurate variance estimation in differential protein expression analysis." Molecular & Cellular Proteomics 19.6 (2020): 1047-1057.*
+
+- [PDF manual](https://www.bioconductor.org/packages/release/bioc/manuals/DEqMS/man/DEqMS.pdf)
+
+- [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/DEqMS.html)
+
+`DEqMS` is built on top of Limma, which assumes the same prior variance for all genes. However, protein abundance estimates in proteomics depend on the number of peptides/PSMs quantified, with proteins quantified by multiple peptides or PSMs being more accurately measured. To achieve better accuracy, the `DEqMS` package estimates different prior variances for proteins quantified by different numbers of PSMs/peptides. This package is suitable for analyzing both label-free and labelled proteomics data.
+
+### MS-EmpiRe {-}
+
+*Ammar, Constantin, et al. "MS-EmpiRe Utilizes Peptide-level Noise Distributions for Ultra-sensitive Detection of Differentially Expressed Proteins [S]." Molecular & Cellular Proteomics 18.9 (2019): 1880-1892.*
+
+- [Github](https://github.com/zimmerlab/MS-EmpiRe)
+
+`MS-EmpiRe` is a new method for mass spectrometry based proteomics that explicitly accounts for the noise underlying peptide fold changes. It derives data set-specific, intensity-dependent empirical error fold change distributions, which are used for individual weighing of peptide fold changes to detect differentially expressed proteins (DEPs). `MS-EmpiRe` doubles the number of correctly identified DEPs compared to state-of-the-art tools and can be applied to any common quantitative proteomics setup.
+
+### msgrob2 {-}
+
+*Goeminne L, Gevaert K, Clement L (2016). “Peptide-level Robust Ridge Regression Improves Estimation, Sensitivity, and Specificity in Data-dependent Quantitative Label-free Shotgun Proteomics.” Molecular & Cellular Proteomics, 15(2), 657-668.*
+
+- [PDF manual](https://www.bioconductor.org/packages/release/bioc/manuals/msqrob2/man/msqrob2.pdf)
+
+- [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/msqrob2.html)
+
+`msgrob2` is an R package that provides functions to perform robust estimation in linear models with missing data. With the help of the Expectation-Maximization (EM) algorithm, the package estimates the parameters of the linear model and imputes the missing data. Additionally, the package offers robust methods for estimating the covariance matrix, including the Minimum Covariance Determinant (MCD) estimator and the S-estimator.
+
+The `msgrob2` package is particularly useful in situations where data is missing from a linear model. The EM algorithm implemented in the package is a powerful tool for imputing missing data, and the robust covariance estimators allow for a better understanding of the data. The package is designed to provide efficient and accurate results when working with incomplete data, making it an essential tool for researchers and data analysts.

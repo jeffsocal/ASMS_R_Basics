@@ -1,0 +1,36 @@
+### enviPat {-}
+**Isotope Pattern, Profile and Centroid Calculation for Mass Spectrometry**
+
+A new method (year 2022) for calculating theoretical isotope patterns in mass spectrometry. This method uses a treelike structure to derive sets of subisotopologues for each element in a molecule. By doing so, it allows for early pruning of low-probability isotopologues and the detection of the most probable isotopologue. The method was validated in a large-scale benchmark simulation.
+
+\
+
++---------------------------------+---------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | [CRAN](https://cran.r-project.org/web/packages/enviPat/enviPat.pdf) |
+|                                 |                                                                     |
+|                                 | *Analytical Chemistry* 2015, 87, 11, 5738–5744                      |
++---------------------------------+---------------------------------------------------------------------+
+
+\
+
+#### Installation {-}
+```{r, eval=FALSE}
+install.packages("enviPat")
+```
+
+#### Use {-}
+```{r, fig.width=6, fig.height=3, fig.align='center', message=FALSE, warning=FALSE}
+library(enviPat)
+
+data("isotopes")
+
+pattern <- isopattern(
+  isotopes,
+  "C100H200S2Cl5",
+  threshold=0.1,
+  plotit=TRUE,
+  charge=FALSE,
+  emass=0.00054858,
+  algo=1
+)
+```

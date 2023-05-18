@@ -73,11 +73,11 @@ However, it's worth noting that package compilation can sometimes fail for vario
 
 In summary, when working with R, it's important to understand how to install packages. Most packages have binary versions available for direct installation, but there may be cases where you need to compile a package yourself. While package compilation can be useful in some cases, it can also be frustrating and time-consuming. Therefore, it's generally recommended to stick with using binary packages whenever possible.
 
-## Packages Utilized in This Book
+## For this Book
 
 ### tidyverse {-}
 
-The Tidyverse R package is a collection of data manipulation and visualization packages for the R programming language. It includes popular packages such as dplyr, ggplot2, and tidyr, among others. The Tidyverse R package is a powerful and versatile tool for data analysis in R. It includes a collection of data manipulation and visualization packages designed to work seamlessly together, making it easy to analyze and visualize data in R.
+The Tidyverse R package is a collection of data manipulation and visualization packages for the R programming language. It includes popular packages such as dplyr, ggplot2, and tidyr, among others. The Tidyverse R package is a powerful and versatile tool for data analysis in R. It includes a collection of data manipulation and visualization packages designed to work seamlessly together, making it easy to analyze and visualize data in R. This package is cover in more detail in \@ref(tidyverse-1) Tidyverse, and \@ref(ggplot2-1) GGplot2.
 
 ```{r}
 library(tidyverse)
@@ -119,19 +119,20 @@ tbl %>%
 
 The **ggplot2** package stands out as the most advanced and comprehensive package for transforming tabulated data into meaningful and informative graphics. With its wide range of visualization tools, this package allows you to create expressive and compelling graphics that not only look great but also convey detailed information in a clear and concise manner. Apart from other visualization tools, **ggplot2** takes a layered approach to creating graphics, allowing for the additive layering of additional data, labels, legends, and annotations, which helps to provide a more comprehensive view of your analysis.
 
-```{r}
+```{r, fig.width=6, fig.height=3, fig.align='center'}
 tbl %>%
   mutate(int = rnorm(n(), mean = 1e5, sd=5e4),
          relative_int = int/max(int) * 100) %>%
   ggplot(aes(mz, relative_int, color=type)) +
   geom_segment(aes(xend = mz, yend = 0)) +
-  labs(title = "Simulated MS/MS Spectrum")
+  labs(title = "Simulated MS/MS Spectrum") +
+  theme_classic()
 ```
 
 One of the key benefits of using the Tidyverse is the standardization of syntax and functions across each package. This means that once you learn the basics of one package, you can easily switch to another package and be confident in your ability to use it. This makes it easier to create reproducible code and improves the efficiency of your data analysis.
 
 The Tidyverse is widely used in the R community and is a valuable tool for any data scientist or analyst working with R. It is especially useful for those who need to manipulate and visualize data quickly and efficiently, without sacrificing accuracy. Whether you are new to R or an experienced user, the Tidyverse is a must-have tool in your data analysis toolkit.
 
-### Mass Spectrometry Specific Packages {-}
+### MS Packages {-}
 
-This book, while providing a beginners level guide to R programming, also introduces several mass spectrometry-specific packages in many of the code examples. While these examples may only touch on some of their functions, the last chapter is dedicated to a more formal, albeit not comprehensive introduction to many of these packages. For example the `mzR` package, which enables users to read and process mass spectrometry data, as well as the `xcms` package, which is used for preprocessing and feature detection. Additionally, the book introduces the `MSnbase` package, which provides a framework for quantitative and qualitative analysis of mass spectrometry data, and the `MSstats` package, which is used for statistical analysis of quantitative proteomics experiments. Lastly, the book covers the `tidyproteomics` package, which provides a collection of tools for analyzing post-analysis quantitative proteomics data using a framework similar to the `tidyverse`.
+This book, while providing a beginners level guide to R programming, also introduces several mass spectrometry-specific packages in many of the code examples. While these examples may only touch on some of their functions, the last chapter is dedicated to a more formal, albeit not comprehensive introduction to many of these packages. For example the \@ref(mzr) `mzR` package, which enables users to read and process mass spectrometry data, as well as the \@ref(xcms) `xcms` package, which is used for preprocessing and feature detection. Additionally, the book introduces the \@ref(msnbase) `MSnbase` package, which provides a framework for quantitative and qualitative analysis of mass spectrometry data, and the \@ref(mstats) `MSstats` package, which is used for statistical analysis of quantitative proteomics experiments. Lastly, the book covers the `tidyproteomics` package, which provides a collection of tools for analyzing post-analysis quantitative proteomics data using a framework similar to the `tidyverse`.

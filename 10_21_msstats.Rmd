@@ -4,45 +4,15 @@ The MSstats package is an R package designed for the analysis of label-free mass
 
 \
 
-+---------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| ![](images/05.png){height="68"} | **Docs** | [web](https://msstats.org), [PDF](https://bioconductor.org/packages/release/bioc/manuals/MSstats/man/MSstats.pdf) |
-|                                 |                                                                                                                              |
-|                                 | **Code** | [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/MSstats.html)                              |
-|                                 |                                                                                                                              |
-|                                 | **Cite** | *Bioinformatics* 30.17 (2014): 2524-2526                                                                          |
-+---------------------------------+------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+----------------------------------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | [WEB tutorial](https://msstats.org)                                                          |
+|                                 |                                                                                              |
+|                                 | [PDF manual](https://bioconductor.org/packages/release/bioc/manuals/MSstats/man/MSstats.pdf) |
+|                                 |                                                                                              |
+|                                 | [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/MSstats.html)         |
+|                                 |                                                                                              |
+|                                 | *Bioinformatics* 2014, 30.17; 2524-2526                                                      |
++---------------------------------+----------------------------------------------------------------------------------------------+
 
 \
 
-#### Installation {-}
-
-Install MSstats from Bioconductor:
-```{r, eval=FALSE}
-BiocManager::install("MSstats")
-```
-
-#### Loading Data {-}
-
-The preferred data structure for use in MSstats is a .csv file in a "long" format with 10 columns representing the following variables: _ProteinName, PeptideSequence, PrecursorCharge, FragmentIon, ProductCharge, IsotopeLabelType, Condition, BioReplicate, Run, and Intensity_. Note that the variable names are fixed and case-insensitive.
-
-```{r, eval=FALSE, warning=FALSE, message=FALSE}
-# example data provided by the MSstats package
-head(SRMRawData)
-```
-
-```
-    ProteinName PeptideSequence PrecursorCharge FragmentIon ProductCharge IsotopeLabelType Condition
-243        IDHC   ATDVIVPEEGELR               2          y7            NA                H         1
-244        IDHC   ATDVIVPEEGELR               2          y7            NA                L         1
-245        IDHC   ATDVIVPEEGELR               2          y8            NA                H         1
-246        IDHC   ATDVIVPEEGELR               2          y8            NA                L         1
-247        IDHC   ATDVIVPEEGELR               2          y9            NA                H         1
-248        IDHC   ATDVIVPEEGELR               2          y9            NA                L         1
-    BioReplicate Run   Intensity
-243        ReplA   1 84361.08350
-244        ReplA   1   215.13526
-245        ReplA   1 29778.10188
-246        ReplA   1    98.02134
-247        ReplA   1 17921.29255
-248        ReplA   1    60.47029
-```
