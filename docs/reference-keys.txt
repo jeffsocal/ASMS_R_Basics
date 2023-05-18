@@ -73,7 +73,6 @@ ggplot2
 data-wrangling
 tidy-data
 example-walkthrough
-exercises---evalfalse
 data-visualization
 base-plot
 ggplot2-1
@@ -90,14 +89,8 @@ docker
 r-packages
 r-shiny-applications
 mass-spectrometry
-data-formats
 commercial
-raw-thermo
-wiff-sciex
-d-agilent
-d-bruker-timstof-data
 open-access-data
 r-calculate-mass
-envipat
 r-ms-data
 r-ms-analysis

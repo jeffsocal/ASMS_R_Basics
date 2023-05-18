@@ -13,11 +13,11 @@ R BRAIN is an isotopic abundance calculator implemented in R programming languag
 
 \
 
-+---------------------------------+----------------------------------------------------------------------------------------------------------------+
-| ![](images/05.png){height="68"} | **Documentation** | [Bioconductor](https://bioconductor.org/packages/release/bioc/manuals/BRAIN/man/BRAIN.pdf) |
-|                                 |                                                                                                                |
-|                                 | **Literature** | *Analytical chemistry* 2013 85(4), 1991-1994                                                  |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------+
++---------------------------------+-------------------------------------------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | **Docs** | [Bioconductor](https://bioconductor.org/packages/release/bioc/manuals/BRAIN/man/BRAIN.pdf) |
+|                                 |                                                                                                       |
+|                                 | **Cite** | *Analytical chemistry* 2013, 85(4), 1991-1994                                               |
++---------------------------------+-------------------------------------------------------------------------------------------------------+
 
 \
 
@@ -66,18 +66,18 @@ plot(x = lst_isotopes$masses,
 ```
 
 
-### enviPat
+### enviPat {-}
 **Isotope Pattern, Profile and Centroid Calculation for Mass Spectrometry**
 
 A new method (year 2022) for calculating theoretical isotope patterns in mass spectrometry. This method uses a treelike structure to derive sets of subisotopologues for each element in a molecule. By doing so, it allows for early pruning of low-probability isotopologues and the detection of the most probable isotopologue. The method was validated in a large-scale benchmark simulation.
 
 \
 
-+---------------------------------+-----------------------------------------------------------------------------------------+
-| ![](images/05.png){height="68"} | **Documentation** | [CRAN](https://cran.r-project.org/web/packages/enviPat/enviPat.pdf) |
-|                                 |                                                                                         |
-|                                 | **Literature** | *Anal. Chem.* 2015, 87, 11, 5738–5744                                  |
-+---------------------------------+-----------------------------------------------------------------------------------------+
++---------------------------------+--------------------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | **Docs** | [CRAN](https://cran.r-project.org/web/packages/enviPat/enviPat.pdf) |
+|                                 |                                                                                |
+|                                 | **Cite** | *Anal. Chem.* 2015, 87, 11, 5738–5744                               |
++---------------------------------+--------------------------------------------------------------------------------+
 
 \
 

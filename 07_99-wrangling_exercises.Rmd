@@ -1,7 +1,7 @@
-## Exercises {-, eval=FALSE}
+## Exercises {-}
 
 +---------------------------------+-----------------------------------------------------------------------------+
-| ![](images/07.png){height="68", eval=FALSE} | - Create a new R Studio Project and name it **005_data_wrangling**.         |
+| ![](images/07.png){height="68"} | - Create a new R Studio Project and name it **005_data_wrangling**.         |
 |                                 |                                                                             |
 |                                 | - Create a new R script, add your name and date at the top as comments.     |
 |                                 |                                                                             |

@@ -4,13 +4,13 @@ The MSstats package is an R package designed for the analysis of label-free mass
 
 \
 
-+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| ![](images/05.png){height="68"} | **Documentation** | [web](https://msstats.org), [PDF](https://bioconductor.org/packages/release/bioc/manuals/MSstats/man/MSstats.pdf) |
-|                                 |                                                                                                                                       |
-|                                 | **Code** | [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/MSstats.html)                                       |
-|                                 |                                                                                                                                       |
-|                                 | **Literature** | *Bioinformatics* 30.17 (2014): 2524-2526                                                                             |
-+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | **Docs** | [web](https://msstats.org), [PDF](https://bioconductor.org/packages/release/bioc/manuals/MSstats/man/MSstats.pdf) |
+|                                 |                                                                                                                              |
+|                                 | **Code** | [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/MSstats.html)                              |
+|                                 |                                                                                                                              |
+|                                 | **Cite** | *Bioinformatics* 30.17 (2014): 2524-2526                                                                          |
++---------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
 \
 

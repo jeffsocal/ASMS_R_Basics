@@ -6,17 +6,13 @@ The `msgrob2` package is particularly useful in situations where data is missing
 
 \
 
-+---------------------------------+---------------------------------------------------------------------------------------------------------------+
-| ![](images/05.png){height="68"} | **Documentation** | [PDF](https://www.bioconductor.org/packages/release/bioc/manuals/msqrob2/man/msqrob2.pdf) |
-|                                 |                                                                                                               |
-|                                 | **Code**          | [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/msqrob2.html)      |
-|                                 |                                                                                                               |
-|                                 | **Literature**    | *Molecular & Cellular Proteomics*, **15**(2), 657-668.                                    |
-|                                 |                                                                                                               |
-|                                 | **Literature**    | *Molecular & Cellular Proteomics*, **19**(7), 1209-1219.                                  |
-|                                 |                                                                                                               |
-|                                 | **Literature**    | *Analytical Chemistry*, **92**(9), 6278--6287.                                            |
-+---------------------------------+---------------------------------------------------------------------------------------------------------------+
++---------------------------------+------------------------------------------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | **Docs** | [PDF](https://www.bioconductor.org/packages/release/bioc/manuals/msqrob2/man/msqrob2.pdf) |
+|                                 |                                                                                                      |
+|                                 | **Code** | [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/msqrob2.html)      |
+|                                 |                                                                                                      |
+|                                 | **Cite**  | *Molecular & Cellular Proteomics* 2016, **15**(2), 657-668.                              |
++---------------------------------+------------------------------------------------------------------------------------------------------+
 
 \
 
