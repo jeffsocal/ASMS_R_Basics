@@ -134,3 +134,8 @@ The American Society for Mass Spectrometry (ASMS) was created in 1969 to promote
 
 MSACL aims to advance mass spectrometry and other advanced technologies in clinical laboratory medicine through education and training of practitioners, physicians, and other healthcare professionals. They also support the development of new technologies for diagnosis, treatment, and prognosis of clinical disorders. MSACL offers resources through their Learning Center on several topics, including using R in clinical data analysis.
 
+[May Institute](https://computationalproteomics.khoury.northeastern.edu/)
+
+*Computation and statistics for mass spectrometry and proteomics*
+
+The event features keynotes, tutorials, and hands-on sessions led by proteomics experts and authors of methods and computational tools. We will take an in-depth look at case studies focused on the design and analysis of quantitative mass spectrometry-based experiments. At the end of each day, the speakers will be available online for additional exercises and Q&A sessions, if there is interest.
