@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Tidyverse | Learning R for Mass Spectrometry</title>
+  <meta name="description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Tidyverse | Learning R for Mass Spectrometry" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  <meta name="github-repo" content="jeffsocal/ASMS_R_Basics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Tidyverse | Learning R for Mass Spectrometry" />
+  
+  <meta name="twitter:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  
+
+<meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
+
+
+<meta name="date" content="2023-05-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="r-objects.html"/>
+<link rel="next" href="data-wrangling.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Learning R for Mass Spec.</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="contents.html"><a href="contents.html"><i class="fa fa-check"></i>Contents</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>1</b> Introduction to R</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#why-choose-it"><i class="fa fa-check"></i>Why choose it?</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#what-you-can-do-with-it"><i class="fa fa-check"></i>What you can do with it?</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-r-learning-curve"><i class="fa fa-check"></i>The R Learning Curve</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#thoughts-about-learning-r-and-how-to-code"><i class="fa fa-check"></i>Thoughts about learning R and how to code</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#alternatives"><i class="fa fa-check"></i>Alternatives</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#resources"><i class="fa fa-check"></i>Resources</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#online"><i class="fa fa-check"></i>Online</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#in-print"><i class="fa fa-check"></i>In Print</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#organizations"><i class="fa fa-check"></i>Organizations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>2</b> Installation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installation.html"><a href="installation.html#r-interpreter"><i class="fa fa-check"></i><b>2.1</b> R interpreter</a></li>
+<li class="chapter" data-level="2.2" data-path="installation.html"><a href="installation.html#rstudio"><i class="fa fa-check"></i><b>2.2</b> Rstudio</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="installation.html"><a href="installation.html#ide-layout"><i class="fa fa-check"></i><b>2.2.1</b> IDE Layout</a></li>
+<li class="chapter" data-level="2.2.2" data-path="installation.html"><a href="installation.html#usage-..-running-lines-of-code-in-rstudio"><i class="fa fa-check"></i><b>2.2.2</b> Usage .. Running lines of code in RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="installation.html"><a href="installation.html#packages"><i class="fa fa-check"></i><b>2.3</b> Packages</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="installation.html"><a href="installation.html#what-are-r-packages"><i class="fa fa-check"></i><b>2.3.1</b> What are R Packages?</a></li>
+<li class="chapter" data-level="2.3.2" data-path="installation.html"><a href="installation.html#where-to-get-r-packages"><i class="fa fa-check"></i><b>2.3.2</b> Where to get R Packages</a></li>
+<li class="chapter" data-level="2.3.3" data-path="installation.html"><a href="installation.html#installing-r-packages"><i class="fa fa-check"></i><b>2.3.3</b> Installing R Packages</a></li>
+<li class="chapter" data-level="2.3.4" data-path="installation.html"><a href="installation.html#potential-gotchas"><i class="fa fa-check"></i><b>2.3.4</b> Potential Gotchas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="installation.html"><a href="installation.html#packages-utilized-in-this-book"><i class="fa fa-check"></i><b>2.4</b> Packages Utilized in This Book</a>
+<ul>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#tidyverse"><i class="fa fa-check"></i>tidyverse</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#mass-spectrometry-specific-packages"><i class="fa fa-check"></i>Mass Spectrometry Specific Packages</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-studio-projects.html"><a href="r-studio-projects.html"><i class="fa fa-check"></i><b>3</b> R Studio Projects</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="r-studio-projects.html"><a href="r-studio-projects.html#creating"><i class="fa fa-check"></i><b>3.1</b> Creating</a></li>
+<li class="chapter" data-level="3.2" data-path="r-studio-projects.html"><a href="r-studio-projects.html#organizing"><i class="fa fa-check"></i><b>3.2</b> Organizing</a>
+<ul>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#data"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#scripts"><i class="fa fa-check"></i>Scripts</a></li>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#results"><i class="fa fa-check"></i>Results</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="r-syntax.html"><a href="r-syntax.html"><i class="fa fa-check"></i><b>4</b> R Syntax</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="r-syntax.html"><a href="r-syntax.html#reserved-words"><i class="fa fa-check"></i><b>4.1</b> Reserved Words</a></li>
+<li class="chapter" data-level="4.2" data-path="r-syntax.html"><a href="r-syntax.html#types"><i class="fa fa-check"></i><b>4.2</b> Types</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="r-syntax.html"><a href="r-syntax.html#comments"><i class="fa fa-check"></i><b>4.2.1</b> Comments</a></li>
+<li class="chapter" data-level="4.2.2" data-path="r-syntax.html"><a href="r-syntax.html#strings"><i class="fa fa-check"></i><b>4.2.2</b> Strings</a></li>
+<li class="chapter" data-level="4.2.3" data-path="r-syntax.html"><a href="r-syntax.html#numbers"><i class="fa fa-check"></i><b>4.2.3</b> Numbers</a></li>
+<li class="chapter" data-level="4.2.4" data-path="r-syntax.html"><a href="r-syntax.html#operators"><i class="fa fa-check"></i><b>4.2.4</b> Operators</a></li>
+<li class="chapter" data-level="4.2.5" data-path="r-syntax.html"><a href="r-syntax.html#variables"><i class="fa fa-check"></i><b>4.2.5</b> Variables</a></li>
+<li class="chapter" data-level="4.2.6" data-path="r-syntax.html"><a href="r-syntax.html#statements"><i class="fa fa-check"></i><b>4.2.6</b> Statements</a></li>
+<li class="chapter" data-level="4.2.7" data-path="r-syntax.html"><a href="r-syntax.html#functions"><i class="fa fa-check"></i><b>4.2.7</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="r-syntax.html"><a href="r-syntax.html#flow-control"><i class="fa fa-check"></i><b>4.3</b> Flow-Control</a>
+<ul>
+<li class="chapter" data-level="" data-path="r-syntax.html"><a href="r-syntax.html#for-loop"><i class="fa fa-check"></i>For Loop</a></li>
+<li class="chapter" data-level="" data-path="r-syntax.html"><a href="r-syntax.html#if-else"><i class="fa fa-check"></i>If-Else</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="r-syntax.html"><a href="r-syntax.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="r-objects.html"><a href="r-objects.html"><i class="fa fa-check"></i><b>5</b> R Objects</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="r-objects.html"><a href="r-objects.html#variable"><i class="fa fa-check"></i><b>5.1</b> Variable</a></li>
+<li class="chapter" data-level="5.2" data-path="r-objects.html"><a href="r-objects.html#vector"><i class="fa fa-check"></i><b>5.2</b> Vector</a></li>
+<li class="chapter" data-level="5.3" data-path="r-objects.html"><a href="r-objects.html#matrix"><i class="fa fa-check"></i><b>5.3</b> Matrix</a></li>
+<li class="chapter" data-level="5.4" data-path="r-objects.html"><a href="r-objects.html#data-frame"><i class="fa fa-check"></i><b>5.4</b> Data Frame</a></li>
+<li class="chapter" data-level="5.5" data-path="r-objects.html"><a href="r-objects.html#list"><i class="fa fa-check"></i><b>5.5</b> List</a></li>
+<li class="chapter" data-level="5.6" data-path="r-objects.html"><a href="r-objects.html#tibbles"><i class="fa fa-check"></i><b>5.6</b> Tibbles</a></li>
+<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#how-to-tell-what-you-are-dealing-with"><i class="fa fa-check"></i>How to tell what you are dealing with</a></li>
+<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tidyverse-1.html"><a href="tidyverse-1.html"><i class="fa fa-check"></i><b>6</b> Tidyverse</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#core-packages"><i class="fa fa-check"></i><b>6.1</b> Core Packages</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#magrittr"><i class="fa fa-check"></i><b>6.1.1</b> magrittr</a></li>
+<li class="chapter" data-level="6.1.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#tibble"><i class="fa fa-check"></i><b>6.1.2</b> tibble</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#importing"><i class="fa fa-check"></i><b>6.2</b> Importing</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#readr"><i class="fa fa-check"></i><b>6.2.1</b> readr</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#wrangling"><i class="fa fa-check"></i><b>6.3</b> Wrangling</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr"><i class="fa fa-check"></i><b>6.3.1</b> dplyr</a></li>
+<li class="chapter" data-level="6.3.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#tidyr"><i class="fa fa-check"></i><b>6.3.2</b> tidyr</a></li>
+<li class="chapter" data-level="6.3.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#purrr"><i class="fa fa-check"></i><b>6.3.3</b> purrr</a></li>
+<li class="chapter" data-level="6.3.4" data-path="tidyverse-1.html"><a href="tidyverse-1.html#glue"><i class="fa fa-check"></i><b>6.3.4</b> glue</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="tidyverse-1.html"><a href="tidyverse-1.html#data-types"><i class="fa fa-check"></i><b>6.4</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#stringr"><i class="fa fa-check"></i><b>6.4.1</b> stringr</a></li>
+<li class="chapter" data-level="6.4.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#lubridate"><i class="fa fa-check"></i><b>6.4.2</b> lubridate</a></li>
+<li class="chapter" data-level="6.4.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#forcats"><i class="fa fa-check"></i><b>6.4.3</b> forcats</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="tidyverse-1.html"><a href="tidyverse-1.html#summarizing"><i class="fa fa-check"></i><b>6.5</b> Summarizing</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr-1"><i class="fa fa-check"></i><b>6.5.1</b> dplyr</a></li>
+<li class="chapter" data-level="6.5.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#ggplot2"><i class="fa fa-check"></i><b>6.5.2</b> ggplot2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>7</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="data-wrangling.html"><a href="data-wrangling.html#tidy-data"><i class="fa fa-check"></i><b>7.1</b> Tidy Data</a></li>
+<li class="chapter" data-level="7.2" data-path="data-wrangling.html"><a href="data-wrangling.html#example-walkthrough"><i class="fa fa-check"></i><b>7.2</b> Example Walkthrough</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#read_"><i class="fa fa-check"></i>read_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#separate"><i class="fa fa-check"></i>separate</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#mutate"><i class="fa fa-check"></i>mutate</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#pivot_"><i class="fa fa-check"></i>pivot_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#write_"><i class="fa fa-check"></i>write_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#non-pipe"><i class="fa fa-check"></i>Non-pipe</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#summarize"><i class="fa fa-check"></i>summarize</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#exercises-4"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>8</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="data-visualization.html"><a href="data-visualization.html#base-plot"><i class="fa fa-check"></i><b>8.1</b> Base: plot</a></li>
+<li class="chapter" data-level="8.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2-1"><i class="fa fa-check"></i><b>8.2</b> GGPlot2</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="data-visualization.html"><a href="data-visualization.html#syntax"><i class="fa fa-check"></i><b>8.2.1</b> Syntax</a></li>
+<li class="chapter" data-level="8.2.2" data-path="data-visualization.html"><a href="data-visualization.html#basic-data-plotting"><i class="fa fa-check"></i><b>8.2.2</b> Basic Data Plotting</a></li>
+<li class="chapter" data-level="8.2.3" data-path="data-visualization.html"><a href="data-visualization.html#data-distributions"><i class="fa fa-check"></i><b>8.2.3</b> Data Distributions</a></li>
+<li class="chapter" data-level="8.2.4" data-path="data-visualization.html"><a href="data-visualization.html#extended-syntax"><i class="fa fa-check"></i><b>8.2.4</b> Extended Syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="data-visualization.html"><a href="data-visualization.html#alternatives-1"><i class="fa fa-check"></i><b>8.3</b> Alternatives</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#lattice"><i class="fa fa-check"></i>lattice</a></li>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#plotly"><i class="fa fa-check"></i>plotly</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#exercises-5"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>9</b> Sharing</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="sharing.html"><a href="sharing.html#notebooks"><i class="fa fa-check"></i><b>9.1</b> Notebooks</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-notebooks"><i class="fa fa-check"></i>Using Notebooks</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-a-notebook"><i class="fa fa-check"></i>Sharing A Notebook</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>9.2</b> Packrat</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#initiating-a-packrat-project"><i class="fa fa-check"></i>Initiating a Packrat Project</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#installing-a-package-into-the-project-library"><i class="fa fa-check"></i>Installing a Package into the Project Library</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#loading-a-package-from-the-project-library"><i class="fa fa-check"></i>Loading a Package from the Project Library</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#updating-a-package-in-the-project-library"><i class="fa fa-check"></i>Updating a Package in the Project Library</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="sharing.html"><a href="sharing.html#github"><i class="fa fa-check"></i><b>9.3</b> GitHub</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-use-github"><i class="fa fa-check"></i>How to Use GitHub</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-share-a-github-repository"><i class="fa fa-check"></i>How to Share A GitHub Repository</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>9.4</b> Docker</a></li>
+<li class="chapter" data-level="9.5" data-path="sharing.html"><a href="sharing.html#r-packages"><i class="fa fa-check"></i><b>9.5</b> R Packages</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-a-package-in-rstudio"><i class="fa fa-check"></i>Creating a Package in RStudio</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-the-package"><i class="fa fa-check"></i>Using the Package</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>9.6</b> R Shiny Applications</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-create-an-r-shiny-application-in-the-rstudio-ide"><i class="fa fa-check"></i>How to Create an R Shiny Application in the RStudio IDE</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#example-of-an-r-shiny-application-for-plotting-points"><i class="fa fa-check"></i>Example of an R Shiny Application for Plotting Points</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html"><i class="fa fa-check"></i><b>10</b> Mass Spectrometry</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#commercial"><i class="fa fa-check"></i><b>10.1</b> Commercial</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#raw-thermo"><i class="fa fa-check"></i>RAW (Thermo)</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#d-bruker-timstof-data"><i class="fa fa-check"></i>.d (Bruker) timsTOF data</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#wiff-sciex"><i class="fa fa-check"></i>WIFF (Sciex)</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#d-agilent"><i class="fa fa-check"></i>D (Agilent)</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#open-access-data"><i class="fa fa-check"></i><b>10.2</b> Open Access Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#proteowizard"><i class="fa fa-check"></i>ProteoWizard</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzxml"><i class="fa fa-check"></i>mzXML</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzml"><i class="fa fa-check"></i>mzML</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzmlb"><i class="fa fa-check"></i>mzMLb</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-calculate-mass"><i class="fa fa-check"></i><b>10.3</b> R Calculate Mass</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#brain"><i class="fa fa-check"></i>BRAIN</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#envipat"><i class="fa fa-check"></i>enviPat</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-ms-data"><i class="fa fa-check"></i><b>10.4</b> R MS Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzr"><i class="fa fa-check"></i>mzR</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msnbase"><i class="fa fa-check"></i>MSnbase</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#xcms"><i class="fa fa-check"></i>xcms</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-ms-analysis"><i class="fa fa-check"></i><b>10.5</b> R MS Analysis</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#deqms"><i class="fa fa-check"></i>deqms</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msempire"><i class="fa fa-check"></i>msempire</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msqrob"><i class="fa fa-check"></i>msqrob</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msstats"><i class="fa fa-check"></i>MSstats</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#statspro-r-package"><i class="fa fa-check"></i>StatsPro R Package</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msgrob2"><i class="fa fa-check"></i>msgrob2</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#tidyproteomics"><i class="fa fa-check"></i>Tidyproteomics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html"><i class="fa fa-check"></i>Answers to Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#r-syntax-1"><i class="fa fa-check"></i><strong>4</strong> R Syntax</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#r-objects-1"><i class="fa fa-check"></i><strong>5</strong> R Objects</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#tidyverse-2"><i class="fa fa-check"></i><strong>6</strong> Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-1"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-2"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-visualization-1"><i class="fa fa-check"></i><strong>8</strong> Data Visualization</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/jeffsocal/asms_r_intro" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Learning R for Mass Spectrometry</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tidyverse-1" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Tidyverse<a href="tidyverse-1.html#tidyverse-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The <code>tidyverse</code> is actually a collection of R packages designed for data analysis and visualization. It is an essential tool for data scientists and statisticians who work with large datasets.</p>
+<p><br />
+</p>
+<table>
+<colgroup>
+<col width="36%" />
+<col width="63%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/03.png" height="68" /></td>
+<td><p><strong>At the end of this chapter you should be able to</strong></p>
+<ul>
+<li><p>Grasp the utility of the tidyverse.</p></li>
+<li><p>Understand how to construct a data pipeline.</p></li>
+<li><p>Composed a simple workflow.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>The <code>tidyverse</code> packages are built around a common philosophy of data manipulation. The goal is to provide a consistent and intuitive syntax for data analysis that is easy to learn and use. The packages in the <code>tidyverse</code> include:</p>
+<table>
+<colgroup>
+<col width="35%" />
+<col width="64%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a href="tidyverse-1.html#magrittr">6.1.1</a> magrittr</td>
+<td>provides the pipe, %&gt;% used throughout the tidyverse.</td>
+</tr>
+<tr class="even">
+<td><a href="tidyverse-1.html#tibble">6.1.2</a> tibble</td>
+<td>creates the main data object.</td>
+</tr>
+<tr class="odd">
+<td><a href="tidyverse-1.html#readr">6.2.1</a> readr</td>
+<td>reading and writing data in various formats.</td>
+</tr>
+<tr class="even">
+<td><a href="tidyverse-1.html#dplyr">6.3.1</a> dplyr</td>
+<td>data manipulation.</td>
+</tr>
+<tr class="odd">
+<td><a href="tidyverse-1.html#tidyr">6.3.2</a> tidyr</td>
+<td>transforming messy data into a tidy format.</td>
+</tr>
+<tr class="even">
+<td><a href="tidyverse-1.html#purrr">6.3.3</a> purrr</td>
+<td>functional programming with vectors and lists.</td>
+</tr>
+<tr class="odd">
+<td><a href="tidyverse-1.html#stringr">6.4.1</a> stringr</td>
+<td>working with strings.</td>
+</tr>
+<tr class="even">
+<td><a href="tidyverse-1.html#lubridate">6.4.2</a> lubridate</td>
+<td>working with dates and date strings.</td>
+</tr>
+<tr class="odd">
+<td><a href="tidyverse-1.html#ggplot2">6.5.2</a> ggplot2</td>
+<td>graphical plotting and data visualization.</td>
+</tr>
+</tbody>
+</table>
+<p>These packages work seamlessly together, allowing users to easily manipulate and visualize their data. The <code>tidyverse</code> also includes a set of conventions and best practices for data analysis, making it easy to follow a consistent workflow.</p>
+<p><br />
+</p>
+<table>
+<colgroup>
+<col width="36%" />
+<col width="63%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/01.png" height="68" /></td>
+<td><strong>Cheat-sheets</strong> <a href="introduction-to-r.html#cheat-sheets"><strong>??</strong></a></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>Consider the following workflow to read in data, calculate a linear regression and visualize the data using nine (9) of the underlying packages in the tidyverse.</p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="tidyverse-1.html#cb125-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb125-2"><a href="tidyverse-1.html#cb125-2" tabindex="-1"></a></span>
+<span id="cb125-3"><a href="tidyverse-1.html#cb125-3" tabindex="-1"></a><span class="co"># readr, tibble, magrittr: read in a table of comma separate values</span></span>
+<span id="cb125-4"><a href="tidyverse-1.html#cb125-4" tabindex="-1"></a>tbl_csv <span class="ot">&lt;-</span> <span class="st">&quot;data/denver_climate.csv&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_csv</span>()</span>
+<span id="cb125-5"><a href="tidyverse-1.html#cb125-5" tabindex="-1"></a></span>
+<span id="cb125-6"><a href="tidyverse-1.html#cb125-6" tabindex="-1"></a><span class="co"># define a function to fit a linear regression model</span></span>
+<span id="cb125-7"><a href="tidyverse-1.html#cb125-7" tabindex="-1"></a>lm_func <span class="ot">&lt;-</span> <span class="cf">function</span>(data) {</span>
+<span id="cb125-8"><a href="tidyverse-1.html#cb125-8" tabindex="-1"></a>  <span class="fu">lm</span>(snowfall <span class="sc">~</span> min_temp, <span class="at">data =</span> data)</span>
+<span id="cb125-9"><a href="tidyverse-1.html#cb125-9" tabindex="-1"></a>}</span>
+<span id="cb125-10"><a href="tidyverse-1.html#cb125-10" tabindex="-1"></a></span>
+<span id="cb125-11"><a href="tidyverse-1.html#cb125-11" tabindex="-1"></a><span class="co"># readr, tibble, magrittr: using the data imported from above</span></span>
+<span id="cb125-12"><a href="tidyverse-1.html#cb125-12" tabindex="-1"></a>tbl_csv_lm <span class="ot">&lt;-</span> tbl_csv <span class="sc">%&gt;%</span></span>
+<span id="cb125-13"><a href="tidyverse-1.html#cb125-13" tabindex="-1"></a>  <span class="co"># dplyr</span></span>
+<span id="cb125-14"><a href="tidyverse-1.html#cb125-14" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
+<span id="cb125-15"><a href="tidyverse-1.html#cb125-15" tabindex="-1"></a>  <span class="co"># tidyr</span></span>
+<span id="cb125-16"><a href="tidyverse-1.html#cb125-16" tabindex="-1"></a>  <span class="fu">nest</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb125-17"><a href="tidyverse-1.html#cb125-17" tabindex="-1"></a>  <span class="co"># dplyr, purrr: apply the function to each nested data frame</span></span>
+<span id="cb125-18"><a href="tidyverse-1.html#cb125-18" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">model =</span> <span class="fu">map</span>(data, lm_func)) <span class="sc">%&gt;%</span></span>
+<span id="cb125-19"><a href="tidyverse-1.html#cb125-19" tabindex="-1"></a>  <span class="co"># dplyr, broom, purrr: extract the coefficients from each model</span></span>
+<span id="cb125-20"><a href="tidyverse-1.html#cb125-20" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">tidy =</span> <span class="fu">map</span>(model, broom<span class="sc">::</span>tidy)) <span class="sc">%&gt;%</span></span>
+<span id="cb125-21"><a href="tidyverse-1.html#cb125-21" tabindex="-1"></a>  <span class="co"># tidyr</span></span>
+<span id="cb125-22"><a href="tidyverse-1.html#cb125-22" tabindex="-1"></a>  <span class="fu">unnest</span>(tidy) <span class="sc">%&gt;%</span></span>
+<span id="cb125-23"><a href="tidyverse-1.html#cb125-23" tabindex="-1"></a>  <span class="co"># dplyr, stringr</span></span>
+<span id="cb125-24"><a href="tidyverse-1.html#cb125-24" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">term =</span> term <span class="sc">%&gt;%</span> <span class="fu">str_replace_all</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">(|</span><span class="sc">\\</span><span class="st">)&quot;</span>, <span class="st">&quot;&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb125-25"><a href="tidyverse-1.html#cb125-25" tabindex="-1"></a>  <span class="co"># dplyr: retain only specific columns</span></span>
+<span id="cb125-26"><a href="tidyverse-1.html#cb125-26" tabindex="-1"></a>  <span class="fu">select</span>(year, term, estimate) <span class="sc">%&gt;%</span></span>
+<span id="cb125-27"><a href="tidyverse-1.html#cb125-27" tabindex="-1"></a>  <span class="co"># tidyr: convert from a long table to a wide table</span></span>
+<span id="cb125-28"><a href="tidyverse-1.html#cb125-28" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">&#39;term&#39;</span>, <span class="at">values_from =</span> <span class="st">&#39;estimate&#39;</span>)</span>
+<span id="cb125-29"><a href="tidyverse-1.html#cb125-29" tabindex="-1"></a></span>
+<span id="cb125-30"><a href="tidyverse-1.html#cb125-30" tabindex="-1"></a></span>
+<span id="cb125-31"><a href="tidyverse-1.html#cb125-31" tabindex="-1"></a><span class="co">#ggplot2</span></span>
+<span id="cb125-32"><a href="tidyverse-1.html#cb125-32" tabindex="-1"></a>tbl_csv <span class="sc">%&gt;%</span></span>
+<span id="cb125-33"><a href="tidyverse-1.html#cb125-33" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(min_temp, snowfall)) <span class="sc">+</span> </span>
+<span id="cb125-34"><a href="tidyverse-1.html#cb125-34" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb125-35"><a href="tidyverse-1.html#cb125-35" tabindex="-1"></a>  <span class="co"># use the linear model data to plot regression lines</span></span>
+<span id="cb125-36"><a href="tidyverse-1.html#cb125-36" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">data =</span> tbl_csv_lm,</span>
+<span id="cb125-37"><a href="tidyverse-1.html#cb125-37" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">slope =</span> min_temp, <span class="at">intercept =</span> Intercept)) <span class="sc">+</span></span>
+<span id="cb125-38"><a href="tidyverse-1.html#cb125-38" tabindex="-1"></a>  <span class="co"># plot each year separately </span></span>
+<span id="cb125-39"><a href="tidyverse-1.html#cb125-39" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>year)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-69-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>To get started with the <code>tidyverse</code>, you can install the package using the following command:</p>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="tidyverse-1.html#cb126-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<p>Once installed, users can load the package and begin using the individual packages within the tidyverse:</p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="tidyverse-1.html#cb127-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>Overall, the tidyverse is an essential tool for data analysis and visualization in R. Its user-friendly syntax and consistent conventions make it easy for data scientists and statisticians to work with large datasets.</p>
+<div id="core-packages" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Core Packages<a href="tidyverse-1.html#core-packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Two important packages in the tidyverse are tibble and magrittr. These core packages enable other data manipulation operations to work seamlessly, improving efficiency and ease of use when working with data in R. Despite their importance, they are often taken for granted.</p>
+<div id="magrittr" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> magrittr<a href="tidyverse-1.html#magrittr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The tidyverse package <code>magrittr</code> is a popular R package that provides a set of operators for chaining operations in a sequence. The package was developed by Stefan Milton Bache and Hadley Wickham. The main goal of <code>magrittr</code> is to make code more readable and easier to maintain.</p>
+<p>The pipe operator, <code>%&gt;%</code>, is the most famous operator provided by <code>magrittr.</code> It allows you to chain multiple operations without the need to use intermediate variables. The pipe operator takes the output of the previous function and passes it as the first argument to the next function. This chaining of operations allows for more concise and readable code.</p>
+<p>Here is an example of how to use the pipe operator with <code>magrittr</code>:</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="tidyverse-1.html#cb128-1" tabindex="-1"></a><span class="co"># create a vector of numbers</span></span>
+<span id="cb128-2"><a href="tidyverse-1.html#cb128-2" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb128-3"><a href="tidyverse-1.html#cb128-3" tabindex="-1"></a></span>
+<span id="cb128-4"><a href="tidyverse-1.html#cb128-4" tabindex="-1"></a><span class="co"># use the pipe operator to chain operations</span></span>
+<span id="cb128-5"><a href="tidyverse-1.html#cb128-5" tabindex="-1"></a>numbers <span class="sc">%&gt;%</span></span>
+<span id="cb128-6"><a href="tidyverse-1.html#cb128-6" tabindex="-1"></a>  <span class="fu">sum</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb128-7"><a href="tidyverse-1.html#cb128-7" tabindex="-1"></a>  <span class="fu">sqrt</span>()</span></code></pre></div>
+<pre><code>## [1] 3.872983</code></pre>
+<p>In this example, we create a vector of numbers and use the pipe operator to chain the <code>sum()</code> and <code>sqrt()</code> functions. The output of the <code>sum()</code> function is passed as the first argument to the <code>sqrt()</code> function. This allows us to calculate the sum and square root of the vector in a single line of code.</p>
+<p>Magrittr also provides other useful operators, such as the assignment pipe <code>%&lt;&gt;%</code>, which allows you to update a variable in place, and the tee operator <code>%T&gt;%</code>, which allows you to inspect the output of an operation without interrupting the chain.</p>
+</div>
+<div id="tibble" class="section level3 hasAnchor" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> tibble<a href="tidyverse-1.html#tibble" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>R <code>tibble</code> is a class of data frame in the R programming language. It is an improved alternative to the traditional data frame and is part of the tidyverse package. Tibbles are data frames with stricter requirements, and they provide a streamlined and more efficient way to work with data.</p>
+<p>One of the main advantages of tibbles is that they provide a cleaner and more consistent way to display data. Tibbles only show the first 10 rows and all the columns that fit on the screen, making it easier to work with large datasets. Additionally, tibbles automatically convert character vectors to factors, preventing common errors that can occur when working with data frames.</p>
+<p>Another important feature of tibbles is the way they handle column names. Tibbles will not allow spaces in column names, and they use backticks to reference columns with non-standard names. This makes it easier to work with datasets that have complex column names. Tibbles also provide a more consistent way to handle missing values. In data frames, missing values can be represented in different ways, such as NA, NaN, or NULL. Tibbles, on the other hand, only use NA to represent missing values, making it easier to work with missing data.</p>
+</div>
+</div>
+<div id="importing" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Importing<a href="tidyverse-1.html#importing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="readr" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> readr<a href="tidyverse-1.html#readr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>R <code>readr</code> is a package in the R language that is used to read structured data files into R. The package is an efficient and user-friendly toolkit that allows for the reading of different types of flat files such as CSV, TSV, and fixed-width files. It is part of the tidyverse collection of packages, which is popular among data scientists and statisticians.</p>
+<p>One of the key features of <code>readr</code> is its ability to quickly read data into R, making it an ideal package for data analysis and data cleaning. <code>readr</code> is designed to handle various types of data, including numeric, date, and character data. The package also has advanced features such as automatic guessing of column types, encoding detection, and parsing of dates and times.</p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="tidyverse-1.html#cb130-1" tabindex="-1"></a><span class="co"># read comma separated values</span></span>
+<span id="cb130-2"><a href="tidyverse-1.html#cb130-2" tabindex="-1"></a>tbl_csv <span class="ot">&lt;-</span> <span class="st">&quot;data/bacterial-metabolites_dose-simicillin_tidy.csv&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_csv</span>()</span></code></pre></div>
+<p>One of the best things about <code>readr</code> is its consistency in dealing with file formats, which allows for easy and fast data manipulation. The package provides a high level of control over the import process, allowing you to specify the location of the data file, the delimiter, and the encoding type. Additionally, <code>readr</code> can handle large datasets with ease, making it one of the most efficient packages for data handling.</p>
+</div>
+</div>
+<div id="wrangling" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Wrangling<a href="tidyverse-1.html#wrangling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Data wrangling is the process of cleaning, transforming, and formatting raw data into a usable format for analysis. The steps involved in data wrangling include removing duplicates, dealing with missing or erroneous values, converting data types, and formatting data into a consistent structure. It also involves merging data from different sources, reshaping data, and transforming data for analysis.</p>
+<p>The objective of data wrangling is to create high-quality, structured data for further analysis and modeling. It requires technical skills, domain knowledge, and creativity. Without proper data wrangling, analysis and modeling may be compromised, leading to incorrect conclusions and decisions. This is where <code>tidyverse</code> functions become quite useful and we will go deeper into Data Wrangling in the subsiquent chapter.</p>
+<p>Given an example of wide data, where <em>Arabidopsis thaliana</em> plants are measured for height for three weeks post germination.</p>
+<div class="line-block">plant | condition | week_1 | week_2 | week_3 |</div>
+<table style="width:68%;">
+<colgroup>
+<col width="11%" />
+<col width="19%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>A
+B
+C</td>
+<td>wet, cold
+moist, cold
+moist, hot</td>
+<td>0.3
+0.2
+0.4</td>
+<td>1.3
+1.5
+1.7</td>
+<td>3.4
+4.1
+5.2</td>
+</tr>
+</tbody>
+</table>
+<div id="dplyr" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> dplyr<a href="tidyverse-1.html#dplyr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>R <code>dplyr</code> is perhaps pne of the most powerful libraries in the <code>tidyverse</code>, providing a set of tools for data manipulation and transformation. It is designed to work seamlessly with data stored in data frames.</p>
+<p>The library comes with a set of functions that can be used to filter, arrange, group, mutate, and summarize data. These functions are optimized for speed and memory efficiency, allowing users to work with large datasets easily.</p>
+<p>Some of the most commonly used functions in <code>dplyr</code> are:</p>
+<ul>
+<li><strong>filter</strong>: used to extract specific rows from a data frame based on certain conditions.</li>
+</ul>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="tidyverse-1.html#cb131-1" tabindex="-1"></a>tbl_wide <span class="sc">%&gt;%</span> <span class="fu">filter</span>(plant <span class="sc">==</span> <span class="st">&#39;A&#39;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 5
+##   plant condition week_1 week_2 week_3
+##   &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1 A     wet, cold    0.3    1.3    3.4</code></pre>
+<ul>
+<li><strong>arrange</strong>: used to sort the rows of a data frame based on one or more columns.</li>
+</ul>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="tidyverse-1.html#cb133-1" tabindex="-1"></a>tbl_wide <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(week_3)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 5
+##   plant condition   week_1 week_2 week_3
+##   &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1 A     wet, cold      0.3    1.3    3.4
+## 2 B     moist, cold    0.2    1.5    4.1
+## 3 C     moist, hot     0.4    1.7    5.2</code></pre>
+<ul>
+<li><strong>select</strong>: used to select specific columns from a data frame.</li>
+</ul>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="tidyverse-1.html#cb135-1" tabindex="-1"></a>tbl_wide <span class="sc">%&gt;%</span> <span class="fu">select</span>(plant, week_3)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 2
+##   plant week_3
+##   &lt;chr&gt;  &lt;dbl&gt;
+## 1 A        3.4
+## 2 B        4.1
+## 3 C        5.2</code></pre>
+<ul>
+<li><strong>mutate</strong>: used to add new columns to a data frame.</li>
+</ul>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="tidyverse-1.html#cb137-1" tabindex="-1"></a>tbl_wide <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">week_4 =</span> <span class="fu">c</span>(<span class="fl">3.8</span>, <span class="fl">4.6</span>, <span class="fl">5.7</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 6
+##   plant condition   week_1 week_2 week_3 week_4
+##   &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1 A     wet, cold      0.3    1.3    3.4    3.8
+## 2 B     moist, cold    0.2    1.5    4.1    4.6
+## 3 C     moist, hot     0.4    1.7    5.2    5.7</code></pre>
+</div>
+<div id="tidyr" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> tidyr<a href="tidyverse-1.html#tidyr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>R <code>tidyr</code> is a package in R that helps to reshape data frames. It is an essential tool for data cleaning and analysis. Tidyr is used to convert data from wide to long format and vice versa, and it also helps to separate and unite columns.</p>
+<ul>
+<li><strong>pivot_longer</strong>: used to reshape data from a column-based wide format to a row-based long format.</li>
+</ul>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="tidyverse-1.html#cb139-1" tabindex="-1"></a>tbl_long <span class="ot">&lt;-</span> tbl_wide <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">matches</span>(<span class="st">&#39;week&#39;</span>), <span class="at">names_to =</span> <span class="st">&#39;time&#39;</span>, <span class="at">values_to =</span> <span class="st">&#39;inches&#39;</span>)</span>
+<span id="cb139-2"><a href="tidyverse-1.html#cb139-2" tabindex="-1"></a></span>
+<span id="cb139-3"><a href="tidyverse-1.html#cb139-3" tabindex="-1"></a>tbl_long</span></code></pre></div>
+<pre><code>## # A tibble: 9 × 4
+##   plant condition   time   inches
+##   &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;   &lt;dbl&gt;
+## 1 A     wet, cold   week_1    0.3
+## 2 A     wet, cold   week_2    1.3
+## 3 A     wet, cold   week_3    3.4
+## 4 B     moist, cold week_1    0.2
+## 5 B     moist, cold week_2    1.5
+## 6 B     moist, cold week_3    4.1
+## 7 C     moist, hot  week_1    0.4
+## 8 C     moist, hot  week_2    1.7
+## 9 C     moist, hot  week_3    5.2</code></pre>
+<ul>
+<li><strong>pivot_wider</strong>: used to reshape data from a row-based long format to a column-based wide format.</li>
+</ul>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="tidyverse-1.html#cb141-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">&#39;time&#39;</span>, <span class="at">values_from =</span> <span class="st">&#39;inches&#39;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 5
+##   plant condition   week_1 week_2 week_3
+##   &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1 A     wet, cold      0.3    1.3    3.4
+## 2 B     moist, cold    0.2    1.5    4.1
+## 3 C     moist, hot     0.4    1.7    5.2</code></pre>
+<p>The package <code>tidyr</code> also has functions to separate and unite columns. The “separate” function is used when you have a column that contains multiple variables. For example, if you have a column that contains both the first and last name of a person, you can separate them into two columns. The “unite” function is the opposite of separate. It is used when you want to combine two or more columns into one column.</p>
+<ul>
+<li><strong>separate</strong>: used to separate a column with multiple values into two or more columns.</li>
+</ul>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="tidyverse-1.html#cb143-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span> <span class="fu">separate</span>(condition, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&#39;soil&#39;</span>, <span class="st">&#39;temp&#39;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 9 × 5
+##   plant soil  temp  time   inches
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt;
+## 1 A     wet   cold  week_1    0.3
+## 2 A     wet   cold  week_2    1.3
+## 3 A     wet   cold  week_3    3.4
+## 4 B     moist cold  week_1    0.2
+## 5 B     moist cold  week_2    1.5
+## 6 B     moist cold  week_3    4.1
+## 7 C     moist hot   week_1    0.4
+## 8 C     moist hot   week_2    1.7
+## 9 C     moist hot   week_3    5.2</code></pre>
+<ul>
+<li><strong>separate_rows</strong>: used to duplicate a row with multiple values from a given column.</li>
+</ul>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="tidyverse-1.html#cb145-1" tabindex="-1"></a>tbl_wide <span class="sc">%&gt;%</span> <span class="fu">separate_rows</span>(condition, <span class="at">sep =</span> <span class="st">&#39;, &#39;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 5
+##   plant condition week_1 week_2 week_3
+##   &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1 A     wet          0.3    1.3    3.4
+## 2 A     cold         0.3    1.3    3.4
+## 3 B     moist        0.2    1.5    4.1
+## 4 B     cold         0.2    1.5    4.1
+## 5 C     moist        0.4    1.7    5.2
+## 6 C     hot          0.4    1.7    5.2</code></pre>
+</div>
+<div id="purrr" class="section level3 hasAnchor" number="6.3.3">
+<h3><span class="header-section-number">6.3.3</span> purrr<a href="tidyverse-1.html#purrr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <code>purrr</code> package is a functional programming toolkit for R that enables users to easily and rapidly apply a function to a set of inputs, returning a list or vector of outputs. It is designed to work seamlessly with the tidyverse ecosystem of packages, but can also be used with base R functions.</p>
+<p>The most important feature in <code>purrr</code> is its ability to replace loops with functions that save time and effort. The package has a collection of functions that allow you to work with functions that take one or more arguments. Some of these functions include <code>map</code>, <code>map2</code>, <code>pmap</code>, and <code>imap.</code></p>
+<p>The map function is purrr’s flagship function and is used to apply a function to each element of a list or vector, returning a list of outputs. The <code>map2</code> function applies a function to two lists or vectors in parallel, returning a list of outputs. The <code>pmap</code> function applies a function to an arbitrary number of lists or vectors in parallel, returning a list of outputs. The <code>imap</code> function is similar to map, but also provides the index of the current element in the input vector.</p>
+<p>Purrr also includes features such as the possibility of mapping over nested lists, using <code>map</code> and variants to iterate over grouped data, and using <code>map</code> and variants to modify data in place.</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="tidyverse-1.html#cb147-1" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb147-2"><a href="tidyverse-1.html#cb147-2" tabindex="-1"></a></span>
+<span id="cb147-3"><a href="tidyverse-1.html#cb147-3" tabindex="-1"></a><span class="co"># define a function to square a number</span></span>
+<span id="cb147-4"><a href="tidyverse-1.html#cb147-4" tabindex="-1"></a>square <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { x <span class="sc">^</span> <span class="dv">2</span> }</span>
+<span id="cb147-5"><a href="tidyverse-1.html#cb147-5" tabindex="-1"></a></span>
+<span id="cb147-6"><a href="tidyverse-1.html#cb147-6" tabindex="-1"></a><span class="co"># use map to apply the function to each element of the list</span></span>
+<span id="cb147-7"><a href="tidyverse-1.html#cb147-7" tabindex="-1"></a>squared_numbers <span class="ot">&lt;-</span> <span class="fu">map</span>(numbers, square)</span>
+<span id="cb147-8"><a href="tidyverse-1.html#cb147-8" tabindex="-1"></a></span>
+<span id="cb147-9"><a href="tidyverse-1.html#cb147-9" tabindex="-1"></a><span class="co"># print the result</span></span>
+<span id="cb147-10"><a href="tidyverse-1.html#cb147-10" tabindex="-1"></a>squared_numbers</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 4
+## 
+## [[3]]
+## [1] 9
+## 
+## [[4]]
+## [1] 16
+## 
+## [[5]]
+## [1] 25</code></pre>
+</div>
+<div id="glue" class="section level3 hasAnchor" number="6.3.4">
+<h3><span class="header-section-number">6.3.4</span> glue<a href="tidyverse-1.html#glue" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>R <code>glue</code> is a tidyverse package that provides a simple way to interpolate values into strings. It allows users to combine multiple strings or variables together into a single string with minimum efforts, simpler than using base R fuctions.</p>
+<p>The <code>glue</code> function can handle various types of inputs, including vectors, lists, and expressions. It also supports user-defined formats and allows users to specify separators between the values.</p>
+<p>One of the significant advantages of using <code>glue</code> is that it provides a more readable and concise way to create strings in R. It eliminates the need for multiple <code>paste()</code> or <code>paste0()</code> statements, which can be cumbersome and error-prone.</p>
+<p>For example, instead of writing:</p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="tidyverse-1.html#cb149-1" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">&quot;The value of x is: &quot;</span>, x, <span class="st">&quot;, and the value of y is: &quot;</span>, y)</span></code></pre></div>
+<p>we can use R glue:</p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="tidyverse-1.html#cb150-1" tabindex="-1"></a><span class="fu">glue</span>(<span class="st">&quot;The value of x is: {x}, and the value of y is: {y}&quot;</span>)</span></code></pre></div>
+<p>This code will produce the same output, but it’s more readable and easier to modify.</p>
+</div>
+</div>
+<div id="data-types" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Data Types<a href="tidyverse-1.html#data-types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="stringr" class="section level3 hasAnchor" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> stringr<a href="tidyverse-1.html#stringr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The tidyverse package <code>stringr</code> provides a cohesive set of functions designed to make working with strings more efficient. It is especially useful when dealing with messy or unstructured data that needs to be cleaned and transformed into a more structured format.</p>
+<p>Several functions in <code>stringr</code> provides methods working with strings, for example:</p>
+<ul>
+<li><strong>str_replace</strong>: replaces a pattern with another pattern in a string.</li>
+</ul>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="tidyverse-1.html#cb151-1" tabindex="-1"></a><span class="fu">str_replace</span>(<span class="st">&quot;Hello World&quot;</span>, <span class="st">&quot;W.+&quot;</span>, <span class="st">&quot;Everyone&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;Hello Everyone&quot;</code></pre>
+<ul>
+<li><strong>str_extract</strong>: extracts the first occurrence of a pattern from a string.</li>
+</ul>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="tidyverse-1.html#cb153-1" tabindex="-1"></a><span class="fu">str_extract</span>(<span class="st">&quot;Hello World&quot;</span>, <span class="st">&quot;W.+&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;World&quot;</code></pre>
+<ul>
+<li><strong>str_split</strong>: splits a string into pieces based on a specified pattern.</li>
+</ul>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="tidyverse-1.html#cb155-1" tabindex="-1"></a><span class="fu">str_split</span>(<span class="st">&quot;Hello World&quot;</span>, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">s&quot;</span>)</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;Hello&quot; &quot;World&quot;</code></pre>
+</div>
+<div id="lubridate" class="section level3 hasAnchor" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> lubridate<a href="tidyverse-1.html#lubridate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The tidyverse package <code>lubridate</code> helps with the handling of dates and times. The package has several functions that make it easier to work with dates and times, especially when dealing with data that has different formats.</p>
+<p>Some of the functions in <code>lubridate</code> package include:</p>
+<ul>
+<li><strong>ymd</strong> - this is used to convert dates in the format of year, month, and day to the date format in R. For example, <code>ymd("20220101")</code> will return the date in R format.</li>
+<li><strong>dmy</strong> - this is used to convert dates in the format of day, month, and year to the date format in R. For example, <code>dmy("01-01-2022")</code> will return the date in R format.</li>
+<li><strong>hms</strong> - this is used to convert time in the format of hours, minutes, and seconds to the time format in R. For example, <code>hms("12:30:15")</code> will return the time in R format.</li>
+<li><strong>ymd_hms</strong> - this is used to convert dates and times in the format of year, month, day, hours, minutes, and seconds to the date and time format in R. For example, <code>ymd_hms("2022-01-01 12:30:15")</code> will return the date and time in R format.</li>
+</ul>
+<p>There are also functions for extracting information from dates and times such as <code>year()</code>, <code>month()</code>, <code>day()</code>, <code>hour()</code>, <code>minute()</code>, and <code>second()</code>.</p>
+</div>
+<div id="forcats" class="section level3 hasAnchor" number="6.4.3">
+<h3><span class="header-section-number">6.4.3</span> forcats<a href="tidyverse-1.html#forcats" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>R <code>forcats</code> is a tidyverse package that provides a set of tools for working with categorical data. It is designed to make it easier to work with factors in R, which are used to represent categorical data.</p>
+<p>The <code>forcats</code> package provides several functions that can be used to manipulate factors, including reordering levels, combining levels, and handling missing values. It also provides functions for working with ordered factors, which are used to represent data that has a natural ordering, such as age groups or ratings.</p>
+<p>One of the key benefits of using <code>forcats</code> is that it allows you to easily visualize and analyze categorical data. The package provides functions for creating categorical plots, such as bar charts and pie charts, as well as for calculating summary statistics for categorical data.</p>
+<p>In addition to its core functionality, <code>forcats</code> is also highly customizable. It provides a wide range of options for controlling the appearance of plots and for customizing the behavior of factor manipulation functions.</p>
+</div>
+</div>
+<div id="summarizing" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Summarizing<a href="tidyverse-1.html#summarizing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="dplyr-1" class="section level3 hasAnchor" number="6.5.1">
+<h3><span class="header-section-number">6.5.1</span> dplyr<a href="tidyverse-1.html#dplyr-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the R tidyverse package, summarizing data is a common task performed on data frames. The dplyr package provides a set of functions that makes it easy to summarize data based on one or more variables.</p>
+<ul>
+<li><strong>group_by</strong>: used to group rows of a data frame by one or more columns.</li>
+<li><strong>summarize</strong>: used to summarize the data based on one or more aggregate functions.</li>
+</ul>
+<p>The summarise() function is used to perform simple summary statistics on data frames. It takes the name of the new variable as well as the summary function that should be used to calculate its value. For example, to calculate the mean and standard deviation of a variable named ‘x’ in a data frame named ‘df’, we can use the following code:</p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="tidyverse-1.html#cb157-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span></span>
+<span id="cb157-2"><a href="tidyverse-1.html#cb157-2" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(inches), </span>
+<span id="cb157-3"><a href="tidyverse-1.html#cb157-3" tabindex="-1"></a>            <span class="at">max =</span> <span class="fu">max</span>(inches))</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 2
+##     min   max
+##   &lt;dbl&gt; &lt;dbl&gt;
+## 1   0.2   5.2</code></pre>
+<p>The group_by() function is used to group data frames by one or more variables. This is useful when we want to summarize data by different categories. For example, to calculate the mean and standard deviation of ‘x’ by ‘group’, we can use the following code:</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="tidyverse-1.html#cb159-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span></span>
+<span id="cb159-2"><a href="tidyverse-1.html#cb159-2" tabindex="-1"></a>  <span class="fu">group_by</span>(plant) <span class="sc">%&gt;%</span></span>
+<span id="cb159-3"><a href="tidyverse-1.html#cb159-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(inches), </span>
+<span id="cb159-4"><a href="tidyverse-1.html#cb159-4" tabindex="-1"></a>            <span class="at">max =</span> <span class="fu">max</span>(inches))</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 3
+##   plant   min   max
+##   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 A       0.3   3.4
+## 2 B       0.2   4.1
+## 3 C       0.4   5.2</code></pre>
+<p>The summarize_at() and summarize_all() functions are used to perform summary statistics on multiple variables at once. The summarize_at() function takes a list of variables to summarize, while the summarize_all() function summarizes all variables in the data frame. For example, to calculate the mean and standard deviation of all numeric variables in a data frame named ‘df’, we can use the following code:</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="tidyverse-1.html#cb161-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span></span>
+<span id="cb161-2"><a href="tidyverse-1.html#cb161-2" tabindex="-1"></a>  <span class="fu">summarise_all</span>(<span class="fu">list</span>(<span class="at">max =</span> max, <span class="at">min =</span> min))</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 8
+##   plant_max conditio…¹ time_…² inche…³ plant…⁴ condi…⁵ time_…⁶
+##   &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  
+## 1 C         wet, cold  week_3      5.2 A       moist,… week_1 
+## # … with 1 more variable: inches_min &lt;dbl&gt;, and abbreviated
+## #   variable names ¹​condition_max, ²​time_max, ³​inches_max,
+## #   ⁴​plant_min, ⁵​condition_min, ⁶​time_min</code></pre>
+<p>Summarizing data is an essential task that can be performed using several functions. These functions make it easy to calculate summary statistics based on one or more variables, group data frames by different categories, and summarize multiple variables at once.</p>
+</div>
+<div id="ggplot2" class="section level3 hasAnchor" number="6.5.2">
+<h3><span class="header-section-number">6.5.2</span> ggplot2<a href="tidyverse-1.html#ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The tidyverse package <code>ggplot2</code>, demonstrated at the onset of this chapter, is a data visualization package in R programming language that provides a flexible and powerful framework for creating graphs and charts. It is built on the grammar of graphics, which is a systematic way of mapping data to visual elements like points, lines, and bars.</p>
+<p>With <code>ggplot2</code>, you can create a wide range of graphs including scatterplots, bar charts, line charts, and more. The package offers a variety of customization options, such as color schemes, themes, and annotations, allowing you to create professional-looking visualizations with ease.</p>
+<p>One of the key benefits of <code>ggplot2</code> is that it allows you to quickly explore and analyze your data visually. You can easily create multiple graphs with different variables and subsets of your data, and compare them side by side to identify patterns and trends.</p>
+
+</div>
+</div>
+<div id="exercises-3" class="section level2 unnumbered hasAnchor">
+<h2>Exercises<a href="tidyverse-1.html#exercises-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="69%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/07.png" height="68" /></td>
+<td><ul>
+<li><p>Create a new R Studio Project and name it <strong>004_tidyverse</strong>.</p></li>
+<li><p>Create a new R script, add your name and date at the top as comments.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li>Calculate the mean of following vector.</li>
+</ol>
+<pre><code>##  [1]  7.48 14.15  6.23 10.21 15.13  8.19  8.58  8.09  9.14
+## [10] 10.41</code></pre>
+<pre><code>## [1] 9.761</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Pipeline (eg. <code>%&gt;%</code>) a data operation that provides the mean of following vector.</li>
+</ol>
+<pre><code>## [1] 9.761</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Employing a pipeline (eg. <code>%&gt;%</code>), construct a tibble with columns named <code>circ</code> and <code>diam</code> which contains the diameters of circles with integer circumferences 1 to 5. Remember PEMDAS.</li>
+</ol>
+<pre><code>## # A tibble: 5 × 2
+##    circ  diam
+##   &lt;int&gt; &lt;dbl&gt;
+## 1     1  3.14
+## 2     2 12.6 
+## 3     3 28.3 
+## 4     4 50.3 
+## 5     5 78.5</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Extract all circumferences greater than 50.</li>
+</ol>
+<pre><code>## # A tibble: 2 × 2
+##    circ  diam
+##   &lt;int&gt; &lt;dbl&gt;
+## 1     4  50.3
+## 2     5  78.5</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Add a column named <code>circ_type</code> where you assign the string <em>odd</em> or <em>even</em> depending on the column <code>circ</code>. Attempt to use the <code>purrr::map</code> function, along with the <code>oddeven()</code> function from the previous chapter, then compute the mean, standard deviation, and coefficient of variation of the diameters for each <code>circ_type</code>.</li>
+</ol>
+<pre><code>## # A tibble: 2 × 4
+##   circ_type diam_mean diam_sd diam_cv
+##   &lt;chr&gt;         &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 even           31.4    26.7   0.849
+## 2 odd            36.7    38.4   1.05</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="r-objects.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-wrangling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/jeffsocal/asms_r_intro/edit/BRANCH/06_01-tidyverse.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

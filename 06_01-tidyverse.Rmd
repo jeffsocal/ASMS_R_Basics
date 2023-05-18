@@ -146,14 +146,41 @@ R `readr` is a package in the R language that is used to read structured data fi
 
 One of the key features of `readr` is its ability to quickly read data into R, making it an ideal package for data analysis and data cleaning. `readr` is designed to handle various types of data, including numeric, date, and character data. The package also has advanced features such as automatic guessing of column types, encoding detection, and parsing of dates and times.
 
-```{r, eval=FALSE, message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE}
 # read comma separated values
-tbl_csv <- "data/denver_climate.csv" %>% read_csv()
+tbl_csv <- "data/bacterial-metabolites_dose-simicillin_tidy.csv" %>% read_csv()
 ```
 
 One of the best things about `readr` is its consistency in dealing with file formats, which allows for easy and fast data manipulation. The package provides a high level of control over the import process, allowing you to specify the location of the data file, the delimiter, and the encoding type. Additionally, `readr` can handle large datasets with ease, making it one of the most efficient packages for data handling.
 
 ## Wrangling
+
+Data wrangling is the process of cleaning, transforming, and formatting raw data into a usable format for analysis. The steps involved in data wrangling include removing duplicates, dealing with missing or erroneous values, converting data types, and formatting data into a consistent structure. It also involves merging data from different sources, reshaping data, and transforming data for analysis.
+
+The objective of data wrangling is to create high-quality, structured data for further analysis and modeling. It requires technical skills, domain knowledge, and creativity. Without proper data wrangling, analysis and modeling may be compromised, leading to incorrect conclusions and decisions. This is where `tidyverse` functions become quite useful and we will go deeper into Data Wrangling in the subsiquent chapter.
+
+Given an example of wide data, where *Arabidopsis thaliana* plants are measured for height for three weeks post germination.
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+
+tbl_wide <- tibble(
+  plant = LETTERS[1:3],
+  condition = c('wet, cold', 'moist, cold', 'moist, hot'),
+  week_1 = c(0.3,0.2,0.4),
+  week_2 = c(1.3,1.5,1.7),
+  week_3 = c(3.4,4.1,5.2)
+)
+```
+
+
+| plant | condition   | week_1 | week_2 | week_3 |
++-------+-------------+--------+--------+--------+
+| A     | wet, cold   | 0.3    | 1.3    | 3.4    |
+| B     | moist, cold | 0.2    | 1.5    | 4.1    |
+| C     | moist, hot  | 0.4    | 1.7    | 5.2    |
++-------+-------------+--------+--------+--------+
+
+
 ### dplyr
 R `dplyr` is perhaps pne of the most powerful libraries in the `tidyverse`, providing a set of tools for data manipulation and transformation. It is designed to work seamlessly with data stored in data frames.
 
@@ -162,22 +189,59 @@ The library comes with a set of functions that can be used to filter, arrange, g
 Some of the most commonly used functions in `dplyr` are:
 
 - **filter**: used to extract specific rows from a data frame based on certain conditions.
+
+```{r}
+tbl_wide %>% filter(plant == 'A')
+```
+
 - **arrange**: used to sort the rows of a data frame based on one or more columns.
+
+```{r}
+tbl_wide %>% arrange(week_3)
+```
+
 - **select**: used to select specific columns from a data frame.
+
+```{r}
+tbl_wide %>% select(plant, week_3)
+```
+
 - **mutate**: used to add new columns to a data frame.
 
-In addition to these functions, dplyr also includes a set of convenient shortcuts and helpers, such as the pipe operator (%>%) which allows users to chain multiple operations together in a more intuitive and readable way.
+```{r}
+tbl_wide %>% mutate(week_4 = c(3.8, 4.6, 5.7))
+```
 
 ### tidyr
 R `tidyr` is a package in R that helps to reshape data frames. It is an essential tool for data cleaning and analysis. Tidyr is used to convert data from wide to long format and vice versa, and it also helps to separate and unite columns.
 
 - **pivot_longer**: used to reshape data from a column-based wide format to a row-based long format.
+
+```{r}
+tbl_long <- tbl_wide %>% pivot_longer(cols = matches('week'), names_to = 'time', values_to = 'inches')
+
+tbl_long
+```
+
 - **pivot_wider**: used to reshape data from a row-based long format to a column-based wide format.
+
+```{r}
+tbl_long %>% pivot_wider(names_from = 'time', values_from = 'inches')
+```
 
 The package `tidyr` also has functions to separate and unite columns. The "separate" function is used when you have a column that contains multiple variables. For example, if you have a column that contains both the first and last name of a person, you can separate them into two columns. The "unite" function is the opposite of separate. It is used when you want to combine two or more columns into one column.
 
-- **seperate**: used to separate a column with multiple values into two or more columns.
-- **seperate_row**: used to duplicate a row with multiple values from a given column.
+- **separate**: used to separate a column with multiple values into two or more columns.
+
+```{r}
+tbl_long %>% separate(condition, into = c('soil', 'temp'))
+```
+
+- **separate_rows**: used to duplicate a row with multiple values from a given column.
+
+```{r}
+tbl_wide %>% separate_rows(condition, sep = ', ')
+```
 
 ### purrr
 The `purrr` package is a functional programming toolkit for R that enables users to easily and rapidly apply a function to a set of inputs, returning a list or vector of outputs. It is designed to work seamlessly with the tidyverse ecosystem of packages, but can also be used with base R functions.
@@ -272,25 +336,25 @@ In the R tidyverse package, summarizing data is a common task performed on data 
 The summarise() function is used to perform simple summary statistics on data frames. It takes the name of the new variable as well as the summary function that should be used to calculate its value. For example, to calculate the mean and standard deviation of a variable named 'x' in a data frame named 'df', we can use the following code:
 
 ``` {r}
-tbl_csv %>%
-  summarise(mean = mean(precipitation), 
-            sd = sd(precipitation))
+tbl_long %>%
+  summarise(min = min(inches), 
+            max = max(inches))
 ```
 
 The group_by() function is used to group data frames by one or more variables. This is useful when we want to summarize data by different categories. For example, to calculate the mean and standard deviation of 'x' by 'group', we can use the following code:
 
 ```{r}
-tbl_csv %>%
-  group_by(year) %>%
-  summarise(mean = mean(precipitation), 
-            sd = sd(precipitation))
+tbl_long %>%
+  group_by(plant) %>%
+  summarise(min = min(inches), 
+            max = max(inches))
 ```
 
 The summarize_at() and summarize_all() functions are used to perform summary statistics on multiple variables at once. The summarize_at() function takes a list of variables to summarize, while the summarize_all() function summarizes all variables in the data frame. For example, to calculate the mean and standard deviation of all numeric variables in a data frame named 'df', we can use the following code:
 
 ```{r}
-tbl_csv %>%
-  summarise_all(list(mean = mean, sd = sd))
+tbl_long %>%
+  summarise_all(list(max = max, min = min))
 ```
 
 Summarizing data is an essential task that can be performed using several functions. These functions make it easy to calculate summary statistics based on one or more variables, group data frames by different categories, and summarize multiple variables at once.

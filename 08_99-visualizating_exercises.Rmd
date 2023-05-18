@@ -8,57 +8,57 @@
 |                                 | - Locate and/or download a GGplot2 cheat-sheet and refer to it as needed. |
 +---------------------------------+---------------------------------------------------------------------------+
 
-1. If not already done, download *Bacterial Metabolite Data* to use as an example data file.
+1. If not already done, download *Bacterial Metabolite Data (tidy)* to use as an example data file.
 ```{r, eval=FALSE}
-url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
-download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-Metabolites_dose-simicillin_tidy.csv"
+download.file(url, destfile = "./data/bacterial-Metabolites_dose-simicillin_tidy.csv")
 ```
 
 2. Read in the dataset .csv using the `tidyverse` set of packages.
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 
-tbl_bac <- "./data/bacterial-metabolites_dose-simicillin_tidy.csv" %>% read_csv()
+tbl_bac <- "./data/bacterial-Metabolites_dose-simicillin_tidy.csv" %>% read_csv()
 ```
 
-3. Create a metabolite `abundance` by `time_min` ...
+3. Create a Metabolite `Abundance` by `Time_min` ...
 ```{r, echo=FALSE, fig.width=4, fig.height=3, fig.align='center'}
 tbl_bac %>% 
-  ggplot(aes(time_min, abundance)) + 
+  ggplot(aes(Time_min, Abundance)) + 
   geom_point()
 ```
 
-4. ... facet by `culture` and `metabolite`...
+4. ... facet by `Organism` and `Metabolite`...
 ```{r, echo=FALSE, fig.width=6, fig.height=6, fig.align='center'}
 tbl_bac %>% 
-  ggplot(aes(time_min, abundance)) + 
+  ggplot(aes(Time_min, Abundance)) + 
   geom_point() + 
-  facet_grid(metabolite ~ culture)
+  facet_grid(Metabolite ~ Organism)
 ```
 
-4. ... adjust the y-axis to log10, color by `dose_mg`, and add a 50% transparent line ...
+4. ... adjust the y-axis to log10, color by `Dose_mg`, and add a 50% transparent line ...
 ```{r, echo=FALSE, fig.width=8, fig.height=6, fig.align='center'}
 tbl_bac %>% 
-  mutate(dose_mg = dose_mg %>% as.factor()) %>%
-  ggplot(aes(time_min, abundance)) + 
-  geom_point(aes(color = dose_mg)) +
-  geom_line(aes(color = dose_mg), alpha = .5) +
-  facet_grid(metabolite ~ culture) +
+  mutate(Dose_mg = Dose_mg %>% as.factor()) %>%
+  ggplot(aes(Time_min, Abundance)) + 
+  geom_point(aes(color = Dose_mg)) +
+  geom_line(aes(color = Dose_mg), alpha = .5) +
+  facet_grid(Metabolite ~ Organism) +
   scale_y_log10()
 ```
 
 5. ... change the theme to something publishable, add a title, modify the x- and y-axis label, modify the legend title, adjust the y-axis ticks to show the actually measured time values, and pick a color scheme that highlights the dose value...
 ```{r, echo=FALSE, fig.width=8, fig.height=6, fig.align='center'}
 tbl_bac %>% 
-  mutate(dose_mg = dose_mg %>% as.factor()) %>%
-  ggplot(aes(time_min, abundance)) + 
-  geom_point(aes(color = dose_mg)) +
-  geom_line(aes(color = dose_mg), alpha = .5) +
-  facet_grid(metabolite ~ culture) +
+  mutate(Dose_mg = Dose_mg %>% as.factor()) %>%
+  ggplot(aes(Time_min, Abundance)) + 
+  geom_point(aes(color = Dose_mg)) +
+  geom_line(aes(color = Dose_mg), alpha = .5) +
+  facet_grid(Metabolite ~ Organism) +
   scale_color_manual(values = c("grey", "orange", "red")) +
   scale_y_log10() +
-  scale_x_continuous(breaks = unique(tbl_bac$time_min)) +
-  labs(title = 'Bacterial metabolite monitoring by LCMS in response to antibiotic',
+  scale_x_continuous(breaks = unique(tbl_bac$Time_min)) +
+  labs(title = 'Bacterial Metabolite monitoring by LCMS in response to antibiotic',
        subtitle = 'Conditions: metered dose of similicillin',
        x = "Time (min)", y = "LCMS Abundance",
        color = "Dose (mg)") +

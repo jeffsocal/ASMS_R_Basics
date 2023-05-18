@@ -11,10 +11,15 @@ There are several measures of a molecular mass that can be reported. The _averag
 
 R BRAIN is an isotopic abundance calculator implemented in R programming language and is especially useful for chemists and researchers who deal with complex molecules and need to calculate their isotopic composition accurately. In addition, it has a handy function for calculating the mass directly from an amino acid sequence.
 
-|                   |                                                                                            |
-|-------------------|--------------------------------------------------------------------------------------------|
-| **Documentation** | [Bioconductor](https://bioconductor.org/packages/release/bioc/manuals/BRAIN/man/BRAIN.pdf) |
-| **Literature**    | *Analytical chemistry* 2013 85(4), 1991-1994                                                   |
+\
+
++---------------------------------+-------------------------------------------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | **Docs** | [Bioconductor](https://bioconductor.org/packages/release/bioc/manuals/BRAIN/man/BRAIN.pdf) |
+|                                 |                                                                                                       |
+|                                 | **Cite** | *Analytical chemistry* 2013, 85(4), 1991-1994                                               |
++---------------------------------+-------------------------------------------------------------------------------------------------------+
+
+\
 
 #### Installation {-}
 ```{r, eval=FALSE}
@@ -44,22 +49,37 @@ calculateMonoisotopicMass(lst_atm)
 
 Calculate the isotopic abundances (probabilities) mass.
 ```{r, fig.width=6, fig.height=3, fig.align='center'}
-Probability <- calculateIsotopicProbabilities(lst_atm, nrPeaks = 25)
-Mass <- calculateMonoisotopicMass(lst_atm) + 0:(length(Probability) - 1)
+lst_isotopes <- useBRAIN(lst_atm, nrPeaks = 20)
 
-plot(Mass, Probability)
+plot(lst_isotopes$masses, lst_isotopes$isoDistr, xlab='Mass', ylab='Probability', type = 'h')
+```
+Calculate the isotopic abundances (probabilities) mass for a metabolite [C100H200S2Cl5].
+```{r, fig.width=6, fig.height=3, fig.align='center'}
+
+lst_atm <- list(C=100, H=200, S=2, Cl=5)
+
+lst_isotopes <- useBRAIN(lst_atm, nrPeaks = 13)
+
+plot(x = lst_isotopes$masses, 
+     y = lst_isotopes$isoDistr / max(lst_isotopes$isoDistr) * 100, 
+     xlab='Mass', ylab='Relative abundance', type = 'h')
 ```
 
 
-### enviPat
+### enviPat {-}
 **Isotope Pattern, Profile and Centroid Calculation for Mass Spectrometry**
 
 A new method (year 2022) for calculating theoretical isotope patterns in mass spectrometry. This method uses a treelike structure to derive sets of subisotopologues for each element in a molecule. By doing so, it allows for early pruning of low-probability isotopologues and the detection of the most probable isotopologue. The method was validated in a large-scale benchmark simulation.
 
-|                   |                                                                                            |
-|-------------------|--------------------------------------------------------------------------------------------|
-| **Documentation** | [CRAN](https://cran.r-project.org/web/packages/enviPat/enviPat.pdf)                        |
-| **Literature**    | *Anal. Chem.* 2015, 87, 11, 5738–5744.                                                     |
+\
+
++---------------------------------+--------------------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | **Docs** | [CRAN](https://cran.r-project.org/web/packages/enviPat/enviPat.pdf) |
+|                                 |                                                                                |
+|                                 | **Cite** | *Anal. Chem.* 2015, 87, 11, 5738–5744                               |
++---------------------------------+--------------------------------------------------------------------------------+
+
+\
 
 #### Installation {-}
 ```{r, eval=FALSE}

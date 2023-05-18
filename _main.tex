@@ -110,12 +110,12 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Introduction to R for Mass Spectrometrists},
+  pdftitle={Learning R for Mass Spectrometry},
   pdfauthor={Jeff Jones, Heath Patterson, Ryan Benz},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{Introduction to R for Mass Spectrometrists}
+\title{Learning R for Mass Spectrometry}
 \author{Jeff Jones, Heath Patterson, Ryan Benz}
 \date{2023-05-16}
 
@@ -210,9 +210,17 @@ This book is organized in a manner such that each chapter builds upon the previo
 
 Before we get started, this book contains some basic cues to help facilitate your understanding of the current topic.
 
-\begin{infobox}{skill}
+\hfill\break
 
-At the end of this chapter you should be able to:
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2411}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7589}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/03.png} & \begin{minipage}[t]{\linewidth}\raggedright
+\textbf{At the end of this chapter you should be able to}
 
 \begin{itemize}
 \item
@@ -222,8 +230,10 @@ At the end of this chapter you should be able to:
 \item
   Know where to find additional educational resources.
 \end{itemize}
+\end{minipage} \\
+\end{longtable}
 
-\end{infobox}
+\hfill\break
 
 \hypertarget{why-choose-it}{%
 \section*{Why choose it?}\label{why-choose-it}}
@@ -242,10 +252,7 @@ Overall, R is an excellent language for anyone who wants to work with data. Its 
 The Stack Overflow blog post \href{https://stackoverflow.blog/2017/10/10/impressive-growth-r/}{The Impressive Growth of R} by David Robinson, discusses the growth and popularity of the programming language R. The post highlights the increase in R's usage on Stack Overflow, as well as the growing interest in R from various industries.
 
 \begin{quote}
-We found in a previous post that Python has a solid claim to being the
-fastest-growing programming language in terms of Stack Overflow visits.
-The same analysis showed that the R programming language has shown remarkable
-growth in the last five years as well. In fact, R is growing at a similar rate to Python\ldots{}
+We found in a previous post that Python has a solid claim to being the fastest-growing programming language in terms of Stack Overflow visits. The same analysis showed that the R programming language has shown remarkable growth in the last five years as well. In fact, R is growing at a similar rate to Python\ldots{}
 \end{quote}
 
 The post provides an overview of R's history, its advantages and disadvantages, and its current position in the programming world. The author notes that R's popularity is due to its ability to handle large datasets, its flexibility for data analysis and in increase in popularity of data science and the growing number of companies using R for data analysis. Overall, the post concludes that R's growth and popularity are likely to continue in the future, as more industries recognize the value of data analysis and turn to R as a solution.
@@ -256,12 +263,21 @@ The post provides an overview of R's history, its advantages and disadvantages, 
 
 The potential of what you can achieve with R is vast and ultimately depends on the level of dedication you have towards learning and expanding your skill set. By utilizing R, you can analyze data through various methods such as reading and plotting data, constructing analysis pipelines, prototyping new algorithms, and even writing your analysis code into shareable packages. With these abilities, you can not only perform data analysis, but also create a more efficient and reproducible workflow. The more you learn and experiment with R, the more you can discover and unlock its full potential.
 
-\begin{infobox}{note}
-\emph{\textbf{NOTES} Some helpful explanatory notes and tips appear as a block quote.}\\
-\strut \\
-R can be a fast, nimble, forgiving scripting language with lots of ready-made tools and resources (CRAN, Github, Bioconductor).
+\hfill\break
 
-\end{infobox}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2061}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7939}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/01.png} & \textbf{NOTES} Some helpful explanatory notes and tips appear as a block quote. \textbar{}
+\textbar{}
+- R can be a fast, nimble, forgiving scripting language with lots of ready-made tools and resources (CRAN, Github, Bioconductor). \\
+\end{longtable}
+
+\hfill\break
 
 \hypertarget{the-r-learning-curve}{%
 \section*{The R Learning Curve}\label{the-r-learning-curve}}
@@ -333,7 +349,9 @@ When working with R, it is important to understand the basics and terms so that 
 
 In addition to Googling to find how to do something in R, there are several online resources available for individuals learning R programming and needing assistance with concepts or coding issues. These resources include CRAN, Bioconductor, RStudio Community, R-bloggers, and Stack Overflow. Each of these resources offers different benefits, such as packages, forums, blogs, and Q\&A communities, to help R users.
 
-Locating available packages (pre-built algorithms):
+\hypertarget{locating-available-packages-pre-built-algorithms}{%
+\subsubsection*{Locating available packages (pre-built algorithms)}\label{locating-available-packages-pre-built-algorithms}}
+\addcontentsline{toc}{subsubsection}{Locating available packages (pre-built algorithms)}
 
 \begin{itemize}
 \item
@@ -342,7 +360,9 @@ Locating available packages (pre-built algorithms):
   Bioconductor: \href{https://bioconductor.org/}{bioconductor.org/}
 \end{itemize}
 
-Ways to ask for help, or find answers to a similar question:
+\hypertarget{ways-to-ask-for-help-or-find-answers-to-a-similar-question}{%
+\subsubsection*{Ways to ask for help, or find answers to a similar question}\label{ways-to-ask-for-help-or-find-answers-to-a-similar-question}}
+\addcontentsline{toc}{subsubsection}{Ways to ask for help, or find answers to a similar question}
 
 \begin{itemize}
 \item
@@ -355,7 +375,9 @@ Ways to ask for help, or find answers to a similar question:
   Stack Overflow: \href{https://stackoverflow.com/questions/tagged/r}{stackoverflow.com/}
 \end{itemize}
 
-More ways to search and find what you are looking for:
+\hypertarget{more-ways-to-search-and-find-what-you-are-looking-for}{%
+\subsubsection*{More ways to search and find what you are looking for}\label{more-ways-to-search-and-find-what-you-are-looking-for}}
+\addcontentsline{toc}{subsubsection}{More ways to search and find what you are looking for}
 
 \begin{itemize}
 \item
@@ -364,7 +386,9 @@ More ways to search and find what you are looking for:
   R-universe: \href{https://r-universe.dev/search/}{r-universe.dev/search/}
 \end{itemize}
 
-Cheat-sheets (condensed help):
+\hypertarget{cheat-sheets}{%
+\subsubsection*{Cheat-sheets}\label{cheat-sheets}}
+\addcontentsline{toc}{subsubsection}{Cheat-sheets}
 
 \begin{itemize}
 \item
@@ -392,8 +416,9 @@ Cheat-sheets (condensed help):
 
 R books in print are becoming increasingly popular due to the growing demand for R programming and data analysis. These books offer several benefits that make them an excellent resource for anyone who wants to learn R programming or improve their data analysis skills. One of the key advantages of R books in print is that they are easy to read and navigate. The authors of these books take into consideration that not everyone who reads their books is an expert in programming. They use simple language and examples to explain concepts from the basics, making it easy for readers to understand. They can be used as a quick reference guide when working on a project or when facing a programming challenge. R books in print are cost-effective. While online resources are free, they are not always reliable, and it can be time-consuming to find the information you need. R books in print, on the other hand, are written and edited by experts who have years of experience in the field making them a reliable source of information.
 
-\textbf{R for Data Science: Import, Tidy, Transform, Visualize, and Model Data 1st Edition}
-\emph{by Garrett Grolemund, Hadley Wickham}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{R for Data Science: Import, Tidy, Transform, Visualize, and Model Data 1st Edition} \emph{by Garrett Grolemund, Hadley Wickham}
 
 \begin{quote}
 Learn how to use R to turn raw data into insight, knowledge, and understanding.
@@ -402,6 +427,8 @@ packages designed to work together to make data science fast, fluent, and fun.
 Suitable for readers with no previous programming experience, R for Data
 Science is designed to get you doing data science as quickly as possible.
 \end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \textbf{Use R!}, a collection of 67 print books.
 
@@ -431,10 +458,21 @@ In summary, the Use R! collection of print books is a valuable resource for anyo
 
 Many R organizations offer individuals an opportunity for training and support, networking, access to resources, and help building a reputation. These benefits make R organizations a valuable resource to consider for both individuals and organizations using R for statistical computing and graphics.
 
-\begin{infobox}{note}
-\emph{\textbf{R User Groups} (RUGs) are a relaxed and friendly way to broaden your contacts, scope and understanding of R}.
+\hfill\break
 
-\end{infobox}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2615}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7385}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/01.png} & \textbf{R User Group (RUG)}
+
+RUGs are a relaxed and friendly way to broaden your contacts, scope and understanding of R. \textbar{} \\
+\end{longtable}
+
+\hfill\break
 
 \hypertarget{r-user-groups}{%
 \subsubsection*{R User Groups}\label{r-user-groups}}
@@ -503,12 +541,29 @@ In the scope of this book, there are three main components that need to be insta
 
 In this book we will be utilizing the RStudio integrated development environment (IDE) to interact with R. Two separate components are required for this - the R interpreter and the RStudio IDE. Both are required as the RStudio IDE only provides an interface for the R interpreter, which reads the code and does all the mathematical operations. The R interpreter can be used alone, interacting through the command line (eg. Windows CMD, MacOS and Linux Terminal), a plain text editor or another IDE such as Xcode, VSCode, Eclipse, Notepad++, etc. Rstudio provides a comprehensive, R specific environment, with auto-complete, code syntax highlighting, in-editor function definitions along with package management and plot visualizations.
 
-\begin{infobox}{skill}
-At the end of this chapter you should be able to:\\
-1. Install R, RStudio and a few R packages\\
-2. Understand the major components for working with R.
+\hfill\break
 
-\end{infobox}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3656}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6344}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/03.png} & \begin{minipage}[t]{\linewidth}\raggedright
+\textbf{At the end of this chapter you should be able to}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Install R, RStudio and a few R packages
+\item
+  Understand the major components for working with R.
+\end{enumerate}
+\end{minipage} \\
+\end{longtable}
+
+\hfill\break
 
 \hypertarget{r-interpreter}{%
 \section{R interpreter}\label{r-interpreter}}
@@ -753,10 +808,19 @@ Overall, R packages are an essential tool for anyone working with R. By using es
 
 When working with R, it is important to understand how to install packages. R packages are collections of functions, data, and documentation that extend the capabilities of R. Most R packages have binary versions available for direct installation with no additional steps required. Binary packages are pre-compiled and ready-to-use packages that are platform-specific. They can be installed with the \texttt{install.packages()} function in R.
 
-\begin{infobox}{note}
-Follow the examples below to install all the required packages used in this book. Jump to the following section if you run into any issues. Use the copy-paste button in the top-right of each code block.
+\hfill\break
 
-\end{infobox}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2083}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7917}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/01.png} & Follow the examples below to install all the required packages used in this book. Jump to the following section if you run into any issues. Use the copy-paste button in the top-right of each code block. \\
+\end{longtable}
+
+\hfill\break
 
 \hypertarget{installing-from-cran}{%
 \subsubsection*{Installing from CRAN}\label{installing-from-cran}}
@@ -795,10 +859,19 @@ Follow the examples below to install all the required packages used in this book
 \end{Highlighting}
 \end{Shaded}
 
-\begin{infobox}{note}
-There maybe several additional packages to install including additional operating system level installs. Go to the \href{https://jeffsocal.github.io/tidyproteomics/}{tidyproteomics} webpage for additional installation help.
+\hfill\break
 
-\end{infobox}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1164}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8836}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/01.png} & There maybe several additional packages to install including additional operating system level installs. Go to the \href{https://jeffsocal.github.io/tidyproteomics/}{tidyproteomics} webpage for additional installation help. \textbar{} \\
+\end{longtable}
+
+\hfill\break
 
 \hypertarget{potential-gotchas}{%
 \subsection{Potential Gotchas}\label{potential-gotchas}}
@@ -836,7 +909,7 @@ The \textbf{readr} package provides a versatile means of reading data from vario
 
 \begin{verbatim}
 ## Rows: 14 Columns: 7
-## -- Column specification -------------------------------------------------------------------------------------------------
+## -- Column specification ---------------------------------------------------------------------------
 ## Delimiter: ","
 ## chr (4): ion, seq, pair, type
 ## dbl (3): mz, z, pos
@@ -986,21 +1059,31 @@ In the \texttt{New\ Project\ Wizard} select \texttt{New\ Directory\ \textgreater
 \section*{Exercises}\label{exercises}}
 \addcontentsline{toc}{section}{Exercises}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2764}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7236}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/07.png} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{itemize}
 \item
-  Create a new project using R Studio. Name it \textbf{001\_new\_project}.
+  Create a new R Studio Project and name it \textbf{001\_new\_project}.
 \item
-  Create a data directory, named data
+  Create a new R script, add your name and date at the top as comments.
 \item
-  Create an R script file, write something (anything), and save it as \textbf{01\_test}
+  Create an R script file, write something (anything), and save it as \textbf{01\_test}.
 \item
-  Locate your new project on your PC
-\end{enumerate}
+  Create a new R script, add your name and date at the top as comments.
+\item
+  Locate your new project on your PC.
+\end{itemize}
+\end{minipage} \\
+\end{longtable}
 
-\hypertarget{the-basics}{%
-\chapter{The Basics}\label{the-basics}}
+\hypertarget{r-syntax}{%
+\chapter{R Syntax}\label{r-syntax}}
 
 Welcome to the R Book! In this chapter, we will explore the basics of R, a powerful programming language used for statistical computing and graphics.
 
@@ -1012,13 +1095,28 @@ In this chapter, we will start by examining the simplest operations of R. We wil
 
 So, let's get started!
 
-\begin{infobox}{skill}
-At the end of this chapter you should be able to:\\
-1. Understand R's syntax, variables, operators and functions\\
-2. Create and edit a project in RStudio\\
+\hfill\break
 
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3434}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6566}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/03.png} & \begin{minipage}[t]{\linewidth}\raggedright
+\textbf{At the end of this chapter you should be able to}
 
-\end{infobox}
+\begin{itemize}
+\item
+  Understand R's syntax, variables, operators and functions.
+\item
+  Create and edit a project in RStudio.
+\end{itemize}
+\end{minipage} \\
+\end{longtable}
+
+\hfill\break
 
 \hypertarget{reserved-words}{%
 \section{Reserved Words}\label{reserved-words}}
@@ -1057,10 +1155,19 @@ Use
 \texttt{NA} & a missing value indicator \\
 \end{longtable}
 
-\begin{infobox}{note}
-A \texttt{Null} results when a value is missing and could be a \emph{string} or a \emph{numeric}, where as a NA results when a known value, such as in a column of numbers, is missing.
+\hfill\break
 
-\end{infobox}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1635}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8365}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/01.png} & A \texttt{Null} results when a value is missing and could be a \emph{string} or a \emph{numeric}, where as a NA results when a known value, such as in a column of numbers, is missing. \textbar{} \\
+\end{longtable}
+
+\hfill\break
 
 \hypertarget{syntax}{%
 \section{Syntax}\label{syntax}}
@@ -1103,10 +1210,19 @@ By understanding these different components of R code, you'll be well on your wa
 ## my number is  4
 \end{verbatim}
 
-\begin{infobox}{note}
-R does not have an line ending character such as \texttt{;} in java, PHP or C++\_
+\hfill\break
 
-\end{infobox}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3119}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6881}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/01.png} & R does not have an line ending character such as \texttt{;} in java, PHP or C++ \\
+\end{longtable}
+
+\hfill\break
 
 \hypertarget{comments}{%
 \subsection{Comments}\label{comments}}
@@ -1309,10 +1425,19 @@ Example
 \texttt{\%\%} & modulus & provides the remainder after division & \texttt{5\ \%\%\ 2} = \texttt{1} \\
 \end{longtable}
 
-\begin{infobox}{note}
-Remember order of operations (PEMDAS): Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right).
+\hfill\break
 
-\end{infobox}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8333}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/02.png} & Remember order of operations (PEMDAS): Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right). \textbar{} \\
+\end{longtable}
+
+\hfill\break
 
 \hypertarget{variables}{%
 \subsection{Variables}\label{variables}}
@@ -1349,10 +1474,19 @@ R even has some intrinsic variables that come in handy, like \emph{pi}.
 ## [1] 3.141593
 \end{verbatim}
 
-\begin{infobox}{note}
-In R it is easy to overwrite existing variables, either initalized by R or created by you, causing error and confusion
+\hfill\break
 
-\end{infobox}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2166}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7834}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/02.png} & In R it is easy to overwrite existing variables, either initialized by R or created by you, causing error and confusion. \\
+\end{longtable}
+
+\hfill\break
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1394,10 +1528,19 @@ Example
 \texttt{1\ ==\ 1\ \&\ 1\ !=\ 2} = \texttt{FALSE} \\
 \end{longtable}
 
-\begin{quote}
-\textbf{NOTE}\\
-\emph{there are also the double operators \textbar\textbar{} and \&\&, these are intended to work as flow control operators and stop at the first condition met. In the most recent versions of R, the double operators will error out if a vector is applied.}
-\end{quote}
+\hfill\break
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1223}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8777}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/01.png} & There are also the double operators \textbf{\textbar\textbar{}} and \textbf{\&\&}, these are intended to work as flow control operators and stop at the first condition met. In the most recent versions of R, the double operators will error out if a vector is applied. \textbar{} \\
+\end{longtable}
+
+\hfill\break
 
 \hypertarget{functions}{%
 \subsection{Functions}\label{functions}}
@@ -1497,14 +1640,22 @@ The notion of an infix operator you and ignore for the most part. But, we will s
 \section*{Exercises}\label{exercises-1}}
 \addcontentsline{toc}{section}{Exercises}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3036}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6964}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/07.png} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{itemize}
 \item
-  Create a new R Studio Project and name it \emph{002\_basics}.
+  Create a new R Studio Project and name it \textbf{002\_basics}.
 \item
-  Create a new R script, add your name and date at the top as comments
-\end{enumerate}
+  Create a new R script, add your name and date at the top as comments.
+\end{itemize}
+\end{minipage} \\
+\end{longtable}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1588,21 +1739,36 @@ The notion of an infix operator you and ignore for the most part. But, we will s
 ## [1] "odd"
 \end{verbatim}
 
-\hypertarget{data-structures}{%
-\chapter{Data Structures}\label{data-structures}}
+\hypertarget{r-objects}{%
+\chapter{R Objects}\label{r-objects}}
 
 The R programming environment includes four basic types of data structures that increase in complexity: \texttt{variable}, \texttt{vector}, \texttt{matrix}, and \texttt{list}. Additionally there is the \texttt{data.frame} while and independent data structure, it is essentially derived from the \texttt{matrix}.
 
-\begin{infobox}{skill}
-At the end of this chapter you should be able to:\\
-1. Understand the 5 most common data structures\\
-2. Understand the data structure lineage\\
-3. Access given subsets of a multi-variable data object\\
+\hfill\break
 
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3617}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6383}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/03.png} & \begin{minipage}[t]{\linewidth}\raggedright
+\textbf{At the end of this chapter you should be able to}
 
-\end{infobox}
+\begin{itemize}
+\item
+  Understand the 5 most common data structures.
+\item
+  Understand the data structure lineage.
+\item
+  Access given subsets of a multi-variable data object.
+\end{itemize}
+\end{minipage} \\
+\end{longtable}
 
 \hfill\break
+
 This book introduced variables briefly in \ref{syntax}. Here, we will expand on that introduction. At its simplest, a variable can be thought of as a container that holds only a single thing, like a single stick of gum. A vector is an ordered, finite collection of variables, like a pack of gum. A matrix consists of columns of equally-sized vectors, similar to a vending machine for several flavors of gum packs. Mentally, you can think of them as a point, a line, and a square, respectively.
 
 \begin{figure}
@@ -1676,7 +1842,8 @@ There are also a handful of pre-populated vectors and functions for constructing
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z"
+##  [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W"
+## [24] "X" "Y" "Z"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1687,7 +1854,8 @@ There are also a handful of pre-populated vectors and functions for constructing
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"
+##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w"
+## [24] "x" "y" "z"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1736,12 +1904,17 @@ There are also a handful of pre-populated vectors and functions for constructing
 
 While variables don't require a referencing scheme, because they only contain a single value, vectors need to have some kind of referencing scheme, shown in \ref{fig:4001} as \texttt{x{[}9{]}} and illustrated in the following example.
 
-\begin{infobox}{note}
-Note the use of an integer vector to sub-select another vector based on position. R abides by the 1:N positional referencing, where as other programming languages refer to the first vector or array position as 0.\\
-\strut \\
-\emph{A good topic for a lively discussion with a computer scientist.}
+\hfill\break
 
-\end{infobox}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1097}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8903}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/01.png} & The use of an integer vector to sub-select another vector based on position. R abides by the 1:N positional referencing, where as other programming languages refer to the first vector or array position as 0. \emph{A good topic for a lively discussion with a computer scientist.} \\
+\end{longtable}
 
 \hfill\break
 
@@ -2093,13 +2266,22 @@ List of 12
 \section*{Exercises}\label{exercises-2}}
 \addcontentsline{toc}{section}{Exercises}
 
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3036}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6964}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/07.png} & \begin{minipage}[t]{\linewidth}\raggedright
 \begin{itemize}
-\tightlist
 \item
-  Create a new R Studio Project and name it \emph{003\_data\_structures}.
+  Create a new R Studio Project and name it \textbf{003\_data\_structures}.
 \item
-  Create a new R script, add your name and date at the top as comments
+  Create a new R script, add your name and date at the top as comments.
 \end{itemize}
+\end{minipage} \\
+\end{longtable}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2153,50 +2335,67 @@ List of 12
 
 The \texttt{tidyverse} is actually a collection of R packages designed for data analysis and visualization. It is an essential tool for data scientists and statisticians who work with large datasets.
 
-\begin{infobox}{skill}
-At the end of this chapter you should be able to:\\
-1. Grasp the importance of teh tidyverse\\
-2. Understand how to construct a data pipeline\\
-3. Composed a simple workflow
+\hfill\break
 
-\end{infobox}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3617}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6383}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/03.png} & \begin{minipage}[t]{\linewidth}\raggedright
+\textbf{At the end of this chapter you should be able to}
+
+\begin{itemize}
+\item
+  Grasp the utility of the tidyverse.
+\item
+  Understand how to construct a data pipeline.
+\item
+  Composed a simple workflow.
+\end{itemize}
+\end{minipage} \\
+\end{longtable}
+
+\hfill\break
 
 The \texttt{tidyverse} packages are built around a common philosophy of data manipulation. The goal is to provide a consistent and intuitive syntax for data analysis that is easy to learn and use. The packages in the \texttt{tidyverse} include:
 
-\begin{itemize}
-\tightlist
-\item
-  \textbf{magrittr}: provides the pipe, \%\textgreater\% used throughout the tidyverse.
-\item
-  \textbf{tibble}: creates the main data object.
-\item
-  \textbf{readr}: reading and writing data in various formats.
-\item
-  \textbf{dplyr}: data manipulation.
-\item
-  \textbf{tidyr}: transforming messy data into a tidy format.
-\item
-  \textbf{purrr}: functional programming with vectors and lists.
-\item
-  \textbf{stringr}: working with strings.
-\item
-  \textbf{lubridate}: working with dates and date strings.
-\item
-  \textbf{ggplot2}: graphical plotting and data visualization.
-\end{itemize}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3563}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6437}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\ref{magrittr} magrittr & provides the pipe, \%\textgreater\% used throughout the tidyverse. \\
+\ref{tibble} tibble & creates the main data object. \\
+\ref{readr} readr & reading and writing data in various formats. \\
+\ref{dplyr} dplyr & data manipulation. \\
+\ref{tidyr} tidyr & transforming messy data into a tidy format. \\
+\ref{purrr} purrr & functional programming with vectors and lists. \\
+\ref{stringr} stringr & working with strings. \\
+\ref{lubridate} lubridate & working with dates and date strings. \\
+\ref{ggplot2} ggplot2 & graphical plotting and data visualization. \\
+\end{longtable}
 
 These packages work seamlessly together, allowing users to easily manipulate and visualize their data. The \texttt{tidyverse} also includes a set of conventions and best practices for data analysis, making it easy to follow a consistent workflow.
 
-\begin{infobox}{note}
-\emph{\textbf{Cheat-Sheets} that summarize the all the functions}\\
-\href{https://www.tidyverse.org/}{tidyverse}: \href{https://readr.tidyverse.org/}{readr},
-\href{https://dplyr.tidyverse.org/}{dplyr}, \href{https://tidyr.tidyverse.org/}{tidyr},
-\href{https://stringr.tidyverse.org/}{stringr}
+\hfill\break
 
-\end{infobox}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3617}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6383}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/01.png} & \textbf{Cheat-sheets} \ref{cheat-sheets} \\
+\end{longtable}
 
 \hfill\break
-\hfill\break
+
 Consider the following workflow to read in data, calculate a linear regression and visualize the data using nine (9) of the underlying packages in the tidyverse.
 
 \begin{Shaded}
@@ -2269,8 +2468,7 @@ Overall, the tidyverse is an essential tool for data analysis and visualization 
 Two important packages in the tidyverse are tibble and magrittr. These core packages enable other data manipulation operations to work seamlessly, improving efficiency and ease of use when working with data in R. Despite their importance, they are often taken for granted.
 
 \hypertarget{magrittr}{%
-\subsection*{magrittr}\label{magrittr}}
-\addcontentsline{toc}{subsection}{magrittr}
+\subsection{magrittr}\label{magrittr}}
 
 The tidyverse package \texttt{magrittr} is a popular R package that provides a set of operators for chaining operations in a sequence. The package was developed by Stefan Milton Bache and Hadley Wickham. The main goal of \texttt{magrittr} is to make code more readable and easier to maintain.
 
@@ -2299,8 +2497,7 @@ In this example, we create a vector of numbers and use the pipe operator to chai
 Magrittr also provides other useful operators, such as the assignment pipe \texttt{\%\textless{}\textgreater{}\%}, which allows you to update a variable in place, and the tee operator \texttt{\%T\textgreater{}\%}, which allows you to inspect the output of an operation without interrupting the chain.
 
 \hypertarget{tibble}{%
-\subsection*{tibble}\label{tibble}}
-\addcontentsline{toc}{subsection}{tibble}
+\subsection{tibble}\label{tibble}}
 
 R \texttt{tibble} is a class of data frame in the R programming language. It is an improved alternative to the traditional data frame and is part of the tidyverse package. Tibbles are data frames with stricter requirements, and they provide a streamlined and more efficient way to work with data.
 
@@ -2312,8 +2509,7 @@ Another important feature of tibbles is the way they handle column names. Tibble
 \section{Importing}\label{importing}}
 
 \hypertarget{readr}{%
-\subsection*{readr}\label{readr}}
-\addcontentsline{toc}{subsection}{readr}
+\subsection{readr}\label{readr}}
 
 R \texttt{readr} is a package in the R language that is used to read structured data files into R. The package is an efficient and user-friendly toolkit that allows for the reading of different types of flat files such as CSV, TSV, and fixed-width files. It is part of the tidyverse collection of packages, which is popular among data scientists and statisticians.
 
@@ -2332,8 +2528,7 @@ One of the best things about \texttt{readr} is its consistency in dealing with f
 \section{Wrangling}\label{wrangling}}
 
 \hypertarget{dplyr}{%
-\subsection*{dplyr}\label{dplyr}}
-\addcontentsline{toc}{subsection}{dplyr}
+\subsection{dplyr}\label{dplyr}}
 
 R \texttt{dplyr} is perhaps pne of the most powerful libraries in the \texttt{tidyverse}, providing a set of tools for data manipulation and transformation. It is designed to work seamlessly with data stored in data frames.
 
@@ -2356,8 +2551,7 @@ Some of the most commonly used functions in \texttt{dplyr} are:
 In addition to these functions, dplyr also includes a set of convenient shortcuts and helpers, such as the pipe operator (\%\textgreater\%) which allows users to chain multiple operations together in a more intuitive and readable way.
 
 \hypertarget{tidyr}{%
-\subsection*{tidyr}\label{tidyr}}
-\addcontentsline{toc}{subsection}{tidyr}
+\subsection{tidyr}\label{tidyr}}
 
 R \texttt{tidyr} is a package in R that helps to reshape data frames. It is an essential tool for data cleaning and analysis. Tidyr is used to convert data from wide to long format and vice versa, and it also helps to separate and unite columns.
 
@@ -2380,8 +2574,7 @@ The package \texttt{tidyr} also has functions to separate and unite columns. The
 \end{itemize}
 
 \hypertarget{purrr}{%
-\subsection*{purrr}\label{purrr}}
-\addcontentsline{toc}{subsection}{purrr}
+\subsection{purrr}\label{purrr}}
 
 The \texttt{purrr} package is a functional programming toolkit for R that enables users to easily and rapidly apply a function to a set of inputs, returning a list or vector of outputs. It is designed to work seamlessly with the tidyverse ecosystem of packages, but can also be used with base R functions.
 
@@ -2424,8 +2617,7 @@ Purrr also includes features such as the possibility of mapping over nested list
 \end{verbatim}
 
 \hypertarget{glue}{%
-\subsection*{glue}\label{glue}}
-\addcontentsline{toc}{subsection}{glue}
+\subsection{glue}\label{glue}}
 
 R \texttt{glue} is a tidyverse package that provides a simple way to interpolate values into strings. It allows users to combine multiple strings or variables together into a single string with minimum efforts, simpler than using base R fuctions.
 
@@ -2455,8 +2647,7 @@ This code will produce the same output, but it's more readable and easier to mod
 \section{Data Types}\label{data-types}}
 
 \hypertarget{stringr}{%
-\subsection*{stringr}\label{stringr}}
-\addcontentsline{toc}{subsection}{stringr}
+\subsection{stringr}\label{stringr}}
 
 The tidyverse package \texttt{stringr} provides a cohesive set of functions designed to make working with strings more efficient. It is especially useful when dealing with messy or unstructured data that needs to be cleaned and transformed into a more structured format.
 
@@ -2512,8 +2703,7 @@ Several functions in \texttt{stringr} provides methods working with strings, for
 \end{verbatim}
 
 \hypertarget{lubridate}{%
-\subsection*{lubridate}\label{lubridate}}
-\addcontentsline{toc}{subsection}{lubridate}
+\subsection{lubridate}\label{lubridate}}
 
 The tidyverse package \texttt{lubridate} helps with the handling of dates and times. The package has several functions that make it easier to work with dates and times, especially when dealing with data that has different formats.
 
@@ -2534,8 +2724,7 @@ Some of the functions in \texttt{lubridate} package include:
 There are also functions for extracting information from dates and times such as \texttt{year()}, \texttt{month()}, \texttt{day()}, \texttt{hour()}, \texttt{minute()}, and \texttt{second()}.
 
 \hypertarget{forcats}{%
-\subsection*{forcats}\label{forcats}}
-\addcontentsline{toc}{subsection}{forcats}
+\subsection{forcats}\label{forcats}}
 
 R \texttt{forcats} is a tidyverse package that provides a set of tools for working with categorical data. It is designed to make it easier to work with factors in R, which are used to represent categorical data.
 
@@ -2549,8 +2738,7 @@ In addition to its core functionality, \texttt{forcats} is also highly customiza
 \section{Summarizing}\label{summarizing}}
 
 \hypertarget{dplyr-1}{%
-\subsection*{dplyr}\label{dplyr-1}}
-\addcontentsline{toc}{subsection}{dplyr}
+\subsection{dplyr}\label{dplyr-1}}
 
 In the R tidyverse package, summarizing data is a common task performed on data frames. The dplyr package provides a set of functions that makes it easy to summarize data based on one or more variables.
 
@@ -2611,18 +2799,18 @@ The summarize\_at() and summarize\_all() functions are used to perform summary s
 
 \begin{verbatim}
 ## # A tibble: 1 x 12
-##   year_mean month_mean max_temp_mean min_temp_mean precipitatio~1 snowf~2 year_sd month~3 max_t~4 min_t~5 preci~6 snowf~7
-##       <dbl>      <dbl>         <dbl>         <dbl>          <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
-## 1     2018.        6.5          64.6          36.6           1.29    4.09    1.13    3.49    15.2    14.2    1.32    5.75
-## # ... with abbreviated variable names 1: precipitation_mean, 2: snowfall_mean, 3: month_sd, 4: max_temp_sd,
-## #   5: min_temp_sd, 6: precipitation_sd, 7: snowfall_sd
+##   year_mean month~1 max_t~2 min_t~3 preci~4 snowf~5 year_sd month~6 max_t~7 min_t~8 preci~9 snowf~*
+##       <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+## 1     2018.     6.5    64.6    36.6    1.29    4.09    1.13    3.49    15.2    14.2    1.32    5.75
+## # ... with abbreviated variable names 1: month_mean, 2: max_temp_mean, 3: min_temp_mean,
+## #   4: precipitation_mean, 5: snowfall_mean, 6: month_sd, 7: max_temp_sd, 8: min_temp_sd,
+## #   9: precipitation_sd, *: snowfall_sd
 \end{verbatim}
 
 Summarizing data is an essential task that can be performed using several functions. These functions make it easy to calculate summary statistics based on one or more variables, group data frames by different categories, and summarize multiple variables at once.
 
 \hypertarget{ggplot2}{%
-\subsection*{ggplot2}\label{ggplot2}}
-\addcontentsline{toc}{subsection}{ggplot2}
+\subsection{ggplot2}\label{ggplot2}}
 
 The tidyverse package \texttt{ggplot2}, demonstrated at the onset of this chapter, is a data visualization package in R programming language that provides a flexible and powerful framework for creating graphs and charts. It is built on the grammar of graphics, which is a systematic way of mapping data to visual elements like points, lines, and bars.
 
@@ -2634,13 +2822,22 @@ One of the key benefits of \texttt{ggplot2} is that it allows you to quickly exp
 \section*{Exercises}\label{exercises-3}}
 \addcontentsline{toc}{section}{Exercises}
 
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3036}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6964}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/07.png} & \begin{minipage}[t]{\linewidth}\raggedright
 \begin{itemize}
-\tightlist
 \item
-  Create a new R Studio Project and name it \emph{004\_tidyverse}.
+  Create a new R Studio Project and name it \textbf{004\_tidyverse}.
 \item
-  Create a new R script, add your name and date at the top as comments
+  Create a new R script, add your name and date at the top as comments.
 \end{itemize}
+\end{minipage} \\
+\end{longtable}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2730,15 +2927,24 @@ One of the key benefits of \texttt{ggplot2} is that it allows you to quickly exp
 \section*{Exercises}\label{exercises-4}}
 \addcontentsline{toc}{section}{Exercises}
 
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3036}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6964}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/07.png} & \begin{minipage}[t]{\linewidth}\raggedright
 \begin{itemize}
-\tightlist
 \item
-  Create a new R Studio Project and name it \emph{005\_data\_wrangling}.
+  Create a new R Studio Project and name it \textbf{005\_data\_wrangling}.
 \item
   Create a new R script, add your name and date at the top as comments.
 \item
-  Locate and/or download the Tidyverse cheat-sheets and refer to them as needed.
+  Locate and/or download a Tidyverse cheat-sheet and refer to it as needed.
 \end{itemize}
+\end{minipage} \\
+\end{longtable}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2906,13 +3112,29 @@ D & 9 & 11 & 7.500000 & 4.126740 & 3.000000 & 0.5000000 & 0.6663856\\
 In data analysis, creating a plot to convey a message or demonstrate a result is a common endpoint. To achieve this, this book utilizes the \texttt{GGPlot2} package, which is part of the \texttt{Tidyverse}. This package complements the data pipelining demonstrated in the previous chapters, making it a perfect choice for creating a wide range of plots, from simple scatter plots to complex heat maps, making it ideal for data visualization.
 
 \hfill\break
-::: \{.infobox .skill data-latex=``\{skill\}''\}
-At the end of this chapter you should be able to:\\
-1. Understand the need for visualization\\
-2. Create some simple plots of points, lines and bars\\
-3. Manipulate how a plot looks\\
-:::\\
-\strut \\
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3656}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6344}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/03.png} & \begin{minipage}[t]{\linewidth}\raggedright
+\textbf{At the end of this chapter you should be able to}
+
+\begin{itemize}
+\item
+  Understand the need for visualizations.
+\item
+  Create some simple plots of points, lines and bars.
+\item
+  Manipulate how a plot looks.
+\end{itemize}
+\end{minipage} \\
+\end{longtable}
+
+\hfill\break
 
 \hypertarget{base-plot}{%
 \section{Base: plot}\label{base-plot}}
@@ -3001,11 +3223,19 @@ Lets create some data \ldots{}
 \hypertarget{basic-data-plotting}{%
 \subsection{Basic Data Plotting}\label{basic-data-plotting}}
 
-\begin{infobox}{note}
-\emph{\textbf{Cheat-sheets} can be found online that summarize all the functions}\\
-\href{https://ggplot2.tidyverse.org/}{ggplot2.tidyverse.org/}
+\hfill\break
 
-\end{infobox}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3617}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6383}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/01.png} & \textbf{Cheat-sheets} \ref{cheat-sheets} \\
+\end{longtable}
+
+\hfill\break
 
 \hypertarget{points-and-lines}{%
 \subsubsection*{Points and Lines}\label{points-and-lines}}
@@ -3442,15 +3672,24 @@ Plotly also nativity supports many data science languages such as R, Python, Jul
 \section*{Exercises}\label{exercises-5}}
 \addcontentsline{toc}{section}{Exercises}
 
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3091}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6909}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/07.png} & \begin{minipage}[t]{\linewidth}\raggedright
 \begin{itemize}
-\tightlist
 \item
-  Create a new R Studio Project and name it \emph{006\_data\_visualizing}.
+  Create a new R Studio Project and name it \textbf{006\_data\_visualizing}.
 \item
-  Create a new R script, add your name and date at the top as comments
+  Create a new R script, add your name and date at the top as comments.
 \item
   Locate and/or download a GGplot2 cheat-sheet and refer to it as needed.
 \end{itemize}
+\end{minipage} \\
+\end{longtable}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3513,12 +3752,27 @@ Plotly also nativity supports many data science languages such as R, Python, Jul
 This topic covers a variety of ways to share R code with others. The goal is to make your work accessible and reproducible for others. Sharing can take many forms, including sharing your RStudio project, creating a distilled version of your analysis that others can follow, developing a web-based application for others to use, or finding ways to contain and disseminate reproducible analyses. By sharing your work, you enable others to learn from and build upon your research, making it more impactful and useful for the wider community.
 
 \hfill\break
-::: \{.infobox .skill data-latex=``\{skill\}''\}
-At the end of this chapter you should be able to:\\
-1. Understand the options for sharing analyses\\
-2. Start an R Notebook project to share\\
-:::\\
-\strut \\
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3656}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6344}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/03.png} & \begin{minipage}[t]{\linewidth}\raggedright
+\textbf{At the end of this chapter you should be able to}
+
+\begin{itemize}
+\item
+  Understand the options for sharing analyses.
+\item
+  Start an R Notebook project to share.
+\end{itemize}
+\end{minipage} \\
+\end{longtable}
+
+\hfill\break
 
 \hypertarget{notebooks}{%
 \section{Notebooks}\label{notebooks}}
@@ -3844,13 +4098,29 @@ Check out the \href{https://shiny.rstudio.com/}{R Shiny} web page for more infor
 \chapter{Mass Spectrometry}\label{mass-spectrometry}}
 
 \hfill\break
-::: \{.infobox .skill data-latex=``\{skill\}''\}
-At the end of this chapter you should be able to:\\
-1. Understand commercially proprietary raw data\\
-2. How to convert raw data to an open access format\\
-2. Be familiar with some R packages specific to mass spectrometry\\
-:::\\
-\strut \\
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3269}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6731}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/03.png} & \begin{minipage}[t]{\linewidth}\raggedright
+\textbf{At the end of this chapter you should be able to}
+
+\begin{itemize}
+\item
+  Understand commercially proprietary raw data.
+\item
+  How to convert raw data to an open access format.
+\item
+  Be familiar with some R packages specific to mass spectrometry.
+\end{itemize}
+\end{minipage} \\
+\end{longtable}
+
+\hfill\break
 
 \hypertarget{data-formats}{%
 \section{Data Formats}\label{data-formats}}
@@ -3935,16 +4205,21 @@ There are several measures of a molecular mass that can be reported. The \emph{a
 
 R BRAIN is an isotopic abundance calculator implemented in R programming language and is especially useful for chemists and researchers who deal with complex molecules and need to calculate their isotopic composition accurately. In addition, it has a handy function for calculating the mass directly from an amino acid sequence.
 
+\hfill\break
+
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1712}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8288}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2313}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7687}}@{}}
 \toprule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Documentation} & \href{https://bioconductor.org/packages/release/bioc/manuals/BRAIN/man/BRAIN.pdf}{Bioconductor} \\
-\textbf{Literature} & \emph{Analytical chemistry} 2013 85(4), 1991-1994 \\
+\includegraphics[width=\textwidth,height=0.70833in]{images/05.png} & \textbf{Documentation} \textbar{} \href{https://bioconductor.org/packages/release/bioc/manuals/BRAIN/man/BRAIN.pdf}{Bioconductor}
+
+\textbf{Literature} \textbar{} \emph{Analytical chemistry} 2013 85(4), 1991-1994 \\
 \end{longtable}
+
+\hfill\break
 
 \hypertarget{installation-1}{%
 \subsubsection*{Installation}\label{installation-1}}
@@ -4000,14 +4275,29 @@ Calculate the isotopic abundances (probabilities) mass.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{Probability }\OtherTok{\textless{}{-}} \FunctionTok{calculateIsotopicProbabilities}\NormalTok{(lst\_atm, }\AttributeTok{nrPeaks =} \DecValTok{25}\NormalTok{)}
-\NormalTok{Mass }\OtherTok{\textless{}{-}} \FunctionTok{calculateMonoisotopicMass}\NormalTok{(lst\_atm) }\SpecialCharTok{+} \DecValTok{0}\SpecialCharTok{:}\NormalTok{(}\FunctionTok{length}\NormalTok{(Probability) }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{)}
+\NormalTok{lst\_isotopes }\OtherTok{\textless{}{-}} \FunctionTok{useBRAIN}\NormalTok{(lst\_atm, }\AttributeTok{nrPeaks =} \DecValTok{20}\NormalTok{)}
 
-\FunctionTok{plot}\NormalTok{(Mass, Probability)}
+\FunctionTok{plot}\NormalTok{(lst\_isotopes}\SpecialCharTok{$}\NormalTok{masses, lst\_isotopes}\SpecialCharTok{$}\NormalTok{isoDistr, }\AttributeTok{xlab=}\StringTok{\textquotesingle{}Mass\textquotesingle{}}\NormalTok{, }\AttributeTok{ylab=}\StringTok{\textquotesingle{}Probability\textquotesingle{}}\NormalTok{, }\AttributeTok{type =} \StringTok{\textquotesingle{}h\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-159-1} \end{center}
+
+Calculate the isotopic abundances (probabilities) mass for a metabolite {[}C100H200S2Cl5{]}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lst\_atm }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(}\AttributeTok{C=}\DecValTok{100}\NormalTok{, }\AttributeTok{H=}\DecValTok{200}\NormalTok{, }\AttributeTok{S=}\DecValTok{2}\NormalTok{, }\AttributeTok{Cl=}\DecValTok{5}\NormalTok{)}
+
+\NormalTok{lst\_isotopes }\OtherTok{\textless{}{-}} \FunctionTok{useBRAIN}\NormalTok{(lst\_atm, }\AttributeTok{nrPeaks =} \DecValTok{13}\NormalTok{)}
+
+\FunctionTok{plot}\NormalTok{(}\AttributeTok{x =}\NormalTok{ lst\_isotopes}\SpecialCharTok{$}\NormalTok{masses, }
+     \AttributeTok{y =}\NormalTok{ lst\_isotopes}\SpecialCharTok{$}\NormalTok{isoDistr }\SpecialCharTok{/} \FunctionTok{max}\NormalTok{(lst\_isotopes}\SpecialCharTok{$}\NormalTok{isoDistr) }\SpecialCharTok{*} \DecValTok{100}\NormalTok{, }
+     \AttributeTok{xlab=}\StringTok{\textquotesingle{}Mass\textquotesingle{}}\NormalTok{, }\AttributeTok{ylab=}\StringTok{\textquotesingle{}Relative abundance\textquotesingle{}}\NormalTok{, }\AttributeTok{type =} \StringTok{\textquotesingle{}h\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-160-1} \end{center}
 
 \hypertarget{envipat}{%
 \subsection{enviPat}\label{envipat}}
@@ -4016,16 +4306,21 @@ Calculate the isotopic abundances (probabilities) mass.
 
 A new method (year 2022) for calculating theoretical isotope patterns in mass spectrometry. This method uses a treelike structure to derive sets of subisotopologues for each element in a molecule. By doing so, it allows for early pruning of low-probability isotopologues and the detection of the most probable isotopologue. The method was validated in a large-scale benchmark simulation.
 
+\hfill\break
+
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1712}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8288}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2742}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7258}}@{}}
 \toprule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Documentation} & \href{https://cran.r-project.org/web/packages/enviPat/enviPat.pdf}{CRAN} \\
-\textbf{Literature} & \emph{Anal. Chem.} 2015, 87, 11, 5738--5744. \\
+\includegraphics[width=\textwidth,height=0.70833in]{images/05.png} & \textbf{Documentation} \textbar{} \href{https://cran.r-project.org/web/packages/enviPat/enviPat.pdf}{CRAN}
+
+\textbf{Literature} \textbar{} \emph{Anal. Chem.} 2015, 87, 11, 5738--5744 \\
 \end{longtable}
+
+\hfill\break
 
 \hypertarget{installation-2}{%
 \subsubsection*{Installation}\label{installation-2}}
@@ -4059,7 +4354,7 @@ A new method (year 2022) for calculating theoretical isotope patterns in mass sp
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-161-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-162-1} \end{center}
 
 \hypertarget{r-ms-data}{%
 \section{R MS Data}\label{r-ms-data}}
@@ -4095,17 +4390,23 @@ Finally, there are numerous R packages that implement methods, common and advanc
 
 The MSstats package is an R package designed for the analysis of label-free mass spectrometry data. It provides a wide range of statistical tools for the analysis of protein abundance data, including normalization, missing value imputation, quality control, and differential expression analysis. MSstats provides a powerful and flexible way to analyze mass spectrometry data, making it an essential tool for researchers in the field.
 
+\hfill\break
+
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2222}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7778}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8000}}@{}}
 \toprule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Documentation} & \href{https://msstats.org}{web}, \href{https://bioconductor.org/packages/release/bioc/manuals/MSstats/man/MSstats.pdf}{PDF} \\
-\textbf{Code} & \href{https://www.bioconductor.org/packages/release/bioc/html/MSstats.html}{Bioconductor} \\
-\textbf{Literature} & \emph{Bioinformatics} 30.17 (2014): 2524-2526 \\
+\includegraphics[width=\textwidth,height=0.70833in]{images/05.png} & \textbf{Documentation} \textbar{} \href{https://msstats.org}{web}, \href{https://bioconductor.org/packages/release/bioc/manuals/MSstats/man/MSstats.pdf}{PDF}
+
+\textbf{Code} \textbar{} \href{https://www.bioconductor.org/packages/release/bioc/html/MSstats.html}{Bioconductor}
+
+\textbf{Literature} \textbar{} \emph{Bioinformatics} 30.17 (2014): 2524-2526 \\
 \end{longtable}
+
+\hfill\break
 
 \hypertarget{installation-3}{%
 \subsubsection*{Installation}\label{installation-3}}
@@ -4153,17 +4454,23 @@ The preferred data structure for use in MSstats is a .csv file in a ``long'' for
 \subsection*{StatsPro R Package}\label{statspro-r-package}}
 \addcontentsline{toc}{subsection}{StatsPro R Package}
 
+\hfill\break
+
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2222}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7778}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1799}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8201}}@{}}
 \toprule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Documentation} & \href{https://github.com/YanglabWCH/StatsPro\#Readme}{github}, \href{https://github.com/YanglabWCH/StatsPro/blob/main/StatsPro_Manual.pdf}{PDF} \\
-\textbf{Code} & \href{https://github.com/YanglabWCH/StatsPro}{github} \\
-\textbf{Literature} & \emph{Journal of Proteomics} 250 (2022): 104386. \\
+\includegraphics[width=\textwidth,height=0.70833in]{images/05.png} & \textbf{Documentation} \textbar{} \href{https://github.com/YanglabWCH/StatsPro\#Readme}{github}, \href{https://github.com/YanglabWCH/StatsPro/blob/main/StatsPro_Manual.pdf}{PDF}
+
+\textbf{Code} \textbar{} \href{https://github.com/YanglabWCH/StatsPro}{github}
+
+\textbf{Literature} \textbar{} \emph{Journal of Proteomics} 250 (2022): 104386. \\
 \end{longtable}
+
+\hfill\break
 
 \hypertarget{msgrob2}{%
 \subsection*{msgrob2}\label{msgrob2}}
@@ -4173,17 +4480,27 @@ The preferred data structure for use in MSstats is a .csv file in a ``long'' for
 
 The \texttt{msgrob2} package is particularly useful in situations where data is missing from a linear model. The EM algorithm implemented in the package is a powerful tool for imputing missing data, and the robust covariance estimators allow for a better understanding of the data. The package is designed to provide efficient and accurate results when working with incomplete data, making it an essential tool for researchers and data analysts.
 
+\hfill\break
+
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7500}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2329}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7671}}@{}}
 \toprule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Documentation} & \href{https://www.bioconductor.org/packages/release/bioc/manuals/msqrob2/man/msqrob2.pdf}{PDF} \\
-\textbf{Code} & \href{https://www.bioconductor.org/packages/release/bioc/html/msqrob2.html}{Bioconductor} \\
-\textbf{Literature} & \emph{Molecular \& Cellular Proteomics}, \textbf{15}(2), 657-668., \emph{Molecular \& Cellular Proteomics}, \textbf{19}(7), 1209-1219., \emph{Analytical Chemistry}, \textbf{92}(9), 6278--6287. \\
+\includegraphics[width=\textwidth,height=0.70833in]{images/05.png} & \textbf{Documentation} \textbar{} \href{https://www.bioconductor.org/packages/release/bioc/manuals/msqrob2/man/msqrob2.pdf}{PDF}
+
+\textbf{Code} \textbar{} \href{https://www.bioconductor.org/packages/release/bioc/html/msqrob2.html}{Bioconductor}
+
+\textbf{Literature} \textbar{} \emph{Molecular \& Cellular Proteomics}, \textbf{15}(2), 657-668.
+
+\textbf{Literature} \textbar{} \emph{Molecular \& Cellular Proteomics}, \textbf{19}(7), 1209-1219.
+
+\textbf{Literature} \textbar{} \emph{Analytical Chemistry}, \textbf{92}(9), 6278--6287. \\
 \end{longtable}
+
+\hfill\break
 
 \hypertarget{installation-4}{%
 \subsubsection*{Installation}\label{installation-4}}
@@ -4238,6 +4555,26 @@ In summary, \texttt{msgrob2} is a comprehensive R package that provides an array
 
 The tidyproteomics R package is a tool that provides a set of functions to preprocess and analyze proteomics data using the tidy data framework. This package is built on top of the tidyverse and Bioconductor packages, which are widely used in the R community for data manipulation and analysis.
 
+\hfill\break
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2857}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7143}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics[width=\textwidth,height=0.70833in]{images/05.png} & \textbf{Documentation} \textbar{} \href{https://jeffsocal.github.io/tidyproteomics/}{github}
+
+\textbf{Code} \textbar{} \href{https://github.com/jeffsocal/tidyproteomics}{github}
+
+\textbf{Web App} \textbar{} \href{bioinformatics.pel.caltech.edu/tidyproteomics/}{tidyproteomics}
+
+\textbf{Literature} \\
+\end{longtable}
+
+\hfill\break
+
 Some of the main features of the tidyproteomics package include:
 
 \begin{itemize}
@@ -4258,19 +4595,6 @@ Some of the main features of the tidyproteomics package include:
 
 \caption{\label{fig:10001}tidyproteomics workflow}\label{fig:10001}
 \end{figure}
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2235}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7765}}@{}}
-\toprule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\textbf{Documentation} & \href{https://jeffsocal.github.io/tidyproteomics/}{github} \\
-\textbf{Code} & \href{https://github.com/jeffsocal/tidyproteomics}{github} \\
-\textbf{Web App} & \href{bioinformatics.pel.caltech.edu/tidyproteomics/}{tidyproteomics} \\
-\textbf{Literature} & \\
-\end{longtable}
 
 \hypertarget{installation-5}{%
 \subsubsection*{Installation}\label{installation-5}}
@@ -4318,7 +4642,7 @@ Currently, tidyproteomics implements two summary quantitative visualizations. Th
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-171-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-172-1} \end{center}
 
 Summary Stats \{-\}
 Summarizing proteomics data is vital to understanding the bigger picture and conveying summary stats that set the tone for the larger analysis. The results of each summary can be directed to via the destination option to ``print'' on screen, ``save'' to a file or ``return'' as a tibble.
@@ -4357,9 +4681,9 @@ Quantitative proteomics requires accurate normalization, which can be difficult 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-174-1} \end{center}
-
 \begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-175-1} \end{center}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-176-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4369,7 +4693,7 @@ Quantitative proteomics requires accurate normalization, which can be difficult 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-177-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-178-1} \end{center}
 
 \hypertarget{expression-analysis}{%
 \subsubsection*{Expression Analysis}\label{expression-analysis}}
@@ -4392,8 +4716,8 @@ Overall, the tidyproteomics package provides a useful set of tools for preproces
 \chapter*{Answers to Exercises}\label{answers-to-exercises}}
 \addcontentsline{toc}{chapter}{Answers to Exercises}
 
-\hypertarget{the-basics-1}{%
-\section*{\texorpdfstring{\textbf{4} The Basics}{4 The Basics}}\label{the-basics-1}}
+\hypertarget{the-basics}{%
+\section*{\texorpdfstring{\textbf{4} The Basics}{4 The Basics}}\label{the-basics}}
 \addcontentsline{toc}{section}{\textbf{4} The Basics}
 
 \begin{Shaded}
@@ -4433,8 +4757,8 @@ Overall, the tidyproteomics package provides a useful set of tools for preproces
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{data-structures-1}{%
-\section*{\texorpdfstring{\textbf{5} Data Structures}{5 Data Structures}}\label{data-structures-1}}
+\hypertarget{data-structures}{%
+\section*{\texorpdfstring{\textbf{5} Data Structures}{5 Data Structures}}\label{data-structures}}
 \addcontentsline{toc}{section}{\textbf{5} Data Structures}
 
 \begin{Shaded}

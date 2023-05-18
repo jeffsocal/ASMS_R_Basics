@@ -14,33 +14,38 @@ output:
 +---------------------------------+-----------------------------------------------------------------------------+
 
 1. Download the data.
-
-2. Read in the messy bacteria data and store it as a variable.
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-library(tidyverse)
-
-met_df <- "data/messy-bacteria-data.xlsx" %>% read_excel(col_names = TRUE)
+```{r, eval=FALSE, eval=FALSE}
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-Metabolites_dose-simicillin_messy.xlsx"
+download.file(url, destfile = "./data/bacterial-Metabolites_dose-simicillin_messy.xlsx")
 ```
 
-*In all proceed exercises, pipe results from previous exercise into current exercise creating a single lone pipe for data processing*
+2. Read in the messy bacteria data and store it as a variable.
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
+library(tidyverse)
+library(readxl)
+
+tbl_bac <- "data/bacterial-Metabolites_dose-simicillin_messy.xlsx" %>% read_excel(col_names = TRUE)
+```
+
+*In all proceeding exercises, pipe results from previous exercise into current exercise creating a single lone pipe for data processing*
 
 3. Separate `Culture` column containing culture and dose into `culture` and `dose_mg_ml` columns.
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-met_df %>%
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
+tbl_bac %>%
   separate(Culture, c("culture", "dose_mg_ml"), sep = " dose--")
 ```
 
 4. Make `dose_mg_ml` column numeric by removing the text and change the column data type from character to numeric.
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-met_df %>%
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
+tbl_bac %>%
   separate(Culture, c("culture", "dose_mg_ml"), sep = " dose--") %>%
   mutate(dose_mg_ml = gsub("-mg/ml","", dose_mg_ml)) %>%
   mutate(dose_mg_ml = as.numeric(dose_mg_ml))
 ```
 
 5. Pivot the table from wide to long creating `metabolite`, `time_hr` & `abundance` columns.
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-met_df %>%
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
+tbl_bac %>%
   separate(Culture, c("culture", "dose_mg_ml"), sep = " dose--") %>%
   mutate(dose_mg_ml = gsub("-mg/ml","", dose_mg_ml)) %>%
   mutate(dose_mg_ml = as.numeric(dose_mg_ml)) %>%
@@ -49,8 +54,8 @@ met_df %>%
 ```
 
 6. Make sure `time_hr` contains just hours and not a mixture of days and hours.
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-met_df %>%
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
+tbl_bac %>%
   separate(Culture, c("culture", "dose_mg_ml"), sep = " dose--") %>%
   mutate(dose_mg_ml = gsub("-mg/ml","", dose_mg_ml)) %>%
   mutate(dose_mg_ml = as.numeric(dose_mg_ml)) %>%
@@ -64,10 +69,10 @@ met_df %>%
   )
 ```
 
-7. Remove the `User` column. See cheatsheet here: https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf or consult internet.
+7. Remove the `User` column. See cheatsheet here: [data-wrangling-cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf) or consult internet.
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-met_df %>%
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
+tbl_bac %>%
   separate(Culture, c("culture", "dose_mg_ml"), sep = " dose--") %>%
   mutate(dose_mg_ml = gsub("-mg/ml","", dose_mg_ml)) %>%
   mutate(dose_mg_ml = as.numeric(dose_mg_ml)) %>%
