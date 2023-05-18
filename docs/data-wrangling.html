@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Data Wrangling | Learning R for Mass Spectrometry</title>
+  <meta name="description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Data Wrangling | Learning R for Mass Spectrometry" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  <meta name="github-repo" content="jeffsocal/ASMS_R_Basics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Data Wrangling | Learning R for Mass Spectrometry" />
+  
+  <meta name="twitter:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  
+
+<meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
+
+
+<meta name="date" content="2023-05-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="tidyverse-1.html"/>
+<link rel="next" href="data-visualization.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Learning R for Mass Spec.</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="contents.html"><a href="contents.html"><i class="fa fa-check"></i>Contents</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>1</b> Introduction to R</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#why-choose-it"><i class="fa fa-check"></i>Why choose it?</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#what-you-can-do-with-it"><i class="fa fa-check"></i>What you can do with it?</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-r-learning-curve"><i class="fa fa-check"></i>The R Learning Curve</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#thoughts-about-learning-r-and-how-to-code"><i class="fa fa-check"></i>Thoughts about learning R and how to code</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#alternatives"><i class="fa fa-check"></i>Alternatives</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#resources"><i class="fa fa-check"></i>Resources</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#online"><i class="fa fa-check"></i>Online</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#in-print"><i class="fa fa-check"></i>In Print</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#organizations"><i class="fa fa-check"></i>Organizations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>2</b> Installation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installation.html"><a href="installation.html#r-interpreter"><i class="fa fa-check"></i><b>2.1</b> R interpreter</a></li>
+<li class="chapter" data-level="2.2" data-path="installation.html"><a href="installation.html#rstudio"><i class="fa fa-check"></i><b>2.2</b> Rstudio</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="installation.html"><a href="installation.html#ide-layout"><i class="fa fa-check"></i><b>2.2.1</b> IDE Layout</a></li>
+<li class="chapter" data-level="2.2.2" data-path="installation.html"><a href="installation.html#usage-..-running-lines-of-code-in-rstudio"><i class="fa fa-check"></i><b>2.2.2</b> Usage .. Running lines of code in RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="installation.html"><a href="installation.html#packages"><i class="fa fa-check"></i><b>2.3</b> Packages</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="installation.html"><a href="installation.html#what-are-r-packages"><i class="fa fa-check"></i><b>2.3.1</b> What are R Packages?</a></li>
+<li class="chapter" data-level="2.3.2" data-path="installation.html"><a href="installation.html#where-to-get-r-packages"><i class="fa fa-check"></i><b>2.3.2</b> Where to get R Packages</a></li>
+<li class="chapter" data-level="2.3.3" data-path="installation.html"><a href="installation.html#installing-r-packages"><i class="fa fa-check"></i><b>2.3.3</b> Installing R Packages</a></li>
+<li class="chapter" data-level="2.3.4" data-path="installation.html"><a href="installation.html#potential-gotchas"><i class="fa fa-check"></i><b>2.3.4</b> Potential Gotchas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="installation.html"><a href="installation.html#packages-utilized-in-this-book"><i class="fa fa-check"></i><b>2.4</b> Packages Utilized in This Book</a>
+<ul>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#tidyverse"><i class="fa fa-check"></i>tidyverse</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#mass-spectrometry-specific-packages"><i class="fa fa-check"></i>Mass Spectrometry Specific Packages</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-studio-projects.html"><a href="r-studio-projects.html"><i class="fa fa-check"></i><b>3</b> R Studio Projects</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="r-studio-projects.html"><a href="r-studio-projects.html#creating"><i class="fa fa-check"></i><b>3.1</b> Creating</a></li>
+<li class="chapter" data-level="3.2" data-path="r-studio-projects.html"><a href="r-studio-projects.html#organizing"><i class="fa fa-check"></i><b>3.2</b> Organizing</a>
+<ul>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#data"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#scripts"><i class="fa fa-check"></i>Scripts</a></li>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#results"><i class="fa fa-check"></i>Results</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="r-syntax.html"><a href="r-syntax.html"><i class="fa fa-check"></i><b>4</b> R Syntax</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="r-syntax.html"><a href="r-syntax.html#reserved-words"><i class="fa fa-check"></i><b>4.1</b> Reserved Words</a></li>
+<li class="chapter" data-level="4.2" data-path="r-syntax.html"><a href="r-syntax.html#types"><i class="fa fa-check"></i><b>4.2</b> Types</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="r-syntax.html"><a href="r-syntax.html#comments"><i class="fa fa-check"></i><b>4.2.1</b> Comments</a></li>
+<li class="chapter" data-level="4.2.2" data-path="r-syntax.html"><a href="r-syntax.html#strings"><i class="fa fa-check"></i><b>4.2.2</b> Strings</a></li>
+<li class="chapter" data-level="4.2.3" data-path="r-syntax.html"><a href="r-syntax.html#numbers"><i class="fa fa-check"></i><b>4.2.3</b> Numbers</a></li>
+<li class="chapter" data-level="4.2.4" data-path="r-syntax.html"><a href="r-syntax.html#operators"><i class="fa fa-check"></i><b>4.2.4</b> Operators</a></li>
+<li class="chapter" data-level="4.2.5" data-path="r-syntax.html"><a href="r-syntax.html#variables"><i class="fa fa-check"></i><b>4.2.5</b> Variables</a></li>
+<li class="chapter" data-level="4.2.6" data-path="r-syntax.html"><a href="r-syntax.html#statements"><i class="fa fa-check"></i><b>4.2.6</b> Statements</a></li>
+<li class="chapter" data-level="4.2.7" data-path="r-syntax.html"><a href="r-syntax.html#functions"><i class="fa fa-check"></i><b>4.2.7</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="r-syntax.html"><a href="r-syntax.html#flow-control"><i class="fa fa-check"></i><b>4.3</b> Flow-Control</a>
+<ul>
+<li class="chapter" data-level="" data-path="r-syntax.html"><a href="r-syntax.html#for-loop"><i class="fa fa-check"></i>For Loop</a></li>
+<li class="chapter" data-level="" data-path="r-syntax.html"><a href="r-syntax.html#if-else"><i class="fa fa-check"></i>If-Else</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="r-syntax.html"><a href="r-syntax.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="r-objects.html"><a href="r-objects.html"><i class="fa fa-check"></i><b>5</b> R Objects</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="r-objects.html"><a href="r-objects.html#variable"><i class="fa fa-check"></i><b>5.1</b> Variable</a></li>
+<li class="chapter" data-level="5.2" data-path="r-objects.html"><a href="r-objects.html#vector"><i class="fa fa-check"></i><b>5.2</b> Vector</a></li>
+<li class="chapter" data-level="5.3" data-path="r-objects.html"><a href="r-objects.html#matrix"><i class="fa fa-check"></i><b>5.3</b> Matrix</a></li>
+<li class="chapter" data-level="5.4" data-path="r-objects.html"><a href="r-objects.html#data-frame"><i class="fa fa-check"></i><b>5.4</b> Data Frame</a></li>
+<li class="chapter" data-level="5.5" data-path="r-objects.html"><a href="r-objects.html#list"><i class="fa fa-check"></i><b>5.5</b> List</a></li>
+<li class="chapter" data-level="5.6" data-path="r-objects.html"><a href="r-objects.html#tibbles"><i class="fa fa-check"></i><b>5.6</b> Tibbles</a></li>
+<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#how-to-tell-what-you-are-dealing-with"><i class="fa fa-check"></i>How to tell what you are dealing with</a></li>
+<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tidyverse-1.html"><a href="tidyverse-1.html"><i class="fa fa-check"></i><b>6</b> Tidyverse</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#core-packages"><i class="fa fa-check"></i><b>6.1</b> Core Packages</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#magrittr"><i class="fa fa-check"></i><b>6.1.1</b> magrittr</a></li>
+<li class="chapter" data-level="6.1.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#tibble"><i class="fa fa-check"></i><b>6.1.2</b> tibble</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#importing"><i class="fa fa-check"></i><b>6.2</b> Importing</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#readr"><i class="fa fa-check"></i><b>6.2.1</b> readr</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#wrangling"><i class="fa fa-check"></i><b>6.3</b> Wrangling</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr"><i class="fa fa-check"></i><b>6.3.1</b> dplyr</a></li>
+<li class="chapter" data-level="6.3.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#tidyr"><i class="fa fa-check"></i><b>6.3.2</b> tidyr</a></li>
+<li class="chapter" data-level="6.3.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#purrr"><i class="fa fa-check"></i><b>6.3.3</b> purrr</a></li>
+<li class="chapter" data-level="6.3.4" data-path="tidyverse-1.html"><a href="tidyverse-1.html#glue"><i class="fa fa-check"></i><b>6.3.4</b> glue</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="tidyverse-1.html"><a href="tidyverse-1.html#data-types"><i class="fa fa-check"></i><b>6.4</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#stringr"><i class="fa fa-check"></i><b>6.4.1</b> stringr</a></li>
+<li class="chapter" data-level="6.4.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#lubridate"><i class="fa fa-check"></i><b>6.4.2</b> lubridate</a></li>
+<li class="chapter" data-level="6.4.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#forcats"><i class="fa fa-check"></i><b>6.4.3</b> forcats</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="tidyverse-1.html"><a href="tidyverse-1.html#summarizing"><i class="fa fa-check"></i><b>6.5</b> Summarizing</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr-1"><i class="fa fa-check"></i><b>6.5.1</b> dplyr</a></li>
+<li class="chapter" data-level="6.5.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#ggplot2"><i class="fa fa-check"></i><b>6.5.2</b> ggplot2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>7</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="data-wrangling.html"><a href="data-wrangling.html#tidy-data"><i class="fa fa-check"></i><b>7.1</b> Tidy Data</a></li>
+<li class="chapter" data-level="7.2" data-path="data-wrangling.html"><a href="data-wrangling.html#example-walkthrough"><i class="fa fa-check"></i><b>7.2</b> Example Walkthrough</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#read_"><i class="fa fa-check"></i>read_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#separate"><i class="fa fa-check"></i>separate</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#mutate"><i class="fa fa-check"></i>mutate</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#pivot_"><i class="fa fa-check"></i>pivot_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#write_"><i class="fa fa-check"></i>write_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#non-pipe"><i class="fa fa-check"></i>Non-pipe</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#summarize"><i class="fa fa-check"></i>summarize</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="data-wrangling.html"><a href="data-wrangling.html#exercises---evalfalse"><i class="fa fa-check"></i><b>7.3</b> Exercises {-, eval=FALSE}</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>8</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="data-visualization.html"><a href="data-visualization.html#base-plot"><i class="fa fa-check"></i><b>8.1</b> Base: plot</a></li>
+<li class="chapter" data-level="8.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2-1"><i class="fa fa-check"></i><b>8.2</b> GGPlot2</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="data-visualization.html"><a href="data-visualization.html#syntax"><i class="fa fa-check"></i><b>8.2.1</b> Syntax</a></li>
+<li class="chapter" data-level="8.2.2" data-path="data-visualization.html"><a href="data-visualization.html#basic-data-plotting"><i class="fa fa-check"></i><b>8.2.2</b> Basic Data Plotting</a></li>
+<li class="chapter" data-level="8.2.3" data-path="data-visualization.html"><a href="data-visualization.html#data-distributions"><i class="fa fa-check"></i><b>8.2.3</b> Data Distributions</a></li>
+<li class="chapter" data-level="8.2.4" data-path="data-visualization.html"><a href="data-visualization.html#extended-syntax"><i class="fa fa-check"></i><b>8.2.4</b> Extended Syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="data-visualization.html"><a href="data-visualization.html#alternatives-1"><i class="fa fa-check"></i><b>8.3</b> Alternatives</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#lattice"><i class="fa fa-check"></i>lattice</a></li>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#plotly"><i class="fa fa-check"></i>plotly</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#exercises-4"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>9</b> Sharing</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="sharing.html"><a href="sharing.html#notebooks"><i class="fa fa-check"></i><b>9.1</b> Notebooks</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-notebooks"><i class="fa fa-check"></i>Using Notebooks</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-a-notebook"><i class="fa fa-check"></i>Sharing A Notebook</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>9.2</b> Packrat</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#initiating-a-packrat-project"><i class="fa fa-check"></i>Initiating a Packrat Project</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#installing-a-package-into-the-project-library"><i class="fa fa-check"></i>Installing a Package into the Project Library</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#loading-a-package-from-the-project-library"><i class="fa fa-check"></i>Loading a Package from the Project Library</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#updating-a-package-in-the-project-library"><i class="fa fa-check"></i>Updating a Package in the Project Library</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="sharing.html"><a href="sharing.html#github"><i class="fa fa-check"></i><b>9.3</b> GitHub</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-use-github"><i class="fa fa-check"></i>How to Use GitHub</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-share-a-github-repository"><i class="fa fa-check"></i>How to Share A GitHub Repository</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>9.4</b> Docker</a></li>
+<li class="chapter" data-level="9.5" data-path="sharing.html"><a href="sharing.html#r-packages"><i class="fa fa-check"></i><b>9.5</b> R Packages</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-a-package-in-rstudio"><i class="fa fa-check"></i>Creating a Package in RStudio</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-the-package"><i class="fa fa-check"></i>Using the Package</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>9.6</b> R Shiny Applications</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-create-an-r-shiny-application-in-the-rstudio-ide"><i class="fa fa-check"></i>How to Create an R Shiny Application in the RStudio IDE</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#example-of-an-r-shiny-application-for-plotting-points"><i class="fa fa-check"></i>Example of an R Shiny Application for Plotting Points</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html"><i class="fa fa-check"></i><b>10</b> Mass Spectrometry</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#data-formats"><i class="fa fa-check"></i><b>10.1</b> Data Formats</a></li>
+<li class="chapter" data-level="10.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#commercial"><i class="fa fa-check"></i><b>10.2</b> Commercial</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#raw-thermo"><i class="fa fa-check"></i><b>10.2.1</b> RAW (Thermo)</a></li>
+<li class="chapter" data-level="10.2.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#wiff-sciex"><i class="fa fa-check"></i><b>10.2.2</b> WIFF (Sciex)</a></li>
+<li class="chapter" data-level="10.2.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#d-agilent"><i class="fa fa-check"></i><b>10.2.3</b> D (Agilent)</a></li>
+<li class="chapter" data-level="10.2.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#d-bruker-timstof-data"><i class="fa fa-check"></i><b>10.2.4</b> .d (Bruker) timsTOF data</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#open-access-data"><i class="fa fa-check"></i><b>10.3</b> Open Access Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzxml"><i class="fa fa-check"></i>mzXML</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzml"><i class="fa fa-check"></i>mzML</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzmlb"><i class="fa fa-check"></i>mzMLb</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-calculate-mass"><i class="fa fa-check"></i><b>10.4</b> R Calculate Mass</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#brain"><i class="fa fa-check"></i>BRAIN</a></li>
+<li class="chapter" data-level="10.4.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#envipat"><i class="fa fa-check"></i><b>10.4.1</b> enviPat</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-ms-data"><i class="fa fa-check"></i><b>10.5</b> R MS Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#xcms"><i class="fa fa-check"></i>xcms</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzr"><i class="fa fa-check"></i>mzR</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-ms-analysis"><i class="fa fa-check"></i><b>10.6</b> R MS Analysis</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#deqms"><i class="fa fa-check"></i>deqms</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msempire"><i class="fa fa-check"></i>msempire</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msqrob"><i class="fa fa-check"></i>msqrob</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msstats"><i class="fa fa-check"></i>MSstats</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#statspro-r-package"><i class="fa fa-check"></i>StatsPro R Package</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msgrob2"><i class="fa fa-check"></i>msgrob2</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#tidyproteomics"><i class="fa fa-check"></i>Tidyproteomics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html"><i class="fa fa-check"></i>Answers to Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#r-syntax-1"><i class="fa fa-check"></i><strong>4</strong> R Syntax</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#r-objects-1"><i class="fa fa-check"></i><strong>5</strong> R Objects</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#tidyverse-2"><i class="fa fa-check"></i><strong>6</strong> Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-1"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-2"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-visualization-1"><i class="fa fa-check"></i><strong>8</strong> Data Visualization</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/jeffsocal/asms_r_intro" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Learning R for Mass Spectrometry</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-wrangling" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Data Wrangling<a href="data-wrangling.html#data-wrangling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In data analysis, having known and expected patterns in the data is important. Wrangling is the act of getting messy real world data organized for analysis.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:7201"></span>
+<img src="images/07_001_messy-data-image.png" alt="\label{fig:7201}Visualizing messy data." width="1259" />
+<p class="caption">
+Figure 7.1: Visualizing messy data.
+</p>
+</div>
+<p><br />
+</p>
+<table>
+<colgroup>
+<col width="36%" />
+<col width="63%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/03.png" height="68" /></td>
+<td><p><strong>At the end of this chapter you should be able to</strong></p>
+<ul>
+<li><p>Understand concept of tidy data.</p></li>
+<li><p>Wrangle some messy data into a tidier form.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<div id="tidy-data" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Tidy Data<a href="data-wrangling.html#tidy-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Tidy data is a concept in data science and statistics that refers to a specific way of organizing data into a tabular format that is easy to work with. The concept of tidy data was introduced by Hadley Wickham in his paper “Tidy Data” published in the Journal of Statistical Software in 2014.</p>
+<p>In tidy data, each row represents a single observation or record, and each column represents a single variable or attribute. Additionally, there should be no duplicate columns or rows, and each cell should contain a single value.</p>
+<p>More specifically, tidy data should have the following properties:</p>
+<ol style="list-style-type: decimal">
+<li><p>Each variable has its own column: In tidy data, each variable or attribute should have its own column. This makes it easy to compare and analyze different variables.</p></li>
+<li><p>Each observation has its own row: In tidy data, each observation or record should have its own row. This makes it easy to perform calculations on individual observations or groups of observations.</p></li>
+<li><p>There should be no duplicate columns or rows: In tidy data, there should be no duplicate columns or rows. This ensures that the data is organized in a clear and concise manner.</p></li>
+<li><p>Each cell should contain a single value: In tidy data, each cell should contain a single value. This makes it easy to perform calculations and manipulate the data.</p></li>
+</ol>
+<p>By organizing data in a tidy format, it becomes easier to analyze and visualize the data using tools like R and Python. Additionally, tidy data is more robust and less prone to errors than other types of data formats, making it easier to work with and share with others.</p>
+Tidy data visualized:
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:7202"></span>
+<img src="images/07_002_tidy-data-vis.png" alt="\label{fig:7202}Visualizing tidy data concepts." width="1259" />
+<p class="caption">
+Figure 7.2: Visualizing tidy data concepts.
+</p>
+</div>
+</div>
+<div id="example-walkthrough" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Example Walkthrough<a href="data-wrangling.html#example-walkthrough" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We have a processed MS data set of metabolites measured for different bacteria at different time-points with different dosages of an antibiotic.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:7203"></span>
+<img src="images/07_003_bacteria-table.png" alt="\label{fig:7203}Checking our messy data table." width="868" />
+<p class="caption">
+Figure 7.3: Checking our messy data table.
+</p>
+</div>
+<p>Having a look at the data, we can see definitely that it is not tidy.</p>
+<p>Our goal will be to:
+* Read excel data with <code>readxl</code> library.
+* In a single <em>dplyr</em> pipe create a tidy with <code>culture</code>, <code>dose_mg</code>, <code>metabolite</code>, <code>time_min</code>, <code>abundance</code> as our columns.</p>
+<div id="read_" class="section level3 unnumbered hasAnchor">
+<h3>read_<a href="data-wrangling.html#read_" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s start with the read-in.</p>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="data-wrangling.html#cb169-1" tabindex="-1"></a><span class="fu">require</span>(readxl)</span>
+<span id="cb169-2"><a href="data-wrangling.html#cb169-2" tabindex="-1"></a><span class="fu">require</span>(tidyverse)</span>
+<span id="cb169-3"><a href="data-wrangling.html#cb169-3" tabindex="-1"></a></span>
+<span id="cb169-4"><a href="data-wrangling.html#cb169-4" tabindex="-1"></a><span class="co"># read_excel can read portions of the excel</span></span>
+<span id="cb169-5"><a href="data-wrangling.html#cb169-5" tabindex="-1"></a>tbl_met <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/bacterial-metabolites_dose-simicillin_wide.xlsx&quot;</span>)</span>
+<span id="cb169-6"><a href="data-wrangling.html#cb169-6" tabindex="-1"></a></span>
+<span id="cb169-7"><a href="data-wrangling.html#cb169-7" tabindex="-1"></a>tbl_met</span></code></pre></div>
+<pre><code>## # A tibble: 9 × 21
+##   Culture    gluta…¹ gluta…² gluta…³ gluta…⁴ gluta…⁵ lysin…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟ succi…˟
+##   &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 e coli do…  191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3  9.62e2 1678885
+## 2 staph aur…  125210  132156  1.14e5  117150  137747     111     119     109  1.19e2  1.19e2  110418
+## 3 p aerugin…  978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3  8.61e2 2558815
+## 4 e coli do…    1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5  1.79e5   50501
+## 5 staph aur…     152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3  1.29e4   11442
+## 6 p aerugin…      23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5  1.37e5  101008
+## 7 e coli do…     885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7  1.88e5  186375
+## 8 staph aur…     136    4276  1.16e6    4841     130     129   12985  123893  1.28e6  1.46e6   11769
+## 9 p aerugin…    3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7  2.23e7  198848
+## # … with 9 more variables: `succinic acid_Time_10min` &lt;dbl&gt;, `succinic acid_Time_20min` &lt;dbl&gt;,
+## #   `succinic acid_Time_50min` &lt;dbl&gt;, `succinic acid_Time_2hr` &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_0min &lt;dbl&gt;, phosphatidylcholine_Time_10min &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_20min &lt;dbl&gt;, phosphatidylcholine_Time_50min &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_2hr &lt;dbl&gt;, and abbreviated variable names ¹​glutamate_Time_0min,
+## #   ²​glutamate_Time_10min, ³​glutamate_Time_20min, ⁴​glutamate_Time_50min, ⁵​glutamate_Time_2hr,
+## #   ⁶​lysine_Time_0min, ⁷​lysine_Time_10min, ⁸​lysine_Time_20min, ⁹​lysine_Time_50min, …</code></pre>
+</div>
+<div id="separate" class="section level3 unnumbered hasAnchor">
+<h3>separate<a href="data-wrangling.html#separate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s <code>separate</code> Culture into two new variables: Species and Dose.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:7204"></span>
+<img src="images/07_011_separate-vis.png" alt="\label{fig:7204}Separating columns in a tibble." width="464" />
+<p class="caption">
+Figure 7.4: Separating columns in a tibble.
+</p>
+</div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="data-wrangling.html#cb171-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb171-2"><a href="data-wrangling.html#cb171-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 9 × 22
+##   culture    dose_mg gluta…¹ gluta…² gluta…³ gluta…⁴ gluta…⁵ lysin…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟
+##   &lt;chr&gt;      &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 e coli     0mg      191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3  9.62e2
+## 2 staph aur… 0mg      125210  132156  1.14e5  117150  137747     111     119     109  1.19e2  1.19e2
+## 3 p aerugin… 0mg      978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3  8.61e2
+## 4 e coli     10mg       1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5  1.79e5
+## 5 staph aur… 10mg        152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3  1.29e4
+## 6 p aerugin… 10mg         23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5  1.37e5
+## 7 e coli     20mg        885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7  1.88e5
+## 8 staph aur… 20mg        136    4276  1.16e6    4841     130     129   12985  123893  1.28e6  1.46e6
+## 9 p aerugin… 20mg       3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7  2.23e7
+## # … with 10 more variables: `succinic acid_Time_0min` &lt;dbl&gt;, `succinic acid_Time_10min` &lt;dbl&gt;,
+## #   `succinic acid_Time_20min` &lt;dbl&gt;, `succinic acid_Time_50min` &lt;dbl&gt;,
+## #   `succinic acid_Time_2hr` &lt;dbl&gt;, phosphatidylcholine_Time_0min &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_10min &lt;dbl&gt;, phosphatidylcholine_Time_20min &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_50min &lt;dbl&gt;, phosphatidylcholine_Time_2hr &lt;dbl&gt;, and abbreviated
+## #   variable names ¹​glutamate_Time_0min, ²​glutamate_Time_10min, ³​glutamate_Time_20min,
+## #   ⁴​glutamate_Time_50min, ⁵​glutamate_Time_2hr, ⁶​lysine_Time_0min, ⁷​lysine_Time_10min, …</code></pre>
+</div>
+<div id="mutate" class="section level3 unnumbered hasAnchor">
+<h3>mutate<a href="data-wrangling.html#mutate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Still some issues here. We managed a separation but out dose column isn’t numeric!
+We need to remove the “mg”.</p>
+<div class="figure"><span style="display:block;" id="fig:7205"></span>
+<img src="images/07_012_mutate-vis.png" alt="\label{fig:7205}Mutate:Making new columns or changing existing ones." width="527" />
+<p class="caption">
+Figure 7.5: Mutate:Making new columns or changing existing ones.
+</p>
+</div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="data-wrangling.html#cb173-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb173-2"><a href="data-wrangling.html#cb173-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb173-3"><a href="data-wrangling.html#cb173-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Dose =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 9 × 23
+##   culture    dose_mg gluta…¹ gluta…² gluta…³ gluta…⁴ gluta…⁵ lysin…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟
+##   &lt;chr&gt;      &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 e coli     0mg      191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3  9.62e2
+## 2 staph aur… 0mg      125210  132156  1.14e5  117150  137747     111     119     109  1.19e2  1.19e2
+## 3 p aerugin… 0mg      978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3  8.61e2
+## 4 e coli     10mg       1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5  1.79e5
+## 5 staph aur… 10mg        152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3  1.29e4
+## 6 p aerugin… 10mg         23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5  1.37e5
+## 7 e coli     20mg        885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7  1.88e5
+## 8 staph aur… 20mg        136    4276  1.16e6    4841     130     129   12985  123893  1.28e6  1.46e6
+## 9 p aerugin… 20mg       3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7  2.23e7
+## # … with 11 more variables: `succinic acid_Time_0min` &lt;dbl&gt;, `succinic acid_Time_10min` &lt;dbl&gt;,
+## #   `succinic acid_Time_20min` &lt;dbl&gt;, `succinic acid_Time_50min` &lt;dbl&gt;,
+## #   `succinic acid_Time_2hr` &lt;dbl&gt;, phosphatidylcholine_Time_0min &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_10min &lt;dbl&gt;, phosphatidylcholine_Time_20min &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_50min &lt;dbl&gt;, phosphatidylcholine_Time_2hr &lt;dbl&gt;, Dose &lt;chr&gt;, and
+## #   abbreviated variable names ¹​glutamate_Time_0min, ²​glutamate_Time_10min, ³​glutamate_Time_20min,
+## #   ⁴​glutamate_Time_50min, ⁵​glutamate_Time_2hr, ⁶​lysine_Time_0min, ⁷​lysine_Time_10min, …</code></pre>
+<p>Ok, the “mg” is removed but if we check the tibble, <code>Dose</code> is still <code>chr</code>, so it’s still computed as text by R! Let’s make it numeric.</p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="data-wrangling.html#cb175-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb175-2"><a href="data-wrangling.html#cb175-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb175-3"><a href="data-wrangling.html#cb175-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb175-4"><a href="data-wrangling.html#cb175-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg))</span></code></pre></div>
+<pre><code>## # A tibble: 9 × 22
+##   culture    dose_mg gluta…¹ gluta…² gluta…³ gluta…⁴ gluta…⁵ lysin…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟
+##   &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 e coli           0  191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3  9.62e2
+## 2 staph aur…       0  125210  132156  1.14e5  117150  137747     111     119     109  1.19e2  1.19e2
+## 3 p aerugin…       0  978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3  8.61e2
+## 4 e coli          10    1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5  1.79e5
+## 5 staph aur…      10     152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3  1.29e4
+## 6 p aerugin…      10      23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5  1.37e5
+## 7 e coli          20     885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7  1.88e5
+## 8 staph aur…      20     136    4276  1.16e6    4841     130     129   12985  123893  1.28e6  1.46e6
+## 9 p aerugin…      20    3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7  2.23e7
+## # … with 10 more variables: `succinic acid_Time_0min` &lt;dbl&gt;, `succinic acid_Time_10min` &lt;dbl&gt;,
+## #   `succinic acid_Time_20min` &lt;dbl&gt;, `succinic acid_Time_50min` &lt;dbl&gt;,
+## #   `succinic acid_Time_2hr` &lt;dbl&gt;, phosphatidylcholine_Time_0min &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_10min &lt;dbl&gt;, phosphatidylcholine_Time_20min &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_50min &lt;dbl&gt;, phosphatidylcholine_Time_2hr &lt;dbl&gt;, and abbreviated
+## #   variable names ¹​glutamate_Time_0min, ²​glutamate_Time_10min, ³​glutamate_Time_20min,
+## #   ⁴​glutamate_Time_50min, ⁵​glutamate_Time_2hr, ⁶​lysine_Time_0min, ⁷​lysine_Time_10min, …</code></pre>
+</div>
+<div id="pivot_" class="section level3 unnumbered hasAnchor">
+<h3>pivot_<a href="data-wrangling.html#pivot_" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now, we have a bigger problem… multiple pieces of information encoded into each column!
+We need this tibble to be <strong>long</strong> rather than <strong>wide</strong> to by tidy. We can use <code>pivot_longer</code> from <code>tidyr</code>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:7206"></span>
+<img src="images/07_013_pivot-longer-vis.png" alt="\label{fig:7206x`} Pivoting longer from wide data." width="636" />
+<p class="caption">
+Figure 7.6:  Pivoting longer from wide data.
+</p>
+</div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="data-wrangling.html#cb177-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb177-2"><a href="data-wrangling.html#cb177-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb177-3"><a href="data-wrangling.html#cb177-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb177-4"><a href="data-wrangling.html#cb177-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
+<span id="cb177-5"><a href="data-wrangling.html#cb177-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 180 × 4
+##    culture dose_mg metabolite_time      abundance
+##    &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;                    &lt;dbl&gt;
+##  1 e coli        0 glutamate_Time_0min     191666
+##  2 e coli        0 glutamate_Time_10min   2082823
+##  3 e coli        0 glutamate_Time_20min   1796910
+##  4 e coli        0 glutamate_Time_50min    846402
+##  5 e coli        0 glutamate_Time_2hr     1782879
+##  6 e coli        0 lysine_Time_0min          1418
+##  7 e coli        0 lysine_Time_10min         2004
+##  8 e coli        0 lysine_Time_20min         1498
+##  9 e coli        0 lysine_Time_50min         1356
+## 10 e coli        0 lysine_Time_2hr            962
+## # … with 170 more rows</code></pre>
+<p>Another happy table…but <strong>STILL</strong> has multiple data encoded in a single column!</p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="data-wrangling.html#cb179-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb179-2"><a href="data-wrangling.html#cb179-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb179-3"><a href="data-wrangling.html#cb179-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb179-4"><a href="data-wrangling.html#cb179-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
+<span id="cb179-5"><a href="data-wrangling.html#cb179-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb179-6"><a href="data-wrangling.html#cb179-6" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 180 × 5
+##    culture dose_mg metabolite time_min abundance
+##    &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;
+##  1 e coli        0 glutamate  Time        191666
+##  2 e coli        0 glutamate  Time       2082823
+##  3 e coli        0 glutamate  Time       1796910
+##  4 e coli        0 glutamate  Time        846402
+##  5 e coli        0 glutamate  Time       1782879
+##  6 e coli        0 lysine     Time          1418
+##  7 e coli        0 lysine     Time          2004
+##  8 e coli        0 lysine     Time          1498
+##  9 e coli        0 lysine     Time          1356
+## 10 e coli        0 lysine     Time           962
+## # … with 170 more rows</code></pre>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="data-wrangling.html#cb181-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb181-2"><a href="data-wrangling.html#cb181-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb181-3"><a href="data-wrangling.html#cb181-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb181-4"><a href="data-wrangling.html#cb181-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
+<span id="cb181-5"><a href="data-wrangling.html#cb181-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb181-6"><a href="data-wrangling.html#cb181-6" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_&quot;</span>, <span class="at">convert =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 180 × 5
+##    culture dose_mg metabolite time_min abundance
+##    &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;
+##  1 e coli        0 glutamate  Time        191666
+##  2 e coli        0 glutamate  Time       2082823
+##  3 e coli        0 glutamate  Time       1796910
+##  4 e coli        0 glutamate  Time        846402
+##  5 e coli        0 glutamate  Time       1782879
+##  6 e coli        0 lysine     Time          1418
+##  7 e coli        0 lysine     Time          2004
+##  8 e coli        0 lysine     Time          1498
+##  9 e coli        0 lysine     Time          1356
+## 10 e coli        0 lysine     Time           962
+## # … with 170 more rows</code></pre>
+<p>Almost there, but notice how <code>metabolite_time</code> has three items when we separate by <code>_</code>?
+glutamate_Time_0min -&gt; <code>glutamate</code><em><code>Time</code></em><code>0min</code>
+We only provided two column names, though. Perhaps we can rethink our separator.</p>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="data-wrangling.html#cb183-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb183-2"><a href="data-wrangling.html#cb183-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb183-3"><a href="data-wrangling.html#cb183-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb183-4"><a href="data-wrangling.html#cb183-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
+<span id="cb183-5"><a href="data-wrangling.html#cb183-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb183-6"><a href="data-wrangling.html#cb183-6" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_Time_&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb183-7"><a href="data-wrangling.html#cb183-7" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb183-8"><a href="data-wrangling.html#cb183-8" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">case_when</span>(</span>
+<span id="cb183-9"><a href="data-wrangling.html#cb183-9" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;min&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;min&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)),</span>
+<span id="cb183-10"><a href="data-wrangling.html#cb183-10" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)) <span class="sc">*</span> <span class="dv">60</span></span>
+<span id="cb183-11"><a href="data-wrangling.html#cb183-11" tabindex="-1"></a>    )</span>
+<span id="cb183-12"><a href="data-wrangling.html#cb183-12" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 180 × 5
+##    culture dose_mg metabolite time_min abundance
+##    &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;
+##  1 e coli        0 glutamate         0    191666
+##  2 e coli        0 glutamate        10   2082823
+##  3 e coli        0 glutamate        20   1796910
+##  4 e coli        0 glutamate        50    846402
+##  5 e coli        0 glutamate       120   1782879
+##  6 e coli        0 lysine            0      1418
+##  7 e coli        0 lysine           10      2004
+##  8 e coli        0 lysine           20      1498
+##  9 e coli        0 lysine           50      1356
+## 10 e coli        0 lysine          120       962
+## # … with 170 more rows</code></pre>
+<p>Ok a new problem has appeared: mixed time units in our <code>time_min</code> column. We have both “min” and “hr”. We need to standardize to understand these as time units. We can <code>mutate</code> with <code>case_when</code>, which does specific things conditionally on particular observations in the tibble. This is a <code>dplyr</code> way of doing if statements. We will also advance it up by doing the “character” to “numeric” conversion in one go!</p>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="data-wrangling.html#cb185-1" tabindex="-1"></a>tbl_met_tidy <span class="ot">&lt;-</span> tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb185-2"><a href="data-wrangling.html#cb185-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb185-3"><a href="data-wrangling.html#cb185-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb185-4"><a href="data-wrangling.html#cb185-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
+<span id="cb185-5"><a href="data-wrangling.html#cb185-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb185-6"><a href="data-wrangling.html#cb185-6" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_Time_&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb185-7"><a href="data-wrangling.html#cb185-7" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb185-8"><a href="data-wrangling.html#cb185-8" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">case_when</span>(</span>
+<span id="cb185-9"><a href="data-wrangling.html#cb185-9" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;min&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;min&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)),</span>
+<span id="cb185-10"><a href="data-wrangling.html#cb185-10" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)) <span class="sc">*</span> <span class="dv">60</span></span>
+<span id="cb185-11"><a href="data-wrangling.html#cb185-11" tabindex="-1"></a>    )</span>
+<span id="cb185-12"><a href="data-wrangling.html#cb185-12" tabindex="-1"></a>  )</span>
+<span id="cb185-13"><a href="data-wrangling.html#cb185-13" tabindex="-1"></a></span>
+<span id="cb185-14"><a href="data-wrangling.html#cb185-14" tabindex="-1"></a>tbl_met_tidy</span></code></pre></div>
+<pre><code>## # A tibble: 180 × 5
+##    culture dose_mg metabolite time_min abundance
+##    &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;
+##  1 e coli        0 glutamate         0    191666
+##  2 e coli        0 glutamate        10   2082823
+##  3 e coli        0 glutamate        20   1796910
+##  4 e coli        0 glutamate        50    846402
+##  5 e coli        0 glutamate       120   1782879
+##  6 e coli        0 lysine            0      1418
+##  7 e coli        0 lysine           10      2004
+##  8 e coli        0 lysine           20      1498
+##  9 e coli        0 lysine           50      1356
+## 10 e coli        0 lysine          120       962
+## # … with 170 more rows</code></pre>
+<p>Now we can examine our tibble and confirm that once and for all, it is tidy. Let’s save it for later use. We can also pipe in our saving.</p>
+</div>
+<div id="write_" class="section level3 unnumbered hasAnchor">
+<h3>write_<a href="data-wrangling.html#write_" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="data-wrangling.html#cb187-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb187-2"><a href="data-wrangling.html#cb187-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb187-3"><a href="data-wrangling.html#cb187-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb187-4"><a href="data-wrangling.html#cb187-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
+<span id="cb187-5"><a href="data-wrangling.html#cb187-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb187-6"><a href="data-wrangling.html#cb187-6" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_Time_&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb187-7"><a href="data-wrangling.html#cb187-7" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb187-8"><a href="data-wrangling.html#cb187-8" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">case_when</span>(</span>
+<span id="cb187-9"><a href="data-wrangling.html#cb187-9" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;min&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;min&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)),</span>
+<span id="cb187-10"><a href="data-wrangling.html#cb187-10" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)) <span class="sc">*</span> <span class="dv">60</span></span>
+<span id="cb187-11"><a href="data-wrangling.html#cb187-11" tabindex="-1"></a>    )</span>
+<span id="cb187-12"><a href="data-wrangling.html#cb187-12" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb187-13"><a href="data-wrangling.html#cb187-13" tabindex="-1"></a>  <span class="fu">write_csv</span>(<span class="st">&quot;data/tidyed-met-df.csv&quot;</span>)</span></code></pre></div>
+</div>
+<div id="non-pipe" class="section level3 unnumbered hasAnchor">
+<h3>Non-pipe<a href="data-wrangling.html#non-pipe" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>One thing you can notice is how the dplyr verbs add up. We can continually pipe one data frame through a series of wrangling steps until we are satisfied. Operating in this way organizes processes in a way that is easy to manage. We could also do this:</p>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="data-wrangling.html#cb188-1" tabindex="-1"></a><span class="co"># read_excel can read portions of the excel</span></span>
+<span id="cb188-2"><a href="data-wrangling.html#cb188-2" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/bacterial-metabolites_dose-simicillin_wide.xlsx&quot;</span>)</span>
+<span id="cb188-3"><a href="data-wrangling.html#cb188-3" tabindex="-1"></a></span>
+<span id="cb188-4"><a href="data-wrangling.html#cb188-4" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">separate</span>(no_pipe_tbl_met, Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>)</span>
+<span id="cb188-5"><a href="data-wrangling.html#cb188-5" tabindex="-1"></a></span>
+<span id="cb188-6"><a href="data-wrangling.html#cb188-6" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">mutate</span>(no_pipe_tbl_met, <span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>))</span>
+<span id="cb188-7"><a href="data-wrangling.html#cb188-7" tabindex="-1"></a></span>
+<span id="cb188-8"><a href="data-wrangling.html#cb188-8" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">mutate</span>(no_pipe_tbl_met, <span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg))</span>
+<span id="cb188-9"><a href="data-wrangling.html#cb188-9" tabindex="-1"></a></span>
+<span id="cb188-10"><a href="data-wrangling.html#cb188-10" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(no_pipe_tbl_met, <span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>)</span>
+<span id="cb188-11"><a href="data-wrangling.html#cb188-11" tabindex="-1"></a></span>
+<span id="cb188-12"><a href="data-wrangling.html#cb188-12" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">separate</span>(no_pipe_tbl_met, metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_Time_&quot;</span>)</span>
+<span id="cb188-13"><a href="data-wrangling.html#cb188-13" tabindex="-1"></a></span>
+<span id="cb188-14"><a href="data-wrangling.html#cb188-14" tabindex="-1"></a>no_pipe_tbl_met_tidy <span class="ot">&lt;-</span>  <span class="fu">mutate</span>(no_pipe_tbl_met,</span>
+<span id="cb188-15"><a href="data-wrangling.html#cb188-15" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">case_when</span>(</span>
+<span id="cb188-16"><a href="data-wrangling.html#cb188-16" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;min&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;min&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)),</span>
+<span id="cb188-17"><a href="data-wrangling.html#cb188-17" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)) <span class="sc">*</span> <span class="dv">60</span></span>
+<span id="cb188-18"><a href="data-wrangling.html#cb188-18" tabindex="-1"></a>    )</span>
+<span id="cb188-19"><a href="data-wrangling.html#cb188-19" tabindex="-1"></a>  )</span>
+<span id="cb188-20"><a href="data-wrangling.html#cb188-20" tabindex="-1"></a></span>
+<span id="cb188-21"><a href="data-wrangling.html#cb188-21" tabindex="-1"></a></span>
+<span id="cb188-22"><a href="data-wrangling.html#cb188-22" tabindex="-1"></a>no_pipe_tbl_met_tidy</span></code></pre></div>
+<pre><code>## # A tibble: 180 × 5
+##    culture dose_mg metabolite time_min abundance
+##    &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;
+##  1 e coli        0 glutamate         0    191666
+##  2 e coli        0 glutamate        10   2082823
+##  3 e coli        0 glutamate        20   1796910
+##  4 e coli        0 glutamate        50    846402
+##  5 e coli        0 glutamate       120   1782879
+##  6 e coli        0 lysine            0      1418
+##  7 e coli        0 lysine           10      2004
+##  8 e coli        0 lysine           20      1498
+##  9 e coli        0 lysine           50      1356
+## 10 e coli        0 lysine          120       962
+## # … with 170 more rows</code></pre>
+</div>
+<div id="summarize" class="section level3 unnumbered hasAnchor">
+<h3>summarize<a href="data-wrangling.html#summarize" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now we have a tidy tibble, we can summarize very rapidly.</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="data-wrangling.html#cb190-1" tabindex="-1"></a>tbl_met_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb190-2"><a href="data-wrangling.html#cb190-2" tabindex="-1"></a>  <span class="fu">group_by</span>(culture, metabolite) <span class="sc">%&gt;%</span></span>
+<span id="cb190-3"><a href="data-wrangling.html#cb190-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(abundance))</span></code></pre></div>
+<pre><code>## # A tibble: 12 × 3
+## # Groups:   culture [3]
+##    culture      metabolite               mean
+##    &lt;chr&gt;        &lt;chr&gt;                   &lt;dbl&gt;
+##  1 e coli       glutamate            2323045.
+##  2 e coli       lysine               1519827.
+##  3 e coli       phosphatidylcholine 67749754.
+##  4 e coli       succinic acid        1906850.
+##  5 p aeruginosa glutamate            2902178 
+##  6 p aeruginosa lysine               2336119.
+##  7 p aeruginosa phosphatidylcholine 77078132.
+##  8 p aeruginosa succinic acid        3525432.
+##  9 staph aureus glutamate             226736.
+## 10 staph aureus lysine                193944.
+## 11 staph aureus phosphatidylcholine  5836359.
+## 12 staph aureus succinic acid         133337.</code></pre>
+<p>What other questions can we ask???</p>
+
+</div>
+</div>
+<div id="exercises---evalfalse" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Exercises {-, eval=FALSE}<a href="data-wrangling.html#exercises---evalfalse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/07.png" />{height=“68”, eval=FALSE} | - Create a new R Studio Project and name it <strong>005_data_wrangling</strong>.
+| |
+| - Create a new R script, add your name and date at the top as comments. |
+| |
+| - Locate and/or download a Tidyverse cheat-sheet and refer to it as needed. |</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li>Download the data.</li>
+</ol>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="data-wrangling.html#cb192-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-Metabolites_dose-simicillin_messy.xlsx&quot;</span></span>
+<span id="cb192-2"><a href="data-wrangling.html#cb192-2" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/bacterial-Metabolites_dose-simicillin_messy.xlsx&quot;</span>)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Read in the messy bacteria data and store it as a variable.</li>
+</ol>
+<p><em>In all proceeding exercises, pipe results from previous exercise into current exercise creating a single lone pipe for data processing</em></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Separate <code>Culture</code> column containing culture and dose into <code>culture</code> and <code>dose_mg_ml</code> columns.</p></li>
+<li><p>Make <code>dose_mg_ml</code> column numeric by removing the text and change the column data type from character to numeric.</p></li>
+<li><p>Pivot the table from wide to long creating <code>metabolite</code>, <code>time_hr</code> &amp; <code>abundance</code> columns.</p></li>
+<li><p>Make sure <code>time_hr</code> contains just hours and not a mixture of days and hours.</p></li>
+<li><p>Remove the <code>User</code> column. See cheatsheet here: <a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">data-wrangling-cheatsheet</a> or consult internet.</p></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tidyverse-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/jeffsocal/asms_r_intro/edit/BRANCH/07_02-wrangling.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

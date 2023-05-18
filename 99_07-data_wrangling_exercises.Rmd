@@ -1,6 +1,6 @@
 ## **7** Data Wrangling {-}
 
-```{r, echo=FALSE}
+```{r, eval=FALSE}
 met_df %>%
   separate(Culture, c("culture", "dose_mg_ml"), sep = " dose--") %>%
   mutate(dose_mg_ml = gsub("-mg/ml","", dose_mg_ml)) %>%

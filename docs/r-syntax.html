@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 R Syntax | Learning R for Mass Spectrometry</title>
+  <meta name="description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 R Syntax | Learning R for Mass Spectrometry" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  <meta name="github-repo" content="jeffsocal/ASMS_R_Basics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 R Syntax | Learning R for Mass Spectrometry" />
+  
+  <meta name="twitter:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  
+
+<meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
+
+
+<meta name="date" content="2023-05-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="r-studio-projects.html"/>
+<link rel="next" href="r-objects.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Learning R for Mass Spec.</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="contents.html"><a href="contents.html"><i class="fa fa-check"></i>Contents</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>1</b> Introduction to R</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#why-choose-it"><i class="fa fa-check"></i>Why choose it?</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#what-you-can-do-with-it"><i class="fa fa-check"></i>What you can do with it?</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-r-learning-curve"><i class="fa fa-check"></i>The R Learning Curve</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#thoughts-about-learning-r-and-how-to-code"><i class="fa fa-check"></i>Thoughts about learning R and how to code</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#alternatives"><i class="fa fa-check"></i>Alternatives</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#resources"><i class="fa fa-check"></i>Resources</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#online"><i class="fa fa-check"></i>Online</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#in-print"><i class="fa fa-check"></i>In Print</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#organizations"><i class="fa fa-check"></i>Organizations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>2</b> Installation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installation.html"><a href="installation.html#r-interpreter"><i class="fa fa-check"></i><b>2.1</b> R interpreter</a></li>
+<li class="chapter" data-level="2.2" data-path="installation.html"><a href="installation.html#rstudio"><i class="fa fa-check"></i><b>2.2</b> Rstudio</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="installation.html"><a href="installation.html#ide-layout"><i class="fa fa-check"></i><b>2.2.1</b> IDE Layout</a></li>
+<li class="chapter" data-level="2.2.2" data-path="installation.html"><a href="installation.html#usage-..-running-lines-of-code-in-rstudio"><i class="fa fa-check"></i><b>2.2.2</b> Usage .. Running lines of code in RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="installation.html"><a href="installation.html#packages"><i class="fa fa-check"></i><b>2.3</b> Packages</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="installation.html"><a href="installation.html#what-are-r-packages"><i class="fa fa-check"></i><b>2.3.1</b> What are R Packages?</a></li>
+<li class="chapter" data-level="2.3.2" data-path="installation.html"><a href="installation.html#where-to-get-r-packages"><i class="fa fa-check"></i><b>2.3.2</b> Where to get R Packages</a></li>
+<li class="chapter" data-level="2.3.3" data-path="installation.html"><a href="installation.html#installing-r-packages"><i class="fa fa-check"></i><b>2.3.3</b> Installing R Packages</a></li>
+<li class="chapter" data-level="2.3.4" data-path="installation.html"><a href="installation.html#potential-gotchas"><i class="fa fa-check"></i><b>2.3.4</b> Potential Gotchas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="installation.html"><a href="installation.html#packages-utilized-in-this-book"><i class="fa fa-check"></i><b>2.4</b> Packages Utilized in This Book</a>
+<ul>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#tidyverse"><i class="fa fa-check"></i>tidyverse</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#mass-spectrometry-specific-packages"><i class="fa fa-check"></i>Mass Spectrometry Specific Packages</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-studio-projects.html"><a href="r-studio-projects.html"><i class="fa fa-check"></i><b>3</b> R Studio Projects</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="r-studio-projects.html"><a href="r-studio-projects.html#creating"><i class="fa fa-check"></i><b>3.1</b> Creating</a></li>
+<li class="chapter" data-level="3.2" data-path="r-studio-projects.html"><a href="r-studio-projects.html#organizing"><i class="fa fa-check"></i><b>3.2</b> Organizing</a>
+<ul>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#data"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#scripts"><i class="fa fa-check"></i>Scripts</a></li>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#results"><i class="fa fa-check"></i>Results</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="r-syntax.html"><a href="r-syntax.html"><i class="fa fa-check"></i><b>4</b> R Syntax</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="r-syntax.html"><a href="r-syntax.html#reserved-words"><i class="fa fa-check"></i><b>4.1</b> Reserved Words</a></li>
+<li class="chapter" data-level="4.2" data-path="r-syntax.html"><a href="r-syntax.html#types"><i class="fa fa-check"></i><b>4.2</b> Types</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="r-syntax.html"><a href="r-syntax.html#comments"><i class="fa fa-check"></i><b>4.2.1</b> Comments</a></li>
+<li class="chapter" data-level="4.2.2" data-path="r-syntax.html"><a href="r-syntax.html#strings"><i class="fa fa-check"></i><b>4.2.2</b> Strings</a></li>
+<li class="chapter" data-level="4.2.3" data-path="r-syntax.html"><a href="r-syntax.html#numbers"><i class="fa fa-check"></i><b>4.2.3</b> Numbers</a></li>
+<li class="chapter" data-level="4.2.4" data-path="r-syntax.html"><a href="r-syntax.html#operators"><i class="fa fa-check"></i><b>4.2.4</b> Operators</a></li>
+<li class="chapter" data-level="4.2.5" data-path="r-syntax.html"><a href="r-syntax.html#variables"><i class="fa fa-check"></i><b>4.2.5</b> Variables</a></li>
+<li class="chapter" data-level="4.2.6" data-path="r-syntax.html"><a href="r-syntax.html#statements"><i class="fa fa-check"></i><b>4.2.6</b> Statements</a></li>
+<li class="chapter" data-level="4.2.7" data-path="r-syntax.html"><a href="r-syntax.html#functions"><i class="fa fa-check"></i><b>4.2.7</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="r-syntax.html"><a href="r-syntax.html#flow-control"><i class="fa fa-check"></i><b>4.3</b> Flow-Control</a>
+<ul>
+<li class="chapter" data-level="" data-path="r-syntax.html"><a href="r-syntax.html#for-loop"><i class="fa fa-check"></i>For Loop</a></li>
+<li class="chapter" data-level="" data-path="r-syntax.html"><a href="r-syntax.html#if-else"><i class="fa fa-check"></i>If-Else</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="r-syntax.html"><a href="r-syntax.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="r-objects.html"><a href="r-objects.html"><i class="fa fa-check"></i><b>5</b> R Objects</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="r-objects.html"><a href="r-objects.html#variable"><i class="fa fa-check"></i><b>5.1</b> Variable</a></li>
+<li class="chapter" data-level="5.2" data-path="r-objects.html"><a href="r-objects.html#vector"><i class="fa fa-check"></i><b>5.2</b> Vector</a></li>
+<li class="chapter" data-level="5.3" data-path="r-objects.html"><a href="r-objects.html#matrix"><i class="fa fa-check"></i><b>5.3</b> Matrix</a></li>
+<li class="chapter" data-level="5.4" data-path="r-objects.html"><a href="r-objects.html#data-frame"><i class="fa fa-check"></i><b>5.4</b> Data Frame</a></li>
+<li class="chapter" data-level="5.5" data-path="r-objects.html"><a href="r-objects.html#list"><i class="fa fa-check"></i><b>5.5</b> List</a></li>
+<li class="chapter" data-level="5.6" data-path="r-objects.html"><a href="r-objects.html#tibbles"><i class="fa fa-check"></i><b>5.6</b> Tibbles</a></li>
+<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#how-to-tell-what-you-are-dealing-with"><i class="fa fa-check"></i>How to tell what you are dealing with</a></li>
+<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tidyverse-1.html"><a href="tidyverse-1.html"><i class="fa fa-check"></i><b>6</b> Tidyverse</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#core-packages"><i class="fa fa-check"></i><b>6.1</b> Core Packages</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#magrittr"><i class="fa fa-check"></i><b>6.1.1</b> magrittr</a></li>
+<li class="chapter" data-level="6.1.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#tibble"><i class="fa fa-check"></i><b>6.1.2</b> tibble</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#importing"><i class="fa fa-check"></i><b>6.2</b> Importing</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#readr"><i class="fa fa-check"></i><b>6.2.1</b> readr</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#wrangling"><i class="fa fa-check"></i><b>6.3</b> Wrangling</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr"><i class="fa fa-check"></i><b>6.3.1</b> dplyr</a></li>
+<li class="chapter" data-level="6.3.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#tidyr"><i class="fa fa-check"></i><b>6.3.2</b> tidyr</a></li>
+<li class="chapter" data-level="6.3.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#purrr"><i class="fa fa-check"></i><b>6.3.3</b> purrr</a></li>
+<li class="chapter" data-level="6.3.4" data-path="tidyverse-1.html"><a href="tidyverse-1.html#glue"><i class="fa fa-check"></i><b>6.3.4</b> glue</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="tidyverse-1.html"><a href="tidyverse-1.html#data-types"><i class="fa fa-check"></i><b>6.4</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#stringr"><i class="fa fa-check"></i><b>6.4.1</b> stringr</a></li>
+<li class="chapter" data-level="6.4.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#lubridate"><i class="fa fa-check"></i><b>6.4.2</b> lubridate</a></li>
+<li class="chapter" data-level="6.4.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#forcats"><i class="fa fa-check"></i><b>6.4.3</b> forcats</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="tidyverse-1.html"><a href="tidyverse-1.html#summarizing"><i class="fa fa-check"></i><b>6.5</b> Summarizing</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr-1"><i class="fa fa-check"></i><b>6.5.1</b> dplyr</a></li>
+<li class="chapter" data-level="6.5.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#ggplot2"><i class="fa fa-check"></i><b>6.5.2</b> ggplot2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>7</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="data-wrangling.html"><a href="data-wrangling.html#tidy-data"><i class="fa fa-check"></i><b>7.1</b> Tidy Data</a></li>
+<li class="chapter" data-level="7.2" data-path="data-wrangling.html"><a href="data-wrangling.html#example-walkthrough"><i class="fa fa-check"></i><b>7.2</b> Example Walkthrough</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#read_"><i class="fa fa-check"></i>read_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#separate"><i class="fa fa-check"></i>separate</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#mutate"><i class="fa fa-check"></i>mutate</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#pivot_"><i class="fa fa-check"></i>pivot_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#write_"><i class="fa fa-check"></i>write_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#non-pipe"><i class="fa fa-check"></i>Non-pipe</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#summarize"><i class="fa fa-check"></i>summarize</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="data-wrangling.html"><a href="data-wrangling.html#exercises---evalfalse"><i class="fa fa-check"></i><b>7.3</b> Exercises {-, eval=FALSE}</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>8</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="data-visualization.html"><a href="data-visualization.html#base-plot"><i class="fa fa-check"></i><b>8.1</b> Base: plot</a></li>
+<li class="chapter" data-level="8.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2-1"><i class="fa fa-check"></i><b>8.2</b> GGPlot2</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="data-visualization.html"><a href="data-visualization.html#syntax"><i class="fa fa-check"></i><b>8.2.1</b> Syntax</a></li>
+<li class="chapter" data-level="8.2.2" data-path="data-visualization.html"><a href="data-visualization.html#basic-data-plotting"><i class="fa fa-check"></i><b>8.2.2</b> Basic Data Plotting</a></li>
+<li class="chapter" data-level="8.2.3" data-path="data-visualization.html"><a href="data-visualization.html#data-distributions"><i class="fa fa-check"></i><b>8.2.3</b> Data Distributions</a></li>
+<li class="chapter" data-level="8.2.4" data-path="data-visualization.html"><a href="data-visualization.html#extended-syntax"><i class="fa fa-check"></i><b>8.2.4</b> Extended Syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="data-visualization.html"><a href="data-visualization.html#alternatives-1"><i class="fa fa-check"></i><b>8.3</b> Alternatives</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#lattice"><i class="fa fa-check"></i>lattice</a></li>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#plotly"><i class="fa fa-check"></i>plotly</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#exercises-4"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>9</b> Sharing</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="sharing.html"><a href="sharing.html#notebooks"><i class="fa fa-check"></i><b>9.1</b> Notebooks</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-notebooks"><i class="fa fa-check"></i>Using Notebooks</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-a-notebook"><i class="fa fa-check"></i>Sharing A Notebook</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>9.2</b> Packrat</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#initiating-a-packrat-project"><i class="fa fa-check"></i>Initiating a Packrat Project</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#installing-a-package-into-the-project-library"><i class="fa fa-check"></i>Installing a Package into the Project Library</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#loading-a-package-from-the-project-library"><i class="fa fa-check"></i>Loading a Package from the Project Library</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#updating-a-package-in-the-project-library"><i class="fa fa-check"></i>Updating a Package in the Project Library</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="sharing.html"><a href="sharing.html#github"><i class="fa fa-check"></i><b>9.3</b> GitHub</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-use-github"><i class="fa fa-check"></i>How to Use GitHub</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-share-a-github-repository"><i class="fa fa-check"></i>How to Share A GitHub Repository</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>9.4</b> Docker</a></li>
+<li class="chapter" data-level="9.5" data-path="sharing.html"><a href="sharing.html#r-packages"><i class="fa fa-check"></i><b>9.5</b> R Packages</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-a-package-in-rstudio"><i class="fa fa-check"></i>Creating a Package in RStudio</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-the-package"><i class="fa fa-check"></i>Using the Package</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>9.6</b> R Shiny Applications</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-create-an-r-shiny-application-in-the-rstudio-ide"><i class="fa fa-check"></i>How to Create an R Shiny Application in the RStudio IDE</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#example-of-an-r-shiny-application-for-plotting-points"><i class="fa fa-check"></i>Example of an R Shiny Application for Plotting Points</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html"><i class="fa fa-check"></i><b>10</b> Mass Spectrometry</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#data-formats"><i class="fa fa-check"></i><b>10.1</b> Data Formats</a></li>
+<li class="chapter" data-level="10.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#commercial"><i class="fa fa-check"></i><b>10.2</b> Commercial</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#raw-thermo"><i class="fa fa-check"></i><b>10.2.1</b> RAW (Thermo)</a></li>
+<li class="chapter" data-level="10.2.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#wiff-sciex"><i class="fa fa-check"></i><b>10.2.2</b> WIFF (Sciex)</a></li>
+<li class="chapter" data-level="10.2.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#d-agilent"><i class="fa fa-check"></i><b>10.2.3</b> D (Agilent)</a></li>
+<li class="chapter" data-level="10.2.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#d-bruker-timstof-data"><i class="fa fa-check"></i><b>10.2.4</b> .d (Bruker) timsTOF data</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#open-access-data"><i class="fa fa-check"></i><b>10.3</b> Open Access Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzxml"><i class="fa fa-check"></i>mzXML</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzml"><i class="fa fa-check"></i>mzML</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzmlb"><i class="fa fa-check"></i>mzMLb</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-calculate-mass"><i class="fa fa-check"></i><b>10.4</b> R Calculate Mass</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#brain"><i class="fa fa-check"></i>BRAIN</a></li>
+<li class="chapter" data-level="10.4.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#envipat"><i class="fa fa-check"></i><b>10.4.1</b> enviPat</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-ms-data"><i class="fa fa-check"></i><b>10.5</b> R MS Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#xcms"><i class="fa fa-check"></i>xcms</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzr"><i class="fa fa-check"></i>mzR</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-ms-analysis"><i class="fa fa-check"></i><b>10.6</b> R MS Analysis</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#deqms"><i class="fa fa-check"></i>deqms</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msempire"><i class="fa fa-check"></i>msempire</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msqrob"><i class="fa fa-check"></i>msqrob</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msstats"><i class="fa fa-check"></i>MSstats</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#statspro-r-package"><i class="fa fa-check"></i>StatsPro R Package</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msgrob2"><i class="fa fa-check"></i>msgrob2</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#tidyproteomics"><i class="fa fa-check"></i>Tidyproteomics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html"><i class="fa fa-check"></i>Answers to Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#r-syntax-1"><i class="fa fa-check"></i><strong>4</strong> R Syntax</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#r-objects-1"><i class="fa fa-check"></i><strong>5</strong> R Objects</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#tidyverse-2"><i class="fa fa-check"></i><strong>6</strong> Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-1"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-2"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-visualization-1"><i class="fa fa-check"></i><strong>8</strong> Data Visualization</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/jeffsocal/asms_r_intro" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Learning R for Mass Spectrometry</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r-syntax" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> R Syntax<a href="r-syntax.html#r-syntax" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Welcome to the R Book! In this chapter, we will explore the basics of R, a powerful programming language used for statistical computing and graphics.</p>
+<p>At its most fundamental level, R is a calculator capable of performing simple, and complex, mathematical operations. It can read and write data to and from files, manipulate the data, calculate summaries and plot visual representations of the data. Essentially, it is a programmatic version of a spreadsheet program.</p>
+<p>However, R is much more than just a calculator. It is also a platform for conducting complex analyses, statistical evaluations, predictive inferencing, and machine learning. With R, you can explore and visualize data in a variety of ways, perform advanced statistical analyses, and build predictive models.</p>
+<p>In this chapter, we will start by examining the simplest operations of R. We will cover basic arithmetic, working with variables, and creating basic plots. By the end of this chapter, you will have a solid understanding of the fundamentals of R and be ready to tackle more complex topics.</p>
+<p>So, let’s get started!</p>
+<p><br />
+</p>
+<table>
+<colgroup>
+<col width="34%" />
+<col width="65%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/03.png" height="68" /></td>
+<td><p><strong>At the end of this chapter you should be able to</strong></p>
+<ul>
+<li><p>Understand R’s syntax, variables, operators and functions.</p></li>
+<li><p>Create and edit a project in RStudio.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<div id="reserved-words" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Reserved Words<a href="r-syntax.html#reserved-words" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As we begin our journey, it’s important to keep in mind that there are certain reserved words that carry a special meaning and cannot be used as identifiers. These words have been set aside by the R programming language, and using them as variable names or function names could lead to errors in your code.</p>
+<p>Therefore, before we dive too deeply into our R programming endeavors, let’s take a moment to familiarize ourselves with these reserved words. This will help us avoid potential issues down the road and ensure that our code runs smoothly.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="r-syntax.html#cb14-1" tabindex="-1"></a><span class="co"># to read more about them type</span></span>
+<span id="cb14-2"><a href="r-syntax.html#cb14-2" tabindex="-1"></a>?reserved</span></code></pre></div>
+<table>
+<colgroup>
+<col width="41%" />
+<col width="58%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Word</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>if</code>, <code>else</code></td>
+<td>flow control, part of the if-then-else statement</td>
+</tr>
+<tr class="even">
+<td><code>for</code>, <code>repeat</code>, <code>while</code>, <code>break</code>, <code>next</code></td>
+<td>flow control, part of the for-loop statement</td>
+</tr>
+<tr class="odd">
+<td><code>function</code></td>
+<td>basis for defining new algorithms</td>
+</tr>
+<tr class="even">
+<td><code>TRUE</code>, <code>FALSE</code></td>
+<td>Boolean logic values</td>
+</tr>
+<tr class="odd">
+<td><code>NULL</code></td>
+<td>an undefined value</td>
+</tr>
+<tr class="even">
+<td><code>Inf</code> , <code>-Inf</code></td>
+<td>an infinite value (eg. <code>1/0</code> )</td>
+</tr>
+<tr class="odd">
+<td><code>NaN</code></td>
+<td>‘not a number’</td>
+</tr>
+<tr class="even">
+<td><code>NA</code></td>
+<td>a missing value indicator</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="83%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/01.png" height="68" /></td>
+<td>A <code>Null</code> results when a value is missing and could be a <em>string</em> or a <em>numeric</em>, where as a NA results when a known value, such as in a column of numbers, is missing. |</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+
+</div>
+<div id="types" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Types<a href="r-syntax.html#types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Welcome to the R Book! Whether you’re just starting out or a seasoned pro, understanding the different components of R code is essential for writing high-quality, efficient R programs. In this section, we’ll take a deep dive into the various components of R code that you should be familiar with.</p>
+<p>R input is composed of typed characters that represent different parts of a process or mathematical operation. These characters come together to form what we call R code. It’s important to note that R code is not just a random collection of characters - each character serves a specific purpose and contributes to the larger structure of the code. As such, understanding the different components of R code is key to writing effective and efficient R programs.</p>
+<p>So, what are these different components of R code? Below, we’ve provided some examples to help you get started:</p>
+<table>
+<colgroup>
+<col width="37%" />
+<col width="62%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a href="r-syntax.html#comments">4.2.1</a> comments</td>
+<td><code># this is an important note</code></td>
+</tr>
+<tr class="even">
+<td><a href="r-syntax.html#strings">4.2.2</a> strings</td>
+<td><code>"letters"</code> or <code>"numbers"</code> in quotes</td>
+</tr>
+<tr class="odd">
+<td><a href="r-syntax.html#numbers">4.2.3</a> numbers</td>
+<td><code>1</code> integers or <code>1.000002</code> floats</td>
+</tr>
+<tr class="even">
+<td><a href="r-syntax.html#operators">4.2.4</a> operators</td>
+<td><code>+</code>, <code>-</code>, <code>/</code>, <code>*</code>, …</td>
+</tr>
+<tr class="odd">
+<td><a href="r-syntax.html#variables">4.2.5</a> variables</td>
+<td><code>var &lt;- 2</code> containers for information</td>
+</tr>
+<tr class="even">
+<td><a href="r-syntax.html#statements">4.2.6</a> statements</td>
+<td><code>==</code> exactly the same, <code>!=</code> not the same</td>
+</tr>
+<tr class="odd">
+<td><a href="r-syntax.html#functions">4.2.7</a> functions</td>
+<td><code>add(x, y)</code> complex code in a convenient wrapper</td>
+</tr>
+</tbody>
+</table>
+<p>By understanding these different components of R code, you’ll be well on your way to writing effective and efficient R programs. So let’s dive in and get started!</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="r-syntax.html#cb15-1" tabindex="-1"></a><span class="co"># adding two numbers here and storing it as a variable</span></span>
+<span id="cb15-2"><a href="r-syntax.html#cb15-2" tabindex="-1"></a>four <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb15-3"><a href="r-syntax.html#cb15-3" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="r-syntax.html#cb15-4" tabindex="-1"></a><span class="co"># using the function &#39;cat&#39; to print out my variable along with some text</span></span>
+<span id="cb15-5"><a href="r-syntax.html#cb15-5" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;my number is &quot;</span>, four)</span></code></pre></div>
+<pre><code>## my number is  4</code></pre>
+<p><br />
+</p>
+<table>
+<colgroup>
+<col width="31%" />
+<col width="68%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/01.png" height="68" /></td>
+<td>R does not have an line ending character such as <code>;</code> in java, PHP or C++</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<div id="comments" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Comments<a href="r-syntax.html#comments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Comments are essential parts of the code you will write. They help explain why you are taking a certain approach to the problem, either for you to remember at a later time or for a colleague. Comments in other coding languages, including R package development, can become quite expressive, representing parts and structures to a larger documentation effort. Here, however, comments are just simple text that gets ignored by the R interpreter. You can put anything you want in comments.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="r-syntax.html#cb17-1" tabindex="-1"></a>oops, not a comment</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="r-syntax.html#cb18-1" tabindex="-1"></a><span class="co"># This is a comment</span></span>
+<span id="cb18-2"><a href="r-syntax.html#cb18-2" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="r-syntax.html#cb18-3" tabindex="-1"></a><span class="co"># and here a comment tag is used to ignore legitimate R code</span></span>
+<span id="cb18-4"><a href="r-syntax.html#cb18-4" tabindex="-1"></a><span class="co"># four &lt;- 2 + 2 </span></span>
+<span id="cb18-5"><a href="r-syntax.html#cb18-5" tabindex="-1"></a>four <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">2</span></span></code></pre></div>
+</div>
+<div id="strings" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Strings<a href="r-syntax.html#strings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Strings are essentially a sequence of characters, consisting of letters or numbers. They are commonly used in programming languages and are used to represent text-based data. A string can be as simple as a single character, such as “A”, or it can be a longer sequence of characters such as “Hello, World!”. Strings are often used to store data that requires text manipulation, such as usernames, passwords, and email addresses. In contrast to words, which are made up of a specific combination of letters to represent a linguistic term, strings do not follow any specific rules of composition and can be a random or semi-random sequence of characters.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="r-syntax.html#cb19-1" tabindex="-1"></a><span class="co"># a string can be a word, this is a string variable</span></span>
+<span id="cb19-2"><a href="r-syntax.html#cb19-2" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb19-3"><a href="r-syntax.html#cb19-3" tabindex="-1"></a><span class="co"># or an abbreviation, this is a variable (thr) representing the string &quot;three&quot;</span></span>
+<span id="cb19-4"><a href="r-syntax.html#cb19-4" tabindex="-1"></a>thr <span class="ot">&lt;-</span> <span class="st">&quot;three&quot;</span> </span>
+<span id="cb19-5"><a href="r-syntax.html#cb19-5" tabindex="-1"></a><span class="co"># a mass spec reference</span></span>
+<span id="cb19-6"><a href="r-syntax.html#cb19-6" tabindex="-1"></a>peptide <span class="ot">&lt;-</span> <span class="st">&quot;QWERTK&quot;</span></span>
+<span id="cb19-7"><a href="r-syntax.html#cb19-7" tabindex="-1"></a><span class="co"># or an abbreviated variable</span></span>
+<span id="cb19-8"><a href="r-syntax.html#cb19-8" tabindex="-1"></a>pep <span class="ot">&lt;-</span> <span class="st">&quot;QWERTK&quot;</span></span></code></pre></div>
+<p>When working with R programming language, it is essential to note that strings play a crucial role in the syntax used. Strings, which define text characters, are used to represent data in R, and they must be enclosed in quotes. Failure to do so will result in the interpreter assuming that you are referring to a variable that is not enclosed in quotes.</p>
+<p>For instance, in the example above, the <code>peptide</code> variable contains the string of letters representing the peptide amino acid sequence <code>"QWERTK"</code>. However, it is essential to note that there are no strict rules for how strings and variables are composed, except that variables <strong>cannot</strong> start with a number.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="r-syntax.html#cb20-1" tabindex="-1"></a><span class="co"># permitted</span></span>
+<span id="cb20-2"><a href="r-syntax.html#cb20-2" tabindex="-1"></a>b4 <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">3</span></span>
+<span id="cb20-3"><a href="r-syntax.html#cb20-3" tabindex="-1"></a><span class="co"># not permitted</span></span>
+<span id="cb20-4"><a href="r-syntax.html#cb20-4" tabindex="-1"></a>4b <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="fl">3.</span> <span class="do">## Error: unexpected symbol in &quot;4b&quot;</span></span></code></pre></div>
+<p>There are however, conventions that you can follow when constructing variable names that aid in the readability of the code and convey information about the contents. This is especially useful in long code blocks, or, when the code becomes more complex and divested across several files. For example:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="r-syntax.html#cb21-1" tabindex="-1"></a><span class="co"># a string containing a peptide sequence</span></span>
+<span id="cb21-2"><a href="r-syntax.html#cb21-2" tabindex="-1"></a>str_pep <span class="ot">&lt;-</span> <span class="st">&quot;QWERTK&quot;</span></span>
+<span id="cb21-3"><a href="r-syntax.html#cb21-3" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="r-syntax.html#cb21-4" tabindex="-1"></a><span class="co"># a data table of m/z values and their identifications</span></span>
+<span id="cb21-5"><a href="r-syntax.html#cb21-5" tabindex="-1"></a>tbl_mz_ids <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;somefile.csv&quot;</span>)</span></code></pre></div>
+<p>To learn more about and follow specific conventions, explore the following resources:</p>
+<ul>
+<li><p><a href="http://adv-r.had.co.nz/Style.html">Hadley Wickham’s Style Guide</a></p></li>
+<li><p><a href="https://google.github.io/styleguide/Rguide.html">Google’s style Guide</a></p></li>
+<li><p><a href="https://style.tidyverse.org/">The tidyverse style guide</a></p></li>
+</ul>
+</div>
+<div id="numbers" class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Numbers<a href="r-syntax.html#numbers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Numbers are the foundation upon which all data analysis is built. Without numbers, we would not be able to perform calculations, identify patterns, or draw conclusions from our data. In the programming language R, there are two main types of numbers: <code>integers</code> and <code>floats</code>. An integer is a whole number with no decimal places, while a float is a number with decimal places. Understanding the difference between these two types of numbers is essential for accurate numerical analysis.</p>
+<p>In R, integers are represented as whole numbers, such as 1, 2, 3, and so on, while floats are represented with a decimal point, such as 1.5, 2.75, and so on. It is important to note that integers occupy less space in memory than floats, which can be a consideration when working with large datasets. This means that when possible, it is generally better to use integers over floats in R, as they are more efficient and can improve the overall performance of your code.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="r-syntax.html#cb22-1" tabindex="-1"></a><span class="co"># integers</span></span>
+<span id="cb22-2"><a href="r-syntax.html#cb22-2" tabindex="-1"></a><span class="dv">1</span>,  <span class="dv">12345</span>, <span class="sc">-</span><span class="dv">17</span>, <span class="dv">0</span></span></code></pre></div>
+<p>Numbers are the foundation upon which all data analysis is built. Without numbers, we would not be able to perform calculations, identify patterns, or draw conclusions from our data. In the programming language R, there are two main types of numbers: <code>integers</code> and <code>floats</code>.</p>
+<p>An integer is a whole number with no decimal places, while a float is a number with decimal places. In most programming languages, including R, integers are represented as whole numbers, such as 1, 2, 3, and so on, while floats are represented with a decimal point, such as 1.5, 2.75, and so on.</p>
+<p>It is essential to understand the difference between these two types of numbers for accurate numerical analysis. While integers can only represent whole numbers, floats can represent fractions and decimals. Thus, if you need to represent a number that is not a whole number, you should use a float.</p>
+<p>Moreover, it is important to note that integers occupy less space in memory than floats. This can be a consideration when working with large datasets, especially when the whole number is enough to represent the data. Therefore, when possible, it is generally better to use integers over floats in R, as they are more efficient and can improve the overall performance of your code.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="r-syntax.html#cb23-1" tabindex="-1"></a><span class="co"># floats</span></span>
+<span id="cb23-2"><a href="r-syntax.html#cb23-2" tabindex="-1"></a>significand <span class="ot">&lt;-</span> <span class="dv">12345</span></span>
+<span id="cb23-3"><a href="r-syntax.html#cb23-3" tabindex="-1"></a>exponent <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">3</span></span>
+<span id="cb23-4"><a href="r-syntax.html#cb23-4" tabindex="-1"></a>base <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb23-5"><a href="r-syntax.html#cb23-5" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="r-syntax.html#cb23-6" tabindex="-1"></a><span class="co"># 12.345 = 12345 * 10^-3</span></span>
+<span id="cb23-7"><a href="r-syntax.html#cb23-7" tabindex="-1"></a>significand <span class="sc">*</span> base <span class="sc">^</span> exponent</span></code></pre></div>
+</div>
+<div id="operators" class="section level3 hasAnchor" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> Operators<a href="r-syntax.html#operators" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Operators are fundamental components of programming that enable us to manipulate and process various data types. They are symbols that perform a specific action on one or more operands, which could be numeric values, variables, or even strings. Most commonly these symbols allow us to perform basic arithmetic operations such as addition, subtraction, multiplication, and division on numeric values, as well as more complex mathematical operations like exponentiation and modulus.</p>
+<p>In addition to numeric values, operators can also manipulate string variables. For instance, we can use concatenation operators to join two or more strings together, which is particularly useful when working with text data. By utilizing operators, we can perform powerful operations that allow us to build complex programs and applications that can handle large amounts of data. Operators play a crucial role in programming, as they allow us to manipulate data in a way that would be difficult or impossible to achieve otherwise.</p>
+<p>At their very basic, operators allow you to perform <strong>calculations</strong> ..</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="r-syntax.html#cb24-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="r-syntax.html#cb26-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">/</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 0.5</code></pre>
+<p>.. <strong>assign</strong> values to string variables ..</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="r-syntax.html#cb28-1" tabindex="-1"></a>myvar <span class="ot">&lt;-</span> <span class="dv">1</span></span></code></pre></div>
+<p>.. and <strong>compare</strong> values.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="r-syntax.html#cb29-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">==</span> myvar</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="r-syntax.html#cb31-1" tabindex="-1"></a><span class="dv">2</span> <span class="sc">!=</span> myvar <span class="sc">+</span> myvar</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<p>Here is a table summarizing of some common operators in R.</p>
+<table style="width:98%;">
+<colgroup>
+<col width="11%" />
+<col width="17%" />
+<col width="39%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Name</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&lt;-</code></td>
+<td>assignmnet</td>
+<td>assigns numerics and functions to variables</td>
+<td><code>x &lt;- 1</code> x now has the value of 1</td>
+</tr>
+<tr class="even">
+<td><code>+</code></td>
+<td>addition</td>
+<td>adds two numbers</td>
+<td><code>1 + 2</code> = <code>3</code></td>
+</tr>
+<tr class="odd">
+<td><code>-</code></td>
+<td>subtraction</td>
+<td>subtracts two numbers</td>
+<td><code>1 - 2</code> = <code>-1</code></td>
+</tr>
+<tr class="even">
+<td><code>*</code></td>
+<td>multplication</td>
+<td>multiplies two numbers</td>
+<td><code>1 * 2</code> = <code>2</code></td>
+</tr>
+<tr class="odd">
+<td><code>/</code></td>
+<td>division</td>
+<td>divides two numbers</td>
+<td><code>1 / 2</code> = <code>0.5</code></td>
+</tr>
+<tr class="even">
+<td><code>^</code></td>
+<td>power or exponent</td>
+<td>raises one number to the power of the other</td>
+<td><code>1 ^ 2</code> = <code>1</code></td>
+</tr>
+<tr class="odd">
+<td><code>=</code></td>
+<td>equals</td>
+<td>also an assignment operator</td>
+<td><code>x = 1</code> x now has the value of 1</td>
+</tr>
+<tr class="even">
+<td><code>==</code></td>
+<td>double equals</td>
+<td>performs a comparison (exactly equal)</td>
+<td><code>1 == 1</code> = <code>TRUE</code></td>
+</tr>
+<tr class="odd">
+<td><code>!=</code></td>
+<td>not equals</td>
+<td>performs a negative comparison (not equal)</td>
+<td><code>1 != 2</code> = <code>TRUE</code></td>
+</tr>
+<tr class="even">
+<td><code>%%</code></td>
+<td>modulus</td>
+<td>provides the remainder after division</td>
+<td><code>5 %% 2</code> = <code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="83%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/02.png" height="68" /></td>
+<td>Remember order of operations (PEMDAS): Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right). |</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+</div>
+<div id="variables" class="section level3 hasAnchor" number="4.2.5">
+<h3><span class="header-section-number">4.2.5</span> Variables<a href="r-syntax.html#variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In programming, variables are essential elements used to store information that can in essence <strong>vary</strong>. They come in handy when we need to manipulate or retrieve the information stored in them.</p>
+<p>Variables can be thought of as containers that can store any kind of information, such as letters, words, numbers, or text strings. They are flexible enough to hold different types of data, and we can use them to store all sorts of information.</p>
+<p>One of the most significant advantages of using variables is that we can refer to them repeatedly to retrieve the information stored in them. We can also manipulate the information stored in them with an operation or replace it with an assignment. Variables are a powerful tool in programming that allows us to store and retrieve information, manipulate it, and perform various operations on it.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="r-syntax.html#cb33-1" tabindex="-1"></a><span class="co"># create two viables and assign values to each</span></span>
+<span id="cb33-2"><a href="r-syntax.html#cb33-2" tabindex="-1"></a>var_a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb33-3"><a href="r-syntax.html#cb33-3" tabindex="-1"></a>var_b <span class="ot">&lt;-</span> <span class="fl">3.14</span></span>
+<span id="cb33-4"><a href="r-syntax.html#cb33-4" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="r-syntax.html#cb33-5" tabindex="-1"></a>var_a <span class="sc">+</span> var_b</span></code></pre></div>
+<pre><code>## [1] 4.14</code></pre>
+<p>R even has some intrinsic variables that come in handy, like <em>pi</em>.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="r-syntax.html#cb35-1" tabindex="-1"></a>pi</span></code></pre></div>
+<pre><code>## [1] 3.141593</code></pre>
+<p><br />
+</p>
+<table>
+<colgroup>
+<col width="21%" />
+<col width="78%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/02.png" height="68" /></td>
+<td>In R it is easy to overwrite existing variables, either initialized by R or created by you, causing error and confusion.</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="r-syntax.html#cb37-1" tabindex="-1"></a>pi <span class="ot">&lt;-</span> <span class="fl">9.876543</span></span>
+<span id="cb37-2"><a href="r-syntax.html#cb37-2" tabindex="-1"></a>pi</span></code></pre></div>
+<pre><code>## [1] 9.876543</code></pre>
+</div>
+<div id="statements" class="section level3 hasAnchor" number="4.2.6">
+<h3><span class="header-section-number">4.2.6</span> Statements<a href="r-syntax.html#statements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using a comparison operator, you can make logical comparisons called statements.</p>
+<table style="width:99%;">
+<colgroup>
+<col width="11%" />
+<col width="64%" />
+<col width="24%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>|</code></td>
+<td>an either <strong>or</strong> comparison, <code>TRUE</code> if both are true <code>FALSE</code> if one is false.</td>
+<td><p><code>1 == 1 | 1 != 2</code> = <code>TRUE</code></p>
+<p><code>1 == 1 | 1 == 2</code> = <code>FALSE</code></p></td>
+</tr>
+<tr class="even">
+<td><code>&amp;</code></td>
+<td>a comparison where <strong>both</strong> must be <code>TRUE</code></td>
+<td><p><code>1 == 1 &amp; 1 != 2</code> = <code>TRUE</code></p>
+<p><code>1 == 1 &amp; 1 != 2</code> = <code>FALSE</code></p></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="87%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/01.png" height="68" /></td>
+<td>There are also the double operators <strong>||</strong> and <strong>&amp;&amp;</strong>, these are intended to work as flow control operators and stop at the first condition met. In the most recent versions of R, the double operators will error out if a vector is applied. |</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<!--# HEATH -->
+</div>
+<div id="functions" class="section level3 hasAnchor" number="4.2.7">
+<h3><span class="header-section-number">4.2.7</span> Functions<a href="r-syntax.html#functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In programming, a function is a type of operator that performs a specific task and can accept additional information or parameters. In fact, all operators are functions in a sense, as they take inputs and produce outputs.</p>
+<p>The R programming language has a special class of operators called “binary infix” operators. Infix means “in between,” and these operators are placed in between two inputs. These operators have a unique syntax that may confuse beginners, but they are essential for more complex operations in R.</p>
+<p>Now, you may wonder why we are discussing these esoteric aspects of R in a beginner’s book. The reason is that understanding these unique features of the language can give you a better understanding of what the R programming language is doing, how it is structured, and how you can relate to it. It is important to have a solid foundation in the basics of any language, but gaining a deeper understanding of its more complex elements can help you become a more proficient programmer.</p>
+<p>So, while binary infix operators may seem like an advanced topic, they are an essential part of the R language and can help you unlock its full potential.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="r-syntax.html#cb39-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span>          <span class="co"># as an infix operator </span></span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="r-syntax.html#cb41-1" tabindex="-1"></a><span class="st">`</span><span class="at">+</span><span class="st">`</span>(<span class="dv">1</span>,<span class="dv">2</span>)       <span class="co"># as the function</span></span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="r-syntax.html#cb43-1" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span>,<span class="dv">2</span>)       <span class="co"># same result just using a named function</span></span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="r-syntax.html#cb45-1" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>) <span class="co"># this function however can take in more than 2 values</span></span></code></pre></div>
+<pre><code>## [1] 15</code></pre>
+<p>We can even create a user defined infix operator …</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="r-syntax.html#cb47-1" tabindex="-1"></a><span class="st">`</span><span class="at">%zyx%</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="cf">function</span>(a,b) { a <span class="sc">+</span> b }</span>
+<span id="cb47-2"><a href="r-syntax.html#cb47-2" tabindex="-1"></a><span class="dv">1</span> <span class="sc">%zyx%</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<p>… or just a normal function.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="r-syntax.html#cb49-1" tabindex="-1"></a>zyx <span class="ot">&lt;-</span> <span class="cf">function</span>(a,b) { a <span class="sc">+</span> b }</span>
+<span id="cb49-2"><a href="r-syntax.html#cb49-2" tabindex="-1"></a><span class="fu">zyx</span>(<span class="dv">1</span>,<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<p>The notion of an infix operator you and ignore for the most part. But, we will see it again when diving into the <code>tidyverse</code> - a collection of arguably the most powerful data manipulation packages you will encounter. For now, lets move on with more about <code>functions()</code>.</p>
+
+</div>
+</div>
+<div id="flow-control" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Flow-Control<a href="r-syntax.html#flow-control" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sometimes in the course of data analysis we have to make decisions or branch decisions based on what is contained within the data.
+The logic of how this done within the programming language is called <code>flow control</code>. More generally, <code>flow control</code> is an essential aspect of programming that allows you to control the order in which statements and functions are executed.</p>
+<div id="for-loop" class="section level3 unnumbered hasAnchor">
+<h3>For Loop<a href="r-syntax.html#for-loop" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In R, a loop is a programming construct that allows you to execute a block of code repeatedly. Loops are used when you want to perform a set of instructions repeatedly, such as when you want to iterate over a set of data and perform a particular operation on each element.</p>
+<p>There are several types of loops available in R, including the <code>for</code> loop, the <code>while</code> loop, and the <code>repeat</code> loop.</p>
+<p>The <code>for</code> loop is the most commonly used loop in R. It is used to iterate over a sequence of values, such as a vector or a list, and perform a particular operation on each element of the sequence. The basic syntax of a for loop in R is as follows:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="r-syntax.html#cb51-1" tabindex="-1"></a><span class="cf">for</span> (var <span class="cf">in</span> sequence) {</span>
+<span id="cb51-2"><a href="r-syntax.html#cb51-2" tabindex="-1"></a>  <span class="co"># code to be executed</span></span>
+<span id="cb51-3"><a href="r-syntax.html#cb51-3" tabindex="-1"></a>}</span></code></pre></div>
+<p>Let’s look at a very simple <code>for</code> loop:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="r-syntax.html#cb52-1" tabindex="-1"></a><span class="co"># Create a vector of numbers</span></span>
+<span id="cb52-2"><a href="r-syntax.html#cb52-2" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb52-3"><a href="r-syntax.html#cb52-3" tabindex="-1"></a></span>
+<span id="cb52-4"><a href="r-syntax.html#cb52-4" tabindex="-1"></a><span class="co"># Iterate over the vector using a for loop</span></span>
+<span id="cb52-5"><a href="r-syntax.html#cb52-5" tabindex="-1"></a><span class="cf">for</span> (num <span class="cf">in</span> numbers) {</span>
+<span id="cb52-6"><a href="r-syntax.html#cb52-6" tabindex="-1"></a>  <span class="fu">print</span>(num)</span>
+<span id="cb52-7"><a href="r-syntax.html#cb52-7" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5</code></pre>
+<p>This code first creates some example data, numbers 1 to 5 increasing by 1, then we go every number and <code>print</code> the value. Translating the synatx to english we can say <code>for</code> every <code>num</code> in <code>numbers</code> vector, <code>print</code> the <code>num</code>.</p>
+</div>
+<div id="if-else" class="section level3 unnumbered hasAnchor">
+<h3>If-Else<a href="r-syntax.html#if-else" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When we have data that needs to be treated based on a condition of the data, we have a branching decision. In this case, our flow control is an If-Else statement. In plain english, <code>if</code> a condition is met, we do something, <code>else</code> we do something else. The brackets between these statements determine what is done.</p>
+<p>Let’s take the previous example and print if the number is even or odd. You can see already that in how we formulate the programming question we already see the syntax. We say “<code>if</code> the number is even…” <code>if</code> is our flow control</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="r-syntax.html#cb54-1" tabindex="-1"></a><span class="co"># Create a vector of numbers</span></span>
+<span id="cb54-2"><a href="r-syntax.html#cb54-2" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb54-3"><a href="r-syntax.html#cb54-3" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="r-syntax.html#cb54-4" tabindex="-1"></a><span class="co"># Iterate over the vector using a for loop</span></span>
+<span id="cb54-5"><a href="r-syntax.html#cb54-5" tabindex="-1"></a><span class="cf">for</span> (num <span class="cf">in</span> numbers) {</span>
+<span id="cb54-6"><a href="r-syntax.html#cb54-6" tabindex="-1"></a>  <span class="cf">if</span> (num <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb54-7"><a href="r-syntax.html#cb54-7" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(num, <span class="st">&quot;is even&quot;</span>))</span>
+<span id="cb54-8"><a href="r-syntax.html#cb54-8" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb54-9"><a href="r-syntax.html#cb54-9" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(num, <span class="st">&quot;is odd&quot;</span>))</span>
+<span id="cb54-10"><a href="r-syntax.html#cb54-10" tabindex="-1"></a>  }</span>
+<span id="cb54-11"><a href="r-syntax.html#cb54-11" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;1 is odd&quot;
+## [1] &quot;2 is even&quot;
+## [1] &quot;3 is odd&quot;
+## [1] &quot;4 is even&quot;
+## [1] &quot;5 is odd&quot;</code></pre>
+<p>In this example, we’re using the %% operator to determine whether each number in the vector is even or odd. If the number is even, the code inside the if block is executed and the number is printed along with the message “is even”. If the number is odd, the code inside the else block is executed and the number is printed along with the message “is odd”. `paste is a handy function for combining</p>
+
+</div>
+</div>
+<div id="exercises-1" class="section level2 unnumbered hasAnchor">
+<h2>Exercises<a href="r-syntax.html#exercises-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="69%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/07.png" height="68" /></td>
+<td><ul>
+<li><p>Create a new R Studio Project and name it <strong>002_basics</strong>.</p></li>
+<li><p>Create a new R script, add your name and date at the top as comments.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="r-syntax.html#cb56-1" tabindex="-1"></a><span class="co"># Your Name</span></span>
+<span id="cb56-2"><a href="r-syntax.html#cb56-2" tabindex="-1"></a><span class="co"># YYYY-MM-DD</span></span>
+<span id="cb56-3"><a href="r-syntax.html#cb56-3" tabindex="-1"></a><span class="co"># Institution</span></span>
+<span id="cb56-4"><a href="r-syntax.html#cb56-4" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb56-5"><a href="r-syntax.html#cb56-5" tabindex="-1"></a><span class="co"># Description</span></span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Calculate the sum of 2 and 3.</li>
+</ol>
+<pre><code>## [1] 5</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Evaluate if 0.5 is equal to 1 divided by 2.</li>
+</ol>
+<pre><code>## [1] TRUE</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Test if 3 is an even number. Hint, use the modulus operator and a comparison operator.</li>
+</ol>
+<pre><code>## [1] FALSE</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Create a function to test if a value is even resulting in <code>TRUE</code> or <code>FALSE</code>.</li>
+</ol>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="r-syntax.html#cb60-1" tabindex="-1"></a><span class="fu">even</span>(<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li>Create a function to test or <em>even</em> or <em>odd</em> by returning a string.</li>
+</ol>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="r-syntax.html#cb62-1" tabindex="-1"></a><span class="fu">oddeven</span>(<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;odd&quot;</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="r-studio-projects.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-objects.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/jeffsocal/asms_r_intro/edit/BRANCH/04_01-syntax.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

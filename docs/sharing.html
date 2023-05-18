@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 9 Sharing | Learning R for Mass Spectrometry</title>
+  <meta name="description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 9 Sharing | Learning R for Mass Spectrometry" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  <meta name="github-repo" content="jeffsocal/ASMS_R_Basics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 9 Sharing | Learning R for Mass Spectrometry" />
+  
+  <meta name="twitter:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  
+
+<meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
+
+
+<meta name="date" content="2023-05-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data-visualization.html"/>
+<link rel="next" href="mass-spectrometry.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Learning R for Mass Spec.</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="contents.html"><a href="contents.html"><i class="fa fa-check"></i>Contents</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>1</b> Introduction to R</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#why-choose-it"><i class="fa fa-check"></i>Why choose it?</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#what-you-can-do-with-it"><i class="fa fa-check"></i>What you can do with it?</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-r-learning-curve"><i class="fa fa-check"></i>The R Learning Curve</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#thoughts-about-learning-r-and-how-to-code"><i class="fa fa-check"></i>Thoughts about learning R and how to code</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#alternatives"><i class="fa fa-check"></i>Alternatives</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#resources"><i class="fa fa-check"></i>Resources</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#online"><i class="fa fa-check"></i>Online</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#in-print"><i class="fa fa-check"></i>In Print</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#organizations"><i class="fa fa-check"></i>Organizations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>2</b> Installation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installation.html"><a href="installation.html#r-interpreter"><i class="fa fa-check"></i><b>2.1</b> R interpreter</a></li>
+<li class="chapter" data-level="2.2" data-path="installation.html"><a href="installation.html#rstudio"><i class="fa fa-check"></i><b>2.2</b> Rstudio</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="installation.html"><a href="installation.html#ide-layout"><i class="fa fa-check"></i><b>2.2.1</b> IDE Layout</a></li>
+<li class="chapter" data-level="2.2.2" data-path="installation.html"><a href="installation.html#usage-..-running-lines-of-code-in-rstudio"><i class="fa fa-check"></i><b>2.2.2</b> Usage .. Running lines of code in RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="installation.html"><a href="installation.html#packages"><i class="fa fa-check"></i><b>2.3</b> Packages</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="installation.html"><a href="installation.html#what-are-r-packages"><i class="fa fa-check"></i><b>2.3.1</b> What are R Packages?</a></li>
+<li class="chapter" data-level="2.3.2" data-path="installation.html"><a href="installation.html#where-to-get-r-packages"><i class="fa fa-check"></i><b>2.3.2</b> Where to get R Packages</a></li>
+<li class="chapter" data-level="2.3.3" data-path="installation.html"><a href="installation.html#installing-r-packages"><i class="fa fa-check"></i><b>2.3.3</b> Installing R Packages</a></li>
+<li class="chapter" data-level="2.3.4" data-path="installation.html"><a href="installation.html#potential-gotchas"><i class="fa fa-check"></i><b>2.3.4</b> Potential Gotchas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="installation.html"><a href="installation.html#packages-utilized-in-this-book"><i class="fa fa-check"></i><b>2.4</b> Packages Utilized in This Book</a>
+<ul>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#tidyverse"><i class="fa fa-check"></i>tidyverse</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#mass-spectrometry-specific-packages"><i class="fa fa-check"></i>Mass Spectrometry Specific Packages</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-studio-projects.html"><a href="r-studio-projects.html"><i class="fa fa-check"></i><b>3</b> R Studio Projects</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="r-studio-projects.html"><a href="r-studio-projects.html#creating"><i class="fa fa-check"></i><b>3.1</b> Creating</a></li>
+<li class="chapter" data-level="3.2" data-path="r-studio-projects.html"><a href="r-studio-projects.html#organizing"><i class="fa fa-check"></i><b>3.2</b> Organizing</a>
+<ul>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#data"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#scripts"><i class="fa fa-check"></i>Scripts</a></li>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#results"><i class="fa fa-check"></i>Results</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="r-syntax.html"><a href="r-syntax.html"><i class="fa fa-check"></i><b>4</b> R Syntax</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="r-syntax.html"><a href="r-syntax.html#reserved-words"><i class="fa fa-check"></i><b>4.1</b> Reserved Words</a></li>
+<li class="chapter" data-level="4.2" data-path="r-syntax.html"><a href="r-syntax.html#types"><i class="fa fa-check"></i><b>4.2</b> Types</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="r-syntax.html"><a href="r-syntax.html#comments"><i class="fa fa-check"></i><b>4.2.1</b> Comments</a></li>
+<li class="chapter" data-level="4.2.2" data-path="r-syntax.html"><a href="r-syntax.html#strings"><i class="fa fa-check"></i><b>4.2.2</b> Strings</a></li>
+<li class="chapter" data-level="4.2.3" data-path="r-syntax.html"><a href="r-syntax.html#numbers"><i class="fa fa-check"></i><b>4.2.3</b> Numbers</a></li>
+<li class="chapter" data-level="4.2.4" data-path="r-syntax.html"><a href="r-syntax.html#operators"><i class="fa fa-check"></i><b>4.2.4</b> Operators</a></li>
+<li class="chapter" data-level="4.2.5" data-path="r-syntax.html"><a href="r-syntax.html#variables"><i class="fa fa-check"></i><b>4.2.5</b> Variables</a></li>
+<li class="chapter" data-level="4.2.6" data-path="r-syntax.html"><a href="r-syntax.html#statements"><i class="fa fa-check"></i><b>4.2.6</b> Statements</a></li>
+<li class="chapter" data-level="4.2.7" data-path="r-syntax.html"><a href="r-syntax.html#functions"><i class="fa fa-check"></i><b>4.2.7</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="r-syntax.html"><a href="r-syntax.html#flow-control"><i class="fa fa-check"></i><b>4.3</b> Flow-Control</a>
+<ul>
+<li class="chapter" data-level="" data-path="r-syntax.html"><a href="r-syntax.html#for-loop"><i class="fa fa-check"></i>For Loop</a></li>
+<li class="chapter" data-level="" data-path="r-syntax.html"><a href="r-syntax.html#if-else"><i class="fa fa-check"></i>If-Else</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="r-syntax.html"><a href="r-syntax.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="r-objects.html"><a href="r-objects.html"><i class="fa fa-check"></i><b>5</b> R Objects</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="r-objects.html"><a href="r-objects.html#variable"><i class="fa fa-check"></i><b>5.1</b> Variable</a></li>
+<li class="chapter" data-level="5.2" data-path="r-objects.html"><a href="r-objects.html#vector"><i class="fa fa-check"></i><b>5.2</b> Vector</a></li>
+<li class="chapter" data-level="5.3" data-path="r-objects.html"><a href="r-objects.html#matrix"><i class="fa fa-check"></i><b>5.3</b> Matrix</a></li>
+<li class="chapter" data-level="5.4" data-path="r-objects.html"><a href="r-objects.html#data-frame"><i class="fa fa-check"></i><b>5.4</b> Data Frame</a></li>
+<li class="chapter" data-level="5.5" data-path="r-objects.html"><a href="r-objects.html#list"><i class="fa fa-check"></i><b>5.5</b> List</a></li>
+<li class="chapter" data-level="5.6" data-path="r-objects.html"><a href="r-objects.html#tibbles"><i class="fa fa-check"></i><b>5.6</b> Tibbles</a></li>
+<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#how-to-tell-what-you-are-dealing-with"><i class="fa fa-check"></i>How to tell what you are dealing with</a></li>
+<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tidyverse-1.html"><a href="tidyverse-1.html"><i class="fa fa-check"></i><b>6</b> Tidyverse</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#core-packages"><i class="fa fa-check"></i><b>6.1</b> Core Packages</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#magrittr"><i class="fa fa-check"></i><b>6.1.1</b> magrittr</a></li>
+<li class="chapter" data-level="6.1.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#tibble"><i class="fa fa-check"></i><b>6.1.2</b> tibble</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#importing"><i class="fa fa-check"></i><b>6.2</b> Importing</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#readr"><i class="fa fa-check"></i><b>6.2.1</b> readr</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#wrangling"><i class="fa fa-check"></i><b>6.3</b> Wrangling</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr"><i class="fa fa-check"></i><b>6.3.1</b> dplyr</a></li>
+<li class="chapter" data-level="6.3.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#tidyr"><i class="fa fa-check"></i><b>6.3.2</b> tidyr</a></li>
+<li class="chapter" data-level="6.3.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#purrr"><i class="fa fa-check"></i><b>6.3.3</b> purrr</a></li>
+<li class="chapter" data-level="6.3.4" data-path="tidyverse-1.html"><a href="tidyverse-1.html#glue"><i class="fa fa-check"></i><b>6.3.4</b> glue</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="tidyverse-1.html"><a href="tidyverse-1.html#data-types"><i class="fa fa-check"></i><b>6.4</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#stringr"><i class="fa fa-check"></i><b>6.4.1</b> stringr</a></li>
+<li class="chapter" data-level="6.4.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#lubridate"><i class="fa fa-check"></i><b>6.4.2</b> lubridate</a></li>
+<li class="chapter" data-level="6.4.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#forcats"><i class="fa fa-check"></i><b>6.4.3</b> forcats</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="tidyverse-1.html"><a href="tidyverse-1.html#summarizing"><i class="fa fa-check"></i><b>6.5</b> Summarizing</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr-1"><i class="fa fa-check"></i><b>6.5.1</b> dplyr</a></li>
+<li class="chapter" data-level="6.5.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#ggplot2"><i class="fa fa-check"></i><b>6.5.2</b> ggplot2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>7</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="data-wrangling.html"><a href="data-wrangling.html#tidy-data"><i class="fa fa-check"></i><b>7.1</b> Tidy Data</a></li>
+<li class="chapter" data-level="7.2" data-path="data-wrangling.html"><a href="data-wrangling.html#example-walkthrough"><i class="fa fa-check"></i><b>7.2</b> Example Walkthrough</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#read_"><i class="fa fa-check"></i>read_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#separate"><i class="fa fa-check"></i>separate</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#mutate"><i class="fa fa-check"></i>mutate</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#pivot_"><i class="fa fa-check"></i>pivot_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#write_"><i class="fa fa-check"></i>write_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#non-pipe"><i class="fa fa-check"></i>Non-pipe</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#summarize"><i class="fa fa-check"></i>summarize</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="data-wrangling.html"><a href="data-wrangling.html#exercises---evalfalse"><i class="fa fa-check"></i><b>7.3</b> Exercises {-, eval=FALSE}</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>8</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="data-visualization.html"><a href="data-visualization.html#base-plot"><i class="fa fa-check"></i><b>8.1</b> Base: plot</a></li>
+<li class="chapter" data-level="8.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2-1"><i class="fa fa-check"></i><b>8.2</b> GGPlot2</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="data-visualization.html"><a href="data-visualization.html#syntax"><i class="fa fa-check"></i><b>8.2.1</b> Syntax</a></li>
+<li class="chapter" data-level="8.2.2" data-path="data-visualization.html"><a href="data-visualization.html#basic-data-plotting"><i class="fa fa-check"></i><b>8.2.2</b> Basic Data Plotting</a></li>
+<li class="chapter" data-level="8.2.3" data-path="data-visualization.html"><a href="data-visualization.html#data-distributions"><i class="fa fa-check"></i><b>8.2.3</b> Data Distributions</a></li>
+<li class="chapter" data-level="8.2.4" data-path="data-visualization.html"><a href="data-visualization.html#extended-syntax"><i class="fa fa-check"></i><b>8.2.4</b> Extended Syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="data-visualization.html"><a href="data-visualization.html#alternatives-1"><i class="fa fa-check"></i><b>8.3</b> Alternatives</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#lattice"><i class="fa fa-check"></i>lattice</a></li>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#plotly"><i class="fa fa-check"></i>plotly</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#exercises-4"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>9</b> Sharing</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="sharing.html"><a href="sharing.html#notebooks"><i class="fa fa-check"></i><b>9.1</b> Notebooks</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-notebooks"><i class="fa fa-check"></i>Using Notebooks</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-a-notebook"><i class="fa fa-check"></i>Sharing A Notebook</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>9.2</b> Packrat</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#initiating-a-packrat-project"><i class="fa fa-check"></i>Initiating a Packrat Project</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#installing-a-package-into-the-project-library"><i class="fa fa-check"></i>Installing a Package into the Project Library</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#loading-a-package-from-the-project-library"><i class="fa fa-check"></i>Loading a Package from the Project Library</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#updating-a-package-in-the-project-library"><i class="fa fa-check"></i>Updating a Package in the Project Library</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="sharing.html"><a href="sharing.html#github"><i class="fa fa-check"></i><b>9.3</b> GitHub</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-use-github"><i class="fa fa-check"></i>How to Use GitHub</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-share-a-github-repository"><i class="fa fa-check"></i>How to Share A GitHub Repository</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>9.4</b> Docker</a></li>
+<li class="chapter" data-level="9.5" data-path="sharing.html"><a href="sharing.html#r-packages"><i class="fa fa-check"></i><b>9.5</b> R Packages</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-a-package-in-rstudio"><i class="fa fa-check"></i>Creating a Package in RStudio</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using-the-package"><i class="fa fa-check"></i>Using the Package</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>9.6</b> R Shiny Applications</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#how-to-create-an-r-shiny-application-in-the-rstudio-ide"><i class="fa fa-check"></i>How to Create an R Shiny Application in the RStudio IDE</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#example-of-an-r-shiny-application-for-plotting-points"><i class="fa fa-check"></i>Example of an R Shiny Application for Plotting Points</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html"><i class="fa fa-check"></i><b>10</b> Mass Spectrometry</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#data-formats"><i class="fa fa-check"></i><b>10.1</b> Data Formats</a></li>
+<li class="chapter" data-level="10.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#commercial"><i class="fa fa-check"></i><b>10.2</b> Commercial</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#raw-thermo"><i class="fa fa-check"></i><b>10.2.1</b> RAW (Thermo)</a></li>
+<li class="chapter" data-level="10.2.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#wiff-sciex"><i class="fa fa-check"></i><b>10.2.2</b> WIFF (Sciex)</a></li>
+<li class="chapter" data-level="10.2.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#d-agilent"><i class="fa fa-check"></i><b>10.2.3</b> D (Agilent)</a></li>
+<li class="chapter" data-level="10.2.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#d-bruker-timstof-data"><i class="fa fa-check"></i><b>10.2.4</b> .d (Bruker) timsTOF data</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#open-access-data"><i class="fa fa-check"></i><b>10.3</b> Open Access Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzxml"><i class="fa fa-check"></i>mzXML</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzml"><i class="fa fa-check"></i>mzML</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzmlb"><i class="fa fa-check"></i>mzMLb</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-calculate-mass"><i class="fa fa-check"></i><b>10.4</b> R Calculate Mass</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#brain"><i class="fa fa-check"></i>BRAIN</a></li>
+<li class="chapter" data-level="10.4.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#envipat"><i class="fa fa-check"></i><b>10.4.1</b> enviPat</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-ms-data"><i class="fa fa-check"></i><b>10.5</b> R MS Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#xcms"><i class="fa fa-check"></i>xcms</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzr"><i class="fa fa-check"></i>mzR</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-ms-analysis"><i class="fa fa-check"></i><b>10.6</b> R MS Analysis</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#deqms"><i class="fa fa-check"></i>deqms</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msempire"><i class="fa fa-check"></i>msempire</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msqrob"><i class="fa fa-check"></i>msqrob</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msstats"><i class="fa fa-check"></i>MSstats</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#statspro-r-package"><i class="fa fa-check"></i>StatsPro R Package</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msgrob2"><i class="fa fa-check"></i>msgrob2</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#tidyproteomics"><i class="fa fa-check"></i>Tidyproteomics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html"><i class="fa fa-check"></i>Answers to Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#r-syntax-1"><i class="fa fa-check"></i><strong>4</strong> R Syntax</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#r-objects-1"><i class="fa fa-check"></i><strong>5</strong> R Objects</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#tidyverse-2"><i class="fa fa-check"></i><strong>6</strong> Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-1"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-2"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-visualization-1"><i class="fa fa-check"></i><strong>8</strong> Data Visualization</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/jeffsocal/asms_r_intro" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Learning R for Mass Spectrometry</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sharing" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Chapter 9</span> Sharing<a href="sharing.html#sharing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This topic covers a variety of ways to share R code with others. The goal is to make your work accessible and reproducible for others. Sharing can take many forms, including sharing your RStudio project, creating a distilled version of your analysis that others can follow, developing a web-based application for others to use, or finding ways to contain and disseminate reproducible analyses. By sharing your work, you enable others to learn from and build upon your research, making it more impactful and useful for the wider community.</p>
+<p><br />
+</p>
+<table>
+<colgroup>
+<col width="36%" />
+<col width="63%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/03.png" height="68" /></td>
+<td><p><strong>At the end of this chapter you should be able to</strong></p>
+<ul>
+<li><p>Understand the options for sharing analyses.</p></li>
+<li><p>Start an R Notebook project to share.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+
+<div id="notebooks" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Notebooks<a href="sharing.html#notebooks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Notebooks in RStudio IDE are interactive documents that allow developers to create and share code, visualizations, and narrative text in a single document. R Notebooks provide an intuitive interface for data analysis, making it easy to explore data, create models, and communicate results.</p>
+<div id="using-notebooks" class="section level3 unnumbered hasAnchor">
+<h3>Using Notebooks<a href="sharing.html#using-notebooks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To use notebooks in RStudio IDE, follow these steps:</p>
+<ol style="list-style-type: decimal">
+<li>Open RStudio IDE and create a new R Notebook by navigating to File &gt; New File &gt; R Notebook.</li>
+<li>Add code chunks by clicking the “Insert a new code chunk” button in the toolbar or by using the keyboard shortcut “Ctrl + Alt + I”.</li>
+<li>Write R code in the code chunks and run them by clicking the “Run” button in the toolbar or by using the keyboard shortcut “Ctrl + Enter”.</li>
+<li>Add markdown text to the notebook by typing in markdown cells.</li>
+</ol>
+<p>One of the most significant benefits of R Notebooks is that they allow you to mix code and narrative text. You can add markdown cells to your notebook to provide context for your code, explain your thought process and methodology, and document your findings. This feature makes it easy for others to understand your work and reproduce your analysis.</p>
+<p>With R Notebooks, it is also possible to:</p>
+<ul>
+<li>Insert tables and images: You can add tables and images to your notebooks using markdown syntax or by using the “Insert” menu in the toolbar.</li>
+<li>Use LaTeX to display formulas: You can use LaTeX syntax to display mathematical formulas in your notebooks.</li>
+<li>Use HTML to display interactive widgets: You can use HTML code to create interactive widgets that allow users to interact with your code and data.</li>
+</ul>
+</div>
+<div id="sharing-a-notebook" class="section level3 unnumbered hasAnchor">
+<h3>Sharing A Notebook<a href="sharing.html#sharing-a-notebook" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sharing your notebook project in RStudio IDE is a straightforward process. By sharing your projects, you can collaborate with other data scientists and benefit from the insights and expertise of your colleagues. Here are the steps to share your projects:</p>
+<!--# Expand on this -->
+
+</div>
+</div>
+<div id="packrat" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Packrat<a href="sharing.html#packrat" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Packrat is an R package that provides a way to manage R package dependencies for projects. It is a powerful tool for reproducible research, as it allows you to create a local library of packages specific to a project that can be shared with collaborators or moved to another machine. With Packrat, packages used in a project are kept at a specific version, ensuring that the same results can be obtained regardless of the version of the package used.</p>
+<div id="initiating-a-packrat-project" class="section level3 unnumbered hasAnchor">
+<h3>Initiating a Packrat Project<a href="sharing.html#initiating-a-packrat-project" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To initiate a Packrat project, you need to run the <code>packrat::init()</code> function in your R console. This will create a <code>packrat</code> directory in your project folder, which will contain all the necessary files and information for Packrat to manage the package dependencies for your project.</p>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="sharing.html#cb221-1" tabindex="-1"></a><span class="fu">library</span>(packrat)</span>
+<span id="cb221-2"><a href="sharing.html#cb221-2" tabindex="-1"></a>packrat<span class="sc">::</span><span class="fu">init</span>()</span></code></pre></div>
+</div>
+<div id="installing-a-package-into-the-project-library" class="section level3 unnumbered hasAnchor">
+<h3>Installing a Package into the Project Library<a href="sharing.html#installing-a-package-into-the-project-library" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To install a package into the project-specific library, you can use the <code>packrat::install.packages()</code> function. Packrat will automatically detect package dependencies and install them as well.</p>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="sharing.html#cb222-1" tabindex="-1"></a>packrat<span class="sc">::</span><span class="fu">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
+</div>
+<div id="loading-a-package-from-the-project-library" class="section level3 unnumbered hasAnchor">
+<h3>Loading a Package from the Project Library<a href="sharing.html#loading-a-package-from-the-project-library" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To load a package from the project library, you simply use the <code>library()</code> function as usual. Packrat will ensure that the correct versions are used.</p>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="sharing.html#cb223-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+</div>
+<div id="updating-a-package-in-the-project-library" class="section level3 unnumbered hasAnchor">
+<h3>Updating a Package in the Project Library<a href="sharing.html#updating-a-package-in-the-project-library" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To update a package in the project library, you can use the <code>packrat::update.packages()</code> function. Packrat will update the package and all its dependencies.</p>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="sharing.html#cb224-1" tabindex="-1"></a>packrat<span class="sc">::</span><span class="fu">update.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
+<p>Overall, Packrat is a valuable tool for reproducible research, as it allows you to manage package dependencies for your projects and ensure that the same results can be obtained regardless of the version of the package used.</p>
+
+</div>
+</div>
+<div id="github" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> GitHub<a href="sharing.html#github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>GitHub is an online platform that provides version control and collaboration features for software development projects. It is widely used by developers to store and manage their code repositories, track changes made to code over time, and collaborate with others on projects. It is a powerful tool that simplifies the process of managing code and makes it easier for developers to work together. A key benefit of RStudio IDE is that it has built-in support for version control systems like GitHub, which makes it easy to manage and share code with others.</p>
+<div id="how-to-use-github" class="section level3 unnumbered hasAnchor">
+<h3>How to Use GitHub<a href="sharing.html#how-to-use-github" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To use GitHub within RStudio IDE, you need to first create a GitHub account and set up a repository. Once you have created a repository, you can follow these steps to use it within RStudio IDE:</p>
+<ol style="list-style-type: decimal">
+<li>Open RStudio IDE and navigate to the “New Project” tab.</li>
+<li>Select “Version Control” and then “Git”.</li>
+<li>Enter the URL of your GitHub repository and choose a project directory.</li>
+<li>Click “Create Project” to create a new RStudio project that is linked to your GitHub repository.</li>
+</ol>
+</div>
+<div id="how-to-share-a-github-repository" class="section level3 unnumbered hasAnchor">
+<h3>How to Share A GitHub Repository<a href="sharing.html#how-to-share-a-github-repository" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sharing code with others using GitHub and RStudio IDE is a straightforward process. Once you have set up your GitHub repository and linked it to your RStudio project, you can follow these steps to share code with others:</p>
+<ol style="list-style-type: decimal">
+<li>Make changes to your code in RStudio IDE.</li>
+<li>Commit your changes to the local Git repository using the “Commit” button in the “Git” tab.</li>
+<li>Push your changes to your GitHub repository using the “Push” button in the “Git” tab.</li>
+<li>Share the URL of your GitHub repository with others so they can access your code.</li>
+</ol>
+
+</div>
+</div>
+<div id="docker" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Docker<a href="sharing.html#docker" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Docker is an open-source platform that allows developers to easily create, deploy, and run applications in containers. Containers are lightweight, portable, and self-contained environments that can run isolated applications. Docker helps to simplify the process of software development, testing, and deployment by providing a consistent environment that runs the same way on any machine, independent of the host operating system.</p>
+<p>For more information check out the main <a href="https://www.docker.com/">Docker</a> website in addition to the <a href="https://rocker-project.org/">Rocker R Project</a>.</p>
+
+</div>
+<div id="r-packages" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> R Packages<a href="sharing.html#r-packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In R, packages are collections of R functions, data, and compiled code that can be easily shared and reused with others. They are an essential part of the R ecosystem and are used for a variety of purposes, such as data analysis, visualization, and statistical modeling.</p>
+<p>Creating a package in R is a straightforward process, and RStudio IDE provides several tools to simplify the package development process. Packages are a way of organizing your code and data into a single, self-contained unit that can be easily shared and distributed with other R users.</p>
+<div id="creating-a-package-in-rstudio" class="section level3 unnumbered hasAnchor">
+<h3>Creating a Package in RStudio<a href="sharing.html#creating-a-package-in-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To create a package in RStudio, follow these simple steps:</p>
+<ol style="list-style-type: decimal">
+<li>Create a new R Project. Go to “File” -&gt; “New Project” -&gt; “New Directory” -&gt; “R Package”</li>
+<li>Choose a name for the package, such as my_new_rpackage and a directory location where it will be saved.</li>
+<li>Once the project is created, RStudio will generate a basic package structure with the following files:</li>
+</ol>
+<ul>
+<li>DESCRIPTION: This file contains information about the package, such as its name, version, author, and dependencies.</li>
+<li>NAMESPACE: This file defines the package’s API, i.e., the set of functions and objects that are intended for public use.</li>
+<li>R/: This directory contains the package’s R source code files.</li>
+<li>man/: This directory contains the package’s documentation files.</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>Now it’s time to write some code. You can start by creating a simple function that outputs “Hello ASMS”. Here’s an example:</li>
+</ol>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="sharing.html#cb225-1" tabindex="-1"></a><span class="co">#&#39; Hello ASMS Function</span></span>
+<span id="cb225-2"><a href="sharing.html#cb225-2" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb225-3"><a href="sharing.html#cb225-3" tabindex="-1"></a><span class="co">#&#39; This function prints &quot;Hello ASMS&quot; to the console.</span></span>
+<span id="cb225-4"><a href="sharing.html#cb225-4" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb225-5"><a href="sharing.html#cb225-5" tabindex="-1"></a><span class="co">#&#39; @return A character vector with the message &quot;Hello ASMS&quot;.</span></span>
+<span id="cb225-6"><a href="sharing.html#cb225-6" tabindex="-1"></a><span class="co">#&#39; @export</span></span>
+<span id="cb225-7"><a href="sharing.html#cb225-7" tabindex="-1"></a>say_hello <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb225-8"><a href="sharing.html#cb225-8" tabindex="-1"></a>  <span class="fu">return</span>(<span class="st">&quot;Hello ASMS&quot;</span>)</span>
+<span id="cb225-9"><a href="sharing.html#cb225-9" tabindex="-1"></a>}</span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li>Save the function in a new R script file called “hello_world.R” and place it in the package’s R/ directory.</li>
+<li>Build the package by running “Build” -&gt; “Build &amp; Reload” from the “Build” tab. This will compile the package code and create a binary package file (.tar.gz) in the “build/” directory.</li>
+<li>Finally, install the package by running “Install and Restart” from the “Build” tab. This will install the package on your local machine, making it available for use.</li>
+</ol>
+</div>
+<div id="using-the-package" class="section level3 unnumbered hasAnchor">
+<h3>Using the Package<a href="sharing.html#using-the-package" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Once the package is installed, you can load it into your R session using the <code>library()</code> function. Here’s an example:</p>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="sharing.html#cb226-1" tabindex="-1"></a><span class="fu">library</span>(my_new_rpackage)</span>
+<span id="cb226-2"><a href="sharing.html#cb226-2" tabindex="-1"></a><span class="fu">say_hello</span>()</span></code></pre></div>
+<p>This will output “Hello ASMS” to the console.</p>
+
+</div>
+</div>
+<div id="r-shiny-applications" class="section level2 hasAnchor" number="9.6">
+<h2><span class="header-section-number">9.6</span> R Shiny Applications<a href="sharing.html#r-shiny-applications" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R Shiny is an R package that allows users to create interactive web applications using R. With R Shiny, users can create and customize web-based dashboards, data visualization tools, and other interactive applications that can be easily shared with others.</p>
+<p>The benefits of using R Shiny include creating powerful data-driven web applications with ease and providing a user-friendly interface for data analysis. R Shiny is widely used in various industries, including finance, healthcare, and e-commerce.</p>
+<div id="how-to-create-an-r-shiny-application-in-the-rstudio-ide" class="section level3 unnumbered hasAnchor">
+<h3>How to Create an R Shiny Application in the RStudio IDE<a href="sharing.html#how-to-create-an-r-shiny-application-in-the-rstudio-ide" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Creating an R Shiny application is relatively easy, and it can be done in the RStudio IDE. Here are the steps to follow:</p>
+<ol style="list-style-type: decimal">
+<li><p>Open RStudio and create a new R script file.</p></li>
+<li><p>Install the ‘shiny’ R package by running the following command:</p>
+<p><code>install.packages("shiny")</code></p></li>
+<li><p>Load the ‘shiny’ package by running the following command:</p>
+<p><code>library(shiny)</code></p></li>
+<li><p>Create a new Shiny application by running the following command:</p>
+<p><code>shinyApp(ui = ui, server = server)</code></p>
+<p>The ‘ui’ argument should contain the user interface (UI) code for the application, while the ‘server’ argument should contain the server-side code for the application.</p></li>
+<li><p>Write the UI code and server-side code for your application, and save the file with a ‘.R’ extension.</p></li>
+<li><p>Run the application by clicking on the ‘Run App’ button in the RStudio IDE, or by running the following command:</p>
+<p><code>runApp("path/to/your/app.R")</code></p></li>
+</ol>
+</div>
+<div id="example-of-an-r-shiny-application-for-plotting-points" class="section level3 unnumbered hasAnchor">
+<h3>Example of an R Shiny Application for Plotting Points<a href="sharing.html#example-of-an-r-shiny-application-for-plotting-points" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Here’s an example of an R Shiny application that allows users to plot points on a graph:</p>
+<pre><code>library(shiny)
+
+# Define UI for application
+ui &lt;- fluidPage(
+  titlePanel(&quot;Plotting Points&quot;),
+  sidebarLayout(
+    sidebarPanel(
+      numericInput(&quot;x&quot;, &quot;X Coordinate:&quot;, 0),
+      numericInput(&quot;y&quot;, &quot;Y Coordinate:&quot;, 0),
+      actionButton(&quot;plot&quot;, &quot;Plot Point&quot;)
+    ),
+    mainPanel(
+      plotOutput(&quot;plot&quot;)
+    )
+  )
+)
+
+# Define server logic
+server &lt;- function(input, output) {
+  coords &lt;- reactiveValues(x = numeric(), y = numeric())
+
+  observeEvent(input$plot, {
+    coords$x &lt;- c(coords$x, input$x)
+    coords$y &lt;- c(coords$y, input$y)
+  })
+
+  output$plot &lt;- renderPlot({
+    plot(coords$x, coords$y, xlim = c(0, 10), ylim = c(0, 10), pch = 19, col = &quot;blue&quot;)
+  })
+}
+
+# Run the application
+shinyApp(ui = ui, server = server)
+</code></pre>
+<p>In this example, the UI code defines a sidebar panel with input fields for the X and Y coordinates of a point, as well as a button to plot the point. The main panel contains a plot that displays all of the points that have been plotted by the user.</p>
+<p>The server-side code defines a reactive variable called ‘coords’ which stores the X and Y coordinates of each plotted point. When the user clicks the ‘Plot Point’ button, an observer function is triggered that adds the new point to the ‘coords’ variable. The renderPlot function then plots all of the points on the graph.</p>
+<p>Check out the <a href="https://shiny.rstudio.com/">R Shiny</a> web page for more information.</p>
+
+<!--# HEATH -->
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-visualization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mass-spectrometry.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/jeffsocal/asms_r_intro/edit/BRANCH/09_01_sharing.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
