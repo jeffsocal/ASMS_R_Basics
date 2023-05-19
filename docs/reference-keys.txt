@@ -19,7 +19,7 @@ fig:7203
 fig:7204
 fig:7205
 fig:7206
-tab:unnamed-chunk-119
+tab:unnamed-chunk-131
 fig:10001
 introduction-to-r
 alternatives
@@ -53,9 +53,10 @@ if-else
 r-objects
 variable
 vector
+list
 matrix
 data-frame
-list
+data.table
 tibbles
 tidyverse-1
 core-packages
@@ -112,9 +113,9 @@ mzr
 xcms
 r-ms-analysis
 msstats
-statspro-r-package
 tidyproteomics
 assayr
 deqms
 ms-empire
 msgrob2
+statspro

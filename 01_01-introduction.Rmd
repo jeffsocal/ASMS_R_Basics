@@ -40,11 +40,11 @@ The potential of what you can achieve with R is vast and ultimately depends on t
 
 \
 
-+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| ![](images/01.png){height="68"} | **NOTES** Some helpful explanatory notes and tips appear as a block quote.                                                      |
-|                                 |                                                                                                                                 |
-|                                 | - R can be a fast, nimble, forgiving scripting language with lots of ready-made tools and resources (CRAN, Github, Bioconductor).|
-+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| ![](images/01.png){height="68"} | **NOTES** Some helpful explanatory notes and tips appear as a block quote.                                                        |
+|                                 |                                                                                                                                   |
+|                                 | - R can be a fast, nimble, forgiving scripting language with lots of ready-made tools and resources (CRAN, Github, Bioconductor). |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 \
 

@@ -4,15 +4,15 @@ The `mzR` package is a powerful tool for analyzing large raw data files in prote
 
 \
 
-+---------------------------------+---------------------------------------------------------------------------------------------------+
-| ![](images/05.png){height="68"} | [WEB tutorial](https://lgatto.github.io/2020-02-17-RProt-Berlin/raw-ms-data-mzr-and-msnbase.html) | 
-|                                 |                                                                                                   |
-|                                 | [PDF manual](https://bioconductor.org/packages/release/bioc/manuals/mzR/man/mzR.pdf)              |
-|                                 |                                                                                                   |
-|                                 | [Bioconductor](https://bioconductor.org/packages/release/bioc/html/mzR.html)                      |
-|                                 |                                                                                                   |
-|                                 | *Nat Biotech* 2012, 30(10), 918–920                                                               |
-+---------------------------------+---------------------------------------------------------------------------------------------------+
++---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | [WEB tutorial](https://lgatto.github.io/2020-02-17-RProt-Berlin/raw-ms-data-mzr-and-msnbase.html)                                           |
+|                                 |                                                                                                                                             |
+|                                 | [PDF manual](https://bioconductor.org/packages/release/bioc/manuals/mzR/man/mzR.pdf)                                                        |
+|                                 |                                                                                                                                             |
+|                                 | [Bioconductor](https://bioconductor.org/packages/release/bioc/html/mzR.html)                                                                |
+|                                 |                                                                                                                                             |
+|                                 | *Chambers, Matthew C., et al. "A cross-platform toolkit for mass spectrometry and proteomics." Nature biotechnology 30.10 (2012): 918-920.* |
++---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 \
 

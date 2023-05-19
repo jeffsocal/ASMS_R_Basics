@@ -5,11 +5,11 @@ R BRAIN is an isotopic abundance calculator implemented in R programming languag
 
 \
 
-+---------------------------------+--------------------------------------------------------------------------------------------+
-| ![](images/05.png){height="68"} | [Bioconductor](https://bioconductor.org/packages/release/bioc/manuals/BRAIN/man/BRAIN.pdf) |
-|                                 |                                                                                            |
-|                                 | *Analytical Chemistry* 2013, 85(4), 1991-1994                                              |
-+---------------------------------+--------------------------------------------------------------------------------------------+
++---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | [Bioconductor](https://bioconductor.org/packages/release/bioc/manuals/BRAIN/man/BRAIN.pdf)                                                                                            |
+|                                 |                                                                                                                                                                                       |
+|                                 | *Dittwald, Piotr, et al. "BRAIN: a universal tool for high-throughput calculations of the isotopic distribution for mass spectrometry." Analytical chemistry 85.4 (2013): 1991-1994.* |
++---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 \
 

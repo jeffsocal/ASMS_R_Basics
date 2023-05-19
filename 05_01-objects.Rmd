@@ -73,9 +73,9 @@ While variables don't require a referencing scheme, because they only contain a 
 
 \
 
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ![](images/01.png){height="68"} | The use of an integer vector to sub-select another vector based on position. R abides by the 1:N positional referencing, where as other programming languages refer to the first vector or array position as 0. *A good topic for a lively discussion with a computer scientist.* |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 \
 
@@ -115,6 +115,39 @@ which(x < .5)
 ```{r}
 x[which(x < .5)]
 ```
+
+## List
+
+In R programming, a 'list' is a powerful and flexible collection of objects of different types. It can contain vectors, matrices, data frames, and even other lists, making it an extremely versatile tool in data analysis, modeling, and visualization.
+
+With its ability to store multiple data types, a list can be used to represent complex structures such as a database table, where each column can be a vector or a matrix. Furthermore, a list can be used to store multiple models for model comparison, or to store a set of parameters for a simulation study.
+
+In addition to its flexibility, a list is also efficient, as it allows for fast and easy data retrieval. It can be used to store large datasets, and its hierarchical structure makes it easy to navigate and manipulate.
+
+Here's an example of how to create a list in R:
+
+```{r}
+# create a list
+my_list <- list(name = "Janie R Programmer",
+                age = 32,
+                salary = 100000,
+                interests = c("coding", "reading", "traveling"))
+
+print(my_list)
+```
+
+In the above code, we have created a list 'my_list' with four elements, each having a different data type. The first element 'name' is a character vector, the second element 'age' is a numeric value, the third element 'salary' is also a numeric value, and the fourth element 'interests' is a character vector.
+
+We can access the elements of a list using the dollar sign '\$' or double brackets '[[]]'. For example:
+
+```{r}
+# accessing elements of a list
+print(my_list$name)
+print(my_list[["salary"]])
+
+```
+
+Lists are also useful for storing and manipulating complex data structures such as data frames and tibbles.
 
 ## Matrix
 
@@ -170,38 +203,59 @@ Lets talk about the structure of what just happened in constructing the `data.fr
 
 The printed output of the `data.frame` shows the two column headers and also prints out the row names, in this case the integer value. Now, that this table is organized by column with row assiciations, we can perform an evalutaion on one column and reterive the value(s) in the other.
 
-## List
+## Data.Table
 
-In R programming, a 'list' is a powerful and flexible collection of objects of different types. It can contain vectors, matrices, data frames, and even other lists, making it an extremely versatile tool in data analysis, modeling, and visualization.
+A `data.table` is a package in R that provides an extension of `data.frame`. It is an optimized and efficient way of handling large datasets in R language. Data.table is widely used in data science as it provides fast and easy ways to analyze large datasets. It is built to handle large datasets with ease while still providing a simple and intuitive syntax. Some R packages build specifically for mass spectrometry utilize `data.tables`, however, its is easy to transform between object types and use the methods you are most comfortable with.
 
-With its ability to store multiple data types, a list can be used to represent complex structures such as a database table, where each column can be a vector or a matrix. Furthermore, a list can be used to store multiple models for model comparison, or to store a set of parameters for a simulation study.
+\
 
-In addition to its flexibility, a list is also efficient, as it allows for fast and easy data retrieval. It can be used to store large datasets, and its hierarchical structure makes it easy to navigate and manipulate.
++---------------------------------+---------------------------------------------------------------------------------------------------+
+| ![](images/05.png){height="99"} | [PDF manual](https://cran.r-project.org/web/packages/data.table/data.table.pdf)                   |
+|                                 |                                                                                                   |
+|                                 | [WEB tutorial](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html) |
+|                                 |                                                                                                   |
+|                                 | [CRAN](https://cran.r-project.org/web/packages/data.table/index.html)                             |
+|                                 |                                                                                                   |
+|                                 | [GitHub](https://github.com/Rdatatable/data.table)                                                |
++---------------------------------+---------------------------------------------------------------------------------------------------+
 
-Here's an example of how to create a list in R:
+\
 
-```{r}
-# create a list
-my_list <- list(name = "Janie R Programmer",
-                age = 32,
-                salary = 100000,
-                interests = c("coding", "reading", "traveling"))
+Data.table provides many advantages over the traditional data.frame. Some of the key advantages are as follows:
 
-print(my_list)
+1. Faster performance as compared to data.frame.
+2. Efficient memory usage.
+3. Provides an easy way to handle and manipulate large datasets.
+4. Provides a syntax similar to SQL for easy querying of data.
+
+```{r, eval=FALSE}
+library(data.table)
+
+tbl_let <- data.table(
+  let = LETTERS,
+  pos = 1:length(LETTERS)
+)
+
 ```
 
-In the above code, we have created a list 'my_list' with four elements, each having a different data type. The first element 'name' is a character vector, the second element 'age' is a numeric value, the third element 'salary' is also a numeric value, and the fourth element 'interests' is a character vector.
-
-We can access the elements of a list using the dollar sign '\$' or double brackets '[[]]'. For example:
-
-```{r}
-# accessing elements of a list
-print(my_list$name)
-print(my_list[["salary"]])
-
+```{r, echo=FALSE}
+cat("    let pos
+ 1:  A   1
+ 2:  B   2
+ 3:  C   3
+ 4:  D   4
+ 5:  E   5
+...
+26:   Z  26
+    let pos")
 ```
 
-Lists are also useful for storing and manipulating complex data structures such as data frames and tibbles.
+In addition, data.table also provides many functions for data manipulation and aggregation. Some of the commonly used functions are:
+
+- **.SD**: Subset of Data.table. It is used to access the subset of data.table.
+- **.N**: It is used to get the number of rows in a group.
+- **.SDcols**: It is used to select columns to subset .SD.
+- **.GRP**: It is used to get the group number of each row.
 
 ## Tibbles
 
@@ -256,6 +310,17 @@ str(plant_data)
 The contents of a tibble is very similar:
 
 ```{r}
+plant_data <- data.table(
+  age_days = c(10, 20, 30, 40, 50, 60),
+  height_inch = c(1.02, 1.10, 5.10, 6.00, 6.50, 6.90)
+)
+
+str(plant_data)
+```
+
+The contents of a tibble is very similar:
+
+```{r}
 plant_data <- tibble(
   age_days = c(10, 20, 30, 40, 50, 60),
   height_inch = c(1.02, 1.10, 5.10, 6.00, 6.50, 6.90)
@@ -289,3 +354,40 @@ List of 12
  $ fitted.values: Named num [1:6] 1.12 2.44 3.77 5.1 6.43 ...
   ..- attr(*, "names")= chr [1:6] "1" "2" "3" "4" ...
 ```
+
+## Converting Objects {-}
+
+In R, we see that there are several data objects that can be used to store and manipulate data. Some of the commonly used data objects include `data.frames`, `data.tables` and `tibbles`. However, we don't need to be stuck with any one object and can easily convert between these data objects using the `as.data.frame`, `as.data.table` and `as_tibble` functions.
+
+If we start out with a `data.frame` as shown above, we can convert that to either a `data.table` or a `tibble` very easily.
+
+```{r, echo=FALSE}
+df <- data.frame(
+  let = LETTERS,
+  pos = 1:length(LETTERS)
+)
+```
+
+```{r, message=FALSE, warning=FALSE}
+library(tibble)
+library(data.table)
+```
+
+Convert from a **data.frame** to a **data.table**:
+```{r, message=FALSE, warning=FALSE}
+
+dt <- as.data.table(df)
+str(dt)
+```
+Convert from a **data.frame** to a **tibble**:
+```{r, message=FALSE, warning=FALSE}
+tbl <- as_tibble(df)
+str(tbl)
+```
+
+Convert from a **data.table** to a **tibble**:
+```{r, message=FALSE, warning=FALSE}
+tbl <- as_tibble(dt)
+str(tbl)
+```
+

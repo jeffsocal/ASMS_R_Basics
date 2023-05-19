@@ -30,40 +30,26 @@ Although no previous knowledge of R is required, some experience with data and s
 
 **What** Is Covered? The purpose of this book is to provide you with a comprehensive guide to the R programming language, as well as to teach you how to use RStudio, tidy data, the tidyverse ecosystem, and ggplot2. By the end of this book, you will have a solid foundation in R and the skills necessary to conduct data analysis and visualization.
 
-Our goals for this book are as follows:
+Our goals for this book are:
 
--   Learn the basic fundamentals of the R programming language, including variables, data types, functions, and control structures. You will also learn how to write and execute basic R scripts.
+-   Learn the fundamentals of the R programming language, including variables, data types, functions, and control structures. You will also learn how to write and execute basic R scripts.
 
--   Learn how to use the RStudio integrated development environment (IDE), including how to navigate the interface, create projects, and install packages.
+-   Learn to use the RStudio integrated development environment (IDE), including how to navigate the interface, create projects, and install packages.
 
 -   Learn about tidy data: what it is, why it's important for data analysis, and how to use the tidyr package to transform data into a tidy format.
 
--   Learn the basic fundamentals of the tidyverse ecosystem of R packages, including dplyr, tidyr, and ggplot2, and how they can be used to streamline the data analysis process.
+-   Learn the basics of the tidyverse ecosystem of R packages, including dplyr, tidyr, and ggplot2, and how they can streamline the data analysis process.
 
--   Learn how to create data visualizations using the ggplot2 R package, including how to customize plots, add themes and colors, and create complex visualizations.
-
-By the end of this course, you should be able to:
-
--   Start up RStudio and create an RStudio project.
-
--   Read a formatted text file (e.g., CSV file) into R.
-
--   Understand basic properties of the data, such as the number of rows and columns.
-
--   Explain what tidy data is and why it's important.
-
--   Perform basic data manipulations and operations on the data.
-
--   Create a simple plot based on the data.
+-   Learn to create data visualizations using the ggplot2 R package, including how to customize plots, add themes and colors, and create complex visualizations.
 
 **What** Is Not Covered? This book is designed to provide you with a comprehensive introduction to R programming. While we cover a variety of essential topics, we don't cover everything. For instance, we do not go into depth on statistical analysis, probability, regression, machine learning, or any other advanced analytical topics. We also do not cover constructing R packages, documentation, markdown, or any other advanced R programming topic.
 
-**Why** have another book on R? This book is the foundation of the Introduction to R course offered at the annual conference for the American Society for Mass Spectrometry (ASMS). It was created by the authors as a more permanent, expandable, and revisable reference document. The book evolved from a 200+ slide presentation used as instructional material in the "Getting Started with R" two-day short course. It became clear that the amount of material covered in such a compressed time was both limiting in the topics discussed and in students' retention of verbal instructions. Therefore, this tome was created to provide a greater depth of coverage on various topics and to record the instructors' nuanced approach to R. This is intended to be a living document, with improvements made to the explanations and topics covered based on comments and suggestions from each instructional iteration, as well as any external feedback, which is greatly appreciated.
+**Why** create another book on R? This book serves as the foundation for the Introduction to R course at the annual conference for the American Society for Mass Spectrometry (ASMS). It's a permanent, expandable, and revisable reference document created by the authors. It evolved from a presentation used as instructional material in the “Getting Started with R” short course. This tome provides greater depth of coverage on various topics and records instructors’ nuanced approach to R. The book is a living document, improved based on feedback.
 
 **When** was this book developed? The initiative that resulted in the creation of the R Book started in 2017, when a group of experts in the field came together to offer a series of workshops at the annual ASMS conference. These workshops were aimed at teaching attendees how to effectively use R, a programming language used in statistical computing and graphics. Year after year, the workshops drew a significant number of attendees, with between 200 and 300 people participating for three consecutive years.
 
-Building on the success of the workshops, the presenters decided to offer a more formal short course in 2020, which was a remote year due to the COVID-19 pandemic. The course proved to be very popular and was well-received by participants.
+Building on the success of the workshops, the presenters decided to offer a more formal short course in 2020, which was a remote year due to the COVID-19 pandemic. The course proved to be very popular and was well-received by participants for 2020 (Virtual), 2021 (Philadelphia, PA), and 2022 (Minneapolis, MN).
 
 Following the positive response to the short course, in 2023, it was decided to convert all of the teaching materials and resources used in the workshops and course into a formal book. This book, the R Book, was created with the aim of providing a comprehensive and accessible guide to using R, and has since become a valuable resource for students, researchers, and professionals alike.
 
-**Where** can the book be accessed? The book is available online here [link]. Additionally, this book and it's contents are covered at the annual American Society for Mass Spectrometry (ASMS), typically the first week in June the weekend prior to the scientific meeting.
+**Where** can the book be accessed? The book is available online [here](https://jeffsocal.github.io/ASMS_R_Basics/). Additionally, this book and it's contents are covered at the annual American Society for Mass Spectrometry (ASMS), typically the first week in June the weekend prior to the scientific meeting.

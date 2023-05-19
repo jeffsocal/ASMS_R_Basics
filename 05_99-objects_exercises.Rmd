@@ -17,7 +17,7 @@ str_gbu
 str_gbu[2]
 ```
 
-3.  Construct a numerical vector of length 5, containing the diameters of circles with integer circumferences 1 to 5. Remember PEMDAS.
+3.  Construct a numerical vector of length 5, containing the circumferences of circles with integer diameters 1 to 5. Remember PEMDAS.
 ```{r, echo=FALSE}
 cir <- (1:5) ^ 2 * pi
 cir
@@ -26,4 +26,22 @@ cir
 4.  Extract all circumferences greater than 50.
 ```{r, echo=FALSE}
 cir[which(cir > 50)]
+```
+
+5. Create a data.frame consisting of circles with integer diameters 1 to 5, and their circumferences.
+```{r, echo=FALSE}
+diameters <- 1:5
+
+df <- data.frame(
+  diameter = diameters,
+  circumfrence = (diameters) ^ 2 * pi
+)
+
+df
+```
+
+6.  Extract all circumferences greater than 50 from the data.frame.
+```{r, echo=FALSE}
+w <- which(df$circumfrence > 50)
+df[w,]
 ```

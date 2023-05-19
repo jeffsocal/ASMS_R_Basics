@@ -6,18 +6,49 @@ Accessing mass spectrometry data has some barriers due to vendors proprietary fi
 
 ### RAW (Thermo) {-}
 
-R::[rawrr](https://github.com/fgcz/rawrr)
+#### rawrr {-}
 This package provides access to proprietary Thermo Fisher Scientific Orbitrap instrument data as a stand-alone R package or serves as MsRawFileReaderBackend for the Bioconductor Spectra package. rawrr wraps the functionality of the RawFileReader .NET assembly. Test files are provided by the tartare ExperimentData package.
+\
 
-R::[rawReadeR](https://github.com/wilsontom/rawReadeR)
-rawReadeR is an R/C++ API to the MSFileReader.dll. rawReadeR allows for m/z profiles and scan header data to be extracted from .RAW files without the need for manual extraction using Xcalibur or conversion to a more universal format (.mzML, .mZXML, etc...)
++--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](images/90_logo_rawrr.png){height="99"} | [PDF manual](https://bioconductor.org/packages/release/bioc/manuals/rawrr/man/rawrr.pdf)                                                                        |
+|                                            |                                                                                                                                                                 |
+|                                            | [WEB tutorial](https://bioconductor.org/packages/release/bioc/vignettes/rawrr/inst/doc/rawrr.html)                                                              |
+|                                            |                                                                                                                                                                 |
+|                                            | [GitHub](https://github.com/fgcz/rawrr)                                                                                                                         |
+|                                            |                                                                                                                                                                 |
+|                                            | [Bioconductor](https://bioconductor.org/packages/release/bioc/html/rawrr.html)                                                                                  |
+|                                            |                                                                                                                                                                 |
+|                                            | _Kockmann, Tobias, and Christian Panse. "The rawrr R package: direct access to Orbitrap data and beyond." Journal of Proteome Research 20.4 (2021): 2028-2034._ |
++--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+\
+
+#### rawReadeR {-}
+This package is an R/C++ API to the MSFileReader.dll. rawReadeR allows for m/z profiles and scan header data to be extracted from .RAW files without the need for manual extraction using Xcalibur or conversion to a more universal format (.mzML, .mZXML, etc...)
+\
+
++---------------------------------+--------------------------------------------------+
+| ![](images/05.png){height="68"} | [GitHub](https://github.com/wilsontom/rawReadeR) |
++---------------------------------+--------------------------------------------------+
+
+\
 
 ---
 
 ### .d (Bruker) timsTOF data {-}
 
-Bruker has released an SDK that has now been ported to python and R.
-R::[timsR](https://github.com/MatteoLacki/timsr)
+#### TimsR {-}
+Bruker has released an SDK that has now been ported to python and R. It provides a simple way to get data out of results collected with your Bruker timsTOF Pro from R. This definitely ain't no rocket science, but is pretty useful! The data is reported in stored in data.table objects, that are the only thing R has to actually work meaningfully with big data sets.
+
+\
+
++---------------------------------+------------------------------------------------+
+| ![](images/05.png){height="68"} | [GitHub](https://github.com/MatteoLacki/timsr) |
++---------------------------------+------------------------------------------------+
+
+\
+
 
 ---
 

@@ -87,7 +87,7 @@ Many R organizations offer individuals an opportunity for training and support, 
 +---------------------------------+-----------------------------------------------------------------------------------------------+
 | ![](images/01.png){height="68"} | **R User Group (RUG)**                                                                        |
 |                                 |                                                                                               |
-|                                 | RUGs are a relaxed and friendly way to broaden your contacts, scope and understanding of R. |
+|                                 | RUGs are a relaxed and friendly way to broaden your contacts, scope and understanding of R.   |
 +---------------------------------+-----------------------------------------------------------------------------------------------+
 
 \

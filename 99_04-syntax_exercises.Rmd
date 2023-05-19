@@ -8,30 +8,61 @@
 # Some basic R practice
 
 # 3.  Calculate the sum of 2 and 3.
+
 2 + 3
+
 
 # 4.  Evaluate if 0.5 is equal to 1 divided by 2.
 
 0.5 == 1 / 2
 
-# 5.  Test if 3 is an even number. 
-#     Hint, use the modulus operator and a comparison operator.
+
+# 5.  Test if 3 is an even number. Hint, use the modulus operator and a 
+#     comparison operator.
 
 3 %% 2 == 0
 
+
 # 6.  Create a function to test if a value is even resulting in `TRUE` or `FALSE`.
 
-even <- function(x) { x %% 2 == 0 }
+even <- function(x) { 
+  x %% 2 == 0 
+}
 
 even(3)
 
-# 7.  Create a function to test or *even* or *odd* by returning a string.
+
+# 7.  Construct an if-else statement to test if the number three is odd or even.
+
+x <- 3
+
+if(x %% 2 == 0) {
+  print('even')
+} else {
+  print('odd')
+}
+
+
+# 8.  Create a function to test or *even* or *odd* by returning a string.
 
 oddeven <- function(x) { 
-  if(x %% 2 == 0) return('even')
-  else return('odd')
+  if(x %% 2 == 0) {
+    return('even')
+  } else {
+    return('odd')
+  }
 }
 
 oddeven(3)
 
+
+# 9.  Construct a for-loop to test, using the function from #8, if the numbers 
+#     between 1 and 9 are odd or even, printing the number and string for each 
+#     on a new line.
+
+x <- 1:9
+
+for ( i in x) {
+  cat(i, "\t", oddeven(i), "\n")
+}
 ```

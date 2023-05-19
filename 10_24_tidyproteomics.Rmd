@@ -7,7 +7,7 @@ The tidyproteomics R package is a tool that provides a set of functions to prepr
 +-----------------------------------------------------+-------------------------------------------------------------------+
 | ![](images/90_logo_tidyproteomics.png){height="99"} | [WEB manual](https://jeffsocal.github.io/tidyproteomics/)         |
 |                                                     |                                                                   |
-|                                                     | [github](https://github.com/jeffsocal/tidyproteomics)             |
+|                                                     | [GitHub](https://github.com/jeffsocal/tidyproteomics)             |
 |                                                     |                                                                   |
 |                                                     | [WEB App](https://bioinformatics.pel.caltech.edu/tidyproteomics/) |
 +-----------------------------------------------------+-------------------------------------------------------------------+

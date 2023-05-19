@@ -6,15 +6,17 @@ XCMS is an R package that provides a collection of functions for processing and 
 
 \
 
-+---------------------------------+----------------------------------------------------------------------------------------------------------+
-| ![](images/05.png){height="68"} | [WEB tutorial](https://bioconductor.org/packages/release/bioc/vignettes/xcms/inst/doc/xcms-lcms-ms.html) |
-|                                 |                                                                                                          |
-|                                 | [PDF manual](https://bioconductor.org/packages/3.12/bioc/manuals/xcms/man/xcms.pdf)                      |
-|                                 |                                                                                                          |
-|                                 | [Bioconductor](https://bioconductor.org/packages/3.12/bioc/html/xcms.html)                               |
-|                                 |                                                                                                          |
-|                                 | *Analytical Chemistry* 2008, 78, 779–787.                                                                |
-+---------------------------------+----------------------------------------------------------------------------------------------------------+
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](images/05.png){height="68"} | [WEB tutorial](https://bioconductor.org/packages/release/bioc/vignettes/xcms/inst/doc/xcms-lcms-ms.html)                                                                                              |
+|                                 |                                                                                                                                                                                                       |
+|                                 | [PDF manual](https://bioconductor.org/packages/3.12/bioc/manuals/xcms/man/xcms.pdf)                                                                                                                   |
+|                                 |                                                                                                                                                                                                       |
+|                                 | [Bioconductor](https://bioconductor.org/packages/3.12/bioc/html/xcms.html)                                                                                                                            |
+|                                 |                                                                                                                                                                                                       |
+|                                 | *Smith, Colin A., et al. "XCMS: processing mass spectrometry data for metabolite profiling using nonlinear peak alignment, matching, and identification." Analytical chemistry 78.3 (2006): 779-787.* |
+|                                 |                                                                                                                                                                                                       |
+|                                 | *Benton, H. Paul, et al. "XCMS2: processing tandem mass spectrometry data for metabolite identification and structural characterization." Analytical chemistry 80.16 (2008): 6382-6389.*              |
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 \
 
@@ -41,6 +43,6 @@ ms_dat <- findChromPeaks(ms_dat, param = cwp)
 
 One of the main advantages of XCMS is its flexibility and scalability. This package is highly customizable, allowing users to tailor the analysis pipeline to their specific needs. In addition, XCMS is designed to handle large data sets, making it suitable for high-throughput experiments.
 
-Currently, spectra data representation, handling and processing is being re-implemented as part of the \ref@(rformassspectrometry) RforMassSpectrometry initiative aiming at increasing the performance of methods and simplifying their use.
+Currently, spectra data representation, handling and processing is being re-implemented as part of the \@ref(rformassspectrometry) RforMassSpectrometry initiative aiming at increasing the performance of methods and simplifying their use.
 
 ---

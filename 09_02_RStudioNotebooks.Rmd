@@ -22,5 +22,3 @@ With R Notebooks, it is also possible to:
 ### Sharing {-}
 
 Sharing your notebook project in RStudio IDE is a straightforward process. By sharing your projects, you can collaborate with other data scientists and benefit from the insights and expertise of your colleagues. Here are the steps to share your projects:
-
-<!--# Expand on this -->

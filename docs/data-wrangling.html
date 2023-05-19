@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2023-05-18" />
+<meta name="date" content="2023-05-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -219,11 +219,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.1" data-path="r-objects.html"><a href="r-objects.html#variable"><i class="fa fa-check"></i><b>5.1</b> Variable</a></li>
 <li class="chapter" data-level="5.2" data-path="r-objects.html"><a href="r-objects.html#vector"><i class="fa fa-check"></i><b>5.2</b> Vector</a></li>
-<li class="chapter" data-level="5.3" data-path="r-objects.html"><a href="r-objects.html#matrix"><i class="fa fa-check"></i><b>5.3</b> Matrix</a></li>
-<li class="chapter" data-level="5.4" data-path="r-objects.html"><a href="r-objects.html#data-frame"><i class="fa fa-check"></i><b>5.4</b> Data Frame</a></li>
-<li class="chapter" data-level="5.5" data-path="r-objects.html"><a href="r-objects.html#list"><i class="fa fa-check"></i><b>5.5</b> List</a></li>
-<li class="chapter" data-level="5.6" data-path="r-objects.html"><a href="r-objects.html#tibbles"><i class="fa fa-check"></i><b>5.6</b> Tibbles</a></li>
+<li class="chapter" data-level="5.3" data-path="r-objects.html"><a href="r-objects.html#list"><i class="fa fa-check"></i><b>5.3</b> List</a></li>
+<li class="chapter" data-level="5.4" data-path="r-objects.html"><a href="r-objects.html#matrix"><i class="fa fa-check"></i><b>5.4</b> Matrix</a></li>
+<li class="chapter" data-level="5.5" data-path="r-objects.html"><a href="r-objects.html#data-frame"><i class="fa fa-check"></i><b>5.5</b> Data Frame</a></li>
+<li class="chapter" data-level="5.6" data-path="r-objects.html"><a href="r-objects.html#data.table"><i class="fa fa-check"></i><b>5.6</b> Data.Table</a></li>
+<li class="chapter" data-level="5.7" data-path="r-objects.html"><a href="r-objects.html#tibbles"><i class="fa fa-check"></i><b>5.7</b> Tibbles</a></li>
 <li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#examine-the-contents"><i class="fa fa-check"></i>Examine the Contents</a></li>
+<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#converting-objects"><i class="fa fa-check"></i>Converting Objects</a></li>
 <li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tidyverse-1.html"><a href="tidyverse-1.html"><i class="fa fa-check"></i><b>6</b> Tidyverse</a>
@@ -351,12 +353,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-ms-analysis"><i class="fa fa-check"></i><b>10.5</b> R MS Analysis</a>
 <ul>
 <li class="chapter" data-level="10.5.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msstats"><i class="fa fa-check"></i><b>10.5.1</b> MSstats</a></li>
-<li class="chapter" data-level="10.5.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#statspro-r-package"><i class="fa fa-check"></i><b>10.5.2</b> StatsPro R Package</a></li>
-<li class="chapter" data-level="10.5.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#tidyproteomics"><i class="fa fa-check"></i><b>10.5.3</b> Tidyproteomics</a></li>
-<li class="chapter" data-level="10.5.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#assayr"><i class="fa fa-check"></i><b>10.5.4</b> AssayR</a></li>
-<li class="chapter" data-level="10.5.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#deqms"><i class="fa fa-check"></i><b>10.5.5</b> DEqMS</a></li>
-<li class="chapter" data-level="10.5.6" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#ms-empire"><i class="fa fa-check"></i><b>10.5.6</b> MS-EmpiRe</a></li>
-<li class="chapter" data-level="10.5.7" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msgrob2"><i class="fa fa-check"></i><b>10.5.7</b> msgrob2</a></li>
+<li class="chapter" data-level="10.5.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#tidyproteomics"><i class="fa fa-check"></i><b>10.5.2</b> Tidyproteomics</a></li>
+<li class="chapter" data-level="10.5.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#assayr"><i class="fa fa-check"></i><b>10.5.3</b> AssayR</a></li>
+<li class="chapter" data-level="10.5.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#deqms"><i class="fa fa-check"></i><b>10.5.4</b> DEqMS</a></li>
+<li class="chapter" data-level="10.5.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#ms-empire"><i class="fa fa-check"></i><b>10.5.5</b> MS-EmpiRe</a></li>
+<li class="chapter" data-level="10.5.6" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msgrob2"><i class="fa fa-check"></i><b>10.5.6</b> msgrob2</a></li>
+<li class="chapter" data-level="10.5.7" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#statspro"><i class="fa fa-check"></i><b>10.5.7</b> StatsPro</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html"><i class="fa fa-check"></i>Answers to Exercises</a>
@@ -391,7 +393,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 7</span> Data Wrangling<a href="data-wrangling.html#data-wrangling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In data analysis, having known and expected patterns in the data is important. Wrangling is the act of getting messy real world data organized for analysis.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:7201"></span>
-<img src="images/07_001_messy-data-image.png" alt="\label{fig:7201}Visualizing messy data." width="1259" />
+<img src="images/07_001_messy-data-image.png" alt="\label{fig:7201}Visualizing messy data." width="720" />
 <p class="caption">
 Figure 7.1: Visualizing messy data.
 </p>
@@ -446,7 +448,7 @@ Figure 7.1: Visualizing messy data.
 </p>
 Tidy data visualized:
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:7202"></span>
-<img src="images/07_002_tidy-data-vis.png" alt="\label{fig:7202}Visualizing tidy data concepts." width="1259" />
+<img src="images/07_002_tidy-data-vis.png" alt="\label{fig:7202}Visualizing tidy data concepts." width="720" />
 <p class="caption">
 Figure 7.2: Visualizing tidy data concepts.
 </p>
@@ -468,32 +470,31 @@ Figure 7.3: Checking our messy data table.
 <div id="read_" class="section level3 unnumbered hasAnchor">
 <h3>read_<a href="data-wrangling.html#read_" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let’s start with the read-in.</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="data-wrangling.html#cb169-1" tabindex="-1"></a><span class="fu">require</span>(readxl)</span>
-<span id="cb169-2"><a href="data-wrangling.html#cb169-2" tabindex="-1"></a><span class="fu">require</span>(tidyverse)</span>
-<span id="cb169-3"><a href="data-wrangling.html#cb169-3" tabindex="-1"></a></span>
-<span id="cb169-4"><a href="data-wrangling.html#cb169-4" tabindex="-1"></a><span class="co"># read_excel can read portions of the excel</span></span>
-<span id="cb169-5"><a href="data-wrangling.html#cb169-5" tabindex="-1"></a>tbl_met <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/bacterial-metabolites_dose-simicillin_wide.xlsx&quot;</span>)</span>
-<span id="cb169-6"><a href="data-wrangling.html#cb169-6" tabindex="-1"></a></span>
-<span id="cb169-7"><a href="data-wrangling.html#cb169-7" tabindex="-1"></a>tbl_met</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="data-wrangling.html#cb184-1" tabindex="-1"></a><span class="fu">require</span>(readxl)</span>
+<span id="cb184-2"><a href="data-wrangling.html#cb184-2" tabindex="-1"></a><span class="fu">require</span>(tidyverse)</span>
+<span id="cb184-3"><a href="data-wrangling.html#cb184-3" tabindex="-1"></a></span>
+<span id="cb184-4"><a href="data-wrangling.html#cb184-4" tabindex="-1"></a><span class="co"># read_excel can read portions of the excel</span></span>
+<span id="cb184-5"><a href="data-wrangling.html#cb184-5" tabindex="-1"></a>tbl_met <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/bacterial-metabolites_dose-simicillin_wide.xlsx&quot;</span>)</span>
+<span id="cb184-6"><a href="data-wrangling.html#cb184-6" tabindex="-1"></a></span>
+<span id="cb184-7"><a href="data-wrangling.html#cb184-7" tabindex="-1"></a>tbl_met</span></code></pre></div>
 <pre><code>## # A tibble: 9 × 21
-##   Culture    gluta…¹ gluta…² gluta…³ gluta…⁴ gluta…⁵ lysin…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟ succi…˟
-##   &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-## 1 e coli do…  191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3  9.62e2 1678885
-## 2 staph aur…  125210  132156  1.14e5  117150  137747     111     119     109  1.19e2  1.19e2  110418
-## 3 p aerugin…  978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3  8.61e2 2558815
-## 4 e coli do…    1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5  1.79e5   50501
-## 5 staph aur…     152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3  1.29e4   11442
-## 6 p aerugin…      23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5  1.37e5  101008
-## 7 e coli do…     885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7  1.88e5  186375
-## 8 staph aur…     136    4276  1.16e6    4841     130     129   12985  123893  1.28e6  1.46e6   11769
-## 9 p aerugin…    3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7  2.23e7  198848
-## # … with 9 more variables: `succinic acid_Time_10min` &lt;dbl&gt;, `succinic acid_Time_20min` &lt;dbl&gt;,
-## #   `succinic acid_Time_50min` &lt;dbl&gt;, `succinic acid_Time_2hr` &lt;dbl&gt;,
-## #   phosphatidylcholine_Time_0min &lt;dbl&gt;, phosphatidylcholine_Time_10min &lt;dbl&gt;,
-## #   phosphatidylcholine_Time_20min &lt;dbl&gt;, phosphatidylcholine_Time_50min &lt;dbl&gt;,
-## #   phosphatidylcholine_Time_2hr &lt;dbl&gt;, and abbreviated variable names ¹​glutamate_Time_0min,
-## #   ²​glutamate_Time_10min, ³​glutamate_Time_20min, ⁴​glutamate_Time_50min, ⁵​glutamate_Time_2hr,
-## #   ⁶​lysine_Time_0min, ⁷​lysine_Time_10min, ⁸​lysine_Time_20min, ⁹​lysine_Time_50min, …</code></pre>
+##   Culture    gluta…¹ gluta…² gluta…³ gluta…⁴ gluta…⁵ lysin…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟ succi…˟ succi…˟ succi…˟ succi…˟
+##   &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 e coli do…  191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3  9.62e2 1678885 1404982  1.69e6  629562
+## 2 staph aur…  125210  132156  1.14e5  117150  137747     111     119     109  1.19e2  1.19e2  110418  132064  1.24e5  102222
+## 3 p aerugin…  978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3  8.61e2 2558815 2899386  7.60e5 1668486
+## 4 e coli do…    1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5  1.79e5   50501  923831  2.04e7  872219
+## 5 staph aur…     152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3  1.29e4   11442  107942  1.11e6  148190
+## 6 p aerugin…      23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5  1.37e5  101008  918978  4.10e7 1795876
+## 7 e coli do…     885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7  1.88e5  186375  231364  1.76e5     323
+## 8 staph aur…     136    4276  1.16e6    4841     130     129   12985  123893  1.28e6  1.46e6   11769   10599  1.27e4     147
+## 9 p aerugin…    3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7  2.23e7  198848   46052  1.01e5      80
+## # … with 6 more variables: `succinic acid_Time_2hr` &lt;dbl&gt;, phosphatidylcholine_Time_0min &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_10min &lt;dbl&gt;, phosphatidylcholine_Time_20min &lt;dbl&gt;, phosphatidylcholine_Time_50min &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_2hr &lt;dbl&gt;, and abbreviated variable names ¹​glutamate_Time_0min, ²​glutamate_Time_10min,
+## #   ³​glutamate_Time_20min, ⁴​glutamate_Time_50min, ⁵​glutamate_Time_2hr, ⁶​lysine_Time_0min, ⁷​lysine_Time_10min,
+## #   ⁸​lysine_Time_20min, ⁹​lysine_Time_50min, ˟​lysine_Time_2hr, ˟​`succinic acid_Time_0min`, ˟​`succinic acid_Time_10min`,
+## #   ˟​`succinic acid_Time_20min`, ˟​`succinic acid_Time_50min`</code></pre>
 </div>
 <div id="separate" class="section level3 unnumbered hasAnchor">
 <h3>separate<a href="data-wrangling.html#separate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -504,27 +505,26 @@ Figure 7.3: Checking our messy data table.
 Figure 7.4: Separating columns in a tibble.
 </p>
 </div>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="data-wrangling.html#cb171-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
-<span id="cb171-2"><a href="data-wrangling.html#cb171-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="data-wrangling.html#cb186-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb186-2"><a href="data-wrangling.html#cb186-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 9 × 22
-##   culture    dose_mg gluta…¹ gluta…² gluta…³ gluta…⁴ gluta…⁵ lysin…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟
-##   &lt;chr&gt;      &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-## 1 e coli     0mg      191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3  9.62e2
-## 2 staph aur… 0mg      125210  132156  1.14e5  117150  137747     111     119     109  1.19e2  1.19e2
-## 3 p aerugin… 0mg      978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3  8.61e2
-## 4 e coli     10mg       1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5  1.79e5
-## 5 staph aur… 10mg        152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3  1.29e4
-## 6 p aerugin… 10mg         23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5  1.37e5
-## 7 e coli     20mg        885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7  1.88e5
-## 8 staph aur… 20mg        136    4276  1.16e6    4841     130     129   12985  123893  1.28e6  1.46e6
-## 9 p aerugin… 20mg       3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7  2.23e7
-## # … with 10 more variables: `succinic acid_Time_0min` &lt;dbl&gt;, `succinic acid_Time_10min` &lt;dbl&gt;,
-## #   `succinic acid_Time_20min` &lt;dbl&gt;, `succinic acid_Time_50min` &lt;dbl&gt;,
-## #   `succinic acid_Time_2hr` &lt;dbl&gt;, phosphatidylcholine_Time_0min &lt;dbl&gt;,
-## #   phosphatidylcholine_Time_10min &lt;dbl&gt;, phosphatidylcholine_Time_20min &lt;dbl&gt;,
-## #   phosphatidylcholine_Time_50min &lt;dbl&gt;, phosphatidylcholine_Time_2hr &lt;dbl&gt;, and abbreviated
-## #   variable names ¹​glutamate_Time_0min, ²​glutamate_Time_10min, ³​glutamate_Time_20min,
-## #   ⁴​glutamate_Time_50min, ⁵​glutamate_Time_2hr, ⁶​lysine_Time_0min, ⁷​lysine_Time_10min, …</code></pre>
+##   culture    dose_mg gluta…¹ gluta…² gluta…³ gluta…⁴ gluta…⁵ lysin…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟ succi…˟ succi…˟ succi…˟
+##   &lt;chr&gt;      &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 e coli     0mg      191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3  9.62e2 1678885 1404982  1.69e6
+## 2 staph aur… 0mg      125210  132156  1.14e5  117150  137747     111     119     109  1.19e2  1.19e2  110418  132064  1.24e5
+## 3 p aerugin… 0mg      978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3  8.61e2 2558815 2899386  7.60e5
+## 4 e coli     10mg       1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5  1.79e5   50501  923831  2.04e7
+## 5 staph aur… 10mg        152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3  1.29e4   11442  107942  1.11e6
+## 6 p aerugin… 10mg         23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5  1.37e5  101008  918978  4.10e7
+## 7 e coli     20mg        885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7  1.88e5  186375  231364  1.76e5
+## 8 staph aur… 20mg        136    4276  1.16e6    4841     130     129   12985  123893  1.28e6  1.46e6   11769   10599  1.27e4
+## 9 p aerugin… 20mg       3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7  2.23e7  198848   46052  1.01e5
+## # … with 7 more variables: `succinic acid_Time_50min` &lt;dbl&gt;, `succinic acid_Time_2hr` &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_0min &lt;dbl&gt;, phosphatidylcholine_Time_10min &lt;dbl&gt;, phosphatidylcholine_Time_20min &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_50min &lt;dbl&gt;, phosphatidylcholine_Time_2hr &lt;dbl&gt;, and abbreviated variable names
+## #   ¹​glutamate_Time_0min, ²​glutamate_Time_10min, ³​glutamate_Time_20min, ⁴​glutamate_Time_50min, ⁵​glutamate_Time_2hr,
+## #   ⁶​lysine_Time_0min, ⁷​lysine_Time_10min, ⁸​lysine_Time_20min, ⁹​lysine_Time_50min, ˟​lysine_Time_2hr,
+## #   ˟​`succinic acid_Time_0min`, ˟​`succinic acid_Time_10min`, ˟​`succinic acid_Time_20min`</code></pre>
 </div>
 <div id="mutate" class="section level3 unnumbered hasAnchor">
 <h3>mutate<a href="data-wrangling.html#mutate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -536,52 +536,50 @@ We need to remove the “mg”.</p>
 Figure 7.5: Mutate:Making new columns or changing existing ones.
 </p>
 </div>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="data-wrangling.html#cb173-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
-<span id="cb173-2"><a href="data-wrangling.html#cb173-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb173-3"><a href="data-wrangling.html#cb173-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Dose =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="data-wrangling.html#cb188-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb188-2"><a href="data-wrangling.html#cb188-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb188-3"><a href="data-wrangling.html#cb188-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Dose =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 9 × 23
-##   culture    dose_mg gluta…¹ gluta…² gluta…³ gluta…⁴ gluta…⁵ lysin…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟
-##   &lt;chr&gt;      &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-## 1 e coli     0mg      191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3  9.62e2
-## 2 staph aur… 0mg      125210  132156  1.14e5  117150  137747     111     119     109  1.19e2  1.19e2
-## 3 p aerugin… 0mg      978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3  8.61e2
-## 4 e coli     10mg       1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5  1.79e5
-## 5 staph aur… 10mg        152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3  1.29e4
-## 6 p aerugin… 10mg         23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5  1.37e5
-## 7 e coli     20mg        885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7  1.88e5
-## 8 staph aur… 20mg        136    4276  1.16e6    4841     130     129   12985  123893  1.28e6  1.46e6
-## 9 p aerugin… 20mg       3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7  2.23e7
-## # … with 11 more variables: `succinic acid_Time_0min` &lt;dbl&gt;, `succinic acid_Time_10min` &lt;dbl&gt;,
-## #   `succinic acid_Time_20min` &lt;dbl&gt;, `succinic acid_Time_50min` &lt;dbl&gt;,
-## #   `succinic acid_Time_2hr` &lt;dbl&gt;, phosphatidylcholine_Time_0min &lt;dbl&gt;,
-## #   phosphatidylcholine_Time_10min &lt;dbl&gt;, phosphatidylcholine_Time_20min &lt;dbl&gt;,
-## #   phosphatidylcholine_Time_50min &lt;dbl&gt;, phosphatidylcholine_Time_2hr &lt;dbl&gt;, Dose &lt;chr&gt;, and
-## #   abbreviated variable names ¹​glutamate_Time_0min, ²​glutamate_Time_10min, ³​glutamate_Time_20min,
-## #   ⁴​glutamate_Time_50min, ⁵​glutamate_Time_2hr, ⁶​lysine_Time_0min, ⁷​lysine_Time_10min, …</code></pre>
+##   culture    dose_mg gluta…¹ gluta…² gluta…³ gluta…⁴ gluta…⁵ lysin…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟ succi…˟ succi…˟ succi…˟
+##   &lt;chr&gt;      &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 e coli     0mg      191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3  9.62e2 1678885 1404982  1.69e6
+## 2 staph aur… 0mg      125210  132156  1.14e5  117150  137747     111     119     109  1.19e2  1.19e2  110418  132064  1.24e5
+## 3 p aerugin… 0mg      978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3  8.61e2 2558815 2899386  7.60e5
+## 4 e coli     10mg       1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5  1.79e5   50501  923831  2.04e7
+## 5 staph aur… 10mg        152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3  1.29e4   11442  107942  1.11e6
+## 6 p aerugin… 10mg         23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5  1.37e5  101008  918978  4.10e7
+## 7 e coli     20mg        885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7  1.88e5  186375  231364  1.76e5
+## 8 staph aur… 20mg        136    4276  1.16e6    4841     130     129   12985  123893  1.28e6  1.46e6   11769   10599  1.27e4
+## 9 p aerugin… 20mg       3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7  2.23e7  198848   46052  1.01e5
+## # … with 8 more variables: `succinic acid_Time_50min` &lt;dbl&gt;, `succinic acid_Time_2hr` &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_0min &lt;dbl&gt;, phosphatidylcholine_Time_10min &lt;dbl&gt;, phosphatidylcholine_Time_20min &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_50min &lt;dbl&gt;, phosphatidylcholine_Time_2hr &lt;dbl&gt;, Dose &lt;chr&gt;, and abbreviated variable names
+## #   ¹​glutamate_Time_0min, ²​glutamate_Time_10min, ³​glutamate_Time_20min, ⁴​glutamate_Time_50min, ⁵​glutamate_Time_2hr,
+## #   ⁶​lysine_Time_0min, ⁷​lysine_Time_10min, ⁸​lysine_Time_20min, ⁹​lysine_Time_50min, ˟​lysine_Time_2hr,
+## #   ˟​`succinic acid_Time_0min`, ˟​`succinic acid_Time_10min`, ˟​`succinic acid_Time_20min`</code></pre>
 <p>Ok, the “mg” is removed but if we check the tibble, <code>Dose</code> is still <code>chr</code>, so it’s still computed as text by R! Let’s make it numeric.</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="data-wrangling.html#cb175-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
-<span id="cb175-2"><a href="data-wrangling.html#cb175-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb175-3"><a href="data-wrangling.html#cb175-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb175-4"><a href="data-wrangling.html#cb175-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg))</span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="data-wrangling.html#cb190-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb190-2"><a href="data-wrangling.html#cb190-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb190-3"><a href="data-wrangling.html#cb190-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb190-4"><a href="data-wrangling.html#cb190-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg))</span></code></pre></div>
 <pre><code>## # A tibble: 9 × 22
-##   culture    dose_mg gluta…¹ gluta…² gluta…³ gluta…⁴ gluta…⁵ lysin…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟
-##   &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-## 1 e coli           0  191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3  9.62e2
-## 2 staph aur…       0  125210  132156  1.14e5  117150  137747     111     119     109  1.19e2  1.19e2
-## 3 p aerugin…       0  978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3  8.61e2
-## 4 e coli          10    1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5  1.79e5
-## 5 staph aur…      10     152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3  1.29e4
-## 6 p aerugin…      10      23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5  1.37e5
-## 7 e coli          20     885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7  1.88e5
-## 8 staph aur…      20     136    4276  1.16e6    4841     130     129   12985  123893  1.28e6  1.46e6
-## 9 p aerugin…      20    3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7  2.23e7
-## # … with 10 more variables: `succinic acid_Time_0min` &lt;dbl&gt;, `succinic acid_Time_10min` &lt;dbl&gt;,
-## #   `succinic acid_Time_20min` &lt;dbl&gt;, `succinic acid_Time_50min` &lt;dbl&gt;,
-## #   `succinic acid_Time_2hr` &lt;dbl&gt;, phosphatidylcholine_Time_0min &lt;dbl&gt;,
-## #   phosphatidylcholine_Time_10min &lt;dbl&gt;, phosphatidylcholine_Time_20min &lt;dbl&gt;,
-## #   phosphatidylcholine_Time_50min &lt;dbl&gt;, phosphatidylcholine_Time_2hr &lt;dbl&gt;, and abbreviated
-## #   variable names ¹​glutamate_Time_0min, ²​glutamate_Time_10min, ³​glutamate_Time_20min,
-## #   ⁴​glutamate_Time_50min, ⁵​glutamate_Time_2hr, ⁶​lysine_Time_0min, ⁷​lysine_Time_10min, …</code></pre>
+##   culture    dose_mg gluta…¹ gluta…² gluta…³ gluta…⁴ gluta…⁵ lysin…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟ succi…˟ succi…˟ succi…˟
+##   &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 e coli           0  191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3  9.62e2 1678885 1404982  1.69e6
+## 2 staph aur…       0  125210  132156  1.14e5  117150  137747     111     119     109  1.19e2  1.19e2  110418  132064  1.24e5
+## 3 p aerugin…       0  978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3  8.61e2 2558815 2899386  7.60e5
+## 4 e coli          10    1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5  1.79e5   50501  923831  2.04e7
+## 5 staph aur…      10     152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3  1.29e4   11442  107942  1.11e6
+## 6 p aerugin…      10      23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5  1.37e5  101008  918978  4.10e7
+## 7 e coli          20     885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7  1.88e5  186375  231364  1.76e5
+## 8 staph aur…      20     136    4276  1.16e6    4841     130     129   12985  123893  1.28e6  1.46e6   11769   10599  1.27e4
+## 9 p aerugin…      20    3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7  2.23e7  198848   46052  1.01e5
+## # … with 7 more variables: `succinic acid_Time_50min` &lt;dbl&gt;, `succinic acid_Time_2hr` &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_0min &lt;dbl&gt;, phosphatidylcholine_Time_10min &lt;dbl&gt;, phosphatidylcholine_Time_20min &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_50min &lt;dbl&gt;, phosphatidylcholine_Time_2hr &lt;dbl&gt;, and abbreviated variable names
+## #   ¹​glutamate_Time_0min, ²​glutamate_Time_10min, ³​glutamate_Time_20min, ⁴​glutamate_Time_50min, ⁵​glutamate_Time_2hr,
+## #   ⁶​lysine_Time_0min, ⁷​lysine_Time_10min, ⁸​lysine_Time_20min, ⁹​lysine_Time_50min, ˟​lysine_Time_2hr,
+## #   ˟​`succinic acid_Time_0min`, ˟​`succinic acid_Time_10min`, ˟​`succinic acid_Time_20min`</code></pre>
 </div>
 <div id="pivot_" class="section level3 unnumbered hasAnchor">
 <h3>pivot_<a href="data-wrangling.html#pivot_" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -593,11 +591,11 @@ We need this tibble to be <strong>long</strong> rather than <strong>wide</strong
 Figure 7.6:  Pivoting longer from wide data.
 </p>
 </div>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="data-wrangling.html#cb177-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
-<span id="cb177-2"><a href="data-wrangling.html#cb177-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb177-3"><a href="data-wrangling.html#cb177-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb177-4"><a href="data-wrangling.html#cb177-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
-<span id="cb177-5"><a href="data-wrangling.html#cb177-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="data-wrangling.html#cb192-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb192-2"><a href="data-wrangling.html#cb192-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb192-3"><a href="data-wrangling.html#cb192-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb192-4"><a href="data-wrangling.html#cb192-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
+<span id="cb192-5"><a href="data-wrangling.html#cb192-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 180 × 4
 ##    culture dose_mg metabolite_time      abundance
 ##    &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;                    &lt;dbl&gt;
@@ -613,12 +611,12 @@ Figure 7.6:  Pivoting longer from wide data.
 ## 10 e coli        0 lysine_Time_2hr            962
 ## # … with 170 more rows</code></pre>
 <p>Another happy table…but <strong>STILL</strong> has multiple data encoded in a single column!</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="data-wrangling.html#cb179-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
-<span id="cb179-2"><a href="data-wrangling.html#cb179-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb179-3"><a href="data-wrangling.html#cb179-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb179-4"><a href="data-wrangling.html#cb179-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
-<span id="cb179-5"><a href="data-wrangling.html#cb179-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb179-6"><a href="data-wrangling.html#cb179-6" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="data-wrangling.html#cb194-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb194-2"><a href="data-wrangling.html#cb194-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb194-3"><a href="data-wrangling.html#cb194-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb194-4"><a href="data-wrangling.html#cb194-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
+<span id="cb194-5"><a href="data-wrangling.html#cb194-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb194-6"><a href="data-wrangling.html#cb194-6" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 180 × 5
 ##    culture dose_mg metabolite time_min abundance
 ##    &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;
@@ -633,12 +631,12 @@ Figure 7.6:  Pivoting longer from wide data.
 ##  9 e coli        0 lysine     Time          1356
 ## 10 e coli        0 lysine     Time           962
 ## # … with 170 more rows</code></pre>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="data-wrangling.html#cb181-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
-<span id="cb181-2"><a href="data-wrangling.html#cb181-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb181-3"><a href="data-wrangling.html#cb181-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb181-4"><a href="data-wrangling.html#cb181-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
-<span id="cb181-5"><a href="data-wrangling.html#cb181-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb181-6"><a href="data-wrangling.html#cb181-6" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_&quot;</span>, <span class="at">convert =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="data-wrangling.html#cb196-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb196-2"><a href="data-wrangling.html#cb196-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb196-3"><a href="data-wrangling.html#cb196-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb196-4"><a href="data-wrangling.html#cb196-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
+<span id="cb196-5"><a href="data-wrangling.html#cb196-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb196-6"><a href="data-wrangling.html#cb196-6" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_&quot;</span>, <span class="at">convert =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 180 × 5
 ##    culture dose_mg metabolite time_min abundance
 ##    &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;
@@ -656,18 +654,18 @@ Figure 7.6:  Pivoting longer from wide data.
 <p>Almost there, but notice how <code>metabolite_time</code> has three items when we separate by <code>_</code>?
 glutamate_Time_0min -&gt; <code>glutamate</code><em><code>Time</code></em><code>0min</code>
 We only provided two column names, though. Perhaps we can rethink our separator.</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="data-wrangling.html#cb183-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
-<span id="cb183-2"><a href="data-wrangling.html#cb183-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb183-3"><a href="data-wrangling.html#cb183-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb183-4"><a href="data-wrangling.html#cb183-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
-<span id="cb183-5"><a href="data-wrangling.html#cb183-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb183-6"><a href="data-wrangling.html#cb183-6" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_Time_&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb183-7"><a href="data-wrangling.html#cb183-7" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb183-8"><a href="data-wrangling.html#cb183-8" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">case_when</span>(</span>
-<span id="cb183-9"><a href="data-wrangling.html#cb183-9" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;min&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;min&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)),</span>
-<span id="cb183-10"><a href="data-wrangling.html#cb183-10" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)) <span class="sc">*</span> <span class="dv">60</span></span>
-<span id="cb183-11"><a href="data-wrangling.html#cb183-11" tabindex="-1"></a>    )</span>
-<span id="cb183-12"><a href="data-wrangling.html#cb183-12" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="data-wrangling.html#cb198-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb198-2"><a href="data-wrangling.html#cb198-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb198-3"><a href="data-wrangling.html#cb198-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb198-4"><a href="data-wrangling.html#cb198-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
+<span id="cb198-5"><a href="data-wrangling.html#cb198-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb198-6"><a href="data-wrangling.html#cb198-6" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_Time_&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb198-7"><a href="data-wrangling.html#cb198-7" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb198-8"><a href="data-wrangling.html#cb198-8" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">case_when</span>(</span>
+<span id="cb198-9"><a href="data-wrangling.html#cb198-9" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;min&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;min&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)),</span>
+<span id="cb198-10"><a href="data-wrangling.html#cb198-10" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)) <span class="sc">*</span> <span class="dv">60</span></span>
+<span id="cb198-11"><a href="data-wrangling.html#cb198-11" tabindex="-1"></a>    )</span>
+<span id="cb198-12"><a href="data-wrangling.html#cb198-12" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 180 × 5
 ##    culture dose_mg metabolite time_min abundance
 ##    &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;
@@ -683,20 +681,20 @@ We only provided two column names, though. Perhaps we can rethink our separator.
 ## 10 e coli        0 lysine          120       962
 ## # … with 170 more rows</code></pre>
 <p>Ok a new problem has appeared: mixed time units in our <code>time_min</code> column. We have both “min” and “hr”. We need to standardize to understand these as time units. We can <code>mutate</code> with <code>case_when</code>, which does specific things conditionally on particular observations in the tibble. This is a <code>dplyr</code> way of doing if statements. We will also advance it up by doing the “character” to “numeric” conversion in one go!</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="data-wrangling.html#cb185-1" tabindex="-1"></a>tbl_met_tidy <span class="ot">&lt;-</span> tbl_met <span class="sc">%&gt;%</span></span>
-<span id="cb185-2"><a href="data-wrangling.html#cb185-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb185-3"><a href="data-wrangling.html#cb185-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb185-4"><a href="data-wrangling.html#cb185-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
-<span id="cb185-5"><a href="data-wrangling.html#cb185-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb185-6"><a href="data-wrangling.html#cb185-6" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_Time_&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb185-7"><a href="data-wrangling.html#cb185-7" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb185-8"><a href="data-wrangling.html#cb185-8" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">case_when</span>(</span>
-<span id="cb185-9"><a href="data-wrangling.html#cb185-9" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;min&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;min&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)),</span>
-<span id="cb185-10"><a href="data-wrangling.html#cb185-10" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)) <span class="sc">*</span> <span class="dv">60</span></span>
-<span id="cb185-11"><a href="data-wrangling.html#cb185-11" tabindex="-1"></a>    )</span>
-<span id="cb185-12"><a href="data-wrangling.html#cb185-12" tabindex="-1"></a>  )</span>
-<span id="cb185-13"><a href="data-wrangling.html#cb185-13" tabindex="-1"></a></span>
-<span id="cb185-14"><a href="data-wrangling.html#cb185-14" tabindex="-1"></a>tbl_met_tidy</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="data-wrangling.html#cb200-1" tabindex="-1"></a>tbl_met_tidy <span class="ot">&lt;-</span> tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb200-2"><a href="data-wrangling.html#cb200-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb200-3"><a href="data-wrangling.html#cb200-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb200-4"><a href="data-wrangling.html#cb200-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
+<span id="cb200-5"><a href="data-wrangling.html#cb200-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb200-6"><a href="data-wrangling.html#cb200-6" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_Time_&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb200-7"><a href="data-wrangling.html#cb200-7" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb200-8"><a href="data-wrangling.html#cb200-8" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">case_when</span>(</span>
+<span id="cb200-9"><a href="data-wrangling.html#cb200-9" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;min&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;min&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)),</span>
+<span id="cb200-10"><a href="data-wrangling.html#cb200-10" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)) <span class="sc">*</span> <span class="dv">60</span></span>
+<span id="cb200-11"><a href="data-wrangling.html#cb200-11" tabindex="-1"></a>    )</span>
+<span id="cb200-12"><a href="data-wrangling.html#cb200-12" tabindex="-1"></a>  )</span>
+<span id="cb200-13"><a href="data-wrangling.html#cb200-13" tabindex="-1"></a></span>
+<span id="cb200-14"><a href="data-wrangling.html#cb200-14" tabindex="-1"></a>tbl_met_tidy</span></code></pre></div>
 <pre><code>## # A tibble: 180 × 5
 ##    culture dose_mg metabolite time_min abundance
 ##    &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;
@@ -715,45 +713,45 @@ We only provided two column names, though. Perhaps we can rethink our separator.
 </div>
 <div id="write_" class="section level3 unnumbered hasAnchor">
 <h3>write_<a href="data-wrangling.html#write_" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="data-wrangling.html#cb187-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
-<span id="cb187-2"><a href="data-wrangling.html#cb187-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb187-3"><a href="data-wrangling.html#cb187-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb187-4"><a href="data-wrangling.html#cb187-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
-<span id="cb187-5"><a href="data-wrangling.html#cb187-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb187-6"><a href="data-wrangling.html#cb187-6" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_Time_&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb187-7"><a href="data-wrangling.html#cb187-7" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb187-8"><a href="data-wrangling.html#cb187-8" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">case_when</span>(</span>
-<span id="cb187-9"><a href="data-wrangling.html#cb187-9" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;min&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;min&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)),</span>
-<span id="cb187-10"><a href="data-wrangling.html#cb187-10" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)) <span class="sc">*</span> <span class="dv">60</span></span>
-<span id="cb187-11"><a href="data-wrangling.html#cb187-11" tabindex="-1"></a>    )</span>
-<span id="cb187-12"><a href="data-wrangling.html#cb187-12" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb187-13"><a href="data-wrangling.html#cb187-13" tabindex="-1"></a>  <span class="fu">write_csv</span>(<span class="st">&quot;data/tidyed-met-df.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="data-wrangling.html#cb202-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
+<span id="cb202-2"><a href="data-wrangling.html#cb202-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb202-3"><a href="data-wrangling.html#cb202-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb202-4"><a href="data-wrangling.html#cb202-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg)) <span class="sc">%&gt;%</span></span>
+<span id="cb202-5"><a href="data-wrangling.html#cb202-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb202-6"><a href="data-wrangling.html#cb202-6" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_Time_&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb202-7"><a href="data-wrangling.html#cb202-7" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb202-8"><a href="data-wrangling.html#cb202-8" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">case_when</span>(</span>
+<span id="cb202-9"><a href="data-wrangling.html#cb202-9" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;min&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;min&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)),</span>
+<span id="cb202-10"><a href="data-wrangling.html#cb202-10" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)) <span class="sc">*</span> <span class="dv">60</span></span>
+<span id="cb202-11"><a href="data-wrangling.html#cb202-11" tabindex="-1"></a>    )</span>
+<span id="cb202-12"><a href="data-wrangling.html#cb202-12" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb202-13"><a href="data-wrangling.html#cb202-13" tabindex="-1"></a>  <span class="fu">write_csv</span>(<span class="st">&quot;data/tidyed-met-df.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="non-pipe" class="section level3 unnumbered hasAnchor">
 <h3>Non-pipe<a href="data-wrangling.html#non-pipe" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One thing you can notice is how the dplyr verbs add up. We can continually pipe one data frame through a series of wrangling steps until we are satisfied. Operating in this way organizes processes in a way that is easy to manage. We could also do this:</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="data-wrangling.html#cb188-1" tabindex="-1"></a><span class="co"># read_excel can read portions of the excel</span></span>
-<span id="cb188-2"><a href="data-wrangling.html#cb188-2" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/bacterial-metabolites_dose-simicillin_wide.xlsx&quot;</span>)</span>
-<span id="cb188-3"><a href="data-wrangling.html#cb188-3" tabindex="-1"></a></span>
-<span id="cb188-4"><a href="data-wrangling.html#cb188-4" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">separate</span>(no_pipe_tbl_met, Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>)</span>
-<span id="cb188-5"><a href="data-wrangling.html#cb188-5" tabindex="-1"></a></span>
-<span id="cb188-6"><a href="data-wrangling.html#cb188-6" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">mutate</span>(no_pipe_tbl_met, <span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>))</span>
-<span id="cb188-7"><a href="data-wrangling.html#cb188-7" tabindex="-1"></a></span>
-<span id="cb188-8"><a href="data-wrangling.html#cb188-8" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">mutate</span>(no_pipe_tbl_met, <span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg))</span>
-<span id="cb188-9"><a href="data-wrangling.html#cb188-9" tabindex="-1"></a></span>
-<span id="cb188-10"><a href="data-wrangling.html#cb188-10" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(no_pipe_tbl_met, <span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>)</span>
-<span id="cb188-11"><a href="data-wrangling.html#cb188-11" tabindex="-1"></a></span>
-<span id="cb188-12"><a href="data-wrangling.html#cb188-12" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">separate</span>(no_pipe_tbl_met, metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_Time_&quot;</span>)</span>
-<span id="cb188-13"><a href="data-wrangling.html#cb188-13" tabindex="-1"></a></span>
-<span id="cb188-14"><a href="data-wrangling.html#cb188-14" tabindex="-1"></a>no_pipe_tbl_met_tidy <span class="ot">&lt;-</span>  <span class="fu">mutate</span>(no_pipe_tbl_met,</span>
-<span id="cb188-15"><a href="data-wrangling.html#cb188-15" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">case_when</span>(</span>
-<span id="cb188-16"><a href="data-wrangling.html#cb188-16" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;min&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;min&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)),</span>
-<span id="cb188-17"><a href="data-wrangling.html#cb188-17" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)) <span class="sc">*</span> <span class="dv">60</span></span>
-<span id="cb188-18"><a href="data-wrangling.html#cb188-18" tabindex="-1"></a>    )</span>
-<span id="cb188-19"><a href="data-wrangling.html#cb188-19" tabindex="-1"></a>  )</span>
-<span id="cb188-20"><a href="data-wrangling.html#cb188-20" tabindex="-1"></a></span>
-<span id="cb188-21"><a href="data-wrangling.html#cb188-21" tabindex="-1"></a></span>
-<span id="cb188-22"><a href="data-wrangling.html#cb188-22" tabindex="-1"></a>no_pipe_tbl_met_tidy</span></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="data-wrangling.html#cb203-1" tabindex="-1"></a><span class="co"># read_excel can read portions of the excel</span></span>
+<span id="cb203-2"><a href="data-wrangling.html#cb203-2" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/bacterial-metabolites_dose-simicillin_wide.xlsx&quot;</span>)</span>
+<span id="cb203-3"><a href="data-wrangling.html#cb203-3" tabindex="-1"></a></span>
+<span id="cb203-4"><a href="data-wrangling.html#cb203-4" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">separate</span>(no_pipe_tbl_met, Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>)</span>
+<span id="cb203-5"><a href="data-wrangling.html#cb203-5" tabindex="-1"></a></span>
+<span id="cb203-6"><a href="data-wrangling.html#cb203-6" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">mutate</span>(no_pipe_tbl_met, <span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>))</span>
+<span id="cb203-7"><a href="data-wrangling.html#cb203-7" tabindex="-1"></a></span>
+<span id="cb203-8"><a href="data-wrangling.html#cb203-8" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">mutate</span>(no_pipe_tbl_met, <span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg))</span>
+<span id="cb203-9"><a href="data-wrangling.html#cb203-9" tabindex="-1"></a></span>
+<span id="cb203-10"><a href="data-wrangling.html#cb203-10" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(no_pipe_tbl_met, <span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">22</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>)</span>
+<span id="cb203-11"><a href="data-wrangling.html#cb203-11" tabindex="-1"></a></span>
+<span id="cb203-12"><a href="data-wrangling.html#cb203-12" tabindex="-1"></a>no_pipe_tbl_met <span class="ot">&lt;-</span> <span class="fu">separate</span>(no_pipe_tbl_met, metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>, <span class="st">&quot;time_min&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_Time_&quot;</span>)</span>
+<span id="cb203-13"><a href="data-wrangling.html#cb203-13" tabindex="-1"></a></span>
+<span id="cb203-14"><a href="data-wrangling.html#cb203-14" tabindex="-1"></a>no_pipe_tbl_met_tidy <span class="ot">&lt;-</span>  <span class="fu">mutate</span>(no_pipe_tbl_met,</span>
+<span id="cb203-15"><a href="data-wrangling.html#cb203-15" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">case_when</span>(</span>
+<span id="cb203-16"><a href="data-wrangling.html#cb203-16" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;min&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;min&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)),</span>
+<span id="cb203-17"><a href="data-wrangling.html#cb203-17" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_min, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_min)) <span class="sc">*</span> <span class="dv">60</span></span>
+<span id="cb203-18"><a href="data-wrangling.html#cb203-18" tabindex="-1"></a>    )</span>
+<span id="cb203-19"><a href="data-wrangling.html#cb203-19" tabindex="-1"></a>  )</span>
+<span id="cb203-20"><a href="data-wrangling.html#cb203-20" tabindex="-1"></a></span>
+<span id="cb203-21"><a href="data-wrangling.html#cb203-21" tabindex="-1"></a></span>
+<span id="cb203-22"><a href="data-wrangling.html#cb203-22" tabindex="-1"></a>no_pipe_tbl_met_tidy</span></code></pre></div>
 <pre><code>## # A tibble: 180 × 5
 ##    culture dose_mg metabolite time_min abundance
 ##    &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;
@@ -772,9 +770,9 @@ We only provided two column names, though. Perhaps we can rethink our separator.
 <div id="summarize" class="section level3 unnumbered hasAnchor">
 <h3>summarize<a href="data-wrangling.html#summarize" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Now we have a tidy tibble, we can summarize very rapidly.</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="data-wrangling.html#cb190-1" tabindex="-1"></a>tbl_met_tidy <span class="sc">%&gt;%</span></span>
-<span id="cb190-2"><a href="data-wrangling.html#cb190-2" tabindex="-1"></a>  <span class="fu">group_by</span>(culture, metabolite) <span class="sc">%&gt;%</span></span>
-<span id="cb190-3"><a href="data-wrangling.html#cb190-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(abundance))</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="data-wrangling.html#cb205-1" tabindex="-1"></a>tbl_met_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb205-2"><a href="data-wrangling.html#cb205-2" tabindex="-1"></a>  <span class="fu">group_by</span>(culture, metabolite) <span class="sc">%&gt;%</span></span>
+<span id="cb205-3"><a href="data-wrangling.html#cb205-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(abundance))</span></code></pre></div>
 <pre><code>## # A tibble: 12 × 3
 ## # Groups:   culture [3]
 ##    culture      metabolite               mean
@@ -816,65 +814,63 @@ We only provided two column names, though. Perhaps we can rethink our separator.
 <ol style="list-style-type: decimal">
 <li>Download the data.</li>
 </ol>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="data-wrangling.html#cb192-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-Metabolites_dose-simicillin_messy.xlsx&quot;</span></span>
-<span id="cb192-2"><a href="data-wrangling.html#cb192-2" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/bacterial-Metabolites_dose-simicillin_messy.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="data-wrangling.html#cb207-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-Metabolites_dose-simicillin_messy.xlsx&quot;</span></span>
+<span id="cb207-2"><a href="data-wrangling.html#cb207-2" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/bacterial-Metabolites_dose-simicillin_messy.xlsx&quot;</span>)</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Read in the messy bacteria data and store it as a variable.</li>
 </ol>
 <pre><code>## # A tibble: 9 × 12
-##   Culture      User  gluta…¹ gluta…² gluta…³ gluta…⁴ gluta…⁵ lysin…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟
-##   &lt;chr&gt;        &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-## 1 e coli dose… Mass…  191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3  9.62e2
-## 2 staph aureu… Mass…  125210  132156  1.14e5  117150  137747     111     119     109  1.19e2  1.19e2
-## 3 p aeruginos… Mass…  978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3  8.61e2
-## 4 e coli dose… Mass…    1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5  1.79e5
-## 5 staph aureu… Mass…     152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3  1.29e4
-## 6 p aeruginos… Mass…      23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5  1.37e5
-## 7 e coli dose… Mass…     885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7  1.88e5
-## 8 staph aureu… Mass…     136    4276  1.16e6    4841     130     129   12985  123893  1.28e6  1.46e6
-## 9 p aeruginos… Mass…    3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7  2.23e7
-## # … with abbreviated variable names ¹​glutamate_runtime_0hr, ²​glutamate_runtime_24hr,
-## #   ³​glutamate_runtime_2day, ⁴​glutamate_runtime_3day, ⁵​glutamate_runtime_5day, ⁶​lysine_runtime_0hr,
-## #   ⁷​lysine_runtime_24hr, ⁸​lysine_runtime_2day, ⁹​lysine_runtime_3day, ˟​lysine_runtime_5day</code></pre>
+##   Culture                     User           gluta…¹ gluta…² gluta…³ gluta…⁴ gluta…⁵ lysin…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟
+##   &lt;chr&gt;                       &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 e coli dose--0-mg/ml        Mass Spectrom…  191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3  9.62e2
+## 2 staph aureus dose--0-mg/ml  Mass Spectrom…  125210  132156  1.14e5  117150  137747     111     119     109  1.19e2  1.19e2
+## 3 p aeruginosa dose--0-mg/ml  Mass Spectrom…  978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3  8.61e2
+## 4 e coli dose--10-mg/ml       Mass Spectrom…    1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5  1.79e5
+## 5 staph aureus dose--10-mg/ml Mass Spectrom…     152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3  1.29e4
+## 6 p aeruginosa dose--10-mg/ml Mass Spectrom…      23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5  1.37e5
+## 7 e coli dose--20-mg/ml       Mass Spectrom…     885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7  1.88e5
+## 8 staph aureus dose--20-mg/ml Mass Spectrom…     136    4276  1.16e6    4841     130     129   12985  123893  1.28e6  1.46e6
+## 9 p aeruginosa dose--20-mg/ml Mass Spectrom…    3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7  2.23e7
+## # … with abbreviated variable names ¹​glutamate_runtime_0hr, ²​glutamate_runtime_24hr, ³​glutamate_runtime_2day,
+## #   ⁴​glutamate_runtime_3day, ⁵​glutamate_runtime_5day, ⁶​lysine_runtime_0hr, ⁷​lysine_runtime_24hr, ⁸​lysine_runtime_2day,
+## #   ⁹​lysine_runtime_3day, ˟​lysine_runtime_5day</code></pre>
 <p><em>In all proceeding exercises, pipe results from previous exercise into current exercise creating a single lone pipe for data processing</em></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Separate <code>Culture</code> column containing culture and dose into <code>culture</code> and <code>dose_mg_ml</code> columns.</li>
 </ol>
 <pre><code>## # A tibble: 9 × 13
-##   culture      dose_…¹ User  gluta…² gluta…³ gluta…⁴ gluta…⁵ gluta…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟
-##   &lt;chr&gt;        &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-## 1 e coli       0-mg/ml Mass…  191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3
-## 2 staph aureus 0-mg/ml Mass…  125210  132156  1.14e5  117150  137747     111     119     109  1.19e2
-## 3 p aeruginosa 0-mg/ml Mass…  978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3
-## 4 e coli       10-mg/… Mass…    1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5
-## 5 staph aureus 10-mg/… Mass…     152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3
-## 6 p aeruginosa 10-mg/… Mass…      23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5
-## 7 e coli       20-mg/… Mass…     885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7
-## 8 staph aureus 20-mg/… Mass…     136    4276  1.16e6    4841     130     129   12985  123893  1.28e6
-## 9 p aeruginosa 20-mg/… Mass…    3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7
-## # … with 1 more variable: lysine_runtime_5day &lt;dbl&gt;, and abbreviated variable names ¹​dose_mg_ml,
-## #   ²​glutamate_runtime_0hr, ³​glutamate_runtime_24hr, ⁴​glutamate_runtime_2day,
-## #   ⁵​glutamate_runtime_3day, ⁶​glutamate_runtime_5day, ⁷​lysine_runtime_0hr, ⁸​lysine_runtime_24hr,
-## #   ⁹​lysine_runtime_2day, ˟​lysine_runtime_3day</code></pre>
+##   culture      dose_mg_ml User               gluta…¹ gluta…² gluta…³ gluta…⁴ gluta…⁵ lysin…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟
+##   &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt;                &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 e coli       0-mg/ml    Mass Spectrometri…  191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3  9.62e2
+## 2 staph aureus 0-mg/ml    Mass Spectrometri…  125210  132156  1.14e5  117150  137747     111     119     109  1.19e2  1.19e2
+## 3 p aeruginosa 0-mg/ml    Mass Spectrometri…  978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3  8.61e2
+## 4 e coli       10-mg/ml   Mass Spectrometri…    1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5  1.79e5
+## 5 staph aureus 10-mg/ml   Mass Spectrometri…     152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3  1.29e4
+## 6 p aeruginosa 10-mg/ml   Mass Spectrometri…      23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5  1.37e5
+## 7 e coli       20-mg/ml   Mass Spectrometri…     885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7  1.88e5
+## 8 staph aureus 20-mg/ml   Mass Spectrometri…     136    4276  1.16e6    4841     130     129   12985  123893  1.28e6  1.46e6
+## 9 p aeruginosa 20-mg/ml   Mass Spectrometri…    3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7  2.23e7
+## # … with abbreviated variable names ¹​glutamate_runtime_0hr, ²​glutamate_runtime_24hr, ³​glutamate_runtime_2day,
+## #   ⁴​glutamate_runtime_3day, ⁵​glutamate_runtime_5day, ⁶​lysine_runtime_0hr, ⁷​lysine_runtime_24hr, ⁸​lysine_runtime_2day,
+## #   ⁹​lysine_runtime_3day, ˟​lysine_runtime_5day</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Make <code>dose_mg_ml</code> column numeric by removing the text and change the column data type from character to numeric.</li>
 </ol>
 <pre><code>## # A tibble: 9 × 13
-##   culture      dose_…¹ User  gluta…² gluta…³ gluta…⁴ gluta…⁵ gluta…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟
-##   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-## 1 e coli             0 Mass…  191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3
-## 2 staph aureus       0 Mass…  125210  132156  1.14e5  117150  137747     111     119     109  1.19e2
-## 3 p aeruginosa       0 Mass…  978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3
-## 4 e coli            10 Mass…    1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5
-## 5 staph aureus      10 Mass…     152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3
-## 6 p aeruginosa      10 Mass…      23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5
-## 7 e coli            20 Mass…     885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7
-## 8 staph aureus      20 Mass…     136    4276  1.16e6    4841     130     129   12985  123893  1.28e6
-## 9 p aeruginosa      20 Mass…    3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7
-## # … with 1 more variable: lysine_runtime_5day &lt;dbl&gt;, and abbreviated variable names ¹​dose_mg_ml,
-## #   ²​glutamate_runtime_0hr, ³​glutamate_runtime_24hr, ⁴​glutamate_runtime_2day,
-## #   ⁵​glutamate_runtime_3day, ⁶​glutamate_runtime_5day, ⁷​lysine_runtime_0hr, ⁸​lysine_runtime_24hr,
-## #   ⁹​lysine_runtime_2day, ˟​lysine_runtime_3day</code></pre>
+##   culture      dose_mg_ml User               gluta…¹ gluta…² gluta…³ gluta…⁴ gluta…⁵ lysin…⁶ lysin…⁷ lysin…⁸ lysin…⁹ lysin…˟
+##   &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 e coli                0 Mass Spectrometri…  191666 2082823  1.80e6  846402 1782879    1418    2004    1498  1.36e3  9.62e2
+## 2 staph aureus          0 Mass Spectrometri…  125210  132156  1.14e5  117150  137747     111     119     109  1.19e2  1.19e2
+## 3 p aeruginosa          0 Mass Spectrometri…  978126  397012  2.68e5  424183 1630613      15    1957    1678  2.55e3  8.61e2
+## 4 e coli               10 Mass Spectrometri…    1445 1017467  1.45e7  813321   29825    1830    8363  121087  1.90e5  1.79e5
+## 5 staph aureus         10 Mass Spectrometri…     152  128683  1.36e6  102188   10920     137    1340   13345  9.86e3  1.29e4
+## 6 p aeruginosa         10 Mass Spectrometri…      23 1612622  1.83e7  199374  230032    3705    9448   16678  2.52e5  1.37e5
+## 7 e coli               20 Mass Spectrometri…     885   42356  1.18e7   22498    1715     367   70492  548146  2.15e7  1.88e5
+## 8 staph aureus         20 Mass Spectrometri…     136    4276  1.16e6    4841     130     129   12985  123893  1.28e6  1.46e6
+## 9 p aeruginosa         20 Mass Spectrometri…    3098   68146  1.93e7  106262     164    3067  233009 1029939  1.10e7  2.23e7
+## # … with abbreviated variable names ¹​glutamate_runtime_0hr, ²​glutamate_runtime_24hr, ³​glutamate_runtime_2day,
+## #   ⁴​glutamate_runtime_3day, ⁵​glutamate_runtime_5day, ⁶​lysine_runtime_0hr, ⁷​lysine_runtime_24hr, ⁸​lysine_runtime_2day,
+## #   ⁹​lysine_runtime_3day, ˟​lysine_runtime_5day</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li>Pivot the table from wide to long creating <code>metabolite</code>, <code>time_hr</code> &amp; <code>abundance</code> columns.</li>
 </ol>
@@ -977,7 +973,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": [["ASMS_R_Basics.zip", "HTML"]],
 "search": {
 "engine": "fuse",
 "options": null

@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2023-05-18" />
+<meta name="date" content="2023-05-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -219,11 +219,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.1" data-path="r-objects.html"><a href="r-objects.html#variable"><i class="fa fa-check"></i><b>5.1</b> Variable</a></li>
 <li class="chapter" data-level="5.2" data-path="r-objects.html"><a href="r-objects.html#vector"><i class="fa fa-check"></i><b>5.2</b> Vector</a></li>
-<li class="chapter" data-level="5.3" data-path="r-objects.html"><a href="r-objects.html#matrix"><i class="fa fa-check"></i><b>5.3</b> Matrix</a></li>
-<li class="chapter" data-level="5.4" data-path="r-objects.html"><a href="r-objects.html#data-frame"><i class="fa fa-check"></i><b>5.4</b> Data Frame</a></li>
-<li class="chapter" data-level="5.5" data-path="r-objects.html"><a href="r-objects.html#list"><i class="fa fa-check"></i><b>5.5</b> List</a></li>
-<li class="chapter" data-level="5.6" data-path="r-objects.html"><a href="r-objects.html#tibbles"><i class="fa fa-check"></i><b>5.6</b> Tibbles</a></li>
+<li class="chapter" data-level="5.3" data-path="r-objects.html"><a href="r-objects.html#list"><i class="fa fa-check"></i><b>5.3</b> List</a></li>
+<li class="chapter" data-level="5.4" data-path="r-objects.html"><a href="r-objects.html#matrix"><i class="fa fa-check"></i><b>5.4</b> Matrix</a></li>
+<li class="chapter" data-level="5.5" data-path="r-objects.html"><a href="r-objects.html#data-frame"><i class="fa fa-check"></i><b>5.5</b> Data Frame</a></li>
+<li class="chapter" data-level="5.6" data-path="r-objects.html"><a href="r-objects.html#data.table"><i class="fa fa-check"></i><b>5.6</b> Data.Table</a></li>
+<li class="chapter" data-level="5.7" data-path="r-objects.html"><a href="r-objects.html#tibbles"><i class="fa fa-check"></i><b>5.7</b> Tibbles</a></li>
 <li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#examine-the-contents"><i class="fa fa-check"></i>Examine the Contents</a></li>
+<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#converting-objects"><i class="fa fa-check"></i>Converting Objects</a></li>
 <li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tidyverse-1.html"><a href="tidyverse-1.html"><i class="fa fa-check"></i><b>6</b> Tidyverse</a>
@@ -351,12 +353,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-ms-analysis"><i class="fa fa-check"></i><b>10.5</b> R MS Analysis</a>
 <ul>
 <li class="chapter" data-level="10.5.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msstats"><i class="fa fa-check"></i><b>10.5.1</b> MSstats</a></li>
-<li class="chapter" data-level="10.5.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#statspro-r-package"><i class="fa fa-check"></i><b>10.5.2</b> StatsPro R Package</a></li>
-<li class="chapter" data-level="10.5.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#tidyproteomics"><i class="fa fa-check"></i><b>10.5.3</b> Tidyproteomics</a></li>
-<li class="chapter" data-level="10.5.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#assayr"><i class="fa fa-check"></i><b>10.5.4</b> AssayR</a></li>
-<li class="chapter" data-level="10.5.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#deqms"><i class="fa fa-check"></i><b>10.5.5</b> DEqMS</a></li>
-<li class="chapter" data-level="10.5.6" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#ms-empire"><i class="fa fa-check"></i><b>10.5.6</b> MS-EmpiRe</a></li>
-<li class="chapter" data-level="10.5.7" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msgrob2"><i class="fa fa-check"></i><b>10.5.7</b> msgrob2</a></li>
+<li class="chapter" data-level="10.5.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#tidyproteomics"><i class="fa fa-check"></i><b>10.5.2</b> Tidyproteomics</a></li>
+<li class="chapter" data-level="10.5.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#assayr"><i class="fa fa-check"></i><b>10.5.3</b> AssayR</a></li>
+<li class="chapter" data-level="10.5.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#deqms"><i class="fa fa-check"></i><b>10.5.4</b> DEqMS</a></li>
+<li class="chapter" data-level="10.5.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#ms-empire"><i class="fa fa-check"></i><b>10.5.5</b> MS-EmpiRe</a></li>
+<li class="chapter" data-level="10.5.6" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msgrob2"><i class="fa fa-check"></i><b>10.5.6</b> msgrob2</a></li>
+<li class="chapter" data-level="10.5.7" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#statspro"><i class="fa fa-check"></i><b>10.5.7</b> StatsPro</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html"><i class="fa fa-check"></i>Answers to Exercises</a>
@@ -528,7 +530,7 @@ Figure 2.5: MacOS RStudio IDE Install
 <p>For example, while creating and viewing a plot, you can have the text editor and console open and organized. This way, you can easily see how the code you are writing is impacting the plot you are creating. Having everything in one place can also help reduce the clutter on your desktop, as you don’t need to have multiple applications open at the same time.</p>
 <p>Overall, the RStudio IDE is an excellent option for anyone looking to streamline their coding and data analysis workflows. By taking advantage of its various features, you can make your work more efficient and enjoyable.</p>
 <div class="figure"><span style="display:block;" id="fig:2021"></span>
-<img src="images/02_021_rstudio_panes.png" alt="\label{fig:2021}RStudio IDE in the default layout" width="691" />
+<img src="images/02_021_rstudio_panes.png" alt="\label{fig:2021}RStudio IDE in the default layout" width="432" />
 <p class="caption">
 Figure 2.6: RStudio IDE in the default layout
 </p>
@@ -543,14 +545,14 @@ Figure 2.6: RStudio IDE in the default layout
 <p>Variables are an important part of any programming language, and R is no exception. In the <em>Editor</em>, variables are colored black. This makes it easy to distinguish variable names from other parts of your code. Finally, quoted text (also known as strings) are colored purple. This makes it easy to identify where strings are being used in your code.</p>
 <p>In summary, the <em>Editor</em> is a powerful tool that can help you write R code more efficiently. By automatically coloring different parts of your code, it makes it easier to read and understand. Whether you are a beginner or an experienced R programmer, the <em>Editor</em> can help you write better code in less time.</p>
 <div class="figure"><span style="display:block;" id="fig:2022"></span>
-<img src="images/02_022_editor_highlighting.png" alt="\label{fig:2022}RStudio IDE syntax highlighting" width="1150" />
+<img src="images/02_022_editor_highlighting.png" alt="\label{fig:2022}RStudio IDE syntax highlighting" width="864" />
 <p class="caption">
 Figure 2.7: RStudio IDE syntax highlighting
 </p>
 </div>
 <p>The Editor also has the ability to suggest available variables and functions. In the image provided, the editor suggests using the mean() function to calculate the average of a collection of values. A pop-up with a description accompanies the suggestion. This feature occurs after typing in the first three letters of anything, and the editor will try to guess what you want to type next. This is a helpful tool that can save you time and effort when writing R code.</p>
 <div class="figure"><span style="display:block;" id="fig:2023"></span>
-<img src="images/02_023_editor_autocomplete.png" alt="\label{fig:2023}RStudio IDE auto complete" width="1150" />
+<img src="images/02_023_editor_autocomplete.png" alt="\label{fig:2023}RStudio IDE auto complete" width="864" />
 <p class="caption">
 Figure 2.8: RStudio IDE auto complete
 </p>
@@ -565,7 +567,7 @@ Figure 2.8: RStudio IDE auto complete
 <p>If you need to open another file, you can do so by clicking on the <em>File</em> menu or by using the shortcut key. When you open a new file, it will create a new tab in the <em>Editor</em> pane, which allows you to switch between open files. This feature is super helpful when you’re working on multiple files simultaneously.</p>
 <p>Another useful tab located in the same pane is the <em>Plots</em> tab. This tab provides a quick way to view any active plots instantly. You don’t need to export your plots or save them separately. Instead, you can view them right within RStudio. This is where RStudio truly shines, as it brings together editing and visualization in one application.</p>
 <div class="figure"><span style="display:block;" id="fig:2024"></span>
-<img src="images/02_024_qplot.png" alt="\label{fig:2024}RStudio IDE plot window" width="1150" />
+<img src="images/02_024_qplot.png" alt="\label{fig:2024}RStudio IDE plot window" width="864" />
 <p class="caption">
 Figure 2.9: RStudio IDE plot window
 </p>
@@ -587,7 +589,7 @@ Figure 2.9: RStudio IDE plot window
 <p>This summary can be useful for new-comers to R because it allows you to quickly see what objects you are currently working with, without having to remember each or manually check. By having a clear overview of your current session, you can avoid mistakes or errors that might arise from using the wrong object or function.</p>
 <p>Overall, the <em>Environment</em> tab is a helpful feature of RStudio that can save you time and frustration. If you’re new to R or just starting to use RStudio, make sure to keep an eye on the <em>Environment</em> tab and make use of its features as often as possible. As you become more versed in RStudio this tab may become less relevant.</p>
 <div class="figure"><span style="display:block;" id="fig:2025"></span>
-<img src="images/02_025_environment.png" alt="\label{fig:2025}RStudio IDE environment window" width="1150" />
+<img src="images/02_025_environment.png" alt="\label{fig:2025}RStudio IDE environment window" width="864" />
 <p class="caption">
 Figure 2.10: RStudio IDE environment window
 </p>
@@ -667,13 +669,13 @@ Figure 2.10: RStudio IDE environment window
 </p>
 <table>
 <colgroup>
-<col width="11%" />
-<col width="88%" />
+<col width="13%" />
+<col width="86%" />
 </colgroup>
 <tbody>
 <tr class="odd">
 <td><img src="images/01.png" height="68" /></td>
-<td>There maybe several additional packages to install including additional operating system level installs. Go to the <a href="https://jeffsocal.github.io/tidyproteomics/">tidyproteomics</a> webpage for additional installation help. |</td>
+<td>There maybe several additional packages to install including additional operating system level installs. Go to the <a href="https://jeffsocal.github.io/tidyproteomics/">tidyproteomics</a> webpage for additional installation help.</td>
 </tr>
 </tbody>
 </table>
@@ -698,7 +700,7 @@ Figure 2.10: RStudio IDE environment window
 <p>The <strong>readr</strong> package provides a versatile means of reading data from various formats, such as comma-separated (CSV) and tab-separated (TSV) delimitated flat files. In addition to its versatility, the <strong>readr</strong> package is also known for its speed and efficiency. It is designed to be faster than the base R functions for reading in data, making it an ideal choice for working with large datasets.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="installation.html#cb5-1" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="st">&quot;./data/table_peptide_fragmnets.csv&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_csv</span>()</span></code></pre></div>
 <pre><code>## Rows: 14 Columns: 7
-## ── Column specification ────────────────────────────────────────────────────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (4): ion, seq, pair, type
 ## dbl (3): mz, z, pos
@@ -814,7 +816,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": [["ASMS_R_Basics.zip", "HTML"]],
 "search": {
 "engine": "fuse",
 "options": null

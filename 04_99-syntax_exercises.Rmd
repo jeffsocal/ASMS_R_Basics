@@ -44,7 +44,18 @@ even <- function(x) {
 even(3)
 ```
 
-7.  Create a function to test or *even* or *odd* by returning a string.
+7.  Construct an if-else statement to test if the number three is odd or even.
+```{r, echo=FALSE}
+x <- 3
+
+if(x %% 2 == 0) {
+  print('even')
+} else {
+  print('odd')
+}
+```
+
+8.  Create a function to test or *even* or *odd* by returning a string.
 
 ```{r, echo=FALSE}
 oddeven <- function(x) { 
@@ -58,4 +69,12 @@ oddeven <- function(x) {
 
 ```{r}
 oddeven(3)
+```
+
+9.  Construct a for-loop to test, using the function from #8, if the numbers between 1 and 9 are odd or even, printing the number and string for each on a new line.
+```{r, echo=FALSE}
+x <- 1:9
+for ( i in x) {
+  cat(i, "\t", oddeven(i), "\n")
+}
 ```

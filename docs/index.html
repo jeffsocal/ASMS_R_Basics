@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2023-05-18" />
+<meta name="date" content="2023-05-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -219,11 +219,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.1" data-path="r-objects.html"><a href="r-objects.html#variable"><i class="fa fa-check"></i><b>5.1</b> Variable</a></li>
 <li class="chapter" data-level="5.2" data-path="r-objects.html"><a href="r-objects.html#vector"><i class="fa fa-check"></i><b>5.2</b> Vector</a></li>
-<li class="chapter" data-level="5.3" data-path="r-objects.html"><a href="r-objects.html#matrix"><i class="fa fa-check"></i><b>5.3</b> Matrix</a></li>
-<li class="chapter" data-level="5.4" data-path="r-objects.html"><a href="r-objects.html#data-frame"><i class="fa fa-check"></i><b>5.4</b> Data Frame</a></li>
-<li class="chapter" data-level="5.5" data-path="r-objects.html"><a href="r-objects.html#list"><i class="fa fa-check"></i><b>5.5</b> List</a></li>
-<li class="chapter" data-level="5.6" data-path="r-objects.html"><a href="r-objects.html#tibbles"><i class="fa fa-check"></i><b>5.6</b> Tibbles</a></li>
+<li class="chapter" data-level="5.3" data-path="r-objects.html"><a href="r-objects.html#list"><i class="fa fa-check"></i><b>5.3</b> List</a></li>
+<li class="chapter" data-level="5.4" data-path="r-objects.html"><a href="r-objects.html#matrix"><i class="fa fa-check"></i><b>5.4</b> Matrix</a></li>
+<li class="chapter" data-level="5.5" data-path="r-objects.html"><a href="r-objects.html#data-frame"><i class="fa fa-check"></i><b>5.5</b> Data Frame</a></li>
+<li class="chapter" data-level="5.6" data-path="r-objects.html"><a href="r-objects.html#data.table"><i class="fa fa-check"></i><b>5.6</b> Data.Table</a></li>
+<li class="chapter" data-level="5.7" data-path="r-objects.html"><a href="r-objects.html#tibbles"><i class="fa fa-check"></i><b>5.7</b> Tibbles</a></li>
 <li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#examine-the-contents"><i class="fa fa-check"></i>Examine the Contents</a></li>
+<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#converting-objects"><i class="fa fa-check"></i>Converting Objects</a></li>
 <li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tidyverse-1.html"><a href="tidyverse-1.html"><i class="fa fa-check"></i><b>6</b> Tidyverse</a>
@@ -351,12 +353,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-ms-analysis"><i class="fa fa-check"></i><b>10.5</b> R MS Analysis</a>
 <ul>
 <li class="chapter" data-level="10.5.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msstats"><i class="fa fa-check"></i><b>10.5.1</b> MSstats</a></li>
-<li class="chapter" data-level="10.5.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#statspro-r-package"><i class="fa fa-check"></i><b>10.5.2</b> StatsPro R Package</a></li>
-<li class="chapter" data-level="10.5.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#tidyproteomics"><i class="fa fa-check"></i><b>10.5.3</b> Tidyproteomics</a></li>
-<li class="chapter" data-level="10.5.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#assayr"><i class="fa fa-check"></i><b>10.5.4</b> AssayR</a></li>
-<li class="chapter" data-level="10.5.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#deqms"><i class="fa fa-check"></i><b>10.5.5</b> DEqMS</a></li>
-<li class="chapter" data-level="10.5.6" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#ms-empire"><i class="fa fa-check"></i><b>10.5.6</b> MS-EmpiRe</a></li>
-<li class="chapter" data-level="10.5.7" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msgrob2"><i class="fa fa-check"></i><b>10.5.7</b> msgrob2</a></li>
+<li class="chapter" data-level="10.5.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#tidyproteomics"><i class="fa fa-check"></i><b>10.5.2</b> Tidyproteomics</a></li>
+<li class="chapter" data-level="10.5.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#assayr"><i class="fa fa-check"></i><b>10.5.3</b> AssayR</a></li>
+<li class="chapter" data-level="10.5.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#deqms"><i class="fa fa-check"></i><b>10.5.4</b> DEqMS</a></li>
+<li class="chapter" data-level="10.5.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#ms-empire"><i class="fa fa-check"></i><b>10.5.5</b> MS-EmpiRe</a></li>
+<li class="chapter" data-level="10.5.6" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msgrob2"><i class="fa fa-check"></i><b>10.5.6</b> msgrob2</a></li>
+<li class="chapter" data-level="10.5.7" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#statspro"><i class="fa fa-check"></i><b>10.5.7</b> StatsPro</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html"><i class="fa fa-check"></i>Answers to Exercises</a>
@@ -390,7 +392,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Learning R for Mass Spectrometry</h1>
 <p class="author"><em>Jeff Jones, Heath Patterson, Ryan Benz</em></p>
-<p class="date"><em>2023-05-18</em></p>
+<p class="date"><em>2023-05-19</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered hasAnchor">
 <h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -403,29 +405,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Who</strong> is the audience? This book is aimed at absolute beginners in R and programming in general. The topics covered are designed to be straightforward and easy to follow, and by the end of the book, readers should be able to develop analytical processes for their own research, provide means for others to accomplish analyses, and extend their skills with more advanced literature.</p>
 <p>Although no previous knowledge of R is required, some experience with data and statistical analysis is recommended. Reading and understanding the chapters and exercises should provide the skills necessary for basic data analysis and prepare readers for more advanced concepts and skills.</p>
 <p><strong>What</strong> Is Covered? The purpose of this book is to provide you with a comprehensive guide to the R programming language, as well as to teach you how to use RStudio, tidy data, the tidyverse ecosystem, and ggplot2. By the end of this book, you will have a solid foundation in R and the skills necessary to conduct data analysis and visualization.</p>
-<p>Our goals for this book are as follows:</p>
+<p>Our goals for this book are:</p>
 <ul>
-<li><p>Learn the basic fundamentals of the R programming language, including variables, data types, functions, and control structures. You will also learn how to write and execute basic R scripts.</p></li>
-<li><p>Learn how to use the RStudio integrated development environment (IDE), including how to navigate the interface, create projects, and install packages.</p></li>
+<li><p>Learn the fundamentals of the R programming language, including variables, data types, functions, and control structures. You will also learn how to write and execute basic R scripts.</p></li>
+<li><p>Learn to use the RStudio integrated development environment (IDE), including how to navigate the interface, create projects, and install packages.</p></li>
 <li><p>Learn about tidy data: what it is, why it’s important for data analysis, and how to use the tidyr package to transform data into a tidy format.</p></li>
-<li><p>Learn the basic fundamentals of the tidyverse ecosystem of R packages, including dplyr, tidyr, and ggplot2, and how they can be used to streamline the data analysis process.</p></li>
-<li><p>Learn how to create data visualizations using the ggplot2 R package, including how to customize plots, add themes and colors, and create complex visualizations.</p></li>
-</ul>
-<p>By the end of this course, you should be able to:</p>
-<ul>
-<li><p>Start up RStudio and create an RStudio project.</p></li>
-<li><p>Read a formatted text file (e.g., CSV file) into R.</p></li>
-<li><p>Understand basic properties of the data, such as the number of rows and columns.</p></li>
-<li><p>Explain what tidy data is and why it’s important.</p></li>
-<li><p>Perform basic data manipulations and operations on the data.</p></li>
-<li><p>Create a simple plot based on the data.</p></li>
+<li><p>Learn the basics of the tidyverse ecosystem of R packages, including dplyr, tidyr, and ggplot2, and how they can streamline the data analysis process.</p></li>
+<li><p>Learn to create data visualizations using the ggplot2 R package, including how to customize plots, add themes and colors, and create complex visualizations.</p></li>
 </ul>
 <p><strong>What</strong> Is Not Covered? This book is designed to provide you with a comprehensive introduction to R programming. While we cover a variety of essential topics, we don’t cover everything. For instance, we do not go into depth on statistical analysis, probability, regression, machine learning, or any other advanced analytical topics. We also do not cover constructing R packages, documentation, markdown, or any other advanced R programming topic.</p>
-<p><strong>Why</strong> have another book on R? This book is the foundation of the Introduction to R course offered at the annual conference for the American Society for Mass Spectrometry (ASMS). It was created by the authors as a more permanent, expandable, and revisable reference document. The book evolved from a 200+ slide presentation used as instructional material in the “Getting Started with R” two-day short course. It became clear that the amount of material covered in such a compressed time was both limiting in the topics discussed and in students’ retention of verbal instructions. Therefore, this tome was created to provide a greater depth of coverage on various topics and to record the instructors’ nuanced approach to R. This is intended to be a living document, with improvements made to the explanations and topics covered based on comments and suggestions from each instructional iteration, as well as any external feedback, which is greatly appreciated.</p>
+<p><strong>Why</strong> create another book on R? This book serves as the foundation for the Introduction to R course at the annual conference for the American Society for Mass Spectrometry (ASMS). It’s a permanent, expandable, and revisable reference document created by the authors. It evolved from a presentation used as instructional material in the “Getting Started with R” short course. This tome provides greater depth of coverage on various topics and records instructors’ nuanced approach to R. The book is a living document, improved based on feedback.</p>
 <p><strong>When</strong> was this book developed? The initiative that resulted in the creation of the R Book started in 2017, when a group of experts in the field came together to offer a series of workshops at the annual ASMS conference. These workshops were aimed at teaching attendees how to effectively use R, a programming language used in statistical computing and graphics. Year after year, the workshops drew a significant number of attendees, with between 200 and 300 people participating for three consecutive years.</p>
-<p>Building on the success of the workshops, the presenters decided to offer a more formal short course in 2020, which was a remote year due to the COVID-19 pandemic. The course proved to be very popular and was well-received by participants.</p>
+<p>Building on the success of the workshops, the presenters decided to offer a more formal short course in 2020, which was a remote year due to the COVID-19 pandemic. The course proved to be very popular and was well-received by participants for 2020 (Virtual), 2021 (Philadelphia, PA), and 2022 (Minneapolis, MN).</p>
 <p>Following the positive response to the short course, in 2023, it was decided to convert all of the teaching materials and resources used in the workshops and course into a formal book. This book, the R Book, was created with the aim of providing a comprehensive and accessible guide to using R, and has since become a valuable resource for students, researchers, and professionals alike.</p>
-<p><strong>Where</strong> can the book be accessed? The book is available online here [link]. Additionally, this book and it’s contents are covered at the annual American Society for Mass Spectrometry (ASMS), typically the first week in June the weekend prior to the scientific meeting.</p>
+<p><strong>Where</strong> can the book be accessed? The book is available online <a href="https://jeffsocal.github.io/ASMS_R_Basics/">here</a>. Additionally, this book and it’s contents are covered at the annual American Society for Mass Spectrometry (ASMS), typically the first week in June the weekend prior to the scientific meeting.</p>
 
 </div>
             </section>
@@ -476,7 +469,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": [["ASMS_R_Basics.zip", "HTML"]],
 "search": {
 "engine": "fuse",
 "options": null
