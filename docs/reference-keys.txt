@@ -20,7 +20,7 @@ fig:7203
 fig:7204
 fig:7205
 fig:7206
-tab:unnamed-chunk-160
+tab:unnamed-chunk-161
 fig:10001
 introduction-to-r
 alternatives

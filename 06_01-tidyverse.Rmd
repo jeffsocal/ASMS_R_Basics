@@ -160,7 +160,7 @@ Data wrangling is the process of cleaning, transforming, and formatting raw data
 The objective of data wrangling is to create high-quality, structured data for further analysis and modeling. It requires technical skills, domain knowledge, and creativity. Without proper data wrangling, analysis and modeling may be compromised, leading to incorrect conclusions and decisions. This is where `tidyverse` functions become quite useful and we will go deeper into Data Wrangling in the subsiquent chapter.
 
 Given an example of wide data, where *Arabidopsis thaliana* plants are measured for height for three weeks post germination.
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE}
 library(tidyverse)
 
 tbl_wide <- tibble(
@@ -170,15 +170,9 @@ tbl_wide <- tibble(
   week_2 = c(1.3,1.5,1.7),
   week_3 = c(3.4,4.1,5.2)
 )
+
+tbl_wide
 ```
-
-
-| plant | condition   | week_1 | week_2 | week_3 |
-+-------+-------------+--------+--------+--------+
-| A     | wet, cold   | 0.3    | 1.3    | 3.4    |
-| B     | moist, cold | 0.2    | 1.5    | 4.1    |
-| C     | moist, hot  | 0.4    | 1.7    | 5.2    |
-+-------+-------------+--------+--------+--------+
 
 
 ### dplyr
