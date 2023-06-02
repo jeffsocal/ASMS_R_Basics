@@ -449,23 +449,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="initiating" class="section level3 unnumbered hasAnchor">
 <h3>Initiating<a href="sharing.html#initiating" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To initiate a Packrat project, you need to run the <code>packrat::init()</code> function in your R console. This will create a <code>packrat</code> directory in your project folder, which will contain all the necessary files and information for Packrat to manage the package dependencies for your project.</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="sharing.html#cb271-1" tabindex="-1"></a><span class="fu">library</span>(packrat)</span>
-<span id="cb271-2"><a href="sharing.html#cb271-2" tabindex="-1"></a>packrat<span class="sc">::</span><span class="fu">init</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="sharing.html#cb272-1" tabindex="-1"></a><span class="fu">library</span>(packrat)</span>
+<span id="cb272-2"><a href="sharing.html#cb272-2" tabindex="-1"></a>packrat<span class="sc">::</span><span class="fu">init</span>()</span></code></pre></div>
 </div>
 <div id="installing-1" class="section level3 unnumbered hasAnchor">
 <h3>Installing<a href="sharing.html#installing-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To install a package into the project-specific library, you can use the <code>packrat::install.packages()</code> function. Packrat will automatically detect package dependencies and install them as well.</p>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="sharing.html#cb272-1" tabindex="-1"></a>packrat<span class="sc">::</span><span class="fu">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="sharing.html#cb273-1" tabindex="-1"></a>packrat<span class="sc">::</span><span class="fu">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
 </div>
 <div id="loading" class="section level3 unnumbered hasAnchor">
 <h3>Loading<a href="sharing.html#loading" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To load a package from the project library, you simply use the <code>library()</code> function as usual. Packrat will ensure that the correct versions are used.</p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="sharing.html#cb273-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="sharing.html#cb274-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
 </div>
 <div id="updating" class="section level3 unnumbered hasAnchor">
 <h3>Updating<a href="sharing.html#updating" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To update a package in the project library, you can use the <code>packrat::update.packages()</code> function. Packrat will update the package and all its dependencies.</p>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="sharing.html#cb274-1" tabindex="-1"></a>packrat<span class="sc">::</span><span class="fu">update.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="sharing.html#cb275-1" tabindex="-1"></a>packrat<span class="sc">::</span><span class="fu">update.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
 <p>Overall, Packrat is a valuable tool for reproducible research, as it allows you to manage package dependencies for your projects and ensure that the same results can be obtained regardless of the version of the package used.</p>
 
 </div>
@@ -522,15 +522,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li>Now it’s time to write some code. You can start by creating a simple function that outputs “Hello ASMS”. Here’s an example:</li>
 </ol>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="sharing.html#cb275-1" tabindex="-1"></a><span class="co">#&#39; Hello ASMS Function</span></span>
-<span id="cb275-2"><a href="sharing.html#cb275-2" tabindex="-1"></a><span class="co">#&#39;</span></span>
-<span id="cb275-3"><a href="sharing.html#cb275-3" tabindex="-1"></a><span class="co">#&#39; This function prints &quot;Hello ASMS&quot; to the console.</span></span>
-<span id="cb275-4"><a href="sharing.html#cb275-4" tabindex="-1"></a><span class="co">#&#39;</span></span>
-<span id="cb275-5"><a href="sharing.html#cb275-5" tabindex="-1"></a><span class="co">#&#39; @return A character vector with the message &quot;Hello ASMS&quot;.</span></span>
-<span id="cb275-6"><a href="sharing.html#cb275-6" tabindex="-1"></a><span class="co">#&#39; @export</span></span>
-<span id="cb275-7"><a href="sharing.html#cb275-7" tabindex="-1"></a>say_hello <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb275-8"><a href="sharing.html#cb275-8" tabindex="-1"></a>  <span class="fu">return</span>(<span class="st">&quot;Hello ASMS&quot;</span>)</span>
-<span id="cb275-9"><a href="sharing.html#cb275-9" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="sharing.html#cb276-1" tabindex="-1"></a><span class="co">#&#39; Hello ASMS Function</span></span>
+<span id="cb276-2"><a href="sharing.html#cb276-2" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb276-3"><a href="sharing.html#cb276-3" tabindex="-1"></a><span class="co">#&#39; This function prints &quot;Hello ASMS&quot; to the console.</span></span>
+<span id="cb276-4"><a href="sharing.html#cb276-4" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb276-5"><a href="sharing.html#cb276-5" tabindex="-1"></a><span class="co">#&#39; @return A character vector with the message &quot;Hello ASMS&quot;.</span></span>
+<span id="cb276-6"><a href="sharing.html#cb276-6" tabindex="-1"></a><span class="co">#&#39; @export</span></span>
+<span id="cb276-7"><a href="sharing.html#cb276-7" tabindex="-1"></a>say_hello <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb276-8"><a href="sharing.html#cb276-8" tabindex="-1"></a>  <span class="fu">return</span>(<span class="st">&quot;Hello ASMS&quot;</span>)</span>
+<span id="cb276-9"><a href="sharing.html#cb276-9" tabindex="-1"></a>}</span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li>Save the function in a new R script file called “hello_world.R” and place it in the package’s R/ directory.</li>
 <li>Build the package by running “Build” -&gt; “Build &amp; Reload” from the “Build” tab. This will compile the package code and create a binary package file (.tar.gz) in the “build/” directory.</li>
@@ -540,8 +540,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="using" class="section level3 unnumbered hasAnchor">
 <h3>Using<a href="sharing.html#using" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Once the package is installed, you can load it into your R session using the <code>library()</code> function. Here’s an example:</p>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="sharing.html#cb276-1" tabindex="-1"></a><span class="fu">library</span>(my_new_rpackage)</span>
-<span id="cb276-2"><a href="sharing.html#cb276-2" tabindex="-1"></a><span class="fu">say_hello</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="sharing.html#cb277-1" tabindex="-1"></a><span class="fu">library</span>(my_new_rpackage)</span>
+<span id="cb277-2"><a href="sharing.html#cb277-2" tabindex="-1"></a><span class="fu">say_hello</span>()</span></code></pre></div>
 <p>This will output “Hello ASMS” to the console.</p>
 
 </div>

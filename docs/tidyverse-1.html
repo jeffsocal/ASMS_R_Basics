@@ -480,50 +480,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br />
 </p>
 <p>Consider the following workflow to read in data, calculate a linear regression and visualize the data using nine (9) of the underlying packages in the tidyverse.</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="tidyverse-1.html#cb154-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb154-2"><a href="tidyverse-1.html#cb154-2" tabindex="-1"></a></span>
-<span id="cb154-3"><a href="tidyverse-1.html#cb154-3" tabindex="-1"></a><span class="co"># readr, tibble, magrittr: read in a table of comma separate values</span></span>
-<span id="cb154-4"><a href="tidyverse-1.html#cb154-4" tabindex="-1"></a>tbl_csv <span class="ot">&lt;-</span> <span class="st">&quot;data/denver_climate.csv&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_csv</span>()</span>
-<span id="cb154-5"><a href="tidyverse-1.html#cb154-5" tabindex="-1"></a></span>
-<span id="cb154-6"><a href="tidyverse-1.html#cb154-6" tabindex="-1"></a><span class="co"># define a function to fit a linear regression model</span></span>
-<span id="cb154-7"><a href="tidyverse-1.html#cb154-7" tabindex="-1"></a>lm_func <span class="ot">&lt;-</span> <span class="cf">function</span>(data) {</span>
-<span id="cb154-8"><a href="tidyverse-1.html#cb154-8" tabindex="-1"></a>  <span class="fu">lm</span>(snowfall <span class="sc">~</span> min_temp, <span class="at">data =</span> data)</span>
-<span id="cb154-9"><a href="tidyverse-1.html#cb154-9" tabindex="-1"></a>}</span>
-<span id="cb154-10"><a href="tidyverse-1.html#cb154-10" tabindex="-1"></a></span>
-<span id="cb154-11"><a href="tidyverse-1.html#cb154-11" tabindex="-1"></a><span class="co"># readr, tibble, magrittr: using the data imported from above</span></span>
-<span id="cb154-12"><a href="tidyverse-1.html#cb154-12" tabindex="-1"></a>tbl_csv_lm <span class="ot">&lt;-</span> tbl_csv <span class="sc">%&gt;%</span></span>
-<span id="cb154-13"><a href="tidyverse-1.html#cb154-13" tabindex="-1"></a>  <span class="co"># dplyr</span></span>
-<span id="cb154-14"><a href="tidyverse-1.html#cb154-14" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
-<span id="cb154-15"><a href="tidyverse-1.html#cb154-15" tabindex="-1"></a>  <span class="co"># tidyr</span></span>
-<span id="cb154-16"><a href="tidyverse-1.html#cb154-16" tabindex="-1"></a>  <span class="fu">nest</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb154-17"><a href="tidyverse-1.html#cb154-17" tabindex="-1"></a>  <span class="co"># dplyr, purrr: apply the function to each nested data frame</span></span>
-<span id="cb154-18"><a href="tidyverse-1.html#cb154-18" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">model =</span> <span class="fu">map</span>(data, lm_func)) <span class="sc">%&gt;%</span></span>
-<span id="cb154-19"><a href="tidyverse-1.html#cb154-19" tabindex="-1"></a>  <span class="co"># dplyr, broom, purrr: extract the coefficients from each model</span></span>
-<span id="cb154-20"><a href="tidyverse-1.html#cb154-20" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">tidy =</span> <span class="fu">map</span>(model, broom<span class="sc">::</span>tidy)) <span class="sc">%&gt;%</span></span>
-<span id="cb154-21"><a href="tidyverse-1.html#cb154-21" tabindex="-1"></a>  <span class="co"># tidyr</span></span>
-<span id="cb154-22"><a href="tidyverse-1.html#cb154-22" tabindex="-1"></a>  <span class="fu">unnest</span>(tidy) <span class="sc">%&gt;%</span></span>
-<span id="cb154-23"><a href="tidyverse-1.html#cb154-23" tabindex="-1"></a>  <span class="co"># dplyr, stringr</span></span>
-<span id="cb154-24"><a href="tidyverse-1.html#cb154-24" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">term =</span> term <span class="sc">%&gt;%</span> <span class="fu">str_replace_all</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">(|</span><span class="sc">\\</span><span class="st">)&quot;</span>, <span class="st">&quot;&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb154-25"><a href="tidyverse-1.html#cb154-25" tabindex="-1"></a>  <span class="co"># dplyr: retain only specific columns</span></span>
-<span id="cb154-26"><a href="tidyverse-1.html#cb154-26" tabindex="-1"></a>  <span class="fu">select</span>(year, term, estimate) <span class="sc">%&gt;%</span></span>
-<span id="cb154-27"><a href="tidyverse-1.html#cb154-27" tabindex="-1"></a>  <span class="co"># tidyr: convert from a long table to a wide table</span></span>
-<span id="cb154-28"><a href="tidyverse-1.html#cb154-28" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">&#39;term&#39;</span>, <span class="at">values_from =</span> <span class="st">&#39;estimate&#39;</span>)</span>
-<span id="cb154-29"><a href="tidyverse-1.html#cb154-29" tabindex="-1"></a></span>
-<span id="cb154-30"><a href="tidyverse-1.html#cb154-30" tabindex="-1"></a></span>
-<span id="cb154-31"><a href="tidyverse-1.html#cb154-31" tabindex="-1"></a><span class="co">#ggplot2</span></span>
-<span id="cb154-32"><a href="tidyverse-1.html#cb154-32" tabindex="-1"></a>tbl_csv <span class="sc">%&gt;%</span></span>
-<span id="cb154-33"><a href="tidyverse-1.html#cb154-33" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(min_temp, snowfall)) <span class="sc">+</span> </span>
-<span id="cb154-34"><a href="tidyverse-1.html#cb154-34" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb154-35"><a href="tidyverse-1.html#cb154-35" tabindex="-1"></a>  <span class="co"># use the linear model data to plot regression lines</span></span>
-<span id="cb154-36"><a href="tidyverse-1.html#cb154-36" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">data =</span> tbl_csv_lm,</span>
-<span id="cb154-37"><a href="tidyverse-1.html#cb154-37" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">slope =</span> min_temp, <span class="at">intercept =</span> Intercept)) <span class="sc">+</span></span>
-<span id="cb154-38"><a href="tidyverse-1.html#cb154-38" tabindex="-1"></a>  <span class="co"># plot each year separately </span></span>
-<span id="cb154-39"><a href="tidyverse-1.html#cb154-39" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>year)</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="tidyverse-1.html#cb155-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb155-2"><a href="tidyverse-1.html#cb155-2" tabindex="-1"></a></span>
+<span id="cb155-3"><a href="tidyverse-1.html#cb155-3" tabindex="-1"></a><span class="co"># readr, tibble, magrittr: read in a table of comma separate values</span></span>
+<span id="cb155-4"><a href="tidyverse-1.html#cb155-4" tabindex="-1"></a>tbl_csv <span class="ot">&lt;-</span> <span class="st">&quot;data/denver_climate.csv&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_csv</span>()</span>
+<span id="cb155-5"><a href="tidyverse-1.html#cb155-5" tabindex="-1"></a></span>
+<span id="cb155-6"><a href="tidyverse-1.html#cb155-6" tabindex="-1"></a><span class="co"># define a function to fit a linear regression model</span></span>
+<span id="cb155-7"><a href="tidyverse-1.html#cb155-7" tabindex="-1"></a>lm_func <span class="ot">&lt;-</span> <span class="cf">function</span>(data) {</span>
+<span id="cb155-8"><a href="tidyverse-1.html#cb155-8" tabindex="-1"></a>  <span class="fu">lm</span>(snowfall <span class="sc">~</span> min_temp, <span class="at">data =</span> data)</span>
+<span id="cb155-9"><a href="tidyverse-1.html#cb155-9" tabindex="-1"></a>}</span>
+<span id="cb155-10"><a href="tidyverse-1.html#cb155-10" tabindex="-1"></a></span>
+<span id="cb155-11"><a href="tidyverse-1.html#cb155-11" tabindex="-1"></a><span class="co"># readr, tibble, magrittr: using the data imported from above</span></span>
+<span id="cb155-12"><a href="tidyverse-1.html#cb155-12" tabindex="-1"></a>tbl_csv_lm <span class="ot">&lt;-</span> tbl_csv <span class="sc">%&gt;%</span></span>
+<span id="cb155-13"><a href="tidyverse-1.html#cb155-13" tabindex="-1"></a>  <span class="co"># dplyr</span></span>
+<span id="cb155-14"><a href="tidyverse-1.html#cb155-14" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
+<span id="cb155-15"><a href="tidyverse-1.html#cb155-15" tabindex="-1"></a>  <span class="co"># tidyr</span></span>
+<span id="cb155-16"><a href="tidyverse-1.html#cb155-16" tabindex="-1"></a>  <span class="fu">nest</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb155-17"><a href="tidyverse-1.html#cb155-17" tabindex="-1"></a>  <span class="co"># dplyr, purrr: apply the function to each nested data frame</span></span>
+<span id="cb155-18"><a href="tidyverse-1.html#cb155-18" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">model =</span> <span class="fu">map</span>(data, lm_func)) <span class="sc">%&gt;%</span></span>
+<span id="cb155-19"><a href="tidyverse-1.html#cb155-19" tabindex="-1"></a>  <span class="co"># dplyr, broom, purrr: extract the coefficients from each model</span></span>
+<span id="cb155-20"><a href="tidyverse-1.html#cb155-20" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">tidy =</span> <span class="fu">map</span>(model, broom<span class="sc">::</span>tidy)) <span class="sc">%&gt;%</span></span>
+<span id="cb155-21"><a href="tidyverse-1.html#cb155-21" tabindex="-1"></a>  <span class="co"># tidyr</span></span>
+<span id="cb155-22"><a href="tidyverse-1.html#cb155-22" tabindex="-1"></a>  <span class="fu">unnest</span>(tidy) <span class="sc">%&gt;%</span></span>
+<span id="cb155-23"><a href="tidyverse-1.html#cb155-23" tabindex="-1"></a>  <span class="co"># dplyr, stringr</span></span>
+<span id="cb155-24"><a href="tidyverse-1.html#cb155-24" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">term =</span> term <span class="sc">%&gt;%</span> <span class="fu">str_replace_all</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">(|</span><span class="sc">\\</span><span class="st">)&quot;</span>, <span class="st">&quot;&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb155-25"><a href="tidyverse-1.html#cb155-25" tabindex="-1"></a>  <span class="co"># dplyr: retain only specific columns</span></span>
+<span id="cb155-26"><a href="tidyverse-1.html#cb155-26" tabindex="-1"></a>  <span class="fu">select</span>(year, term, estimate) <span class="sc">%&gt;%</span></span>
+<span id="cb155-27"><a href="tidyverse-1.html#cb155-27" tabindex="-1"></a>  <span class="co"># tidyr: convert from a long table to a wide table</span></span>
+<span id="cb155-28"><a href="tidyverse-1.html#cb155-28" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">&#39;term&#39;</span>, <span class="at">values_from =</span> <span class="st">&#39;estimate&#39;</span>)</span>
+<span id="cb155-29"><a href="tidyverse-1.html#cb155-29" tabindex="-1"></a></span>
+<span id="cb155-30"><a href="tidyverse-1.html#cb155-30" tabindex="-1"></a></span>
+<span id="cb155-31"><a href="tidyverse-1.html#cb155-31" tabindex="-1"></a><span class="co">#ggplot2</span></span>
+<span id="cb155-32"><a href="tidyverse-1.html#cb155-32" tabindex="-1"></a>tbl_csv <span class="sc">%&gt;%</span></span>
+<span id="cb155-33"><a href="tidyverse-1.html#cb155-33" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(min_temp, snowfall)) <span class="sc">+</span> </span>
+<span id="cb155-34"><a href="tidyverse-1.html#cb155-34" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb155-35"><a href="tidyverse-1.html#cb155-35" tabindex="-1"></a>  <span class="co"># use the linear model data to plot regression lines</span></span>
+<span id="cb155-36"><a href="tidyverse-1.html#cb155-36" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">data =</span> tbl_csv_lm,</span>
+<span id="cb155-37"><a href="tidyverse-1.html#cb155-37" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">slope =</span> min_temp, <span class="at">intercept =</span> Intercept)) <span class="sc">+</span></span>
+<span id="cb155-38"><a href="tidyverse-1.html#cb155-38" tabindex="-1"></a>  <span class="co"># plot each year separately </span></span>
+<span id="cb155-39"><a href="tidyverse-1.html#cb155-39" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>year)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-95-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>To get started with the <code>tidyverse</code>, you can install the package using the following command:</p>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="tidyverse-1.html#cb155-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="tidyverse-1.html#cb156-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
 <p>Once installed, users can load the package and begin using the individual packages within the tidyverse:</p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="tidyverse-1.html#cb156-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="tidyverse-1.html#cb157-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <p>Overall, the tidyverse is an essential tool for data analysis and visualization in R. Its user-friendly syntax and consistent conventions make it easy for data scientists and statisticians to work with large datasets.</p>
 <div id="core-packages" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Core Packages<a href="tidyverse-1.html#core-packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -533,13 +533,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The tidyverse package <code>magrittr</code> is a popular R package that provides a set of operators for chaining operations in a sequence. The package was developed by Stefan Milton Bache and Hadley Wickham. The main goal of <code>magrittr</code> is to make code more readable and easier to maintain.</p>
 <p>The pipe operator, <code>%&gt;%</code>, is the most famous operator provided by <code>magrittr.</code> It allows you to chain multiple operations without the need to use intermediate variables. The pipe operator takes the output of the previous function and passes it as the first argument to the next function. This chaining of operations allows for more concise and readable code.</p>
 <p>Here is an example of how to use the pipe operator with <code>magrittr</code>:</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="tidyverse-1.html#cb157-1" tabindex="-1"></a><span class="co"># create a vector of numbers</span></span>
-<span id="cb157-2"><a href="tidyverse-1.html#cb157-2" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb157-3"><a href="tidyverse-1.html#cb157-3" tabindex="-1"></a></span>
-<span id="cb157-4"><a href="tidyverse-1.html#cb157-4" tabindex="-1"></a><span class="co"># use the pipe operator to chain operations</span></span>
-<span id="cb157-5"><a href="tidyverse-1.html#cb157-5" tabindex="-1"></a>numbers <span class="sc">%&gt;%</span></span>
-<span id="cb157-6"><a href="tidyverse-1.html#cb157-6" tabindex="-1"></a>  <span class="fu">sum</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb157-7"><a href="tidyverse-1.html#cb157-7" tabindex="-1"></a>  <span class="fu">sqrt</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="tidyverse-1.html#cb158-1" tabindex="-1"></a><span class="co"># create a vector of numbers</span></span>
+<span id="cb158-2"><a href="tidyverse-1.html#cb158-2" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb158-3"><a href="tidyverse-1.html#cb158-3" tabindex="-1"></a></span>
+<span id="cb158-4"><a href="tidyverse-1.html#cb158-4" tabindex="-1"></a><span class="co"># use the pipe operator to chain operations</span></span>
+<span id="cb158-5"><a href="tidyverse-1.html#cb158-5" tabindex="-1"></a>numbers <span class="sc">%&gt;%</span></span>
+<span id="cb158-6"><a href="tidyverse-1.html#cb158-6" tabindex="-1"></a>  <span class="fu">sum</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb158-7"><a href="tidyverse-1.html#cb158-7" tabindex="-1"></a>  <span class="fu">sqrt</span>()</span></code></pre></div>
 <pre><code>## [1] 3.872983</code></pre>
 <p>In this example, we create a vector of numbers and use the pipe operator to chain the <code>sum()</code> and <code>sqrt()</code> functions. The output of the <code>sum()</code> function is passed as the first argument to the <code>sqrt()</code> function. This allows us to calculate the sum and square root of the vector in a single line of code.</p>
 <p>Magrittr also provides other useful operators, such as the assignment pipe <code>%&lt;&gt;%</code>, which allows you to update a variable in place, and the tee operator <code>%T&gt;%</code>, which allows you to inspect the output of an operation without interrupting the chain.</p>
@@ -557,8 +557,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">6.2.1</span> readr<a href="tidyverse-1.html#readr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>R <code>readr</code> is a package in the R language that is used to read structured data files into R. The package is an efficient and user-friendly toolkit that allows for the reading of different types of flat files such as CSV, TSV, and fixed-width files. It is part of the tidyverse collection of packages, which is popular among data scientists and statisticians.</p>
 <p>One of the key features of <code>readr</code> is its ability to quickly read data into R, making it an ideal package for data analysis and data cleaning. <code>readr</code> is designed to handle various types of data, including numeric, date, and character data. The package also has advanced features such as automatic guessing of column types, encoding detection, and parsing of dates and times.</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="tidyverse-1.html#cb159-1" tabindex="-1"></a><span class="co"># read comma separated values</span></span>
-<span id="cb159-2"><a href="tidyverse-1.html#cb159-2" tabindex="-1"></a>tbl_csv <span class="ot">&lt;-</span> <span class="st">&quot;data/bacterial-metabolites_dose-simicillin_tidy.csv&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_csv</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="tidyverse-1.html#cb160-1" tabindex="-1"></a><span class="co"># read comma separated values</span></span>
+<span id="cb160-2"><a href="tidyverse-1.html#cb160-2" tabindex="-1"></a>tbl_csv <span class="ot">&lt;-</span> <span class="st">&quot;data/bacterial-metabolites_dose-simicillin_tidy.csv&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_csv</span>()</span></code></pre></div>
 <p>One of the best things about <code>readr</code> is its consistency in dealing with file formats, which allows for easy and fast data manipulation. The package provides a high level of control over the import process, allowing you to specify the location of the data file, the delimiter, and the encoding type. Additionally, <code>readr</code> can handle large datasets with ease, making it one of the most efficient packages for data handling.</p>
 </div>
 </div>
@@ -567,17 +567,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Data wrangling is the process of cleaning, transforming, and formatting raw data into a usable format for analysis. The steps involved in data wrangling include removing duplicates, dealing with missing or erroneous values, converting data types, and formatting data into a consistent structure. It also involves merging data from different sources, reshaping data, and transforming data for analysis.</p>
 <p>The objective of data wrangling is to create high-quality, structured data for further analysis and modeling. It requires technical skills, domain knowledge, and creativity. Without proper data wrangling, analysis and modeling may be compromised, leading to incorrect conclusions and decisions. This is where <code>tidyverse</code> functions become quite useful and we will go deeper into Data Wrangling in the subsiquent chapter.</p>
 <p>Given an example of wide data, where <em>Arabidopsis thaliana</em> plants are measured for height for three weeks post germination.</p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="tidyverse-1.html#cb160-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb160-2"><a href="tidyverse-1.html#cb160-2" tabindex="-1"></a></span>
-<span id="cb160-3"><a href="tidyverse-1.html#cb160-3" tabindex="-1"></a>tbl_wide <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb160-4"><a href="tidyverse-1.html#cb160-4" tabindex="-1"></a>  <span class="at">plant =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
-<span id="cb160-5"><a href="tidyverse-1.html#cb160-5" tabindex="-1"></a>  <span class="at">condition =</span> <span class="fu">c</span>(<span class="st">&#39;wet, cold&#39;</span>, <span class="st">&#39;moist, cold&#39;</span>, <span class="st">&#39;moist, hot&#39;</span>),</span>
-<span id="cb160-6"><a href="tidyverse-1.html#cb160-6" tabindex="-1"></a>  <span class="at">week_1 =</span> <span class="fu">c</span>(<span class="fl">0.3</span>,<span class="fl">0.2</span>,<span class="fl">0.4</span>),</span>
-<span id="cb160-7"><a href="tidyverse-1.html#cb160-7" tabindex="-1"></a>  <span class="at">week_2 =</span> <span class="fu">c</span>(<span class="fl">1.3</span>,<span class="fl">1.5</span>,<span class="fl">1.7</span>),</span>
-<span id="cb160-8"><a href="tidyverse-1.html#cb160-8" tabindex="-1"></a>  <span class="at">week_3 =</span> <span class="fu">c</span>(<span class="fl">3.4</span>,<span class="fl">4.1</span>,<span class="fl">5.2</span>)</span>
-<span id="cb160-9"><a href="tidyverse-1.html#cb160-9" tabindex="-1"></a>)</span>
-<span id="cb160-10"><a href="tidyverse-1.html#cb160-10" tabindex="-1"></a></span>
-<span id="cb160-11"><a href="tidyverse-1.html#cb160-11" tabindex="-1"></a>tbl_wide</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="tidyverse-1.html#cb161-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb161-2"><a href="tidyverse-1.html#cb161-2" tabindex="-1"></a></span>
+<span id="cb161-3"><a href="tidyverse-1.html#cb161-3" tabindex="-1"></a>tbl_wide <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb161-4"><a href="tidyverse-1.html#cb161-4" tabindex="-1"></a>  <span class="at">plant =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb161-5"><a href="tidyverse-1.html#cb161-5" tabindex="-1"></a>  <span class="at">condition =</span> <span class="fu">c</span>(<span class="st">&#39;wet, cold&#39;</span>, <span class="st">&#39;moist, cold&#39;</span>, <span class="st">&#39;moist, hot&#39;</span>),</span>
+<span id="cb161-6"><a href="tidyverse-1.html#cb161-6" tabindex="-1"></a>  <span class="at">week_1 =</span> <span class="fu">c</span>(<span class="fl">0.3</span>,<span class="fl">0.2</span>,<span class="fl">0.4</span>),</span>
+<span id="cb161-7"><a href="tidyverse-1.html#cb161-7" tabindex="-1"></a>  <span class="at">week_2 =</span> <span class="fu">c</span>(<span class="fl">1.3</span>,<span class="fl">1.5</span>,<span class="fl">1.7</span>),</span>
+<span id="cb161-8"><a href="tidyverse-1.html#cb161-8" tabindex="-1"></a>  <span class="at">week_3 =</span> <span class="fu">c</span>(<span class="fl">3.4</span>,<span class="fl">4.1</span>,<span class="fl">5.2</span>)</span>
+<span id="cb161-9"><a href="tidyverse-1.html#cb161-9" tabindex="-1"></a>)</span>
+<span id="cb161-10"><a href="tidyverse-1.html#cb161-10" tabindex="-1"></a></span>
+<span id="cb161-11"><a href="tidyverse-1.html#cb161-11" tabindex="-1"></a>tbl_wide</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 5
 ##   plant condition   week_1 week_2 week_3
 ##   &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -592,7 +592,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><strong>filter</strong>: used to extract specific rows from a data frame based on certain conditions.</li>
 </ul>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="tidyverse-1.html#cb162-1" tabindex="-1"></a>tbl_wide <span class="sc">%&gt;%</span> <span class="fu">filter</span>(plant <span class="sc">==</span> <span class="st">&#39;A&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="tidyverse-1.html#cb163-1" tabindex="-1"></a>tbl_wide <span class="sc">%&gt;%</span> <span class="fu">filter</span>(plant <span class="sc">==</span> <span class="st">&#39;A&#39;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 5
 ##   plant condition week_1 week_2 week_3
 ##   &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -600,7 +600,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><strong>arrange</strong>: used to sort the rows of a data frame based on one or more columns.</li>
 </ul>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="tidyverse-1.html#cb164-1" tabindex="-1"></a>tbl_wide <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(week_3)</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="tidyverse-1.html#cb165-1" tabindex="-1"></a>tbl_wide <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(week_3)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 5
 ##   plant condition   week_1 week_2 week_3
 ##   &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -610,7 +610,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><strong>select</strong>: used to select specific columns from a data frame.</li>
 </ul>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="tidyverse-1.html#cb166-1" tabindex="-1"></a>tbl_wide <span class="sc">%&gt;%</span> <span class="fu">select</span>(plant, week_3)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="tidyverse-1.html#cb167-1" tabindex="-1"></a>tbl_wide <span class="sc">%&gt;%</span> <span class="fu">select</span>(plant, week_3)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 2
 ##   plant week_3
 ##   &lt;chr&gt;  &lt;dbl&gt;
@@ -620,7 +620,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><strong>mutate</strong>: used to add new columns to a data frame.</li>
 </ul>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="tidyverse-1.html#cb168-1" tabindex="-1"></a>tbl_wide <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">week_4 =</span> <span class="fu">c</span>(<span class="fl">3.8</span>, <span class="fl">4.6</span>, <span class="fl">5.7</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="tidyverse-1.html#cb169-1" tabindex="-1"></a>tbl_wide <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">week_4 =</span> <span class="fu">c</span>(<span class="fl">3.8</span>, <span class="fl">4.6</span>, <span class="fl">5.7</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 6
 ##   plant condition   week_1 week_2 week_3 week_4
 ##   &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -634,9 +634,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><strong>pivot_longer</strong>: used to reshape data from a column-based wide format to a row-based long format.</li>
 </ul>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="tidyverse-1.html#cb170-1" tabindex="-1"></a>tbl_long <span class="ot">&lt;-</span> tbl_wide <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">matches</span>(<span class="st">&#39;week&#39;</span>), <span class="at">names_to =</span> <span class="st">&#39;time&#39;</span>, <span class="at">values_to =</span> <span class="st">&#39;inches&#39;</span>)</span>
-<span id="cb170-2"><a href="tidyverse-1.html#cb170-2" tabindex="-1"></a></span>
-<span id="cb170-3"><a href="tidyverse-1.html#cb170-3" tabindex="-1"></a>tbl_long</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="tidyverse-1.html#cb171-1" tabindex="-1"></a>tbl_long <span class="ot">&lt;-</span> tbl_wide <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">matches</span>(<span class="st">&#39;week&#39;</span>), <span class="at">names_to =</span> <span class="st">&#39;time&#39;</span>, <span class="at">values_to =</span> <span class="st">&#39;inches&#39;</span>)</span>
+<span id="cb171-2"><a href="tidyverse-1.html#cb171-2" tabindex="-1"></a></span>
+<span id="cb171-3"><a href="tidyverse-1.html#cb171-3" tabindex="-1"></a>tbl_long</span></code></pre></div>
 <pre><code>## # A tibble: 9 × 4
 ##   plant condition   time   inches
 ##   &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;   &lt;dbl&gt;
@@ -652,7 +652,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><strong>pivot_wider</strong>: used to reshape data from a row-based long format to a column-based wide format.</li>
 </ul>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="tidyverse-1.html#cb172-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">&#39;time&#39;</span>, <span class="at">values_from =</span> <span class="st">&#39;inches&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="tidyverse-1.html#cb173-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">&#39;time&#39;</span>, <span class="at">values_from =</span> <span class="st">&#39;inches&#39;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 5
 ##   plant condition   week_1 week_2 week_3
 ##   &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -663,7 +663,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><strong>separate</strong>: used to separate a column with multiple values into two or more columns.</li>
 </ul>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="tidyverse-1.html#cb174-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span> <span class="fu">separate</span>(condition, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&#39;soil&#39;</span>, <span class="st">&#39;temp&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="tidyverse-1.html#cb175-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span> <span class="fu">separate</span>(condition, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&#39;soil&#39;</span>, <span class="st">&#39;temp&#39;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 9 × 5
 ##   plant soil  temp  time   inches
 ##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt;
@@ -679,7 +679,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><strong>separate_rows</strong>: used to duplicate a row with multiple values from a given column.</li>
 </ul>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="tidyverse-1.html#cb176-1" tabindex="-1"></a>tbl_wide <span class="sc">%&gt;%</span> <span class="fu">separate_rows</span>(condition, <span class="at">sep =</span> <span class="st">&#39;, &#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="tidyverse-1.html#cb177-1" tabindex="-1"></a>tbl_wide <span class="sc">%&gt;%</span> <span class="fu">separate_rows</span>(condition, <span class="at">sep =</span> <span class="st">&#39;, &#39;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 5
 ##   plant condition week_1 week_2 week_3
 ##   &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -696,16 +696,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The most important feature in <code>purrr</code> is its ability to replace loops with functions that save time and effort. The package has a collection of functions that allow you to work with functions that take one or more arguments. Some of these functions include <code>map</code>, <code>map2</code>, <code>pmap</code>, and <code>imap.</code></p>
 <p>The map function is purrr’s flagship function and is used to apply a function to each element of a list or vector, returning a list of outputs. The <code>map2</code> function applies a function to two lists or vectors in parallel, returning a list of outputs. The <code>pmap</code> function applies a function to an arbitrary number of lists or vectors in parallel, returning a list of outputs. The <code>imap</code> function is similar to map, but also provides the index of the current element in the input vector.</p>
 <p>Purrr also includes features such as the possibility of mapping over nested lists, using <code>map</code> and variants to iterate over grouped data, and using <code>map</code> and variants to modify data in place.</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="tidyverse-1.html#cb178-1" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb178-2"><a href="tidyverse-1.html#cb178-2" tabindex="-1"></a></span>
-<span id="cb178-3"><a href="tidyverse-1.html#cb178-3" tabindex="-1"></a><span class="co"># define a function to square a number</span></span>
-<span id="cb178-4"><a href="tidyverse-1.html#cb178-4" tabindex="-1"></a>square <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { x <span class="sc">^</span> <span class="dv">2</span> }</span>
-<span id="cb178-5"><a href="tidyverse-1.html#cb178-5" tabindex="-1"></a></span>
-<span id="cb178-6"><a href="tidyverse-1.html#cb178-6" tabindex="-1"></a><span class="co"># use map to apply the function to each element of the list</span></span>
-<span id="cb178-7"><a href="tidyverse-1.html#cb178-7" tabindex="-1"></a>squared_numbers <span class="ot">&lt;-</span> <span class="fu">map</span>(numbers, square)</span>
-<span id="cb178-8"><a href="tidyverse-1.html#cb178-8" tabindex="-1"></a></span>
-<span id="cb178-9"><a href="tidyverse-1.html#cb178-9" tabindex="-1"></a><span class="co"># print the result</span></span>
-<span id="cb178-10"><a href="tidyverse-1.html#cb178-10" tabindex="-1"></a>squared_numbers</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="tidyverse-1.html#cb179-1" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb179-2"><a href="tidyverse-1.html#cb179-2" tabindex="-1"></a></span>
+<span id="cb179-3"><a href="tidyverse-1.html#cb179-3" tabindex="-1"></a><span class="co"># define a function to square a number</span></span>
+<span id="cb179-4"><a href="tidyverse-1.html#cb179-4" tabindex="-1"></a>square <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { x <span class="sc">^</span> <span class="dv">2</span> }</span>
+<span id="cb179-5"><a href="tidyverse-1.html#cb179-5" tabindex="-1"></a></span>
+<span id="cb179-6"><a href="tidyverse-1.html#cb179-6" tabindex="-1"></a><span class="co"># use map to apply the function to each element of the list</span></span>
+<span id="cb179-7"><a href="tidyverse-1.html#cb179-7" tabindex="-1"></a>squared_numbers <span class="ot">&lt;-</span> <span class="fu">map</span>(numbers, square)</span>
+<span id="cb179-8"><a href="tidyverse-1.html#cb179-8" tabindex="-1"></a></span>
+<span id="cb179-9"><a href="tidyverse-1.html#cb179-9" tabindex="-1"></a><span class="co"># print the result</span></span>
+<span id="cb179-10"><a href="tidyverse-1.html#cb179-10" tabindex="-1"></a>squared_numbers</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] 1
 ## 
@@ -727,9 +727,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The <code>glue</code> function can handle various types of inputs, including vectors, lists, and expressions. It also supports user-defined formats and allows users to specify separators between the values.</p>
 <p>One of the significant advantages of using <code>glue</code> is that it provides a more readable and concise way to create strings in R. It eliminates the need for multiple <code>paste()</code> or <code>paste0()</code> statements, which can be cumbersome and error-prone.</p>
 <p>For example, instead of writing:</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="tidyverse-1.html#cb180-1" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">&quot;The value of x is: &quot;</span>, x, <span class="st">&quot;, and the value of y is: &quot;</span>, y)</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="tidyverse-1.html#cb181-1" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">&quot;The value of x is: &quot;</span>, x, <span class="st">&quot;, and the value of y is: &quot;</span>, y)</span></code></pre></div>
 <p>we can use R glue:</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="tidyverse-1.html#cb181-1" tabindex="-1"></a><span class="fu">glue</span>(<span class="st">&quot;The value of x is: {x}, and the value of y is: {y}&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="tidyverse-1.html#cb182-1" tabindex="-1"></a><span class="fu">glue</span>(<span class="st">&quot;The value of x is: {x}, and the value of y is: {y}&quot;</span>)</span></code></pre></div>
 <p>This code will produce the same output, but it’s more readable and easier to modify.</p>
 </div>
 </div>
@@ -742,17 +742,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><strong>str_replace</strong>: replaces a pattern with another pattern in a string.</li>
 </ul>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="tidyverse-1.html#cb182-1" tabindex="-1"></a><span class="fu">str_replace</span>(<span class="st">&quot;Hello World&quot;</span>, <span class="st">&quot;W.+&quot;</span>, <span class="st">&quot;Everyone&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="tidyverse-1.html#cb183-1" tabindex="-1"></a><span class="fu">str_replace</span>(<span class="st">&quot;Hello World&quot;</span>, <span class="st">&quot;W.+&quot;</span>, <span class="st">&quot;Everyone&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;Hello Everyone&quot;</code></pre>
 <ul>
 <li><strong>str_extract</strong>: extracts the first occurrence of a pattern from a string.</li>
 </ul>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="tidyverse-1.html#cb184-1" tabindex="-1"></a><span class="fu">str_extract</span>(<span class="st">&quot;Hello World&quot;</span>, <span class="st">&quot;W.+&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="tidyverse-1.html#cb185-1" tabindex="-1"></a><span class="fu">str_extract</span>(<span class="st">&quot;Hello World&quot;</span>, <span class="st">&quot;W.+&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;World&quot;</code></pre>
 <ul>
 <li><strong>str_split</strong>: splits a string into pieces based on a specified pattern.</li>
 </ul>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="tidyverse-1.html#cb186-1" tabindex="-1"></a><span class="fu">str_split</span>(<span class="st">&quot;Hello World&quot;</span>, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">s&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="tidyverse-1.html#cb187-1" tabindex="-1"></a><span class="fu">str_split</span>(<span class="st">&quot;Hello World&quot;</span>, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">s&quot;</span>)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;Hello&quot; &quot;World&quot;</code></pre>
 </div>
@@ -786,18 +786,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>summarize</strong>: used to summarize the data based on one or more aggregate functions.</li>
 </ul>
 <p>The summarise() function is used to perform simple summary statistics on data frames. It takes the name of the new variable as well as the summary function that should be used to calculate its value. For example, to calculate the mean and standard deviation of a variable named ‘x’ in a data frame named ‘df’, we can use the following code:</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="tidyverse-1.html#cb188-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span></span>
-<span id="cb188-2"><a href="tidyverse-1.html#cb188-2" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(inches), </span>
-<span id="cb188-3"><a href="tidyverse-1.html#cb188-3" tabindex="-1"></a>            <span class="at">max =</span> <span class="fu">max</span>(inches))</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="tidyverse-1.html#cb189-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span></span>
+<span id="cb189-2"><a href="tidyverse-1.html#cb189-2" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(inches), </span>
+<span id="cb189-3"><a href="tidyverse-1.html#cb189-3" tabindex="-1"></a>            <span class="at">max =</span> <span class="fu">max</span>(inches))</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 2
 ##     min   max
 ##   &lt;dbl&gt; &lt;dbl&gt;
 ## 1   0.2   5.2</code></pre>
 <p>The group_by() function is used to group data frames by one or more variables. This is useful when we want to summarize data by different categories. For example, to calculate the mean and standard deviation of ‘x’ by ‘group’, we can use the following code:</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="tidyverse-1.html#cb190-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span></span>
-<span id="cb190-2"><a href="tidyverse-1.html#cb190-2" tabindex="-1"></a>  <span class="fu">group_by</span>(plant) <span class="sc">%&gt;%</span></span>
-<span id="cb190-3"><a href="tidyverse-1.html#cb190-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(inches), </span>
-<span id="cb190-4"><a href="tidyverse-1.html#cb190-4" tabindex="-1"></a>            <span class="at">max =</span> <span class="fu">max</span>(inches))</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="tidyverse-1.html#cb191-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span></span>
+<span id="cb191-2"><a href="tidyverse-1.html#cb191-2" tabindex="-1"></a>  <span class="fu">group_by</span>(plant) <span class="sc">%&gt;%</span></span>
+<span id="cb191-3"><a href="tidyverse-1.html#cb191-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(inches), </span>
+<span id="cb191-4"><a href="tidyverse-1.html#cb191-4" tabindex="-1"></a>            <span class="at">max =</span> <span class="fu">max</span>(inches))</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 3
 ##   plant   min   max
 ##   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -805,8 +805,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 2 B       0.2   4.1
 ## 3 C       0.4   5.2</code></pre>
 <p>The summarize_at() and summarize_all() functions are used to perform summary statistics on multiple variables at once. The summarize_at() function takes a list of variables to summarize, while the summarize_all() function summarizes all variables in the data frame. For example, to calculate the mean and standard deviation of all numeric variables in a data frame named ‘df’, we can use the following code:</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="tidyverse-1.html#cb192-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span></span>
-<span id="cb192-2"><a href="tidyverse-1.html#cb192-2" tabindex="-1"></a>  <span class="fu">summarise_all</span>(<span class="fu">list</span>(<span class="at">max =</span> max, <span class="at">min =</span> min))</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="tidyverse-1.html#cb193-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span></span>
+<span id="cb193-2"><a href="tidyverse-1.html#cb193-2" tabindex="-1"></a>  <span class="fu">summarise_all</span>(<span class="fu">list</span>(<span class="at">max =</span> max, <span class="at">min =</span> min))</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 8
 ##   plant_max condition_max time_max inches_max plant_min condition_min time_min inches_min
 ##   &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;         &lt;dbl&gt;
@@ -895,10 +895,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>Load the <code>tidyverse</code> library …</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="tidyverse-1.html#cb200-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="tidyverse-1.html#cb201-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <p>Download the data.</p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="tidyverse-1.html#cb201-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/Choi2017_DDA_Skyline_input.csv.zip&quot;</span></span>
-<span id="cb201-2"><a href="tidyverse-1.html#cb201-2" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/Choi2017_DDA_Skyline_input.csv.zip&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="tidyverse-1.html#cb202-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/Choi2017_DDA_Skyline_input.csv.zip&quot;</span></span>
+<span id="cb202-2"><a href="tidyverse-1.html#cb202-2" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/Choi2017_DDA_Skyline_input.csv.zip&quot;</span>)</span></code></pre></div>
 <p>Exercise #1 – Reading data</p>
 <p>1.1 Read the example data from a proteomics experiment NOTE: file is a zipped .csv file – R knows how to read it!</p>
 <p>Exercise #2 – Reviewing data Frames</p>
@@ -984,22 +984,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [10] &quot;JD_06232014_sample4-A.raw&quot; &quot;JD_06232014_sample4_B.raw&quot; &quot;JD_06232014_sample4_C.raw&quot;</code></pre>
 <p>3.3 Using data frame indexing syntax, subset the data to rows for the protein “sp|P33399|LHP1_YEAST”</p>
 <pre><code>## # A tibble: 288 × 16
-##    ProteinName   Pepti…¹ Pepti…² Precu…³ Precu…⁴ Fragm…⁵ Produ…⁶ Produ…⁷ Isoto…⁸ Condi…⁹ BioRe…˟
-##    &lt;chr&gt;         &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;
-##  1 sp|P33399|LH… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       1
-##  2 sp|P33399|LH… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       2
-##  3 sp|P33399|LH… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       3
-##  4 sp|P33399|LH… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       4
-##  5 sp|P33399|LH… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       5
-##  6 sp|P33399|LH… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       6
-##  7 sp|P33399|LH… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       7
-##  8 sp|P33399|LH… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       8
-##  9 sp|P33399|LH… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       9
-## 10 sp|P33399|LH… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…      10
+##    ProteinN…¹ Pepti…² Pepti…³ Precu…⁴ Precu…⁵ Fragm…⁶ Produ…⁷ Produ…⁸ Isoto…⁹ Condi…˟ BioRe…˟
+##    &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;
+##  1 sp|P33399… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       1
+##  2 sp|P33399… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       2
+##  3 sp|P33399… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       3
+##  4 sp|P33399… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       4
+##  5 sp|P33399… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       5
+##  6 sp|P33399… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       6
+##  7 sp|P33399… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       7
+##  8 sp|P33399… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       8
+##  9 sp|P33399… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       9
+## 10 sp|P33399… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…      10
 ## # … with 278 more rows, 5 more variables: FileName &lt;chr&gt;, Area &lt;chr&gt;, StandardType &lt;lgl&gt;,
-## #   Truncated &lt;lgl&gt;, DetectionQValue &lt;chr&gt;, and abbreviated variable names ¹​PeptideSequence,
-## #   ²​PeptideModifiedSequence, ³​PrecursorCharge, ⁴​PrecursorMz, ⁵​FragmentIon, ⁶​ProductCharge,
-## #   ⁷​ProductMz, ⁸​IsotopeLabelType, ⁹​Condition, ˟​BioReplicate</code></pre>
+## #   Truncated &lt;lgl&gt;, DetectionQValue &lt;chr&gt;, and abbreviated variable names ¹​ProteinName,
+## #   ²​PeptideSequence, ³​PeptideModifiedSequence, ⁴​PrecursorCharge, ⁵​PrecursorMz,
+## #   ⁶​FragmentIon, ⁷​ProductCharge, ⁸​ProductMz, ⁹​IsotopeLabelType, ˟​Condition, ˟​BioReplicate</code></pre>
 <p>3.4 How many unique peptides are present in the data for the above protein?</p>
 <ul>
 <li><p>first store the subset in a variable</p></li>

@@ -13,12 +13,32 @@ In the `New Project Wizard` select `New Directory > New Project`, enter the name
 ```{r 3201, echo=FALSE, fig.cap="\\label{fig:3201}RStudio Create New Project"}
 knitr::include_graphics("images/03_021_new_project_01.png")
 ```
+
 ```{r 3202, echo=FALSE, fig.cap="\\label{fig:3202}RStudio Create New Project"}
 knitr::include_graphics("images/03_021_new_project_02.png")
 ```
 
 ## Organizing
+
 Organizing your RStudio project is an important task that can help you work more efficiently and avoid confusion when working on a project. Good organization will help you come back to your code at a later date as well as make it possible in some smaller projects to share entirely the data and code, making it possible for others to run the code and modify it.
+
+Typical project directory structure 
+
+```{r, eval=FALSE}
+your_project
+  |- 001_import_data.R
+  |- 002_tidy_data.R
+  |- 003_analysis_01.R
+  |- 004_analysis_02.R
+  |- data
+     |- tidy_table.csv
+     |- main_file.xlsx
+  |- plots
+     |- plot_xy_scatter.png
+     |- plot_xy_regression.png
+  |- results
+     |- predicted_output_20230531.csv
+```
 
 ### Data {-}
 
@@ -27,18 +47,23 @@ It's a good idea to keep your data files separate from your R scripts and other 
 You can then also use subfolders to organize different types of data or data from different sources with the `/data/` folder.
 
 You can create and navigate folders in your RStudio project directly in RStudio!
+
 ```{r 3203, echo=FALSE, fig.cap="\\label{fig:3203}RStudio Create New Folder"}
 knitr::include_graphics("images/03_022_new_folder.png")
 ```
 
 ### Scripts {-}
+
 One of the best ways to manage scripts is tocreate scripts for different tasks: Break your project into separate scripts that perform different tasks, such as data cleaning, data analysis, and data visualization. This can make it easier to modify and update specific parts of your project without affecting other parts.
 
 ### Results {-}
+
 Like data, results may be best saved in a specific results folder. Keeping track of date and time of results can also be smart.
 
 #### Tables {-}
-Tables can be exported as .csv or other formats depending on your use case and stored in results. Always keep track of date and time the results were created. One issue that can arise is a new version of the result was created by a new process in the code but that is not indicated in the file name, so it is hard to be certain the results are the latest.  
+
+Tables can be exported as .csv or other formats depending on your use case and stored in results. Always keep track of date and time the results were created. One issue that can arise is a new version of the result was created by a new process in the code but that is not indicated in the file name, so it is hard to be certain the results are the latest.
 
 #### Plots {-}
-Similar to tables, plot files could be stored in a sub folder. 
+
+Similar to tables, plot files could be stored in a sub folder.

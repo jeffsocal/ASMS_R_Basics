@@ -417,11 +417,25 @@ Figure 3.2: RStudio Create New Project
 <div id="organizing" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Organizing<a href="r-studio-projects.html#organizing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Organizing your RStudio project is an important task that can help you work more efficiently and avoid confusion when working on a project. Good organization will help you come back to your code at a later date as well as make it possible in some smaller projects to share entirely the data and code, making it possible for others to run the code and modify it.</p>
+<p>Typical project directory structure</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="r-studio-projects.html#cb14-1" tabindex="-1"></a>your_project</span>
+<span id="cb14-2"><a href="r-studio-projects.html#cb14-2" tabindex="-1"></a>  <span class="sc">|-</span> 001_import_data.R</span>
+<span id="cb14-3"><a href="r-studio-projects.html#cb14-3" tabindex="-1"></a>  <span class="sc">|-</span> 002_tidy_data.R</span>
+<span id="cb14-4"><a href="r-studio-projects.html#cb14-4" tabindex="-1"></a>  <span class="sc">|-</span> 003_analysis_01.R</span>
+<span id="cb14-5"><a href="r-studio-projects.html#cb14-5" tabindex="-1"></a>  <span class="sc">|-</span> 004_analysis_02.R</span>
+<span id="cb14-6"><a href="r-studio-projects.html#cb14-6" tabindex="-1"></a>  <span class="sc">|-</span> data</span>
+<span id="cb14-7"><a href="r-studio-projects.html#cb14-7" tabindex="-1"></a>     <span class="sc">|-</span> tidy_table.csv</span>
+<span id="cb14-8"><a href="r-studio-projects.html#cb14-8" tabindex="-1"></a>     <span class="sc">|-</span> main_file.xlsx</span>
+<span id="cb14-9"><a href="r-studio-projects.html#cb14-9" tabindex="-1"></a>  <span class="sc">|-</span> plots</span>
+<span id="cb14-10"><a href="r-studio-projects.html#cb14-10" tabindex="-1"></a>     <span class="sc">|-</span> plot_xy_scatter.png</span>
+<span id="cb14-11"><a href="r-studio-projects.html#cb14-11" tabindex="-1"></a>     <span class="sc">|-</span> plot_xy_regression.png</span>
+<span id="cb14-12"><a href="r-studio-projects.html#cb14-12" tabindex="-1"></a>  <span class="sc">|-</span> results</span>
+<span id="cb14-13"><a href="r-studio-projects.html#cb14-13" tabindex="-1"></a>     <span class="sc">|-</span> predicted_output_20230531.csv</span></code></pre></div>
 <div id="data" class="section level3 unnumbered hasAnchor">
 <h3>Data<a href="r-studio-projects.html#data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>It’s a good idea to keep your data files separate from your R scripts and other files. If the data is small enough (at your disgression what is small), it can be helpful to store the data in <code>/data/</code> folder in the project itself!</p>
 <p>You can then also use subfolders to organize different types of data or data from different sources with the <code>/data/</code> folder.</p>
-You can create and navigate folders in your RStudio project directly in RStudio!
+<p>You can create and navigate folders in your RStudio project directly in RStudio!</p>
 <div class="figure"><span style="display:block;" id="fig:3203"></span>
 <img src="images/03_022_new_folder.png" alt="\label{fig:3203}RStudio Create New Folder" width="1238" />
 <p class="caption">

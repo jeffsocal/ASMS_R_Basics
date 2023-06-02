@@ -398,518 +398,518 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="r-syntax-1" class="section level2 unnumbered hasAnchor">
 <h2><strong>4</strong> R Syntax<a href="answers-to-exercises.html#r-syntax-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="answers-to-exercises.html#cb304-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
-<span id="cb304-2"><a href="answers-to-exercises.html#cb304-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
-<span id="cb304-3"><a href="answers-to-exercises.html#cb304-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
-<span id="cb304-4"><a href="answers-to-exercises.html#cb304-4" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb304-5"><a href="answers-to-exercises.html#cb304-5" tabindex="-1"></a><span class="co"># Some basic R practice</span></span>
-<span id="cb304-6"><a href="answers-to-exercises.html#cb304-6" tabindex="-1"></a></span>
-<span id="cb304-7"><a href="answers-to-exercises.html#cb304-7" tabindex="-1"></a><span class="co"># 3.  Calculate the sum of 2 and 3.</span></span>
-<span id="cb304-8"><a href="answers-to-exercises.html#cb304-8" tabindex="-1"></a></span>
-<span id="cb304-9"><a href="answers-to-exercises.html#cb304-9" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span></span>
-<span id="cb304-10"><a href="answers-to-exercises.html#cb304-10" tabindex="-1"></a></span>
-<span id="cb304-11"><a href="answers-to-exercises.html#cb304-11" tabindex="-1"></a></span>
-<span id="cb304-12"><a href="answers-to-exercises.html#cb304-12" tabindex="-1"></a><span class="co"># 4.  Evaluate if 0.5 is equal to 1 divided by 2.</span></span>
-<span id="cb304-13"><a href="answers-to-exercises.html#cb304-13" tabindex="-1"></a></span>
-<span id="cb304-14"><a href="answers-to-exercises.html#cb304-14" tabindex="-1"></a><span class="fl">0.5</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">2</span></span>
-<span id="cb304-15"><a href="answers-to-exercises.html#cb304-15" tabindex="-1"></a></span>
-<span id="cb304-16"><a href="answers-to-exercises.html#cb304-16" tabindex="-1"></a></span>
-<span id="cb304-17"><a href="answers-to-exercises.html#cb304-17" tabindex="-1"></a><span class="co"># 5.  Test if 3 is an even number. Hint, use the modulus operator and a </span></span>
-<span id="cb304-18"><a href="answers-to-exercises.html#cb304-18" tabindex="-1"></a><span class="co">#     comparison operator.</span></span>
-<span id="cb304-19"><a href="answers-to-exercises.html#cb304-19" tabindex="-1"></a></span>
-<span id="cb304-20"><a href="answers-to-exercises.html#cb304-20" tabindex="-1"></a><span class="dv">3</span> <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span></span>
-<span id="cb304-21"><a href="answers-to-exercises.html#cb304-21" tabindex="-1"></a></span>
-<span id="cb304-22"><a href="answers-to-exercises.html#cb304-22" tabindex="-1"></a></span>
-<span id="cb304-23"><a href="answers-to-exercises.html#cb304-23" tabindex="-1"></a><span class="co"># 6.  Create a function to test if a value is even resulting in `TRUE` or `FALSE`.</span></span>
-<span id="cb304-24"><a href="answers-to-exercises.html#cb304-24" tabindex="-1"></a></span>
-<span id="cb304-25"><a href="answers-to-exercises.html#cb304-25" tabindex="-1"></a>even <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { </span>
-<span id="cb304-26"><a href="answers-to-exercises.html#cb304-26" tabindex="-1"></a>  x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span> </span>
-<span id="cb304-27"><a href="answers-to-exercises.html#cb304-27" tabindex="-1"></a>}</span>
-<span id="cb304-28"><a href="answers-to-exercises.html#cb304-28" tabindex="-1"></a></span>
-<span id="cb304-29"><a href="answers-to-exercises.html#cb304-29" tabindex="-1"></a><span class="fu">even</span>(<span class="dv">3</span>)</span>
-<span id="cb304-30"><a href="answers-to-exercises.html#cb304-30" tabindex="-1"></a></span>
-<span id="cb304-31"><a href="answers-to-exercises.html#cb304-31" tabindex="-1"></a></span>
-<span id="cb304-32"><a href="answers-to-exercises.html#cb304-32" tabindex="-1"></a><span class="co"># 7.  Construct an if-else statement to test if the number three is odd or even.</span></span>
-<span id="cb304-33"><a href="answers-to-exercises.html#cb304-33" tabindex="-1"></a></span>
-<span id="cb304-34"><a href="answers-to-exercises.html#cb304-34" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb304-35"><a href="answers-to-exercises.html#cb304-35" tabindex="-1"></a></span>
-<span id="cb304-36"><a href="answers-to-exercises.html#cb304-36" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
-<span id="cb304-37"><a href="answers-to-exercises.html#cb304-37" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&#39;even&#39;</span>)</span>
-<span id="cb304-38"><a href="answers-to-exercises.html#cb304-38" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb304-39"><a href="answers-to-exercises.html#cb304-39" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&#39;odd&#39;</span>)</span>
-<span id="cb304-40"><a href="answers-to-exercises.html#cb304-40" tabindex="-1"></a>}</span>
-<span id="cb304-41"><a href="answers-to-exercises.html#cb304-41" tabindex="-1"></a></span>
-<span id="cb304-42"><a href="answers-to-exercises.html#cb304-42" tabindex="-1"></a></span>
-<span id="cb304-43"><a href="answers-to-exercises.html#cb304-43" tabindex="-1"></a><span class="co"># 8.  Create a function to test or *even* or *odd* by returning a string.</span></span>
-<span id="cb304-44"><a href="answers-to-exercises.html#cb304-44" tabindex="-1"></a></span>
-<span id="cb304-45"><a href="answers-to-exercises.html#cb304-45" tabindex="-1"></a>oddeven <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { </span>
-<span id="cb304-46"><a href="answers-to-exercises.html#cb304-46" tabindex="-1"></a>  <span class="cf">if</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
-<span id="cb304-47"><a href="answers-to-exercises.html#cb304-47" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">&#39;even&#39;</span>)</span>
-<span id="cb304-48"><a href="answers-to-exercises.html#cb304-48" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb304-49"><a href="answers-to-exercises.html#cb304-49" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">&#39;odd&#39;</span>)</span>
-<span id="cb304-50"><a href="answers-to-exercises.html#cb304-50" tabindex="-1"></a>  }</span>
-<span id="cb304-51"><a href="answers-to-exercises.html#cb304-51" tabindex="-1"></a>}</span>
-<span id="cb304-52"><a href="answers-to-exercises.html#cb304-52" tabindex="-1"></a></span>
-<span id="cb304-53"><a href="answers-to-exercises.html#cb304-53" tabindex="-1"></a><span class="fu">oddeven</span>(<span class="dv">3</span>)</span>
-<span id="cb304-54"><a href="answers-to-exercises.html#cb304-54" tabindex="-1"></a></span>
-<span id="cb304-55"><a href="answers-to-exercises.html#cb304-55" tabindex="-1"></a></span>
-<span id="cb304-56"><a href="answers-to-exercises.html#cb304-56" tabindex="-1"></a><span class="co"># 9.  Construct a for-loop to test, using the function from #8, if the numbers </span></span>
-<span id="cb304-57"><a href="answers-to-exercises.html#cb304-57" tabindex="-1"></a><span class="co">#     between 1 and 9 are odd or even, printing the number and string for each </span></span>
-<span id="cb304-58"><a href="answers-to-exercises.html#cb304-58" tabindex="-1"></a><span class="co">#     on a new line.</span></span>
-<span id="cb304-59"><a href="answers-to-exercises.html#cb304-59" tabindex="-1"></a></span>
-<span id="cb304-60"><a href="answers-to-exercises.html#cb304-60" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span></span>
-<span id="cb304-61"><a href="answers-to-exercises.html#cb304-61" tabindex="-1"></a></span>
-<span id="cb304-62"><a href="answers-to-exercises.html#cb304-62" tabindex="-1"></a><span class="cf">for</span> ( i <span class="cf">in</span> x) {</span>
-<span id="cb304-63"><a href="answers-to-exercises.html#cb304-63" tabindex="-1"></a>  <span class="fu">cat</span>(i, <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>, <span class="fu">oddeven</span>(i), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb304-64"><a href="answers-to-exercises.html#cb304-64" tabindex="-1"></a>}</span></code></pre></div>
-
-</div>
-<div id="r-objects-1" class="section level2 unnumbered hasAnchor">
-<h2><strong>5</strong> R Objects<a href="answers-to-exercises.html#r-objects-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="answers-to-exercises.html#cb305-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
 <span id="cb305-2"><a href="answers-to-exercises.html#cb305-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
 <span id="cb305-3"><a href="answers-to-exercises.html#cb305-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
 <span id="cb305-4"><a href="answers-to-exercises.html#cb305-4" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb305-5"><a href="answers-to-exercises.html#cb305-5" tabindex="-1"></a><span class="co"># Data Object Exercises</span></span>
+<span id="cb305-5"><a href="answers-to-exercises.html#cb305-5" tabindex="-1"></a><span class="co"># Some basic R practice</span></span>
 <span id="cb305-6"><a href="answers-to-exercises.html#cb305-6" tabindex="-1"></a></span>
-<span id="cb305-7"><a href="answers-to-exercises.html#cb305-7" tabindex="-1"></a><span class="co"># 1.  Construct the following vector and store as a variable.</span></span>
-<span id="cb305-8"><a href="answers-to-exercises.html#cb305-8" tabindex="-1"></a>str_gbu <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;red&#39;</span>, <span class="st">&#39;green&#39;</span>, <span class="st">&#39;blue&#39;</span>)</span>
-<span id="cb305-9"><a href="answers-to-exercises.html#cb305-9" tabindex="-1"></a></span>
-<span id="cb305-10"><a href="answers-to-exercises.html#cb305-10" tabindex="-1"></a><span class="co"># 2.  Extract the 2nd element in the variable.</span></span>
+<span id="cb305-7"><a href="answers-to-exercises.html#cb305-7" tabindex="-1"></a><span class="co"># 3.  Calculate the sum of 2 and 3.</span></span>
+<span id="cb305-8"><a href="answers-to-exercises.html#cb305-8" tabindex="-1"></a></span>
+<span id="cb305-9"><a href="answers-to-exercises.html#cb305-9" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span></span>
+<span id="cb305-10"><a href="answers-to-exercises.html#cb305-10" tabindex="-1"></a></span>
 <span id="cb305-11"><a href="answers-to-exercises.html#cb305-11" tabindex="-1"></a></span>
-<span id="cb305-12"><a href="answers-to-exercises.html#cb305-12" tabindex="-1"></a>str_gbu[<span class="dv">2</span>]</span>
+<span id="cb305-12"><a href="answers-to-exercises.html#cb305-12" tabindex="-1"></a><span class="co"># 4.  Evaluate if 0.5 is equal to 1 divided by 2.</span></span>
 <span id="cb305-13"><a href="answers-to-exercises.html#cb305-13" tabindex="-1"></a></span>
-<span id="cb305-14"><a href="answers-to-exercises.html#cb305-14" tabindex="-1"></a></span>
-<span id="cb305-15"><a href="answers-to-exercises.html#cb305-15" tabindex="-1"></a><span class="co"># 3.  Construct a numerical vector of length 5, containing the circumferences of </span></span>
-<span id="cb305-16"><a href="answers-to-exercises.html#cb305-16" tabindex="-1"></a><span class="co">#     circles with integer diameters 1 to 5. Remember PEMDAS.</span></span>
-<span id="cb305-17"><a href="answers-to-exercises.html#cb305-17" tabindex="-1"></a></span>
-<span id="cb305-18"><a href="answers-to-exercises.html#cb305-18" tabindex="-1"></a>cir <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi</span>
+<span id="cb305-14"><a href="answers-to-exercises.html#cb305-14" tabindex="-1"></a><span class="fl">0.5</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb305-15"><a href="answers-to-exercises.html#cb305-15" tabindex="-1"></a></span>
+<span id="cb305-16"><a href="answers-to-exercises.html#cb305-16" tabindex="-1"></a></span>
+<span id="cb305-17"><a href="answers-to-exercises.html#cb305-17" tabindex="-1"></a><span class="co"># 5.  Test if 3 is an even number. Hint, use the modulus operator and a </span></span>
+<span id="cb305-18"><a href="answers-to-exercises.html#cb305-18" tabindex="-1"></a><span class="co">#     comparison operator.</span></span>
 <span id="cb305-19"><a href="answers-to-exercises.html#cb305-19" tabindex="-1"></a></span>
-<span id="cb305-20"><a href="answers-to-exercises.html#cb305-20" tabindex="-1"></a><span class="co"># 4.  Extract all circumferences greater than 50.</span></span>
+<span id="cb305-20"><a href="answers-to-exercises.html#cb305-20" tabindex="-1"></a><span class="dv">3</span> <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span></span>
 <span id="cb305-21"><a href="answers-to-exercises.html#cb305-21" tabindex="-1"></a></span>
-<span id="cb305-22"><a href="answers-to-exercises.html#cb305-22" tabindex="-1"></a>cir[<span class="fu">which</span>(cir <span class="sc">&gt;</span> <span class="dv">50</span>)]</span>
-<span id="cb305-23"><a href="answers-to-exercises.html#cb305-23" tabindex="-1"></a></span>
+<span id="cb305-22"><a href="answers-to-exercises.html#cb305-22" tabindex="-1"></a></span>
+<span id="cb305-23"><a href="answers-to-exercises.html#cb305-23" tabindex="-1"></a><span class="co"># 6.  Create a function to test if a value is even resulting in `TRUE` or `FALSE`.</span></span>
 <span id="cb305-24"><a href="answers-to-exercises.html#cb305-24" tabindex="-1"></a></span>
-<span id="cb305-25"><a href="answers-to-exercises.html#cb305-25" tabindex="-1"></a><span class="co"># 5. Create a data.frame consisting of circles with integer diameters 1 to 5, </span></span>
-<span id="cb305-26"><a href="answers-to-exercises.html#cb305-26" tabindex="-1"></a><span class="co">#     and their circumferences.</span></span>
-<span id="cb305-27"><a href="answers-to-exercises.html#cb305-27" tabindex="-1"></a></span>
-<span id="cb305-28"><a href="answers-to-exercises.html#cb305-28" tabindex="-1"></a>diameters <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
-<span id="cb305-29"><a href="answers-to-exercises.html#cb305-29" tabindex="-1"></a></span>
-<span id="cb305-30"><a href="answers-to-exercises.html#cb305-30" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb305-31"><a href="answers-to-exercises.html#cb305-31" tabindex="-1"></a>  <span class="at">diameter =</span> diameters,</span>
-<span id="cb305-32"><a href="answers-to-exercises.html#cb305-32" tabindex="-1"></a>  <span class="at">circumfrence =</span> (diameters) <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi</span>
-<span id="cb305-33"><a href="answers-to-exercises.html#cb305-33" tabindex="-1"></a>)</span>
-<span id="cb305-34"><a href="answers-to-exercises.html#cb305-34" tabindex="-1"></a></span>
+<span id="cb305-25"><a href="answers-to-exercises.html#cb305-25" tabindex="-1"></a>even <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { </span>
+<span id="cb305-26"><a href="answers-to-exercises.html#cb305-26" tabindex="-1"></a>  x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span> </span>
+<span id="cb305-27"><a href="answers-to-exercises.html#cb305-27" tabindex="-1"></a>}</span>
+<span id="cb305-28"><a href="answers-to-exercises.html#cb305-28" tabindex="-1"></a></span>
+<span id="cb305-29"><a href="answers-to-exercises.html#cb305-29" tabindex="-1"></a><span class="fu">even</span>(<span class="dv">3</span>)</span>
+<span id="cb305-30"><a href="answers-to-exercises.html#cb305-30" tabindex="-1"></a></span>
+<span id="cb305-31"><a href="answers-to-exercises.html#cb305-31" tabindex="-1"></a></span>
+<span id="cb305-32"><a href="answers-to-exercises.html#cb305-32" tabindex="-1"></a><span class="co"># 7.  Construct an if-else statement to test if the number three is odd or even.</span></span>
+<span id="cb305-33"><a href="answers-to-exercises.html#cb305-33" tabindex="-1"></a></span>
+<span id="cb305-34"><a href="answers-to-exercises.html#cb305-34" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
 <span id="cb305-35"><a href="answers-to-exercises.html#cb305-35" tabindex="-1"></a></span>
-<span id="cb305-36"><a href="answers-to-exercises.html#cb305-36" tabindex="-1"></a><span class="co"># 6.  Extract all circumferences greater than 50 from the data.frame.</span></span>
-<span id="cb305-37"><a href="answers-to-exercises.html#cb305-37" tabindex="-1"></a></span>
-<span id="cb305-38"><a href="answers-to-exercises.html#cb305-38" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(df<span class="sc">$</span>circumfrence <span class="sc">&gt;</span> <span class="dv">50</span>)</span>
-<span id="cb305-39"><a href="answers-to-exercises.html#cb305-39" tabindex="-1"></a></span>
-<span id="cb305-40"><a href="answers-to-exercises.html#cb305-40" tabindex="-1"></a>df[w,]</span></code></pre></div>
+<span id="cb305-36"><a href="answers-to-exercises.html#cb305-36" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb305-37"><a href="answers-to-exercises.html#cb305-37" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&#39;even&#39;</span>)</span>
+<span id="cb305-38"><a href="answers-to-exercises.html#cb305-38" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb305-39"><a href="answers-to-exercises.html#cb305-39" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&#39;odd&#39;</span>)</span>
+<span id="cb305-40"><a href="answers-to-exercises.html#cb305-40" tabindex="-1"></a>}</span>
+<span id="cb305-41"><a href="answers-to-exercises.html#cb305-41" tabindex="-1"></a></span>
+<span id="cb305-42"><a href="answers-to-exercises.html#cb305-42" tabindex="-1"></a></span>
+<span id="cb305-43"><a href="answers-to-exercises.html#cb305-43" tabindex="-1"></a><span class="co"># 8.  Create a function to test or *even* or *odd* by returning a string.</span></span>
+<span id="cb305-44"><a href="answers-to-exercises.html#cb305-44" tabindex="-1"></a></span>
+<span id="cb305-45"><a href="answers-to-exercises.html#cb305-45" tabindex="-1"></a>oddeven <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { </span>
+<span id="cb305-46"><a href="answers-to-exercises.html#cb305-46" tabindex="-1"></a>  <span class="cf">if</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb305-47"><a href="answers-to-exercises.html#cb305-47" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">&#39;even&#39;</span>)</span>
+<span id="cb305-48"><a href="answers-to-exercises.html#cb305-48" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb305-49"><a href="answers-to-exercises.html#cb305-49" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">&#39;odd&#39;</span>)</span>
+<span id="cb305-50"><a href="answers-to-exercises.html#cb305-50" tabindex="-1"></a>  }</span>
+<span id="cb305-51"><a href="answers-to-exercises.html#cb305-51" tabindex="-1"></a>}</span>
+<span id="cb305-52"><a href="answers-to-exercises.html#cb305-52" tabindex="-1"></a></span>
+<span id="cb305-53"><a href="answers-to-exercises.html#cb305-53" tabindex="-1"></a><span class="fu">oddeven</span>(<span class="dv">3</span>)</span>
+<span id="cb305-54"><a href="answers-to-exercises.html#cb305-54" tabindex="-1"></a></span>
+<span id="cb305-55"><a href="answers-to-exercises.html#cb305-55" tabindex="-1"></a></span>
+<span id="cb305-56"><a href="answers-to-exercises.html#cb305-56" tabindex="-1"></a><span class="co"># 9.  Construct a for-loop to test, using the function from #8, if the numbers </span></span>
+<span id="cb305-57"><a href="answers-to-exercises.html#cb305-57" tabindex="-1"></a><span class="co">#     between 1 and 9 are odd or even, printing the number and string for each </span></span>
+<span id="cb305-58"><a href="answers-to-exercises.html#cb305-58" tabindex="-1"></a><span class="co">#     on a new line.</span></span>
+<span id="cb305-59"><a href="answers-to-exercises.html#cb305-59" tabindex="-1"></a></span>
+<span id="cb305-60"><a href="answers-to-exercises.html#cb305-60" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span></span>
+<span id="cb305-61"><a href="answers-to-exercises.html#cb305-61" tabindex="-1"></a></span>
+<span id="cb305-62"><a href="answers-to-exercises.html#cb305-62" tabindex="-1"></a><span class="cf">for</span> ( i <span class="cf">in</span> x) {</span>
+<span id="cb305-63"><a href="answers-to-exercises.html#cb305-63" tabindex="-1"></a>  <span class="fu">cat</span>(i, <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>, <span class="fu">oddeven</span>(i), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb305-64"><a href="answers-to-exercises.html#cb305-64" tabindex="-1"></a>}</span></code></pre></div>
 
 </div>
-<div id="tidyverse-2" class="section level2 unnumbered hasAnchor">
-<h2><strong>6</strong> Tidyverse<a href="answers-to-exercises.html#tidyverse-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="r-objects-1" class="section level2 unnumbered hasAnchor">
+<h2><strong>5</strong> R Objects<a href="answers-to-exercises.html#r-objects-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="answers-to-exercises.html#cb306-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
 <span id="cb306-2"><a href="answers-to-exercises.html#cb306-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
 <span id="cb306-3"><a href="answers-to-exercises.html#cb306-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
 <span id="cb306-4"><a href="answers-to-exercises.html#cb306-4" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb306-5"><a href="answers-to-exercises.html#cb306-5" tabindex="-1"></a><span class="co"># Tidyverse Exercises</span></span>
+<span id="cb306-5"><a href="answers-to-exercises.html#cb306-5" tabindex="-1"></a><span class="co"># Data Object Exercises</span></span>
 <span id="cb306-6"><a href="answers-to-exercises.html#cb306-6" tabindex="-1"></a></span>
-<span id="cb306-7"><a href="answers-to-exercises.html#cb306-7" tabindex="-1"></a><span class="co"># 1. Pipeline (eg. `%&gt;%`) a data operation that provides the mean of following vector.</span></span>
-<span id="cb306-8"><a href="answers-to-exercises.html#cb306-8" tabindex="-1"></a></span>
-<span id="cb306-9"><a href="answers-to-exercises.html#cb306-9" tabindex="-1"></a><span class="fu">c</span>(<span class="fl">7.48</span>, <span class="fl">14.15</span>, <span class="fl">6.23</span>, <span class="fl">10.21</span>, <span class="fl">15.13</span>, <span class="fl">8.19</span>, <span class="fl">8.58</span>, <span class="fl">8.09</span>, <span class="fl">9.14</span>, <span class="fl">10.41</span>) <span class="sc">%&gt;%</span> <span class="fu">mean</span>()</span>
-<span id="cb306-10"><a href="answers-to-exercises.html#cb306-10" tabindex="-1"></a></span>
+<span id="cb306-7"><a href="answers-to-exercises.html#cb306-7" tabindex="-1"></a><span class="co"># 1.  Construct the following vector and store as a variable.</span></span>
+<span id="cb306-8"><a href="answers-to-exercises.html#cb306-8" tabindex="-1"></a>str_gbu <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;red&#39;</span>, <span class="st">&#39;green&#39;</span>, <span class="st">&#39;blue&#39;</span>)</span>
+<span id="cb306-9"><a href="answers-to-exercises.html#cb306-9" tabindex="-1"></a></span>
+<span id="cb306-10"><a href="answers-to-exercises.html#cb306-10" tabindex="-1"></a><span class="co"># 2.  Extract the 2nd element in the variable.</span></span>
 <span id="cb306-11"><a href="answers-to-exercises.html#cb306-11" tabindex="-1"></a></span>
-<span id="cb306-12"><a href="answers-to-exercises.html#cb306-12" tabindex="-1"></a><span class="co"># 2.  Employing a pipeline (eg. `%&gt;%`), construct a tibble with columns named </span></span>
-<span id="cb306-13"><a href="answers-to-exercises.html#cb306-13" tabindex="-1"></a><span class="co">#     `circ` and `diam` which contains the diameters of circles with integer </span></span>
-<span id="cb306-14"><a href="answers-to-exercises.html#cb306-14" tabindex="-1"></a><span class="co">#     circumferences 1 to 5. Remember PEMDAS.</span></span>
-<span id="cb306-15"><a href="answers-to-exercises.html#cb306-15" tabindex="-1"></a></span>
-<span id="cb306-16"><a href="answers-to-exercises.html#cb306-16" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb306-12"><a href="answers-to-exercises.html#cb306-12" tabindex="-1"></a>str_gbu[<span class="dv">2</span>]</span>
+<span id="cb306-13"><a href="answers-to-exercises.html#cb306-13" tabindex="-1"></a></span>
+<span id="cb306-14"><a href="answers-to-exercises.html#cb306-14" tabindex="-1"></a></span>
+<span id="cb306-15"><a href="answers-to-exercises.html#cb306-15" tabindex="-1"></a><span class="co"># 3.  Construct a numerical vector of length 5, containing the circumferences of </span></span>
+<span id="cb306-16"><a href="answers-to-exercises.html#cb306-16" tabindex="-1"></a><span class="co">#     circles with integer diameters 1 to 5. Remember PEMDAS.</span></span>
 <span id="cb306-17"><a href="answers-to-exercises.html#cb306-17" tabindex="-1"></a></span>
-<span id="cb306-18"><a href="answers-to-exercises.html#cb306-18" tabindex="-1"></a>tbl_cir <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb306-19"><a href="answers-to-exercises.html#cb306-19" tabindex="-1"></a>  <span class="at">circ =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
-<span id="cb306-20"><a href="answers-to-exercises.html#cb306-20" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb306-21"><a href="answers-to-exercises.html#cb306-21" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">diam =</span> circ <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi)</span>
-<span id="cb306-22"><a href="answers-to-exercises.html#cb306-22" tabindex="-1"></a></span>
-<span id="cb306-23"><a href="answers-to-exercises.html#cb306-23" tabindex="-1"></a>tbl_cir</span>
+<span id="cb306-18"><a href="answers-to-exercises.html#cb306-18" tabindex="-1"></a>cir <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi</span>
+<span id="cb306-19"><a href="answers-to-exercises.html#cb306-19" tabindex="-1"></a></span>
+<span id="cb306-20"><a href="answers-to-exercises.html#cb306-20" tabindex="-1"></a><span class="co"># 4.  Extract all circumferences greater than 50.</span></span>
+<span id="cb306-21"><a href="answers-to-exercises.html#cb306-21" tabindex="-1"></a></span>
+<span id="cb306-22"><a href="answers-to-exercises.html#cb306-22" tabindex="-1"></a>cir[<span class="fu">which</span>(cir <span class="sc">&gt;</span> <span class="dv">50</span>)]</span>
+<span id="cb306-23"><a href="answers-to-exercises.html#cb306-23" tabindex="-1"></a></span>
 <span id="cb306-24"><a href="answers-to-exercises.html#cb306-24" tabindex="-1"></a></span>
-<span id="cb306-25"><a href="answers-to-exercises.html#cb306-25" tabindex="-1"></a></span>
-<span id="cb306-26"><a href="answers-to-exercises.html#cb306-26" tabindex="-1"></a><span class="co"># 3.  Extract all circumferences greater than 50.</span></span>
+<span id="cb306-25"><a href="answers-to-exercises.html#cb306-25" tabindex="-1"></a><span class="co"># 5. Create a data.frame consisting of circles with integer diameters 1 to 5, </span></span>
+<span id="cb306-26"><a href="answers-to-exercises.html#cb306-26" tabindex="-1"></a><span class="co">#     and their circumferences.</span></span>
 <span id="cb306-27"><a href="answers-to-exercises.html#cb306-27" tabindex="-1"></a></span>
-<span id="cb306-28"><a href="answers-to-exercises.html#cb306-28" tabindex="-1"></a>tbl_cir <span class="sc">%&gt;%</span> <span class="fu">filter</span>(diam <span class="sc">&gt;</span> <span class="dv">50</span>)</span>
+<span id="cb306-28"><a href="answers-to-exercises.html#cb306-28" tabindex="-1"></a>diameters <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
 <span id="cb306-29"><a href="answers-to-exercises.html#cb306-29" tabindex="-1"></a></span>
-<span id="cb306-30"><a href="answers-to-exercises.html#cb306-30" tabindex="-1"></a></span>
-<span id="cb306-31"><a href="answers-to-exercises.html#cb306-31" tabindex="-1"></a><span class="co"># 4. Add a column named `circ_type` where you assign the string *odd* or *even* </span></span>
-<span id="cb306-32"><a href="answers-to-exercises.html#cb306-32" tabindex="-1"></a><span class="co">#     depending on the column `circ`. Attempt to use the `purrr::map` function, </span></span>
-<span id="cb306-33"><a href="answers-to-exercises.html#cb306-33" tabindex="-1"></a><span class="co">#     along with the `oddeven()` function from the previous chapter, then compute </span></span>
-<span id="cb306-34"><a href="answers-to-exercises.html#cb306-34" tabindex="-1"></a><span class="co">#     the mean, standard deviation, and coefficient of variation of the diameters </span></span>
-<span id="cb306-35"><a href="answers-to-exercises.html#cb306-35" tabindex="-1"></a><span class="co">#     for each `circ_type`.</span></span>
-<span id="cb306-36"><a href="answers-to-exercises.html#cb306-36" tabindex="-1"></a></span>
-<span id="cb306-37"><a href="answers-to-exercises.html#cb306-37" tabindex="-1"></a>oddeven <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { </span>
-<span id="cb306-38"><a href="answers-to-exercises.html#cb306-38" tabindex="-1"></a>  <span class="cf">if</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
-<span id="cb306-39"><a href="answers-to-exercises.html#cb306-39" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">&#39;even&#39;</span>)</span>
-<span id="cb306-40"><a href="answers-to-exercises.html#cb306-40" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb306-41"><a href="answers-to-exercises.html#cb306-41" tabindex="-1"></a>      <span class="fu">return</span>(<span class="st">&#39;odd&#39;</span>)</span>
-<span id="cb306-42"><a href="answers-to-exercises.html#cb306-42" tabindex="-1"></a>    }</span>
-<span id="cb306-43"><a href="answers-to-exercises.html#cb306-43" tabindex="-1"></a>}</span>
-<span id="cb306-44"><a href="answers-to-exercises.html#cb306-44" tabindex="-1"></a></span>
-<span id="cb306-45"><a href="answers-to-exercises.html#cb306-45" tabindex="-1"></a>tbl_cir <span class="sc">%&gt;%</span> </span>
-<span id="cb306-46"><a href="answers-to-exercises.html#cb306-46" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">circ_type =</span> <span class="fu">map</span>(circ, oddeven)) <span class="sc">%&gt;%</span></span>
-<span id="cb306-47"><a href="answers-to-exercises.html#cb306-47" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">circ_type =</span> <span class="fu">unlist</span>(circ_type)) <span class="sc">%&gt;%</span></span>
-<span id="cb306-48"><a href="answers-to-exercises.html#cb306-48" tabindex="-1"></a>  <span class="fu">group_by</span>(circ_type) <span class="sc">%&gt;%</span></span>
-<span id="cb306-49"><a href="answers-to-exercises.html#cb306-49" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb306-50"><a href="answers-to-exercises.html#cb306-50" tabindex="-1"></a>    <span class="at">diam_mean =</span> <span class="fu">mean</span>(diam),</span>
-<span id="cb306-51"><a href="answers-to-exercises.html#cb306-51" tabindex="-1"></a>    <span class="at">diam_sd =</span> <span class="fu">sd</span>(diam),</span>
-<span id="cb306-52"><a href="answers-to-exercises.html#cb306-52" tabindex="-1"></a>    <span class="at">diam_cv =</span> diam_sd <span class="sc">/</span> diam_mean</span>
-<span id="cb306-53"><a href="answers-to-exercises.html#cb306-53" tabindex="-1"></a>  )</span></code></pre></div>
+<span id="cb306-30"><a href="answers-to-exercises.html#cb306-30" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb306-31"><a href="answers-to-exercises.html#cb306-31" tabindex="-1"></a>  <span class="at">diameter =</span> diameters,</span>
+<span id="cb306-32"><a href="answers-to-exercises.html#cb306-32" tabindex="-1"></a>  <span class="at">circumfrence =</span> (diameters) <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi</span>
+<span id="cb306-33"><a href="answers-to-exercises.html#cb306-33" tabindex="-1"></a>)</span>
+<span id="cb306-34"><a href="answers-to-exercises.html#cb306-34" tabindex="-1"></a></span>
+<span id="cb306-35"><a href="answers-to-exercises.html#cb306-35" tabindex="-1"></a></span>
+<span id="cb306-36"><a href="answers-to-exercises.html#cb306-36" tabindex="-1"></a><span class="co"># 6.  Extract all circumferences greater than 50 from the data.frame.</span></span>
+<span id="cb306-37"><a href="answers-to-exercises.html#cb306-37" tabindex="-1"></a></span>
+<span id="cb306-38"><a href="answers-to-exercises.html#cb306-38" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(df<span class="sc">$</span>circumfrence <span class="sc">&gt;</span> <span class="dv">50</span>)</span>
+<span id="cb306-39"><a href="answers-to-exercises.html#cb306-39" tabindex="-1"></a></span>
+<span id="cb306-40"><a href="answers-to-exercises.html#cb306-40" tabindex="-1"></a>df[w,]</span></code></pre></div>
 
 </div>
-<div id="data-wrangling-1" class="section level2 unnumbered hasAnchor">
-<h2><strong>7</strong> Data Wrangling<a href="answers-to-exercises.html#data-wrangling-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="tidyverse-2" class="section level2 unnumbered hasAnchor">
+<h2><strong>6</strong> Tidyverse<a href="answers-to-exercises.html#tidyverse-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="answers-to-exercises.html#cb307-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
 <span id="cb307-2"><a href="answers-to-exercises.html#cb307-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
 <span id="cb307-3"><a href="answers-to-exercises.html#cb307-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
 <span id="cb307-4"><a href="answers-to-exercises.html#cb307-4" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb307-5"><a href="answers-to-exercises.html#cb307-5" tabindex="-1"></a><span class="co"># Data Wrangling Exercises</span></span>
+<span id="cb307-5"><a href="answers-to-exercises.html#cb307-5" tabindex="-1"></a><span class="co"># Tidyverse Exercises</span></span>
 <span id="cb307-6"><a href="answers-to-exercises.html#cb307-6" tabindex="-1"></a></span>
-<span id="cb307-7"><a href="answers-to-exercises.html#cb307-7" tabindex="-1"></a><span class="co"># 1. Download the data.</span></span>
+<span id="cb307-7"><a href="answers-to-exercises.html#cb307-7" tabindex="-1"></a><span class="co"># 1. Pipeline (eg. `%&gt;%`) a data operation that provides the mean of following vector.</span></span>
 <span id="cb307-8"><a href="answers-to-exercises.html#cb307-8" tabindex="-1"></a></span>
-<span id="cb307-9"><a href="answers-to-exercises.html#cb307-9" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-Metabolites_dose-simicillin_messy.xlsx&quot;</span></span>
-<span id="cb307-10"><a href="answers-to-exercises.html#cb307-10" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/bacterial-Metabolites_dose-simicillin_messy.xlsx&quot;</span>)</span>
+<span id="cb307-9"><a href="answers-to-exercises.html#cb307-9" tabindex="-1"></a><span class="fu">c</span>(<span class="fl">7.48</span>, <span class="fl">14.15</span>, <span class="fl">6.23</span>, <span class="fl">10.21</span>, <span class="fl">15.13</span>, <span class="fl">8.19</span>, <span class="fl">8.58</span>, <span class="fl">8.09</span>, <span class="fl">9.14</span>, <span class="fl">10.41</span>) <span class="sc">%&gt;%</span> <span class="fu">mean</span>()</span>
+<span id="cb307-10"><a href="answers-to-exercises.html#cb307-10" tabindex="-1"></a></span>
 <span id="cb307-11"><a href="answers-to-exercises.html#cb307-11" tabindex="-1"></a></span>
-<span id="cb307-12"><a href="answers-to-exercises.html#cb307-12" tabindex="-1"></a></span>
-<span id="cb307-13"><a href="answers-to-exercises.html#cb307-13" tabindex="-1"></a><span class="co"># 2. Read in the messy bacteria data and store it as a variable.</span></span>
-<span id="cb307-14"><a href="answers-to-exercises.html#cb307-14" tabindex="-1"></a></span>
-<span id="cb307-15"><a href="answers-to-exercises.html#cb307-15" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb307-16"><a href="answers-to-exercises.html#cb307-16" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb307-12"><a href="answers-to-exercises.html#cb307-12" tabindex="-1"></a><span class="co"># 2.  Employing a pipeline (eg. `%&gt;%`), construct a tibble with columns named </span></span>
+<span id="cb307-13"><a href="answers-to-exercises.html#cb307-13" tabindex="-1"></a><span class="co">#     `circ` and `diam` which contains the diameters of circles with integer </span></span>
+<span id="cb307-14"><a href="answers-to-exercises.html#cb307-14" tabindex="-1"></a><span class="co">#     circumferences 1 to 5. Remember PEMDAS.</span></span>
+<span id="cb307-15"><a href="answers-to-exercises.html#cb307-15" tabindex="-1"></a></span>
+<span id="cb307-16"><a href="answers-to-exercises.html#cb307-16" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb307-17"><a href="answers-to-exercises.html#cb307-17" tabindex="-1"></a></span>
-<span id="cb307-18"><a href="answers-to-exercises.html#cb307-18" tabindex="-1"></a>tbl_bac <span class="ot">&lt;-</span> <span class="st">&quot;data/bacterial-Metabolites_dose-simicillin_messy.xlsx&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_excel</span>(<span class="at">col_names =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb307-19"><a href="answers-to-exercises.html#cb307-19" tabindex="-1"></a></span>
-<span id="cb307-20"><a href="answers-to-exercises.html#cb307-20" tabindex="-1"></a></span>
-<span id="cb307-21"><a href="answers-to-exercises.html#cb307-21" tabindex="-1"></a><span class="co"># *In all proceeding exercises, pipe results from previous exercise into current </span></span>
-<span id="cb307-22"><a href="answers-to-exercises.html#cb307-22" tabindex="-1"></a><span class="co">#    exercise creating a single lone pipe for data processing*</span></span>
-<span id="cb307-23"><a href="answers-to-exercises.html#cb307-23" tabindex="-1"></a></span>
-<span id="cb307-24"><a href="answers-to-exercises.html#cb307-24" tabindex="-1"></a><span class="co"># 3. Separate `Culture` column containing culture and dose into `culture` and </span></span>
-<span id="cb307-25"><a href="answers-to-exercises.html#cb307-25" tabindex="-1"></a><span class="co">#    `dose_mg_ml` columns.</span></span>
-<span id="cb307-26"><a href="answers-to-exercises.html#cb307-26" tabindex="-1"></a></span>
-<span id="cb307-27"><a href="answers-to-exercises.html#cb307-27" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span></span>
-<span id="cb307-28"><a href="answers-to-exercises.html#cb307-28" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg_ml&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose--&quot;</span>)</span>
+<span id="cb307-18"><a href="answers-to-exercises.html#cb307-18" tabindex="-1"></a>tbl_cir <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb307-19"><a href="answers-to-exercises.html#cb307-19" tabindex="-1"></a>  <span class="at">circ =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb307-20"><a href="answers-to-exercises.html#cb307-20" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb307-21"><a href="answers-to-exercises.html#cb307-21" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">diam =</span> circ <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi)</span>
+<span id="cb307-22"><a href="answers-to-exercises.html#cb307-22" tabindex="-1"></a></span>
+<span id="cb307-23"><a href="answers-to-exercises.html#cb307-23" tabindex="-1"></a>tbl_cir</span>
+<span id="cb307-24"><a href="answers-to-exercises.html#cb307-24" tabindex="-1"></a></span>
+<span id="cb307-25"><a href="answers-to-exercises.html#cb307-25" tabindex="-1"></a></span>
+<span id="cb307-26"><a href="answers-to-exercises.html#cb307-26" tabindex="-1"></a><span class="co"># 3.  Extract all circumferences greater than 50.</span></span>
+<span id="cb307-27"><a href="answers-to-exercises.html#cb307-27" tabindex="-1"></a></span>
+<span id="cb307-28"><a href="answers-to-exercises.html#cb307-28" tabindex="-1"></a>tbl_cir <span class="sc">%&gt;%</span> <span class="fu">filter</span>(diam <span class="sc">&gt;</span> <span class="dv">50</span>)</span>
 <span id="cb307-29"><a href="answers-to-exercises.html#cb307-29" tabindex="-1"></a></span>
 <span id="cb307-30"><a href="answers-to-exercises.html#cb307-30" tabindex="-1"></a></span>
-<span id="cb307-31"><a href="answers-to-exercises.html#cb307-31" tabindex="-1"></a><span class="co"># 4. Make `dose_mg_ml` column numeric by removing the text and change the column </span></span>
-<span id="cb307-32"><a href="answers-to-exercises.html#cb307-32" tabindex="-1"></a><span class="co">#    data type from character to numeric.</span></span>
-<span id="cb307-33"><a href="answers-to-exercises.html#cb307-33" tabindex="-1"></a></span>
-<span id="cb307-34"><a href="answers-to-exercises.html#cb307-34" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span></span>
-<span id="cb307-35"><a href="answers-to-exercises.html#cb307-35" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg_ml&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose--&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb307-36"><a href="answers-to-exercises.html#cb307-36" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">gsub</span>(<span class="st">&quot;-mg/ml&quot;</span>,<span class="st">&quot;&quot;</span>, dose_mg_ml)) <span class="sc">%&gt;%</span></span>
-<span id="cb307-37"><a href="answers-to-exercises.html#cb307-37" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">as.numeric</span>(dose_mg_ml))</span>
-<span id="cb307-38"><a href="answers-to-exercises.html#cb307-38" tabindex="-1"></a></span>
-<span id="cb307-39"><a href="answers-to-exercises.html#cb307-39" tabindex="-1"></a></span>
-<span id="cb307-40"><a href="answers-to-exercises.html#cb307-40" tabindex="-1"></a><span class="co"># 5. Pivot the table from wide to long creating `metabolite`, `time_hr` &amp; `abundance` columns.</span></span>
-<span id="cb307-41"><a href="answers-to-exercises.html#cb307-41" tabindex="-1"></a></span>
-<span id="cb307-42"><a href="answers-to-exercises.html#cb307-42" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span></span>
-<span id="cb307-43"><a href="answers-to-exercises.html#cb307-43" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg_ml&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose--&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb307-44"><a href="answers-to-exercises.html#cb307-44" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">gsub</span>(<span class="st">&quot;-mg/ml&quot;</span>,<span class="st">&quot;&quot;</span>, dose_mg_ml)) <span class="sc">%&gt;%</span></span>
-<span id="cb307-45"><a href="answers-to-exercises.html#cb307-45" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">as.numeric</span>(dose_mg_ml)) <span class="sc">%&gt;%</span></span>
-<span id="cb307-46"><a href="answers-to-exercises.html#cb307-46" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">13</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb307-47"><a href="answers-to-exercises.html#cb307-47" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>,<span class="st">&quot;time_hr&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_runtime_&quot;</span>)</span>
-<span id="cb307-48"><a href="answers-to-exercises.html#cb307-48" tabindex="-1"></a></span>
-<span id="cb307-49"><a href="answers-to-exercises.html#cb307-49" tabindex="-1"></a></span>
-<span id="cb307-50"><a href="answers-to-exercises.html#cb307-50" tabindex="-1"></a><span class="co"># 6. Make sure `time_hr` contains just hours and not a mixture of days and hours.</span></span>
-<span id="cb307-51"><a href="answers-to-exercises.html#cb307-51" tabindex="-1"></a></span>
-<span id="cb307-52"><a href="answers-to-exercises.html#cb307-52" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span></span>
-<span id="cb307-53"><a href="answers-to-exercises.html#cb307-53" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg_ml&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose--&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb307-54"><a href="answers-to-exercises.html#cb307-54" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">gsub</span>(<span class="st">&quot;-mg/ml&quot;</span>,<span class="st">&quot;&quot;</span>, dose_mg_ml)) <span class="sc">%&gt;%</span></span>
-<span id="cb307-55"><a href="answers-to-exercises.html#cb307-55" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">as.numeric</span>(dose_mg_ml)) <span class="sc">%&gt;%</span></span>
-<span id="cb307-56"><a href="answers-to-exercises.html#cb307-56" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">13</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb307-57"><a href="answers-to-exercises.html#cb307-57" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>,<span class="st">&quot;time_hr&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_runtime_&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb307-58"><a href="answers-to-exercises.html#cb307-58" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb307-59"><a href="answers-to-exercises.html#cb307-59" tabindex="-1"></a>    <span class="at">time_hr =</span> <span class="fu">case_when</span>(</span>
-<span id="cb307-60"><a href="answers-to-exercises.html#cb307-60" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_hr, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_hr)),</span>
-<span id="cb307-61"><a href="answers-to-exercises.html#cb307-61" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;day&quot;</span>, time_hr, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;day&quot;</span>, <span class="st">&quot;&quot;</span>, time_hr)) <span class="sc">*</span> <span class="dv">24</span></span>
-<span id="cb307-62"><a href="answers-to-exercises.html#cb307-62" tabindex="-1"></a>    )</span>
-<span id="cb307-63"><a href="answers-to-exercises.html#cb307-63" tabindex="-1"></a>  )</span>
-<span id="cb307-64"><a href="answers-to-exercises.html#cb307-64" tabindex="-1"></a></span>
-<span id="cb307-65"><a href="answers-to-exercises.html#cb307-65" tabindex="-1"></a></span>
-<span id="cb307-66"><a href="answers-to-exercises.html#cb307-66" tabindex="-1"></a><span class="co"># 7. Remove the `User` column. See the cheat-sheet here: </span></span>
-<span id="cb307-67"><a href="answers-to-exercises.html#cb307-67" tabindex="-1"></a><span class="co">#    https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf</span></span>
-<span id="cb307-68"><a href="answers-to-exercises.html#cb307-68" tabindex="-1"></a></span>
-<span id="cb307-69"><a href="answers-to-exercises.html#cb307-69" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span></span>
-<span id="cb307-70"><a href="answers-to-exercises.html#cb307-70" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg_ml&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose--&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb307-71"><a href="answers-to-exercises.html#cb307-71" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">gsub</span>(<span class="st">&quot;-mg/ml&quot;</span>,<span class="st">&quot;&quot;</span>, dose_mg_ml)) <span class="sc">%&gt;%</span></span>
-<span id="cb307-72"><a href="answers-to-exercises.html#cb307-72" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">as.numeric</span>(dose_mg_ml)) <span class="sc">%&gt;%</span></span>
-<span id="cb307-73"><a href="answers-to-exercises.html#cb307-73" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">13</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb307-74"><a href="answers-to-exercises.html#cb307-74" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>,<span class="st">&quot;time_hr&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_runtime_&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb307-75"><a href="answers-to-exercises.html#cb307-75" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb307-76"><a href="answers-to-exercises.html#cb307-76" tabindex="-1"></a>    <span class="at">time_hr =</span> <span class="fu">case_when</span>(</span>
-<span id="cb307-77"><a href="answers-to-exercises.html#cb307-77" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_hr, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_hr)),</span>
-<span id="cb307-78"><a href="answers-to-exercises.html#cb307-78" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;day&quot;</span>, time_hr, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;day&quot;</span>, <span class="st">&quot;&quot;</span>, time_hr)) <span class="sc">*</span> <span class="dv">24</span></span>
-<span id="cb307-79"><a href="answers-to-exercises.html#cb307-79" tabindex="-1"></a>    )</span>
-<span id="cb307-80"><a href="answers-to-exercises.html#cb307-80" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb307-81"><a href="answers-to-exercises.html#cb307-81" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>User)</span></code></pre></div>
+<span id="cb307-31"><a href="answers-to-exercises.html#cb307-31" tabindex="-1"></a><span class="co"># 4. Add a column named `circ_type` where you assign the string *odd* or *even* </span></span>
+<span id="cb307-32"><a href="answers-to-exercises.html#cb307-32" tabindex="-1"></a><span class="co">#     depending on the column `circ`. Attempt to use the `purrr::map` function, </span></span>
+<span id="cb307-33"><a href="answers-to-exercises.html#cb307-33" tabindex="-1"></a><span class="co">#     along with the `oddeven()` function from the previous chapter, then compute </span></span>
+<span id="cb307-34"><a href="answers-to-exercises.html#cb307-34" tabindex="-1"></a><span class="co">#     the mean, standard deviation, and coefficient of variation of the diameters </span></span>
+<span id="cb307-35"><a href="answers-to-exercises.html#cb307-35" tabindex="-1"></a><span class="co">#     for each `circ_type`.</span></span>
+<span id="cb307-36"><a href="answers-to-exercises.html#cb307-36" tabindex="-1"></a></span>
+<span id="cb307-37"><a href="answers-to-exercises.html#cb307-37" tabindex="-1"></a>oddeven <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { </span>
+<span id="cb307-38"><a href="answers-to-exercises.html#cb307-38" tabindex="-1"></a>  <span class="cf">if</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
+<span id="cb307-39"><a href="answers-to-exercises.html#cb307-39" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">&#39;even&#39;</span>)</span>
+<span id="cb307-40"><a href="answers-to-exercises.html#cb307-40" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb307-41"><a href="answers-to-exercises.html#cb307-41" tabindex="-1"></a>      <span class="fu">return</span>(<span class="st">&#39;odd&#39;</span>)</span>
+<span id="cb307-42"><a href="answers-to-exercises.html#cb307-42" tabindex="-1"></a>    }</span>
+<span id="cb307-43"><a href="answers-to-exercises.html#cb307-43" tabindex="-1"></a>}</span>
+<span id="cb307-44"><a href="answers-to-exercises.html#cb307-44" tabindex="-1"></a></span>
+<span id="cb307-45"><a href="answers-to-exercises.html#cb307-45" tabindex="-1"></a>tbl_cir <span class="sc">%&gt;%</span> </span>
+<span id="cb307-46"><a href="answers-to-exercises.html#cb307-46" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">circ_type =</span> <span class="fu">map</span>(circ, oddeven)) <span class="sc">%&gt;%</span></span>
+<span id="cb307-47"><a href="answers-to-exercises.html#cb307-47" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">circ_type =</span> <span class="fu">unlist</span>(circ_type)) <span class="sc">%&gt;%</span></span>
+<span id="cb307-48"><a href="answers-to-exercises.html#cb307-48" tabindex="-1"></a>  <span class="fu">group_by</span>(circ_type) <span class="sc">%&gt;%</span></span>
+<span id="cb307-49"><a href="answers-to-exercises.html#cb307-49" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb307-50"><a href="answers-to-exercises.html#cb307-50" tabindex="-1"></a>    <span class="at">diam_mean =</span> <span class="fu">mean</span>(diam),</span>
+<span id="cb307-51"><a href="answers-to-exercises.html#cb307-51" tabindex="-1"></a>    <span class="at">diam_sd =</span> <span class="fu">sd</span>(diam),</span>
+<span id="cb307-52"><a href="answers-to-exercises.html#cb307-52" tabindex="-1"></a>    <span class="at">diam_cv =</span> diam_sd <span class="sc">/</span> diam_mean</span>
+<span id="cb307-53"><a href="answers-to-exercises.html#cb307-53" tabindex="-1"></a>  )</span></code></pre></div>
 
 </div>
-<div id="data-visualization-1" class="section level2 unnumbered hasAnchor">
-<h2><strong>8</strong> Data Visualization<a href="answers-to-exercises.html#data-visualization-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="data-wrangling-1" class="section level2 unnumbered hasAnchor">
+<h2><strong>7</strong> Data Wrangling<a href="answers-to-exercises.html#data-wrangling-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="answers-to-exercises.html#cb308-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
 <span id="cb308-2"><a href="answers-to-exercises.html#cb308-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
 <span id="cb308-3"><a href="answers-to-exercises.html#cb308-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
 <span id="cb308-4"><a href="answers-to-exercises.html#cb308-4" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb308-5"><a href="answers-to-exercises.html#cb308-5" tabindex="-1"></a><span class="co"># Data Visualization Exercises</span></span>
+<span id="cb308-5"><a href="answers-to-exercises.html#cb308-5" tabindex="-1"></a><span class="co"># Data Wrangling Exercises</span></span>
 <span id="cb308-6"><a href="answers-to-exercises.html#cb308-6" tabindex="-1"></a></span>
-<span id="cb308-7"><a href="answers-to-exercises.html#cb308-7" tabindex="-1"></a><span class="co"># 1. If not already done, download *Bacterial Metabolite Data (tidy)* to use as </span></span>
-<span id="cb308-8"><a href="answers-to-exercises.html#cb308-8" tabindex="-1"></a><span class="co">#    an example data file.</span></span>
-<span id="cb308-9"><a href="answers-to-exercises.html#cb308-9" tabindex="-1"></a></span>
-<span id="cb308-10"><a href="answers-to-exercises.html#cb308-10" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-Metabolites_dose-simicillin_tidy.csv&quot;</span></span>
-<span id="cb308-11"><a href="answers-to-exercises.html#cb308-11" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/bacterial-Metabolites_dose-simicillin_tidy.csv&quot;</span>)</span>
+<span id="cb308-7"><a href="answers-to-exercises.html#cb308-7" tabindex="-1"></a><span class="co"># 1. Download the data.</span></span>
+<span id="cb308-8"><a href="answers-to-exercises.html#cb308-8" tabindex="-1"></a></span>
+<span id="cb308-9"><a href="answers-to-exercises.html#cb308-9" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-Metabolites_dose-simicillin_messy.xlsx&quot;</span></span>
+<span id="cb308-10"><a href="answers-to-exercises.html#cb308-10" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/bacterial-Metabolites_dose-simicillin_messy.xlsx&quot;</span>)</span>
+<span id="cb308-11"><a href="answers-to-exercises.html#cb308-11" tabindex="-1"></a></span>
 <span id="cb308-12"><a href="answers-to-exercises.html#cb308-12" tabindex="-1"></a></span>
-<span id="cb308-13"><a href="answers-to-exercises.html#cb308-13" tabindex="-1"></a></span>
-<span id="cb308-14"><a href="answers-to-exercises.html#cb308-14" tabindex="-1"></a><span class="co"># 2. Read in the dataset .csv using the `tidyverse` set of packages.</span></span>
-<span id="cb308-15"><a href="answers-to-exercises.html#cb308-15" tabindex="-1"></a></span>
-<span id="cb308-16"><a href="answers-to-exercises.html#cb308-16" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb308-13"><a href="answers-to-exercises.html#cb308-13" tabindex="-1"></a><span class="co"># 2. Read in the messy bacteria data and store it as a variable.</span></span>
+<span id="cb308-14"><a href="answers-to-exercises.html#cb308-14" tabindex="-1"></a></span>
+<span id="cb308-15"><a href="answers-to-exercises.html#cb308-15" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb308-16"><a href="answers-to-exercises.html#cb308-16" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb308-17"><a href="answers-to-exercises.html#cb308-17" tabindex="-1"></a></span>
-<span id="cb308-18"><a href="answers-to-exercises.html#cb308-18" tabindex="-1"></a>tbl_bac <span class="ot">&lt;-</span> <span class="st">&quot;./data/bacterial-Metabolites_dose-simicillin_tidy.csv&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_csv</span>()</span>
+<span id="cb308-18"><a href="answers-to-exercises.html#cb308-18" tabindex="-1"></a>tbl_bac <span class="ot">&lt;-</span> <span class="st">&quot;data/bacterial-Metabolites_dose-simicillin_messy.xlsx&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_excel</span>(<span class="at">col_names =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb308-19"><a href="answers-to-exercises.html#cb308-19" tabindex="-1"></a></span>
 <span id="cb308-20"><a href="answers-to-exercises.html#cb308-20" tabindex="-1"></a></span>
-<span id="cb308-21"><a href="answers-to-exercises.html#cb308-21" tabindex="-1"></a><span class="co"># 3. Create a Metabolite `Abundance` by `Time_min` ...</span></span>
-<span id="cb308-22"><a href="answers-to-exercises.html#cb308-22" tabindex="-1"></a></span>
-<span id="cb308-23"><a href="answers-to-exercises.html#cb308-23" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span> </span>
-<span id="cb308-24"><a href="answers-to-exercises.html#cb308-24" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Time_min, Abundance)) <span class="sc">+</span> </span>
-<span id="cb308-25"><a href="answers-to-exercises.html#cb308-25" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb308-21"><a href="answers-to-exercises.html#cb308-21" tabindex="-1"></a><span class="co"># *In all proceeding exercises, pipe results from previous exercise into current </span></span>
+<span id="cb308-22"><a href="answers-to-exercises.html#cb308-22" tabindex="-1"></a><span class="co">#    exercise creating a single lone pipe for data processing*</span></span>
+<span id="cb308-23"><a href="answers-to-exercises.html#cb308-23" tabindex="-1"></a></span>
+<span id="cb308-24"><a href="answers-to-exercises.html#cb308-24" tabindex="-1"></a><span class="co"># 3. Separate `Culture` column containing culture and dose into `culture` and </span></span>
+<span id="cb308-25"><a href="answers-to-exercises.html#cb308-25" tabindex="-1"></a><span class="co">#    `dose_mg_ml` columns.</span></span>
 <span id="cb308-26"><a href="answers-to-exercises.html#cb308-26" tabindex="-1"></a></span>
-<span id="cb308-27"><a href="answers-to-exercises.html#cb308-27" tabindex="-1"></a></span>
-<span id="cb308-28"><a href="answers-to-exercises.html#cb308-28" tabindex="-1"></a><span class="co"># 4. ... facet by `Organism` and `Metabolite`...</span></span>
+<span id="cb308-27"><a href="answers-to-exercises.html#cb308-27" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span></span>
+<span id="cb308-28"><a href="answers-to-exercises.html#cb308-28" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg_ml&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose--&quot;</span>)</span>
 <span id="cb308-29"><a href="answers-to-exercises.html#cb308-29" tabindex="-1"></a></span>
-<span id="cb308-30"><a href="answers-to-exercises.html#cb308-30" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span> </span>
-<span id="cb308-31"><a href="answers-to-exercises.html#cb308-31" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Time_min, Abundance)) <span class="sc">+</span> </span>
-<span id="cb308-32"><a href="answers-to-exercises.html#cb308-32" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb308-33"><a href="answers-to-exercises.html#cb308-33" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Metabolite <span class="sc">~</span> Organism)</span>
-<span id="cb308-34"><a href="answers-to-exercises.html#cb308-34" tabindex="-1"></a></span>
-<span id="cb308-35"><a href="answers-to-exercises.html#cb308-35" tabindex="-1"></a></span>
-<span id="cb308-36"><a href="answers-to-exercises.html#cb308-36" tabindex="-1"></a><span class="co"># 4. ... adjust the y-axis to log10, color by `Dose_mg`, and add a 50% transparent line ...</span></span>
-<span id="cb308-37"><a href="answers-to-exercises.html#cb308-37" tabindex="-1"></a></span>
-<span id="cb308-38"><a href="answers-to-exercises.html#cb308-38" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span> </span>
-<span id="cb308-39"><a href="answers-to-exercises.html#cb308-39" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Dose_mg =</span> Dose_mg <span class="sc">%&gt;%</span> <span class="fu">as.factor</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb308-40"><a href="answers-to-exercises.html#cb308-40" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Time_min, Abundance)) <span class="sc">+</span> </span>
-<span id="cb308-41"><a href="answers-to-exercises.html#cb308-41" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Dose_mg)) <span class="sc">+</span></span>
-<span id="cb308-42"><a href="answers-to-exercises.html#cb308-42" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> Dose_mg), <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb308-43"><a href="answers-to-exercises.html#cb308-43" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Metabolite <span class="sc">~</span> Organism) <span class="sc">+</span></span>
-<span id="cb308-44"><a href="answers-to-exercises.html#cb308-44" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>()</span>
-<span id="cb308-45"><a href="answers-to-exercises.html#cb308-45" tabindex="-1"></a></span>
-<span id="cb308-46"><a href="answers-to-exercises.html#cb308-46" tabindex="-1"></a></span>
-<span id="cb308-47"><a href="answers-to-exercises.html#cb308-47" tabindex="-1"></a><span class="co"># 5. ... change the theme to something publishable, add a title, modify the x- </span></span>
-<span id="cb308-48"><a href="answers-to-exercises.html#cb308-48" tabindex="-1"></a><span class="co">#    and y-axis label, modify the legend title, adjust the y-axis ticks to show </span></span>
-<span id="cb308-49"><a href="answers-to-exercises.html#cb308-49" tabindex="-1"></a><span class="co">#    the actually measured time values, and pick a color scheme that highlights </span></span>
-<span id="cb308-50"><a href="answers-to-exercises.html#cb308-50" tabindex="-1"></a><span class="co">#    the dose value...</span></span>
+<span id="cb308-30"><a href="answers-to-exercises.html#cb308-30" tabindex="-1"></a></span>
+<span id="cb308-31"><a href="answers-to-exercises.html#cb308-31" tabindex="-1"></a><span class="co"># 4. Make `dose_mg_ml` column numeric by removing the text and change the column </span></span>
+<span id="cb308-32"><a href="answers-to-exercises.html#cb308-32" tabindex="-1"></a><span class="co">#    data type from character to numeric.</span></span>
+<span id="cb308-33"><a href="answers-to-exercises.html#cb308-33" tabindex="-1"></a></span>
+<span id="cb308-34"><a href="answers-to-exercises.html#cb308-34" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span></span>
+<span id="cb308-35"><a href="answers-to-exercises.html#cb308-35" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg_ml&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose--&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb308-36"><a href="answers-to-exercises.html#cb308-36" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">gsub</span>(<span class="st">&quot;-mg/ml&quot;</span>,<span class="st">&quot;&quot;</span>, dose_mg_ml)) <span class="sc">%&gt;%</span></span>
+<span id="cb308-37"><a href="answers-to-exercises.html#cb308-37" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">as.numeric</span>(dose_mg_ml))</span>
+<span id="cb308-38"><a href="answers-to-exercises.html#cb308-38" tabindex="-1"></a></span>
+<span id="cb308-39"><a href="answers-to-exercises.html#cb308-39" tabindex="-1"></a></span>
+<span id="cb308-40"><a href="answers-to-exercises.html#cb308-40" tabindex="-1"></a><span class="co"># 5. Pivot the table from wide to long creating `metabolite`, `time_hr` &amp; `abundance` columns.</span></span>
+<span id="cb308-41"><a href="answers-to-exercises.html#cb308-41" tabindex="-1"></a></span>
+<span id="cb308-42"><a href="answers-to-exercises.html#cb308-42" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span></span>
+<span id="cb308-43"><a href="answers-to-exercises.html#cb308-43" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg_ml&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose--&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb308-44"><a href="answers-to-exercises.html#cb308-44" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">gsub</span>(<span class="st">&quot;-mg/ml&quot;</span>,<span class="st">&quot;&quot;</span>, dose_mg_ml)) <span class="sc">%&gt;%</span></span>
+<span id="cb308-45"><a href="answers-to-exercises.html#cb308-45" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">as.numeric</span>(dose_mg_ml)) <span class="sc">%&gt;%</span></span>
+<span id="cb308-46"><a href="answers-to-exercises.html#cb308-46" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">13</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb308-47"><a href="answers-to-exercises.html#cb308-47" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>,<span class="st">&quot;time_hr&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_runtime_&quot;</span>)</span>
+<span id="cb308-48"><a href="answers-to-exercises.html#cb308-48" tabindex="-1"></a></span>
+<span id="cb308-49"><a href="answers-to-exercises.html#cb308-49" tabindex="-1"></a></span>
+<span id="cb308-50"><a href="answers-to-exercises.html#cb308-50" tabindex="-1"></a><span class="co"># 6. Make sure `time_hr` contains just hours and not a mixture of days and hours.</span></span>
 <span id="cb308-51"><a href="answers-to-exercises.html#cb308-51" tabindex="-1"></a></span>
-<span id="cb308-52"><a href="answers-to-exercises.html#cb308-52" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span> </span>
-<span id="cb308-53"><a href="answers-to-exercises.html#cb308-53" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Dose_mg =</span> Dose_mg <span class="sc">%&gt;%</span> <span class="fu">as.factor</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb308-54"><a href="answers-to-exercises.html#cb308-54" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Time_min, Abundance)) <span class="sc">+</span> </span>
-<span id="cb308-55"><a href="answers-to-exercises.html#cb308-55" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Dose_mg)) <span class="sc">+</span></span>
-<span id="cb308-56"><a href="answers-to-exercises.html#cb308-56" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> Dose_mg), <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb308-57"><a href="answers-to-exercises.html#cb308-57" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Metabolite <span class="sc">~</span> Organism) <span class="sc">+</span></span>
-<span id="cb308-58"><a href="answers-to-exercises.html#cb308-58" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;grey&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;red&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb308-59"><a href="answers-to-exercises.html#cb308-59" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span></span>
-<span id="cb308-60"><a href="answers-to-exercises.html#cb308-60" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">unique</span>(tbl_bac<span class="sc">$</span>Time_min)) <span class="sc">+</span></span>
-<span id="cb308-61"><a href="answers-to-exercises.html#cb308-61" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Bacterial Metabolite monitoring by LCMS in response to antibiotic&#39;</span>,</span>
-<span id="cb308-62"><a href="answers-to-exercises.html#cb308-62" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Conditions: metered dose of similicillin&#39;</span>,</span>
-<span id="cb308-63"><a href="answers-to-exercises.html#cb308-63" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Time (min)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;LCMS Abundance&quot;</span>,</span>
-<span id="cb308-64"><a href="answers-to-exercises.html#cb308-64" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Dose (mg)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb308-65"><a href="answers-to-exercises.html#cb308-65" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<span id="cb308-52"><a href="answers-to-exercises.html#cb308-52" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span></span>
+<span id="cb308-53"><a href="answers-to-exercises.html#cb308-53" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg_ml&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose--&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb308-54"><a href="answers-to-exercises.html#cb308-54" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">gsub</span>(<span class="st">&quot;-mg/ml&quot;</span>,<span class="st">&quot;&quot;</span>, dose_mg_ml)) <span class="sc">%&gt;%</span></span>
+<span id="cb308-55"><a href="answers-to-exercises.html#cb308-55" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">as.numeric</span>(dose_mg_ml)) <span class="sc">%&gt;%</span></span>
+<span id="cb308-56"><a href="answers-to-exercises.html#cb308-56" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">13</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb308-57"><a href="answers-to-exercises.html#cb308-57" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>,<span class="st">&quot;time_hr&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_runtime_&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb308-58"><a href="answers-to-exercises.html#cb308-58" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb308-59"><a href="answers-to-exercises.html#cb308-59" tabindex="-1"></a>    <span class="at">time_hr =</span> <span class="fu">case_when</span>(</span>
+<span id="cb308-60"><a href="answers-to-exercises.html#cb308-60" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_hr, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_hr)),</span>
+<span id="cb308-61"><a href="answers-to-exercises.html#cb308-61" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;day&quot;</span>, time_hr, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;day&quot;</span>, <span class="st">&quot;&quot;</span>, time_hr)) <span class="sc">*</span> <span class="dv">24</span></span>
+<span id="cb308-62"><a href="answers-to-exercises.html#cb308-62" tabindex="-1"></a>    )</span>
+<span id="cb308-63"><a href="answers-to-exercises.html#cb308-63" tabindex="-1"></a>  )</span>
+<span id="cb308-64"><a href="answers-to-exercises.html#cb308-64" tabindex="-1"></a></span>
+<span id="cb308-65"><a href="answers-to-exercises.html#cb308-65" tabindex="-1"></a></span>
+<span id="cb308-66"><a href="answers-to-exercises.html#cb308-66" tabindex="-1"></a><span class="co"># 7. Remove the `User` column. See the cheat-sheet here: </span></span>
+<span id="cb308-67"><a href="answers-to-exercises.html#cb308-67" tabindex="-1"></a><span class="co">#    https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf</span></span>
+<span id="cb308-68"><a href="answers-to-exercises.html#cb308-68" tabindex="-1"></a></span>
+<span id="cb308-69"><a href="answers-to-exercises.html#cb308-69" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span></span>
+<span id="cb308-70"><a href="answers-to-exercises.html#cb308-70" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg_ml&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose--&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb308-71"><a href="answers-to-exercises.html#cb308-71" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">gsub</span>(<span class="st">&quot;-mg/ml&quot;</span>,<span class="st">&quot;&quot;</span>, dose_mg_ml)) <span class="sc">%&gt;%</span></span>
+<span id="cb308-72"><a href="answers-to-exercises.html#cb308-72" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">as.numeric</span>(dose_mg_ml)) <span class="sc">%&gt;%</span></span>
+<span id="cb308-73"><a href="answers-to-exercises.html#cb308-73" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">13</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb308-74"><a href="answers-to-exercises.html#cb308-74" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>,<span class="st">&quot;time_hr&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_runtime_&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb308-75"><a href="answers-to-exercises.html#cb308-75" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb308-76"><a href="answers-to-exercises.html#cb308-76" tabindex="-1"></a>    <span class="at">time_hr =</span> <span class="fu">case_when</span>(</span>
+<span id="cb308-77"><a href="answers-to-exercises.html#cb308-77" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_hr, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_hr)),</span>
+<span id="cb308-78"><a href="answers-to-exercises.html#cb308-78" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;day&quot;</span>, time_hr, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;day&quot;</span>, <span class="st">&quot;&quot;</span>, time_hr)) <span class="sc">*</span> <span class="dv">24</span></span>
+<span id="cb308-79"><a href="answers-to-exercises.html#cb308-79" tabindex="-1"></a>    )</span>
+<span id="cb308-80"><a href="answers-to-exercises.html#cb308-80" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb308-81"><a href="answers-to-exercises.html#cb308-81" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>User)</span></code></pre></div>
 
 </div>
-<div id="more-5-r-objects" class="section level2 unnumbered hasAnchor">
-<h2>More <strong>5</strong> R Objects<a href="answers-to-exercises.html#more-5-r-objects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="data-visualization-1" class="section level2 unnumbered hasAnchor">
+<h2><strong>8</strong> Data Visualization<a href="answers-to-exercises.html#data-visualization-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="answers-to-exercises.html#cb309-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
 <span id="cb309-2"><a href="answers-to-exercises.html#cb309-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
 <span id="cb309-3"><a href="answers-to-exercises.html#cb309-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
 <span id="cb309-4"><a href="answers-to-exercises.html#cb309-4" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb309-5"><a href="answers-to-exercises.html#cb309-5" tabindex="-1"></a><span class="co"># More Data Object Exercises</span></span>
+<span id="cb309-5"><a href="answers-to-exercises.html#cb309-5" tabindex="-1"></a><span class="co"># Data Visualization Exercises</span></span>
 <span id="cb309-6"><a href="answers-to-exercises.html#cb309-6" tabindex="-1"></a></span>
-<span id="cb309-7"><a href="answers-to-exercises.html#cb309-7" tabindex="-1"></a><span class="co"># Exercise #1 -- Working with Variables You are running an LC-MS experiment </span></span>
-<span id="cb309-8"><a href="answers-to-exercises.html#cb309-8" tabindex="-1"></a><span class="co">#     using a 60 min LC gradient</span></span>
+<span id="cb309-7"><a href="answers-to-exercises.html#cb309-7" tabindex="-1"></a><span class="co"># 1. If not already done, download *Bacterial Metabolite Data (tidy)* to use as </span></span>
+<span id="cb309-8"><a href="answers-to-exercises.html#cb309-8" tabindex="-1"></a><span class="co">#    an example data file.</span></span>
 <span id="cb309-9"><a href="answers-to-exercises.html#cb309-9" tabindex="-1"></a></span>
-<span id="cb309-10"><a href="answers-to-exercises.html#cb309-10" tabindex="-1"></a><span class="co"># 1.1 Create a variable called gradient_min to hold the length of the gradient </span></span>
-<span id="cb309-11"><a href="answers-to-exercises.html#cb309-11" tabindex="-1"></a><span class="co">#     in minutes.</span></span>
+<span id="cb309-10"><a href="answers-to-exercises.html#cb309-10" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-Metabolites_dose-simicillin_tidy.csv&quot;</span></span>
+<span id="cb309-11"><a href="answers-to-exercises.html#cb309-11" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/bacterial-Metabolites_dose-simicillin_tidy.csv&quot;</span>)</span>
 <span id="cb309-12"><a href="answers-to-exercises.html#cb309-12" tabindex="-1"></a></span>
-<span id="cb309-13"><a href="answers-to-exercises.html#cb309-13" tabindex="-1"></a>gradient_min <span class="ot">&lt;-</span> <span class="dv">60</span></span>
-<span id="cb309-14"><a href="answers-to-exercises.html#cb309-14" tabindex="-1"></a></span>
+<span id="cb309-13"><a href="answers-to-exercises.html#cb309-13" tabindex="-1"></a></span>
+<span id="cb309-14"><a href="answers-to-exercises.html#cb309-14" tabindex="-1"></a><span class="co"># 2. Read in the dataset .csv using the `tidyverse` set of packages.</span></span>
 <span id="cb309-15"><a href="answers-to-exercises.html#cb309-15" tabindex="-1"></a></span>
-<span id="cb309-16"><a href="answers-to-exercises.html#cb309-16" tabindex="-1"></a><span class="co"># 1.2 Using the gradient length variable you just created, convert it to seconds </span></span>
-<span id="cb309-17"><a href="answers-to-exercises.html#cb309-17" tabindex="-1"></a><span class="co">#     and assign it to a new variable with a meaningful name.</span></span>
-<span id="cb309-18"><a href="answers-to-exercises.html#cb309-18" tabindex="-1"></a></span>
-<span id="cb309-19"><a href="answers-to-exercises.html#cb309-19" tabindex="-1"></a>gradient_sec <span class="ot">&lt;-</span> gradient_min <span class="sc">*</span> <span class="dv">60</span></span>
+<span id="cb309-16"><a href="answers-to-exercises.html#cb309-16" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb309-17"><a href="answers-to-exercises.html#cb309-17" tabindex="-1"></a></span>
+<span id="cb309-18"><a href="answers-to-exercises.html#cb309-18" tabindex="-1"></a>tbl_bac <span class="ot">&lt;-</span> <span class="st">&quot;./data/bacterial-Metabolites_dose-simicillin_tidy.csv&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_csv</span>()</span>
+<span id="cb309-19"><a href="answers-to-exercises.html#cb309-19" tabindex="-1"></a></span>
 <span id="cb309-20"><a href="answers-to-exercises.html#cb309-20" tabindex="-1"></a></span>
-<span id="cb309-21"><a href="answers-to-exercises.html#cb309-21" tabindex="-1"></a></span>
-<span id="cb309-22"><a href="answers-to-exercises.html#cb309-22" tabindex="-1"></a><span class="co"># Exercise #2 -- Working with Vectors</span></span>
-<span id="cb309-23"><a href="answers-to-exercises.html#cb309-23" tabindex="-1"></a></span>
-<span id="cb309-24"><a href="answers-to-exercises.html#cb309-24" tabindex="-1"></a><span class="co"># Continuing from Exercise #1...</span></span>
-<span id="cb309-25"><a href="answers-to-exercises.html#cb309-25" tabindex="-1"></a></span>
-<span id="cb309-26"><a href="answers-to-exercises.html#cb309-26" tabindex="-1"></a><span class="co"># 2.1 Imagine you conducted additional experiments, one with a 15 minute gradient </span></span>
-<span id="cb309-27"><a href="answers-to-exercises.html#cb309-27" tabindex="-1"></a><span class="co">#     and one with a 30 min gradient. Create a vector to hold all three gradient </span></span>
-<span id="cb309-28"><a href="answers-to-exercises.html#cb309-28" tabindex="-1"></a><span class="co">#     times in minutes, and assign it to a new variable.</span></span>
+<span id="cb309-21"><a href="answers-to-exercises.html#cb309-21" tabindex="-1"></a><span class="co"># 3. Create a Metabolite `Abundance` by `Time_min` ...</span></span>
+<span id="cb309-22"><a href="answers-to-exercises.html#cb309-22" tabindex="-1"></a></span>
+<span id="cb309-23"><a href="answers-to-exercises.html#cb309-23" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span> </span>
+<span id="cb309-24"><a href="answers-to-exercises.html#cb309-24" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Time_min, Abundance)) <span class="sc">+</span> </span>
+<span id="cb309-25"><a href="answers-to-exercises.html#cb309-25" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb309-26"><a href="answers-to-exercises.html#cb309-26" tabindex="-1"></a></span>
+<span id="cb309-27"><a href="answers-to-exercises.html#cb309-27" tabindex="-1"></a></span>
+<span id="cb309-28"><a href="answers-to-exercises.html#cb309-28" tabindex="-1"></a><span class="co"># 4. ... facet by `Organism` and `Metabolite`...</span></span>
 <span id="cb309-29"><a href="answers-to-exercises.html#cb309-29" tabindex="-1"></a></span>
-<span id="cb309-30"><a href="answers-to-exercises.html#cb309-30" tabindex="-1"></a>gradients_min <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">60</span>)</span>
-<span id="cb309-31"><a href="answers-to-exercises.html#cb309-31" tabindex="-1"></a></span>
-<span id="cb309-32"><a href="answers-to-exercises.html#cb309-32" tabindex="-1"></a></span>
-<span id="cb309-33"><a href="answers-to-exercises.html#cb309-33" tabindex="-1"></a><span class="co"># 2.2 Convert the vector of gradient times to seconds. How does this conversion </span></span>
-<span id="cb309-34"><a href="answers-to-exercises.html#cb309-34" tabindex="-1"></a><span class="co">#     compare to how you did the conversion in Exercise 1?</span></span>
+<span id="cb309-30"><a href="answers-to-exercises.html#cb309-30" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span> </span>
+<span id="cb309-31"><a href="answers-to-exercises.html#cb309-31" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Time_min, Abundance)) <span class="sc">+</span> </span>
+<span id="cb309-32"><a href="answers-to-exercises.html#cb309-32" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb309-33"><a href="answers-to-exercises.html#cb309-33" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Metabolite <span class="sc">~</span> Organism)</span>
+<span id="cb309-34"><a href="answers-to-exercises.html#cb309-34" tabindex="-1"></a></span>
 <span id="cb309-35"><a href="answers-to-exercises.html#cb309-35" tabindex="-1"></a></span>
-<span id="cb309-36"><a href="answers-to-exercises.html#cb309-36" tabindex="-1"></a>gradients_sec <span class="ot">&lt;-</span> gradients_min <span class="sc">*</span> <span class="dv">60</span></span>
+<span id="cb309-36"><a href="answers-to-exercises.html#cb309-36" tabindex="-1"></a><span class="co"># 4. ... adjust the y-axis to log10, color by `Dose_mg`, and add a 50% transparent line ...</span></span>
 <span id="cb309-37"><a href="answers-to-exercises.html#cb309-37" tabindex="-1"></a></span>
-<span id="cb309-38"><a href="answers-to-exercises.html#cb309-38" tabindex="-1"></a></span>
-<span id="cb309-39"><a href="answers-to-exercises.html#cb309-39" tabindex="-1"></a><span class="co"># Exercise #3 -- More Practice with Vectors</span></span>
-<span id="cb309-40"><a href="answers-to-exercises.html#cb309-40" tabindex="-1"></a></span>
-<span id="cb309-41"><a href="answers-to-exercises.html#cb309-41" tabindex="-1"></a><span class="co"># 3.1 The following vector represents precursor m/z values for detected features</span></span>
-<span id="cb309-42"><a href="answers-to-exercises.html#cb309-42" tabindex="-1"></a><span class="co">#     from your experiment:</span></span>
-<span id="cb309-43"><a href="answers-to-exercises.html#cb309-43" tabindex="-1"></a></span>
-<span id="cb309-44"><a href="answers-to-exercises.html#cb309-44" tabindex="-1"></a>prec_mz <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">968.4759</span>, <span class="fl">812.1599</span>, <span class="fl">887.9829</span>, <span class="fl">338.5294</span>, <span class="fl">510.2720</span>, </span>
-<span id="cb309-45"><a href="answers-to-exercises.html#cb309-45" tabindex="-1"></a>             <span class="fl">775.3455</span>, <span class="fl">409.2369</span>, <span class="fl">944.0385</span>, <span class="fl">584.7687</span>, <span class="fl">1041.9523</span>)</span>
+<span id="cb309-38"><a href="answers-to-exercises.html#cb309-38" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span> </span>
+<span id="cb309-39"><a href="answers-to-exercises.html#cb309-39" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Dose_mg =</span> Dose_mg <span class="sc">%&gt;%</span> <span class="fu">as.factor</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb309-40"><a href="answers-to-exercises.html#cb309-40" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Time_min, Abundance)) <span class="sc">+</span> </span>
+<span id="cb309-41"><a href="answers-to-exercises.html#cb309-41" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Dose_mg)) <span class="sc">+</span></span>
+<span id="cb309-42"><a href="answers-to-exercises.html#cb309-42" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> Dose_mg), <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb309-43"><a href="answers-to-exercises.html#cb309-43" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Metabolite <span class="sc">~</span> Organism) <span class="sc">+</span></span>
+<span id="cb309-44"><a href="answers-to-exercises.html#cb309-44" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>()</span>
+<span id="cb309-45"><a href="answers-to-exercises.html#cb309-45" tabindex="-1"></a></span>
 <span id="cb309-46"><a href="answers-to-exercises.html#cb309-46" tabindex="-1"></a></span>
-<span id="cb309-47"><a href="answers-to-exercises.html#cb309-47" tabindex="-1"></a></span>
-<span id="cb309-48"><a href="answers-to-exercises.html#cb309-48" tabindex="-1"></a><span class="co"># -   How many values are there?</span></span>
-<span id="cb309-49"><a href="answers-to-exercises.html#cb309-49" tabindex="-1"></a></span>
-<span id="cb309-50"><a href="answers-to-exercises.html#cb309-50" tabindex="-1"></a><span class="fu">length</span>(prec_mz)</span>
+<span id="cb309-47"><a href="answers-to-exercises.html#cb309-47" tabindex="-1"></a><span class="co"># 5. ... change the theme to something publishable, add a title, modify the x- </span></span>
+<span id="cb309-48"><a href="answers-to-exercises.html#cb309-48" tabindex="-1"></a><span class="co">#    and y-axis label, modify the legend title, adjust the y-axis ticks to show </span></span>
+<span id="cb309-49"><a href="answers-to-exercises.html#cb309-49" tabindex="-1"></a><span class="co">#    the actually measured time values, and pick a color scheme that highlights </span></span>
+<span id="cb309-50"><a href="answers-to-exercises.html#cb309-50" tabindex="-1"></a><span class="co">#    the dose value...</span></span>
 <span id="cb309-51"><a href="answers-to-exercises.html#cb309-51" tabindex="-1"></a></span>
-<span id="cb309-52"><a href="answers-to-exercises.html#cb309-52" tabindex="-1"></a></span>
-<span id="cb309-53"><a href="answers-to-exercises.html#cb309-53" tabindex="-1"></a><span class="co"># -   What is the minimum value? The maximum?</span></span>
-<span id="cb309-54"><a href="answers-to-exercises.html#cb309-54" tabindex="-1"></a></span>
-<span id="cb309-55"><a href="answers-to-exercises.html#cb309-55" tabindex="-1"></a><span class="fu">min</span>(prec_mz)</span>
-<span id="cb309-56"><a href="answers-to-exercises.html#cb309-56" tabindex="-1"></a><span class="fu">max</span>(prec_mz)</span>
-<span id="cb309-57"><a href="answers-to-exercises.html#cb309-57" tabindex="-1"></a></span>
-<span id="cb309-58"><a href="answers-to-exercises.html#cb309-58" tabindex="-1"></a></span>
-<span id="cb309-59"><a href="answers-to-exercises.html#cb309-59" tabindex="-1"></a><span class="co"># Exercise #4 -- Vectors and Conditional Expressions</span></span>
-<span id="cb309-60"><a href="answers-to-exercises.html#cb309-60" tabindex="-1"></a></span>
-<span id="cb309-61"><a href="answers-to-exercises.html#cb309-61" tabindex="-1"></a><span class="co"># 4.1 Using the above vector of precursor values, write a conditional expression</span></span>
-<span id="cb309-62"><a href="answers-to-exercises.html#cb309-62" tabindex="-1"></a><span class="co">#     to find the values with m/z \&lt; 600. What is returned by this expression? A</span></span>
-<span id="cb309-63"><a href="answers-to-exercises.html#cb309-63" tabindex="-1"></a><span class="co">#     single value or multiple values? A number or something else?</span></span>
-<span id="cb309-64"><a href="answers-to-exercises.html#cb309-64" tabindex="-1"></a></span>
-<span id="cb309-65"><a href="answers-to-exercises.html#cb309-65" tabindex="-1"></a>prec_mz <span class="sc">&lt;</span> <span class="dv">600</span></span>
-<span id="cb309-66"><a href="answers-to-exercises.html#cb309-66" tabindex="-1"></a></span>
-<span id="cb309-67"><a href="answers-to-exercises.html#cb309-67" tabindex="-1"></a></span>
-<span id="cb309-68"><a href="answers-to-exercises.html#cb309-68" tabindex="-1"></a><span class="co"># 4.2 Use this conditional expression to get the precursor values with m/z \&lt; 600</span></span>
-<span id="cb309-69"><a href="answers-to-exercises.html#cb309-69" tabindex="-1"></a></span>
-<span id="cb309-70"><a href="answers-to-exercises.html#cb309-70" tabindex="-1"></a>prec_mz[prec_mz <span class="sc">&lt;</span> <span class="dv">600</span>]</span>
-<span id="cb309-71"><a href="answers-to-exercises.html#cb309-71" tabindex="-1"></a></span>
-<span id="cb309-72"><a href="answers-to-exercises.html#cb309-72" tabindex="-1"></a></span>
-<span id="cb309-73"><a href="answers-to-exercises.html#cb309-73" tabindex="-1"></a><span class="co"># 4.3 Consider a new vector of data that contains the charge states of the same </span></span>
-<span id="cb309-74"><a href="answers-to-exercises.html#cb309-74" tabindex="-1"></a><span class="co">#     detected features from above:</span></span>
-<span id="cb309-75"><a href="answers-to-exercises.html#cb309-75" tabindex="-1"></a></span>
-<span id="cb309-76"><a href="answers-to-exercises.html#cb309-76" tabindex="-1"></a>prec_z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
-<span id="cb309-77"><a href="answers-to-exercises.html#cb309-77" tabindex="-1"></a></span>
-<span id="cb309-78"><a href="answers-to-exercises.html#cb309-78" tabindex="-1"></a></span>
-<span id="cb309-79"><a href="answers-to-exercises.html#cb309-79" tabindex="-1"></a><span class="co"># -   Write a conditional expression to find which detected features that have </span></span>
-<span id="cb309-80"><a href="answers-to-exercises.html#cb309-80" tabindex="-1"></a><span class="co">#     a charge state of 2.</span></span>
-<span id="cb309-81"><a href="answers-to-exercises.html#cb309-81" tabindex="-1"></a></span>
-<span id="cb309-82"><a href="answers-to-exercises.html#cb309-82" tabindex="-1"></a>prec_z <span class="sc">==</span> <span class="dv">2</span></span>
-<span id="cb309-83"><a href="answers-to-exercises.html#cb309-83" tabindex="-1"></a></span>
-<span id="cb309-84"><a href="answers-to-exercises.html#cb309-84" tabindex="-1"></a></span>
-<span id="cb309-85"><a href="answers-to-exercises.html#cb309-85" tabindex="-1"></a><span class="co"># 4.4 Write an expression to get the precursor m/z values for features having </span></span>
-<span id="cb309-86"><a href="answers-to-exercises.html#cb309-86" tabindex="-1"></a><span class="co">#     charge states of 2?</span></span>
-<span id="cb309-87"><a href="answers-to-exercises.html#cb309-87" tabindex="-1"></a></span>
-<span id="cb309-88"><a href="answers-to-exercises.html#cb309-88" tabindex="-1"></a>prec_mz[prec_z <span class="sc">==</span> <span class="dv">2</span>]</span></code></pre></div>
+<span id="cb309-52"><a href="answers-to-exercises.html#cb309-52" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span> </span>
+<span id="cb309-53"><a href="answers-to-exercises.html#cb309-53" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Dose_mg =</span> Dose_mg <span class="sc">%&gt;%</span> <span class="fu">as.factor</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb309-54"><a href="answers-to-exercises.html#cb309-54" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Time_min, Abundance)) <span class="sc">+</span> </span>
+<span id="cb309-55"><a href="answers-to-exercises.html#cb309-55" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Dose_mg)) <span class="sc">+</span></span>
+<span id="cb309-56"><a href="answers-to-exercises.html#cb309-56" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> Dose_mg), <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb309-57"><a href="answers-to-exercises.html#cb309-57" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Metabolite <span class="sc">~</span> Organism) <span class="sc">+</span></span>
+<span id="cb309-58"><a href="answers-to-exercises.html#cb309-58" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;grey&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;red&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb309-59"><a href="answers-to-exercises.html#cb309-59" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span></span>
+<span id="cb309-60"><a href="answers-to-exercises.html#cb309-60" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">unique</span>(tbl_bac<span class="sc">$</span>Time_min)) <span class="sc">+</span></span>
+<span id="cb309-61"><a href="answers-to-exercises.html#cb309-61" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Bacterial Metabolite monitoring by LCMS in response to antibiotic&#39;</span>,</span>
+<span id="cb309-62"><a href="answers-to-exercises.html#cb309-62" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Conditions: metered dose of similicillin&#39;</span>,</span>
+<span id="cb309-63"><a href="answers-to-exercises.html#cb309-63" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Time (min)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;LCMS Abundance&quot;</span>,</span>
+<span id="cb309-64"><a href="answers-to-exercises.html#cb309-64" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Dose (mg)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb309-65"><a href="answers-to-exercises.html#cb309-65" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
 
 </div>
-<div id="more-6-tidyverse" class="section level2 unnumbered hasAnchor">
-<h2>More <strong>6</strong> Tidyverse<a href="answers-to-exercises.html#more-6-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="more-5-r-objects" class="section level2 unnumbered hasAnchor">
+<h2>More <strong>5</strong> R Objects<a href="answers-to-exercises.html#more-5-r-objects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="answers-to-exercises.html#cb310-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
 <span id="cb310-2"><a href="answers-to-exercises.html#cb310-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
 <span id="cb310-3"><a href="answers-to-exercises.html#cb310-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
 <span id="cb310-4"><a href="answers-to-exercises.html#cb310-4" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb310-5"><a href="answers-to-exercises.html#cb310-5" tabindex="-1"></a><span class="co"># Moire Tidyverse Exercises</span></span>
+<span id="cb310-5"><a href="answers-to-exercises.html#cb310-5" tabindex="-1"></a><span class="co"># More Data Object Exercises</span></span>
 <span id="cb310-6"><a href="answers-to-exercises.html#cb310-6" tabindex="-1"></a></span>
-<span id="cb310-7"><a href="answers-to-exercises.html#cb310-7" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb310-8"><a href="answers-to-exercises.html#cb310-8" tabindex="-1"></a></span>
-<span id="cb310-9"><a href="answers-to-exercises.html#cb310-9" tabindex="-1"></a><span class="co"># Download the data.</span></span>
-<span id="cb310-10"><a href="answers-to-exercises.html#cb310-10" tabindex="-1"></a></span>
-<span id="cb310-11"><a href="answers-to-exercises.html#cb310-11" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/Choi2017_DDA_Skyline_input.csv.zip&quot;</span></span>
-<span id="cb310-12"><a href="answers-to-exercises.html#cb310-12" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/Choi2017_DDA_Skyline_input.csv.zip&quot;</span>)</span>
-<span id="cb310-13"><a href="answers-to-exercises.html#cb310-13" tabindex="-1"></a></span>
+<span id="cb310-7"><a href="answers-to-exercises.html#cb310-7" tabindex="-1"></a><span class="co"># Exercise #1 -- Working with Variables You are running an LC-MS experiment </span></span>
+<span id="cb310-8"><a href="answers-to-exercises.html#cb310-8" tabindex="-1"></a><span class="co">#     using a 60 min LC gradient</span></span>
+<span id="cb310-9"><a href="answers-to-exercises.html#cb310-9" tabindex="-1"></a></span>
+<span id="cb310-10"><a href="answers-to-exercises.html#cb310-10" tabindex="-1"></a><span class="co"># 1.1 Create a variable called gradient_min to hold the length of the gradient </span></span>
+<span id="cb310-11"><a href="answers-to-exercises.html#cb310-11" tabindex="-1"></a><span class="co">#     in minutes.</span></span>
+<span id="cb310-12"><a href="answers-to-exercises.html#cb310-12" tabindex="-1"></a></span>
+<span id="cb310-13"><a href="answers-to-exercises.html#cb310-13" tabindex="-1"></a>gradient_min <span class="ot">&lt;-</span> <span class="dv">60</span></span>
 <span id="cb310-14"><a href="answers-to-exercises.html#cb310-14" tabindex="-1"></a></span>
-<span id="cb310-15"><a href="answers-to-exercises.html#cb310-15" tabindex="-1"></a><span class="co"># Exercise #1 -- Reading data</span></span>
-<span id="cb310-16"><a href="answers-to-exercises.html#cb310-16" tabindex="-1"></a></span>
-<span id="cb310-17"><a href="answers-to-exercises.html#cb310-17" tabindex="-1"></a><span class="co"># 1.1 Read the example data from a proteomics experiment </span><span class="al">NOTE</span><span class="co">: file is a zipped </span></span>
-<span id="cb310-18"><a href="answers-to-exercises.html#cb310-18" tabindex="-1"></a><span class="co">#     .csv file -- R knows how to read it!</span></span>
-<span id="cb310-19"><a href="answers-to-exercises.html#cb310-19" tabindex="-1"></a></span>
-<span id="cb310-20"><a href="answers-to-exercises.html#cb310-20" tabindex="-1"></a>tbl_dda <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/Choi2017_DDA_Skyline_input.csv.zip&quot;</span>, <span class="at">guess_max =</span> <span class="dv">10000</span>)</span>
+<span id="cb310-15"><a href="answers-to-exercises.html#cb310-15" tabindex="-1"></a></span>
+<span id="cb310-16"><a href="answers-to-exercises.html#cb310-16" tabindex="-1"></a><span class="co"># 1.2 Using the gradient length variable you just created, convert it to seconds </span></span>
+<span id="cb310-17"><a href="answers-to-exercises.html#cb310-17" tabindex="-1"></a><span class="co">#     and assign it to a new variable with a meaningful name.</span></span>
+<span id="cb310-18"><a href="answers-to-exercises.html#cb310-18" tabindex="-1"></a></span>
+<span id="cb310-19"><a href="answers-to-exercises.html#cb310-19" tabindex="-1"></a>gradient_sec <span class="ot">&lt;-</span> gradient_min <span class="sc">*</span> <span class="dv">60</span></span>
+<span id="cb310-20"><a href="answers-to-exercises.html#cb310-20" tabindex="-1"></a></span>
 <span id="cb310-21"><a href="answers-to-exercises.html#cb310-21" tabindex="-1"></a></span>
-<span id="cb310-22"><a href="answers-to-exercises.html#cb310-22" tabindex="-1"></a></span>
-<span id="cb310-23"><a href="answers-to-exercises.html#cb310-23" tabindex="-1"></a><span class="co"># Exercise #2 -- Reviewing data Frames</span></span>
-<span id="cb310-24"><a href="answers-to-exercises.html#cb310-24" tabindex="-1"></a></span>
-<span id="cb310-25"><a href="answers-to-exercises.html#cb310-25" tabindex="-1"></a><span class="co"># 2.1 Review some basic properties of the data frame</span></span>
-<span id="cb310-26"><a href="answers-to-exercises.html#cb310-26" tabindex="-1"></a></span>
-<span id="cb310-27"><a href="answers-to-exercises.html#cb310-27" tabindex="-1"></a><span class="co"># -   How many rows?\</span></span>
-<span id="cb310-28"><a href="answers-to-exercises.html#cb310-28" tabindex="-1"></a></span>
-<span id="cb310-29"><a href="answers-to-exercises.html#cb310-29" tabindex="-1"></a><span class="fu">nrow</span>(tbl_dda)</span>
-<span id="cb310-30"><a href="answers-to-exercises.html#cb310-30" tabindex="-1"></a></span>
-<span id="cb310-31"><a href="answers-to-exercises.html#cb310-31" tabindex="-1"></a><span class="co"># -   How many columns?</span></span>
+<span id="cb310-22"><a href="answers-to-exercises.html#cb310-22" tabindex="-1"></a><span class="co"># Exercise #2 -- Working with Vectors</span></span>
+<span id="cb310-23"><a href="answers-to-exercises.html#cb310-23" tabindex="-1"></a></span>
+<span id="cb310-24"><a href="answers-to-exercises.html#cb310-24" tabindex="-1"></a><span class="co"># Continuing from Exercise #1...</span></span>
+<span id="cb310-25"><a href="answers-to-exercises.html#cb310-25" tabindex="-1"></a></span>
+<span id="cb310-26"><a href="answers-to-exercises.html#cb310-26" tabindex="-1"></a><span class="co"># 2.1 Imagine you conducted additional experiments, one with a 15 minute gradient </span></span>
+<span id="cb310-27"><a href="answers-to-exercises.html#cb310-27" tabindex="-1"></a><span class="co">#     and one with a 30 min gradient. Create a vector to hold all three gradient </span></span>
+<span id="cb310-28"><a href="answers-to-exercises.html#cb310-28" tabindex="-1"></a><span class="co">#     times in minutes, and assign it to a new variable.</span></span>
+<span id="cb310-29"><a href="answers-to-exercises.html#cb310-29" tabindex="-1"></a></span>
+<span id="cb310-30"><a href="answers-to-exercises.html#cb310-30" tabindex="-1"></a>gradients_min <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">60</span>)</span>
+<span id="cb310-31"><a href="answers-to-exercises.html#cb310-31" tabindex="-1"></a></span>
 <span id="cb310-32"><a href="answers-to-exercises.html#cb310-32" tabindex="-1"></a></span>
-<span id="cb310-33"><a href="answers-to-exercises.html#cb310-33" tabindex="-1"></a><span class="fu">ncol</span>(tbl_dda)</span>
-<span id="cb310-34"><a href="answers-to-exercises.html#cb310-34" tabindex="-1"></a></span>
-<span id="cb310-35"><a href="answers-to-exercises.html#cb310-35" tabindex="-1"></a><span class="co"># -   How many rows &amp; columns (use one expression)</span></span>
-<span id="cb310-36"><a href="answers-to-exercises.html#cb310-36" tabindex="-1"></a></span>
-<span id="cb310-37"><a href="answers-to-exercises.html#cb310-37" tabindex="-1"></a><span class="fu">dim</span>(tbl_dda)</span>
+<span id="cb310-33"><a href="answers-to-exercises.html#cb310-33" tabindex="-1"></a><span class="co"># 2.2 Convert the vector of gradient times to seconds. How does this conversion </span></span>
+<span id="cb310-34"><a href="answers-to-exercises.html#cb310-34" tabindex="-1"></a><span class="co">#     compare to how you did the conversion in Exercise 1?</span></span>
+<span id="cb310-35"><a href="answers-to-exercises.html#cb310-35" tabindex="-1"></a></span>
+<span id="cb310-36"><a href="answers-to-exercises.html#cb310-36" tabindex="-1"></a>gradients_sec <span class="ot">&lt;-</span> gradients_min <span class="sc">*</span> <span class="dv">60</span></span>
+<span id="cb310-37"><a href="answers-to-exercises.html#cb310-37" tabindex="-1"></a></span>
 <span id="cb310-38"><a href="answers-to-exercises.html#cb310-38" tabindex="-1"></a></span>
-<span id="cb310-39"><a href="answers-to-exercises.html#cb310-39" tabindex="-1"></a><span class="co"># -   What are the column names?</span></span>
+<span id="cb310-39"><a href="answers-to-exercises.html#cb310-39" tabindex="-1"></a><span class="co"># Exercise #3 -- More Practice with Vectors</span></span>
 <span id="cb310-40"><a href="answers-to-exercises.html#cb310-40" tabindex="-1"></a></span>
-<span id="cb310-41"><a href="answers-to-exercises.html#cb310-41" tabindex="-1"></a><span class="fu">names</span>(tbl_dda)</span>
-<span id="cb310-42"><a href="answers-to-exercises.html#cb310-42" tabindex="-1"></a></span>
-<span id="cb310-43"><a href="answers-to-exercises.html#cb310-43" tabindex="-1"></a><span class="co"># -   What are the data types stored in each column?</span></span>
-<span id="cb310-44"><a href="answers-to-exercises.html#cb310-44" tabindex="-1"></a></span>
-<span id="cb310-45"><a href="answers-to-exercises.html#cb310-45" tabindex="-1"></a><span class="fu">str</span>(tbl_dda)</span>
+<span id="cb310-41"><a href="answers-to-exercises.html#cb310-41" tabindex="-1"></a><span class="co"># 3.1 The following vector represents precursor m/z values for detected features</span></span>
+<span id="cb310-42"><a href="answers-to-exercises.html#cb310-42" tabindex="-1"></a><span class="co">#     from your experiment:</span></span>
+<span id="cb310-43"><a href="answers-to-exercises.html#cb310-43" tabindex="-1"></a></span>
+<span id="cb310-44"><a href="answers-to-exercises.html#cb310-44" tabindex="-1"></a>prec_mz <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">968.4759</span>, <span class="fl">812.1599</span>, <span class="fl">887.9829</span>, <span class="fl">338.5294</span>, <span class="fl">510.2720</span>, </span>
+<span id="cb310-45"><a href="answers-to-exercises.html#cb310-45" tabindex="-1"></a>             <span class="fl">775.3455</span>, <span class="fl">409.2369</span>, <span class="fl">944.0385</span>, <span class="fl">584.7687</span>, <span class="fl">1041.9523</span>)</span>
 <span id="cb310-46"><a href="answers-to-exercises.html#cb310-46" tabindex="-1"></a></span>
 <span id="cb310-47"><a href="answers-to-exercises.html#cb310-47" tabindex="-1"></a></span>
-<span id="cb310-48"><a href="answers-to-exercises.html#cb310-48" tabindex="-1"></a><span class="co"># What kind of data is present? What is the structure of the data?</span></span>
+<span id="cb310-48"><a href="answers-to-exercises.html#cb310-48" tabindex="-1"></a><span class="co"># -   How many values are there?</span></span>
 <span id="cb310-49"><a href="answers-to-exercises.html#cb310-49" tabindex="-1"></a></span>
-<span id="cb310-50"><a href="answers-to-exercises.html#cb310-50" tabindex="-1"></a><span class="co"># -   Use the View function to review the data in RStudio.</span></span>
+<span id="cb310-50"><a href="answers-to-exercises.html#cb310-50" tabindex="-1"></a><span class="fu">length</span>(prec_mz)</span>
 <span id="cb310-51"><a href="answers-to-exercises.html#cb310-51" tabindex="-1"></a></span>
-<span id="cb310-52"><a href="answers-to-exercises.html#cb310-52" tabindex="-1"></a><span class="co"># -   It appears that some of the data is duplicated across many rows? Look at </span></span>
-<span id="cb310-53"><a href="answers-to-exercises.html#cb310-53" tabindex="-1"></a><span class="co">#     the data column by column and see if you can understand why.</span></span>
+<span id="cb310-52"><a href="answers-to-exercises.html#cb310-52" tabindex="-1"></a></span>
+<span id="cb310-53"><a href="answers-to-exercises.html#cb310-53" tabindex="-1"></a><span class="co"># -   What is the minimum value? The maximum?</span></span>
 <span id="cb310-54"><a href="answers-to-exercises.html#cb310-54" tabindex="-1"></a></span>
-<span id="cb310-55"><a href="answers-to-exercises.html#cb310-55" tabindex="-1"></a><span class="fu">View</span>(tbl_dda)</span>
-<span id="cb310-56"><a href="answers-to-exercises.html#cb310-56" tabindex="-1"></a></span>
+<span id="cb310-55"><a href="answers-to-exercises.html#cb310-55" tabindex="-1"></a><span class="fu">min</span>(prec_mz)</span>
+<span id="cb310-56"><a href="answers-to-exercises.html#cb310-56" tabindex="-1"></a><span class="fu">max</span>(prec_mz)</span>
 <span id="cb310-57"><a href="answers-to-exercises.html#cb310-57" tabindex="-1"></a></span>
-<span id="cb310-58"><a href="answers-to-exercises.html#cb310-58" tabindex="-1"></a><span class="co"># Exercise #3 -- Working with data Frames</span></span>
-<span id="cb310-59"><a href="answers-to-exercises.html#cb310-59" tabindex="-1"></a></span>
-<span id="cb310-60"><a href="answers-to-exercises.html#cb310-60" tabindex="-1"></a><span class="co"># 3.1 Retrieve the data from the column call &quot;FileName&quot; How many values do you </span></span>
-<span id="cb310-61"><a href="answers-to-exercises.html#cb310-61" tabindex="-1"></a><span class="co">#     expect to get? Write an expression using the data you retrieved to see if </span></span>
-<span id="cb310-62"><a href="answers-to-exercises.html#cb310-62" tabindex="-1"></a><span class="co">#     your guess is correct.</span></span>
-<span id="cb310-63"><a href="answers-to-exercises.html#cb310-63" tabindex="-1"></a></span>
-<span id="cb310-64"><a href="answers-to-exercises.html#cb310-64" tabindex="-1"></a><span class="fu">length</span>(tbl_dda<span class="sc">$</span>FileName)</span>
-<span id="cb310-65"><a href="answers-to-exercises.html#cb310-65" tabindex="-1"></a></span>
-<span id="cb310-66"><a href="answers-to-exercises.html#cb310-66" tabindex="-1"></a><span class="co"># -   you&#39;d expect to have the same number of values are there is rows</span></span>
+<span id="cb310-58"><a href="answers-to-exercises.html#cb310-58" tabindex="-1"></a></span>
+<span id="cb310-59"><a href="answers-to-exercises.html#cb310-59" tabindex="-1"></a><span class="co"># Exercise #4 -- Vectors and Conditional Expressions</span></span>
+<span id="cb310-60"><a href="answers-to-exercises.html#cb310-60" tabindex="-1"></a></span>
+<span id="cb310-61"><a href="answers-to-exercises.html#cb310-61" tabindex="-1"></a><span class="co"># 4.1 Using the above vector of precursor values, write a conditional expression</span></span>
+<span id="cb310-62"><a href="answers-to-exercises.html#cb310-62" tabindex="-1"></a><span class="co">#     to find the values with m/z \&lt; 600. What is returned by this expression? A</span></span>
+<span id="cb310-63"><a href="answers-to-exercises.html#cb310-63" tabindex="-1"></a><span class="co">#     single value or multiple values? A number or something else?</span></span>
+<span id="cb310-64"><a href="answers-to-exercises.html#cb310-64" tabindex="-1"></a></span>
+<span id="cb310-65"><a href="answers-to-exercises.html#cb310-65" tabindex="-1"></a>prec_mz <span class="sc">&lt;</span> <span class="dv">600</span></span>
+<span id="cb310-66"><a href="answers-to-exercises.html#cb310-66" tabindex="-1"></a></span>
 <span id="cb310-67"><a href="answers-to-exercises.html#cb310-67" tabindex="-1"></a></span>
-<span id="cb310-68"><a href="answers-to-exercises.html#cb310-68" tabindex="-1"></a><span class="fu">nrow</span>(tbl_dda)</span>
+<span id="cb310-68"><a href="answers-to-exercises.html#cb310-68" tabindex="-1"></a><span class="co"># 4.2 Use this conditional expression to get the precursor values with m/z \&lt; 600</span></span>
 <span id="cb310-69"><a href="answers-to-exercises.html#cb310-69" tabindex="-1"></a></span>
-<span id="cb310-70"><a href="answers-to-exercises.html#cb310-70" tabindex="-1"></a></span>
-<span id="cb310-71"><a href="answers-to-exercises.html#cb310-71" tabindex="-1"></a><span class="co"># 3.2 How many unique values of the data from &quot;FileName&quot; are there? What are </span></span>
-<span id="cb310-72"><a href="answers-to-exercises.html#cb310-72" tabindex="-1"></a><span class="co">#     these values and what do they correspond to?</span></span>
-<span id="cb310-73"><a href="answers-to-exercises.html#cb310-73" tabindex="-1"></a></span>
-<span id="cb310-74"><a href="answers-to-exercises.html#cb310-74" tabindex="-1"></a><span class="fu">unique</span>(tbl_dda<span class="sc">$</span>FileName)</span>
+<span id="cb310-70"><a href="answers-to-exercises.html#cb310-70" tabindex="-1"></a>prec_mz[prec_mz <span class="sc">&lt;</span> <span class="dv">600</span>]</span>
+<span id="cb310-71"><a href="answers-to-exercises.html#cb310-71" tabindex="-1"></a></span>
+<span id="cb310-72"><a href="answers-to-exercises.html#cb310-72" tabindex="-1"></a></span>
+<span id="cb310-73"><a href="answers-to-exercises.html#cb310-73" tabindex="-1"></a><span class="co"># 4.3 Consider a new vector of data that contains the charge states of the same </span></span>
+<span id="cb310-74"><a href="answers-to-exercises.html#cb310-74" tabindex="-1"></a><span class="co">#     detected features from above:</span></span>
 <span id="cb310-75"><a href="answers-to-exercises.html#cb310-75" tabindex="-1"></a></span>
-<span id="cb310-76"><a href="answers-to-exercises.html#cb310-76" tabindex="-1"></a></span>
-<span id="cb310-77"><a href="answers-to-exercises.html#cb310-77" tabindex="-1"></a><span class="co"># 3.3 Using data frame indexing syntax, subset the data to rows for the protein </span></span>
-<span id="cb310-78"><a href="answers-to-exercises.html#cb310-78" tabindex="-1"></a><span class="co">#     &quot;sp\|P33399\|LHP1_YEAST&quot;</span></span>
-<span id="cb310-79"><a href="answers-to-exercises.html#cb310-79" tabindex="-1"></a></span>
-<span id="cb310-80"><a href="answers-to-exercises.html#cb310-80" tabindex="-1"></a>tbl_dda[tbl_dda<span class="sc">$</span>ProteinName <span class="sc">==</span> <span class="st">&quot;sp|P33399|LHP1_YEAST&quot;</span>,]</span>
+<span id="cb310-76"><a href="answers-to-exercises.html#cb310-76" tabindex="-1"></a>prec_z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb310-77"><a href="answers-to-exercises.html#cb310-77" tabindex="-1"></a></span>
+<span id="cb310-78"><a href="answers-to-exercises.html#cb310-78" tabindex="-1"></a></span>
+<span id="cb310-79"><a href="answers-to-exercises.html#cb310-79" tabindex="-1"></a><span class="co"># -   Write a conditional expression to find which detected features that have </span></span>
+<span id="cb310-80"><a href="answers-to-exercises.html#cb310-80" tabindex="-1"></a><span class="co">#     a charge state of 2.</span></span>
 <span id="cb310-81"><a href="answers-to-exercises.html#cb310-81" tabindex="-1"></a></span>
-<span id="cb310-82"><a href="answers-to-exercises.html#cb310-82" tabindex="-1"></a></span>
-<span id="cb310-83"><a href="answers-to-exercises.html#cb310-83" tabindex="-1"></a><span class="co"># 3.4 How many unique peptides are present in the data for the above protein?</span></span>
+<span id="cb310-82"><a href="answers-to-exercises.html#cb310-82" tabindex="-1"></a>prec_z <span class="sc">==</span> <span class="dv">2</span></span>
+<span id="cb310-83"><a href="answers-to-exercises.html#cb310-83" tabindex="-1"></a></span>
 <span id="cb310-84"><a href="answers-to-exercises.html#cb310-84" tabindex="-1"></a></span>
-<span id="cb310-85"><a href="answers-to-exercises.html#cb310-85" tabindex="-1"></a><span class="co"># -   first store the subset in a variable</span></span>
-<span id="cb310-86"><a href="answers-to-exercises.html#cb310-86" tabindex="-1"></a></span>
-<span id="cb310-87"><a href="answers-to-exercises.html#cb310-87" tabindex="-1"></a>tbl_dda_subset <span class="ot">&lt;-</span> tbl_dda[tbl_dda<span class="sc">$</span>ProteinName <span class="sc">==</span> <span class="st">&quot;sp|P33399|LHP1_YEAST&quot;</span>,]</span>
-<span id="cb310-88"><a href="answers-to-exercises.html#cb310-88" tabindex="-1"></a></span>
-<span id="cb310-89"><a href="answers-to-exercises.html#cb310-89" tabindex="-1"></a><span class="co"># -   now calculate the number of unique peptides</span></span>
-<span id="cb310-90"><a href="answers-to-exercises.html#cb310-90" tabindex="-1"></a></span>
-<span id="cb310-91"><a href="answers-to-exercises.html#cb310-91" tabindex="-1"></a>peptides <span class="ot">&lt;-</span> tbl_dda_subset<span class="sc">$</span>PeptideSequence</span>
-<span id="cb310-92"><a href="answers-to-exercises.html#cb310-92" tabindex="-1"></a>unique_peptides <span class="ot">&lt;-</span> <span class="fu">unique</span>(peptides)</span>
-<span id="cb310-93"><a href="answers-to-exercises.html#cb310-93" tabindex="-1"></a><span class="fu">length</span>(unique_peptides)</span>
-<span id="cb310-94"><a href="answers-to-exercises.html#cb310-94" tabindex="-1"></a></span>
-<span id="cb310-95"><a href="answers-to-exercises.html#cb310-95" tabindex="-1"></a><span class="co"># -   or you can do it with one expression</span></span>
-<span id="cb310-96"><a href="answers-to-exercises.html#cb310-96" tabindex="-1"></a></span>
-<span id="cb310-97"><a href="answers-to-exercises.html#cb310-97" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(tbl_dda_subset<span class="sc">$</span>PeptideSequence))</span></code></pre></div>
+<span id="cb310-85"><a href="answers-to-exercises.html#cb310-85" tabindex="-1"></a><span class="co"># 4.4 Write an expression to get the precursor m/z values for features having </span></span>
+<span id="cb310-86"><a href="answers-to-exercises.html#cb310-86" tabindex="-1"></a><span class="co">#     charge states of 2?</span></span>
+<span id="cb310-87"><a href="answers-to-exercises.html#cb310-87" tabindex="-1"></a></span>
+<span id="cb310-88"><a href="answers-to-exercises.html#cb310-88" tabindex="-1"></a>prec_mz[prec_z <span class="sc">==</span> <span class="dv">2</span>]</span></code></pre></div>
+
+</div>
+<div id="more-6-tidyverse" class="section level2 unnumbered hasAnchor">
+<h2>More <strong>6</strong> Tidyverse<a href="answers-to-exercises.html#more-6-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="answers-to-exercises.html#cb311-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
+<span id="cb311-2"><a href="answers-to-exercises.html#cb311-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
+<span id="cb311-3"><a href="answers-to-exercises.html#cb311-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
+<span id="cb311-4"><a href="answers-to-exercises.html#cb311-4" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb311-5"><a href="answers-to-exercises.html#cb311-5" tabindex="-1"></a><span class="co"># Moire Tidyverse Exercises</span></span>
+<span id="cb311-6"><a href="answers-to-exercises.html#cb311-6" tabindex="-1"></a></span>
+<span id="cb311-7"><a href="answers-to-exercises.html#cb311-7" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb311-8"><a href="answers-to-exercises.html#cb311-8" tabindex="-1"></a></span>
+<span id="cb311-9"><a href="answers-to-exercises.html#cb311-9" tabindex="-1"></a><span class="co"># Download the data.</span></span>
+<span id="cb311-10"><a href="answers-to-exercises.html#cb311-10" tabindex="-1"></a></span>
+<span id="cb311-11"><a href="answers-to-exercises.html#cb311-11" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/Choi2017_DDA_Skyline_input.csv.zip&quot;</span></span>
+<span id="cb311-12"><a href="answers-to-exercises.html#cb311-12" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/Choi2017_DDA_Skyline_input.csv.zip&quot;</span>)</span>
+<span id="cb311-13"><a href="answers-to-exercises.html#cb311-13" tabindex="-1"></a></span>
+<span id="cb311-14"><a href="answers-to-exercises.html#cb311-14" tabindex="-1"></a></span>
+<span id="cb311-15"><a href="answers-to-exercises.html#cb311-15" tabindex="-1"></a><span class="co"># Exercise #1 -- Reading data</span></span>
+<span id="cb311-16"><a href="answers-to-exercises.html#cb311-16" tabindex="-1"></a></span>
+<span id="cb311-17"><a href="answers-to-exercises.html#cb311-17" tabindex="-1"></a><span class="co"># 1.1 Read the example data from a proteomics experiment </span><span class="al">NOTE</span><span class="co">: file is a zipped </span></span>
+<span id="cb311-18"><a href="answers-to-exercises.html#cb311-18" tabindex="-1"></a><span class="co">#     .csv file -- R knows how to read it!</span></span>
+<span id="cb311-19"><a href="answers-to-exercises.html#cb311-19" tabindex="-1"></a></span>
+<span id="cb311-20"><a href="answers-to-exercises.html#cb311-20" tabindex="-1"></a>tbl_dda <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/Choi2017_DDA_Skyline_input.csv.zip&quot;</span>, <span class="at">guess_max =</span> <span class="dv">10000</span>)</span>
+<span id="cb311-21"><a href="answers-to-exercises.html#cb311-21" tabindex="-1"></a></span>
+<span id="cb311-22"><a href="answers-to-exercises.html#cb311-22" tabindex="-1"></a></span>
+<span id="cb311-23"><a href="answers-to-exercises.html#cb311-23" tabindex="-1"></a><span class="co"># Exercise #2 -- Reviewing data Frames</span></span>
+<span id="cb311-24"><a href="answers-to-exercises.html#cb311-24" tabindex="-1"></a></span>
+<span id="cb311-25"><a href="answers-to-exercises.html#cb311-25" tabindex="-1"></a><span class="co"># 2.1 Review some basic properties of the data frame</span></span>
+<span id="cb311-26"><a href="answers-to-exercises.html#cb311-26" tabindex="-1"></a></span>
+<span id="cb311-27"><a href="answers-to-exercises.html#cb311-27" tabindex="-1"></a><span class="co"># -   How many rows?\</span></span>
+<span id="cb311-28"><a href="answers-to-exercises.html#cb311-28" tabindex="-1"></a></span>
+<span id="cb311-29"><a href="answers-to-exercises.html#cb311-29" tabindex="-1"></a><span class="fu">nrow</span>(tbl_dda)</span>
+<span id="cb311-30"><a href="answers-to-exercises.html#cb311-30" tabindex="-1"></a></span>
+<span id="cb311-31"><a href="answers-to-exercises.html#cb311-31" tabindex="-1"></a><span class="co"># -   How many columns?</span></span>
+<span id="cb311-32"><a href="answers-to-exercises.html#cb311-32" tabindex="-1"></a></span>
+<span id="cb311-33"><a href="answers-to-exercises.html#cb311-33" tabindex="-1"></a><span class="fu">ncol</span>(tbl_dda)</span>
+<span id="cb311-34"><a href="answers-to-exercises.html#cb311-34" tabindex="-1"></a></span>
+<span id="cb311-35"><a href="answers-to-exercises.html#cb311-35" tabindex="-1"></a><span class="co"># -   How many rows &amp; columns (use one expression)</span></span>
+<span id="cb311-36"><a href="answers-to-exercises.html#cb311-36" tabindex="-1"></a></span>
+<span id="cb311-37"><a href="answers-to-exercises.html#cb311-37" tabindex="-1"></a><span class="fu">dim</span>(tbl_dda)</span>
+<span id="cb311-38"><a href="answers-to-exercises.html#cb311-38" tabindex="-1"></a></span>
+<span id="cb311-39"><a href="answers-to-exercises.html#cb311-39" tabindex="-1"></a><span class="co"># -   What are the column names?</span></span>
+<span id="cb311-40"><a href="answers-to-exercises.html#cb311-40" tabindex="-1"></a></span>
+<span id="cb311-41"><a href="answers-to-exercises.html#cb311-41" tabindex="-1"></a><span class="fu">names</span>(tbl_dda)</span>
+<span id="cb311-42"><a href="answers-to-exercises.html#cb311-42" tabindex="-1"></a></span>
+<span id="cb311-43"><a href="answers-to-exercises.html#cb311-43" tabindex="-1"></a><span class="co"># -   What are the data types stored in each column?</span></span>
+<span id="cb311-44"><a href="answers-to-exercises.html#cb311-44" tabindex="-1"></a></span>
+<span id="cb311-45"><a href="answers-to-exercises.html#cb311-45" tabindex="-1"></a><span class="fu">str</span>(tbl_dda)</span>
+<span id="cb311-46"><a href="answers-to-exercises.html#cb311-46" tabindex="-1"></a></span>
+<span id="cb311-47"><a href="answers-to-exercises.html#cb311-47" tabindex="-1"></a></span>
+<span id="cb311-48"><a href="answers-to-exercises.html#cb311-48" tabindex="-1"></a><span class="co"># What kind of data is present? What is the structure of the data?</span></span>
+<span id="cb311-49"><a href="answers-to-exercises.html#cb311-49" tabindex="-1"></a></span>
+<span id="cb311-50"><a href="answers-to-exercises.html#cb311-50" tabindex="-1"></a><span class="co"># -   Use the View function to review the data in RStudio.</span></span>
+<span id="cb311-51"><a href="answers-to-exercises.html#cb311-51" tabindex="-1"></a></span>
+<span id="cb311-52"><a href="answers-to-exercises.html#cb311-52" tabindex="-1"></a><span class="co"># -   It appears that some of the data is duplicated across many rows? Look at </span></span>
+<span id="cb311-53"><a href="answers-to-exercises.html#cb311-53" tabindex="-1"></a><span class="co">#     the data column by column and see if you can understand why.</span></span>
+<span id="cb311-54"><a href="answers-to-exercises.html#cb311-54" tabindex="-1"></a></span>
+<span id="cb311-55"><a href="answers-to-exercises.html#cb311-55" tabindex="-1"></a><span class="fu">View</span>(tbl_dda)</span>
+<span id="cb311-56"><a href="answers-to-exercises.html#cb311-56" tabindex="-1"></a></span>
+<span id="cb311-57"><a href="answers-to-exercises.html#cb311-57" tabindex="-1"></a></span>
+<span id="cb311-58"><a href="answers-to-exercises.html#cb311-58" tabindex="-1"></a><span class="co"># Exercise #3 -- Working with data Frames</span></span>
+<span id="cb311-59"><a href="answers-to-exercises.html#cb311-59" tabindex="-1"></a></span>
+<span id="cb311-60"><a href="answers-to-exercises.html#cb311-60" tabindex="-1"></a><span class="co"># 3.1 Retrieve the data from the column call &quot;FileName&quot; How many values do you </span></span>
+<span id="cb311-61"><a href="answers-to-exercises.html#cb311-61" tabindex="-1"></a><span class="co">#     expect to get? Write an expression using the data you retrieved to see if </span></span>
+<span id="cb311-62"><a href="answers-to-exercises.html#cb311-62" tabindex="-1"></a><span class="co">#     your guess is correct.</span></span>
+<span id="cb311-63"><a href="answers-to-exercises.html#cb311-63" tabindex="-1"></a></span>
+<span id="cb311-64"><a href="answers-to-exercises.html#cb311-64" tabindex="-1"></a><span class="fu">length</span>(tbl_dda<span class="sc">$</span>FileName)</span>
+<span id="cb311-65"><a href="answers-to-exercises.html#cb311-65" tabindex="-1"></a></span>
+<span id="cb311-66"><a href="answers-to-exercises.html#cb311-66" tabindex="-1"></a><span class="co"># -   you&#39;d expect to have the same number of values are there is rows</span></span>
+<span id="cb311-67"><a href="answers-to-exercises.html#cb311-67" tabindex="-1"></a></span>
+<span id="cb311-68"><a href="answers-to-exercises.html#cb311-68" tabindex="-1"></a><span class="fu">nrow</span>(tbl_dda)</span>
+<span id="cb311-69"><a href="answers-to-exercises.html#cb311-69" tabindex="-1"></a></span>
+<span id="cb311-70"><a href="answers-to-exercises.html#cb311-70" tabindex="-1"></a></span>
+<span id="cb311-71"><a href="answers-to-exercises.html#cb311-71" tabindex="-1"></a><span class="co"># 3.2 How many unique values of the data from &quot;FileName&quot; are there? What are </span></span>
+<span id="cb311-72"><a href="answers-to-exercises.html#cb311-72" tabindex="-1"></a><span class="co">#     these values and what do they correspond to?</span></span>
+<span id="cb311-73"><a href="answers-to-exercises.html#cb311-73" tabindex="-1"></a></span>
+<span id="cb311-74"><a href="answers-to-exercises.html#cb311-74" tabindex="-1"></a><span class="fu">unique</span>(tbl_dda<span class="sc">$</span>FileName)</span>
+<span id="cb311-75"><a href="answers-to-exercises.html#cb311-75" tabindex="-1"></a></span>
+<span id="cb311-76"><a href="answers-to-exercises.html#cb311-76" tabindex="-1"></a></span>
+<span id="cb311-77"><a href="answers-to-exercises.html#cb311-77" tabindex="-1"></a><span class="co"># 3.3 Using data frame indexing syntax, subset the data to rows for the protein </span></span>
+<span id="cb311-78"><a href="answers-to-exercises.html#cb311-78" tabindex="-1"></a><span class="co">#     &quot;sp\|P33399\|LHP1_YEAST&quot;</span></span>
+<span id="cb311-79"><a href="answers-to-exercises.html#cb311-79" tabindex="-1"></a></span>
+<span id="cb311-80"><a href="answers-to-exercises.html#cb311-80" tabindex="-1"></a>tbl_dda[tbl_dda<span class="sc">$</span>ProteinName <span class="sc">==</span> <span class="st">&quot;sp|P33399|LHP1_YEAST&quot;</span>,]</span>
+<span id="cb311-81"><a href="answers-to-exercises.html#cb311-81" tabindex="-1"></a></span>
+<span id="cb311-82"><a href="answers-to-exercises.html#cb311-82" tabindex="-1"></a></span>
+<span id="cb311-83"><a href="answers-to-exercises.html#cb311-83" tabindex="-1"></a><span class="co"># 3.4 How many unique peptides are present in the data for the above protein?</span></span>
+<span id="cb311-84"><a href="answers-to-exercises.html#cb311-84" tabindex="-1"></a></span>
+<span id="cb311-85"><a href="answers-to-exercises.html#cb311-85" tabindex="-1"></a><span class="co"># -   first store the subset in a variable</span></span>
+<span id="cb311-86"><a href="answers-to-exercises.html#cb311-86" tabindex="-1"></a></span>
+<span id="cb311-87"><a href="answers-to-exercises.html#cb311-87" tabindex="-1"></a>tbl_dda_subset <span class="ot">&lt;-</span> tbl_dda[tbl_dda<span class="sc">$</span>ProteinName <span class="sc">==</span> <span class="st">&quot;sp|P33399|LHP1_YEAST&quot;</span>,]</span>
+<span id="cb311-88"><a href="answers-to-exercises.html#cb311-88" tabindex="-1"></a></span>
+<span id="cb311-89"><a href="answers-to-exercises.html#cb311-89" tabindex="-1"></a><span class="co"># -   now calculate the number of unique peptides</span></span>
+<span id="cb311-90"><a href="answers-to-exercises.html#cb311-90" tabindex="-1"></a></span>
+<span id="cb311-91"><a href="answers-to-exercises.html#cb311-91" tabindex="-1"></a>peptides <span class="ot">&lt;-</span> tbl_dda_subset<span class="sc">$</span>PeptideSequence</span>
+<span id="cb311-92"><a href="answers-to-exercises.html#cb311-92" tabindex="-1"></a>unique_peptides <span class="ot">&lt;-</span> <span class="fu">unique</span>(peptides)</span>
+<span id="cb311-93"><a href="answers-to-exercises.html#cb311-93" tabindex="-1"></a><span class="fu">length</span>(unique_peptides)</span>
+<span id="cb311-94"><a href="answers-to-exercises.html#cb311-94" tabindex="-1"></a></span>
+<span id="cb311-95"><a href="answers-to-exercises.html#cb311-95" tabindex="-1"></a><span class="co"># -   or you can do it with one expression</span></span>
+<span id="cb311-96"><a href="answers-to-exercises.html#cb311-96" tabindex="-1"></a></span>
+<span id="cb311-97"><a href="answers-to-exercises.html#cb311-97" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(tbl_dda_subset<span class="sc">$</span>PeptideSequence))</span></code></pre></div>
 
 </div>
 </div>
