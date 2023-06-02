@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>More Exercises | Learning R for Mass Spectrometry</title>
+  <meta name="description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="More Exercises | Learning R for Mass Spectrometry" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  <meta name="github-repo" content="jeffsocal/ASMS_R_Basics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="More Exercises | Learning R for Mass Spectrometry" />
+  
+  <meta name="twitter:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  
+
+<meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
+
+
+<meta name="date" content="2023-05-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="tidyverse-1.html"/>
+<link rel="next" href="data-wrangling.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Learning R for Mass Spec.</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="contents.html"><a href="contents.html"><i class="fa fa-check"></i>Contents</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>1</b> Introduction to R</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#why-choose-it"><i class="fa fa-check"></i>Why choose it?</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#what-you-can-do-with-it"><i class="fa fa-check"></i>What you can do with it?</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-r-learning-curve"><i class="fa fa-check"></i>The R Learning Curve</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#learning-to-code"><i class="fa fa-check"></i>Learning to code</a></li>
+<li class="chapter" data-level="1.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#alternatives"><i class="fa fa-check"></i><b>1.1</b> Alternatives</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#resources"><i class="fa fa-check"></i><b>1.2</b> Resources</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#online"><i class="fa fa-check"></i><b>1.2.1</b> Online</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#in-print"><i class="fa fa-check"></i><b>1.2.2</b> In Print</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#organizations"><i class="fa fa-check"></i><b>1.2.3</b> Organizations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>2</b> Installation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installation.html"><a href="installation.html#r-interpreter"><i class="fa fa-check"></i><b>2.1</b> R interpreter</a>
+<ul>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#steps"><i class="fa fa-check"></i>Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="installation.html"><a href="installation.html#r-studio-ide"><i class="fa fa-check"></i><b>2.2</b> R Studio IDE</a>
+<ul>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#steps-1"><i class="fa fa-check"></i>Steps</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#ide-layout"><i class="fa fa-check"></i>IDE Layout</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#usage"><i class="fa fa-check"></i>Usage</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="installation.html"><a href="installation.html#r-packages"><i class="fa fa-check"></i><b>2.3</b> R Packages</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="installation.html"><a href="installation.html#exploring"><i class="fa fa-check"></i><b>2.3.1</b> Exploring</a></li>
+<li class="chapter" data-level="2.3.2" data-path="installation.html"><a href="installation.html#installing"><i class="fa fa-check"></i><b>2.3.2</b> Installing</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#gotchas"><i class="fa fa-check"></i>Gotchas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="installation.html"><a href="installation.html#for-this-book"><i class="fa fa-check"></i><b>2.4</b> For this Book</a>
+<ul>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#tidyverse"><i class="fa fa-check"></i>tidyverse</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#ms-packages"><i class="fa fa-check"></i>MS Packages</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-studio-projects.html"><a href="r-studio-projects.html"><i class="fa fa-check"></i><b>3</b> R Studio Projects</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="r-studio-projects.html"><a href="r-studio-projects.html#creating"><i class="fa fa-check"></i><b>3.1</b> Creating</a></li>
+<li class="chapter" data-level="3.2" data-path="r-studio-projects.html"><a href="r-studio-projects.html#organizing"><i class="fa fa-check"></i><b>3.2</b> Organizing</a>
+<ul>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#data"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#scripts"><i class="fa fa-check"></i>Scripts</a></li>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#results"><i class="fa fa-check"></i>Results</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="r-syntax.html"><a href="r-syntax.html"><i class="fa fa-check"></i><b>4</b> R Syntax</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="r-syntax.html"><a href="r-syntax.html#reserved-words"><i class="fa fa-check"></i><b>4.1</b> Reserved Words</a></li>
+<li class="chapter" data-level="4.2" data-path="r-syntax.html"><a href="r-syntax.html#types"><i class="fa fa-check"></i><b>4.2</b> Types</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="r-syntax.html"><a href="r-syntax.html#comments"><i class="fa fa-check"></i><b>4.2.1</b> Comments</a></li>
+<li class="chapter" data-level="4.2.2" data-path="r-syntax.html"><a href="r-syntax.html#strings"><i class="fa fa-check"></i><b>4.2.2</b> Strings</a></li>
+<li class="chapter" data-level="4.2.3" data-path="r-syntax.html"><a href="r-syntax.html#numbers"><i class="fa fa-check"></i><b>4.2.3</b> Numbers</a></li>
+<li class="chapter" data-level="4.2.4" data-path="r-syntax.html"><a href="r-syntax.html#operators"><i class="fa fa-check"></i><b>4.2.4</b> Operators</a></li>
+<li class="chapter" data-level="4.2.5" data-path="r-syntax.html"><a href="r-syntax.html#variables"><i class="fa fa-check"></i><b>4.2.5</b> Variables</a></li>
+<li class="chapter" data-level="4.2.6" data-path="r-syntax.html"><a href="r-syntax.html#statements"><i class="fa fa-check"></i><b>4.2.6</b> Statements</a></li>
+<li class="chapter" data-level="4.2.7" data-path="r-syntax.html"><a href="r-syntax.html#functions"><i class="fa fa-check"></i><b>4.2.7</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="r-syntax.html"><a href="r-syntax.html#flow-control"><i class="fa fa-check"></i><b>4.3</b> Flow-Control</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="r-syntax.html"><a href="r-syntax.html#for-loop"><i class="fa fa-check"></i><b>4.3.1</b> For Loop</a></li>
+<li class="chapter" data-level="4.3.2" data-path="r-syntax.html"><a href="r-syntax.html#if-else"><i class="fa fa-check"></i><b>4.3.2</b> If-Else</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="r-syntax.html"><a href="r-syntax.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="r-objects.html"><a href="r-objects.html"><i class="fa fa-check"></i><b>5</b> R Objects</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="r-objects.html"><a href="r-objects.html#variable"><i class="fa fa-check"></i><b>5.1</b> Variable</a></li>
+<li class="chapter" data-level="5.2" data-path="r-objects.html"><a href="r-objects.html#vector"><i class="fa fa-check"></i><b>5.2</b> Vector</a></li>
+<li class="chapter" data-level="5.3" data-path="r-objects.html"><a href="r-objects.html#list"><i class="fa fa-check"></i><b>5.3</b> List</a></li>
+<li class="chapter" data-level="5.4" data-path="r-objects.html"><a href="r-objects.html#matrix"><i class="fa fa-check"></i><b>5.4</b> Matrix</a></li>
+<li class="chapter" data-level="5.5" data-path="r-objects.html"><a href="r-objects.html#data-frame"><i class="fa fa-check"></i><b>5.5</b> Data Frame</a></li>
+<li class="chapter" data-level="5.6" data-path="r-objects.html"><a href="r-objects.html#data-table"><i class="fa fa-check"></i><b>5.6</b> Data Table</a></li>
+<li class="chapter" data-level="5.7" data-path="r-objects.html"><a href="r-objects.html#tibbles"><i class="fa fa-check"></i><b>5.7</b> Tibbles</a></li>
+<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#examine-the-contents"><i class="fa fa-check"></i>Examine the Contents</a></li>
+<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#converting-objects"><i class="fa fa-check"></i>Converting Objects</a></li>
+<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="more-exercises.html"><a href="more-exercises.html"><i class="fa fa-check"></i>More Exercises</a></li>
+<li class="chapter" data-level="6" data-path="tidyverse-1.html"><a href="tidyverse-1.html"><i class="fa fa-check"></i><b>6</b> Tidyverse</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#core-packages"><i class="fa fa-check"></i><b>6.1</b> Core Packages</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#magrittr"><i class="fa fa-check"></i><b>6.1.1</b> magrittr</a></li>
+<li class="chapter" data-level="6.1.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#tibble"><i class="fa fa-check"></i><b>6.1.2</b> tibble</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#importing"><i class="fa fa-check"></i><b>6.2</b> Importing</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#readr"><i class="fa fa-check"></i><b>6.2.1</b> readr</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#wrangling"><i class="fa fa-check"></i><b>6.3</b> Wrangling</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr"><i class="fa fa-check"></i><b>6.3.1</b> dplyr</a></li>
+<li class="chapter" data-level="6.3.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#tidyr"><i class="fa fa-check"></i><b>6.3.2</b> tidyr</a></li>
+<li class="chapter" data-level="6.3.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#purrr"><i class="fa fa-check"></i><b>6.3.3</b> purrr</a></li>
+<li class="chapter" data-level="6.3.4" data-path="tidyverse-1.html"><a href="tidyverse-1.html#glue"><i class="fa fa-check"></i><b>6.3.4</b> glue</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="tidyverse-1.html"><a href="tidyverse-1.html#data-types"><i class="fa fa-check"></i><b>6.4</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#stringr"><i class="fa fa-check"></i><b>6.4.1</b> stringr</a></li>
+<li class="chapter" data-level="6.4.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#lubridate"><i class="fa fa-check"></i><b>6.4.2</b> lubridate</a></li>
+<li class="chapter" data-level="6.4.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#forcats"><i class="fa fa-check"></i><b>6.4.3</b> forcats</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="tidyverse-1.html"><a href="tidyverse-1.html#summarizing"><i class="fa fa-check"></i><b>6.5</b> Summarizing</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr-1"><i class="fa fa-check"></i><b>6.5.1</b> dplyr</a></li>
+<li class="chapter" data-level="6.5.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#ggplot2"><i class="fa fa-check"></i><b>6.5.2</b> ggplot2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="more-exercises-1.html"><a href="more-exercises-1.html"><i class="fa fa-check"></i>More Exercises</a></li>
+<li class="chapter" data-level="7" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>7</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="data-wrangling.html"><a href="data-wrangling.html#tidy-data"><i class="fa fa-check"></i><b>7.1</b> Tidy Data</a></li>
+<li class="chapter" data-level="7.2" data-path="data-wrangling.html"><a href="data-wrangling.html#example-walkthrough"><i class="fa fa-check"></i><b>7.2</b> Example Walkthrough</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#read_"><i class="fa fa-check"></i>read_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#separate"><i class="fa fa-check"></i>separate</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#mutate"><i class="fa fa-check"></i>mutate</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#pivot_"><i class="fa fa-check"></i>pivot_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#write_"><i class="fa fa-check"></i>write_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#non-pipe"><i class="fa fa-check"></i>Non-pipe</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#summarize"><i class="fa fa-check"></i>summarize</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#exercises-4"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>8</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="data-visualization.html"><a href="data-visualization.html#base-plot"><i class="fa fa-check"></i><b>8.1</b> Base: plot</a></li>
+<li class="chapter" data-level="8.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2-1"><i class="fa fa-check"></i><b>8.2</b> GGPlot2</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="data-visualization.html"><a href="data-visualization.html#syntax"><i class="fa fa-check"></i><b>8.2.1</b> Syntax</a></li>
+<li class="chapter" data-level="8.2.2" data-path="data-visualization.html"><a href="data-visualization.html#basic-data-plotting"><i class="fa fa-check"></i><b>8.2.2</b> Basic Data Plotting</a></li>
+<li class="chapter" data-level="8.2.3" data-path="data-visualization.html"><a href="data-visualization.html#data-distributions"><i class="fa fa-check"></i><b>8.2.3</b> Data Distributions</a></li>
+<li class="chapter" data-level="8.2.4" data-path="data-visualization.html"><a href="data-visualization.html#extended-syntax"><i class="fa fa-check"></i><b>8.2.4</b> Extended Syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="data-visualization.html"><a href="data-visualization.html#alternatives-1"><i class="fa fa-check"></i><b>8.3</b> Alternatives</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="data-visualization.html"><a href="data-visualization.html#lattice"><i class="fa fa-check"></i><b>8.3.1</b> lattice</a></li>
+<li class="chapter" data-level="8.3.2" data-path="data-visualization.html"><a href="data-visualization.html#plotly"><i class="fa fa-check"></i><b>8.3.2</b> plotly</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#exercises-5"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>9</b> Sharing</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="sharing.html"><a href="sharing.html#notebooks"><i class="fa fa-check"></i><b>9.1</b> Notebooks</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-1"><i class="fa fa-check"></i>Creating</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-1"><i class="fa fa-check"></i>Sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>9.2</b> Packrat</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#initiating"><i class="fa fa-check"></i>Initiating</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#installing-1"><i class="fa fa-check"></i>Installing</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#loading"><i class="fa fa-check"></i>Loading</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#updating"><i class="fa fa-check"></i>Updating</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="sharing.html"><a href="sharing.html#github-1"><i class="fa fa-check"></i><b>9.3</b> GitHub</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-2"><i class="fa fa-check"></i>Sharing</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-3"><i class="fa fa-check"></i>Sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>9.4</b> Docker</a></li>
+<li class="chapter" data-level="9.5" data-path="sharing.html"><a href="sharing.html#r-packages-1"><i class="fa fa-check"></i><b>9.5</b> R Packages</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-2"><i class="fa fa-check"></i>Creating</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using"><i class="fa fa-check"></i>Using</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>9.6</b> R Shiny Applications</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-3"><i class="fa fa-check"></i>Creating</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#example"><i class="fa fa-check"></i>Example</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html"><i class="fa fa-check"></i><b>10</b> Mass Spectrometry</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#commercial"><i class="fa fa-check"></i><b>10.1</b> Commercial</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#raw-thermo"><i class="fa fa-check"></i>RAW (Thermo)</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#d-bruker-timstof-data"><i class="fa fa-check"></i>.d (Bruker) timsTOF data</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#wiff-sciex"><i class="fa fa-check"></i>WIFF (Sciex)</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#d-agilent"><i class="fa fa-check"></i>D (Agilent)</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#open-access-data"><i class="fa fa-check"></i><b>10.2</b> Open Access Data</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#proteowizard"><i class="fa fa-check"></i><b>10.2.1</b> ProteoWizard</a></li>
+<li class="chapter" data-level="10.2.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzxml"><i class="fa fa-check"></i><b>10.2.2</b> mzXML</a></li>
+<li class="chapter" data-level="10.2.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzml"><i class="fa fa-check"></i><b>10.2.3</b> mzML</a></li>
+<li class="chapter" data-level="10.2.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzmlb"><i class="fa fa-check"></i><b>10.2.4</b> mzMLb</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-mass"><i class="fa fa-check"></i><b>10.3</b> R Mass</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#brain"><i class="fa fa-check"></i><b>10.3.1</b> BRAIN</a></li>
+<li class="chapter" data-level="10.3.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#envipat"><i class="fa fa-check"></i><b>10.3.2</b> enviPat</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-ms-data"><i class="fa fa-check"></i><b>10.4</b> R MS Data</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#rformassspectrometry"><i class="fa fa-check"></i><b>10.4.1</b> RforMassSpectrometry</a></li>
+<li class="chapter" data-level="10.4.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msnbase"><i class="fa fa-check"></i><b>10.4.2</b> MSnbase</a></li>
+<li class="chapter" data-level="10.4.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzr"><i class="fa fa-check"></i><b>10.4.3</b> mzR</a></li>
+<li class="chapter" data-level="10.4.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#xcms"><i class="fa fa-check"></i><b>10.4.4</b> xcms</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-ms-analysis"><i class="fa fa-check"></i><b>10.5</b> R MS Analysis</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msstats"><i class="fa fa-check"></i><b>10.5.1</b> MSstats</a></li>
+<li class="chapter" data-level="10.5.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#tidyproteomics"><i class="fa fa-check"></i><b>10.5.2</b> Tidyproteomics</a></li>
+<li class="chapter" data-level="10.5.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#assayr"><i class="fa fa-check"></i><b>10.5.3</b> AssayR</a></li>
+<li class="chapter" data-level="10.5.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#deqms"><i class="fa fa-check"></i><b>10.5.4</b> DEqMS</a></li>
+<li class="chapter" data-level="10.5.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#ms-empire"><i class="fa fa-check"></i><b>10.5.5</b> MS-EmpiRe</a></li>
+<li class="chapter" data-level="10.5.6" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msgrob2"><i class="fa fa-check"></i><b>10.5.6</b> msgrob2</a></li>
+<li class="chapter" data-level="10.5.7" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#statspro"><i class="fa fa-check"></i><b>10.5.7</b> StatsPro</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html"><i class="fa fa-check"></i>Answers to Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#r-syntax-1"><i class="fa fa-check"></i><strong>4</strong> R Syntax</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#r-objects-1"><i class="fa fa-check"></i><strong>5</strong> R Objects</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#tidyverse-2"><i class="fa fa-check"></i><strong>6</strong> Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-1"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-visualization-1"><i class="fa fa-check"></i><strong>8</strong> Data Visualization</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#more-5-r-objects"><i class="fa fa-check"></i>More <strong>5</strong> R Objects</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#more-6-tidyverse"><i class="fa fa-check"></i>More <strong>6</strong> Tidyverse</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/jeffsocal/asms_r_intro" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Learning R for Mass Spectrometry</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="more-exercises-1" class="section level1 unnumbered hasAnchor">
+<h1>More Exercises<a href="more-exercises-1.html#more-exercises-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<table>
+<colgroup>
+<col width="29%" />
+<col width="70%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/07.png" height="68" /></td>
+<td><ul>
+<li>Create a new R Studio Project and name it <strong>104_tidyverse</strong>. |
+|</li>
+<li>Create a new R script, add your name and tbl_ddae at the top as comments.</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p>Load the <code>tidyverse</code> library …</p>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="more-exercises-1.html#cb198-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>Download the data.</p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="more-exercises-1.html#cb199-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/Choi2017_DDA_Skyline_input.csv.zip&quot;</span></span>
+<span id="cb199-2"><a href="more-exercises-1.html#cb199-2" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/Choi2017_DDA_Skyline_input.csv.zip&quot;</span>)</span></code></pre></div>
+<p>Exercise #1 – Reading data</p>
+<p>1.1 Read the example data from a proteomics experiment NOTE: file is a zipped .csv file – R knows how to read it!</p>
+<p>Exercise #2 – Reviewing data Frames</p>
+<p>2.1 Review some basic properties of the data frame</p>
+<ul>
+<li>How many rows?<br />
+</li>
+</ul>
+<pre><code>## [1] 1257732</code></pre>
+<ul>
+<li>How many columns?</li>
+</ul>
+<pre><code>## [1] 16</code></pre>
+<ul>
+<li>How many rows &amp; columns (use one expression)</li>
+</ul>
+<pre><code>## [1] 1257732      16</code></pre>
+<ul>
+<li>What are the column names?</li>
+</ul>
+<pre><code>##  [1] &quot;ProteinName&quot;             &quot;PeptideSequence&quot;         &quot;PeptideModifiedSequence&quot; &quot;PrecursorCharge&quot;        
+##  [5] &quot;PrecursorMz&quot;             &quot;FragmentIon&quot;             &quot;ProductCharge&quot;           &quot;ProductMz&quot;              
+##  [9] &quot;IsotopeLabelType&quot;        &quot;Condition&quot;               &quot;BioReplicate&quot;            &quot;FileName&quot;               
+## [13] &quot;Area&quot;                    &quot;StandardType&quot;            &quot;Truncated&quot;               &quot;DetectionQValue&quot;</code></pre>
+<ul>
+<li>What are the data types stored in each column?</li>
+</ul>
+<pre><code>## spc_tbl_ [1,257,732 × 16] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ ProteinName            : chr [1:1257732] &quot;DECOY_sp|P0CF18|YM085_YEAST&quot; &quot;DECOY_sp|P0CF18|YM085_YEAST&quot; &quot;DECOY_sp|P0CF18|YM085_YEAST&quot; &quot;DECOY_sp|P0CF18|YM085_YEAST&quot; ...
+##  $ PeptideSequence        : chr [1:1257732] &quot;KDMYGNPFQK&quot; &quot;KDMYGNPFQK&quot; &quot;KDMYGNPFQK&quot; &quot;KDMYGNPFQK&quot; ...
+##  $ PeptideModifiedSequence: chr [1:1257732] &quot;KDM[+16]YGNPFQK&quot; &quot;KDM[+16]YGNPFQK&quot; &quot;KDM[+16]YGNPFQK&quot; &quot;KDM[+16]YGNPFQK&quot; ...
+##  $ PrecursorCharge        : num [1:1257732] 3 3 3 3 3 3 3 3 3 3 ...
+##  $ PrecursorMz            : num [1:1257732] 415 415 415 415 415 ...
+##  $ FragmentIon            : chr [1:1257732] &quot;precursor&quot; &quot;precursor&quot; &quot;precursor&quot; &quot;precursor&quot; ...
+##  $ ProductCharge          : num [1:1257732] 3 3 3 3 3 3 3 3 3 3 ...
+##  $ ProductMz              : num [1:1257732] 415 415 415 415 415 ...
+##  $ IsotopeLabelType       : chr [1:1257732] &quot;light&quot; &quot;light&quot; &quot;light&quot; &quot;light&quot; ...
+##  $ Condition              : chr [1:1257732] &quot;Condition1&quot; &quot;Condition1&quot; &quot;Condition1&quot; &quot;Condition2&quot; ...
+##  $ BioReplicate           : num [1:1257732] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ FileName               : chr [1:1257732] &quot;JD_06232014_sample1-A.raw&quot; &quot;JD_06232014_sample1_B.raw&quot; &quot;JD_06232014_sample1_C.raw&quot; &quot;JD_06232014_sample2_A.raw&quot; ...
+##  $ Area                   : chr [1:1257732] &quot;71765.046875&quot; &quot;147327.265625&quot; &quot;1373396.5&quot; &quot;66387.4453125&quot; ...
+##  $ StandardType           : logi [1:1257732] NA NA NA NA NA NA ...
+##  $ Truncated              : logi [1:1257732] FALSE FALSE FALSE FALSE FALSE FALSE ...
+##  $ DetectionQValue        : chr [1:1257732] &quot;#N/A&quot; &quot;#N/A&quot; &quot;#N/A&quot; &quot;#N/A&quot; ...
+##  - attr(*, &quot;spec&quot;)=
+##   .. cols(
+##   ..   ProteinName = col_character(),
+##   ..   PeptideSequence = col_character(),
+##   ..   PeptideModifiedSequence = col_character(),
+##   ..   PrecursorCharge = col_double(),
+##   ..   PrecursorMz = col_double(),
+##   ..   FragmentIon = col_character(),
+##   ..   ProductCharge = col_double(),
+##   ..   ProductMz = col_double(),
+##   ..   IsotopeLabelType = col_character(),
+##   ..   Condition = col_character(),
+##   ..   BioReplicate = col_double(),
+##   ..   FileName = col_character(),
+##   ..   Area = col_character(),
+##   ..   StandardType = col_logical(),
+##   ..   Truncated = col_logical(),
+##   ..   DetectionQValue = col_character()
+##   .. )
+##  - attr(*, &quot;problems&quot;)=&lt;externalptr&gt;</code></pre>
+<p>What kind of data is present? What is the structure of the data?</p>
+<ul>
+<li><p>Use the View function to review the data in RStudio.</p></li>
+<li><p>It appears that some of the data is duplicated across many rows? Look at the data column by column and see if you can understand why.</p></li>
+</ul>
+<p>Exercise #3 – Working with data Frames</p>
+<p>3.1 Retrieve the data from the column call “FileName” How many values do you expect to get? Write an expression using the data you retrieved to see if your guess is correct.</p>
+<pre><code>## [1] 1257732</code></pre>
+<ul>
+<li>you’d expect to have the same number of values are there is rows</li>
+</ul>
+<pre><code>## [1] 1257732</code></pre>
+<p>3.2 How many unique values of the data from “FileName” are there? What are these values and what do they correspond to?</p>
+<pre><code>##  [1] &quot;JD_06232014_sample1-A.raw&quot; &quot;JD_06232014_sample1_B.raw&quot; &quot;JD_06232014_sample1_C.raw&quot; &quot;JD_06232014_sample2_A.raw&quot;
+##  [5] &quot;JD_06232014_sample2_B.raw&quot; &quot;JD_06232014_sample2_C.raw&quot; &quot;JD_06232014_sample3_A.raw&quot; &quot;JD_06232014_sample3_B.raw&quot;
+##  [9] &quot;JD_06232014_sample3_C.raw&quot; &quot;JD_06232014_sample4-A.raw&quot; &quot;JD_06232014_sample4_B.raw&quot; &quot;JD_06232014_sample4_C.raw&quot;</code></pre>
+<p>3.3 Using data frame indexing syntax, subset the data to rows for the protein “sp|P33399|LHP1_YEAST”</p>
+<pre><code>## # A tibble: 288 × 16
+##    ProteinName Pepti…¹ Pepti…² Precu…³ Precu…⁴ Fragm…⁵ Produ…⁶ Produ…⁷ Isoto…⁸ Condi…⁹ BioRe…˟ FileN…˟ Area  Stand…˟ Trunc…˟
+##    &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt; &lt;lgl&gt;   &lt;lgl&gt;  
+##  1 sp|P33399|… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       1 JD_062… 1397… NA      FALSE  
+##  2 sp|P33399|… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       2 JD_062… 1281… NA      FALSE  
+##  3 sp|P33399|… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       3 JD_062… 1019… NA      FALSE  
+##  4 sp|P33399|… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       4 JD_062… 1104… NA      FALSE  
+##  5 sp|P33399|… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       5 JD_062… 1302… NA      FALSE  
+##  6 sp|P33399|… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       6 JD_062… 1126… NA      FALSE  
+##  7 sp|P33399|… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       7 JD_062… 1094… NA      FALSE  
+##  8 sp|P33399|… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       8 JD_062… 1457… NA      FALSE  
+##  9 sp|P33399|… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…       9 JD_062… 1213… NA      FALSE  
+## 10 sp|P33399|… NDGWVP… NDGWVP…       2    846. precur…       2    846. light   Condit…      10 JD_062… 1170… NA      FALSE  
+## # … with 278 more rows, 1 more variable: DetectionQValue &lt;chr&gt;, and abbreviated variable names ¹​PeptideSequence,
+## #   ²​PeptideModifiedSequence, ³​PrecursorCharge, ⁴​PrecursorMz, ⁵​FragmentIon, ⁶​ProductCharge, ⁷​ProductMz, ⁸​IsotopeLabelType,
+## #   ⁹​Condition, ˟​BioReplicate, ˟​FileName, ˟​StandardType, ˟​Truncated</code></pre>
+<p>3.4 How many unique peptides are present in the data for the above protein?</p>
+<ul>
+<li><p>first store the subset in a variable</p></li>
+<li><p>now calculate the number of unique peptides</p></li>
+</ul>
+<pre><code>## [1] 7</code></pre>
+<ul>
+<li>or you can do it with one expression</li>
+</ul>
+<pre><code>## [1] 7</code></pre>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tidyverse-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-wrangling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/jeffsocal/asms_r_intro/edit/BRANCH/06_92-tidyverse_exercises.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": [["ASMS_R_Basics.zip", "HTML"]],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

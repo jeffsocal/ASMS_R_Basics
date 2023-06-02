@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2023-05-19" />
+<meta name="date" content="2023-06-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -222,11 +222,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3" data-path="r-objects.html"><a href="r-objects.html#list"><i class="fa fa-check"></i><b>5.3</b> List</a></li>
 <li class="chapter" data-level="5.4" data-path="r-objects.html"><a href="r-objects.html#matrix"><i class="fa fa-check"></i><b>5.4</b> Matrix</a></li>
 <li class="chapter" data-level="5.5" data-path="r-objects.html"><a href="r-objects.html#data-frame"><i class="fa fa-check"></i><b>5.5</b> Data Frame</a></li>
-<li class="chapter" data-level="5.6" data-path="r-objects.html"><a href="r-objects.html#data.table"><i class="fa fa-check"></i><b>5.6</b> Data.Table</a></li>
+<li class="chapter" data-level="5.6" data-path="r-objects.html"><a href="r-objects.html#data-table"><i class="fa fa-check"></i><b>5.6</b> Data Table</a></li>
 <li class="chapter" data-level="5.7" data-path="r-objects.html"><a href="r-objects.html#tibbles"><i class="fa fa-check"></i><b>5.7</b> Tibbles</a></li>
 <li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#examine-the-contents"><i class="fa fa-check"></i>Examine the Contents</a></li>
 <li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#converting-objects"><i class="fa fa-check"></i>Converting Objects</a></li>
 <li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#more-exercises"><i class="fa fa-check"></i>More Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tidyverse-1.html"><a href="tidyverse-1.html"><i class="fa fa-check"></i><b>6</b> Tidyverse</a>
 <ul>
@@ -258,6 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#ggplot2"><i class="fa fa-check"></i><b>6.5.2</b> ggplot2</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#more-exercises-1"><i class="fa fa-check"></i>More Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>7</b> Data Wrangling</a>
 <ul>
@@ -368,6 +370,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#tidyverse-2"><i class="fa fa-check"></i><strong>6</strong> Tidyverse</a></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-1"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-visualization-1"><i class="fa fa-check"></i><strong>8</strong> Data Visualization</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#more-5-r-objects"><i class="fa fa-check"></i>More <strong>5</strong> R Objects</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#more-6-tidyverse"><i class="fa fa-check"></i>More <strong>6</strong> Tidyverse</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/jeffsocal/asms_r_intro" target="blank">Published with bookdown</a></li>
@@ -414,8 +418,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br />
 </p>
 <p>This book introduced variables briefly in <a href="data-visualization.html#syntax">8.2.1</a>. Here, we will expand on that introduction. At its simplest, a variable can be thought of as a container that holds only a single thing, like a single stick of gum. A vector is an ordered, finite collection of variables, like a pack of gum. A matrix consists of columns of equally-sized vectors, similar to a vending machine for several flavors of gum packs. Mentally, you can think of them as a point, a line, and a square, respectively.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:4001"></span>
-<img src="images/04_001_data_structures.png" alt="\label{fig:4001}R main data structures" width="67%" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:5001"></span>
+<img src="images/05_001_data_structures.png" alt="\label{fig:5001}R main data structures" width="67%" />
 <p class="caption">
 Figure 5.1: R main data structures
 </p>
@@ -442,10 +446,12 @@ Figure 5.1: R main data structures
 <p>There are also a handful of pre-populated vectors and functions for constructing patters.</p>
 <div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="r-objects.html#cb73-1" tabindex="-1"></a><span class="co"># all upper case letters</span></span>
 <span id="cb73-2"><a href="r-objects.html#cb73-2" tabindex="-1"></a>LETTERS</span></code></pre></div>
-<pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot; &quot;I&quot; &quot;J&quot; &quot;K&quot; &quot;L&quot; &quot;M&quot; &quot;N&quot; &quot;O&quot; &quot;P&quot; &quot;Q&quot; &quot;R&quot; &quot;S&quot; &quot;T&quot; &quot;U&quot; &quot;V&quot; &quot;W&quot; &quot;X&quot; &quot;Y&quot; &quot;Z&quot;</code></pre>
+<pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot; &quot;I&quot; &quot;J&quot; &quot;K&quot; &quot;L&quot; &quot;M&quot; &quot;N&quot; &quot;O&quot; &quot;P&quot; &quot;Q&quot; &quot;R&quot; &quot;S&quot; &quot;T&quot; &quot;U&quot; &quot;V&quot; &quot;W&quot;
+## [24] &quot;X&quot; &quot;Y&quot; &quot;Z&quot;</code></pre>
 <div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="r-objects.html#cb75-1" tabindex="-1"></a><span class="co"># all lower case letters</span></span>
 <span id="cb75-2"><a href="r-objects.html#cb75-2" tabindex="-1"></a>letters</span></code></pre></div>
-<pre><code>##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
+<pre><code>##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot;
+## [24] &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
 <div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="r-objects.html#cb77-1" tabindex="-1"></a><span class="co"># a repetitive vector of the letter &quot;a&quot;</span></span>
 <span id="cb77-2"><a href="r-objects.html#cb77-2" tabindex="-1"></a><span class="fu">rep</span>(<span class="st">&#39;a&#39;</span>, <span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;a&quot;</code></pre>
@@ -458,7 +464,7 @@ Figure 5.1: R main data structures
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="r-objects.html#cb83-1" tabindex="-1"></a><span class="co"># same as above</span></span>
 <span id="cb83-2"><a href="r-objects.html#cb83-2" tabindex="-1"></a><span class="dv">10</span><span class="sc">:</span><span class="dv">5</span></span></code></pre></div>
 <pre><code>## [1] 10  9  8  7  6  5</code></pre>
-<p>While variables don’t require a referencing scheme, because they only contain a single value, vectors need to have some kind of referencing scheme, shown in <a href="r-objects.html#fig:4001">5.1</a> as <code>x[9]</code> and illustrated in the following example.</p>
+<p>While variables don’t require a referencing scheme, because they only contain a single value, vectors need to have some kind of referencing scheme, shown in <a href="#fig:4001"><strong>??</strong></a> as <code>x[9]</code> and illustrated in the following example.</p>
 <p><br />
 </p>
 <table>
@@ -568,8 +574,8 @@ Figure 5.1: R main data structures
 <p>Lets talk about the structure of what just happened in constructing the <code>data.frame</code> table. Note that we defined the column with <em>let</em> and <em>pos</em> referring to letter and position, respectively. Second, note the use of the single <code>=</code> to assign a vector to that column rather than the “out-of-function” assignment operator <code>&lt;-</code> – meaning that functions use the <code>=</code> assignment operator, while data structures use the <code>&lt;-</code> assignment operator.</p>
 <p>The printed output of the <code>data.frame</code> shows the two column headers and also prints out the row names, in this case the integer value. Now, that this table is organized by column with row assiciations, we can perform an evalutaion on one column and reterive the value(s) in the other.</p>
 </div>
-<div id="data.table" class="section level2 hasAnchor" number="5.6">
-<h2><span class="header-section-number">5.6</span> Data.Table<a href="r-objects.html#data.table" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="data-table" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Data Table<a href="r-objects.html#data-table" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A <code>data.table</code> is a package in R that provides an extension of <code>data.frame</code>. It is an optimized and efficient way of handling large datasets in R language. Data.table is widely used in data science as it provides fast and easy ways to analyze large datasets. It is built to handle large datasets with ease while still providing a simple and intuitive syntax. Some R packages build specifically for mass spectrometry utilize <code>data.tables</code>, however, its is easy to transform between object types and use the methods you are most comfortable with.</p>
 <p><br />
 </p>
@@ -590,19 +596,18 @@ Figure 5.1: R main data structures
 </table>
 <p><br />
 </p>
-<p>Data.table provides many advantages over the traditional data.frame. Some of the key advantages are as follows:</p>
+<p>The <code>data.table</code> object provides many advantages over the traditional <code>data.frame</code>. Some of the key advantages are as follows:</p>
 <ol style="list-style-type: decimal">
-<li>Faster performance as compared to data.frame.</li>
+<li>Faster performance as compared to <code>data.frame</code>.</li>
 <li>Efficient memory usage.</li>
 <li>Provides an easy way to handle and manipulate large datasets.</li>
 <li>Provides a syntax similar to SQL for easy querying of data.</li>
 </ol>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="r-objects.html#cb113-1" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
-<span id="cb113-2"><a href="r-objects.html#cb113-2" tabindex="-1"></a></span>
-<span id="cb113-3"><a href="r-objects.html#cb113-3" tabindex="-1"></a>tbl_let <span class="ot">&lt;-</span> <span class="fu">data.table</span>(</span>
-<span id="cb113-4"><a href="r-objects.html#cb113-4" tabindex="-1"></a>  <span class="at">let =</span> LETTERS,</span>
-<span id="cb113-5"><a href="r-objects.html#cb113-5" tabindex="-1"></a>  <span class="at">pos =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(LETTERS)</span>
-<span id="cb113-6"><a href="r-objects.html#cb113-6" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="r-objects.html#cb113-1" tabindex="-1"></a><span class="fu">library</span>(data.table)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="r-objects.html#cb114-1" tabindex="-1"></a>tbl_let <span class="ot">&lt;-</span> <span class="fu">data.table</span>(</span>
+<span id="cb114-2"><a href="r-objects.html#cb114-2" tabindex="-1"></a>  <span class="at">let =</span> LETTERS,</span>
+<span id="cb114-3"><a href="r-objects.html#cb114-3" tabindex="-1"></a>  <span class="at">pos =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(LETTERS)</span>
+<span id="cb114-4"><a href="r-objects.html#cb114-4" tabindex="-1"></a>)</span></code></pre></div>
 <pre><code>##     let pos
 ##  1:  A   1
 ##  2:  B   2
@@ -624,12 +629,12 @@ Figure 5.1: R main data structures
 <h2><span class="header-section-number">5.7</span> Tibbles<a href="r-objects.html#tibbles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A tibble is a modern data frame in R programming language. Tibble is a part of tidyverse package that provides an efficient and user-friendly way to work with data frames. Tibbles are similar to data frames, but they have better printing capabilities, and they are designed to never alter your data.</p>
 <p>Tibbles are created using the <code>tibble()</code> function. You can create a tibble by passing vectors, lists, or data frames to the <code>tibble()</code> function. Once created, you can manipulate the tibble using the <code>dplyr</code> package.</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="r-objects.html#cb115-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb115-2"><a href="r-objects.html#cb115-2" tabindex="-1"></a></span>
-<span id="cb115-3"><a href="r-objects.html#cb115-3" tabindex="-1"></a>tbl_let <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb115-4"><a href="r-objects.html#cb115-4" tabindex="-1"></a>  <span class="at">let =</span> LETTERS,</span>
-<span id="cb115-5"><a href="r-objects.html#cb115-5" tabindex="-1"></a>  <span class="at">pos =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(LETTERS)</span>
-<span id="cb115-6"><a href="r-objects.html#cb115-6" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="r-objects.html#cb116-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb116-2"><a href="r-objects.html#cb116-2" tabindex="-1"></a></span>
+<span id="cb116-3"><a href="r-objects.html#cb116-3" tabindex="-1"></a>tbl_let <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb116-4"><a href="r-objects.html#cb116-4" tabindex="-1"></a>  <span class="at">let =</span> LETTERS,</span>
+<span id="cb116-5"><a href="r-objects.html#cb116-5" tabindex="-1"></a>  <span class="at">pos =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(LETTERS)</span>
+<span id="cb116-6"><a href="r-objects.html#cb116-6" tabindex="-1"></a>)</span></code></pre></div>
 <pre><code>## # A tibble: 26 × 2
 ##    let     pos
 ##    &lt;chr&gt; &lt;int&gt;
@@ -651,41 +656,41 @@ Figure 5.1: R main data structures
 <h2>Examine the Contents<a href="r-objects.html#examine-the-contents" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You can use the <code>str()</code> function to peak inside any data object to see how it is structured.</p>
 <p>The contents of a data.frame:</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="r-objects.html#cb117-1" tabindex="-1"></a>plant_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb117-2"><a href="r-objects.html#cb117-2" tabindex="-1"></a>  <span class="at">age_days =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>),</span>
-<span id="cb117-3"><a href="r-objects.html#cb117-3" tabindex="-1"></a>  <span class="at">height_inch =</span> <span class="fu">c</span>(<span class="fl">1.02</span>, <span class="fl">1.10</span>, <span class="fl">5.10</span>, <span class="fl">6.00</span>, <span class="fl">6.50</span>, <span class="fl">6.90</span>)</span>
-<span id="cb117-4"><a href="r-objects.html#cb117-4" tabindex="-1"></a>)</span>
-<span id="cb117-5"><a href="r-objects.html#cb117-5" tabindex="-1"></a></span>
-<span id="cb117-6"><a href="r-objects.html#cb117-6" tabindex="-1"></a><span class="fu">str</span>(plant_data)</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="r-objects.html#cb118-1" tabindex="-1"></a>plant_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb118-2"><a href="r-objects.html#cb118-2" tabindex="-1"></a>  <span class="at">age_days =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>),</span>
+<span id="cb118-3"><a href="r-objects.html#cb118-3" tabindex="-1"></a>  <span class="at">height_inch =</span> <span class="fu">c</span>(<span class="fl">1.02</span>, <span class="fl">1.10</span>, <span class="fl">5.10</span>, <span class="fl">6.00</span>, <span class="fl">6.50</span>, <span class="fl">6.90</span>)</span>
+<span id="cb118-4"><a href="r-objects.html#cb118-4" tabindex="-1"></a>)</span>
+<span id="cb118-5"><a href="r-objects.html#cb118-5" tabindex="-1"></a></span>
+<span id="cb118-6"><a href="r-objects.html#cb118-6" tabindex="-1"></a><span class="fu">str</span>(plant_data)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    6 obs. of  2 variables:
 ##  $ age_days   : num  10 20 30 40 50 60
 ##  $ height_inch: num  1.02 1.1 5.1 6 6.5 6.9</code></pre>
 <p>The contents of a tibble is very similar:</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="r-objects.html#cb119-1" tabindex="-1"></a>plant_data <span class="ot">&lt;-</span> <span class="fu">data.table</span>(</span>
-<span id="cb119-2"><a href="r-objects.html#cb119-2" tabindex="-1"></a>  <span class="at">age_days =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>),</span>
-<span id="cb119-3"><a href="r-objects.html#cb119-3" tabindex="-1"></a>  <span class="at">height_inch =</span> <span class="fu">c</span>(<span class="fl">1.02</span>, <span class="fl">1.10</span>, <span class="fl">5.10</span>, <span class="fl">6.00</span>, <span class="fl">6.50</span>, <span class="fl">6.90</span>)</span>
-<span id="cb119-4"><a href="r-objects.html#cb119-4" tabindex="-1"></a>)</span>
-<span id="cb119-5"><a href="r-objects.html#cb119-5" tabindex="-1"></a></span>
-<span id="cb119-6"><a href="r-objects.html#cb119-6" tabindex="-1"></a><span class="fu">str</span>(plant_data)</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="r-objects.html#cb120-1" tabindex="-1"></a>plant_data <span class="ot">&lt;-</span> <span class="fu">data.table</span>(</span>
+<span id="cb120-2"><a href="r-objects.html#cb120-2" tabindex="-1"></a>  <span class="at">age_days =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>),</span>
+<span id="cb120-3"><a href="r-objects.html#cb120-3" tabindex="-1"></a>  <span class="at">height_inch =</span> <span class="fu">c</span>(<span class="fl">1.02</span>, <span class="fl">1.10</span>, <span class="fl">5.10</span>, <span class="fl">6.00</span>, <span class="fl">6.50</span>, <span class="fl">6.90</span>)</span>
+<span id="cb120-4"><a href="r-objects.html#cb120-4" tabindex="-1"></a>)</span>
+<span id="cb120-5"><a href="r-objects.html#cb120-5" tabindex="-1"></a></span>
+<span id="cb120-6"><a href="r-objects.html#cb120-6" tabindex="-1"></a><span class="fu">str</span>(plant_data)</span></code></pre></div>
 <pre><code>## Classes &#39;data.table&#39; and &#39;data.frame&#39;:   6 obs. of  2 variables:
 ##  $ age_days   : num  10 20 30 40 50 60
 ##  $ height_inch: num  1.02 1.1 5.1 6 6.5 6.9
 ##  - attr(*, &quot;.internal.selfref&quot;)=&lt;externalptr&gt;</code></pre>
 <p>The contents of a tibble is very similar:</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="r-objects.html#cb121-1" tabindex="-1"></a>plant_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb121-2"><a href="r-objects.html#cb121-2" tabindex="-1"></a>  <span class="at">age_days =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>),</span>
-<span id="cb121-3"><a href="r-objects.html#cb121-3" tabindex="-1"></a>  <span class="at">height_inch =</span> <span class="fu">c</span>(<span class="fl">1.02</span>, <span class="fl">1.10</span>, <span class="fl">5.10</span>, <span class="fl">6.00</span>, <span class="fl">6.50</span>, <span class="fl">6.90</span>)</span>
-<span id="cb121-4"><a href="r-objects.html#cb121-4" tabindex="-1"></a>)</span>
-<span id="cb121-5"><a href="r-objects.html#cb121-5" tabindex="-1"></a></span>
-<span id="cb121-6"><a href="r-objects.html#cb121-6" tabindex="-1"></a><span class="fu">str</span>(plant_data)</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="r-objects.html#cb122-1" tabindex="-1"></a>plant_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb122-2"><a href="r-objects.html#cb122-2" tabindex="-1"></a>  <span class="at">age_days =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>),</span>
+<span id="cb122-3"><a href="r-objects.html#cb122-3" tabindex="-1"></a>  <span class="at">height_inch =</span> <span class="fu">c</span>(<span class="fl">1.02</span>, <span class="fl">1.10</span>, <span class="fl">5.10</span>, <span class="fl">6.00</span>, <span class="fl">6.50</span>, <span class="fl">6.90</span>)</span>
+<span id="cb122-4"><a href="r-objects.html#cb122-4" tabindex="-1"></a>)</span>
+<span id="cb122-5"><a href="r-objects.html#cb122-5" tabindex="-1"></a></span>
+<span id="cb122-6"><a href="r-objects.html#cb122-6" tabindex="-1"></a><span class="fu">str</span>(plant_data)</span></code></pre></div>
 <pre><code>## tibble [6 × 2] (S3: tbl_df/tbl/data.frame)
 ##  $ age_days   : num [1:6] 10 20 30 40 50 60
 ##  $ height_inch: num [1:6] 1.02 1.1 5.1 6 6.5 6.9</code></pre>
 <p>The contents of a linear regression data object are quite different:</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="r-objects.html#cb123-1" tabindex="-1"></a><span class="co"># linear prediction of plant growth (eg. height) based on age</span></span>
-<span id="cb123-2"><a href="r-objects.html#cb123-2" tabindex="-1"></a>linear_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> plant_data, height_inch <span class="sc">~</span> age_days)</span>
-<span id="cb123-3"><a href="r-objects.html#cb123-3" tabindex="-1"></a></span>
-<span id="cb123-4"><a href="r-objects.html#cb123-4" tabindex="-1"></a>linear_model</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="r-objects.html#cb124-1" tabindex="-1"></a><span class="co"># linear prediction of plant growth (eg. height) based on age</span></span>
+<span id="cb124-2"><a href="r-objects.html#cb124-2" tabindex="-1"></a>linear_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> plant_data, height_inch <span class="sc">~</span> age_days)</span>
+<span id="cb124-3"><a href="r-objects.html#cb124-3" tabindex="-1"></a></span>
+<span id="cb124-4"><a href="r-objects.html#cb124-4" tabindex="-1"></a>linear_model</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = height_inch ~ age_days, data = plant_data)
@@ -693,7 +698,7 @@ Figure 5.1: R main data structures
 ## Coefficients:
 ## (Intercept)     age_days  
 ##     -0.2133       0.1329</code></pre>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="r-objects.html#cb125-1" tabindex="-1"></a><span class="fu">str</span>(linear_model)</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="r-objects.html#cb126-1" tabindex="-1"></a><span class="fu">str</span>(linear_model)</span></code></pre></div>
 <pre><code>List of 12
  $ coefficients : Named num [1:2] -0.213 0.133
   ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;(Intercept)&quot; &quot;age_days&quot;
@@ -709,24 +714,24 @@ Figure 5.1: R main data structures
 <h2>Converting Objects<a href="r-objects.html#converting-objects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In R, we see that there are several data objects that can be used to store and manipulate data. Some of the commonly used data objects include <code>data.frames</code>, <code>data.tables</code> and <code>tibbles</code>. However, we don’t need to be stuck with any one object and can easily convert between these data objects using the <code>as.data.frame</code>, <code>as.data.table</code> and <code>as_tibble</code> functions.</p>
 <p>If we start out with a <code>data.frame</code> as shown above, we can convert that to either a <code>data.table</code> or a <code>tibble</code> very easily.</p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="r-objects.html#cb127-1" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
-<span id="cb127-2"><a href="r-objects.html#cb127-2" tabindex="-1"></a><span class="fu">library</span>(data.table)</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="r-objects.html#cb128-1" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb128-2"><a href="r-objects.html#cb128-2" tabindex="-1"></a><span class="fu">library</span>(data.table)</span></code></pre></div>
 <p>Convert from a <strong>data.frame</strong> to a <strong>data.table</strong>:</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="r-objects.html#cb128-1" tabindex="-1"></a>dt <span class="ot">&lt;-</span> <span class="fu">as.data.table</span>(df)</span>
-<span id="cb128-2"><a href="r-objects.html#cb128-2" tabindex="-1"></a><span class="fu">str</span>(dt)</span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="r-objects.html#cb129-1" tabindex="-1"></a>dt <span class="ot">&lt;-</span> <span class="fu">as.data.table</span>(df)</span>
+<span id="cb129-2"><a href="r-objects.html#cb129-2" tabindex="-1"></a><span class="fu">str</span>(dt)</span></code></pre></div>
 <pre><code>## Classes &#39;data.table&#39; and &#39;data.frame&#39;:   26 obs. of  2 variables:
 ##  $ let: chr  &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; ...
 ##  $ pos: int  1 2 3 4 5 6 7 8 9 10 ...
 ##  - attr(*, &quot;.internal.selfref&quot;)=&lt;externalptr&gt;</code></pre>
 <p>Convert from a <strong>data.frame</strong> to a <strong>tibble</strong>:</p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="r-objects.html#cb130-1" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(df)</span>
-<span id="cb130-2"><a href="r-objects.html#cb130-2" tabindex="-1"></a><span class="fu">str</span>(tbl)</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="r-objects.html#cb131-1" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(df)</span>
+<span id="cb131-2"><a href="r-objects.html#cb131-2" tabindex="-1"></a><span class="fu">str</span>(tbl)</span></code></pre></div>
 <pre><code>## tibble [26 × 2] (S3: tbl_df/tbl/data.frame)
 ##  $ let: chr [1:26] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; ...
 ##  $ pos: int [1:26] 1 2 3 4 5 6 7 8 9 10 ...</code></pre>
 <p>Convert from a <strong>data.table</strong> to a <strong>tibble</strong>:</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="r-objects.html#cb132-1" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(dt)</span>
-<span id="cb132-2"><a href="r-objects.html#cb132-2" tabindex="-1"></a><span class="fu">str</span>(tbl)</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="r-objects.html#cb133-1" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(dt)</span>
+<span id="cb133-2"><a href="r-objects.html#cb133-2" tabindex="-1"></a><span class="fu">str</span>(tbl)</span></code></pre></div>
 <pre><code>## tibble [26 × 2] (S3: tbl_df/tbl/data.frame)
 ##  $ let: chr [1:26] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; ...
 ##  $ pos: int [1:26] 1 2 3 4 5 6 7 8 9 10 ...
@@ -781,6 +786,62 @@ Figure 5.1: R main data structures
 <pre><code>##   diameter circumfrence
 ## 4        4     50.26549
 ## 5        5     78.53982</code></pre>
+
+</div>
+<div id="more-exercises" class="section level2 unnumbered hasAnchor">
+<h2>More Exercises<a href="r-objects.html#more-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="69%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/07.png" height="68" /></td>
+<td><ul>
+<li><p>Create a new R Studio Project and name it <strong>103_data_structures</strong>.</p></li>
+<li><p>Create a new R script, add your name and date at the top as comments.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p>Exercise #1 – Working with Variables You are running an LC-MS experiment using a 60 min LC gradient</p>
+<p>1.1 Create a variable called gradient_min to hold the length of the gradient in minutes.</p>
+<pre><code>## [1] 60</code></pre>
+<p>1.2 Using the gradient length variable you just created, convert it to seconds and assign it to a new variable with a meaningful name.</p>
+<pre><code>## [1] 3600</code></pre>
+<p>Exercise #2 – Working with Vectors</p>
+<p>Continuing from Exercise #1…</p>
+<p>2.1 Imagine you conducted additional experiments, one with a 15 minute gradient and one with a 30 min gradient. Create a vector to hold all three gradient times in minutes, and assign it to a new variable.</p>
+<pre><code>## [1] 15 30 60</code></pre>
+<p>2.2 Convert the vector of gradient times to seconds. How does this conversion compare to how you did the conversion in Exercise 1?</p>
+<pre><code>## [1]  900 1800 3600</code></pre>
+<p>Exercise #3 – More Practice with Vectors</p>
+<p>3.1 The following vector represents precursor m/z values for detected features from your experiment:</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="r-objects.html#cb145-1" tabindex="-1"></a>prec_mz <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">968.4759</span>, <span class="fl">812.1599</span>, <span class="fl">887.9829</span>, <span class="fl">338.5294</span>, <span class="fl">510.2720</span>, </span>
+<span id="cb145-2"><a href="r-objects.html#cb145-2" tabindex="-1"></a>             <span class="fl">775.3455</span>, <span class="fl">409.2369</span>, <span class="fl">944.0385</span>, <span class="fl">584.7687</span>, <span class="fl">1041.9523</span>)</span></code></pre></div>
+<ul>
+<li>How many values are there?</li>
+</ul>
+<pre><code>## [1] 10</code></pre>
+<ul>
+<li>What is the minimum value? The maximum?</li>
+</ul>
+<pre><code>## [1] 338.5294</code></pre>
+<pre><code>## [1] 1041.952</code></pre>
+<p>Exercise #4 – Vectors and Conditional Expressions</p>
+<p>4.1 Using the above vector of precursor values, write a conditional expression to find the values with m/z &lt; 600. What is returned by this expression? A single value or multiple values? A number or something else?</p>
+<pre><code>##  [1] FALSE FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE</code></pre>
+<p>4.2 Use this conditional expression to get the precursor values with m/z &lt; 600</p>
+<pre><code>## [1] 338.5294 510.2720 409.2369 584.7687</code></pre>
+<p>4.3 Consider a new vector of data that contains the charge states of the same detected features from above:</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="r-objects.html#cb151-1" tabindex="-1"></a>prec_z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span></code></pre></div>
+<ul>
+<li>Write a conditional expression to find which detected features that have a charge state of 2.</li>
+</ul>
+<pre><code>##  [1]  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+<p>4.4 Write an expression to get the precursor m/z values for features having charge states of 2?</p>
+<pre><code>## [1]  968.4759  887.9829  510.2720  775.3455  409.2369  944.0385  584.7687 1041.9523</code></pre>
 
 </div>
 </div>

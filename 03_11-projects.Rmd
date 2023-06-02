@@ -28,7 +28,7 @@ You can then also use subfolders to organize different types of data or data fro
 
 You can create and navigate folders in your RStudio project directly in RStudio!
 ```{r 3203, echo=FALSE, fig.cap="\\label{fig:3203}RStudio Create New Folder"}
-# knitr::include_graphics("images/03_022_new_folder.png")
+knitr::include_graphics("images/03_022_new_folder.png")
 ```
 
 ### Scripts {-}

@@ -18,8 +18,8 @@ The R programming environment includes four basic types of data structures that 
 
 This book introduced variables briefly in \@ref(syntax). Here, we will expand on that introduction. At its simplest, a variable can be thought of as a container that holds only a single thing, like a single stick of gum. A vector is an ordered, finite collection of variables, like a pack of gum. A matrix consists of columns of equally-sized vectors, similar to a vending machine for several flavors of gum packs. Mentally, you can think of them as a point, a line, and a square, respectively.
 
-```{r 4001, echo=FALSE, fig.cap="\\label{fig:4001}R main data structures", out.width="67%", fig.align='center'}
-knitr::include_graphics("images/04_001_data_structures.png")
+```{r 5001, echo=FALSE, fig.cap="\\label{fig:5001}R main data structures", out.width="67%", fig.align='center'}
+knitr::include_graphics("images/05_001_data_structures.png")
 ```
 
 ## Variable
@@ -203,7 +203,7 @@ Lets talk about the structure of what just happened in constructing the `data.fr
 
 The printed output of the `data.frame` shows the two column headers and also prints out the row names, in this case the integer value. Now, that this table is organized by column with row assiciations, we can perform an evalutaion on one column and reterive the value(s) in the other.
 
-## Data.Table
+## Data Table
 
 A `data.table` is a package in R that provides an extension of `data.frame`. It is an optimized and efficient way of handling large datasets in R language. Data.table is widely used in data science as it provides fast and easy ways to analyze large datasets. It is built to handle large datasets with ease while still providing a simple and intuitive syntax. Some R packages build specifically for mass spectrometry utilize `data.tables`, however, its is easy to transform between object types and use the methods you are most comfortable with.
 
@@ -221,16 +221,17 @@ A `data.table` is a package in R that provides an extension of `data.frame`. It 
 
 \
 
-Data.table provides many advantages over the traditional data.frame. Some of the key advantages are as follows:
+The `data.table` object provides many advantages over the traditional `data.frame`. Some of the key advantages are as follows:
 
-1. Faster performance as compared to data.frame.
+1. Faster performance as compared to `data.frame`.
 2. Efficient memory usage.
 3. Provides an easy way to handle and manipulate large datasets.
 4. Provides a syntax similar to SQL for easy querying of data.
 
-```{r, eval=FALSE}
+```{r, message=FALSE, warning=FALSE}
 library(data.table)
-
+```
+```{r, eval=FALSE}
 tbl_let <- data.table(
   let = LETTERS,
   pos = 1:length(LETTERS)

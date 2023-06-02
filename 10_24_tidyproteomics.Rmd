@@ -100,16 +100,18 @@ data_proteins <- data_proteins %>%
 
 # plot visualizations comparing normalization methods
 p03 <- data_proteins %>% plot_normalization()
+```
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE, fig.width=8, fig.height=3, fig.align='center'}
+p03
+```
+```{r, warning=FALSE, message=FALSE, fig.width=8, fig.height=3, fig.align='center'}
 p04 <- data_proteins %>% plot_variation_cv()
-p05 <- data_proteins %>% plot_variation_pca()
+```
+```{r, warning=FALSE, message=FALSE}
 p06 <- data_proteins %>% plot_dynamic_range()
 ```
 
-```{r, echo=FALSE, fig.width=8, fig.height=3, fig.align='center'}
-grid.arrange(p04 + labs(title = '', subtitle = 'p04: Normalization CVs'), 
-             p05 + labs(title = '', subtitle = 'p05: Normalization PCA'), 
-             nrow = 1)
-```
 ```{r, echo=FALSE, fig.width=8, fig.height=3, fig.align='center', warning=FALSE, message=FALSE}
 data_proteins %>% subset(imputed == 0) %>% plot_dynamic_range() + labs(title = '', subtitle = 'p06: Normalization Dynamic Range')
 ```

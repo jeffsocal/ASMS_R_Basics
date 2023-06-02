@@ -1,0 +1,120 @@
+## More Exercises {-}
+
++---------------------------------+---------------------------------------------------------------------------+
+| ![](images/07.png){height="68"} | -   Create a new R Studio Project and name it **104_tidyverse**.          |
+|                                 |                                                                           |
+|                                 | -   Create a new R script, add your name and tbl_ddae at the top as comments. |
++---------------------------------+---------------------------------------------------------------------------+
+
+Load the `tidyverse` library ...
+
+```{r, message=FALSE,warning=FALSE}
+library(tidyverse)
+```
+
+Download the data.
+
+```{r, eval=FALSE}
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/Choi2017_DDA_Skyline_input.csv.zip"
+download.file(url, destfile = "./data/Choi2017_DDA_Skyline_input.csv.zip")
+```
+
+Exercise #1 -- Reading data
+
+1.1 Read the example data from a proteomics experiment NOTE: file is a zipped .csv file -- R knows how to read it!
+
+```{r, echo=FALSE, message=FALSE,warning=FALSE}
+tbl_dda <- read_csv("data/Choi2017_DDA_Skyline_input.csv.zip", guess_max = 10000)
+```
+
+Exercise #2 -- Reviewing data Frames
+
+2.1 Review some basic properties of the data frame
+
+-   How many rows?\
+
+```{r, echo=FALSE}
+nrow(tbl_dda)
+```
+
+-   How many columns?
+
+```{r, echo=FALSE}
+ncol(tbl_dda)
+```
+
+-   How many rows & columns (use one expression)
+
+```{r, echo=FALSE}
+dim(tbl_dda)
+```
+
+-   What are the column names?
+
+```{r, echo=FALSE}
+names(tbl_dda)
+```
+
+-   What are the data types stored in each column?
+
+```{r, echo=FALSE}
+str(tbl_dda)
+```
+
+What kind of data is present? What is the structure of the data?
+
+-   Use the View function to review the data in RStudio.
+
+-   It appears that some of the data is duplicated across many rows? Look at the data column by column and see if you can understand why.
+
+```{r, eval=FALSE, echo=FALSE}
+View(tbl_dda)
+```
+
+Exercise #3 -- Working with data Frames
+
+3.1 Retrieve the data from the column call "FileName" How many values do you expect to get? Write an expression using the data you retrieved to see if your guess is correct.
+
+```{r, echo=FALSE}
+length(tbl_dda$FileName)
+```
+
+-   you'd expect to have the same number of values are there is rows
+
+```{r, echo=FALSE}
+nrow(tbl_dda)
+```
+
+3.2 How many unique values of the data from "FileName" are there? What are these values and what do they correspond to?
+
+```{r, echo=FALSE}
+unique(tbl_dda$FileName)
+```
+
+3.3 Using data frame indexing syntax, subset the data to rows for the protein "sp\|P33399\|LHP1_YEAST"
+
+```{r, echo=FALSE}
+tbl_dda[tbl_dda$ProteinName == "sp|P33399|LHP1_YEAST",]
+```
+
+3.4 How many unique peptides are present in the data for the above protein?
+
+-   first store the subset in a variable
+
+```{r, echo=FALSE}
+tbl_dda_subset <- tbl_dda[tbl_dda$ProteinName == "sp|P33399|LHP1_YEAST",]
+```
+
+-   now calculate the number of unique peptides
+
+```{r, echo=FALSE}
+peptides <- tbl_dda_subset$PeptideSequence
+unique_peptides <- unique(peptides)
+length(unique_peptides)
+```
+
+-   or you can do it with one expression
+
+```{r, echo=FALSE}
+length(unique(tbl_dda_subset$PeptideSequence))
+```

@@ -12,14 +12,15 @@ fig:2024
 fig:2025
 fig:3201
 fig:3202
-fig:4001
+fig:3203
+fig:5001
 fig:7201
 fig:7202
 fig:7203
 fig:7204
 fig:7205
 fig:7206
-tab:unnamed-chunk-131
+tab:unnamed-chunk-160
 fig:10001
 introduction-to-r
 alternatives
@@ -56,7 +57,7 @@ vector
 list
 matrix
 data-frame
-data.table
+data-table
 tibbles
 tidyverse-1
 core-packages

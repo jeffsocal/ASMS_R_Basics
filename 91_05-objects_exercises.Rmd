@@ -5,7 +5,7 @@
 # 2023-06-02
 # Institution Inc.
 #
-# Data Structures Exercises
+# Data Object Exercises
 
 # 1.  Construct the following vector and store as a variable.
 str_gbu <- c('red', 'green', 'blue')
