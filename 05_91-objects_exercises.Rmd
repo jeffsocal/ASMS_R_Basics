@@ -17,31 +17,31 @@ str_gbu
 str_gbu[2]
 ```
 
-3.  Construct a numerical vector of length 5, containing the circumferences of circles with integer diameters 1 to 5. Remember PEMDAS.
+3.  Construct a numerical vector of length 5, containing the AREA of circles with integer RADIUS 1 to 5. Remember PEMDAS.
 ```{r, echo=FALSE}
-cir <- (1:5) ^ 2 * pi
-cir
+area <- (1:5) ^ 2 * pi
+area
 ```
 
-4.  Extract all circumferences greater than 50.
+4.  Extract all AREA greater than 50.
 ```{r, echo=FALSE}
-cir[which(cir > 50)]
+area[which(area > 50)]
 ```
 
-5. Create a data.frame consisting of circles with integer diameters 1 to 5, and their circumferences.
+5. Create a data.frame consisting of circles with integer RADIUS 1 to 5, and their AREA.
 ```{r, echo=FALSE}
-diameters <- 1:5
+radius <- 1:5
 
 df <- data.frame(
-  diameter = diameters,
-  circumfrence = (diameters) ^ 2 * pi
+  radius = radius,
+  area = (radius) ^ 2 * pi
 )
 
 df
 ```
 
-6.  Extract all circumferences greater than 50 from the data.frame.
+6.  Extract all AREA greater than 50 from the data.frame.
 ```{r, echo=FALSE}
-w <- which(df$circumfrence > 50)
+w <- which(df$area > 50)
 df[w,]
 ```

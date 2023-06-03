@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2023-06-02" />
+<meta name="date" content="2023-06-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -418,19 +418,19 @@ Figure 3.2: RStudio Create New Project
 <h2><span class="header-section-number">3.2</span> Organizing<a href="r-studio-projects.html#organizing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Organizing your RStudio project is an important task that can help you work more efficiently and avoid confusion when working on a project. Good organization will help you come back to your code at a later date as well as make it possible in some smaller projects to share entirely the data and code, making it possible for others to run the code and modify it.</p>
 <p>Typical project directory structure</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="r-studio-projects.html#cb14-1" tabindex="-1"></a>your_project</span>
-<span id="cb14-2"><a href="r-studio-projects.html#cb14-2" tabindex="-1"></a>  <span class="sc">|-</span> 001_import_data.R</span>
-<span id="cb14-3"><a href="r-studio-projects.html#cb14-3" tabindex="-1"></a>  <span class="sc">|-</span> 002_tidy_data.R</span>
-<span id="cb14-4"><a href="r-studio-projects.html#cb14-4" tabindex="-1"></a>  <span class="sc">|-</span> 003_analysis_01.R</span>
-<span id="cb14-5"><a href="r-studio-projects.html#cb14-5" tabindex="-1"></a>  <span class="sc">|-</span> 004_analysis_02.R</span>
-<span id="cb14-6"><a href="r-studio-projects.html#cb14-6" tabindex="-1"></a>  <span class="sc">|-</span> data</span>
-<span id="cb14-7"><a href="r-studio-projects.html#cb14-7" tabindex="-1"></a>     <span class="sc">|-</span> tidy_table.csv</span>
-<span id="cb14-8"><a href="r-studio-projects.html#cb14-8" tabindex="-1"></a>     <span class="sc">|-</span> main_file.xlsx</span>
-<span id="cb14-9"><a href="r-studio-projects.html#cb14-9" tabindex="-1"></a>  <span class="sc">|-</span> plots</span>
-<span id="cb14-10"><a href="r-studio-projects.html#cb14-10" tabindex="-1"></a>     <span class="sc">|-</span> plot_xy_scatter.png</span>
-<span id="cb14-11"><a href="r-studio-projects.html#cb14-11" tabindex="-1"></a>     <span class="sc">|-</span> plot_xy_regression.png</span>
-<span id="cb14-12"><a href="r-studio-projects.html#cb14-12" tabindex="-1"></a>  <span class="sc">|-</span> results</span>
-<span id="cb14-13"><a href="r-studio-projects.html#cb14-13" tabindex="-1"></a>     <span class="sc">|-</span> predicted_output_20230531.csv</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="r-studio-projects.html#cb15-1" tabindex="-1"></a>your_project</span>
+<span id="cb15-2"><a href="r-studio-projects.html#cb15-2" tabindex="-1"></a>  <span class="sc">|-</span> 001_import_data.R</span>
+<span id="cb15-3"><a href="r-studio-projects.html#cb15-3" tabindex="-1"></a>  <span class="sc">|-</span> 002_tidy_data.R</span>
+<span id="cb15-4"><a href="r-studio-projects.html#cb15-4" tabindex="-1"></a>  <span class="sc">|-</span> 003_analysis_01.R</span>
+<span id="cb15-5"><a href="r-studio-projects.html#cb15-5" tabindex="-1"></a>  <span class="sc">|-</span> 004_analysis_02.R</span>
+<span id="cb15-6"><a href="r-studio-projects.html#cb15-6" tabindex="-1"></a>  <span class="sc">|-</span> data</span>
+<span id="cb15-7"><a href="r-studio-projects.html#cb15-7" tabindex="-1"></a>     <span class="sc">|-</span> tidy_table.csv</span>
+<span id="cb15-8"><a href="r-studio-projects.html#cb15-8" tabindex="-1"></a>     <span class="sc">|-</span> main_file.xlsx</span>
+<span id="cb15-9"><a href="r-studio-projects.html#cb15-9" tabindex="-1"></a>  <span class="sc">|-</span> plots</span>
+<span id="cb15-10"><a href="r-studio-projects.html#cb15-10" tabindex="-1"></a>     <span class="sc">|-</span> plot_xy_scatter.png</span>
+<span id="cb15-11"><a href="r-studio-projects.html#cb15-11" tabindex="-1"></a>     <span class="sc">|-</span> plot_xy_regression.png</span>
+<span id="cb15-12"><a href="r-studio-projects.html#cb15-12" tabindex="-1"></a>  <span class="sc">|-</span> results</span>
+<span id="cb15-13"><a href="r-studio-projects.html#cb15-13" tabindex="-1"></a>     <span class="sc">|-</span> predicted_output_20230531.csv</span></code></pre></div>
 <div id="data" class="section level3 unnumbered hasAnchor">
 <h3>Data<a href="r-studio-projects.html#data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>It’s a good idea to keep your data files separate from your R scripts and other files. If the data is small enough (at your disgression what is small), it can be helpful to store the data in <code>/data/</code> folder in the project itself!</p>
@@ -457,6 +457,14 @@ Figure 3.3: RStudio Create New Folder
 <div id="plots" class="section level4 unnumbered hasAnchor">
 <h4>Plots<a href="r-studio-projects.html#plots" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Similar to tables, plot files could be stored in a sub folder.</p>
+
+<!--# R v RStudio -->
+<!--# Basic Interactions -->
+<!--## Hot keys -->
+<!--## create, run, save scripts -->
+<!--## run blocks of code -->
+<!--# ADD R Notebook v R Script -->
+<!--# Where we are going form here -->
 
 </div>
 </div>

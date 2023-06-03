@@ -1,0 +1,10 @@
+<!--# R v RStudio -->
+
+<!--# Basic Interactions -->
+<!--## Hot keys -->
+<!--## create, run, save scripts -->
+<!--## run blocks of code -->
+
+<!--# ADD R Notebook v R Script -->
+
+<!--# Where we are going form here -->
