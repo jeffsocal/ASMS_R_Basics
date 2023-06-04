@@ -10,16 +10,15 @@
 
 1. Download the data.
 ```{r, eval=FALSE}
-url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_messy.xlsx"
-download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_messy.xlsx")
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_messy.csv"
+download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_messy.csv")
 ```
 
 2. Read in the messy bacteria data and store it as a variable.
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
-library(readxl)
 
-tbl_bac <- "data/bacterial-metabolites_dose-simicillin_messy.xlsx" %>% read_excel(col_names = TRUE)
+tbl_bac <- "data/bacterial-metabolites_dose-simicillin_messy.csv" %>% read_csv(col_names = TRUE)
 
 tbl_bac
 ```

@@ -1,0 +1,10 @@
+﻿Culture,User,glutamate_runtime_0hr,glutamate_runtime_24hr,glutamate_runtime_2day,glutamate_runtime_3day,glutamate_runtime_5day,lysine_runtime_0hr,lysine_runtime_24hr,lysine_runtime_2day,lysine_runtime_3day,lysine_runtime_5day
+e coli dose--0-mg/ml,Mass Spectrometrist,191666,2082823,1796910,846402,1782879,1418,2004,1498,1356,961
+staph aureus dose--0-mg/ml,Mass Spectrometrist,125210,132156,114445,117150,137747,111,119,109,119,119
+p aeruginosa dose--0-mg/ml,Mass Spectrometrist,978126,397012,267599,424183,1630613,15,1957,1678,2548,861
+e coli dose--10-mg/ml,Mass Spectrometrist,1445,1017467,14456533,813321,29825,1830,8363,121087,190152,179472
+staph aureus dose--10-mg/ml,Mass Spectrometrist,152,128683,1360154,102188,10920,137,1340,13345,9856,12885
+p aeruginosa dose--10-mg/ml,Mass Spectrometrist,23,1612622,18282386,199374,230032,3705,9448,16678,252158,136535
+e coli dose--20-mg/ml,Mass Spectrometrist,885,42356,11758951,22498,1715,367,70492,548146,21482392,187863
+staph aureus dose--20-mg/ml,Mass Spectrometrist,136,4276,1162855,4841,130,129,12985,123893,1275203,1458806
+p aeruginosa dose--20-mg/ml,Mass Spectrometrist,3098,68146,19333030,106262,164,3067,233009,1029939,11009706,22340479
