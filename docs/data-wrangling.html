@@ -824,8 +824,8 @@ We only provided two column names, though. Perhaps we can rethink our separator.
 <ol style="list-style-type: decimal">
 <li>Download the data.</li>
 </ol>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="data-wrangling.html#cb239-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_messy.xlsx&quot;</span></span>
-<span id="cb239-2"><a href="data-wrangling.html#cb239-2" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/bacterial-metabolites_dose-simicillin_messy.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="data-wrangling.html#cb239-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_messy.csv&quot;</span></span>
+<span id="cb239-2"><a href="data-wrangling.html#cb239-2" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/bacterial-metabolites_dose-simicillin_messy.csv&quot;</span>)</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Read in the messy bacteria data and store it as a variable.</li>
 </ol>
@@ -902,7 +902,7 @@ We only provided two column names, though. Perhaps we can rethink our separator.
 ##  7 e coli           0 Mass Spectrometr… lysine     24hr         2004
 ##  8 e coli           0 Mass Spectrometr… lysine     2day         1498
 ##  9 e coli           0 Mass Spectrometr… lysine     3day         1356
-## 10 e coli           0 Mass Spectrometr… lysine     5day          962
+## 10 e coli           0 Mass Spectrometr… lysine     5day          961
 ## # ℹ 80 more rows</code></pre>
 <ol start="6" style="list-style-type: decimal">
 <li>Make sure <code>time_hr</code> contains just hours and not a mixture of days and hours.</li>
@@ -919,7 +919,7 @@ We only provided two column names, though. Perhaps we can rethink our separator.
 ##  7 e coli           0 Mass Spectrometr… lysine          24      2004
 ##  8 e coli           0 Mass Spectrometr… lysine          48      1498
 ##  9 e coli           0 Mass Spectrometr… lysine          72      1356
-## 10 e coli           0 Mass Spectrometr… lysine         120       962
+## 10 e coli           0 Mass Spectrometr… lysine         120       961
 ## # ℹ 80 more rows</code></pre>
 <ol start="7" style="list-style-type: decimal">
 <li>Remove the <code>User</code> column. See cheatsheet here: <a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">data-wrangling-cheatsheet</a> or consult internet.</li>
@@ -936,7 +936,7 @@ We only provided two column names, though. Perhaps we can rethink our separator.
 ##  7 e coli           0 lysine          24      2004
 ##  8 e coli           0 lysine          48      1498
 ##  9 e coli           0 lysine          72      1356
-## 10 e coli           0 lysine         120       962
+## 10 e coli           0 lysine         120       961
 ## # ℹ 80 more rows</code></pre>
 
 </div>
