@@ -519,7 +519,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb156-37"><a href="tidyverse-1.html#cb156-37" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">slope =</span> min_temp, <span class="at">intercept =</span> Intercept)) <span class="sc">+</span></span>
 <span id="cb156-38"><a href="tidyverse-1.html#cb156-38" tabindex="-1"></a>  <span class="co"># plot each year separately </span></span>
 <span id="cb156-39"><a href="tidyverse-1.html#cb156-39" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>year)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-95-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-113-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>To get started with the <code>tidyverse</code>, you can install the package using the following command:</p>
 <div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="tidyverse-1.html#cb157-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
 <p>Once installed, users can load the package and begin using the individual packages within the tidyverse:</p>
@@ -808,11 +808,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="tidyverse-1.html#cb194-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span></span>
 <span id="cb194-2"><a href="tidyverse-1.html#cb194-2" tabindex="-1"></a>  <span class="fu">summarise_all</span>(<span class="fu">list</span>(<span class="at">max =</span> max, <span class="at">min =</span> min))</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 8
-##   plant_max condition_max time_max inches_max plant_min
-##   &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    
-## 1 C         wet, cold     week_3          5.2 A        
-## # ℹ 3 more variables: condition_min &lt;chr&gt;, time_min &lt;chr&gt;,
-## #   inches_min &lt;dbl&gt;</code></pre>
+##   plant_max condition_max time_max inches_max plant_min condition_min
+##   &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;        
+## 1 C         wet, cold     week_3          5.2 A         moist, cold  
+## # ℹ 2 more variables: time_min &lt;chr&gt;, inches_min &lt;dbl&gt;</code></pre>
 <p>Summarizing data is an essential task that can be performed using several functions. These functions make it easy to calculate summary statistics based on one or more variables, group data frames by different categories, and summarize multiple variables at once.</p>
 </div>
 <div id="ggplot2" class="section level3 hasAnchor" number="6.5.2">
@@ -990,24 +989,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [11] &quot;JD_06232014_sample4_B.raw&quot; &quot;JD_06232014_sample4_C.raw&quot;</code></pre>
 <p>3.3 Using data frame indexing syntax, subset the data to rows for the protein “sp|P33399|LHP1_YEAST”</p>
 <pre><code>## # A tibble: 288 × 16
-##    ProteinName          PeptideSequence PeptideModifiedSequence
-##    &lt;chr&gt;                &lt;chr&gt;           &lt;chr&gt;                  
-##  1 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-##  2 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-##  3 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-##  4 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-##  5 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-##  6 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-##  7 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-##  8 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-##  9 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-## 10 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
+##    ProteinName        PeptideSequence PeptideModifiedSeque…¹ PrecursorCharge
+##    &lt;chr&gt;              &lt;chr&gt;           &lt;chr&gt;                            &lt;dbl&gt;
+##  1 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
+##  2 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
+##  3 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
+##  4 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
+##  5 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
+##  6 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
+##  7 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
+##  8 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
+##  9 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
+## 10 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
 ## # ℹ 278 more rows
-## # ℹ 13 more variables: PrecursorCharge &lt;dbl&gt;, PrecursorMz &lt;dbl&gt;,
-## #   FragmentIon &lt;chr&gt;, ProductCharge &lt;dbl&gt;, ProductMz &lt;dbl&gt;,
-## #   IsotopeLabelType &lt;chr&gt;, Condition &lt;chr&gt;, BioReplicate &lt;dbl&gt;,
-## #   FileName &lt;chr&gt;, Area &lt;chr&gt;, StandardType &lt;lgl&gt;,
-## #   Truncated &lt;lgl&gt;, DetectionQValue &lt;chr&gt;</code></pre>
+## # ℹ abbreviated name: ¹​PeptideModifiedSequence
+## # ℹ 12 more variables: PrecursorMz &lt;dbl&gt;, FragmentIon &lt;chr&gt;,
+## #   ProductCharge &lt;dbl&gt;, ProductMz &lt;dbl&gt;, IsotopeLabelType &lt;chr&gt;,
+## #   Condition &lt;chr&gt;, BioReplicate &lt;dbl&gt;, FileName &lt;chr&gt;, Area &lt;chr&gt;,
+## #   StandardType &lt;lgl&gt;, Truncated &lt;lgl&gt;, DetectionQValue &lt;chr&gt;</code></pre>
 <p>3.4 How many unique peptides are present in the data for the above protein?</p>
 <ul>
 <li><p>first store the subset in a variable</p></li>

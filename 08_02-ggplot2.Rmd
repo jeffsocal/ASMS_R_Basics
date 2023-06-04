@@ -440,14 +440,16 @@ In addition to the Brewer color scales, GGplot2 also allows users to specify cus
 Manual color scales are particularly useful when you want to use specific colors that are not included in the Brewer palettes. For example, if you are creating a visualization for a company and you want to use the company's brand colors, you can specify the colors using a manual color scale.
 
 ```{r, echo=FALSE}
-p31 <- tbl_new %>% ggplot(aes(group, int)) + geom_boxplot(aes(fill=class)) + scale_y_log10() + theme_classic()
+p31 <- tbl_new %>% 
+  select(!group) %>%
+  ggplot(aes(class, int)) + geom_boxplot(aes(fill=class)) + scale_y_log10() + theme_classic()
 ```
 
 ```{r}
-p37 <- p34
-p38 <- p34 + scale_fill_brewer(palette = 'Set1')
-p39 <- p34 + scale_fill_brewer(palette = 'Blues')
-p40 <- p34 + scale_fill_manual(values = c("#d97828", "#83992a", "#995d81","#44709d"))
+p37 <- p31
+p38 <- p31 + scale_fill_brewer(palette = 'Set1')
+p39 <- p31 + scale_fill_brewer(palette = 'Blues')
+p40 <- p31 + scale_fill_manual(values = c("#d97828", "#83992a", "#995d81","#44709d"))
 ```
 
 ```{r, echo=FALSE, fig.width=7, fig.height=3.5, fig.align='center'}

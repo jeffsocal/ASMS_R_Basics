@@ -10,18 +10,18 @@
 
 1. If not already done, download *Bacterial Metabolite Data (tidy)* to use as an example data file.
 ```{r, eval=FALSE}
-url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-Metabolites_dose-simicillin_tidy.csv"
-download.file(url, destfile = "./data/bacterial-Metabolites_dose-simicillin_tidy.csv")
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
+download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
 ```
 
 2. Read in the dataset .csv using the `tidyverse` set of packages.
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 
-tbl_bac <- "./data/bacterial-Metabolites_dose-simicillin_tidy.csv" %>% read_csv()
+tbl_bac <- "./data/bacterial-metabolites_dose-simicillin_tidy.csv" %>% read_csv()
 ```
 
-3. Create a Metabolite `Abundance` by `Time_min` ...
+3. Create a plot of metabolite `Abundance` by `Time_min` ...
 ```{r, echo=FALSE, fig.width=4, fig.height=3, fig.align='center'}
 tbl_bac %>% 
   ggplot(aes(Time_min, Abundance)) + 
