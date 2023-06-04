@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2023-06-03" />
+<meta name="date" content="2023-06-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -808,11 +808,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="tidyverse-1.html#cb194-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span></span>
 <span id="cb194-2"><a href="tidyverse-1.html#cb194-2" tabindex="-1"></a>  <span class="fu">summarise_all</span>(<span class="fu">list</span>(<span class="at">max =</span> max, <span class="at">min =</span> min))</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 8
-##   plant_max condition_max time_max inches_max plant_min
-##   &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    
-## 1 C         wet, cold     week_3          5.2 A        
-## # ℹ 3 more variables: condition_min &lt;chr&gt;, time_min &lt;chr&gt;,
-## #   inches_min &lt;dbl&gt;</code></pre>
+##   plant_max condition_max time_max inches_max plant_min condition_min time_min
+##   &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;   
+## 1 C         wet, cold     week_3          5.2 A         moist, cold   week_1  
+## # ℹ 1 more variable: inches_min &lt;dbl&gt;</code></pre>
 <p>Summarizing data is an essential task that can be performed using several functions. These functions make it easy to calculate summary statistics based on one or more variables, group data frames by different categories, and summarize multiple variables at once.</p>
 </div>
 <div id="ggplot2" class="section level3 hasAnchor" number="6.5.2">
@@ -849,30 +848,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Pipeline (eg. <code>%&gt;%</code>) a data operation that provides the mean of following vector.</li>
 </ol>
 <pre><code>## [1] 9.761</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>Employing a pipeline (eg. <code>%&gt;%</code>), construct a tibble with columns named <code>circ</code> and <code>diam</code> which contains the diameters of circles with integer circumferences 1 to 5. Remember PEMDAS.</li>
+<ol start="3" style="list-style-type: decimal">
+<li>Employing a pipeline (eg. <code>%&gt;%</code>), construct a tibble with columns named <code>radi</code> and <code>area</code> which contains the AREA of circles with integer RADII 1 to 5. Remember PEMDAS.</li>
 </ol>
 <pre><code>## # A tibble: 5 × 2
-##    circ  diam
+##    radi  area
 ##   &lt;int&gt; &lt;dbl&gt;
 ## 1     1  3.14
 ## 2     2 12.6 
 ## 3     3 28.3 
 ## 4     4 50.3 
 ## 5     5 78.5</code></pre>
-<ol start="3" style="list-style-type: decimal">
-<li>Extract all circumferences greater than 50.</li>
+<ol start="4" style="list-style-type: decimal">
+<li>Extract all AREAs greater than 50.</li>
 </ol>
 <pre><code>## # A tibble: 2 × 2
-##    circ  diam
+##    radi  area
 ##   &lt;int&gt; &lt;dbl&gt;
 ## 1     4  50.3
 ## 2     5  78.5</code></pre>
-<ol start="4" style="list-style-type: decimal">
-<li>Add a column named <code>circ_type</code> where you assign the string <em>odd</em> or <em>even</em> depending on the column <code>circ</code>. Attempt to use the <code>purrr::map</code> function, along with the <code>oddeven()</code> function from the previous chapter, then compute the mean, standard deviation, and coefficient of variation of the diameters for each <code>circ_type</code>.</li>
+<ol start="5" style="list-style-type: decimal">
+<li>Add a column named <code>circ_type</code> where you assign the string <em>odd</em> or <em>even</em> depending on the column <code>radi</code>. Attempt to use the <code>purrr::map</code> function, along with the <code>oddeven()</code> function from the previous chapter, then compute the mean, standard deviation, and coefficient of variation of the AREA for each <code>circ_type</code>.</li>
 </ol>
 <pre><code>## # A tibble: 2 × 4
-##   circ_type diam_mean diam_sd diam_cv
+##   circ_type area_mean area_sd area_cv
 ##   &lt;chr&gt;         &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
 ## 1 even           31.4    26.7   0.849
 ## 2 odd            36.7    38.4   1.05</code></pre>
@@ -990,24 +989,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [11] &quot;JD_06232014_sample4_B.raw&quot; &quot;JD_06232014_sample4_C.raw&quot;</code></pre>
 <p>3.3 Using data frame indexing syntax, subset the data to rows for the protein “sp|P33399|LHP1_YEAST”</p>
 <pre><code>## # A tibble: 288 × 16
-##    ProteinName          PeptideSequence PeptideModifiedSequence
-##    &lt;chr&gt;                &lt;chr&gt;           &lt;chr&gt;                  
-##  1 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-##  2 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-##  3 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-##  4 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-##  5 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-##  6 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-##  7 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-##  8 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-##  9 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
-## 10 sp|P33399|LHP1_YEAST NDGWVPISTIATFNR NDGWVPISTIATFNR        
+##    ProteinName PeptideSequence PeptideModifiedSeque…¹ PrecursorCharge PrecursorMz
+##    &lt;chr&gt;       &lt;chr&gt;           &lt;chr&gt;                            &lt;dbl&gt;       &lt;dbl&gt;
+##  1 sp|P33399|… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846.
+##  2 sp|P33399|… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846.
+##  3 sp|P33399|… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846.
+##  4 sp|P33399|… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846.
+##  5 sp|P33399|… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846.
+##  6 sp|P33399|… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846.
+##  7 sp|P33399|… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846.
+##  8 sp|P33399|… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846.
+##  9 sp|P33399|… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846.
+## 10 sp|P33399|… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846.
 ## # ℹ 278 more rows
-## # ℹ 13 more variables: PrecursorCharge &lt;dbl&gt;, PrecursorMz &lt;dbl&gt;,
-## #   FragmentIon &lt;chr&gt;, ProductCharge &lt;dbl&gt;, ProductMz &lt;dbl&gt;,
-## #   IsotopeLabelType &lt;chr&gt;, Condition &lt;chr&gt;, BioReplicate &lt;dbl&gt;,
-## #   FileName &lt;chr&gt;, Area &lt;chr&gt;, StandardType &lt;lgl&gt;,
-## #   Truncated &lt;lgl&gt;, DetectionQValue &lt;chr&gt;</code></pre>
+## # ℹ abbreviated name: ¹​PeptideModifiedSequence
+## # ℹ 11 more variables: FragmentIon &lt;chr&gt;, ProductCharge &lt;dbl&gt;, ProductMz &lt;dbl&gt;,
+## #   IsotopeLabelType &lt;chr&gt;, Condition &lt;chr&gt;, BioReplicate &lt;dbl&gt;, FileName &lt;chr&gt;,
+## #   Area &lt;chr&gt;, StandardType &lt;lgl&gt;, Truncated &lt;lgl&gt;, DetectionQValue &lt;chr&gt;</code></pre>
 <p>3.4 How many unique peptides are present in the data for the above protein?</p>
 <ul>
 <li><p>first store the subset in a variable</p></li>

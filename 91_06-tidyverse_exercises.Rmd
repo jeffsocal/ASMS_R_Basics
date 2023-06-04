@@ -7,52 +7,57 @@
 #
 # Tidyverse Exercises
 
+# 1. Calculate the mean of following vector.
+
+vec_data <- c(7.48, 14.15, 6.23, 10.21, 15.13, 8.19, 8.58, 8.09, 9.14, 10.41)
+mean(vec_data)
+
+
 # 1. Pipeline (eg. `%>%`) a data operation that provides the mean of following vector.
 
-c(7.48, 14.15, 6.23, 10.21, 15.13, 8.19, 8.58, 8.09, 9.14, 10.41) %>% mean()
+vec_data %>% mean()
 
 
-# 2.  Employing a pipeline (eg. `%>%`), construct a tibble with columns named 
-#     `circ` and `diam` which contains the diameters of circles with integer 
-#     circumferences 1 to 5. Remember PEMDAS.
+# 3.  Employing a pipeline (eg. `%>%`), construct a tibble with columns named 
+#     `radi` and `area` which contains the AREA of circles with integer RADII 1 
+#     to 5. Remember PEMDAS.
 
 library(tidyverse)
 
 tbl_cir <- tibble(
-  circ = 1:5
+  radi = 1:5
 ) %>%
-  mutate(diam = circ ^ 2 * pi)
+  mutate(area = radi ^ 2 * pi)
 
 tbl_cir
 
 
-# 3.  Extract all circumferences greater than 50.
+# 4.  Extract all AREAs greater than 50.
 
-tbl_cir %>% filter(diam > 50)
+tbl_cir %>% filter(area > 50)
 
 
-# 4. Add a column named `circ_type` where you assign the string *odd* or *even* 
-#     depending on the column `circ`. Attempt to use the `purrr::map` function, 
+# 5.  Add a column named `circ_type` where you assign the string *odd* or *even* 
+#     depending on the column `radi`. Attempt to use the `purrr::map` function, 
 #     along with the `oddeven()` function from the previous chapter, then compute 
-#     the mean, standard deviation, and coefficient of variation of the diameters 
-#     for each `circ_type`.
+#     the mean, standard deviation, and coefficient of variation of the AREA for 
+#     each `circ_type`.
 
 oddeven <- function(x) { 
-  if(x %% 2 == 0){
+  if(x %% 2 == 0) {
     return('even')
-    } else {
-      return('odd')
-    }
+  } else {
+    return('odd')
+  }
 }
 
 tbl_cir %>% 
-  mutate(circ_type = map(circ, oddeven)) %>%
+  mutate(circ_type = map(radi, oddeven)) %>%
   mutate(circ_type = unlist(circ_type)) %>%
   group_by(circ_type) %>%
   summarise(
-    diam_mean = mean(diam),
-    diam_sd = sd(diam),
-    diam_cv = diam_sd / diam_mean
+    area_mean = mean(area),
+    area_sd = sd(area),
+    area_cv = area_sd / area_mean
   )
-
 ```

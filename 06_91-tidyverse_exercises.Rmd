@@ -22,24 +22,24 @@ mean(vec_data)
 vec_data %>% mean()
 ```
 
-2.  Employing a pipeline (eg. `%>%`), construct a tibble with columns named `circ` and `diam` which contains the diameters of circles with integer circumferences 1 to 5. Remember PEMDAS.
+3.  Employing a pipeline (eg. `%>%`), construct a tibble with columns named `radi` and `area` which contains the AREA of circles with integer RADII 1 to 5. Remember PEMDAS.
 ```{r, echo=FALSE}
 library(tidyverse)
 
 tbl_cir <- tibble(
-  circ = 1:5
+  radi = 1:5
 ) %>%
-  mutate(diam = circ ^ 2 * pi)
+  mutate(area = radi ^ 2 * pi)
 
 tbl_cir
 ```
 
-3.  Extract all circumferences greater than 50.
+4.  Extract all AREAs greater than 50.
 ```{r, echo=FALSE}
-tbl_cir %>% filter(diam > 50)
+tbl_cir %>% filter(area > 50)
 ```
 
-4. Add a column named `circ_type` where you assign the string *odd* or *even* depending on the column `circ`. Attempt to use the `purrr::map` function, along with the `oddeven()` function from the previous chapter, then compute the mean, standard deviation, and coefficient of variation of the diameters for each `circ_type`.
+5. Add a column named `circ_type` where you assign the string *odd* or *even* depending on the column `radi`. Attempt to use the `purrr::map` function, along with the `oddeven()` function from the previous chapter, then compute the mean, standard deviation, and coefficient of variation of the AREA for each `circ_type`.
 ```{r, echo=FALSE}
 oddeven <- function(x) { 
   if(x %% 2 == 0) {
@@ -50,12 +50,12 @@ oddeven <- function(x) {
 }
 
 tbl_cir %>% 
-  mutate(circ_type = map(circ, oddeven)) %>%
+  mutate(circ_type = map(radi, oddeven)) %>%
   mutate(circ_type = unlist(circ_type)) %>%
   group_by(circ_type) %>%
   summarise(
-    diam_mean = mean(diam),
-    diam_sd = sd(diam),
-    diam_cv = diam_sd / diam_mean
+    area_mean = mean(area),
+    area_sd = sd(area),
+    area_cv = area_sd / area_mean
   )
 ```

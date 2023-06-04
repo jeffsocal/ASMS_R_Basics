@@ -146,7 +146,7 @@ R `readr` is a package in the R language that is used to read structured data fi
 
 One of the key features of `readr` is its ability to quickly read data into R, making it an ideal package for data analysis and data cleaning. `readr` is designed to handle various types of data, including numeric, date, and character data. The package also has advanced features such as automatic guessing of column types, encoding detection, and parsing of dates and times.
 
-```{r, message=FALSE, warning=FALSE}
+```{r, eval=FALSE, message=FALSE, warning=FALSE}
 # read comma separated values
 tbl_csv <- "data/bacterial-metabolites_dose-simicillin_tidy.csv" %>% read_csv()
 ```

@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2023-06-03" />
+<meta name="date" content="2023-06-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -473,39 +473,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb307-5"><a href="answers-to-exercises.html#cb307-5" tabindex="-1"></a><span class="co"># Data Object Exercises</span></span>
 <span id="cb307-6"><a href="answers-to-exercises.html#cb307-6" tabindex="-1"></a></span>
 <span id="cb307-7"><a href="answers-to-exercises.html#cb307-7" tabindex="-1"></a><span class="co"># 1.  Construct the following vector and store as a variable.</span></span>
-<span id="cb307-8"><a href="answers-to-exercises.html#cb307-8" tabindex="-1"></a>str_gbu <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;red&#39;</span>, <span class="st">&#39;green&#39;</span>, <span class="st">&#39;blue&#39;</span>)</span>
-<span id="cb307-9"><a href="answers-to-exercises.html#cb307-9" tabindex="-1"></a></span>
-<span id="cb307-10"><a href="answers-to-exercises.html#cb307-10" tabindex="-1"></a><span class="co"># 2.  Extract the 2nd element in the variable.</span></span>
+<span id="cb307-8"><a href="answers-to-exercises.html#cb307-8" tabindex="-1"></a></span>
+<span id="cb307-9"><a href="answers-to-exercises.html#cb307-9" tabindex="-1"></a>str_gbu <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;red&#39;</span>, <span class="st">&#39;green&#39;</span>, <span class="st">&#39;blue&#39;</span>)</span>
+<span id="cb307-10"><a href="answers-to-exercises.html#cb307-10" tabindex="-1"></a></span>
 <span id="cb307-11"><a href="answers-to-exercises.html#cb307-11" tabindex="-1"></a></span>
-<span id="cb307-12"><a href="answers-to-exercises.html#cb307-12" tabindex="-1"></a>str_gbu[<span class="dv">2</span>]</span>
+<span id="cb307-12"><a href="answers-to-exercises.html#cb307-12" tabindex="-1"></a><span class="co"># 2.  Extract the 2nd element in the variable.</span></span>
 <span id="cb307-13"><a href="answers-to-exercises.html#cb307-13" tabindex="-1"></a></span>
-<span id="cb307-14"><a href="answers-to-exercises.html#cb307-14" tabindex="-1"></a></span>
-<span id="cb307-15"><a href="answers-to-exercises.html#cb307-15" tabindex="-1"></a><span class="co"># 3.  Construct a numerical vector of length 5, containing the circumferences of </span></span>
-<span id="cb307-16"><a href="answers-to-exercises.html#cb307-16" tabindex="-1"></a><span class="co">#     circles with integer diameters 1 to 5. Remember PEMDAS.</span></span>
-<span id="cb307-17"><a href="answers-to-exercises.html#cb307-17" tabindex="-1"></a></span>
-<span id="cb307-18"><a href="answers-to-exercises.html#cb307-18" tabindex="-1"></a>cir <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi</span>
-<span id="cb307-19"><a href="answers-to-exercises.html#cb307-19" tabindex="-1"></a></span>
-<span id="cb307-20"><a href="answers-to-exercises.html#cb307-20" tabindex="-1"></a><span class="co"># 4.  Extract all circumferences greater than 50.</span></span>
+<span id="cb307-14"><a href="answers-to-exercises.html#cb307-14" tabindex="-1"></a>str_gbu[<span class="dv">2</span>]</span>
+<span id="cb307-15"><a href="answers-to-exercises.html#cb307-15" tabindex="-1"></a></span>
+<span id="cb307-16"><a href="answers-to-exercises.html#cb307-16" tabindex="-1"></a><span class="co"># 3.  Construct a numerical vector of length 5, containing the AREA of circles </span></span>
+<span id="cb307-17"><a href="answers-to-exercises.html#cb307-17" tabindex="-1"></a><span class="co">#     with integer RADIUS 1 to 5. Remember PEMDAS.</span></span>
+<span id="cb307-18"><a href="answers-to-exercises.html#cb307-18" tabindex="-1"></a></span>
+<span id="cb307-19"><a href="answers-to-exercises.html#cb307-19" tabindex="-1"></a>area <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi</span>
+<span id="cb307-20"><a href="answers-to-exercises.html#cb307-20" tabindex="-1"></a></span>
 <span id="cb307-21"><a href="answers-to-exercises.html#cb307-21" tabindex="-1"></a></span>
-<span id="cb307-22"><a href="answers-to-exercises.html#cb307-22" tabindex="-1"></a>cir[<span class="fu">which</span>(cir <span class="sc">&gt;</span> <span class="dv">50</span>)]</span>
+<span id="cb307-22"><a href="answers-to-exercises.html#cb307-22" tabindex="-1"></a><span class="co"># 4.  Extract all AREA greater than 50.</span></span>
 <span id="cb307-23"><a href="answers-to-exercises.html#cb307-23" tabindex="-1"></a></span>
-<span id="cb307-24"><a href="answers-to-exercises.html#cb307-24" tabindex="-1"></a></span>
-<span id="cb307-25"><a href="answers-to-exercises.html#cb307-25" tabindex="-1"></a><span class="co"># 5. Create a data.frame consisting of circles with integer diameters 1 to 5, </span></span>
-<span id="cb307-26"><a href="answers-to-exercises.html#cb307-26" tabindex="-1"></a><span class="co">#     and their circumferences.</span></span>
-<span id="cb307-27"><a href="answers-to-exercises.html#cb307-27" tabindex="-1"></a></span>
-<span id="cb307-28"><a href="answers-to-exercises.html#cb307-28" tabindex="-1"></a>diameters <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
-<span id="cb307-29"><a href="answers-to-exercises.html#cb307-29" tabindex="-1"></a></span>
-<span id="cb307-30"><a href="answers-to-exercises.html#cb307-30" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb307-31"><a href="answers-to-exercises.html#cb307-31" tabindex="-1"></a>  <span class="at">diameter =</span> diameters,</span>
-<span id="cb307-32"><a href="answers-to-exercises.html#cb307-32" tabindex="-1"></a>  <span class="at">circumfrence =</span> (diameters) <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi</span>
-<span id="cb307-33"><a href="answers-to-exercises.html#cb307-33" tabindex="-1"></a>)</span>
-<span id="cb307-34"><a href="answers-to-exercises.html#cb307-34" tabindex="-1"></a></span>
+<span id="cb307-24"><a href="answers-to-exercises.html#cb307-24" tabindex="-1"></a>area[<span class="fu">which</span>(area <span class="sc">&gt;</span> <span class="dv">50</span>)]</span>
+<span id="cb307-25"><a href="answers-to-exercises.html#cb307-25" tabindex="-1"></a></span>
+<span id="cb307-26"><a href="answers-to-exercises.html#cb307-26" tabindex="-1"></a></span>
+<span id="cb307-27"><a href="answers-to-exercises.html#cb307-27" tabindex="-1"></a><span class="co"># 5. Create a data.frame consisting of circles with integer RADIUS 1 to 5, and their AREA.</span></span>
+<span id="cb307-28"><a href="answers-to-exercises.html#cb307-28" tabindex="-1"></a></span>
+<span id="cb307-29"><a href="answers-to-exercises.html#cb307-29" tabindex="-1"></a>radius <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb307-30"><a href="answers-to-exercises.html#cb307-30" tabindex="-1"></a></span>
+<span id="cb307-31"><a href="answers-to-exercises.html#cb307-31" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb307-32"><a href="answers-to-exercises.html#cb307-32" tabindex="-1"></a>  <span class="at">radius =</span> radius,</span>
+<span id="cb307-33"><a href="answers-to-exercises.html#cb307-33" tabindex="-1"></a>  <span class="at">area =</span> (radius) <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi</span>
+<span id="cb307-34"><a href="answers-to-exercises.html#cb307-34" tabindex="-1"></a>)</span>
 <span id="cb307-35"><a href="answers-to-exercises.html#cb307-35" tabindex="-1"></a></span>
-<span id="cb307-36"><a href="answers-to-exercises.html#cb307-36" tabindex="-1"></a><span class="co"># 6.  Extract all circumferences greater than 50 from the data.frame.</span></span>
+<span id="cb307-36"><a href="answers-to-exercises.html#cb307-36" tabindex="-1"></a>df</span>
 <span id="cb307-37"><a href="answers-to-exercises.html#cb307-37" tabindex="-1"></a></span>
-<span id="cb307-38"><a href="answers-to-exercises.html#cb307-38" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(df<span class="sc">$</span>circumfrence <span class="sc">&gt;</span> <span class="dv">50</span>)</span>
-<span id="cb307-39"><a href="answers-to-exercises.html#cb307-39" tabindex="-1"></a></span>
-<span id="cb307-40"><a href="answers-to-exercises.html#cb307-40" tabindex="-1"></a>df[w,]</span></code></pre></div>
+<span id="cb307-38"><a href="answers-to-exercises.html#cb307-38" tabindex="-1"></a></span>
+<span id="cb307-39"><a href="answers-to-exercises.html#cb307-39" tabindex="-1"></a><span class="co"># 6.  Extract all AREA greater than 50 from the data.frame.</span></span>
+<span id="cb307-40"><a href="answers-to-exercises.html#cb307-40" tabindex="-1"></a></span>
+<span id="cb307-41"><a href="answers-to-exercises.html#cb307-41" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(df<span class="sc">$</span>area <span class="sc">&gt;</span> <span class="dv">50</span>)</span>
+<span id="cb307-42"><a href="answers-to-exercises.html#cb307-42" tabindex="-1"></a>df[w,]</span></code></pre></div>
 
 </div>
 <div id="tidyverse-2" class="section level2 unnumbered hasAnchor">
@@ -516,53 +518,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb308-4"><a href="answers-to-exercises.html#cb308-4" tabindex="-1"></a><span class="co">#</span></span>
 <span id="cb308-5"><a href="answers-to-exercises.html#cb308-5" tabindex="-1"></a><span class="co"># Tidyverse Exercises</span></span>
 <span id="cb308-6"><a href="answers-to-exercises.html#cb308-6" tabindex="-1"></a></span>
-<span id="cb308-7"><a href="answers-to-exercises.html#cb308-7" tabindex="-1"></a><span class="co"># 1. Pipeline (eg. `%&gt;%`) a data operation that provides the mean of following vector.</span></span>
+<span id="cb308-7"><a href="answers-to-exercises.html#cb308-7" tabindex="-1"></a><span class="co"># 1. Calculate the mean of following vector.</span></span>
 <span id="cb308-8"><a href="answers-to-exercises.html#cb308-8" tabindex="-1"></a></span>
-<span id="cb308-9"><a href="answers-to-exercises.html#cb308-9" tabindex="-1"></a><span class="fu">c</span>(<span class="fl">7.48</span>, <span class="fl">14.15</span>, <span class="fl">6.23</span>, <span class="fl">10.21</span>, <span class="fl">15.13</span>, <span class="fl">8.19</span>, <span class="fl">8.58</span>, <span class="fl">8.09</span>, <span class="fl">9.14</span>, <span class="fl">10.41</span>) <span class="sc">%&gt;%</span> <span class="fu">mean</span>()</span>
-<span id="cb308-10"><a href="answers-to-exercises.html#cb308-10" tabindex="-1"></a></span>
+<span id="cb308-9"><a href="answers-to-exercises.html#cb308-9" tabindex="-1"></a>vec_data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">7.48</span>, <span class="fl">14.15</span>, <span class="fl">6.23</span>, <span class="fl">10.21</span>, <span class="fl">15.13</span>, <span class="fl">8.19</span>, <span class="fl">8.58</span>, <span class="fl">8.09</span>, <span class="fl">9.14</span>, <span class="fl">10.41</span>)</span>
+<span id="cb308-10"><a href="answers-to-exercises.html#cb308-10" tabindex="-1"></a><span class="fu">mean</span>(vec_data)</span>
 <span id="cb308-11"><a href="answers-to-exercises.html#cb308-11" tabindex="-1"></a></span>
-<span id="cb308-12"><a href="answers-to-exercises.html#cb308-12" tabindex="-1"></a><span class="co"># 2.  Employing a pipeline (eg. `%&gt;%`), construct a tibble with columns named </span></span>
-<span id="cb308-13"><a href="answers-to-exercises.html#cb308-13" tabindex="-1"></a><span class="co">#     `circ` and `diam` which contains the diameters of circles with integer </span></span>
-<span id="cb308-14"><a href="answers-to-exercises.html#cb308-14" tabindex="-1"></a><span class="co">#     circumferences 1 to 5. Remember PEMDAS.</span></span>
-<span id="cb308-15"><a href="answers-to-exercises.html#cb308-15" tabindex="-1"></a></span>
-<span id="cb308-16"><a href="answers-to-exercises.html#cb308-16" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb308-12"><a href="answers-to-exercises.html#cb308-12" tabindex="-1"></a></span>
+<span id="cb308-13"><a href="answers-to-exercises.html#cb308-13" tabindex="-1"></a><span class="co"># 1. Pipeline (eg. `%&gt;%`) a data operation that provides the mean of following vector.</span></span>
+<span id="cb308-14"><a href="answers-to-exercises.html#cb308-14" tabindex="-1"></a></span>
+<span id="cb308-15"><a href="answers-to-exercises.html#cb308-15" tabindex="-1"></a>vec_data <span class="sc">%&gt;%</span> <span class="fu">mean</span>()</span>
+<span id="cb308-16"><a href="answers-to-exercises.html#cb308-16" tabindex="-1"></a></span>
 <span id="cb308-17"><a href="answers-to-exercises.html#cb308-17" tabindex="-1"></a></span>
-<span id="cb308-18"><a href="answers-to-exercises.html#cb308-18" tabindex="-1"></a>tbl_cir <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb308-19"><a href="answers-to-exercises.html#cb308-19" tabindex="-1"></a>  <span class="at">circ =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
-<span id="cb308-20"><a href="answers-to-exercises.html#cb308-20" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb308-21"><a href="answers-to-exercises.html#cb308-21" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">diam =</span> circ <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi)</span>
-<span id="cb308-22"><a href="answers-to-exercises.html#cb308-22" tabindex="-1"></a></span>
-<span id="cb308-23"><a href="answers-to-exercises.html#cb308-23" tabindex="-1"></a>tbl_cir</span>
-<span id="cb308-24"><a href="answers-to-exercises.html#cb308-24" tabindex="-1"></a></span>
-<span id="cb308-25"><a href="answers-to-exercises.html#cb308-25" tabindex="-1"></a></span>
-<span id="cb308-26"><a href="answers-to-exercises.html#cb308-26" tabindex="-1"></a><span class="co"># 3.  Extract all circumferences greater than 50.</span></span>
-<span id="cb308-27"><a href="answers-to-exercises.html#cb308-27" tabindex="-1"></a></span>
-<span id="cb308-28"><a href="answers-to-exercises.html#cb308-28" tabindex="-1"></a>tbl_cir <span class="sc">%&gt;%</span> <span class="fu">filter</span>(diam <span class="sc">&gt;</span> <span class="dv">50</span>)</span>
-<span id="cb308-29"><a href="answers-to-exercises.html#cb308-29" tabindex="-1"></a></span>
+<span id="cb308-18"><a href="answers-to-exercises.html#cb308-18" tabindex="-1"></a><span class="co"># 3.  Employing a pipeline (eg. `%&gt;%`), construct a tibble with columns named </span></span>
+<span id="cb308-19"><a href="answers-to-exercises.html#cb308-19" tabindex="-1"></a><span class="co">#     `radi` and `area` which contains the AREA of circles with integer RADII 1 </span></span>
+<span id="cb308-20"><a href="answers-to-exercises.html#cb308-20" tabindex="-1"></a><span class="co">#     to 5. Remember PEMDAS.</span></span>
+<span id="cb308-21"><a href="answers-to-exercises.html#cb308-21" tabindex="-1"></a></span>
+<span id="cb308-22"><a href="answers-to-exercises.html#cb308-22" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb308-23"><a href="answers-to-exercises.html#cb308-23" tabindex="-1"></a></span>
+<span id="cb308-24"><a href="answers-to-exercises.html#cb308-24" tabindex="-1"></a>tbl_cir <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb308-25"><a href="answers-to-exercises.html#cb308-25" tabindex="-1"></a>  <span class="at">radi =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb308-26"><a href="answers-to-exercises.html#cb308-26" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb308-27"><a href="answers-to-exercises.html#cb308-27" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">area =</span> radi <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi)</span>
+<span id="cb308-28"><a href="answers-to-exercises.html#cb308-28" tabindex="-1"></a></span>
+<span id="cb308-29"><a href="answers-to-exercises.html#cb308-29" tabindex="-1"></a>tbl_cir</span>
 <span id="cb308-30"><a href="answers-to-exercises.html#cb308-30" tabindex="-1"></a></span>
-<span id="cb308-31"><a href="answers-to-exercises.html#cb308-31" tabindex="-1"></a><span class="co"># 4. Add a column named `circ_type` where you assign the string *odd* or *even* </span></span>
-<span id="cb308-32"><a href="answers-to-exercises.html#cb308-32" tabindex="-1"></a><span class="co">#     depending on the column `circ`. Attempt to use the `purrr::map` function, </span></span>
-<span id="cb308-33"><a href="answers-to-exercises.html#cb308-33" tabindex="-1"></a><span class="co">#     along with the `oddeven()` function from the previous chapter, then compute </span></span>
-<span id="cb308-34"><a href="answers-to-exercises.html#cb308-34" tabindex="-1"></a><span class="co">#     the mean, standard deviation, and coefficient of variation of the diameters </span></span>
-<span id="cb308-35"><a href="answers-to-exercises.html#cb308-35" tabindex="-1"></a><span class="co">#     for each `circ_type`.</span></span>
+<span id="cb308-31"><a href="answers-to-exercises.html#cb308-31" tabindex="-1"></a></span>
+<span id="cb308-32"><a href="answers-to-exercises.html#cb308-32" tabindex="-1"></a><span class="co"># 4.  Extract all AREAs greater than 50.</span></span>
+<span id="cb308-33"><a href="answers-to-exercises.html#cb308-33" tabindex="-1"></a></span>
+<span id="cb308-34"><a href="answers-to-exercises.html#cb308-34" tabindex="-1"></a>tbl_cir <span class="sc">%&gt;%</span> <span class="fu">filter</span>(area <span class="sc">&gt;</span> <span class="dv">50</span>)</span>
+<span id="cb308-35"><a href="answers-to-exercises.html#cb308-35" tabindex="-1"></a></span>
 <span id="cb308-36"><a href="answers-to-exercises.html#cb308-36" tabindex="-1"></a></span>
-<span id="cb308-37"><a href="answers-to-exercises.html#cb308-37" tabindex="-1"></a>oddeven <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { </span>
-<span id="cb308-38"><a href="answers-to-exercises.html#cb308-38" tabindex="-1"></a>  <span class="cf">if</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
-<span id="cb308-39"><a href="answers-to-exercises.html#cb308-39" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">&#39;even&#39;</span>)</span>
-<span id="cb308-40"><a href="answers-to-exercises.html#cb308-40" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb308-41"><a href="answers-to-exercises.html#cb308-41" tabindex="-1"></a>      <span class="fu">return</span>(<span class="st">&#39;odd&#39;</span>)</span>
-<span id="cb308-42"><a href="answers-to-exercises.html#cb308-42" tabindex="-1"></a>    }</span>
-<span id="cb308-43"><a href="answers-to-exercises.html#cb308-43" tabindex="-1"></a>}</span>
-<span id="cb308-44"><a href="answers-to-exercises.html#cb308-44" tabindex="-1"></a></span>
-<span id="cb308-45"><a href="answers-to-exercises.html#cb308-45" tabindex="-1"></a>tbl_cir <span class="sc">%&gt;%</span> </span>
-<span id="cb308-46"><a href="answers-to-exercises.html#cb308-46" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">circ_type =</span> <span class="fu">map</span>(circ, oddeven)) <span class="sc">%&gt;%</span></span>
-<span id="cb308-47"><a href="answers-to-exercises.html#cb308-47" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">circ_type =</span> <span class="fu">unlist</span>(circ_type)) <span class="sc">%&gt;%</span></span>
-<span id="cb308-48"><a href="answers-to-exercises.html#cb308-48" tabindex="-1"></a>  <span class="fu">group_by</span>(circ_type) <span class="sc">%&gt;%</span></span>
-<span id="cb308-49"><a href="answers-to-exercises.html#cb308-49" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb308-50"><a href="answers-to-exercises.html#cb308-50" tabindex="-1"></a>    <span class="at">diam_mean =</span> <span class="fu">mean</span>(diam),</span>
-<span id="cb308-51"><a href="answers-to-exercises.html#cb308-51" tabindex="-1"></a>    <span class="at">diam_sd =</span> <span class="fu">sd</span>(diam),</span>
-<span id="cb308-52"><a href="answers-to-exercises.html#cb308-52" tabindex="-1"></a>    <span class="at">diam_cv =</span> diam_sd <span class="sc">/</span> diam_mean</span>
-<span id="cb308-53"><a href="answers-to-exercises.html#cb308-53" tabindex="-1"></a>  )</span></code></pre></div>
+<span id="cb308-37"><a href="answers-to-exercises.html#cb308-37" tabindex="-1"></a><span class="co"># 5.  Add a column named `circ_type` where you assign the string *odd* or *even* </span></span>
+<span id="cb308-38"><a href="answers-to-exercises.html#cb308-38" tabindex="-1"></a><span class="co">#     depending on the column `radi`. Attempt to use the `purrr::map` function, </span></span>
+<span id="cb308-39"><a href="answers-to-exercises.html#cb308-39" tabindex="-1"></a><span class="co">#     along with the `oddeven()` function from the previous chapter, then compute </span></span>
+<span id="cb308-40"><a href="answers-to-exercises.html#cb308-40" tabindex="-1"></a><span class="co">#     the mean, standard deviation, and coefficient of variation of the AREA for </span></span>
+<span id="cb308-41"><a href="answers-to-exercises.html#cb308-41" tabindex="-1"></a><span class="co">#     each `circ_type`.</span></span>
+<span id="cb308-42"><a href="answers-to-exercises.html#cb308-42" tabindex="-1"></a></span>
+<span id="cb308-43"><a href="answers-to-exercises.html#cb308-43" tabindex="-1"></a>oddeven <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { </span>
+<span id="cb308-44"><a href="answers-to-exercises.html#cb308-44" tabindex="-1"></a>  <span class="cf">if</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb308-45"><a href="answers-to-exercises.html#cb308-45" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">&#39;even&#39;</span>)</span>
+<span id="cb308-46"><a href="answers-to-exercises.html#cb308-46" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb308-47"><a href="answers-to-exercises.html#cb308-47" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">&#39;odd&#39;</span>)</span>
+<span id="cb308-48"><a href="answers-to-exercises.html#cb308-48" tabindex="-1"></a>  }</span>
+<span id="cb308-49"><a href="answers-to-exercises.html#cb308-49" tabindex="-1"></a>}</span>
+<span id="cb308-50"><a href="answers-to-exercises.html#cb308-50" tabindex="-1"></a></span>
+<span id="cb308-51"><a href="answers-to-exercises.html#cb308-51" tabindex="-1"></a>tbl_cir <span class="sc">%&gt;%</span> </span>
+<span id="cb308-52"><a href="answers-to-exercises.html#cb308-52" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">circ_type =</span> <span class="fu">map</span>(radi, oddeven)) <span class="sc">%&gt;%</span></span>
+<span id="cb308-53"><a href="answers-to-exercises.html#cb308-53" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">circ_type =</span> <span class="fu">unlist</span>(circ_type)) <span class="sc">%&gt;%</span></span>
+<span id="cb308-54"><a href="answers-to-exercises.html#cb308-54" tabindex="-1"></a>  <span class="fu">group_by</span>(circ_type) <span class="sc">%&gt;%</span></span>
+<span id="cb308-55"><a href="answers-to-exercises.html#cb308-55" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb308-56"><a href="answers-to-exercises.html#cb308-56" tabindex="-1"></a>    <span class="at">area_mean =</span> <span class="fu">mean</span>(area),</span>
+<span id="cb308-57"><a href="answers-to-exercises.html#cb308-57" tabindex="-1"></a>    <span class="at">area_sd =</span> <span class="fu">sd</span>(area),</span>
+<span id="cb308-58"><a href="answers-to-exercises.html#cb308-58" tabindex="-1"></a>    <span class="at">area_cv =</span> area_sd <span class="sc">/</span> area_mean</span>
+<span id="cb308-59"><a href="answers-to-exercises.html#cb308-59" tabindex="-1"></a>  )</span></code></pre></div>
 
 </div>
 <div id="data-wrangling-1" class="section level2 unnumbered hasAnchor">
