@@ -3,4 +3,4 @@
 .RData
 .Ruserdata
 .DS_Store
-data
+data/make_data.R
