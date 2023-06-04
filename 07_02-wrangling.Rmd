@@ -63,14 +63,19 @@ Our goal will be to:
 
 ### read_ {-}
 
+Download the data ...
+```{r}
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_wide.csv"
+download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_wide.csv")
+```
+
 Let's start with the read-in.
 
 ```{r, message=FALSE, warning=FALSE}
-require(readxl)
 require(tidyverse)
 
-# read_excel can read portions of the excel
-tbl_met <- read_excel("data/bacterial-metabolites_dose-simicillin_wide.xlsx")
+# read_csv
+tbl_met <- "data/bacterial-metabolites_dose-simicillin_wide.csv" %>% read_csv()
 
 tbl_met
 ```
