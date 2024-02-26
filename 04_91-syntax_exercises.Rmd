@@ -26,17 +26,18 @@
 0.5 == 1 / 2
 ```
 
-5.  Test if 3 is an even number. Hint, use the modulus operator and a comparison operator.
+5.  Test if 3 is an even number. Hint, use the `round()` or `floor()` functions and a comparison operator (eg. if the number is even there will not be a remainder).
 
 ```{r, echo=FALSE}
-3 %% 2 == 0
+3/2 == floor(3/2)
 ```
 
 6.  Create a function to test if a value is even resulting in `TRUE` or `FALSE`.
 
 ```{r, echo=FALSE}
 even <- function(x) { 
-  x %% 2 == 0 
+  is_even <- x/2 == floor(x/2)
+  return(is_even)
 }
 ```
 
@@ -59,7 +60,8 @@ if(x %% 2 == 0) {
 
 ```{r, echo=FALSE}
 oddeven <- function(x) { 
-  if(x %% 2 == 0) {
+  is_even <- x/2 == floor(x/2)
+  if(is_even == TRUE) {
     return('even')
   } else {
     return('odd')

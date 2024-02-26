@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 Tidyverse | Learning R for Mass Spectrometry</title>
   <meta name="description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
-  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 Tidyverse | Learning R for Mass Spectrometry" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2023-06-04" />
+<meta name="date" content="2024-02-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,8 +52,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.10.1/plotly.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.3/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
@@ -126,6 +126,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -519,7 +523,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb156-37"><a href="tidyverse-1.html#cb156-37" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">slope =</span> min_temp, <span class="at">intercept =</span> Intercept)) <span class="sc">+</span></span>
 <span id="cb156-38"><a href="tidyverse-1.html#cb156-38" tabindex="-1"></a>  <span class="co"># plot each year separately </span></span>
 <span id="cb156-39"><a href="tidyverse-1.html#cb156-39" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>year)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-113-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-98-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>To get started with the <code>tidyverse</code>, you can install the package using the following command:</p>
 <div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="tidyverse-1.html#cb157-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
 <p>Once installed, users can load the package and begin using the individual packages within the tidyverse:</p>
@@ -808,10 +812,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="tidyverse-1.html#cb194-1" tabindex="-1"></a>tbl_long <span class="sc">%&gt;%</span></span>
 <span id="cb194-2"><a href="tidyverse-1.html#cb194-2" tabindex="-1"></a>  <span class="fu">summarise_all</span>(<span class="fu">list</span>(<span class="at">max =</span> max, <span class="at">min =</span> min))</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 8
-##   plant_max condition_max time_max inches_max plant_min condition_min
-##   &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;        
-## 1 C         wet, cold     week_3          5.2 A         moist, cold  
-## # ℹ 2 more variables: time_min &lt;chr&gt;, inches_min &lt;dbl&gt;</code></pre>
+##   plant_max condition_max time_max inches_max plant_min condition_min time_min inches_min
+##   &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;         &lt;dbl&gt;
+## 1 C         wet, cold     week_3          5.2 A         moist, cold   week_1          0.2</code></pre>
 <p>Summarizing data is an essential task that can be performed using several functions. These functions make it easy to calculate summary statistics based on one or more variables, group data frames by different categories, and summarize multiple variables at once.</p>
 </div>
 <div id="ggplot2" class="section level3 hasAnchor" number="6.5.2">
@@ -920,14 +923,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>What are the column names?</li>
 </ul>
-<pre><code>##  [1] &quot;ProteinName&quot;             &quot;PeptideSequence&quot;        
-##  [3] &quot;PeptideModifiedSequence&quot; &quot;PrecursorCharge&quot;        
-##  [5] &quot;PrecursorMz&quot;             &quot;FragmentIon&quot;            
-##  [7] &quot;ProductCharge&quot;           &quot;ProductMz&quot;              
-##  [9] &quot;IsotopeLabelType&quot;        &quot;Condition&quot;              
-## [11] &quot;BioReplicate&quot;            &quot;FileName&quot;               
-## [13] &quot;Area&quot;                    &quot;StandardType&quot;           
-## [15] &quot;Truncated&quot;               &quot;DetectionQValue&quot;</code></pre>
+<pre><code>##  [1] &quot;ProteinName&quot;             &quot;PeptideSequence&quot;         &quot;PeptideModifiedSequence&quot; &quot;PrecursorCharge&quot;         &quot;PrecursorMz&quot;            
+##  [6] &quot;FragmentIon&quot;             &quot;ProductCharge&quot;           &quot;ProductMz&quot;               &quot;IsotopeLabelType&quot;        &quot;Condition&quot;              
+## [11] &quot;BioReplicate&quot;            &quot;FileName&quot;                &quot;Area&quot;                    &quot;StandardType&quot;            &quot;Truncated&quot;              
+## [16] &quot;DetectionQValue&quot;</code></pre>
 <ul>
 <li>What are the data types stored in each column?</li>
 </ul>
@@ -981,32 +980,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <pre><code>## [1] 1257732</code></pre>
 <p>3.2 How many unique values of the data from “FileName” are there? What are these values and what do they correspond to?</p>
-<pre><code>##  [1] &quot;JD_06232014_sample1-A.raw&quot; &quot;JD_06232014_sample1_B.raw&quot;
-##  [3] &quot;JD_06232014_sample1_C.raw&quot; &quot;JD_06232014_sample2_A.raw&quot;
-##  [5] &quot;JD_06232014_sample2_B.raw&quot; &quot;JD_06232014_sample2_C.raw&quot;
-##  [7] &quot;JD_06232014_sample3_A.raw&quot; &quot;JD_06232014_sample3_B.raw&quot;
-##  [9] &quot;JD_06232014_sample3_C.raw&quot; &quot;JD_06232014_sample4-A.raw&quot;
-## [11] &quot;JD_06232014_sample4_B.raw&quot; &quot;JD_06232014_sample4_C.raw&quot;</code></pre>
+<pre><code>##  [1] &quot;JD_06232014_sample1-A.raw&quot; &quot;JD_06232014_sample1_B.raw&quot; &quot;JD_06232014_sample1_C.raw&quot; &quot;JD_06232014_sample2_A.raw&quot;
+##  [5] &quot;JD_06232014_sample2_B.raw&quot; &quot;JD_06232014_sample2_C.raw&quot; &quot;JD_06232014_sample3_A.raw&quot; &quot;JD_06232014_sample3_B.raw&quot;
+##  [9] &quot;JD_06232014_sample3_C.raw&quot; &quot;JD_06232014_sample4-A.raw&quot; &quot;JD_06232014_sample4_B.raw&quot; &quot;JD_06232014_sample4_C.raw&quot;</code></pre>
 <p>3.3 Using data frame indexing syntax, subset the data to rows for the protein “sp|P33399|LHP1_YEAST”</p>
 <pre><code>## # A tibble: 288 × 16
-##    ProteinName        PeptideSequence PeptideModifiedSeque…¹ PrecursorCharge
-##    &lt;chr&gt;              &lt;chr&gt;           &lt;chr&gt;                            &lt;dbl&gt;
-##  1 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
-##  2 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
-##  3 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
-##  4 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
-##  5 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
-##  6 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
-##  7 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
-##  8 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
-##  9 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
-## 10 sp|P33399|LHP1_YE… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2
+##    ProteinName  PeptideSequence PeptideModifiedSeque…¹ PrecursorCharge PrecursorMz FragmentIon ProductCharge ProductMz IsotopeLabelType
+##    &lt;chr&gt;        &lt;chr&gt;           &lt;chr&gt;                            &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;               &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;           
+##  1 sp|P33399|L… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846. precursor               2      846. light           
+##  2 sp|P33399|L… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846. precursor               2      846. light           
+##  3 sp|P33399|L… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846. precursor               2      846. light           
+##  4 sp|P33399|L… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846. precursor               2      846. light           
+##  5 sp|P33399|L… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846. precursor               2      846. light           
+##  6 sp|P33399|L… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846. precursor               2      846. light           
+##  7 sp|P33399|L… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846. precursor               2      846. light           
+##  8 sp|P33399|L… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846. precursor               2      846. light           
+##  9 sp|P33399|L… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846. precursor               2      846. light           
+## 10 sp|P33399|L… NDGWVPISTIATFNR NDGWVPISTIATFNR                      2        846. precursor               2      846. light           
 ## # ℹ 278 more rows
 ## # ℹ abbreviated name: ¹​PeptideModifiedSequence
-## # ℹ 12 more variables: PrecursorMz &lt;dbl&gt;, FragmentIon &lt;chr&gt;,
-## #   ProductCharge &lt;dbl&gt;, ProductMz &lt;dbl&gt;, IsotopeLabelType &lt;chr&gt;,
-## #   Condition &lt;chr&gt;, BioReplicate &lt;dbl&gt;, FileName &lt;chr&gt;, Area &lt;chr&gt;,
-## #   StandardType &lt;lgl&gt;, Truncated &lt;lgl&gt;, DetectionQValue &lt;chr&gt;</code></pre>
+## # ℹ 7 more variables: Condition &lt;chr&gt;, BioReplicate &lt;dbl&gt;, FileName &lt;chr&gt;, Area &lt;chr&gt;, StandardType &lt;lgl&gt;, Truncated &lt;lgl&gt;,
+## #   DetectionQValue &lt;chr&gt;</code></pre>
 <p>3.4 How many unique peptides are present in the data for the above protein?</p>
 <ul>
 <li><p>first store the subset in a variable</p></li>

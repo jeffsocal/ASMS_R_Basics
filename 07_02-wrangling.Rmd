@@ -219,6 +219,9 @@ tbl_met %>%
 One thing you can notice is how the dplyr verbs add up. We can continually pipe one data frame through a series of wrangling steps until we are satisfied. Operating in this way organizes processes in a way that is easy to manage. We could also do this:
 
 ```{r, message=FALSE, warning=FALSE}
+# need an additional library for excel documents
+library(readxl)
+
 # read_excel can read portions of the excel
 no_pipe_tbl_met <- read_excel("data/bacterial-metabolites_dose-simicillin_wide.xlsx")
 

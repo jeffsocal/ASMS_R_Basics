@@ -259,37 +259,49 @@ Using a comparison operator, you can make logical comparisons called statements.
 
 \
 
-<!--# HEATH -->
-
 ### Functions
 
-In programming, a function is a type of operator that performs a specific task and can accept additional information or parameters. In fact, all operators are functions in a sense, as they take inputs and produce outputs.
+In programming, a function is a type of operator that performs a specific task and can accept additional information or parameters. Functions in the R programming language are fundamental building blocks used to encapsulate and execute a sequence of statements. They allow for modular, reusable, and efficient code development. Functions in R can perform a wide range of tasks, from simple operations like adding two numbers to complex data analyses and visualizations. The structure and behavior of functions in R are designed to support both built-in functions provided by R itself and user-defined functions created by programmers to meet specific needs.
 
-The R programming language has a special class of operators called "binary infix" operators. Infix means "in between," and these operators are placed in between two inputs. These operators have a unique syntax that may confuse beginners, but they are essential for more complex operations in R.
+Functions in R can do a wide range of tasks, such as perform a simple calculation and return a single variable. or a vector of variables. Functions can be used to clean, subset, merge, and transform data frames or lists. They can perform statistical modeling and analysis as well as create simple plots and complex, multi-layered graphics.
 
-Now, you may wonder why we are discussing these esoteric aspects of R in a beginner's book. The reason is that understanding these unique features of the language can give you a better understanding of what the R programming language is doing, how it is structured, and how you can relate to it. It is important to have a solid foundation in the basics of any language, but gaining a deeper understanding of its more complex elements can help you become a more proficient programmer.
+Moreover, R empowers users to define their own functions, allowing for the encapsulation of complex or repetitive tasks into single, reusable commands, enhancing the language's flexibility and efficiency.
 
-So, while binary infix operators may seem like an advanced topic, they are an essential part of the R language and can help you unlock its full potential.
-
-```{r}
-1 + 2          # as an infix operator 
-`+`(1,2)       # as the function
-sum(1,2)       # same result just using a named function
-sum(1,2,3,4,5) # this function however can take in more than 2 values
-```
-
-We can even create a user defined infix operator ...
+A function in R is defined using the `function` keyword, followed by a set of parentheses that can contain any arguments (parameters) the function requires, and a body enclosed in curly braces {} that contains the code to be executed. Here's the basic syntax:
 
 ```{r}
-`%zyx%` <- function(a,b) { a + b }
-1 %zyx% 2
+add <- function(a,b) { a + b }
+add(1,2)
 ```
 
-... or just a normal function.
+Note that this function requires the inputs for `a` and `b` as denoted in the parameters brackets `()`. The function then transfers those inputs into the main body of the function that performs the operation inside the curly brackets `{}`. And while this single line function is compact and concise, it does not define default values, check any of the inputs, or explicitly return a value. And as a consequence we can get an error that can be confusing.
+
+```{r, error=TRUE}
+add(1,'two')
+```
+
+```{r, error=TRUE}
+add(1)
+```
+
+The following is a more robust function that can be reused at a later date that adds some readability to the process and explicitly returns, with the `return()` function, the intended value. Note, that we used some functions, `is.numeric()`, `stop()`, and `paste0` inside our function.
+```{r}
+add <- function(
+    a = 1,
+    b = 2
+) { 
+  if(!is.numeric(a)) { stop('the first value is not a number') }
+  if(!is.numeric(b)) { stop(paste0('the second value "', b, '" is not a number')) }
+  answer <- a + b 
+  return(answer)
+}
+add(1,2)
+```
 
 ```{r}
-zyx <- function(a,b) { a + b }
-zyx(1,2)
+add(1)
 ```
 
-The notion of an infix operator you and ignore for the most part. But, we will see it again when diving into the `tidyverse` - a collection of arguably the most powerful data manipulation packages you will encounter. For now, lets move on with more about `functions()`.
+```{r, error=TRUE}
+add(1,'two')
+```

@@ -17,16 +17,17 @@
 0.5 == 1 / 2
 
 
-# 5.  Test if 3 is an even number. Hint, use the modulus operator and a 
-#     comparison operator.
+# 5.  Test if 3 is an even number. Hint, use the `round()` or `floor()` 
+#     functions and a comparison operator.
 
-3 %% 2 == 0
+3/2 == floor(3/2)
 
 
 # 6.  Create a function to test if a value is even resulting in `TRUE` or `FALSE`.
 
 even <- function(x) { 
-  x %% 2 == 0 
+  is_even <- x/2 == floor(x/2)
+  return(is_even)
 }
 
 even(3)
@@ -46,7 +47,8 @@ if(x %% 2 == 0) {
 # 8.  Create a function to test or *even* or *odd* by returning a string.
 
 oddeven <- function(x) { 
-  if(x %% 2 == 0) {
+  is_even <- x/2 == floor(x/2)
+  if(is_even == TRUE) {
     return('even')
   } else {
     return('odd')

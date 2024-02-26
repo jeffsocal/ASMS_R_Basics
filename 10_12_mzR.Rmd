@@ -21,7 +21,7 @@ Read in an \@ref(mzml) mzML converted LCMS data file and check its contents.
 ```{r, eval=FALSE, warning=FALSE, message=FALSE}
 library(mzR)
 
-ms_dat <- openMSfile("~/Local/QC_20230214_QE_Hela200ng_Aur2hr.mzML")
+ms_dat <- openMSfile("~/path_to_some.mzML")
 
 ms_dat
 ```
@@ -29,7 +29,7 @@ ms_dat
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(mzR)
 
-ms_dat <- openMSfile("~/Local/data/pel/QC_20230214_QE_Hela200ng_Aur2hr.mzML")
+ms_dat <- openMSfile("~/Local/data/asms_2023/small.mzML")
 
 ms_dat
 ```
@@ -38,7 +38,7 @@ Extract out a specific spectrum.
 ```{r, warning=FALSE, message=FALSE}
 library(tidyverse)
 
-tbl_spec <- peaks(ms_dat, 1234) %>% as_tibble()
+tbl_spec <- peaks(ms_dat, 36) %>% as_tibble()
 
 tbl_spec
 ```
