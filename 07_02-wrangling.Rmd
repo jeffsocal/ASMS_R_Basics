@@ -64,7 +64,7 @@ Our goal will be to:
 ### read_ {-}
 
 Download the data ...
-```{r}
+```{r, eval=FALSE}
 url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_wide.csv"
 download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_wide.csv")
 ```

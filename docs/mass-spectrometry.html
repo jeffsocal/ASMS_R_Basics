@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 10 Mass Spectrometry | Learning R for Mass Spectrometry</title>
+  <title>Chapter 10 Mass Spectrometry | Learning R for Mass Spectrometrists</title>
   <meta name="description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 10 Mass Spectrometry | Learning R for Mass Spectrometry" />
+  <meta property="og:title" content="Chapter 10 Mass Spectrometry | Learning R for Mass Spectrometrists" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
   <meta name="github-repo" content="jeffsocal/ASMS_R_Basics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 10 Mass Spectrometry | Learning R for Mass Spectrometry" />
+  <meta name="twitter:title" content="Chapter 10 Mass Spectrometry | Learning R for Mass Spectrometrists" />
   
   <meta name="twitter:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2024-02-26" />
+<meta name="date" content="2024-04-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,11 +52,11 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.10.3/plotly.js"></script>
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.4/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
@@ -389,7 +389,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Learning R for Mass Spectrometry</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Learning R for Mass Spectrometrists</a>
           </h1>
         </div>
 
@@ -769,11 +769,15 @@ Calculate the isotopic abundances (probabilities) mass for a metabolite [C100H20
 <p><br />
 </p>
 <p>Read in an <a href="mass-spectrometry.html#mzml">10.2.3</a> mzML converted LCMS data file and check its contents.</p>
-<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="mass-spectrometry.html#cb291-1" tabindex="-1"></a><span class="fu">library</span>(mzR)</span>
-<span id="cb291-2"><a href="mass-spectrometry.html#cb291-2" tabindex="-1"></a></span>
-<span id="cb291-3"><a href="mass-spectrometry.html#cb291-3" tabindex="-1"></a>ms_dat <span class="ot">&lt;-</span> <span class="fu">openMSfile</span>(<span class="st">&quot;~/path_to_some.mzML&quot;</span>)</span>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="mass-spectrometry.html#cb291-1" tabindex="-1"></a><span class="co"># download the file</span></span>
+<span id="cb291-2"><a href="mass-spectrometry.html#cb291-2" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/small.mzML&quot;</span></span>
+<span id="cb291-3"><a href="mass-spectrometry.html#cb291-3" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/small.mzML&quot;</span>)</span>
 <span id="cb291-4"><a href="mass-spectrometry.html#cb291-4" tabindex="-1"></a></span>
-<span id="cb291-5"><a href="mass-spectrometry.html#cb291-5" tabindex="-1"></a>ms_dat</span></code></pre></div>
+<span id="cb291-5"><a href="mass-spectrometry.html#cb291-5" tabindex="-1"></a><span class="fu">library</span>(mzR)</span>
+<span id="cb291-6"><a href="mass-spectrometry.html#cb291-6" tabindex="-1"></a></span>
+<span id="cb291-7"><a href="mass-spectrometry.html#cb291-7" tabindex="-1"></a>ms_dat <span class="ot">&lt;-</span> <span class="fu">openMSfile</span>(<span class="st">&quot;./data/small.mzML&quot;</span>)</span>
+<span id="cb291-8"><a href="mass-spectrometry.html#cb291-8" tabindex="-1"></a></span>
+<span id="cb291-9"><a href="mass-spectrometry.html#cb291-9" tabindex="-1"></a>ms_dat</span></code></pre></div>
 <pre><code>## Mass Spectrometry file handle.
 ## Filename:  small.mzML 
 ## Number of scans:  48</code></pre>
@@ -839,7 +843,7 @@ Calculate the isotopic abundances (probabilities) mass for a metabolite [C100H20
 <p>Read in an <a href="mass-spectrometry.html#mzml">10.2.3</a> mzML converted LCMS data file and check its contents.</p>
 <div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="mass-spectrometry.html#cb296-1" tabindex="-1"></a><span class="fu">library</span>(xcms)</span>
 <span id="cb296-2"><a href="mass-spectrometry.html#cb296-2" tabindex="-1"></a></span>
-<span id="cb296-3"><a href="mass-spectrometry.html#cb296-3" tabindex="-1"></a>ms_dat <span class="ot">&lt;-</span> <span class="fu">readMSData</span>(<span class="st">&quot;~/Local/gitdata/QC_20230214_QE_Hela200ng_Aur2hr.mzML&quot;</span>)</span></code></pre></div>
+<span id="cb296-3"><a href="mass-spectrometry.html#cb296-3" tabindex="-1"></a>ms_dat <span class="ot">&lt;-</span> <span class="fu">readMSData</span>(<span class="st">&quot;~/lcms_data/example_001.mzML&quot;</span>)</span></code></pre></div>
 <p>Use a peak-detection algorithm to find chromatographic peaks for each precursor</p>
 <div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="mass-spectrometry.html#cb297-1" tabindex="-1"></a>cwp <span class="ot">&lt;-</span> <span class="fu">CentWaveParam</span>(<span class="at">snthresh =</span> <span class="dv">5</span>, <span class="at">noise =</span> <span class="dv">100</span>, <span class="at">ppm =</span> <span class="dv">10</span>, <span class="at">peakwidth =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">30</span>))</span>
 <span id="cb297-2"><a href="mass-spectrometry.html#cb297-2" tabindex="-1"></a></span>
@@ -907,7 +911,7 @@ Calculate the isotopic abundances (probabilities) mass for a metabolite [C100H20
 <li>Integration with other Bioconductor packages for downstream analysis such as differential expression analysis and pathway analysis.</li>
 </ul>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:10001"></span>
-<img src="images/10_001_tidyproteomics.png" alt="\label{fig:10001}tidyproteomics workflow" width="440" />
+<img src="images/10_001_tidyproteomics.png" alt="\label{fig:10001}tidyproteomics workflow"  />
 <p class="caption">
 Figure 10.1: tidyproteomics workflow
 </p>

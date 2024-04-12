@@ -1,5 +1,5 @@
 ---
-title: "Learning R for Mass Spectrometry"
+title: "Learning R for Mass Spectrometrists"
 author: "Jeff Jones, Heath Patterson, Ryan Benz "
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site

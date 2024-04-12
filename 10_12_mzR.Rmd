@@ -19,9 +19,13 @@ The `mzR` package is a powerful tool for analyzing large raw data files in prote
 
 Read in an \@ref(mzml) mzML converted LCMS data file and check its contents.
 ```{r, eval=FALSE, warning=FALSE, message=FALSE}
+# download the file
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/small.mzML"
+download.file(url, destfile = "./data/small.mzML")
+
 library(mzR)
 
-ms_dat <- openMSfile("~/path_to_some.mzML")
+ms_dat <- openMSfile("./data/small.mzML")
 
 ms_dat
 ```
@@ -29,7 +33,7 @@ ms_dat
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(mzR)
 
-ms_dat <- openMSfile("~/Local/data/asms_2023/small.mzML")
+ms_dat <- openMSfile("./data/small.mzML")
 
 ms_dat
 ```

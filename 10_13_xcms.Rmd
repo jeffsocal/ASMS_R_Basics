@@ -31,7 +31,7 @@ Read in an \@ref(mzml) mzML converted LCMS data file and check its contents.
 ```{r, eval=FALSE, warning=FALSE, message=FALSE}
 library(xcms)
 
-ms_dat <- readMSData("~/Local/gitdata/QC_20230214_QE_Hela200ng_Aur2hr.mzML")
+ms_dat <- readMSData("~/lcms_data/example_001.mzML")
 ```
 
 Use a peak-detection algorithm to find chromatographic peaks for each precursor
