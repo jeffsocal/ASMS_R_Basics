@@ -3,12 +3,14 @@ This topic covers a variety of ways to share R code with others. The goal is to 
 
 \
 
-+---------------------------------+----------------------------------------------------------+
-| ![](images/03.png){height="68"} | **At the end of this chapter you should be able to**     |
-|                                 |                                                          |
-|                                 | -   Understand the options for sharing analyses.         |
-|                                 |                                                          |
-|                                 | -   Start an R Notebook project to share.                |
-+---------------------------------+----------------------------------------------------------+
++---------------------------------+-----------------------------------------------------------------------+
+| ![](images/03.png){height="68"} | **At the end of this chapter you should be able to**                  |
+|                                 |                                                                       |
+|                                 | -   Understand the options for sharing analyses.                      |
+|                                 |                                                                       |
+|                                 | -   Understand why reproducible data analysis is important            |
+|                                 |                                                                       |
+|                                 | -   Understand the basic of Quarto and how to use it for data reports |
++---------------------------------+-----------------------------------------------------------------------+
 
 \

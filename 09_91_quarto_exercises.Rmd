@@ -1,0 +1,19 @@
+## Exercises {-}
+
++---------------------------------+-----------------------------------------------------------------------------+
+| ![](images/07.png){height="68"} | - Create a new R Studio Project and name it **007_quarto**.                 |
+|                                 |                                                                             |
+|                                 | - Create a new Quarto document, add your name, a title, and date            |
++---------------------------------+-----------------------------------------------------------------------------+
+
+1. Replace the default YAML header with the one specified in this chapter and render the document. Confirm the HTML output is successfully created.
+
+2. Review the document and study the structure. Which parts are text blocks and which are code blocks? How are headings being used in the text blocks?
+
+3. Try executing and editing the R code blocks using the green right-facing triangle. What happens when you execute a code block?
+
+4. Insert a new R code block and add a ggplot code example from the *Data Visualization* section (make sure you load the required data first). What happens when you execute the code?
+
+5. Change the options in the YAML header under `execute:` to *not* include R code. Re-render the document to confirm.
+
+6. Add code block options to the ggplot code you added in 4 to change the figure with and height.

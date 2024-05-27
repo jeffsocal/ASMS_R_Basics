@@ -16,6 +16,11 @@ The `tidyverse` is actually a collection of R packages designed for data analysi
 
 \
 
+```{r 6001, echo=FALSE, fig.cap="\\label{fig:6001}The tidyverse.", fig.align='center'}
+knitr::include_graphics("images/06_001_tidyverse.png")
+```
+
+
 The `tidyverse` packages are built around a common philosophy of data manipulation. The goal is to provide a consistent and intuitive syntax for data analysis that is easy to learn and use. The packages in the `tidyverse` include:
 
 +------------------------------+-------------------------------------------------------+
@@ -48,13 +53,13 @@ These packages work seamlessly together, allowing users to easily manipulate and
 
 \
 
-Consider the following workflow to read in data, calculate a linear regression and visualize the data using nine (9) of the underlying packages in the tidyverse.
+Consider the following workflow to read in data, calculate a linear regression and visualize the data using nine (9) of the underlying packages in the tidyverse. In this example, the goal is to read in climate data from Denver, Colorado and create a linear model relating the monthly amount of snowfall to the minimum temperature computed separately for each year in the data set.  Additionally, plots of the data and the linear fit are produced to visualize the data.
 
 ```{r, message=FALSE, warning=FALSE, fig.width=6, fig.height=4, fig.align='center'}
 library(tidyverse)
 
-# readr, tibble, magrittr: read in a table of comma separate values
-tbl_csv <- "data/denver_climate.csv" %>% read_csv()
+# readr, tibble: read in a table of comma separate values
+tbl_csv <- read_csv("data/denver_climate.csv")
 
 # define a function to fit a linear regression model
 lm_func <- function(data) {
@@ -73,21 +78,24 @@ tbl_csv_lm <- tbl_csv %>%
   mutate(tidy = map(model, broom::tidy)) %>%
   # tidyr
   unnest(tidy) %>%
-  # dplyr, stringr
+  ungroup() %>%
+  # dplyr, stringr: clean-up the terms
   mutate(term = term %>% str_replace_all("\\(|\\)", "")) %>%
   # dplyr: retain only specific columns
   select(year, term, estimate) %>%
   # tidyr: convert from a long table to a wide table
-  pivot_wider(names_from = 'term', values_from = 'estimate')
+  pivot_wider(names_from = 'term', values_from = 'estimate') %>%
+  # dplyr: rename the min_temp variable to slope
+  rename(model_slope = min_temp)
 
 
 #ggplot2
-tbl_csv %>%
-  ggplot(aes(min_temp, snowfall)) + 
+ggplot(tbl_csv, aes(min_temp, snowfall)) + 
+  # represent the data as points
   geom_point() +
   # use the linear model data to plot regression lines
   geom_abline(data = tbl_csv_lm,
-              aes(slope = min_temp, intercept = Intercept)) +
+              aes(slope = model_slope, intercept = Intercept)) +
   # plot each year separately 
   facet_wrap(~year)
   
@@ -109,12 +117,13 @@ library(tidyverse)
 Overall, the tidyverse is an essential tool for data analysis and visualization in R. Its user-friendly syntax and consistent conventions make it easy for data scientists and statisticians to work with large datasets.
 
 ## Core Packages
-Two important packages in the tidyverse are tibble and magrittr. These core packages enable other data manipulation operations to work seamlessly, improving efficiency and ease of use when working with data in R. Despite their importance, they are often taken for granted.
+Two important packages in the tidyverse are tibble and magrittr. These core packages enable other data manipulation operations to work seamlessly, improving efficiency and ease of use when working with data in R. In practice, these packages are typically used "behind-the-scenes": you may not realize you're using them, but they provide the basis for working with data in the tidyverse.
 
 ### magrittr
-The tidyverse package `magrittr` is a popular R package that provides a set of operators for chaining operations in a sequence. The package was developed by Stefan Milton Bache and Hadley Wickham. The main goal of `magrittr` is to make code more readable and easier to maintain.
+The tidyverse package `magrittr` is a popular R package that provides a set of operators for chaining operations in a sequence, or *pipeline*. The package was developed by Stefan Milton Bache and Hadley Wickham. The main goal of `magrittr` is to make code more readable and easier to maintain by providing a chaining mechanism to link together individual data manipulation operations into data analysis pipelines. These pipelines are often much easier to construct and read compared to the same code written with base R.
 
-The pipe operator, `%>%`, is the most famous operator provided by `magrittr.` It allows you to chain multiple operations without the need to use intermediate variables. The pipe operator takes the output of the previous function and passes it as the first argument to the next function. This chaining of operations allows for more concise and readable code.
+The pipe operator, `%>%`, is the most famous operator provided by `magrittr.` It allows you to chain multiple operations without the need to use intermediate variables. The pipe operator takes an input, which could be the output of a previous function, and passes it as the first argument to the next function. This chaining of operations allows for more concise and readable code.
+
 
 Here is an example of how to use the pipe operator with `magrittr`:
 
@@ -122,16 +131,25 @@ Here is an example of how to use the pipe operator with `magrittr`:
 # create a vector of numbers
 numbers <- c(1, 2, 3, 4, 5)
 
-# use the pipe operator to chain operations
-numbers %>%
-  sum() %>%
-  sqrt()
+# Compute the square root of the sum of the numbers
+# using base R
+sqrt(sum(numbers))
+
+# use the pipe operator to do the same thing
+# by chaining together the operations
+numbers %>% sum() %>% sqrt()
 
 ```
 
-In this example, we create a vector of numbers and use the pipe operator to chain the `sum()` and `sqrt()` functions. The output of the `sum()` function is passed as the first argument to the `sqrt()` function. This allows us to calculate the sum and square root of the vector in a single line of code.
+In this example, we create a vector of numbers and use the pipe operator to chain the `sum()` and `sqrt()` functions. The output of the `sum()` function is passed as the first argument to the `sqrt()` function. In this case, the base R version is actually quicker to type, but the order of operations are specified "inside-out" which is backwards from how we typically read. An advantage of pipe syntax is that the steps of the data processing proceed from left-to-right, just like how we read standard text. This become particularly helpful when performing more complex data analyses.
 
 Magrittr also provides other useful operators, such as the assignment pipe `%<>%`, which allows you to update a variable in place, and the tee operator `%T>%`, which allows you to inspect the output of an operation without interrupting the chain.
+
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| ![](images/01.png){height="68"} | **The New Pipe Operator**: The R language has recently added a "native" pipe operator, `|>`, that is part of base R. Newer R code   |
+|                                 |                            may use `|>` instead of `%>%` but both do *essentially* the same thing.                                  |
+|                                 |                            see [this blog post](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/) for more information |
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 
 ### tibble
 R `tibble` is a class of data frame in the R programming language. It is an improved alternative to the traditional data frame and is part of the tidyverse package. Tibbles are data frames with stricter requirements, and they provide a streamlined and more efficient way to work with data.
@@ -359,3 +377,262 @@ The tidyverse package `ggplot2`, demonstrated at the onset of this chapter, is a
 With `ggplot2`, you can create a wide range of graphs including scatterplots, bar charts, line charts, and more. The package offers a variety of customization options, such as color schemes, themes, and annotations, allowing you to create professional-looking visualizations with ease.
 
 One of the key benefits of `ggplot2` is that it allows you to quickly explore and analyze your data visually. You can easily create multiple graphs with different variables and subsets of your data, and compare them side by side to identify patterns and trends.
+
+
+## Dplyr in more Detail
+
+```{r 6003, echo=FALSE, fig.cap="\\label{fig:6003}dplyr hex logo.", fig.align='center', out.width="40%"}
+knitr::include_graphics("images/06_003_dplyr_logo.png")
+```
+
+The `dplyr` package is the backbone of the tidyverse and defines the fundamental data operations that are needed to perform data analysis tasks. Specifically, `dplyr` formalizes these fundamental operations into a set of "verbs" or *actions* that are used to manipulate/transform/summarize data.  These verbs are embodied as functions you can use to perform complex data analysis tasks.  Fortunately, there is a relatively small set of functions that you need to learn and remember, and their names clearly reflect what they are used for. Ultimately, these `dplyr` functions help you focus on the question you're trying to answer rather than the mechanism of how to answer the question.
+
+There are six fundamental verbs (functions) provided by the `dplyr` package:
+
+- `mutate`: adds a new (or updates an existing) column to the input data, often based upon exisiting columns in the input data
+- `select`: picks specific columns from the input data (i.e. filters to specific columns)
+- `filter`: subsets the input data to specific rows, usually based upon a filtering condition
+- `arrange`: reorders the input data based upon the data in specified columns
+- `group_by`: creates subset groups of the input data using columns with group information in the input data
+- `summarize`: compute summaries across multiple rows in your data; often used with `group_by`
+
+```{r 6004, echo=FALSE, fig.cap="\\label{fig:6004}Overview of dplyr verbs.", fig.align='center'}
+knitr::include_graphics("images/06_004_dplyr_verbs.png")
+```
+
+Importantly, the first input to a `dplyr` function is *always* a data table (e.g. a tibble) and the ouput is *always* a new data table that has been transformed by the function. For example:
+
+```{r, eval=FALSE}
+# add a new column to my_df
+mutate(my_df, ...)
+
+# subset my_df to specific columns
+select(my_df, ...)
+
+# dplyr functions always return a transformed data table
+# you typically want to save the results to a new variable
+# or update the existing version of the table
+my_df2 <- mutate(my_df, ...)
+
+```
+
+### `mutate`
+
+The `mutate` function is used when you want to add a new column or update an existing column in your data table. Typically, the new or updated column is based upon existing data already present in your data table and you use it as the basis for the new column you want to create/update. Some examples include:
+
+- computing the log transformed version of existing data
+- adding together the values from multiple columns
+- subtracting off a baseline value from existing measurements
+
+The following code provides a common example of how `mutate` can be used:
+
+```{r, eval = TRUE}
+# mutate example
+
+# Read the data set
+dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
+dat
+
+# Add a new column that is the log10 value of the Abundance column
+dat <- mutate(dat, log10_Abundance = log10(Abundance))
+dat
+```
+
+In this example, `dat` is data table and used as input to the `mutate` function. Inside the `mutate` function, the new column to create is given a name, `log10_Abundance`, followed by an `=` and the expression that will be used to compute the data in the new column.  Importantly, this expression uses existing data in our input data table specified by its column name, `Abundance`. Note that there are no quotation marks around `Abundance`; when using `dplyr` functions, you don't put quotes around the name of columns in the input data.
+
+
+### `select`
+
+The `select` function is used when you want to focus on specific columns in your data table. Sometimes, a data table may contain many columns of data, but you may only need a small subset of them for a given analysis task. In this case, using select removes the unnecessary columns from the data table and allows you to more easily focus on what you need.
+
+
+```{r, eval = TRUE}
+# select example
+
+# Read the data set
+dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
+dat
+
+# Focus on just the Organism, Time_min and Abundance columns
+dat <- select(dat, Organism, Time_min, Abundance)
+dat
+```
+
+Here, the `select` function just takes the names of the columns you want to subset to as input. Like in the `mutate` example above, you do not put quotes around the names of the columns.
+
+
+### `filter`
+
+The `filter` function is used when you need to get or remove specific rows from your data table, almost always as specified by a conditional expression. The `filter` function uses the supplied condition expression, evaluates the condition on each row in your data table, and only gives back rows for which the condition is true.  Keeping versus removing rows depends on how the conditional expression is constructed. For example, if you want to keep rows based on a given condition, you might use the `==` operator, while if you want to remove rows, you might use the `!=` operator. Some examples where `filter` is used include:
+
+- removing negative or missing values (`NA`) from your data table
+- getting only the "disease" samples from your data table
+- subsetting the data to m/z values greater than 1000
+
+
+```{r, eval = TRUE}
+# filter examples
+
+# Read the data set
+dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
+dat
+
+# Get just the e coli data
+dat2 <- filter(dat, Organism == "e coli")
+dat2
+
+# Remove any data where the Abundance is less than 10
+dat2 <- filter(dat, Abundance >= 10)
+dat2
+```
+
+In the first example, we use the conditional expression `Organism == "e coli"` as the filtering criteria.  Here, `Organism` in the name of a column in our input data (note: no quotes around the column name) and the conditional expression asks the question "is Organism equal to 'e coli'?" for every row in the data table. If the answer is yes, that row is kept in the output; otherwise it is removed. The second example is similar but uses the `>=` operator to ask questions about the `Abundance` values, only keeping those rows where the `Abundance` is greater than or equal to 10.
+
+
+### `arrange`
+
+The `arrange` function is used to reorder the rows in your data table, most often, by sorting based upon one or more of the columns. Some examples include:
+
+- sorting your table from low to high values
+- sorting your table first by a group column, then by values within each group
+
+
+```{r, eval = TRUE}
+# arrange examples
+
+# Read the data set
+dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
+dat
+
+# sort the table by Abundance (low to high)
+dat <- arrange(dat, Abundance)
+dat
+
+# sort the table by Abundance (high to low)
+# desc is a function that says to use descending order
+dat <- arrange(dat, desc(Abundance))
+dat
+
+# sort the table by Organism, then by Abundance (high to low)
+dat <- arrange(dat, Organism, desc(Abundance))
+dat
+```
+
+In these examples, column names in the input data table are used to sort the table.  When you need to perform sorting within multiple groups, you just supply the column names in the order you want to perform the sorting. By default, sorting is performed from "low to high": for numbers, numerical sorting is used, and for characters, alphabetical sorting is used.  The `desc` function can be used to reverse the sorting from "high to low".
+
+
+### `group_by` + `summarize`
+
+While `group_by` can be used with the other `dplyr` functions, it is most commonly used in combination with `summarize` in order to compute summarizations or aggregations of data within subgroups of your data. By itself, `group_by` doesn't *outwardly* do anything to your data table. Rather, it tells R to get ready to work on subsets of your data individually for each subgroup. As such, `group_by` is always used in combination with another `dplyr` function. You can think of the `group_by` function as slicing apart your input data table into individual smaller tables based on a supplied grouping column so that you can perform further data manipulations on each of these sub-tables individually.  Some examples of when you might use `group_by` + `summarize` include:
+
+- computing the average abundance for each analyte in your experiment
+- finding the max retention time for each peptide across runs
+- computing intensity CVs for each analyte (measured with replicates)
+
+
+```{r, eval = TRUE}
+# group_by + summarize examples
+
+# Read the data set
+dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
+dat
+
+# group the data by Organism
+dat_grp <- group_by(dat, Organism)
+dat_grp
+
+# compute the median abundance for each organism
+dat_smry <- summarize(dat_grp, median_Abundance = median(Abundance))
+dat_smry
+```
+
+In this first example, the data table was first grouped by `Organism`, then `summarize` was used on this *grouped* data table to compute the median `Abundance` value for each group. The expression, `median_Abundance = median(Abundance)` is very similar to the type of expression used in the `mutate` example above.  Here, we first supply the name of the new column, `median_Abundance`, that will be created to hold the summarized median `Abundance` values computed for each `Organism`.  Then we specify the expression to be performed on each `Organism` group, in this case, using the `median` function. Because the input table has data for 3 different organisms, the resulting table returned from `summarize` has 3 rows, one row for each organsim. Furthermore, the output table contains the new column with the summarized abundance values.
+
+
+It is also possible to group by more than one column, as shown below:
+
+```{r, eval = TRUE}
+# You can also group by multiple columns
+dat_grp <- group_by(dat, Organism, Dose_mg)
+dat_smry <- summarize(dat_grp, median_Abundance = median(Abundance))
+dat_smry
+```
+
+Here, you simply supply additional grouping column names in the `group_by` function.  In this case, we use both `Organism` and `Dose_mg` to create the subgroups. Interestingly, the `summarize` code is exactly the same as before, but since the input grouped data has been group by two columns, the summarized output is different and based upon this new grouping. Now, the results show the median `Abundance` values for each `Organism` and `Dose_mg` pair.  Since there are 3 organisms and 3 dose levels in the input data, the output summarized data has 3 x 3 = 9 rows.
+
+
+
+## Dplyr Data Pipelines
+
+Building on the `dplyr` fundamentals covered above, the next step is learn how to these data manipulation verbs can be effectively used to create data analysis pipelines. First, we need to revisit the pipe operator from above, `%>%`. Recall that the pipe operator takes an input (on the left side) and passes it as the first argument to a function (on the right side. In practice, the pipe operator just allows us to write R code in a slightly different way, but this new way is really useful for making data analysis pipelines.
+
+The following figure shows specifically what the pipe operator does:
+
+```{r 6002, echo=FALSE, fig.cap="\\label{fig:6002}Base R syntax vs. pipeline syntax.", fig.align='center'}
+knitr::include_graphics("images/06_002_pipe_syntax_example.png")
+```
+
+Both of these lines of code do exactly the same thing, but are written slightly differently. The pipe syntax allows you to pull out the first argument of a function, move it to the front before the `%>%`, and then specify the function with the rest of needed arguments.
+
+Next, we can combine this syntax with one of the fundamental properties of the `dplyr` functions from above: the first input to all `dplyr` verb functions is a data table, and the ouput is another data table as transformed by the verb function.
+
+```{r 6005, echo=FALSE, fig.cap="\\label{fig:6005}dplyr verb function used with the pipe operator.", fig.align='center'}
+knitr::include_graphics("images/06_005_dplyr_pipeline_1.png")
+```
+
+This pattern can be though of as a data manipulation template. Relating this back to the specific `dplyr` functions from above, this template can be applied as follows:
+
+```{r 6006, echo=FALSE, fig.cap="\\label{fig:6006}Pipeline template applied with different dplyr verbs.", fig.align='center'}
+knitr::include_graphics("images/06_006_dplyr_pipeline_2.png")
+```
+
+Because we know both the input and output for a `dplyr` verb is a data frame, the pipeline operator allows us to chain together multiple data manipulations into a data analysis pipeline:
+
+```{r 6007, echo=FALSE, fig.cap="\\label{fig:6007}dplyr verbs chained together in a dplyr pipeline.", fig.align='center'}
+knitr::include_graphics("images/06_007_dplyr_pipeline_3.png")
+```
+
+Let's now make this more concrete with specific examples. Using the metabolite data used in the examples above, imagine you need to compute the mean log10 abundance for metabolite and dose, separately for each organism.  Furthermore, you've found that the data at the last timepoint (120 min) are not reliable and should be removed from the calculations. Also, since you are most interested in the results with the highest mean abundance values, it would be useful to sort the output in descending mean abundance order.
+
+Fortunatley, it is fairly straightforward to translate this task to a `dplyr` pipeline. As a beginner, a great place to start is to translate the problem into step-by-step pieces that you intend to perform:
+
+1. Read the data into R
+2. Filter out data from the 120 min time point
+3. Compute the log10 abundance values
+4. Group the data by organism, does, and metabolite
+5. Summarize the data by computing the3 mean log10 abundance values for each group
+6. Arrange the resulting data by mean abundance in descending order
+
+With this workflow in mind, each step can be translated into a `dplyr` pipeline:
+
+```{r, eval = TRUE}
+
+# 1. Read the data into R
+dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
+
+# Make the analysis pipeline
+dat_smry <- dat %>%
+  # 2. Filter out data from the 120 min time point
+  filter(Time_min != 120) %>%
+  # 3. Compute the log10 abundance values
+  mutate(log10_Abundance = log10(Abundance)) %>%
+  # 4. Group the data by organism, dose, and metabolite
+  group_by(Organism, Dose_mg, Metabolite) %>%
+  # 5. Summarize the data by computing the3 mean log10 abundance values for each group
+  summarize(mean_log10_Abundance = mean(log10_Abundance)) %>%
+  # 6. Arrange the resulting data by mean abundance in descending order
+  arrange(desc(mean_log10_Abundance)) %>%
+  # optional but advised step to ungroup the data
+  ungroup()
+
+dat_smry
+```
+
+
+
+
+
+
+
+
+

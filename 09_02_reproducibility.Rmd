@@ -1,0 +1,51 @@
+
+## Reproducibility and Data Science Notebooks
+
+The ability to reproduce or replicate published scientific findings is a critical component to the scientific process.  However, over the last decade, the ongoing "reproducibility/replication crisis" has emerged with the problematic concern that many research findings cannot be reproduced.
+
+In the context of data analysis, irreproducibility can occur for a varitey of reasons including:
+
+- raw data not provided
+- analysis files or scripts not provided
+- analysis methods not adequately described
+- wrong analysis methods used
+- software, analysis scripting bugs
+
+In recent years, publication standard have increased to help combat the reproducibility crisis. For example, many journals now require that raw data be included in the publication process. As scientists, it is also important for us to keep reproducibility in mind as we perform data analysis tasks. Not only does this help us to conduct better science, reproducible analysis methods can also make our jobs easier by clarifying the analysis process and explicitly capturing all steps that were performed.
+
+Reproducible data analysis aims to ensure that someone else is able to repeat the analysis and get the same results.  This "someone else" could also be you in the future! A reproducible analysis should provide the *why* behind the methods used (i.e. good documentation) and the *how/what* was done (i.e. input data and analysis code). Each analysis step should be explicit and clear, and provide the foundation for others to understand and evaluate what was done.
+
+It's important to note that reproducibility does not imply correctness.  You can still do the wrong thing (i.e. apply incorrect methods or have a bug in your code) in a reproducible way.  However, knowing exactly what was done is critical to finding and correcting mistakes.  Reproducible methods also enables you to more easily share your work and allow others to help find and fix problems.
+
+Reproducibility in data analysis exists at many different levels, including:
+
+- reproducibility of your own processes and code
+  - does your code capture all steps of the analysis?
+  - if you make changes to your code, could you revisit older versions?
+- reproducibility of external code (software versions, packages, libraries)
+  - is your analysis reproducible if you upgrade your software?
+  - could you access older software versions if you needed to?
+- reproducibility of your compute environment
+  - what happens if you upgrade your computer?
+  - is your analysis affected by different operating systems or settings?
+- reproducibility of your data
+  - could the analysis data change in the future, knowingly or unknowingly?
+  - could you detect a change in the data if one occurred?
+  
+Whether or not an analysis is *fully* reproducible isn't a binary assessment. There is a continuum along the reproducibility scale, and not all projects require the same level of reproducibility. A high degree of reproducibility can require a significant amount of time and cost, so one must balance this effort with the needs of the project.
+
+Fortunately, a basic but highly effective level of reproducibility in data analysis tasks can be achieved by following a few guidelines:
+
+- Capture *all* steps of an analysis in code/scripts/analysis notebooks, starting from reading input data through to the final output of results.
+- Avoid any manual editing or transformation of data.
+- Provide good documentation about the *why* behind the analysis and the choices you made
+- Provide *how/what* you did through your analysis code
+
+To help data analysts follow these guidelines, data science notebooks have emerged as a standard tool used for conducting and communicating analysis work. There are a variety of notebook formats to choose from, including Jupyter Notebooks, RMarkdown and Quarto, but they all generally use a *literate programming style* where code and documentation about the code live in the same document. These notebooks typically utilize two type of "languages"
+
+1. Plain text, formatted text, or a Markup language (e.g. Markdown) to capture the documentation
+2. A programming language to capture the code underlying the analysis
+
+After an analysis notebook has been created, the document can be "compiled" to create a human readble document that combines both the documentation, the code, and the output from the code. The compiled document can exist in a variety of forms (e.g. PDFs or HTML files) that can be easily shared with others who can see exactly how the analysis was performed.
+
+
