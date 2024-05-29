@@ -1,63 +1,106 @@
 ## **6** Tidyverse {-}
 
-```{r, eval=FALSE}
-# John Doe
-# 2023-06-02
-# Institution Inc.
-#
-# Tidyverse Exercises
+1. Read in the `bacterial-metabolites_dose-simicillin_tidy.csv` data set.
 
-# 1. Calculate the mean of following vector.
-
-vec_data <- c(7.48, 14.15, 6.23, 10.21, 15.13, 8.19, 8.58, 8.09, 9.14, 10.41)
-mean(vec_data)
-
-
-# 1. Pipeline (eg. `%>%`) a data operation that provides the mean of following vector.
-
-vec_data %>% mean()
-
-
-# 3.  Employing a pipeline (eg. `%>%`), construct a tibble with columns named 
-#     `radi` and `area` which contains the AREA of circles with integer RADII 1 
-#     to 5. Remember PEMDAS.
-
+```{r, echo = TRUE, message = FALSE}
 library(tidyverse)
 
-tbl_cir <- tibble(
-  radi = 1:5
-) %>%
-  mutate(area = radi ^ 2 * pi)
-
-tbl_cir
+dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
+```
 
 
-# 4.  Extract all AREAs greater than 50.
+2. How many organisms, metabolites, dose levels, and time points are in the data? How many rows are in the data table? What is the overall study design?
 
-tbl_cir %>% filter(area > 50)
+```{r, echo = TRUE}
+orgs <- unique(dat$Organism)
+n_orgs <- length(unique(orgs))
+
+metabs <- unique(dat$Metabolite)
+n_metabs <- length(unique(metabs))
+
+doses <- unique(dat$Dose_mg)
+n_doses <- length(unique(doses))
+
+time_pts <- unique(dat$Time_min)
+n_time_pts <- length(unique(time_pts))
+
+nrow(dat)
+nrow(dat) == n_orgs * n_metabs * n_doses * n_time_pts
+```
+
+3. Which metabolite has the highest overall mean abundance?
+
+```{r, echo = TRUE}
+dat %>%
+  group_by(Metabolite) %>%
+  summarize(mean_abundance = mean(Abundance)) %>%
+  arrange(desc(mean_abundance))
+```
+
+4. Does this metabolite have the highest mean abundance for each organism, or is there differences between organisms?
+
+```{r, echo = TRUE}
+dat %>%
+  group_by(Organism, Metabolite) %>%
+  summarize(mean_abundance = mean(Abundance)) %>%
+  arrange(Organism, desc(mean_abundance))
+```
+
+5. Is there an overall trend of mean abundance values vs. time point? What about abundance vs. dose?
+
+```{r, echo = TRUE}
+dat %>%
+  group_by(Time_min) %>%
+  summarize(mean_abundance = mean(Abundance))
 
 
-# 5.  Add a column named `circ_type` where you assign the string *odd* or *even* 
-#     depending on the column `radi`. Attempt to use the `purrr::map` function, 
-#     along with the `oddeven()` function from the previous chapter, then compute 
-#     the mean, standard deviation, and coefficient of variation of the AREA for 
-#     each `circ_type`.
+dat %>%
+  group_by(Dose_mg) %>%
+  summarize(mean_abundance = mean(Abundance))
+```
 
-oddeven <- function(x) { 
-  if(x %% 2 == 0) {
-    return('even')
-  } else {
-    return('odd')
-  }
+6. Using the example code at the beginning of this Chapter (using the Dever climate data), compute a linear fit of log10 abundance vs. time point for each metabolite and plot the results.
+
+```{r, echo = TRUE}
+dat <- dat %>%
+  mutate(log10_abundance = log10(Abundance))
+
+lm_func <- function(data) {
+  lm(log10_abundance ~ Time_min, data = data)
 }
 
-tbl_cir %>% 
-  mutate(circ_type = map(radi, oddeven)) %>%
-  mutate(circ_type = unlist(circ_type)) %>%
-  group_by(circ_type) %>%
-  summarise(
-    area_mean = mean(area),
-    area_sd = sd(area),
-    area_cv = area_sd / area_mean
-  )
+
+dat_lm <- dat %>%
+  # dplyr
+  group_by(Metabolite) %>%
+  # tidyr
+  nest() %>%
+  # dplyr, purrr: apply the function to each nested data frame
+  mutate(model = map(data, lm_func)) %>%
+  # dplyr, broom, purrr: extract the coefficients from each model
+  mutate(tidy = map(model, broom::tidy)) %>%
+  # tidyr
+  unnest(tidy) %>%
+  ungroup() %>%
+  # dplyr, stringr: clean-up the terms
+  mutate(term = term %>% str_replace_all("\\(|\\)", "")) %>%
+  # dplyr: retain only specific columns
+  select(Metabolite, term, estimate) %>%
+  # tidyr: convert from a long table to a wide table
+  pivot_wider(names_from = 'term', values_from = 'estimate') %>%
+  # dplyr: create a new column with the model slope (better name), just copy Time_min
+  mutate(model_slope = Time_min)
+
+
+#ggplot2
+ggplot(dat, aes(Time_min, log10_abundance)) + 
+  # represent the data as points
+  geom_point() +
+  # use the linear model data to plot regression lines
+  geom_abline(data = dat_lm,
+              aes(slope = model_slope, intercept = Intercept)) +
+  # plot each year separately 
+  facet_wrap(~Metabolite)
+
 ```
+
