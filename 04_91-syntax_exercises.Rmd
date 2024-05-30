@@ -26,57 +26,63 @@
 0.5 == 1 / 2
 ```
 
-5.  Test if 3 is an even number. Hint, use the `round()` or `floor()` functions and a comparison operator (eg. if the number is even there will not be a remainder).
+5.  Define a variable that is is 98.6 degrees in Fahrenheit. 
 
 ```{r, echo=FALSE}
-3/2 == floor(3/2)
+fahrenheit_temp <- 101
 ```
 
-6.  Create a function to test if a value is even resulting in `TRUE` or `FALSE`.
+6.  Construct an if-else statement to determine if the temperature indicates a fever (temperature greater than or equal to 100). If it does print "The temperature indicates a fever." If the temperature is less than 100, print "The temperature does not indicate a fever."
 
 ```{r, echo=FALSE}
-even <- function(x) { 
-  is_even <- x/2 == floor(x/2)
-  return(is_even)
+
+if (fahrenheit_temp >= 100){
+  print("The temperature indicates a fever.")
+}else{
+  print("The temperature does not indicate a fever.")
 }
+
 ```
 
-```{r}
-even(3)
-```
-
-7.  Construct an if-else statement to test if the number three is odd or even.
-```{r, echo=FALSE}
-x <- 3
-
-if(x %% 2 == 0) {
-  print('even')
-} else {
-  print('odd')
-}
-```
-
-8.  Create a function to test or *even* or *odd* by returning a string.
+8.  Create a function to test if a temperature is a fever called `fever_checker` the prints above, but can be reused
 
 ```{r, echo=FALSE}
-oddeven <- function(x) { 
-  is_even <- x/2 == floor(x/2)
-  if(is_even == TRUE) {
-    return('even')
-  } else {
-    return('odd')
+fever_checker <- function(fahrenheit_temp) { 
+  if (fahrenheit_temp >= 100){
+    print("The temperature indicates a fever.")
+  }else{
+    print("The temperature does not indicate a fever.")
   }
 }
 ```
 
 ```{r}
-oddeven(3)
+fever_checker(101)
 ```
 
-9.  Construct a for-loop to test, using the function from #8, if the numbers between 1 and 9 are odd or even, printing the number and string for each on a new line.
+```{r}
+fever_checker(98.6)
+```
+
+
+9.  Use similar logic to print if a temperature is the homeostatic range for human beings (97.7–99.5).
+
 ```{r, echo=FALSE}
-x <- 1:9
-for ( i in x) {
-  cat(i, "\t", oddeven(i), "\n")
+homeostatic_range_check <- function(fahrenheit_temp){
+  if (fahrenheit_temp >= 97.7 && fahrenheit_temp <= 99.5){
+    print("In homeostatic range!")
+  } else{
+    print("Outside homeostatic range!")
+  }
 }
 ```
+
+```{r}
+homeostatic_range_check(96.0)
+```
+
+```{r}
+homeostatic_range_check(100)
+```
+
+10. Advanced exercise... add TRUE / FALSE returns to the functions and create a function that combines both called `temperature_check`. That gives us info on the what our temperature means (i.e., is it homeostatic, is it a fever, are we possibly dead (temperature way too low??)
