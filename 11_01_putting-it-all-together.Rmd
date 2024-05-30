@@ -1,0 +1,55 @@
+# Putting It All Together
+
+Over the past few days, you have embarked on an enlightening journey into the world of R programming, a language renowned for its prowess in data analysis and visualization. This expedition has been as rewarding as it has been challenging, with each new concept building upon the last, culminating in a cohesive and comprehensive understanding of how to wield R effectively.
+
+The initial steps involved mastering the basics of R. Understanding the syntax, the various data structures, and the fundamental functions were the foundation stones. These basics, though seemingly simple, are crucial as they form the bedrock upon which more complex operations are built. Every line of code, every function call, and every variable assignment reinforced the importance of a solid grasp of these foundational elements.
+
+As you progressed, the focus shifted to data wrangling, a critical aspect of data analysis. Here, you learned how to manipulate data frames, clean datasets, and transform data into a usable format. Functions like `dplyr` and `tidyr` became invaluable allies, enabling you to filter, select, and arrange data with precision and efficiency. Data wrangling is akin to preparing a canvas before painting; it ensures that the data is in its optimal form, ready to reveal its insights.
+
+With clean, well-structured data in hand, you moved on to the art of creating succinct graphs and plots. Visualization is a powerful tool in data analysis, transforming raw numbers into visual stories that are easy to comprehend. Using libraries like `ggplot2`, you explored various ways to represent data visually, from simple bar charts and histograms to more complex scatter plots and line graphs. Each plot was an exercise in clarity, aiming to convey information as effectively as possible.
+
+All these skills coalesced in the organized notebook, a repository of knowledge and analysis. This notebook is not just a collection of code snippets and plots; it is a narrative that answers complex questions methodically. Each section flows logically into the next, ensuring that the analysis is easy to follow and reproduce. The notebook stands as a testament to the structured approach you have taken—beginning with data importation, followed by cleaning, analysis, visualization, and finally, interpretation of results.
+
+This process of learning and application has underscored the importance of organization and clarity. By putting everything you have learned together, you can now approach complex questions with confidence, armed with the ability to analyze data thoroughly and present your findings in a manner that is both understandable and reproducible. The journey through R has not just been about acquiring a new skill; it has been about learning how to think critically and systematically about data, ensuring that every analysis is as insightful as it is rigorous.
+
+\
+
++---------------------------------+---------------------------------------------------------------------+
+| ![](images/03.png){height="68"} | **Nothing to learn here, just practice**                            |
+|                                 |                                                                     |
+|                                 | -   Download the data.                                              |
+|                                 |                                                                     |
+|                                 | -   Approach the scientific question.                               |
+|                                 |                                                                     |
+|                                 | -   Document your analysis and results in a notebook.               |
++---------------------------------+---------------------------------------------------------------------+
+
+\
+
+## Your Objective {-}
+__The LCMS Proteomics lab manager is trying to determine the optimal conditions for yield and reproducibility.__
+
+### The Proteomic Data Set {-}
+```{r, eval=FALSE}
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/blob/main/data/HelaDilution_Skyline-MSstats_peptides.csv.zip"
+download.file(url, destfile = "./data/HelaDilution_Skyline-MSstats_peptides.csv.zip")
+```
+
+### Other Observations {-}
+- The Proteomics Bioinformatician suggests 
+  - some dilutions may yield different identifications.
+  - not all identifications are real, ie, some are MBR (Match Between Run).
+
+### Plan Your Approach {-}
+- Create a new notebook.
+- Examine the data file. Tidy if necessary.
+- Provide some basic summary accounting of the data.
+- Get into the analysis.
+
+### R Coding Tricks {-}
+
+#### Tidy Columns {-}
+One way to avoid the backtick in referencing columns is to rename them with underscores for spaces.  
+```{r, eval=FALSE}
+tbl <- tbl |> rename_all(function(x){tolower(x) |> str_replace_all("\\s+", "_")})
+```

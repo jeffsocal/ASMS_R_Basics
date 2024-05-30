@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2024-04-12" />
+<meta name="date" content="2024-05-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -63,7 +63,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -262,8 +262,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr-1"><i class="fa fa-check"></i><b>6.5.1</b> dplyr</a></li>
 <li class="chapter" data-level="6.5.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#ggplot2"><i class="fa fa-check"></i><b>6.5.2</b> ggplot2</a></li>
 </ul></li>
+<li class="chapter" data-level="6.6" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr-in-more-detail"><i class="fa fa-check"></i><b>6.6</b> Dplyr in more Detail</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#mutate"><i class="fa fa-check"></i><b>6.6.1</b> <code>mutate</code></a></li>
+<li class="chapter" data-level="6.6.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#select"><i class="fa fa-check"></i><b>6.6.2</b> <code>select</code></a></li>
+<li class="chapter" data-level="6.6.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#filter"><i class="fa fa-check"></i><b>6.6.3</b> <code>filter</code></a></li>
+<li class="chapter" data-level="6.6.4" data-path="tidyverse-1.html"><a href="tidyverse-1.html#arrange"><i class="fa fa-check"></i><b>6.6.4</b> <code>arrange</code></a></li>
+<li class="chapter" data-level="6.6.5" data-path="tidyverse-1.html"><a href="tidyverse-1.html#group_by-summarize"><i class="fa fa-check"></i><b>6.6.5</b> <code>group_by</code> + <code>summarize</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr-data-pipelines"><i class="fa fa-check"></i><b>6.7</b> Dplyr Data Pipelines</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#more-exercises-1"><i class="fa fa-check"></i>More Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>7</b> Data Wrangling</a>
 <ul>
@@ -272,7 +280,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#read_"><i class="fa fa-check"></i>read_</a></li>
 <li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#separate"><i class="fa fa-check"></i>separate</a></li>
-<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#mutate"><i class="fa fa-check"></i>mutate</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#mutate-1"><i class="fa fa-check"></i>mutate</a></li>
 <li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#pivot_"><i class="fa fa-check"></i>pivot_</a></li>
 <li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#write_"><i class="fa fa-check"></i>write_</a></li>
 <li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#non-pipe"><i class="fa fa-check"></i>Non-pipe</a></li>
@@ -297,36 +305,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#exercises-5"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>9</b> Sharing</a>
+<li class="chapter" data-level="9" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html"><i class="fa fa-check"></i><b>9</b> Reproducibility and Sharing</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="sharing.html"><a href="sharing.html#notebooks"><i class="fa fa-check"></i><b>9.1</b> Notebooks</a>
+<li class="chapter" data-level="9.1" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#reproducibility-and-data-science-notebooks"><i class="fa fa-check"></i><b>9.1</b> Reproducibility and Data Science Notebooks</a></li>
+<li class="chapter" data-level="9.2" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#quarto"><i class="fa fa-check"></i><b>9.2</b> Quarto</a>
 <ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-1"><i class="fa fa-check"></i>Creating</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-1"><i class="fa fa-check"></i>Sharing</a></li>
+<li class="chapter" data-level="9.2.1" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#yaml-headers"><i class="fa fa-check"></i><b>9.2.1</b> YAML Headers</a></li>
+<li class="chapter" data-level="9.2.2" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#text-blocks"><i class="fa fa-check"></i><b>9.2.2</b> Text Blocks</a></li>
+<li class="chapter" data-level="9.2.3" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#code-blocks"><i class="fa fa-check"></i><b>9.2.3</b> Code Blocks</a></li>
+<li class="chapter" data-level="9.2.4" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#rendering"><i class="fa fa-check"></i><b>9.2.4</b> Rendering</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>9.2</b> Packrat</a>
+<li class="chapter" data-level="9.3" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#packrat"><i class="fa fa-check"></i><b>9.3</b> Packrat</a>
 <ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#initiating"><i class="fa fa-check"></i>Initiating</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#installing-1"><i class="fa fa-check"></i>Installing</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#loading"><i class="fa fa-check"></i>Loading</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#updating"><i class="fa fa-check"></i>Updating</a></li>
+<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#initiating"><i class="fa fa-check"></i>Initiating</a></li>
+<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#installing-1"><i class="fa fa-check"></i>Installing</a></li>
+<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#loading"><i class="fa fa-check"></i>Loading</a></li>
+<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#updating"><i class="fa fa-check"></i>Updating</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="sharing.html"><a href="sharing.html#github-1"><i class="fa fa-check"></i><b>9.3</b> GitHub</a>
+<li class="chapter" data-level="9.4" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#github-1"><i class="fa fa-check"></i><b>9.4</b> GitHub</a>
 <ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-2"><i class="fa fa-check"></i>Sharing</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-3"><i class="fa fa-check"></i>Sharing</a></li>
+<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#sharing"><i class="fa fa-check"></i>Sharing</a></li>
+<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#sharing-1"><i class="fa fa-check"></i>Sharing</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>9.4</b> Docker</a></li>
-<li class="chapter" data-level="9.5" data-path="sharing.html"><a href="sharing.html#r-packages-1"><i class="fa fa-check"></i><b>9.5</b> R Packages</a>
+<li class="chapter" data-level="9.5" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#docker"><i class="fa fa-check"></i><b>9.5</b> Docker</a></li>
+<li class="chapter" data-level="9.6" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#r-packages-1"><i class="fa fa-check"></i><b>9.6</b> R Packages</a>
 <ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-2"><i class="fa fa-check"></i>Creating</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using"><i class="fa fa-check"></i>Using</a></li>
+<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#creating-1"><i class="fa fa-check"></i>Creating</a></li>
+<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#using"><i class="fa fa-check"></i>Using</a></li>
 </ul></li>
-<li class="chapter" data-level="9.6" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>9.6</b> R Shiny Applications</a>
+<li class="chapter" data-level="9.7" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>9.7</b> R Shiny Applications</a>
 <ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-3"><i class="fa fa-check"></i>Creating</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#example"><i class="fa fa-check"></i>Example</a></li>
+<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#creating-2"><i class="fa fa-check"></i>Creating</a></li>
+<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#example"><i class="fa fa-check"></i>Example</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#exercises-6"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html"><i class="fa fa-check"></i><b>10</b> Mass Spectrometry</a>
 <ul>
@@ -367,15 +379,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.5.7" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#statspro"><i class="fa fa-check"></i><b>10.5.7</b> StatsPro</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="11" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html"><i class="fa fa-check"></i><b>11</b> Putting It All Together</a>
+<ul>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#your-objective"><i class="fa fa-check"></i>Your Objective</a>
+<ul>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#the-proteomic-data-set"><i class="fa fa-check"></i>The Proteomic Data Set</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#other-observations"><i class="fa fa-check"></i>Other Observations</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#plan-your-approach"><i class="fa fa-check"></i>Plan Your Approach</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#code-tips"><i class="fa fa-check"></i>Code Tips</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html"><i class="fa fa-check"></i>Answers to Exercises</a>
 <ul>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#r-syntax-1"><i class="fa fa-check"></i><strong>4</strong> R Syntax</a></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#r-objects-1"><i class="fa fa-check"></i><strong>5</strong> R Objects</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#r-objects-more"><i class="fa fa-check"></i><strong>5</strong> R Objects <em>MORE</em></a></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#tidyverse-2"><i class="fa fa-check"></i><strong>6</strong> Tidyverse</a></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-1"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-visualization-1"><i class="fa fa-check"></i><strong>8</strong> Data Visualization</a></li>
-<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#more-5-r-objects"><i class="fa fa-check"></i>More <strong>5</strong> R Objects</a></li>
-<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#more-6-tidyverse"><i class="fa fa-check"></i>More <strong>6</strong> Tidyverse</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/jeffsocal/asms_r_intro" target="blank">Published with bookdown</a></li>
@@ -422,19 +443,19 @@ Figure 3.2: RStudio Create New Project
 <h2><span class="header-section-number">3.2</span> Organizing<a href="r-studio-projects.html#organizing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Organizing your RStudio project is an important task that can help you work more efficiently and avoid confusion when working on a project. Good organization will help you come back to your code at a later date as well as make it possible in some smaller projects to share entirely the data and code, making it possible for others to run the code and modify it.</p>
 <p>Typical project directory structure</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="r-studio-projects.html#cb15-1" tabindex="-1"></a>your_project</span>
-<span id="cb15-2"><a href="r-studio-projects.html#cb15-2" tabindex="-1"></a>  <span class="sc">|-</span> 001_import_data.R</span>
-<span id="cb15-3"><a href="r-studio-projects.html#cb15-3" tabindex="-1"></a>  <span class="sc">|-</span> 002_tidy_data.R</span>
-<span id="cb15-4"><a href="r-studio-projects.html#cb15-4" tabindex="-1"></a>  <span class="sc">|-</span> 003_analysis_01.R</span>
-<span id="cb15-5"><a href="r-studio-projects.html#cb15-5" tabindex="-1"></a>  <span class="sc">|-</span> 004_analysis_02.R</span>
-<span id="cb15-6"><a href="r-studio-projects.html#cb15-6" tabindex="-1"></a>  <span class="sc">|-</span> data</span>
-<span id="cb15-7"><a href="r-studio-projects.html#cb15-7" tabindex="-1"></a>     <span class="sc">|-</span> tidy_table.csv</span>
-<span id="cb15-8"><a href="r-studio-projects.html#cb15-8" tabindex="-1"></a>     <span class="sc">|-</span> main_file.xlsx</span>
-<span id="cb15-9"><a href="r-studio-projects.html#cb15-9" tabindex="-1"></a>  <span class="sc">|-</span> plots</span>
-<span id="cb15-10"><a href="r-studio-projects.html#cb15-10" tabindex="-1"></a>     <span class="sc">|-</span> plot_xy_scatter.png</span>
-<span id="cb15-11"><a href="r-studio-projects.html#cb15-11" tabindex="-1"></a>     <span class="sc">|-</span> plot_xy_regression.png</span>
-<span id="cb15-12"><a href="r-studio-projects.html#cb15-12" tabindex="-1"></a>  <span class="sc">|-</span> results</span>
-<span id="cb15-13"><a href="r-studio-projects.html#cb15-13" tabindex="-1"></a>     <span class="sc">|-</span> predicted_output_20230531.csv</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="r-studio-projects.html#cb16-1" tabindex="-1"></a>your_project</span>
+<span id="cb16-2"><a href="r-studio-projects.html#cb16-2" tabindex="-1"></a>  <span class="sc">|-</span> <span class="dv">001</span>_import_data.R</span>
+<span id="cb16-3"><a href="r-studio-projects.html#cb16-3" tabindex="-1"></a>  <span class="sc">|-</span> <span class="dv">002</span>_tidy_data.R</span>
+<span id="cb16-4"><a href="r-studio-projects.html#cb16-4" tabindex="-1"></a>  <span class="sc">|-</span> <span class="dv">003</span>_analysis_01.R</span>
+<span id="cb16-5"><a href="r-studio-projects.html#cb16-5" tabindex="-1"></a>  <span class="sc">|-</span> <span class="dv">004</span>_analysis_02.R</span>
+<span id="cb16-6"><a href="r-studio-projects.html#cb16-6" tabindex="-1"></a>  <span class="sc">|-</span> data</span>
+<span id="cb16-7"><a href="r-studio-projects.html#cb16-7" tabindex="-1"></a>     <span class="sc">|-</span> tidy_table.csv</span>
+<span id="cb16-8"><a href="r-studio-projects.html#cb16-8" tabindex="-1"></a>     <span class="sc">|-</span> main_file.xlsx</span>
+<span id="cb16-9"><a href="r-studio-projects.html#cb16-9" tabindex="-1"></a>  <span class="sc">|-</span> plots</span>
+<span id="cb16-10"><a href="r-studio-projects.html#cb16-10" tabindex="-1"></a>     <span class="sc">|-</span> plot_xy_scatter.png</span>
+<span id="cb16-11"><a href="r-studio-projects.html#cb16-11" tabindex="-1"></a>     <span class="sc">|-</span> plot_xy_regression.png</span>
+<span id="cb16-12"><a href="r-studio-projects.html#cb16-12" tabindex="-1"></a>  <span class="sc">|-</span> results</span>
+<span id="cb16-13"><a href="r-studio-projects.html#cb16-13" tabindex="-1"></a>     <span class="sc">|-</span> predicted_output_20230531.csv</span></code></pre></div>
 <div id="data" class="section level3 unnumbered hasAnchor">
 <h3>Data<a href="r-studio-projects.html#data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>It’s a good idea to keep your data files separate from your R scripts and other files. If the data is small enough (at your disgression what is small), it can be helpful to store the data in <code>/data/</code> folder in the project itself!</p>

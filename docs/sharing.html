@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2024-04-12" />
+<meta name="date" content="2024-05-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -63,7 +63,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -262,8 +262,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr-1"><i class="fa fa-check"></i><b>6.5.1</b> dplyr</a></li>
 <li class="chapter" data-level="6.5.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#ggplot2"><i class="fa fa-check"></i><b>6.5.2</b> ggplot2</a></li>
 </ul></li>
+<li class="chapter" data-level="6.6" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr-in-more-detail"><i class="fa fa-check"></i><b>6.6</b> Dplyr in more Detail</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#mutate"><i class="fa fa-check"></i><b>6.6.1</b> <code>mutate</code></a></li>
+<li class="chapter" data-level="6.6.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#select"><i class="fa fa-check"></i><b>6.6.2</b> <code>select</code></a></li>
+<li class="chapter" data-level="6.6.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#filter"><i class="fa fa-check"></i><b>6.6.3</b> <code>filter</code></a></li>
+<li class="chapter" data-level="6.6.4" data-path="tidyverse-1.html"><a href="tidyverse-1.html#arrange"><i class="fa fa-check"></i><b>6.6.4</b> <code>arrange</code></a></li>
+<li class="chapter" data-level="6.6.5" data-path="tidyverse-1.html"><a href="tidyverse-1.html#group_by-summarize"><i class="fa fa-check"></i><b>6.6.5</b> <code>group_by</code> + <code>summarize</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr-data-pipelines"><i class="fa fa-check"></i><b>6.7</b> Dplyr Data Pipelines</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#more-exercises-1"><i class="fa fa-check"></i>More Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>7</b> Data Wrangling</a>
 <ul>
@@ -272,7 +280,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#read_"><i class="fa fa-check"></i>read_</a></li>
 <li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#separate"><i class="fa fa-check"></i>separate</a></li>
-<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#mutate"><i class="fa fa-check"></i>mutate</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#mutate-1"><i class="fa fa-check"></i>mutate</a></li>
 <li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#pivot_"><i class="fa fa-check"></i>pivot_</a></li>
 <li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#write_"><i class="fa fa-check"></i>write_</a></li>
 <li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#non-pipe"><i class="fa fa-check"></i>Non-pipe</a></li>
@@ -299,34 +307,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>9</b> Sharing</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="sharing.html"><a href="sharing.html#notebooks"><i class="fa fa-check"></i><b>9.1</b> Notebooks</a>
+<li class="chapter" data-level="9.1" data-path="sharing.html"><a href="sharing.html#reproducibility-and-data-science-notebooks"><i class="fa fa-check"></i><b>9.1</b> Reproducibility and Data Science Notebooks</a></li>
+<li class="chapter" data-level="9.2" data-path="sharing.html"><a href="sharing.html#quarto"><i class="fa fa-check"></i><b>9.2</b> Quarto</a>
 <ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-1"><i class="fa fa-check"></i>Creating</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-1"><i class="fa fa-check"></i>Sharing</a></li>
+<li class="chapter" data-level="9.2.1" data-path="sharing.html"><a href="sharing.html#yaml-headers"><i class="fa fa-check"></i><b>9.2.1</b> YAML Headers</a></li>
+<li class="chapter" data-level="9.2.2" data-path="sharing.html"><a href="sharing.html#text-blocks"><i class="fa fa-check"></i><b>9.2.2</b> Text Blocks</a></li>
+<li class="chapter" data-level="9.2.3" data-path="sharing.html"><a href="sharing.html#code-blocks"><i class="fa fa-check"></i><b>9.2.3</b> Code Blocks</a></li>
+<li class="chapter" data-level="9.2.4" data-path="sharing.html"><a href="sharing.html#rendering"><i class="fa fa-check"></i><b>9.2.4</b> Rendering</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>9.2</b> Packrat</a>
+<li class="chapter" data-level="9.3" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>9.3</b> Packrat</a>
 <ul>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#initiating"><i class="fa fa-check"></i>Initiating</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#installing-1"><i class="fa fa-check"></i>Installing</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#loading"><i class="fa fa-check"></i>Loading</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#updating"><i class="fa fa-check"></i>Updating</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="sharing.html"><a href="sharing.html#github-1"><i class="fa fa-check"></i><b>9.3</b> GitHub</a>
+<li class="chapter" data-level="9.4" data-path="sharing.html"><a href="sharing.html#github-1"><i class="fa fa-check"></i><b>9.4</b> GitHub</a>
 <ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-1"><i class="fa fa-check"></i>Sharing</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-2"><i class="fa fa-check"></i>Sharing</a></li>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-3"><i class="fa fa-check"></i>Sharing</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>9.4</b> Docker</a></li>
-<li class="chapter" data-level="9.5" data-path="sharing.html"><a href="sharing.html#r-packages-1"><i class="fa fa-check"></i><b>9.5</b> R Packages</a>
+<li class="chapter" data-level="9.5" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>9.5</b> Docker</a></li>
+<li class="chapter" data-level="9.6" data-path="sharing.html"><a href="sharing.html#r-packages-1"><i class="fa fa-check"></i><b>9.6</b> R Packages</a>
 <ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-2"><i class="fa fa-check"></i>Creating</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-1"><i class="fa fa-check"></i>Creating</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using"><i class="fa fa-check"></i>Using</a></li>
 </ul></li>
-<li class="chapter" data-level="9.6" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>9.6</b> R Shiny Applications</a>
+<li class="chapter" data-level="9.7" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>9.7</b> R Shiny Applications</a>
 <ul>
-<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-3"><i class="fa fa-check"></i>Creating</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-2"><i class="fa fa-check"></i>Creating</a></li>
 <li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#example"><i class="fa fa-check"></i>Example</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#exercises-6"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html"><i class="fa fa-check"></i><b>10</b> Mass Spectrometry</a>
 <ul>
@@ -375,7 +387,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-1"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-visualization-1"><i class="fa fa-check"></i><strong>8</strong> Data Visualization</a></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#more-5-r-objects"><i class="fa fa-check"></i>More <strong>5</strong> R Objects</a></li>
-<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#more-6-tidyverse"><i class="fa fa-check"></i>More <strong>6</strong> Tidyverse</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/jeffsocal/asms_r_intro" target="blank">Published with bookdown</a></li>
@@ -404,8 +415,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 <table>
 <colgroup>
-<col width="36%" />
-<col width="63%" />
+<col width="32%" />
+<col width="67%" />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -413,7 +424,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td><p><strong>At the end of this chapter you should be able to</strong></p>
 <ul>
 <li><p>Understand the options for sharing analyses.</p></li>
-<li><p>Start an R Notebook project to share.</p></li>
+<li><p>Understand why reproducible data analysis is important</p></li>
+<li><p>Understand the basic of Quarto and how to use it for data reports</p></li>
 </ul></td>
 </tr>
 </tbody>
@@ -421,64 +433,201 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br />
 </p>
 
-<div id="notebooks" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> Notebooks<a href="sharing.html#notebooks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Notebooks in RStudio IDE are interactive documents that allow developers to create and share code, visualizations, and narrative text in a single document. R Notebooks provide an intuitive interface for data analysis, making it easy to explore data, create models, and communicate results.</p>
-<div id="creating-1" class="section level3 unnumbered hasAnchor">
-<h3>Creating<a href="sharing.html#creating-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>To use notebooks in RStudio IDE, follow these steps:</p>
-<ol style="list-style-type: decimal">
-<li>Open RStudio IDE and create a new R Notebook by navigating to File &gt; New File &gt; R Notebook.</li>
-<li>Add code chunks by clicking the “Insert a new code chunk” button in the toolbar or by using the keyboard shortcut “Ctrl + Alt + I”.</li>
-<li>Write R code in the code chunks and run them by clicking the “Run” button in the toolbar or by using the keyboard shortcut “Ctrl + Enter”.</li>
-<li>Add markdown text to the notebook by typing in markdown cells.</li>
-</ol>
-<p>One of the most significant benefits of R Notebooks is that they allow you to mix code and narrative text. You can add markdown cells to your notebook to provide context for your code, explain your thought process and methodology, and document your findings. This feature makes it easy for others to understand your work and reproduce your analysis.</p>
-<p>With R Notebooks, it is also possible to:</p>
+<div id="reproducibility-and-data-science-notebooks" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Reproducibility and Data Science Notebooks<a href="sharing.html#reproducibility-and-data-science-notebooks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The ability to reproduce or replicate published scientific findings is a critical component to the scientific process. However, over the last decade, the ongoing “reproducibility/replication crisis” has emerged with the problematic concern that many research findings cannot be reproduced.</p>
+<p>In the context of data analysis, irreproducibility can occur for a varitey of reasons including:</p>
 <ul>
-<li>Insert tables and images: You can add tables and images to your notebooks using markdown syntax or by using the “Insert” menu in the toolbar.</li>
-<li>Use LaTeX to display formulas: You can use LaTeX syntax to display mathematical formulas in your notebooks.</li>
-<li>Use HTML to display interactive widgets: You can use HTML code to create interactive widgets that allow users to interact with your code and data.</li>
+<li>raw data not provided</li>
+<li>analysis files or scripts not provided</li>
+<li>analysis methods not adequately described</li>
+<li>wrong analysis methods used</li>
+<li>software, analysis scripting bugs</li>
 </ul>
+<p>In recent years, publication standard have increased to help combat the reproducibility crisis. For example, many journals now require that raw data be included in the publication process. As scientists, it is also important for us to keep reproducibility in mind as we perform data analysis tasks. Not only does this help us to conduct better science, reproducible analysis methods can also make our jobs easier by clarifying the analysis process and explicitly capturing all steps that were performed.</p>
+<p>Reproducible data analysis aims to ensure that someone else is able to repeat the analysis and get the same results. This “someone else” could also be you in the future! A reproducible analysis should provide the <em>why</em> behind the methods used (i.e. good documentation) and the <em>how/what</em> was done (i.e. input data and analysis code). Each analysis step should be explicit and clear, and provide the foundation for others to understand and evaluate what was done.</p>
+<p>It’s important to note that reproducibility does not imply correctness. You can still do the wrong thing (i.e. apply incorrect methods or have a bug in your code) in a reproducible way. However, knowing exactly what was done is critical to finding and correcting mistakes. Reproducible methods also enables you to more easily share your work and allow others to help find and fix problems.</p>
+<p>Reproducibility in data analysis exists at many different levels, including:</p>
+<ul>
+<li>reproducibility of your own processes and code
+<ul>
+<li>does your code capture all steps of the analysis?</li>
+<li>if you make changes to your code, could you revisit older versions?</li>
+</ul></li>
+<li>reproducibility of external code (software versions, packages, libraries)
+<ul>
+<li>is your analysis reproducible if you upgrade your software?</li>
+<li>could you access older software versions if you needed to?</li>
+</ul></li>
+<li>reproducibility of your compute environment
+<ul>
+<li>what happens if you upgrade your computer?</li>
+<li>is your analysis affected by different operating systems or settings?</li>
+</ul></li>
+<li>reproducibility of your data
+<ul>
+<li>could the analysis data change in the future, knowingly or unknowingly?</li>
+<li>could you detect a change in the data if one occurred?</li>
+</ul></li>
+</ul>
+<p>Whether or not an analysis is <em>fully</em> reproducible isn’t a binary assessment. There is a continuum along the reproducibility scale, and not all projects require the same level of reproducibility. A high degree of reproducibility can require a significant amount of time and cost, so one must balance this effort with the needs of the project.</p>
+<p>Fortunately, a basic but highly effective level of reproducibility in data analysis tasks can be achieved by following a few guidelines:</p>
+<ul>
+<li>Capture <em>all</em> steps of an analysis in code/scripts/analysis notebooks, starting from reading input data through to the final output of results.</li>
+<li>Avoid any manual editing or transformation of data.</li>
+<li>Provide good documentation about the <em>why</em> behind the analysis and the choices you made</li>
+<li>Provide <em>how/what</em> you did through your analysis code</li>
+</ul>
+<p>To help data analysts follow these guidelines, data science notebooks have emerged as a standard tool used for conducting and communicating analysis work. There are a variety of notebook formats to choose from, including Jupyter Notebooks, RMarkdown and Quarto, but they all generally use a <em>literate programming style</em> where code and documentation about the code live in the same document. These notebooks typically utilize two type of “languages”</p>
+<ol style="list-style-type: decimal">
+<li>Plain text, formatted text, or a Markup language (e.g. Markdown) to capture the documentation</li>
+<li>A programming language to capture the code underlying the analysis</li>
+</ol>
+<p>After an analysis notebook has been created, the document can be “compiled” to create a human readble document that combines both the documentation, the code, and the output from the code. The compiled document can exist in a variety of forms (e.g. PDFs or HTML files) that can be easily shared with others who can see exactly how the analysis was performed.</p>
+
 </div>
-<div id="sharing-1" class="section level3 unnumbered hasAnchor">
-<h3>Sharing<a href="sharing.html#sharing-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Sharing your notebook project in RStudio IDE is a straightforward process. By sharing your projects, you can collaborate with other data scientists and benefit from the insights and expertise of your colleagues. Here are the steps to share your projects:</p>
+<div id="quarto" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Quarto<a href="sharing.html#quarto" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://quarto.org">Quarto</a> is a modern “open-source scientific and technical publishing system” created by Posit. For many years, RMarkdown (also developed and supported by Posit/RStudio) was the default data science notebook platform for R users. However, development for RMarkdown was stopped several years ago and efforts are now focused on Quarto, which also supports other languages including Python.</p>
+<p>Quarto is an extremely power system that not only allows one to make data science notebooks, but also books, websites, reports and presentations. See the <a href="https://quarto.org/docs/gallery/">Quarto Gallery</a> for examples of what Quarto can do.</p>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="79%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/01.png" height="68" /></td>
+<td><strong>Installing Quarto</strong>: Before you can use Quarto in RStudio, you need to first install it. Follow the instructions on the
+<a href="https://quarto.org/docs/get-started/">Quarto Get Started</a> page.</td>
+</tr>
+</tbody>
+</table>
+<p>In a Quarto document, you write text documentation and R code in the same text file with a .qmd file extension. RStudio makes it easy to work with Quarto documents, as summarized in the following workflow:</p>
+<ol style="list-style-type: decimal">
+<li>Create a new .qmd file: <code>File --&gt; New File --&gt; Quarto Document...</code></li>
+<li>Write/edit the .qmd file using either the <em>source</em> or <em>visual</em> editor</li>
+<li>Once finished, render the file to an output document, such as a PDF or HTML file</li>
+</ol>
+<p>You can think of editing a .qmd file just like editing an R script, but with added emphasis on also including well organized text documentation about your methods and accompanying R code. In older versions of RStudio, the only way to edit notebooks (which were RMarkdown notebooks at the time) was to use the source editor, the same one used to edit R scripts. However, RStudio has recently gained the ability to edit .qmd documents using a visual editor. In the source editor, everything, including the text documentation, is written with code. This meant that you had to also learn the markup language <a href="https://daringfireball.net/projects/markdown/">Markdown</a> and some HTML to effectively write the text documentation. However, with the addition of the visual editor to RStudio, you can now write text documentation in a text-editor-like manner (e.g. like in Microsoft Word), removing the need to learn additional computer languages.</p>
+<p>There are three main components to a .qmd document:</p>
+<ol style="list-style-type: decimal">
+<li>A YAML header that defines the documention options and parameters</li>
+<li>Text blocks where you document your work, analysis, and code</li>
+<li>Code blocks where write R code to do the actual analysis work</li>
+</ol>
+<p>Each of these will be described in more detail in the following sections.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:9031"></span>
+<img src="images/09_031_quarto_blocks.png" alt="\label{fig:9031}Basic components of a Quarto document."  />
+<p class="caption">
+Figure 9.1: Basic components of a Quarto document.
+</p>
+</div>
+<div id="yaml-headers" class="section level3 hasAnchor" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> YAML Headers<a href="sharing.html#yaml-headers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The YAML header is place at the top of a .qmd file and defines global properties of the document (e.g. title, author, date, output format). While there are a lot of possible options you can specify in the YAML, beginners can just copy and paste the same default template (given below) which covers good default settings for scientific reports.</p>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="sharing.html#cb314-1" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb314-2"><a href="sharing.html#cb314-2" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">&quot;REPORT TITLE&quot;</span></span>
+<span id="cb314-3"><a href="sharing.html#cb314-3" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">&quot;NAME&quot;</span></span>
+<span id="cb314-4"><a href="sharing.html#cb314-4" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">&quot;today&quot;</span></span>
+<span id="cb314-5"><a href="sharing.html#cb314-5" tabindex="-1"></a>toc<span class="sc">:</span> true</span>
+<span id="cb314-6"><a href="sharing.html#cb314-6" tabindex="-1"></a>format<span class="sc">:</span></span>
+<span id="cb314-7"><a href="sharing.html#cb314-7" tabindex="-1"></a>  html<span class="sc">:</span></span>
+<span id="cb314-8"><a href="sharing.html#cb314-8" tabindex="-1"></a>    code<span class="sc">-</span>tools<span class="sc">:</span> true</span>
+<span id="cb314-9"><a href="sharing.html#cb314-9" tabindex="-1"></a>    code<span class="sc">-</span>fold<span class="sc">:</span> true</span>
+<span id="cb314-10"><a href="sharing.html#cb314-10" tabindex="-1"></a>    self<span class="sc">-</span>contained<span class="sc">:</span> true</span>
+<span id="cb314-11"><a href="sharing.html#cb314-11" tabindex="-1"></a>execute<span class="sc">:</span> </span>
+<span id="cb314-12"><a href="sharing.html#cb314-12" tabindex="-1"></a>  echo<span class="sc">:</span> true</span>
+<span id="cb314-13"><a href="sharing.html#cb314-13" tabindex="-1"></a>  warning<span class="sc">:</span> false</span>
+<span id="cb314-14"><a href="sharing.html#cb314-14" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:9032"></span>
+<img src="images/09_032_quarto_yaml.png" alt="\label{fig:9032}Quarto YAML header example."  />
+<p class="caption">
+Figure 9.2: Quarto YAML header example.
+</p>
+</div>
+<p>In the example YAML header above, many of the options are self explanatory: <code>title</code>, <code>author</code> and <code>date</code> are used to specific exactly what they say. In the <code>date</code> option, you can supply a formatted date string (e.g. 2024-06-01), or use the shortcut “today” to insert today’s date (as of the time of rendering the document).</p>
+<p>The <code>toc</code> option indicate whether or not you want a table of contents included in the documjent (use false if you don’t).</p>
+<p>The <code>format</code> options are a bit more complex, but essentially say that we want HTML output along with some additional options about how code is displayed in the document.</p>
+<p>Finally, the <code>execute</code> options specify how the code blocks are handled. In this case, <code>echo: true</code> means we want to include the printing of code in our output document, and <code>warning: false</code> means we want to suppress the printing of R warnings in our ouptut document.</p>
+<p>The YAML header content is sandwiched between <code>---</code> at the top and bottom, with options specified in the middle. These options take the form of a defined keyword (e.g. <code>title</code>), followed by a <code>:</code> and the value that specifies the option. The options supplied in the header are <em>global</em>, meaning they apply to all the following blocks in the document. For example, it’s possible to define default figure size in the YAML header. While you can individually override figure size in each code block, the figure size defined in the YAML will be used by default. There are <a href="https://quarto.org/docs/reference/formats/opml.html">a lot of options</a> you can configure in the YAML header. But for basic usage, the above header is a great place to start.</p>
+</div>
+<div id="text-blocks" class="section level3 hasAnchor" number="9.2.2">
+<h3><span class="header-section-number">9.2.2</span> Text Blocks<a href="sharing.html#text-blocks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>After the YAML header is added, the next step is to intertwine text and code blocks needed to perform the analysis task. There is no limit to the number or length of the text and code blocks: use as many as you need to properly communicate your work. As a shortcut in the visual editor, you can type <code>/</code> on a blank line to bring on an <em>insert palette</em> which provides a list of block types to add to your document, including not only text and code blocks, but also things like bulleted lists, tables and links.</p>
+<p>With the visual editor, you can style text using the formatting bar in the editor pane. Furthermore, many standard text editing keyboard shortcuts are also available to use (e.g. CTRL/CMD+B to bold text). When writing text documentation, it is also good practice to make use of heading levels to organize your document by defining sections for your content. By default, the document title (supplied in the YAML header) has the top heading level of 1. Therefore, additional sections in your document should start a level heading 2 and higher. For example, in a report, you may start with a <strong>Summary</strong> section (heading level 2) which provides an overview of your analysis, information about the input data, and an overview of the methods used. This could be followed with an <strong>Analysis</strong> section (heading level 2) that goes into the analysis details and code. If you have a more complex analysis, you may further divide the <strong>Analysis</strong> section into subgroups (heading levels 3) to describe individual components of the analysis. Finally, you may add a <strong>Conclusions</strong> section (heading level 2) to summarize the main results and findings. How you organize your document is completely up to you, but following standard writing procedures that you use in other contexts (e.g. when writing publications or reports in school) is recommended. As an added benefit, level heading sections are used to automatically generate a table of contents, which can be particularly useful for longer documents.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:9033"></span>
+<img src="images/09_033_visual_editor.png" alt="\label{fig:9033}Visual editor for Quarto documents."  />
+<p class="caption">
+Figure 9.3: Visual editor for Quarto documents.
+</p>
+</div>
+</div>
+<div id="code-blocks" class="section level3 hasAnchor" number="9.2.3">
+<h3><span class="header-section-number">9.2.3</span> Code Blocks<a href="sharing.html#code-blocks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Code blocks are where you enter R code to perform the actual analysis work. You can easily insert an R code block by typing <code>/</code> on a empty line in the .qmd file. This will bring up a block selection interface where you can select different types of block and objects to insert, including an R code block (first item in the interface by default). Once you add an R code block, you will see a new section added to the document with <code>{r}</code> at the top and a shaded background. This indicates you now have an R code block, and you can enter your R code into this shaded area. The green right facing triangle in the upper right side of the code block allows you to execute the code inside the block in the console. This is useful if you want to test out the code you’ve written.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:9034"></span>
+<img src="images/09_034_insert_block.png" alt="\label{fig:9034}R Code blocks can be inserted using the / menu"  />
+<p class="caption">
+Figure 9.4: R Code blocks can be inserted using the / menu
+</p>
+</div>
+<p>When adding code to your document, you don’t need, nor is it suggested, to enter all your analysis code into a single block. Rather, it usually makes sense to break-up your analysis code into smaller pieces, interspersed with text blocks documenting your work. This makes it easier for you to develope your analysis, and for someone else to follow what you did. Like a standard R script, R code blocks are executed from top to bottom in the document, and any defined variables are accessible to all blocks that follow.</p>
+<p>Unlike text blocks, which directly display the entered text into the output document, the output from code blocks depends on the options specified either in the YAML header (global options) or individually for each R code block. For example, you can control whether or not R code, the output from the code, and warning/error messages are shown in the output document. In the YAML header shown above, the options that are part of the <code>execute:</code> section indicate that R code should be output (<code>echo: true</code>) and warning messages should not (<code>warning: false</code>). Because these options are specified in the YAML header, all R code blocks will follow these options unless different options are specified within an R code block.</p>
+<p>Code block level options can be specified at the top of a code block, by typing <code>#|</code> followed by an option string. Multiple options can be specified by entering them on multiple lines. Some useful code block options include:</p>
+<ul>
+<li><code>fig-width:</code>, <code>fig-height:</code> control the width and height of a plot</li>
+<li><code>fig-cap:</code> add a figure caption</li>
+<li><code>echo:</code> whether or not to display code</li>
+<li><code>warning:</code> whether or not to display warning or error messages</li>
+<li><code>eval:</code> whether or not to actually execute the code when rendering (useful if you just want to output code)</li>
+</ul>
+<p>An example of using code block options and how they affect output is shown in the figure below.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:9035"></span>
+<img src="images/09_035_code_block_options.png" alt="\label{fig:9035}Example code block options and associated output."  />
+<p class="caption">
+Figure 9.5: Example code block options and associated output.
+</p>
+</div>
+</div>
+<div id="rendering" class="section level3 hasAnchor" number="9.2.4">
+<h3><span class="header-section-number">9.2.4</span> Rendering<a href="sharing.html#rendering" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>After you have finished writing a .qmd file, the final step is to render it into an output document. This can be easily accomplished by clicking the <code>Render</code> button in the tool bar of the Quarto editor pane inside of RStudio. The format of the output is indicated by the options set in the YAML header. For reports, PDFs and HTML files are useful output options. In practice, HTML output is highly suggested because HTML allows for interactivity in the document (like for webpages) that isn’t possible with PDF files. For example, HTML output allows you to have a floating table of contents within your document, and with more advanced R coding, you can also include interactive plots in your output. Furthermore, since web browsers are ubiquitous, HTML files can be opened by anyone and on any platform.</p>
 
 </div>
 </div>
-<div id="packrat" class="section level2 hasAnchor" number="9.2">
-<h2><span class="header-section-number">9.2</span> Packrat<a href="sharing.html#packrat" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="packrat" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Packrat<a href="sharing.html#packrat" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Packrat is an R package that provides a way to manage R package dependencies for projects. It is a powerful tool for reproducible research, as it allows you to create a local library of packages specific to a project that can be shared with collaborators or moved to another machine. With Packrat, packages used in a project are kept at a specific version, ensuring that the same results can be obtained regardless of the version of the package used.</p>
 <div id="initiating" class="section level3 unnumbered hasAnchor">
 <h3>Initiating<a href="sharing.html#initiating" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To initiate a Packrat project, you need to run the <code>packrat::init()</code> function in your R console. This will create a <code>packrat</code> directory in your project folder, which will contain all the necessary files and information for Packrat to manage the package dependencies for your project.</p>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="sharing.html#cb274-1" tabindex="-1"></a><span class="fu">library</span>(packrat)</span>
-<span id="cb274-2"><a href="sharing.html#cb274-2" tabindex="-1"></a>packrat<span class="sc">::</span><span class="fu">init</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="sharing.html#cb315-1" tabindex="-1"></a><span class="fu">library</span>(packrat)</span>
+<span id="cb315-2"><a href="sharing.html#cb315-2" tabindex="-1"></a>packrat<span class="sc">::</span><span class="fu">init</span>()</span></code></pre></div>
 </div>
 <div id="installing-1" class="section level3 unnumbered hasAnchor">
 <h3>Installing<a href="sharing.html#installing-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To install a package into the project-specific library, you can use the <code>packrat::install.packages()</code> function. Packrat will automatically detect package dependencies and install them as well.</p>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="sharing.html#cb275-1" tabindex="-1"></a>packrat<span class="sc">::</span><span class="fu">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="sharing.html#cb316-1" tabindex="-1"></a>packrat<span class="sc">::</span><span class="fu">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
 </div>
 <div id="loading" class="section level3 unnumbered hasAnchor">
 <h3>Loading<a href="sharing.html#loading" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To load a package from the project library, you simply use the <code>library()</code> function as usual. Packrat will ensure that the correct versions are used.</p>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="sharing.html#cb276-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="sharing.html#cb317-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
 </div>
 <div id="updating" class="section level3 unnumbered hasAnchor">
 <h3>Updating<a href="sharing.html#updating" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To update a package in the project library, you can use the <code>packrat::update.packages()</code> function. Packrat will update the package and all its dependencies.</p>
-<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="sharing.html#cb277-1" tabindex="-1"></a>packrat<span class="sc">::</span><span class="fu">update.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="sharing.html#cb318-1" tabindex="-1"></a>packrat<span class="sc">::</span><span class="fu">update.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
 <p>Overall, Packrat is a valuable tool for reproducible research, as it allows you to manage package dependencies for your projects and ensure that the same results can be obtained regardless of the version of the package used.</p>
 
 </div>
 </div>
-<div id="github-1" class="section level2 hasAnchor" number="9.3">
-<h2><span class="header-section-number">9.3</span> GitHub<a href="sharing.html#github-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="github-1" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> GitHub<a href="sharing.html#github-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>GitHub is an online platform that provides version control and collaboration features for software development projects. It is widely used by developers to store and manage their code repositories, track changes made to code over time, and collaborate with others on projects. It is a powerful tool that simplifies the process of managing code and makes it easier for developers to work together. A key benefit of RStudio IDE is that it has built-in support for version control systems like GitHub, which makes it easy to manage and share code with others.</p>
-<div id="sharing-2" class="section level3 unnumbered hasAnchor">
-<h3>Sharing<a href="sharing.html#sharing-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sharing-1" class="section level3 unnumbered hasAnchor">
+<h3>Sharing<a href="sharing.html#sharing-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To use GitHub within RStudio IDE, you need to first create a GitHub account and set up a repository. Once you have created a repository, you can follow these steps to use it within RStudio IDE:</p>
 <ol style="list-style-type: decimal">
 <li>Open RStudio IDE and navigate to the “New Project” tab.</li>
@@ -487,8 +636,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Click “Create Project” to create a new RStudio project that is linked to your GitHub repository.</li>
 </ol>
 </div>
-<div id="sharing-3" class="section level3 unnumbered hasAnchor">
-<h3>Sharing<a href="sharing.html#sharing-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sharing-2" class="section level3 unnumbered hasAnchor">
+<h3>Sharing<a href="sharing.html#sharing-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Sharing code with others using GitHub and RStudio IDE is a straightforward process. Once you have set up your GitHub repository and linked it to your RStudio project, you can follow these steps to share code with others:</p>
 <ol style="list-style-type: decimal">
 <li>Make changes to your code in RStudio IDE.</li>
@@ -499,18 +648,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
-<div id="docker" class="section level2 hasAnchor" number="9.4">
-<h2><span class="header-section-number">9.4</span> Docker<a href="sharing.html#docker" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="docker" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> Docker<a href="sharing.html#docker" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Docker is an open-source platform that allows developers to easily create, deploy, and run applications in containers. Containers are lightweight, portable, and self-contained environments that can run isolated applications. Docker helps to simplify the process of software development, testing, and deployment by providing a consistent environment that runs the same way on any machine, independent of the host operating system.</p>
 <p>For more information check out the main <a href="https://www.docker.com/">Docker</a> website in addition to the <a href="https://rocker-project.org/">Rocker R Project</a>.</p>
 
 </div>
-<div id="r-packages-1" class="section level2 hasAnchor" number="9.5">
-<h2><span class="header-section-number">9.5</span> R Packages<a href="sharing.html#r-packages-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="r-packages-1" class="section level2 hasAnchor" number="9.6">
+<h2><span class="header-section-number">9.6</span> R Packages<a href="sharing.html#r-packages-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In R, packages are collections of R functions, data, and compiled code that can be easily shared and reused with others. They are an essential part of the R ecosystem and are used for a variety of purposes, such as data analysis, visualization, and statistical modeling.</p>
 <p>Creating a package in R is a straightforward process, and RStudio IDE provides several tools to simplify the package development process. Packages are a way of organizing your code and data into a single, self-contained unit that can be easily shared and distributed with other R users.</p>
-<div id="creating-2" class="section level3 unnumbered hasAnchor">
-<h3>Creating<a href="sharing.html#creating-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="creating-1" class="section level3 unnumbered hasAnchor">
+<h3>Creating<a href="sharing.html#creating-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To create a package in RStudio, follow these simple steps:</p>
 <ol style="list-style-type: decimal">
 <li>Create a new R Project. Go to “File” -&gt; “New Project” -&gt; “New Directory” -&gt; “R Package”</li>
@@ -526,15 +675,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li>Now it’s time to write some code. You can start by creating a simple function that outputs “Hello ASMS”. Here’s an example:</li>
 </ol>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="sharing.html#cb278-1" tabindex="-1"></a><span class="co">#&#39; Hello ASMS Function</span></span>
-<span id="cb278-2"><a href="sharing.html#cb278-2" tabindex="-1"></a><span class="co">#&#39;</span></span>
-<span id="cb278-3"><a href="sharing.html#cb278-3" tabindex="-1"></a><span class="co">#&#39; This function prints &quot;Hello ASMS&quot; to the console.</span></span>
-<span id="cb278-4"><a href="sharing.html#cb278-4" tabindex="-1"></a><span class="co">#&#39;</span></span>
-<span id="cb278-5"><a href="sharing.html#cb278-5" tabindex="-1"></a><span class="co">#&#39; @return A character vector with the message &quot;Hello ASMS&quot;.</span></span>
-<span id="cb278-6"><a href="sharing.html#cb278-6" tabindex="-1"></a><span class="co">#&#39; @export</span></span>
-<span id="cb278-7"><a href="sharing.html#cb278-7" tabindex="-1"></a>say_hello <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb278-8"><a href="sharing.html#cb278-8" tabindex="-1"></a>  <span class="fu">return</span>(<span class="st">&quot;Hello ASMS&quot;</span>)</span>
-<span id="cb278-9"><a href="sharing.html#cb278-9" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="sharing.html#cb319-1" tabindex="-1"></a><span class="co">#&#39; Hello ASMS Function</span></span>
+<span id="cb319-2"><a href="sharing.html#cb319-2" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb319-3"><a href="sharing.html#cb319-3" tabindex="-1"></a><span class="co">#&#39; This function prints &quot;Hello ASMS&quot; to the console.</span></span>
+<span id="cb319-4"><a href="sharing.html#cb319-4" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb319-5"><a href="sharing.html#cb319-5" tabindex="-1"></a><span class="co">#&#39; @return A character vector with the message &quot;Hello ASMS&quot;.</span></span>
+<span id="cb319-6"><a href="sharing.html#cb319-6" tabindex="-1"></a><span class="co">#&#39; @export</span></span>
+<span id="cb319-7"><a href="sharing.html#cb319-7" tabindex="-1"></a>say_hello <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb319-8"><a href="sharing.html#cb319-8" tabindex="-1"></a>  <span class="fu">return</span>(<span class="st">&quot;Hello ASMS&quot;</span>)</span>
+<span id="cb319-9"><a href="sharing.html#cb319-9" tabindex="-1"></a>}</span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li>Save the function in a new R script file called “hello_world.R” and place it in the package’s R/ directory.</li>
 <li>Build the package by running “Build” -&gt; “Build &amp; Reload” from the “Build” tab. This will compile the package code and create a binary package file (.tar.gz) in the “build/” directory.</li>
@@ -544,18 +693,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="using" class="section level3 unnumbered hasAnchor">
 <h3>Using<a href="sharing.html#using" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Once the package is installed, you can load it into your R session using the <code>library()</code> function. Here’s an example:</p>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="sharing.html#cb279-1" tabindex="-1"></a><span class="fu">library</span>(my_new_rpackage)</span>
-<span id="cb279-2"><a href="sharing.html#cb279-2" tabindex="-1"></a><span class="fu">say_hello</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="sharing.html#cb320-1" tabindex="-1"></a><span class="fu">library</span>(my_new_rpackage)</span>
+<span id="cb320-2"><a href="sharing.html#cb320-2" tabindex="-1"></a><span class="fu">say_hello</span>()</span></code></pre></div>
 <p>This will output “Hello ASMS” to the console.</p>
 
 </div>
 </div>
-<div id="r-shiny-applications" class="section level2 hasAnchor" number="9.6">
-<h2><span class="header-section-number">9.6</span> R Shiny Applications<a href="sharing.html#r-shiny-applications" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="r-shiny-applications" class="section level2 hasAnchor" number="9.7">
+<h2><span class="header-section-number">9.7</span> R Shiny Applications<a href="sharing.html#r-shiny-applications" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>R Shiny is an R package that allows users to create interactive web applications using R. With R Shiny, users can create and customize web-based dashboards, data visualization tools, and other interactive applications that can be easily shared with others.</p>
 <p>The benefits of using R Shiny include creating powerful data-driven web applications with ease and providing a user-friendly interface for data analysis. R Shiny is widely used in various industries, including finance, healthcare, and e-commerce.</p>
-<div id="creating-3" class="section level3 unnumbered hasAnchor">
-<h3>Creating<a href="sharing.html#creating-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="creating-2" class="section level3 unnumbered hasAnchor">
+<h3>Creating<a href="sharing.html#creating-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Creating an R Shiny application is relatively easy, and it can be done in the RStudio IDE. Here are the steps to follow:</p>
 <ol style="list-style-type: decimal">
 <li><p>Open RStudio and create a new R script file.</p></li>
@@ -613,6 +762,33 @@ shinyApp(ui = ui, server = server)
 <p>Check out the <a href="https://shiny.rstudio.com/">R Shiny</a> web page for more information.</p>
 
 </div>
+</div>
+<div id="exercises-6" class="section level2 unnumbered hasAnchor">
+<h2>Exercises<a href="sharing.html#exercises-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="69%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/07.png" height="68" /></td>
+<td><ul>
+<li><p>Create a new R Studio Project and name it <strong>007_quarto</strong>.</p></li>
+<li><p>Create a new Quarto document, add your name, a title, and date</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li><p>Replace the default YAML header with the one specified in this chapter and render the document. Confirm the HTML output is successfully created.</p></li>
+<li><p>Review the document and study the structure. Which parts are text blocks and which are code blocks? How are headings being used in the text blocks?</p></li>
+<li><p>Try executing and editing the R code blocks using the green right-facing triangle. What happens when you execute a code block?</p></li>
+<li><p>Insert a new R code block and add a ggplot code example from the <em>Data Visualization</em> section (make sure you load the required data first). What happens when you execute the code?</p></li>
+<li><p>Change the options in the YAML header under <code>execute:</code> to <em>not</em> include R code. Re-render the document to confirm.</p></li>
+<li><p>Add code block options to the ggplot code you added in 4 to change the figure with and height.</p></li>
+</ol>
+
 </div>
 </div>
             </section>
