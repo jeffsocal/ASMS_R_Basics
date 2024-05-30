@@ -293,7 +293,9 @@ cat("# A tibble: 26 × 2
 
 Tibbles have several advantages over data frames. They print only the first 10 rows and all the columns that fit on the screen. This makes it easier to view and work with large datasets. Tibbles also have better error messages, which makes debugging easier. Additionally, tibbles are more consistent in handling columns with different types of data.
 
-## Examine the Contents {-}
+## Managing Objects
+
+### Examine the Contents
 
 You can use the `str()` function to peak inside any data object to see how it is structured.
 
@@ -356,7 +358,7 @@ List of 12
   ..- attr(*, "names")= chr [1:6] "1" "2" "3" "4" ...
 ```
 
-## Converting Objects {-}
+### Converting Objects
 
 In R, we see that there are several data objects that can be used to store and manipulate data. Some of the commonly used data objects include `data.frames`, `data.tables` and `tibbles`. However, we don't need to be stuck with any one object and can easily convert between these data objects using the `as.data.frame`, `as.data.table` and `as_tibble` functions.
 
