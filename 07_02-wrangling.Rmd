@@ -75,7 +75,9 @@ Let's start with the read-in.
 require(tidyverse)
 
 # read_csv
-tbl_met <- "data/bacterial-metabolites_dose-simicillin_wide.csv" %>% read_csv()
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_wide.csv"
+download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_wide.csv")
+tbl_met <- read_csv("data/bacterial-metabolites_dose-simicillin_wide.csv")
 
 tbl_met
 ```

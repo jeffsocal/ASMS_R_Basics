@@ -59,6 +59,8 @@ Consider the following workflow to read in data, calculate a linear regression a
 library(tidyverse)
 
 # readr, tibble: read in a table of comma separate values
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/denver_climate.csv"
+download.file(url, destfile = "./data/denver_climate.csv")
 tbl_csv <- read_csv("data/denver_climate.csv")
 
 # define a function to fit a linear regression model
@@ -166,6 +168,8 @@ One of the key features of `readr` is its ability to quickly read data into R, m
 
 ```{r, eval=FALSE, message=FALSE, warning=FALSE}
 # read comma separated values
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
+download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
 tbl_csv <- "data/bacterial-metabolites_dose-simicillin_tidy.csv" %>% read_csv()
 ```
 
@@ -430,6 +434,8 @@ The following code provides a common example of how `mutate` can be used:
 # mutate example
 
 # Read the data set
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
+download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
 dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
 dat
 
@@ -450,6 +456,8 @@ The `select` function is used when you want to focus on specific columns in your
 # select example
 
 # Read the data set
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
+download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
 dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
 dat
 
@@ -474,6 +482,8 @@ The `filter` function is used when you need to get or remove specific rows from 
 # filter examples
 
 # Read the data set
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
+download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
 dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
 dat
 
@@ -501,6 +511,8 @@ The `arrange` function is used to reorder the rows in your data table, most ofte
 # arrange examples
 
 # Read the data set
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
+download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
 dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
 dat
 
@@ -534,6 +546,8 @@ While `group_by` can be used with the other `dplyr` functions, it is most common
 # group_by + summarize examples
 
 # Read the data set
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
+download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
 dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
 dat
 
@@ -608,6 +622,8 @@ With this workflow in mind, each step can be translated into a `dplyr` pipeline:
 ```{r, eval = TRUE}
 
 # 1. Read the data into R
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
+download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
 dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
 
 # Make the analysis pipeline

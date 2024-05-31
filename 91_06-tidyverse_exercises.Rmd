@@ -5,6 +5,8 @@
 ```{r, echo = TRUE, message = FALSE}
 library(tidyverse)
 
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
+download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
 dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
 ```
 
