@@ -33,7 +33,7 @@ __The LCMS Proteomics lab manager is trying to determine the optimal conditions 
 
 ### The Data Set {-}
 ```{r, eval=FALSE}
-url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/blob/main/data/HelaDilution_Skyline-MSstats_peptides.csv.zip"
+url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/HelaDilution_Skyline-MSstats_peptides.csv.zip"
 download.file(url, destfile = "./data/HelaDilution_Skyline-MSstats_peptides.csv.zip")
 ```
 
