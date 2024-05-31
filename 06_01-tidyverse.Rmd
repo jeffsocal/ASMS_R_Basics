@@ -55,12 +55,15 @@ These packages work seamlessly together, allowing users to easily manipulate and
 
 Consider the following workflow to read in data, calculate a linear regression and visualize the data using nine (9) of the underlying packages in the tidyverse. In this example, the goal is to read in climate data from Denver, Colorado and create a linear model relating the monthly amount of snowfall to the minimum temperature computed separately for each year in the data set.  Additionally, plots of the data and the linear fit are produced to visualize the data.
 
-```{r, message=FALSE, warning=FALSE, fig.width=6, fig.height=4, fig.align='center'}
+```{r, eval=FALSE}
 library(tidyverse)
 
 # readr, tibble: read in a table of comma separate values
 url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/denver_climate.csv"
 download.file(url, destfile = "./data/denver_climate.csv")
+```
+
+```{r message=FALSE, warning=FALSE}
 tbl_csv <- read_csv("data/denver_climate.csv")
 
 # define a function to fit a linear regression model
@@ -101,7 +104,6 @@ ggplot(tbl_csv, aes(min_temp, snowfall)) +
   # plot each year separately 
   facet_wrap(~year)
   
-
 ```
 
 To get started with the `tidyverse`, you can install the package using the following command:
@@ -166,11 +168,16 @@ R `readr` is a package in the R language that is used to read structured data fi
 
 One of the key features of `readr` is its ability to quickly read data into R, making it an ideal package for data analysis and data cleaning. `readr` is designed to handle various types of data, including numeric, date, and character data. The package also has advanced features such as automatic guessing of column types, encoding detection, and parsing of dates and times.
 
-```{r, eval=FALSE, message=FALSE, warning=FALSE}
-# read comma separated values
-url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
-download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
-tbl_csv <- "data/bacterial-metabolites_dose-simicillin_tidy.csv" %>% read_csv()
+```{r, eval=FALSE}
+# read in data from various formats
+tbl_csv <- "data/some_data_set.csv" %>% read_csv()
+tbl_tsv <- "data/some_data_set.tsv" %>% read_tsv()
+
+# even read in compressed files
+tbl_csv <- "data/some_data_set.csv.zip" %>% read_csv()
+
+# read in data with some unconventional column separation by defining it literally
+tbl_weird <- "data/some_data_set.txt" %>% read_delim(delim = "*")
 ```
 
 One of the best things about `readr` is its consistency in dealing with file formats, which allows for easy and fast data manipulation. The package provides a high level of control over the import process, allowing you to specify the location of the data file, the delimiter, and the encoding type. Additionally, `readr` can handle large datasets with ease, making it one of the most efficient packages for data handling.
@@ -430,15 +437,19 @@ The `mutate` function is used when you want to add a new column or update an exi
 
 The following code provides a common example of how `mutate` can be used:
 
-```{r, eval = TRUE}
-# mutate example
-
+```{r, eval=FALSE}
 # Read the data set
 url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
 download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
+```
+
+```{r}
+# read in and examine the data
 dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
 dat
+```
 
+```{r}
 # Add a new column that is the log10 value of the Abundance column
 dat <- mutate(dat, log10_Abundance = log10(Abundance))
 dat
@@ -452,18 +463,10 @@ In this example, `dat` is data table and used as input to the `mutate` function.
 The `select` function is used when you want to focus on specific columns in your data table. Sometimes, a data table may contain many columns of data, but you may only need a small subset of them for a given analysis task. In this case, using select removes the unnecessary columns from the data table and allows you to more easily focus on what you need.
 
 
-```{r, eval = TRUE}
-# select example
-
-# Read the data set
-url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
-download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
-dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
-dat
-
+```{r}
 # Focus on just the Organism, Time_min and Abundance columns
-dat <- select(dat, Organism, Time_min, Abundance)
-dat
+dat_slct <- select(dat, Organism, Time_min, Abundance)
+dat_slct
 ```
 
 Here, the `select` function just takes the names of the columns you want to subset to as input. Like in the `mutate` example above, you do not put quotes around the names of the columns.
@@ -478,22 +481,16 @@ The `filter` function is used when you need to get or remove specific rows from 
 - subsetting the data to m/z values greater than 1000
 
 
-```{r, eval = TRUE}
-# filter examples
-
-# Read the data set
-url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
-download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
-dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
-dat
-
+```{r}
 # Get just the e coli data
-dat2 <- filter(dat, Organism == "e coli")
-dat2
+dat_flt <- filter(dat, Organism == "e coli")
+dat_flt
+```
 
+```{r}
 # Remove any data where the Abundance is less than 10
-dat2 <- filter(dat, Abundance >= 10)
-dat2
+dat_flt <- filter(dat, Abundance >= 10)
+dat_flt
 ```
 
 In the first example, we use the conditional expression `Organism == "e coli"` as the filtering criteria.  Here, `Organism` in the name of a column in our input data (note: no quotes around the column name) and the conditional expression asks the question "is Organism equal to 'e coli'?" for every row in the data table. If the answer is yes, that row is kept in the output; otherwise it is removed. The second example is similar but uses the `>=` operator to ask questions about the `Abundance` values, only keeping those rows where the `Abundance` is greater than or equal to 10.
@@ -507,24 +504,20 @@ The `arrange` function is used to reorder the rows in your data table, most ofte
 - sorting your table first by a group column, then by values within each group
 
 
-```{r, eval = TRUE}
-# arrange examples
-
-# Read the data set
-url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
-download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
-dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
-dat
-
+```{r}
 # sort the table by Abundance (low to high)
 dat <- arrange(dat, Abundance)
 dat
+```
 
+```{r}
 # sort the table by Abundance (high to low)
 # desc is a function that says to use descending order
 dat <- arrange(dat, desc(Abundance))
 dat
+```
 
+```{r}
 # sort the table by Organism, then by Abundance (high to low)
 dat <- arrange(dat, Organism, desc(Abundance))
 dat
@@ -542,19 +535,13 @@ While `group_by` can be used with the other `dplyr` functions, it is most common
 - computing intensity CVs for each analyte (measured with replicates)
 
 
-```{r, eval = TRUE}
-# group_by + summarize examples
-
-# Read the data set
-url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
-download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
-dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
-dat
-
+```{r}
 # group the data by Organism
 dat_grp <- group_by(dat, Organism)
 dat_grp
+```
 
+```{r}
 # compute the median abundance for each organism
 dat_smry <- summarize(dat_grp, median_Abundance = median(Abundance))
 dat_smry
@@ -619,13 +606,7 @@ Fortunatley, it is fairly straightforward to translate this task to a `dplyr` pi
 
 With this workflow in mind, each step can be translated into a `dplyr` pipeline:
 
-```{r, eval = TRUE}
-
-# 1. Read the data into R
-url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
-download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
-dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
-
+```{r}
 # Make the analysis pipeline
 dat_smry <- dat %>%
   # 2. Filter out data from the 120 min time point
@@ -643,12 +624,4 @@ dat_smry <- dat %>%
 
 dat_smry
 ```
-
-
-
-
-
-
-
-
 

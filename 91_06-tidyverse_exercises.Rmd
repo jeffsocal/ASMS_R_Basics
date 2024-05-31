@@ -2,11 +2,13 @@
 
 1. Read in the `bacterial-metabolites_dose-simicillin_tidy.csv` data set.
 
-```{r, echo = TRUE, message = FALSE}
-library(tidyverse)
-
+```{r, eval=FALSE}
 url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
 download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
+```
+
+```{r, echo=TRUE}
+library(tidyverse)
 dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
 ```
 

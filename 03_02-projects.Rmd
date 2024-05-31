@@ -1,8 +1,8 @@
-# R Studio Projects
+## R Studio Projects
 
-Project are how RStudio organizes your work. Think of project as singular goal oriented collection. There are no rules but some basic organizational tips should help simplify your project.
+RStudio gives us a lot of tools to help beginners and experts develop better AND faster. Project are how RStudio organizes your work. Think of project as singular goal oriented collection. There are no rules but some basic organizational tips should help simplify your project.
 
-## Creating
+### Creating
 
 Creating a new project is very forgiving, you can create a new directory with a project name, or create a project out of an existing directory.
 
@@ -18,7 +18,7 @@ knitr::include_graphics("images/03_021_new_project_01.png")
 knitr::include_graphics("images/03_021_new_project_02.png")
 ```
 
-## Organizing
+### Organizing
 
 Organizing your RStudio project is an important task that can help you work more efficiently and avoid confusion when working on a project. Good organization will help you come back to your code at a later date as well as make it possible in some smaller projects to share entirely the data and code, making it possible for others to run the code and modify it.
 
@@ -40,7 +40,7 @@ your_project
      |- predicted_output_20230531.csv
 ```
 
-### Data {-}
+#### Data {-}
 
 It's a good idea to keep your data files separate from your R scripts and other files. If the data is small enough (at your disgression what is small), it can be helpful to store the data in `/data/` folder in the project itself!
 
@@ -52,18 +52,18 @@ You can create and navigate folders in your RStudio project directly in RStudio!
 knitr::include_graphics("images/03_022_new_folder.png")
 ```
 
-### Scripts {-}
+#### Scripts {-}
 
 One of the best ways to manage scripts is tocreate scripts for different tasks: Break your project into separate scripts that perform different tasks, such as data cleaning, data analysis, and data visualization. This can make it easier to modify and update specific parts of your project without affecting other parts.
 
-### Results {-}
+#### Results {-}
 
 Like data, results may be best saved in a specific results folder. Keeping track of date and time of results can also be smart.
 
-#### Tables {-}
+##### Tables {-}
 
 Tables can be exported as .csv or other formats depending on your use case and stored in results. Always keep track of date and time the results were created. One issue that can arise is a new version of the result was created by a new process in the code but that is not indicated in the file name, so it is hard to be certain the results are the latest.
 
-#### Plots {-}
+##### Plots {-}
 
 Similar to tables, plot files could be stored in a sub folder.

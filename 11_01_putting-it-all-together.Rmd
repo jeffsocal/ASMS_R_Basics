@@ -26,10 +26,12 @@ This process of learning and application has underscored the importance of organ
 
 \
 
-## Your Objective {-}
+## Test Scenario 1
+
+### Proteomics Optimization {-}
 __The LCMS Proteomics lab manager is trying to determine the optimal conditions for yield and reproducibility.__
 
-### The Proteomic Data Set {-}
+### The Data Set {-}
 ```{r, eval=FALSE}
 url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/blob/main/data/HelaDilution_Skyline-MSstats_peptides.csv.zip"
 download.file(url, destfile = "./data/HelaDilution_Skyline-MSstats_peptides.csv.zip")
@@ -46,10 +48,51 @@ download.file(url, destfile = "./data/HelaDilution_Skyline-MSstats_peptides.csv.
 - Provide some basic summary accounting of the data.
 - Get into the analysis.
 
-### R Coding Tricks {-}
+## Test Scenario 2
 
-#### Tidy Columns {-}
+### Metabolomics Biomarker {-}
+__The Company has measured the quantitative abundance of several metabolites between healthy patients and patients with breast cancer. Your task is to determine if there are any potential biomarkers.__
+
+### The Data Set {-}
+```{r, eval=FALSE}
+url <- "https://www.metabolomicsworkbench.org/studydownload/ST000918_AN001504_Results.txt"
+download.file(url, destfile = "./data/ST000918_AN001504_Results.txt")
+```
+
+### Other Observations {-}
+- The data is in a matrix format and has been post processed to normalize and impute missing values. 
+- You will likely need to adjust for multiple hypothesis testing.
+
+### Plan Your Approach {-}
+- Create a new notebook.
+- Examine the data file. Tidy if necessary.
+- Provide some basic summary accounting of the data.
+- Get into the analysis.
+
+## Some Pro Coding Tricks
+
+### Tidy Columns {-}
 One way to avoid the backtick in referencing columns is to rename them with underscores for spaces.  
 ```{r, eval=FALSE}
-tbl <- tbl |> rename_all(function(x){tolower(x) |> str_replace_all("\\s+", "_")})
+tbl <- tbl |> 
+  # rename all the columns with a functing using the 'dplyr' and 'stringr' packages
+  rename_all(function(x){tolower(x) |> str_replace_all("\\s+", "_")})
+```
+
+### Nested Summary Stats {-}
+One way to compute a summary statistic inside a table is with nesting.  
+```{r, eval=FALSE}
+tbl <- tbl |>
+  # group by the column(s) that you want to summarize across
+  group_by(column) |>
+  # "nest" the remaining columns as a nested table, using the 'tidyr' package 
+  nest() |>
+  mutate(
+    # compute the summary stats using map from the `purrr` package
+    stats = data |> map(some_function),
+    # extract the summary stat values using the 'broom' package
+    stats = stats |> map(tidy)) |>
+  # unnest and ungroup
+  unnest(stats) |>
+  ungroup()
 ```

@@ -27,7 +27,7 @@ fig:7203
 fig:7204
 fig:7205
 fig:7206
-tab:unnamed-chunk-157
+tab:unnamed-chunk-167
 fig:9031
 fig:9032
 fig:9033
@@ -47,6 +47,17 @@ r-packages
 exploring
 installing
 for-this-book
+rstudio-basics
+r-vs-r-studo
+rstudio-basic-interactions
+other-areas
+hot-keys
+create-run-save-scripts
+running-code
+r-notebooks
+r-notebooks-vs-r-scripts
+r-notebooks-1
+r-scripts
 r-studio-projects
 creating
 organizing
@@ -71,6 +82,9 @@ matrix
 data-frame
 data-table
 tibbles
+managing-objects
+examine-the-contents
+converting-objects
 tidyverse-1
 core-packages
 magrittr
@@ -109,7 +123,7 @@ extended-syntax
 alternatives-1
 lattice
 plotly
-reproducibility-and-sharing
+sharing
 reproducibility-and-data-science-notebooks
 quarto
 yaml-headers
@@ -145,3 +159,6 @@ ms-empire
 msgrob2
 statspro
 putting-it-all-together
+test-scenario-1
+test-scenario-2
+some-pro-coding-tricks

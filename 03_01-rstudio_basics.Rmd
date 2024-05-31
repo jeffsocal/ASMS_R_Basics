@@ -196,9 +196,6 @@ Comments are added with at least 1 `#` before code like below.
 # comments go like this
 # do a basic addition
 2 + 2
-}
 ```
 
-## Where are we going???
 
-RStudio gives us a lot of tools to help beginners and experts develop better AND faster. Next we'll show you one of the best tools for beginners, **RStudio Projects**!

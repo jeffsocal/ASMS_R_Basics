@@ -6,16 +6,18 @@
 |                                 | - Create a new R script, add your name and date at the top as comments.     |
 +---------------------------------+-----------------------------------------------------------------------------+
 
-1. Read in the `bacterial-metabolites_dose-simicillin_tidy.csv` data set.
+0. Download the `bacterial-metabolites_dose-simicillin_tidy.csv` data set.
 
-```{r, echo = FALSE, message = FALSE}
-library(tidyverse)
-
+```{r, eval = FALSE}
 url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv"
 download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_tidy.csv")
-dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
 ```
 
+1. Read in the `bacterial-metabolites_dose-simicillin_tidy.csv` data set.
+```{r}
+library(tidyverse)
+dat <- read_csv("data/bacterial-metabolites_dose-simicillin_tidy.csv")
+```
 
 2. How many organisms, metabolites, dose levels, and time points are in the data? How many rows are in the data table? What is the overall study design?
 

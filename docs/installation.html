@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2024-05-30" />
+<meta name="date" content="2024-05-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="introduction-to-r.html"/>
-<link rel="next" href="r-studio-projects.html"/>
+<link rel="next" href="rstudio-basics.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -188,16 +188,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#ms-packages"><i class="fa fa-check"></i>MS Packages</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="r-studio-projects.html"><a href="r-studio-projects.html"><i class="fa fa-check"></i><b>3</b> R Studio Projects</a>
+<li class="chapter" data-level="3" data-path="rstudio-basics.html"><a href="rstudio-basics.html"><i class="fa fa-check"></i><b>3</b> RStudio Basics</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="r-studio-projects.html"><a href="r-studio-projects.html#creating"><i class="fa fa-check"></i><b>3.1</b> Creating</a></li>
-<li class="chapter" data-level="3.2" data-path="r-studio-projects.html"><a href="r-studio-projects.html#organizing"><i class="fa fa-check"></i><b>3.2</b> Organizing</a>
+<li class="chapter" data-level="3.1" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-vs-r-studo"><i class="fa fa-check"></i><b>3.1</b> R vs R Studo</a></li>
+<li class="chapter" data-level="3.2" data-path="rstudio-basics.html"><a href="rstudio-basics.html#rstudio-basic-interactions"><i class="fa fa-check"></i><b>3.2</b> RStudio Basic Interactions</a>
 <ul>
-<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#data"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#scripts"><i class="fa fa-check"></i>Scripts</a></li>
-<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#results"><i class="fa fa-check"></i>Results</a></li>
+<li class="chapter" data-level="3.2.1" data-path="rstudio-basics.html"><a href="rstudio-basics.html#other-areas"><i class="fa fa-check"></i><b>3.2.1</b> Other Areas</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="3.3" data-path="rstudio-basics.html"><a href="rstudio-basics.html#hot-keys"><i class="fa fa-check"></i><b>3.3</b> Hot Keys</a></li>
+<li class="chapter" data-level="3.4" data-path="rstudio-basics.html"><a href="rstudio-basics.html#create-run-save-scripts"><i class="fa fa-check"></i><b>3.4</b> Create, Run, Save Scripts</a></li>
+<li class="chapter" data-level="3.5" data-path="rstudio-basics.html"><a href="rstudio-basics.html#running-code"><i class="fa fa-check"></i><b>3.5</b> Running Code</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-notebooks"><i class="fa fa-check"></i><b>3.5.1</b> R Notebooks</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-notebooks-vs-r-scripts"><i class="fa fa-check"></i><b>3.6</b> R Notebooks vs R scripts</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-notebooks-1"><i class="fa fa-check"></i><b>3.6.1</b> R Notebooks</a></li>
+<li class="chapter" data-level="3.6.2" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-scripts"><i class="fa fa-check"></i><b>3.6.2</b> R Scripts</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-studio-projects"><i class="fa fa-check"></i><b>3.7</b> R Studio Projects</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="rstudio-basics.html"><a href="rstudio-basics.html#creating"><i class="fa fa-check"></i><b>3.7.1</b> Creating</a></li>
+<li class="chapter" data-level="3.7.2" data-path="rstudio-basics.html"><a href="rstudio-basics.html#organizing"><i class="fa fa-check"></i><b>3.7.2</b> Organizing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="rstudio-basics.html"><a href="rstudio-basics.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="r-syntax.html"><a href="r-syntax.html"><i class="fa fa-check"></i><b>4</b> R Syntax</a>
 <ul>
@@ -228,8 +242,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.5" data-path="r-objects.html"><a href="r-objects.html#data-frame"><i class="fa fa-check"></i><b>5.5</b> Data Frame</a></li>
 <li class="chapter" data-level="5.6" data-path="r-objects.html"><a href="r-objects.html#data-table"><i class="fa fa-check"></i><b>5.6</b> Data Table</a></li>
 <li class="chapter" data-level="5.7" data-path="r-objects.html"><a href="r-objects.html#tibbles"><i class="fa fa-check"></i><b>5.7</b> Tibbles</a></li>
-<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#examine-the-contents"><i class="fa fa-check"></i>Examine the Contents</a></li>
-<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#converting-objects"><i class="fa fa-check"></i>Converting Objects</a></li>
+<li class="chapter" data-level="5.8" data-path="r-objects.html"><a href="r-objects.html#managing-objects"><i class="fa fa-check"></i><b>5.8</b> Managing Objects</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="r-objects.html"><a href="r-objects.html#examine-the-contents"><i class="fa fa-check"></i><b>5.8.1</b> Examine the Contents</a></li>
+<li class="chapter" data-level="5.8.2" data-path="r-objects.html"><a href="r-objects.html#converting-objects"><i class="fa fa-check"></i><b>5.8.2</b> Converting Objects</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#more-exercises"><i class="fa fa-check"></i>More Exercises</a></li>
 </ul></li>
@@ -305,40 +322,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#exercises-5"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html"><i class="fa fa-check"></i><b>9</b> Reproducibility and Sharing</a>
+<li class="chapter" data-level="9" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>9</b> Sharing</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#reproducibility-and-data-science-notebooks"><i class="fa fa-check"></i><b>9.1</b> Reproducibility and Data Science Notebooks</a></li>
-<li class="chapter" data-level="9.2" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#quarto"><i class="fa fa-check"></i><b>9.2</b> Quarto</a>
+<li class="chapter" data-level="9.1" data-path="sharing.html"><a href="sharing.html#reproducibility-and-data-science-notebooks"><i class="fa fa-check"></i><b>9.1</b> Reproducibility and Data Science Notebooks</a></li>
+<li class="chapter" data-level="9.2" data-path="sharing.html"><a href="sharing.html#quarto"><i class="fa fa-check"></i><b>9.2</b> Quarto</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#yaml-headers"><i class="fa fa-check"></i><b>9.2.1</b> YAML Headers</a></li>
-<li class="chapter" data-level="9.2.2" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#text-blocks"><i class="fa fa-check"></i><b>9.2.2</b> Text Blocks</a></li>
-<li class="chapter" data-level="9.2.3" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#code-blocks"><i class="fa fa-check"></i><b>9.2.3</b> Code Blocks</a></li>
-<li class="chapter" data-level="9.2.4" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#rendering"><i class="fa fa-check"></i><b>9.2.4</b> Rendering</a></li>
+<li class="chapter" data-level="9.2.1" data-path="sharing.html"><a href="sharing.html#yaml-headers"><i class="fa fa-check"></i><b>9.2.1</b> YAML Headers</a></li>
+<li class="chapter" data-level="9.2.2" data-path="sharing.html"><a href="sharing.html#text-blocks"><i class="fa fa-check"></i><b>9.2.2</b> Text Blocks</a></li>
+<li class="chapter" data-level="9.2.3" data-path="sharing.html"><a href="sharing.html#code-blocks"><i class="fa fa-check"></i><b>9.2.3</b> Code Blocks</a></li>
+<li class="chapter" data-level="9.2.4" data-path="sharing.html"><a href="sharing.html#rendering"><i class="fa fa-check"></i><b>9.2.4</b> Rendering</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#packrat"><i class="fa fa-check"></i><b>9.3</b> Packrat</a>
+<li class="chapter" data-level="9.3" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>9.3</b> Packrat</a>
 <ul>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#initiating"><i class="fa fa-check"></i>Initiating</a></li>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#installing-1"><i class="fa fa-check"></i>Installing</a></li>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#loading"><i class="fa fa-check"></i>Loading</a></li>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#updating"><i class="fa fa-check"></i>Updating</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#initiating"><i class="fa fa-check"></i>Initiating</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#installing-1"><i class="fa fa-check"></i>Installing</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#loading"><i class="fa fa-check"></i>Loading</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#updating"><i class="fa fa-check"></i>Updating</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#github-1"><i class="fa fa-check"></i><b>9.4</b> GitHub</a>
+<li class="chapter" data-level="9.4" data-path="sharing.html"><a href="sharing.html#github-1"><i class="fa fa-check"></i><b>9.4</b> GitHub</a>
 <ul>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#sharing"><i class="fa fa-check"></i>Sharing</a></li>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#sharing-1"><i class="fa fa-check"></i>Sharing</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-1"><i class="fa fa-check"></i>Sharing</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-2"><i class="fa fa-check"></i>Sharing</a></li>
 </ul></li>
-<li class="chapter" data-level="9.5" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#docker"><i class="fa fa-check"></i><b>9.5</b> Docker</a></li>
-<li class="chapter" data-level="9.6" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#r-packages-1"><i class="fa fa-check"></i><b>9.6</b> R Packages</a>
+<li class="chapter" data-level="9.5" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>9.5</b> Docker</a></li>
+<li class="chapter" data-level="9.6" data-path="sharing.html"><a href="sharing.html#r-packages-1"><i class="fa fa-check"></i><b>9.6</b> R Packages</a>
 <ul>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#creating-1"><i class="fa fa-check"></i>Creating</a></li>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#using"><i class="fa fa-check"></i>Using</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-1"><i class="fa fa-check"></i>Creating</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using"><i class="fa fa-check"></i>Using</a></li>
 </ul></li>
-<li class="chapter" data-level="9.7" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>9.7</b> R Shiny Applications</a>
+<li class="chapter" data-level="9.7" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>9.7</b> R Shiny Applications</a>
 <ul>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#creating-2"><i class="fa fa-check"></i>Creating</a></li>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#example"><i class="fa fa-check"></i>Example</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-2"><i class="fa fa-check"></i>Creating</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#example"><i class="fa fa-check"></i>Example</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#exercises-6"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#exercises-6"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html"><i class="fa fa-check"></i><b>10</b> Mass Spectrometry</a>
 <ul>
@@ -381,12 +398,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html"><i class="fa fa-check"></i><b>11</b> Putting It All Together</a>
 <ul>
-<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#your-objective"><i class="fa fa-check"></i>Your Objective</a>
+<li class="chapter" data-level="11.1" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#test-scenario-1"><i class="fa fa-check"></i><b>11.1</b> Test Scenario 1</a>
 <ul>
-<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#the-proteomic-data-set"><i class="fa fa-check"></i>The Proteomic Data Set</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#proteomics-optimization"><i class="fa fa-check"></i>Proteomics Optimization</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#the-data-set"><i class="fa fa-check"></i>The Data Set</a></li>
 <li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#other-observations"><i class="fa fa-check"></i>Other Observations</a></li>
 <li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#plan-your-approach"><i class="fa fa-check"></i>Plan Your Approach</a></li>
-<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#code-tips"><i class="fa fa-check"></i>Code Tips</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#test-scenario-2"><i class="fa fa-check"></i><b>11.2</b> Test Scenario 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#metabolomics-biomarker"><i class="fa fa-check"></i>Metabolomics Biomarker</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#the-data-set-1"><i class="fa fa-check"></i>The Data Set</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#other-observations-1"><i class="fa fa-check"></i>Other Observations</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#plan-your-approach-1"><i class="fa fa-check"></i>Plan Your Approach</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#some-pro-coding-tricks"><i class="fa fa-check"></i><b>11.3</b> Some Pro Coding Tricks</a>
+<ul>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#tidy-columns"><i class="fa fa-check"></i>Tidy Columns</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#nested-summary-stats"><i class="fa fa-check"></i>Nested Summary Stats</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html"><i class="fa fa-check"></i>Answers to Exercises</a>
@@ -726,20 +755,20 @@ Figure 2.10: RStudio IDE environment window
 <h3>tidyverse<a href="installation.html#tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The Tidyverse R package is a collection of data manipulation and visualization packages for the R programming language. It includes popular packages such as dplyr, ggplot2, and tidyr, among others. The Tidyverse R package is a powerful and versatile tool for data analysis in R. It includes a collection of data manipulation and visualization packages designed to work seamlessly together, making it easy to analyze and visualize data in R. This package is cover in more detail in <a href="tidyverse-1.html#tidyverse-1">6</a> Tidyverse, and <a href="data-visualization.html#ggplot2-1">8.2</a> GGplot2.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="installation.html#cb4-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-<pre><code>## ── Attaching core tidyverse packages ─────────────────────────────────────────────────────────────────── tidyverse 2.0.0 ──
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────────────────────────────────────────────────────────────────────── tidyverse 2.0.0 ──
 ## ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ## ✔ forcats   1.0.0     ✔ stringr   1.5.1
 ## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
 ## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
 ## ✔ purrr     1.0.2     
-## ── Conflicts ───────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## ── Conflicts ────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
 ## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 <p>The <strong>readr</strong> package provides a versatile means of reading data from various formats, such as comma-separated (CSV) and tab-separated (TSV) delimitated flat files. In addition to its versatility, the <strong>readr</strong> package is also known for its speed and efficiency. It is designed to be faster than the base R functions for reading in data, making it an ideal choice for working with large datasets.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="installation.html#cb6-1" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="st">&quot;./data/table_peptide_fragmnets.csv&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_csv</span>()</span></code></pre></div>
 <pre><code>## Rows: 14 Columns: 7
-## ── Column specification ───────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (4): ion, seq, pair, type
 ## dbl (3): mz, z, pos
@@ -816,7 +845,7 @@ Figure 2.10: RStudio IDE environment window
         </div>
       </div>
 <a href="introduction-to-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="r-studio-projects.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="rstudio-basics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

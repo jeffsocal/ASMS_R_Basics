@@ -23,14 +23,14 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2024-05-30" />
+<meta name="date" content="2024-05-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="reproducibility-and-sharing.html"/>
+<link rel="prev" href="sharing.html"/>
 <link rel="next" href="putting-it-all-together.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -188,16 +188,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#ms-packages"><i class="fa fa-check"></i>MS Packages</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="r-studio-projects.html"><a href="r-studio-projects.html"><i class="fa fa-check"></i><b>3</b> R Studio Projects</a>
+<li class="chapter" data-level="3" data-path="rstudio-basics.html"><a href="rstudio-basics.html"><i class="fa fa-check"></i><b>3</b> RStudio Basics</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="r-studio-projects.html"><a href="r-studio-projects.html#creating"><i class="fa fa-check"></i><b>3.1</b> Creating</a></li>
-<li class="chapter" data-level="3.2" data-path="r-studio-projects.html"><a href="r-studio-projects.html#organizing"><i class="fa fa-check"></i><b>3.2</b> Organizing</a>
+<li class="chapter" data-level="3.1" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-vs-r-studo"><i class="fa fa-check"></i><b>3.1</b> R vs R Studo</a></li>
+<li class="chapter" data-level="3.2" data-path="rstudio-basics.html"><a href="rstudio-basics.html#rstudio-basic-interactions"><i class="fa fa-check"></i><b>3.2</b> RStudio Basic Interactions</a>
 <ul>
-<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#data"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#scripts"><i class="fa fa-check"></i>Scripts</a></li>
-<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#results"><i class="fa fa-check"></i>Results</a></li>
+<li class="chapter" data-level="3.2.1" data-path="rstudio-basics.html"><a href="rstudio-basics.html#other-areas"><i class="fa fa-check"></i><b>3.2.1</b> Other Areas</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="r-studio-projects.html"><a href="r-studio-projects.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="3.3" data-path="rstudio-basics.html"><a href="rstudio-basics.html#hot-keys"><i class="fa fa-check"></i><b>3.3</b> Hot Keys</a></li>
+<li class="chapter" data-level="3.4" data-path="rstudio-basics.html"><a href="rstudio-basics.html#create-run-save-scripts"><i class="fa fa-check"></i><b>3.4</b> Create, Run, Save Scripts</a></li>
+<li class="chapter" data-level="3.5" data-path="rstudio-basics.html"><a href="rstudio-basics.html#running-code"><i class="fa fa-check"></i><b>3.5</b> Running Code</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-notebooks"><i class="fa fa-check"></i><b>3.5.1</b> R Notebooks</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-notebooks-vs-r-scripts"><i class="fa fa-check"></i><b>3.6</b> R Notebooks vs R scripts</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-notebooks-1"><i class="fa fa-check"></i><b>3.6.1</b> R Notebooks</a></li>
+<li class="chapter" data-level="3.6.2" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-scripts"><i class="fa fa-check"></i><b>3.6.2</b> R Scripts</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-studio-projects"><i class="fa fa-check"></i><b>3.7</b> R Studio Projects</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="rstudio-basics.html"><a href="rstudio-basics.html#creating"><i class="fa fa-check"></i><b>3.7.1</b> Creating</a></li>
+<li class="chapter" data-level="3.7.2" data-path="rstudio-basics.html"><a href="rstudio-basics.html#organizing"><i class="fa fa-check"></i><b>3.7.2</b> Organizing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="rstudio-basics.html"><a href="rstudio-basics.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="r-syntax.html"><a href="r-syntax.html"><i class="fa fa-check"></i><b>4</b> R Syntax</a>
 <ul>
@@ -228,8 +242,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.5" data-path="r-objects.html"><a href="r-objects.html#data-frame"><i class="fa fa-check"></i><b>5.5</b> Data Frame</a></li>
 <li class="chapter" data-level="5.6" data-path="r-objects.html"><a href="r-objects.html#data-table"><i class="fa fa-check"></i><b>5.6</b> Data Table</a></li>
 <li class="chapter" data-level="5.7" data-path="r-objects.html"><a href="r-objects.html#tibbles"><i class="fa fa-check"></i><b>5.7</b> Tibbles</a></li>
-<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#examine-the-contents"><i class="fa fa-check"></i>Examine the Contents</a></li>
-<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#converting-objects"><i class="fa fa-check"></i>Converting Objects</a></li>
+<li class="chapter" data-level="5.8" data-path="r-objects.html"><a href="r-objects.html#managing-objects"><i class="fa fa-check"></i><b>5.8</b> Managing Objects</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="r-objects.html"><a href="r-objects.html#examine-the-contents"><i class="fa fa-check"></i><b>5.8.1</b> Examine the Contents</a></li>
+<li class="chapter" data-level="5.8.2" data-path="r-objects.html"><a href="r-objects.html#converting-objects"><i class="fa fa-check"></i><b>5.8.2</b> Converting Objects</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#more-exercises"><i class="fa fa-check"></i>More Exercises</a></li>
 </ul></li>
@@ -305,40 +322,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#exercises-5"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html"><i class="fa fa-check"></i><b>9</b> Reproducibility and Sharing</a>
+<li class="chapter" data-level="9" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>9</b> Sharing</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#reproducibility-and-data-science-notebooks"><i class="fa fa-check"></i><b>9.1</b> Reproducibility and Data Science Notebooks</a></li>
-<li class="chapter" data-level="9.2" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#quarto"><i class="fa fa-check"></i><b>9.2</b> Quarto</a>
+<li class="chapter" data-level="9.1" data-path="sharing.html"><a href="sharing.html#reproducibility-and-data-science-notebooks"><i class="fa fa-check"></i><b>9.1</b> Reproducibility and Data Science Notebooks</a></li>
+<li class="chapter" data-level="9.2" data-path="sharing.html"><a href="sharing.html#quarto"><i class="fa fa-check"></i><b>9.2</b> Quarto</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#yaml-headers"><i class="fa fa-check"></i><b>9.2.1</b> YAML Headers</a></li>
-<li class="chapter" data-level="9.2.2" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#text-blocks"><i class="fa fa-check"></i><b>9.2.2</b> Text Blocks</a></li>
-<li class="chapter" data-level="9.2.3" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#code-blocks"><i class="fa fa-check"></i><b>9.2.3</b> Code Blocks</a></li>
-<li class="chapter" data-level="9.2.4" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#rendering"><i class="fa fa-check"></i><b>9.2.4</b> Rendering</a></li>
+<li class="chapter" data-level="9.2.1" data-path="sharing.html"><a href="sharing.html#yaml-headers"><i class="fa fa-check"></i><b>9.2.1</b> YAML Headers</a></li>
+<li class="chapter" data-level="9.2.2" data-path="sharing.html"><a href="sharing.html#text-blocks"><i class="fa fa-check"></i><b>9.2.2</b> Text Blocks</a></li>
+<li class="chapter" data-level="9.2.3" data-path="sharing.html"><a href="sharing.html#code-blocks"><i class="fa fa-check"></i><b>9.2.3</b> Code Blocks</a></li>
+<li class="chapter" data-level="9.2.4" data-path="sharing.html"><a href="sharing.html#rendering"><i class="fa fa-check"></i><b>9.2.4</b> Rendering</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#packrat"><i class="fa fa-check"></i><b>9.3</b> Packrat</a>
+<li class="chapter" data-level="9.3" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>9.3</b> Packrat</a>
 <ul>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#initiating"><i class="fa fa-check"></i>Initiating</a></li>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#installing-1"><i class="fa fa-check"></i>Installing</a></li>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#loading"><i class="fa fa-check"></i>Loading</a></li>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#updating"><i class="fa fa-check"></i>Updating</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#initiating"><i class="fa fa-check"></i>Initiating</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#installing-1"><i class="fa fa-check"></i>Installing</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#loading"><i class="fa fa-check"></i>Loading</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#updating"><i class="fa fa-check"></i>Updating</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#github-1"><i class="fa fa-check"></i><b>9.4</b> GitHub</a>
+<li class="chapter" data-level="9.4" data-path="sharing.html"><a href="sharing.html#github-1"><i class="fa fa-check"></i><b>9.4</b> GitHub</a>
 <ul>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#sharing"><i class="fa fa-check"></i>Sharing</a></li>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#sharing-1"><i class="fa fa-check"></i>Sharing</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-1"><i class="fa fa-check"></i>Sharing</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-2"><i class="fa fa-check"></i>Sharing</a></li>
 </ul></li>
-<li class="chapter" data-level="9.5" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#docker"><i class="fa fa-check"></i><b>9.5</b> Docker</a></li>
-<li class="chapter" data-level="9.6" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#r-packages-1"><i class="fa fa-check"></i><b>9.6</b> R Packages</a>
+<li class="chapter" data-level="9.5" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>9.5</b> Docker</a></li>
+<li class="chapter" data-level="9.6" data-path="sharing.html"><a href="sharing.html#r-packages-1"><i class="fa fa-check"></i><b>9.6</b> R Packages</a>
 <ul>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#creating-1"><i class="fa fa-check"></i>Creating</a></li>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#using"><i class="fa fa-check"></i>Using</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-1"><i class="fa fa-check"></i>Creating</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using"><i class="fa fa-check"></i>Using</a></li>
 </ul></li>
-<li class="chapter" data-level="9.7" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>9.7</b> R Shiny Applications</a>
+<li class="chapter" data-level="9.7" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>9.7</b> R Shiny Applications</a>
 <ul>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#creating-2"><i class="fa fa-check"></i>Creating</a></li>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#example"><i class="fa fa-check"></i>Example</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-2"><i class="fa fa-check"></i>Creating</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#example"><i class="fa fa-check"></i>Example</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="reproducibility-and-sharing.html"><a href="reproducibility-and-sharing.html#exercises-6"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#exercises-6"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html"><i class="fa fa-check"></i><b>10</b> Mass Spectrometry</a>
 <ul>
@@ -381,12 +398,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html"><i class="fa fa-check"></i><b>11</b> Putting It All Together</a>
 <ul>
-<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#your-objective"><i class="fa fa-check"></i>Your Objective</a>
+<li class="chapter" data-level="11.1" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#test-scenario-1"><i class="fa fa-check"></i><b>11.1</b> Test Scenario 1</a>
 <ul>
-<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#the-proteomic-data-set"><i class="fa fa-check"></i>The Proteomic Data Set</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#proteomics-optimization"><i class="fa fa-check"></i>Proteomics Optimization</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#the-data-set"><i class="fa fa-check"></i>The Data Set</a></li>
 <li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#other-observations"><i class="fa fa-check"></i>Other Observations</a></li>
 <li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#plan-your-approach"><i class="fa fa-check"></i>Plan Your Approach</a></li>
-<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#code-tips"><i class="fa fa-check"></i>Code Tips</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#test-scenario-2"><i class="fa fa-check"></i><b>11.2</b> Test Scenario 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#metabolomics-biomarker"><i class="fa fa-check"></i>Metabolomics Biomarker</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#the-data-set-1"><i class="fa fa-check"></i>The Data Set</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#other-observations-1"><i class="fa fa-check"></i>Other Observations</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#plan-your-approach-1"><i class="fa fa-check"></i>Plan Your Approach</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#some-pro-coding-tricks"><i class="fa fa-check"></i><b>11.3</b> Some Pro Coding Tricks</a>
+<ul>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#tidy-columns"><i class="fa fa-check"></i>Tidy Columns</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#nested-summary-stats"><i class="fa fa-check"></i>Nested Summary Stats</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html"><i class="fa fa-check"></i>Answers to Exercises</a>
@@ -602,37 +631,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 <div id="installation-1" class="section level4 unnumbered hasAnchor">
 <h4>Installation<a href="mass-spectrometry.html#installation-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="mass-spectrometry.html#cb322-1" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">&quot;BRAIN&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="mass-spectrometry.html#cb312-1" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">&quot;BRAIN&quot;</span>)</span></code></pre></div>
 </div>
 <div id="useage" class="section level4 unnumbered hasAnchor">
 <h4>Useage<a href="mass-spectrometry.html#useage" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="mass-spectrometry.html#cb323-1" tabindex="-1"></a><span class="fu">library</span>(BRAIN)</span>
-<span id="cb323-2"><a href="mass-spectrometry.html#cb323-2" tabindex="-1"></a></span>
-<span id="cb323-3"><a href="mass-spectrometry.html#cb323-3" tabindex="-1"></a><span class="co"># Human insulin amino acid sequence</span></span>
-<span id="cb323-4"><a href="mass-spectrometry.html#cb323-4" tabindex="-1"></a>str_seq <span class="ot">&lt;-</span> <span class="st">&quot;MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN&quot;</span></span>
-<span id="cb323-5"><a href="mass-spectrometry.html#cb323-5" tabindex="-1"></a></span>
-<span id="cb323-6"><a href="mass-spectrometry.html#cb323-6" tabindex="-1"></a><span class="co"># get a list-object of atoms</span></span>
-<span id="cb323-7"><a href="mass-spectrometry.html#cb323-7" tabindex="-1"></a>lst_atm <span class="ot">&lt;-</span> <span class="fu">getAtomsFromSeq</span>(str_seq) </span></code></pre></div>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="mass-spectrometry.html#cb313-1" tabindex="-1"></a><span class="fu">library</span>(BRAIN)</span>
+<span id="cb313-2"><a href="mass-spectrometry.html#cb313-2" tabindex="-1"></a></span>
+<span id="cb313-3"><a href="mass-spectrometry.html#cb313-3" tabindex="-1"></a><span class="co"># Human insulin amino acid sequence</span></span>
+<span id="cb313-4"><a href="mass-spectrometry.html#cb313-4" tabindex="-1"></a>str_seq <span class="ot">&lt;-</span> <span class="st">&quot;MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN&quot;</span></span>
+<span id="cb313-5"><a href="mass-spectrometry.html#cb313-5" tabindex="-1"></a></span>
+<span id="cb313-6"><a href="mass-spectrometry.html#cb313-6" tabindex="-1"></a><span class="co"># get a list-object of atoms</span></span>
+<span id="cb313-7"><a href="mass-spectrometry.html#cb313-7" tabindex="-1"></a>lst_atm <span class="ot">&lt;-</span> <span class="fu">getAtomsFromSeq</span>(str_seq) </span></code></pre></div>
 <p>Calculate the average mass.</p>
-<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="mass-spectrometry.html#cb324-1" tabindex="-1"></a><span class="fu">calculateAverageMass</span>(lst_atm)</span></code></pre></div>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="mass-spectrometry.html#cb314-1" tabindex="-1"></a><span class="fu">calculateAverageMass</span>(lst_atm)</span></code></pre></div>
 <pre><code>## [1] 11980.82</code></pre>
 <p>Calculate the monoisotopic mass.</p>
-<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="mass-spectrometry.html#cb326-1" tabindex="-1"></a><span class="fu">calculateMonoisotopicMass</span>(lst_atm)</span></code></pre></div>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="mass-spectrometry.html#cb316-1" tabindex="-1"></a><span class="fu">calculateMonoisotopicMass</span>(lst_atm)</span></code></pre></div>
 <pre><code>## [1] 11973.02</code></pre>
 <p>Calculate the isotopic abundances (probabilities) mass.</p>
-<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="mass-spectrometry.html#cb328-1" tabindex="-1"></a>lst_isotopes <span class="ot">&lt;-</span> <span class="fu">useBRAIN</span>(lst_atm, <span class="at">nrPeaks =</span> <span class="dv">20</span>)</span>
-<span id="cb328-2"><a href="mass-spectrometry.html#cb328-2" tabindex="-1"></a></span>
-<span id="cb328-3"><a href="mass-spectrometry.html#cb328-3" tabindex="-1"></a><span class="fu">plot</span>(lst_isotopes<span class="sc">$</span>masses, lst_isotopes<span class="sc">$</span>isoDistr, <span class="at">xlab=</span><span class="st">&#39;Mass&#39;</span>, <span class="at">ylab=</span><span class="st">&#39;Probability&#39;</span>, <span class="at">type =</span> <span class="st">&#39;h&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-226-1.png" width="576" style="display: block; margin: auto;" />
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="mass-spectrometry.html#cb318-1" tabindex="-1"></a>lst_isotopes <span class="ot">&lt;-</span> <span class="fu">useBRAIN</span>(lst_atm, <span class="at">nrPeaks =</span> <span class="dv">20</span>)</span>
+<span id="cb318-2"><a href="mass-spectrometry.html#cb318-2" tabindex="-1"></a></span>
+<span id="cb318-3"><a href="mass-spectrometry.html#cb318-3" tabindex="-1"></a><span class="fu">plot</span>(lst_isotopes<span class="sc">$</span>masses, lst_isotopes<span class="sc">$</span>isoDistr, <span class="at">xlab=</span><span class="st">&#39;Mass&#39;</span>, <span class="at">ylab=</span><span class="st">&#39;Probability&#39;</span>, <span class="at">type =</span> <span class="st">&#39;h&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-236-1.png" width="576" style="display: block; margin: auto;" />
 Calculate the isotopic abundances (probabilities) mass for a metabolite [C100H200S2Cl5].</p>
-<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="mass-spectrometry.html#cb329-1" tabindex="-1"></a>lst_atm <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">C=</span><span class="dv">100</span>, <span class="at">H=</span><span class="dv">200</span>, <span class="at">S=</span><span class="dv">2</span>, <span class="at">Cl=</span><span class="dv">5</span>)</span>
-<span id="cb329-2"><a href="mass-spectrometry.html#cb329-2" tabindex="-1"></a></span>
-<span id="cb329-3"><a href="mass-spectrometry.html#cb329-3" tabindex="-1"></a>lst_isotopes <span class="ot">&lt;-</span> <span class="fu">useBRAIN</span>(lst_atm, <span class="at">nrPeaks =</span> <span class="dv">13</span>)</span>
-<span id="cb329-4"><a href="mass-spectrometry.html#cb329-4" tabindex="-1"></a></span>
-<span id="cb329-5"><a href="mass-spectrometry.html#cb329-5" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> lst_isotopes<span class="sc">$</span>masses, </span>
-<span id="cb329-6"><a href="mass-spectrometry.html#cb329-6" tabindex="-1"></a>     <span class="at">y =</span> lst_isotopes<span class="sc">$</span>isoDistr <span class="sc">/</span> <span class="fu">max</span>(lst_isotopes<span class="sc">$</span>isoDistr) <span class="sc">*</span> <span class="dv">100</span>, </span>
-<span id="cb329-7"><a href="mass-spectrometry.html#cb329-7" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&#39;Mass&#39;</span>, <span class="at">ylab=</span><span class="st">&#39;Relative abundance&#39;</span>, <span class="at">type =</span> <span class="st">&#39;h&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-227-1.png" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="mass-spectrometry.html#cb319-1" tabindex="-1"></a>lst_atm <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">C=</span><span class="dv">100</span>, <span class="at">H=</span><span class="dv">200</span>, <span class="at">S=</span><span class="dv">2</span>, <span class="at">Cl=</span><span class="dv">5</span>)</span>
+<span id="cb319-2"><a href="mass-spectrometry.html#cb319-2" tabindex="-1"></a></span>
+<span id="cb319-3"><a href="mass-spectrometry.html#cb319-3" tabindex="-1"></a>lst_isotopes <span class="ot">&lt;-</span> <span class="fu">useBRAIN</span>(lst_atm, <span class="at">nrPeaks =</span> <span class="dv">13</span>)</span>
+<span id="cb319-4"><a href="mass-spectrometry.html#cb319-4" tabindex="-1"></a></span>
+<span id="cb319-5"><a href="mass-spectrometry.html#cb319-5" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> lst_isotopes<span class="sc">$</span>masses, </span>
+<span id="cb319-6"><a href="mass-spectrometry.html#cb319-6" tabindex="-1"></a>     <span class="at">y =</span> lst_isotopes<span class="sc">$</span>isoDistr <span class="sc">/</span> <span class="fu">max</span>(lst_isotopes<span class="sc">$</span>isoDistr) <span class="sc">*</span> <span class="dv">100</span>, </span>
+<span id="cb319-7"><a href="mass-spectrometry.html#cb319-7" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&#39;Mass&#39;</span>, <span class="at">ylab=</span><span class="st">&#39;Relative abundance&#39;</span>, <span class="at">type =</span> <span class="st">&#39;h&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-237-1.png" width="576" style="display: block; margin: auto;" /></p>
 <hr />
 
 </div>
@@ -660,24 +689,24 @@ Calculate the isotopic abundances (probabilities) mass for a metabolite [C100H20
 </p>
 <div id="installation-2" class="section level4 unnumbered hasAnchor">
 <h4>Installation<a href="mass-spectrometry.html#installation-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="mass-spectrometry.html#cb330-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;enviPat&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="mass-spectrometry.html#cb320-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;enviPat&quot;</span>)</span></code></pre></div>
 </div>
 <div id="use" class="section level4 unnumbered hasAnchor">
 <h4>Use<a href="mass-spectrometry.html#use" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="mass-spectrometry.html#cb331-1" tabindex="-1"></a><span class="fu">library</span>(enviPat)</span>
-<span id="cb331-2"><a href="mass-spectrometry.html#cb331-2" tabindex="-1"></a></span>
-<span id="cb331-3"><a href="mass-spectrometry.html#cb331-3" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;isotopes&quot;</span>)</span>
-<span id="cb331-4"><a href="mass-spectrometry.html#cb331-4" tabindex="-1"></a></span>
-<span id="cb331-5"><a href="mass-spectrometry.html#cb331-5" tabindex="-1"></a>pattern <span class="ot">&lt;-</span> <span class="fu">isopattern</span>(</span>
-<span id="cb331-6"><a href="mass-spectrometry.html#cb331-6" tabindex="-1"></a>  isotopes,</span>
-<span id="cb331-7"><a href="mass-spectrometry.html#cb331-7" tabindex="-1"></a>  <span class="st">&quot;C100H200S2Cl5&quot;</span>,</span>
-<span id="cb331-8"><a href="mass-spectrometry.html#cb331-8" tabindex="-1"></a>  <span class="at">threshold=</span><span class="fl">0.1</span>,</span>
-<span id="cb331-9"><a href="mass-spectrometry.html#cb331-9" tabindex="-1"></a>  <span class="at">plotit=</span><span class="cn">TRUE</span>,</span>
-<span id="cb331-10"><a href="mass-spectrometry.html#cb331-10" tabindex="-1"></a>  <span class="at">charge=</span><span class="cn">FALSE</span>,</span>
-<span id="cb331-11"><a href="mass-spectrometry.html#cb331-11" tabindex="-1"></a>  <span class="at">emass=</span><span class="fl">0.00054858</span>,</span>
-<span id="cb331-12"><a href="mass-spectrometry.html#cb331-12" tabindex="-1"></a>  <span class="at">algo=</span><span class="dv">1</span></span>
-<span id="cb331-13"><a href="mass-spectrometry.html#cb331-13" tabindex="-1"></a>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-229-1.png" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="mass-spectrometry.html#cb321-1" tabindex="-1"></a><span class="fu">library</span>(enviPat)</span>
+<span id="cb321-2"><a href="mass-spectrometry.html#cb321-2" tabindex="-1"></a></span>
+<span id="cb321-3"><a href="mass-spectrometry.html#cb321-3" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;isotopes&quot;</span>)</span>
+<span id="cb321-4"><a href="mass-spectrometry.html#cb321-4" tabindex="-1"></a></span>
+<span id="cb321-5"><a href="mass-spectrometry.html#cb321-5" tabindex="-1"></a>pattern <span class="ot">&lt;-</span> <span class="fu">isopattern</span>(</span>
+<span id="cb321-6"><a href="mass-spectrometry.html#cb321-6" tabindex="-1"></a>  isotopes,</span>
+<span id="cb321-7"><a href="mass-spectrometry.html#cb321-7" tabindex="-1"></a>  <span class="st">&quot;C100H200S2Cl5&quot;</span>,</span>
+<span id="cb321-8"><a href="mass-spectrometry.html#cb321-8" tabindex="-1"></a>  <span class="at">threshold=</span><span class="fl">0.1</span>,</span>
+<span id="cb321-9"><a href="mass-spectrometry.html#cb321-9" tabindex="-1"></a>  <span class="at">plotit=</span><span class="cn">TRUE</span>,</span>
+<span id="cb321-10"><a href="mass-spectrometry.html#cb321-10" tabindex="-1"></a>  <span class="at">charge=</span><span class="cn">FALSE</span>,</span>
+<span id="cb321-11"><a href="mass-spectrometry.html#cb321-11" tabindex="-1"></a>  <span class="at">emass=</span><span class="fl">0.00054858</span>,</span>
+<span id="cb321-12"><a href="mass-spectrometry.html#cb321-12" tabindex="-1"></a>  <span class="at">algo=</span><span class="dv">1</span></span>
+<span id="cb321-13"><a href="mass-spectrometry.html#cb321-13" tabindex="-1"></a>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-239-1.png" width="576" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
@@ -790,24 +819,24 @@ Calculate the isotopic abundances (probabilities) mass for a metabolite [C100H20
 <p><br />
 </p>
 <p>Read in an <a href="mass-spectrometry.html#mzml">10.2.3</a> mzML converted LCMS data file and check its contents.</p>
-<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="mass-spectrometry.html#cb332-1" tabindex="-1"></a><span class="co"># download the file</span></span>
-<span id="cb332-2"><a href="mass-spectrometry.html#cb332-2" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/small.mzML&quot;</span></span>
-<span id="cb332-3"><a href="mass-spectrometry.html#cb332-3" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/small.mzML&quot;</span>)</span>
-<span id="cb332-4"><a href="mass-spectrometry.html#cb332-4" tabindex="-1"></a></span>
-<span id="cb332-5"><a href="mass-spectrometry.html#cb332-5" tabindex="-1"></a><span class="fu">library</span>(mzR)</span>
-<span id="cb332-6"><a href="mass-spectrometry.html#cb332-6" tabindex="-1"></a></span>
-<span id="cb332-7"><a href="mass-spectrometry.html#cb332-7" tabindex="-1"></a>ms_dat <span class="ot">&lt;-</span> <span class="fu">openMSfile</span>(<span class="st">&quot;./data/small.mzML&quot;</span>)</span>
-<span id="cb332-8"><a href="mass-spectrometry.html#cb332-8" tabindex="-1"></a></span>
-<span id="cb332-9"><a href="mass-spectrometry.html#cb332-9" tabindex="-1"></a>ms_dat</span></code></pre></div>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="mass-spectrometry.html#cb322-1" tabindex="-1"></a><span class="co"># download the file</span></span>
+<span id="cb322-2"><a href="mass-spectrometry.html#cb322-2" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/small.mzML&quot;</span></span>
+<span id="cb322-3"><a href="mass-spectrometry.html#cb322-3" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/small.mzML&quot;</span>)</span>
+<span id="cb322-4"><a href="mass-spectrometry.html#cb322-4" tabindex="-1"></a></span>
+<span id="cb322-5"><a href="mass-spectrometry.html#cb322-5" tabindex="-1"></a><span class="fu">library</span>(mzR)</span>
+<span id="cb322-6"><a href="mass-spectrometry.html#cb322-6" tabindex="-1"></a></span>
+<span id="cb322-7"><a href="mass-spectrometry.html#cb322-7" tabindex="-1"></a>ms_dat <span class="ot">&lt;-</span> <span class="fu">openMSfile</span>(<span class="st">&quot;./data/small.mzML&quot;</span>)</span>
+<span id="cb322-8"><a href="mass-spectrometry.html#cb322-8" tabindex="-1"></a></span>
+<span id="cb322-9"><a href="mass-spectrometry.html#cb322-9" tabindex="-1"></a>ms_dat</span></code></pre></div>
 <pre><code>## Mass Spectrometry file handle.
 ## Filename:  small.mzML 
 ## Number of scans:  48</code></pre>
 <p>Extract out a specific spectrum.</p>
-<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="mass-spectrometry.html#cb334-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb334-2"><a href="mass-spectrometry.html#cb334-2" tabindex="-1"></a></span>
-<span id="cb334-3"><a href="mass-spectrometry.html#cb334-3" tabindex="-1"></a>tbl_spec <span class="ot">&lt;-</span> <span class="fu">peaks</span>(ms_dat, <span class="dv">36</span>) <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>()</span>
-<span id="cb334-4"><a href="mass-spectrometry.html#cb334-4" tabindex="-1"></a></span>
-<span id="cb334-5"><a href="mass-spectrometry.html#cb334-5" tabindex="-1"></a>tbl_spec</span></code></pre></div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="mass-spectrometry.html#cb324-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb324-2"><a href="mass-spectrometry.html#cb324-2" tabindex="-1"></a></span>
+<span id="cb324-3"><a href="mass-spectrometry.html#cb324-3" tabindex="-1"></a>tbl_spec <span class="ot">&lt;-</span> <span class="fu">peaks</span>(ms_dat, <span class="dv">36</span>) <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>()</span>
+<span id="cb324-4"><a href="mass-spectrometry.html#cb324-4" tabindex="-1"></a></span>
+<span id="cb324-5"><a href="mass-spectrometry.html#cb324-5" tabindex="-1"></a>tbl_spec</span></code></pre></div>
 <pre><code>## # A tibble: 19,800 × 2
 ##       mz intensity
 ##    &lt;dbl&gt;     &lt;dbl&gt;
@@ -822,10 +851,10 @@ Calculate the isotopic abundances (probabilities) mass for a metabolite [C100H20
 ##  9  201.         0
 ## 10  201.         0
 ## # ℹ 19,790 more rows</code></pre>
-<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="mass-spectrometry.html#cb336-1" tabindex="-1"></a>tbl_spec <span class="sc">%&gt;%</span> </span>
-<span id="cb336-2"><a href="mass-spectrometry.html#cb336-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(mz, intensity)) <span class="sc">+</span> </span>
-<span id="cb336-3"><a href="mass-spectrometry.html#cb336-3" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">xend =</span> mz, <span class="at">yend =</span> <span class="dv">0</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-233-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="mass-spectrometry.html#cb326-1" tabindex="-1"></a>tbl_spec <span class="sc">%&gt;%</span> </span>
+<span id="cb326-2"><a href="mass-spectrometry.html#cb326-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(mz, intensity)) <span class="sc">+</span> </span>
+<span id="cb326-3"><a href="mass-spectrometry.html#cb326-3" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">xend =</span> mz, <span class="at">yend =</span> <span class="dv">0</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-243-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>In addition to its parsing capabilities, <code>mzR</code> includes a range of useful functions for working with mass spectrometry data. This package supports a wide variety of file formats, and provides functions for reading, writing, and manipulating data in these formats. Furthermore, <code>mzR</code> includes features for working with tandem mass spectrometry (MS/MS) data, including functions for spectral processing and peak picking.</p>
 <hr />
 
@@ -862,13 +891,13 @@ Calculate the isotopic abundances (probabilities) mass for a metabolite [C100H20
 <li>Visualization: XCMS provides several visualization tools for exploring and interpreting MS data, including heatmaps, scatter plots, and volcano plots.</li>
 </ul>
 <p>Read in an <a href="mass-spectrometry.html#mzml">10.2.3</a> mzML converted LCMS data file and check its contents.</p>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="mass-spectrometry.html#cb337-1" tabindex="-1"></a><span class="fu">library</span>(xcms)</span>
-<span id="cb337-2"><a href="mass-spectrometry.html#cb337-2" tabindex="-1"></a></span>
-<span id="cb337-3"><a href="mass-spectrometry.html#cb337-3" tabindex="-1"></a>ms_dat <span class="ot">&lt;-</span> <span class="fu">readMSData</span>(<span class="st">&quot;~/lcms_data/example_001.mzML&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="mass-spectrometry.html#cb327-1" tabindex="-1"></a><span class="fu">library</span>(xcms)</span>
+<span id="cb327-2"><a href="mass-spectrometry.html#cb327-2" tabindex="-1"></a></span>
+<span id="cb327-3"><a href="mass-spectrometry.html#cb327-3" tabindex="-1"></a>ms_dat <span class="ot">&lt;-</span> <span class="fu">readMSData</span>(<span class="st">&quot;~/lcms_data/example_001.mzML&quot;</span>)</span></code></pre></div>
 <p>Use a peak-detection algorithm to find chromatographic peaks for each precursor</p>
-<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="mass-spectrometry.html#cb338-1" tabindex="-1"></a>cwp <span class="ot">&lt;-</span> <span class="fu">CentWaveParam</span>(<span class="at">snthresh =</span> <span class="dv">5</span>, <span class="at">noise =</span> <span class="dv">100</span>, <span class="at">ppm =</span> <span class="dv">10</span>, <span class="at">peakwidth =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">30</span>))</span>
-<span id="cb338-2"><a href="mass-spectrometry.html#cb338-2" tabindex="-1"></a></span>
-<span id="cb338-3"><a href="mass-spectrometry.html#cb338-3" tabindex="-1"></a>ms_dat <span class="ot">&lt;-</span> <span class="fu">findChromPeaks</span>(ms_dat, <span class="at">param =</span> cwp)</span></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="mass-spectrometry.html#cb328-1" tabindex="-1"></a>cwp <span class="ot">&lt;-</span> <span class="fu">CentWaveParam</span>(<span class="at">snthresh =</span> <span class="dv">5</span>, <span class="at">noise =</span> <span class="dv">100</span>, <span class="at">ppm =</span> <span class="dv">10</span>, <span class="at">peakwidth =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">30</span>))</span>
+<span id="cb328-2"><a href="mass-spectrometry.html#cb328-2" tabindex="-1"></a></span>
+<span id="cb328-3"><a href="mass-spectrometry.html#cb328-3" tabindex="-1"></a>ms_dat <span class="ot">&lt;-</span> <span class="fu">findChromPeaks</span>(ms_dat, <span class="at">param =</span> cwp)</span></code></pre></div>
 <p>One of the main advantages of XCMS is its flexibility and scalability. This package is highly customizable, allowing users to tailor the analysis pipeline to their specific needs. In addition, XCMS is designed to handle large data sets, making it suitable for high-throughput experiments.</p>
 <p>Currently, spectra data representation, handling and processing is being re-implemented as part of the <a href="mass-spectrometry.html#rformassspectrometry">10.4.1</a> RforMassSpectrometry initiative aiming at increasing the performance of methods and simplifying their use.</p>
 <hr />
@@ -940,67 +969,67 @@ Figure 10.1: tidyproteomics workflow
 <div id="installation-3" class="section level4 unnumbered hasAnchor">
 <h4>Installation<a href="mass-spectrometry.html#installation-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>To install the <code>tidyproteomics</code> package, you will need to install GitHub and Bioconductor repositories:</p>
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="mass-spectrometry.html#cb339-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
-<span id="cb339-2"><a href="mass-spectrometry.html#cb339-2" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;jeffsocal/tidyproteomics&quot;</span>)</span>
-<span id="cb339-3"><a href="mass-spectrometry.html#cb339-3" tabindex="-1"></a></span>
-<span id="cb339-4"><a href="mass-spectrometry.html#cb339-4" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;BiocManager&quot;</span>)</span>
-<span id="cb339-5"><a href="mass-spectrometry.html#cb339-5" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="fu">c</span>(<span class="st">&quot;limma&quot;</span>,<span class="st">&quot;qvalue&quot;</span>,<span class="st">&quot;fgsea&quot;</span>,<span class="st">&quot;Biostrings&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="mass-spectrometry.html#cb329-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
+<span id="cb329-2"><a href="mass-spectrometry.html#cb329-2" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;jeffsocal/tidyproteomics&quot;</span>)</span>
+<span id="cb329-3"><a href="mass-spectrometry.html#cb329-3" tabindex="-1"></a></span>
+<span id="cb329-4"><a href="mass-spectrometry.html#cb329-4" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;BiocManager&quot;</span>)</span>
+<span id="cb329-5"><a href="mass-spectrometry.html#cb329-5" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="fu">c</span>(<span class="st">&quot;limma&quot;</span>,<span class="st">&quot;qvalue&quot;</span>,<span class="st">&quot;fgsea&quot;</span>,<span class="st">&quot;Biostrings&quot;</span>))</span></code></pre></div>
 </div>
 <div id="loading-data" class="section level4 unnumbered hasAnchor">
 <h4>Loading Data<a href="mass-spectrometry.html#loading-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>To load your data into tidyproteomics, you can use the following code:</p>
-<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="mass-spectrometry.html#cb340-1" tabindex="-1"></a><span class="co"># Load the tidyproteomics package</span></span>
-<span id="cb340-2"><a href="mass-spectrometry.html#cb340-2" tabindex="-1"></a><span class="fu">library</span>(tidyproteomics)</span>
-<span id="cb340-3"><a href="mass-spectrometry.html#cb340-3" tabindex="-1"></a></span>
-<span id="cb340-4"><a href="mass-spectrometry.html#cb340-4" tabindex="-1"></a><span class="co"># Import data</span></span>
-<span id="cb340-5"><a href="mass-spectrometry.html#cb340-5" tabindex="-1"></a>data_proteins <span class="ot">&lt;-</span> <span class="st">&quot;path_to_data.xlsx&quot;</span> <span class="sc">%&gt;%</span></span>
-<span id="cb340-6"><a href="mass-spectrometry.html#cb340-6" tabindex="-1"></a>  <span class="fu">import</span>(<span class="st">&quot;ProteomeDiscoverer&quot;</span>, <span class="st">&quot;proteins&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="mass-spectrometry.html#cb330-1" tabindex="-1"></a><span class="co"># Load the tidyproteomics package</span></span>
+<span id="cb330-2"><a href="mass-spectrometry.html#cb330-2" tabindex="-1"></a><span class="fu">library</span>(tidyproteomics)</span>
+<span id="cb330-3"><a href="mass-spectrometry.html#cb330-3" tabindex="-1"></a></span>
+<span id="cb330-4"><a href="mass-spectrometry.html#cb330-4" tabindex="-1"></a><span class="co"># Import data</span></span>
+<span id="cb330-5"><a href="mass-spectrometry.html#cb330-5" tabindex="-1"></a>data_proteins <span class="ot">&lt;-</span> <span class="st">&quot;path_to_data.xlsx&quot;</span> <span class="sc">%&gt;%</span></span>
+<span id="cb330-6"><a href="mass-spectrometry.html#cb330-6" tabindex="-1"></a>  <span class="fu">import</span>(<span class="st">&quot;ProteomeDiscoverer&quot;</span>, <span class="st">&quot;proteins&quot;</span>) </span></code></pre></div>
 </div>
 <div id="data-summaries" class="section level4 unnumbered hasAnchor">
 <h4>Data Summaries<a href="mass-spectrometry.html#data-summaries" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Currently, tidyproteomics implements two summary quantitative visualizations. The first is a simple grouped bar chart that displays individual and grouped proteins, as well as all and unique peptides. The match-between-runs is shown as a margin above the MS2 evidenced identifications. In recent literature, a summary of protein quantitation has been visualized as a rank-based dot plot. This plot can be extended to highlight statistical differences via an unbiased all-pair-wise comparison, which gives an anticipated view on how to guide downstream analyses.</p>
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="mass-spectrometry.html#cb341-1" tabindex="-1"></a>p01 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_counts</span>()</span>
-<span id="cb341-2"><a href="mass-spectrometry.html#cb341-2" tabindex="-1"></a>p02 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_quantrank</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-240-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="mass-spectrometry.html#cb331-1" tabindex="-1"></a>p01 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_counts</span>()</span>
+<span id="cb331-2"><a href="mass-spectrometry.html#cb331-2" tabindex="-1"></a>p02 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_quantrank</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-250-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Summary Stats {-}</p>
 <p>Summarizing proteomics data is vital to understanding the bigger picture and conveying summary stats that set the tone for the larger analysis. The results of each summary can be directed to via the destination option to “print” on screen, “save” to a file or “return” as a tibble.</p>
-<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="mass-spectrometry.html#cb342-1" tabindex="-1"></a>data_proteins <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span></span>
-<span id="cb342-2"><a href="mass-spectrometry.html#cb342-2" tabindex="-1"></a>  <span class="co"># save a table of simple summary stats</span></span>
-<span id="cb342-3"><a href="mass-spectrometry.html#cb342-3" tabindex="-1"></a>  <span class="fu">summary</span>(<span class="st">&quot;sample&quot;</span>, <span class="at">destination =</span> <span class="st">&quot;save&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb342-4"><a href="mass-spectrometry.html#cb342-4" tabindex="-1"></a>  <span class="co"># save a report on contamination</span></span>
-<span id="cb342-5"><a href="mass-spectrometry.html#cb342-5" tabindex="-1"></a>  <span class="fu">summary</span>(<span class="at">contamination =</span> <span class="st">&quot;CRAP&quot;</span>, <span class="at">destination =</span> <span class="st">&quot;save&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb342-6"><a href="mass-spectrometry.html#cb342-6" tabindex="-1"></a>  <span class="co"># remove contamination</span></span>
-<span id="cb342-7"><a href="mass-spectrometry.html#cb342-7" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="sc">!</span>description <span class="sc">%like%</span> <span class="st">&quot;^CRAP&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="mass-spectrometry.html#cb332-1" tabindex="-1"></a>data_proteins <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span></span>
+<span id="cb332-2"><a href="mass-spectrometry.html#cb332-2" tabindex="-1"></a>  <span class="co"># save a table of simple summary stats</span></span>
+<span id="cb332-3"><a href="mass-spectrometry.html#cb332-3" tabindex="-1"></a>  <span class="fu">summary</span>(<span class="st">&quot;sample&quot;</span>, <span class="at">destination =</span> <span class="st">&quot;save&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb332-4"><a href="mass-spectrometry.html#cb332-4" tabindex="-1"></a>  <span class="co"># save a report on contamination</span></span>
+<span id="cb332-5"><a href="mass-spectrometry.html#cb332-5" tabindex="-1"></a>  <span class="fu">summary</span>(<span class="at">contamination =</span> <span class="st">&quot;CRAP&quot;</span>, <span class="at">destination =</span> <span class="st">&quot;save&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb332-6"><a href="mass-spectrometry.html#cb332-6" tabindex="-1"></a>  <span class="co"># remove contamination</span></span>
+<span id="cb332-7"><a href="mass-spectrometry.html#cb332-7" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="sc">!</span>description <span class="sc">%like%</span> <span class="st">&quot;^CRAP&quot;</span>)</span></code></pre></div>
 </div>
 <div id="normalization-and-imputation" class="section level4 unnumbered hasAnchor">
 <h4>Normalization and Imputation<a href="mass-spectrometry.html#normalization-and-imputation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Quantitative proteomics requires accurate normalization, which can be difficult to implement. The <code>normalize()</code> function in the tidyproteomics package is a wrapper for various normalization methods, while <code>select_normalization()</code> automatically selects the best method based on a weighted score. Both functions allow for downstream analyses such as <code>expression()</code> and <code>enrichment()</code>. The package attempts to apply each function universally to peptide and protein values using the <code>identifier</code> variable to identify the thing being measured.</p>
-<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="mass-spectrometry.html#cb343-1" tabindex="-1"></a>data_proteins <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span></span>
-<span id="cb343-2"><a href="mass-spectrometry.html#cb343-2" tabindex="-1"></a>  <span class="co"># normalize via several methods, best method will be automatically selected</span></span>
-<span id="cb343-3"><a href="mass-spectrometry.html#cb343-3" tabindex="-1"></a>  <span class="fu">normalize</span>(<span class="at">.method =</span> <span class="fu">c</span>(<span class="st">&quot;median&quot;</span>,<span class="st">&quot;linear&quot;</span>,<span class="st">&quot;limma&quot;</span>,<span class="st">&quot;randomforest&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb343-4"><a href="mass-spectrometry.html#cb343-4" tabindex="-1"></a>  <span class="co"># impute with a minimum value (this is a knock-out)</span></span>
-<span id="cb343-5"><a href="mass-spectrometry.html#cb343-5" tabindex="-1"></a>  <span class="fu">impute</span>(base<span class="sc">::</span>min)</span>
-<span id="cb343-6"><a href="mass-spectrometry.html#cb343-6" tabindex="-1"></a></span>
-<span id="cb343-7"><a href="mass-spectrometry.html#cb343-7" tabindex="-1"></a><span class="co"># plot visualizations comparing normalization methods</span></span>
-<span id="cb343-8"><a href="mass-spectrometry.html#cb343-8" tabindex="-1"></a>p03 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_normalization</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-243-1.png" width="768" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="mass-spectrometry.html#cb344-1" tabindex="-1"></a>p04 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_variation_cv</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-244-1.png" width="768" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="mass-spectrometry.html#cb345-1" tabindex="-1"></a>p06 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_dynamic_range</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-246-1.png" width="768" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="mass-spectrometry.html#cb346-1" tabindex="-1"></a><span class="co"># plot visualizations of unbiased clustering</span></span>
-<span id="cb346-2"><a href="mass-spectrometry.html#cb346-2" tabindex="-1"></a>p07 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_heatmap</span>()</span>
-<span id="cb346-3"><a href="mass-spectrometry.html#cb346-3" tabindex="-1"></a>p08 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_pca</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-248-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="mass-spectrometry.html#cb333-1" tabindex="-1"></a>data_proteins <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span></span>
+<span id="cb333-2"><a href="mass-spectrometry.html#cb333-2" tabindex="-1"></a>  <span class="co"># normalize via several methods, best method will be automatically selected</span></span>
+<span id="cb333-3"><a href="mass-spectrometry.html#cb333-3" tabindex="-1"></a>  <span class="fu">normalize</span>(<span class="at">.method =</span> <span class="fu">c</span>(<span class="st">&quot;median&quot;</span>,<span class="st">&quot;linear&quot;</span>,<span class="st">&quot;limma&quot;</span>,<span class="st">&quot;randomforest&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb333-4"><a href="mass-spectrometry.html#cb333-4" tabindex="-1"></a>  <span class="co"># impute with a minimum value (this is a knock-out)</span></span>
+<span id="cb333-5"><a href="mass-spectrometry.html#cb333-5" tabindex="-1"></a>  <span class="fu">impute</span>(base<span class="sc">::</span>min)</span>
+<span id="cb333-6"><a href="mass-spectrometry.html#cb333-6" tabindex="-1"></a></span>
+<span id="cb333-7"><a href="mass-spectrometry.html#cb333-7" tabindex="-1"></a><span class="co"># plot visualizations comparing normalization methods</span></span>
+<span id="cb333-8"><a href="mass-spectrometry.html#cb333-8" tabindex="-1"></a>p03 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_normalization</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-253-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="mass-spectrometry.html#cb334-1" tabindex="-1"></a>p04 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_variation_cv</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-254-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="mass-spectrometry.html#cb335-1" tabindex="-1"></a>p06 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_dynamic_range</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-256-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="mass-spectrometry.html#cb336-1" tabindex="-1"></a><span class="co"># plot visualizations of unbiased clustering</span></span>
+<span id="cb336-2"><a href="mass-spectrometry.html#cb336-2" tabindex="-1"></a>p07 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_heatmap</span>()</span>
+<span id="cb336-3"><a href="mass-spectrometry.html#cb336-3" tabindex="-1"></a>p08 <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span> <span class="fu">plot_pca</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-258-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="expression-analysis" class="section level4 unnumbered hasAnchor">
 <h4>Expression Analysis<a href="mass-spectrometry.html#expression-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="mass-spectrometry.html#cb347-1" tabindex="-1"></a>data_proteins <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span></span>
-<span id="cb347-2"><a href="mass-spectrometry.html#cb347-2" tabindex="-1"></a>  <span class="co"># calculate the expression between experiment: ko and control: wt</span></span>
-<span id="cb347-3"><a href="mass-spectrometry.html#cb347-3" tabindex="-1"></a>  <span class="fu">expression</span>(kndw<span class="sc">/</span>ctrl) <span class="sc">%&gt;%</span></span>
-<span id="cb347-4"><a href="mass-spectrometry.html#cb347-4" tabindex="-1"></a>  <span class="co"># plot the expression analysis</span></span>
-<span id="cb347-5"><a href="mass-spectrometry.html#cb347-5" tabindex="-1"></a>  <span class="fu">plot_volcano</span>(kndw<span class="sc">/</span>ctrl, <span class="at">destination =</span> <span class="st">&quot;png&quot;</span>, <span class="at">significance_column =</span> <span class="st">&quot;p_value&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb347-6"><a href="mass-spectrometry.html#cb347-6" tabindex="-1"></a>  <span class="fu">plot_proportion</span>(kndw<span class="sc">/</span>ctrl, <span class="at">destination =</span> <span class="st">&quot;png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="mass-spectrometry.html#cb337-1" tabindex="-1"></a>data_proteins <span class="ot">&lt;-</span> data_proteins <span class="sc">%&gt;%</span></span>
+<span id="cb337-2"><a href="mass-spectrometry.html#cb337-2" tabindex="-1"></a>  <span class="co"># calculate the expression between experiment: ko and control: wt</span></span>
+<span id="cb337-3"><a href="mass-spectrometry.html#cb337-3" tabindex="-1"></a>  <span class="fu">expression</span>(kndw<span class="sc">/</span>ctrl) <span class="sc">%&gt;%</span></span>
+<span id="cb337-4"><a href="mass-spectrometry.html#cb337-4" tabindex="-1"></a>  <span class="co"># plot the expression analysis</span></span>
+<span id="cb337-5"><a href="mass-spectrometry.html#cb337-5" tabindex="-1"></a>  <span class="fu">plot_volcano</span>(kndw<span class="sc">/</span>ctrl, <span class="at">destination =</span> <span class="st">&quot;png&quot;</span>, <span class="at">significance_column =</span> <span class="st">&quot;p_value&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb337-6"><a href="mass-spectrometry.html#cb337-6" tabindex="-1"></a>  <span class="fu">plot_proportion</span>(kndw<span class="sc">/</span>ctrl, <span class="at">destination =</span> <span class="st">&quot;png&quot;</span>)</span></code></pre></div>
 <p>Overall, the tidyproteomics package provides a useful set of tools for preprocessing and analyzing proteomics data using the tidy data framework in R. There are several more workable examples in the online documentation.</p>
 <hr />
 
@@ -1064,7 +1093,7 @@ Figure 10.1: tidyproteomics workflow
           </div>
         </div>
       </div>
-<a href="reproducibility-and-sharing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sharing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="putting-it-all-together.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
