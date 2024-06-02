@@ -401,14 +401,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.1" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#test-scenario-1"><i class="fa fa-check"></i><b>11.1</b> Test Scenario 1</a>
 <ul>
 <li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#proteomics-optimization"><i class="fa fa-check"></i>Proteomics Optimization</a></li>
-<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#the-data-set"><i class="fa fa-check"></i>The Data Set</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#the-data"><i class="fa fa-check"></i>The Data</a></li>
 <li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#other-observations"><i class="fa fa-check"></i>Other Observations</a></li>
 <li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#plan-your-approach"><i class="fa fa-check"></i>Plan Your Approach</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#test-scenario-2"><i class="fa fa-check"></i><b>11.2</b> Test Scenario 2</a>
 <ul>
 <li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#metabolomics-biomarker"><i class="fa fa-check"></i>Metabolomics Biomarker</a></li>
-<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#the-data-set-1"><i class="fa fa-check"></i>The Data Set</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#the-data-1"><i class="fa fa-check"></i>The Data</a></li>
 <li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#other-observations-1"><i class="fa fa-check"></i>Other Observations</a></li>
 <li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#plan-your-approach-1"><i class="fa fa-check"></i>Plan Your Approach</a></li>
 </ul></li>
@@ -459,8 +459,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 <table>
 <colgroup>
-<col width="32%" />
-<col width="67%" />
+<col width="37%" />
+<col width="62%" />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -482,8 +482,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3>Proteomics Optimization<a href="putting-it-all-together.html#proteomics-optimization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>The LCMS Proteomics Lab has run a dilution series of a HeLa digest to determine the optimal LC column loading conditions with respect to yield and reproducibility. Determine which dilution provides the greatest number of unique peptides with a minimum amount of quantitative variability.</strong></p>
 </div>
-<div id="the-data-set" class="section level3 unnumbered hasAnchor">
-<h3>The Data Set<a href="putting-it-all-together.html#the-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="the-data" class="section level3 unnumbered hasAnchor">
+<h3>The Data<a href="putting-it-all-together.html#the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="putting-it-all-together.html#cb336-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/HelaDilution_Skyline-MSstats_peptides.csv.zip&quot;</span></span>
 <span id="cb336-2"><a href="putting-it-all-together.html#cb336-2" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/HelaDilution_Skyline-MSstats_peptides.csv.zip&quot;</span>)</span></code></pre></div>
 </div>
@@ -511,12 +511,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">11.2</span> Test Scenario 2<a href="putting-it-all-together.html#test-scenario-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="metabolomics-biomarker" class="section level3 unnumbered hasAnchor">
 <h3>Metabolomics Biomarker<a href="putting-it-all-together.html#metabolomics-biomarker" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><em>Cala MP, Aldana J, Medina J, Sánchez J, Guio J, Wist J, Meesters RJW. Multiplatform plasma metabolic and lipid fingerprinting of breast cancer: A pilot control-case study in Colombian Hispanic women. PLoS One. 2018 Feb 13;13(2):e0190958. doi: 10.1371/journal.pone.0190958. PMID: 29438405; PMCID: PMC5810980.</em>
-<a href="https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?Mode=Project&amp;ProjectID=PR000634">Metabolomics Workbench</a>_</p>
+<p><em>Cala MP, Aldana J, Medina J, Sánchez J, Guio J, Wist J, Meesters RJW. Multiplatform plasma metabolic and lipid fingerprinting of breast cancer: A pilot control-case study in Colombian Hispanic women. PLoS One. 2018 Feb 13;13(2):e0190958. doi: 10.1371/journal.pone.0190958. PMID: 29438405; PMCID: PMC5810980.</em><br />
+Links: <a href="https://pubmed.ncbi.nlm.nih.gov/29438405/">PubMed</a> |
+<a href="https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?Mode=Project&amp;ProjectID=PR000634">Data Repository</a></p>
 <p><strong>An open access dataset has measured the quantitative abundance of several metabolites between healthy patients and patients with breast cancer. Determine if there are any potential biomarkers.</strong></p>
 </div>
-<div id="the-data-set-1" class="section level3 unnumbered hasAnchor">
-<h3>The Data Set<a href="putting-it-all-together.html#the-data-set-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="the-data-1" class="section level3 unnumbered hasAnchor">
+<h3>The Data<a href="putting-it-all-together.html#the-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="putting-it-all-together.html#cb337-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://www.metabolomicsworkbench.org/studydownload/ST000918_AN001504_Results.txt&quot;</span></span>
 <span id="cb337-2"><a href="putting-it-all-together.html#cb337-2" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/ST000918_AN001504_Results.txt&quot;</span>)</span></code></pre></div>
 </div>

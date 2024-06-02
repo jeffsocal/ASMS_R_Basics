@@ -28,24 +28,24 @@ This process of learning and application has underscored the importance of organ
 
 ## Test Scenario 1
 
-### Proteomics Optimization {.unnumbered}
+### Proteomics Optimization {-}
 
 **The LCMS Proteomics Lab has run a dilution series of a HeLa digest to determine the optimal LC column loading conditions with respect to yield and reproducibility. Determine which dilution provides the greatest number of unique peptides with a minimum amount of quantitative variability.**
 
-### The Data Set {.unnumbered}
+### The Data {-}
 
 ```{r, eval=FALSE}
 url <- "https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/HelaDilution_Skyline-MSstats_peptides.csv.zip"
 download.file(url, destfile = "./data/HelaDilution_Skyline-MSstats_peptides.csv.zip")
 ```
 
-### Other Observations {.unnumbered}
+### Other Observations {-}
 
 -   The Proteomics Bioinformatician suggests
     -   some dilutions may yield different identifications.
     -   not all identifications are real, ie, some are MBR (Match Between Run).
 
-### Plan Your Approach {.unnumbered}
+### Plan Your Approach {-}
 
 -   Create a new notebook.
 -   Examine the data file. Tidy if necessary.
@@ -54,25 +54,27 @@ download.file(url, destfile = "./data/HelaDilution_Skyline-MSstats_peptides.csv.
 
 ## Test Scenario 2
 
-### Metabolomics Biomarker {.unnumbered}
+### Metabolomics Biomarker {-}
 
-*Cala MP, Aldana J, Medina J, Sánchez J, Guio J, Wist J, Meesters RJW. Multiplatform plasma metabolic and lipid fingerprinting of breast cancer: A pilot control-case study in Colombian Hispanic women. PLoS One. 2018 Feb 13;13(2):e0190958. doi: 10.1371/journal.pone.0190958. PMID: 29438405; PMCID: PMC5810980.* [Metabolomics Workbench](https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?Mode=Project&ProjectID=PR000634)\_
+*Cala MP, Aldana J, Medina J, Sánchez J, Guio J, Wist J, Meesters RJW. Multiplatform plasma metabolic and lipid fingerprinting of breast cancer: A pilot control-case study in Colombian Hispanic women. PLoS One. 2018 Feb 13;13(2):e0190958. doi: 10.1371/journal.pone.0190958. PMID: 29438405; PMCID: PMC5810980.*  
+Links: [PubMed](https://pubmed.ncbi.nlm.nih.gov/29438405/) | 
+[Data Repository](https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?Mode=Project&ProjectID=PR000634)
 
 **An open access dataset has measured the quantitative abundance of several metabolites between healthy patients and patients with breast cancer. Determine if there are any potential biomarkers.**
 
-### The Data Set {.unnumbered}
+### The Data {-}
 
 ```{r, eval=FALSE}
 url <- "https://www.metabolomicsworkbench.org/studydownload/ST000918_AN001504_Results.txt"
 download.file(url, destfile = "./data/ST000918_AN001504_Results.txt")
 ```
 
-### Other Observations {.unnumbered}
+### Other Observations {-}
 
 -   The data is in a matrix format and has been post processed to normalize and impute missing values.
 -   You will likely need to adjust for multiple hypothesis testing.
 
-### Plan Your Approach {.unnumbered}
+### Plan Your Approach {-}
 
 -   Create a new notebook.
 -   Examine the data file. Tidy if necessary.
@@ -81,7 +83,7 @@ download.file(url, destfile = "./data/ST000918_AN001504_Results.txt")
 
 ## Some Pro Coding Tricks
 
-### Tidy Columns {.unnumbered}
+### Tidy Columns {-}
 
 One way to avoid the backtick in referencing columns is to rename them with underscores for spaces.
 
@@ -91,7 +93,7 @@ tbl <- tbl |>
   rename_all(function(x){tolower(x) |> str_replace_all("\\s+", "_")})
 ```
 
-### Nested Summary Stats {.unnumbered}
+### Nested Summary Stats {-}
 
 One way to compute a summary statistic inside a table is with nesting.
 
