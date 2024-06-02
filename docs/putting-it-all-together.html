@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2024-05-31" />
+<meta name="date" content="2024-06-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -484,8 +484,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="the-data-set" class="section level3 unnumbered hasAnchor">
 <h3>The Data Set<a href="putting-it-all-together.html#the-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="putting-it-all-together.html#cb338-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/HelaDilution_Skyline-MSstats_peptides.csv.zip&quot;</span></span>
-<span id="cb338-2"><a href="putting-it-all-together.html#cb338-2" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/HelaDilution_Skyline-MSstats_peptides.csv.zip&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="putting-it-all-together.html#cb336-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/HelaDilution_Skyline-MSstats_peptides.csv.zip&quot;</span></span>
+<span id="cb336-2"><a href="putting-it-all-together.html#cb336-2" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/HelaDilution_Skyline-MSstats_peptides.csv.zip&quot;</span>)</span></code></pre></div>
 </div>
 <div id="other-observations" class="section level3 unnumbered hasAnchor">
 <h3>Other Observations<a href="putting-it-all-together.html#other-observations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -515,8 +515,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="the-data-set-1" class="section level3 unnumbered hasAnchor">
 <h3>The Data Set<a href="putting-it-all-together.html#the-data-set-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="putting-it-all-together.html#cb339-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://www.metabolomicsworkbench.org/studydownload/ST000918_AN001504_Results.txt&quot;</span></span>
-<span id="cb339-2"><a href="putting-it-all-together.html#cb339-2" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/ST000918_AN001504_Results.txt&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="putting-it-all-together.html#cb337-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://www.metabolomicsworkbench.org/studydownload/ST000918_AN001504_Results.txt&quot;</span></span>
+<span id="cb337-2"><a href="putting-it-all-together.html#cb337-2" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/ST000918_AN001504_Results.txt&quot;</span>)</span></code></pre></div>
 </div>
 <div id="other-observations-1" class="section level3 unnumbered hasAnchor">
 <h3>Other Observations<a href="putting-it-all-together.html#other-observations-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -540,26 +540,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="tidy-columns" class="section level3 unnumbered hasAnchor">
 <h3>Tidy Columns<a href="putting-it-all-together.html#tidy-columns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One way to avoid the backtick in referencing columns is to rename them with underscores for spaces.</p>
-<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="putting-it-all-together.html#cb340-1" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> tbl <span class="sc">|&gt;</span> </span>
-<span id="cb340-2"><a href="putting-it-all-together.html#cb340-2" tabindex="-1"></a>  <span class="co"># rename all the columns with a functing using the &#39;dplyr&#39; and &#39;stringr&#39; packages</span></span>
-<span id="cb340-3"><a href="putting-it-all-together.html#cb340-3" tabindex="-1"></a>  <span class="fu">rename_all</span>(<span class="cf">function</span>(x){<span class="fu">tolower</span>(x) <span class="sc">|&gt;</span> <span class="fu">str_replace_all</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">s+&quot;</span>, <span class="st">&quot;_&quot;</span>)})</span></code></pre></div>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="putting-it-all-together.html#cb338-1" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> tbl <span class="sc">|&gt;</span> </span>
+<span id="cb338-2"><a href="putting-it-all-together.html#cb338-2" tabindex="-1"></a>  <span class="co"># rename all the columns with a functing using the &#39;dplyr&#39; and &#39;stringr&#39; packages</span></span>
+<span id="cb338-3"><a href="putting-it-all-together.html#cb338-3" tabindex="-1"></a>  <span class="fu">rename_all</span>(<span class="cf">function</span>(x){<span class="fu">tolower</span>(x) <span class="sc">|&gt;</span> <span class="fu">str_replace_all</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">s+&quot;</span>, <span class="st">&quot;_&quot;</span>)})</span></code></pre></div>
 </div>
 <div id="nested-summary-stats" class="section level3 unnumbered hasAnchor">
 <h3>Nested Summary Stats<a href="putting-it-all-together.html#nested-summary-stats" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One way to compute a summary statistic inside a table is with nesting.</p>
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="putting-it-all-together.html#cb341-1" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> tbl <span class="sc">|&gt;</span></span>
-<span id="cb341-2"><a href="putting-it-all-together.html#cb341-2" tabindex="-1"></a>  <span class="co"># group by the column(s) that you want to summarize across</span></span>
-<span id="cb341-3"><a href="putting-it-all-together.html#cb341-3" tabindex="-1"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
-<span id="cb341-4"><a href="putting-it-all-together.html#cb341-4" tabindex="-1"></a>  <span class="co"># &quot;nest&quot; the remaining columns as a nested table, using the &#39;tidyr&#39; package </span></span>
-<span id="cb341-5"><a href="putting-it-all-together.html#cb341-5" tabindex="-1"></a>  <span class="fu">nest</span>() <span class="sc">|&gt;</span></span>
-<span id="cb341-6"><a href="putting-it-all-together.html#cb341-6" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb341-7"><a href="putting-it-all-together.html#cb341-7" tabindex="-1"></a>    <span class="co"># compute the summary stats using map from the `purrr` package</span></span>
-<span id="cb341-8"><a href="putting-it-all-together.html#cb341-8" tabindex="-1"></a>    <span class="at">stats =</span> data <span class="sc">|&gt;</span> <span class="fu">map</span>(some_function),</span>
-<span id="cb341-9"><a href="putting-it-all-together.html#cb341-9" tabindex="-1"></a>    <span class="co"># extract the summary stat values using the &#39;broom&#39; package</span></span>
-<span id="cb341-10"><a href="putting-it-all-together.html#cb341-10" tabindex="-1"></a>    <span class="at">stats =</span> stats <span class="sc">|&gt;</span> <span class="fu">map</span>(tidy)) <span class="sc">|&gt;</span></span>
-<span id="cb341-11"><a href="putting-it-all-together.html#cb341-11" tabindex="-1"></a>  <span class="co"># unnest and ungroup</span></span>
-<span id="cb341-12"><a href="putting-it-all-together.html#cb341-12" tabindex="-1"></a>  <span class="fu">unnest</span>(stats) <span class="sc">|&gt;</span></span>
-<span id="cb341-13"><a href="putting-it-all-together.html#cb341-13" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="putting-it-all-together.html#cb339-1" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> tbl <span class="sc">|&gt;</span></span>
+<span id="cb339-2"><a href="putting-it-all-together.html#cb339-2" tabindex="-1"></a>  <span class="co"># group by the column(s) that you want to summarize across</span></span>
+<span id="cb339-3"><a href="putting-it-all-together.html#cb339-3" tabindex="-1"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
+<span id="cb339-4"><a href="putting-it-all-together.html#cb339-4" tabindex="-1"></a>  <span class="co"># &quot;nest&quot; the remaining columns as a nested table, using the &#39;tidyr&#39; package </span></span>
+<span id="cb339-5"><a href="putting-it-all-together.html#cb339-5" tabindex="-1"></a>  <span class="fu">nest</span>() <span class="sc">|&gt;</span></span>
+<span id="cb339-6"><a href="putting-it-all-together.html#cb339-6" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb339-7"><a href="putting-it-all-together.html#cb339-7" tabindex="-1"></a>    <span class="co"># compute the summary stats using map from the `purrr` package</span></span>
+<span id="cb339-8"><a href="putting-it-all-together.html#cb339-8" tabindex="-1"></a>    <span class="at">stats =</span> data <span class="sc">|&gt;</span> <span class="fu">map</span>(some_function),</span>
+<span id="cb339-9"><a href="putting-it-all-together.html#cb339-9" tabindex="-1"></a>    <span class="co"># extract the summary stat values using the &#39;broom&#39; package</span></span>
+<span id="cb339-10"><a href="putting-it-all-together.html#cb339-10" tabindex="-1"></a>    <span class="at">stats =</span> stats <span class="sc">|&gt;</span> <span class="fu">map</span>(tidy)) <span class="sc">|&gt;</span></span>
+<span id="cb339-11"><a href="putting-it-all-together.html#cb339-11" tabindex="-1"></a>  <span class="co"># unnest and ungroup</span></span>
+<span id="cb339-12"><a href="putting-it-all-together.html#cb339-12" tabindex="-1"></a>  <span class="fu">unnest</span>(stats) <span class="sc">|&gt;</span></span>
+<span id="cb339-13"><a href="putting-it-all-together.html#cb339-13" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div>
 
 </div>
 </div>

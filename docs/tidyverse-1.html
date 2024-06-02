@@ -23,7 +23,7 @@
 <meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
 
 
-<meta name="date" content="2024-05-31" />
+<meta name="date" content="2024-06-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -959,7 +959,7 @@ Figure 6.3: Overview of dplyr verbs.
 <div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="tidyverse-1.html#cb205-1" tabindex="-1"></a><span class="co"># read in and examine the data</span></span>
 <span id="cb205-2"><a href="tidyverse-1.html#cb205-2" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/bacterial-metabolites_dose-simicillin_tidy.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 180 Columns: 5
-## ── Column specification ───────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Column specification ─────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (2): Organism, Metabolite
 ## dbl (3): Dose_mg, Time_min, Abundance
@@ -1167,7 +1167,8 @@ Figure 6.3: Overview of dplyr verbs.
 <div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="tidyverse-1.html#cb227-1" tabindex="-1"></a><span class="co"># You can also group by multiple columns</span></span>
 <span id="cb227-2"><a href="tidyverse-1.html#cb227-2" tabindex="-1"></a>dat_grp <span class="ot">&lt;-</span> <span class="fu">group_by</span>(dat, Organism, Dose_mg)</span>
 <span id="cb227-3"><a href="tidyverse-1.html#cb227-3" tabindex="-1"></a>dat_smry <span class="ot">&lt;-</span> <span class="fu">summarize</span>(dat_grp, <span class="at">median_Abundance =</span> <span class="fu">median</span>(Abundance))</span></code></pre></div>
-<pre><code>## `summarise()` has grouped output by &#39;Organism&#39;. You can override using the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;Organism&#39;. You can override using the `.groups`
+## argument.</code></pre>
 <div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="tidyverse-1.html#cb229-1" tabindex="-1"></a>dat_smry</span></code></pre></div>
 <pre><code>## # A tibble: 9 × 3
 ## # Groups:   Organism [3]
@@ -1242,7 +1243,8 @@ Figure 6.7: dplyr verbs chained together in a dplyr pipeline.
 <span id="cb231-12"><a href="tidyverse-1.html#cb231-12" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_log10_Abundance)) <span class="sc">%&gt;%</span></span>
 <span id="cb231-13"><a href="tidyverse-1.html#cb231-13" tabindex="-1"></a>  <span class="co"># optional but advised step to ungroup the data</span></span>
 <span id="cb231-14"><a href="tidyverse-1.html#cb231-14" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div>
-<pre><code>## `summarise()` has grouped output by &#39;Organism&#39;, &#39;Dose_mg&#39;. You can override using the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;Organism&#39;, &#39;Dose_mg&#39;. You can override using the
+## `.groups` argument.</code></pre>
 <div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="tidyverse-1.html#cb233-1" tabindex="-1"></a>dat_smry</span></code></pre></div>
 <pre><code>## # A tibble: 36 × 4
 ##    Organism     Dose_mg Metabolite          mean_log10_Abundance
@@ -1288,7 +1290,7 @@ Figure 6.7: dplyr verbs chained together in a dplyr pipeline.
 <div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="tidyverse-1.html#cb236-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb236-2"><a href="tidyverse-1.html#cb236-2" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/bacterial-metabolites_dose-simicillin_tidy.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 180 Columns: 5
-## ── Column specification ───────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Column specification ─────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (2): Organism, Metabolite
 ## dbl (3): Dose_mg, Time_min, Abundance
@@ -1313,7 +1315,8 @@ Figure 6.7: dplyr verbs chained together in a dplyr pipeline.
 <ol start="4" style="list-style-type: decimal">
 <li>Does this metabolite have the highest mean abundance for each organism, or is there differences between organisms?</li>
 </ol>
-<pre><code>## `summarise()` has grouped output by &#39;Organism&#39;. You can override using the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;Organism&#39;. You can override using the `.groups`
+## argument.</code></pre>
 <pre><code>## # A tibble: 12 × 3
 ## # Groups:   Organism [3]
 ##    Organism     Metabolite          mean_abundance
