@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Answers to Exercises | Learning R for Mass Spectrometrists</title>
+  <meta name="description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Answers to Exercises | Learning R for Mass Spectrometrists" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  <meta name="github-repo" content="jeffsocal/ASMS_R_Basics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Answers to Exercises | Learning R for Mass Spectrometrists" />
+  
+  <meta name="twitter:description" content="An introductory approach to using R in the analysis of mass spectrometry related data." />
+  
+
+<meta name="author" content="Jeff Jones, Heath Patterson, Ryan Benz" />
+
+
+<meta name="date" content="2024-06-02" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="putting-it-all-together.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Learning R for Mass Spec.</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="contents.html"><a href="contents.html"><i class="fa fa-check"></i>Contents</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>1</b> Introduction to R</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#why-choose-it"><i class="fa fa-check"></i>Why choose it?</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#what-you-can-do-with-it"><i class="fa fa-check"></i>What you can do with it?</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-r-learning-curve"><i class="fa fa-check"></i>The R Learning Curve</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#learning-to-code"><i class="fa fa-check"></i>Learning to code</a></li>
+<li class="chapter" data-level="1.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#alternatives"><i class="fa fa-check"></i><b>1.1</b> Alternatives</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#resources"><i class="fa fa-check"></i><b>1.2</b> Resources</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#online"><i class="fa fa-check"></i><b>1.2.1</b> Online</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#in-print"><i class="fa fa-check"></i><b>1.2.2</b> In Print</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#organizations"><i class="fa fa-check"></i><b>1.2.3</b> Organizations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>2</b> Installation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installation.html"><a href="installation.html#r-interpreter"><i class="fa fa-check"></i><b>2.1</b> R interpreter</a>
+<ul>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#steps"><i class="fa fa-check"></i>Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="installation.html"><a href="installation.html#r-studio-ide"><i class="fa fa-check"></i><b>2.2</b> R Studio IDE</a>
+<ul>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#steps-1"><i class="fa fa-check"></i>Steps</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#ide-layout"><i class="fa fa-check"></i>IDE Layout</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#usage"><i class="fa fa-check"></i>Usage</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="installation.html"><a href="installation.html#r-packages"><i class="fa fa-check"></i><b>2.3</b> R Packages</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="installation.html"><a href="installation.html#exploring"><i class="fa fa-check"></i><b>2.3.1</b> Exploring</a></li>
+<li class="chapter" data-level="2.3.2" data-path="installation.html"><a href="installation.html#installing"><i class="fa fa-check"></i><b>2.3.2</b> Installing</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#gotchas"><i class="fa fa-check"></i>Gotchas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="installation.html"><a href="installation.html#for-this-book"><i class="fa fa-check"></i><b>2.4</b> For this Book</a>
+<ul>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#tidyverse"><i class="fa fa-check"></i>tidyverse</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#ms-packages"><i class="fa fa-check"></i>MS Packages</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="rstudio-basics.html"><a href="rstudio-basics.html"><i class="fa fa-check"></i><b>3</b> RStudio Basics</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-vs-r-studo"><i class="fa fa-check"></i><b>3.1</b> R vs R Studo</a></li>
+<li class="chapter" data-level="3.2" data-path="rstudio-basics.html"><a href="rstudio-basics.html#rstudio-basic-interactions"><i class="fa fa-check"></i><b>3.2</b> RStudio Basic Interactions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="rstudio-basics.html"><a href="rstudio-basics.html#other-areas"><i class="fa fa-check"></i><b>3.2.1</b> Other Areas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="rstudio-basics.html"><a href="rstudio-basics.html#hot-keys"><i class="fa fa-check"></i><b>3.3</b> Hot Keys</a></li>
+<li class="chapter" data-level="3.4" data-path="rstudio-basics.html"><a href="rstudio-basics.html#create-run-save-scripts"><i class="fa fa-check"></i><b>3.4</b> Create, Run, Save Scripts</a></li>
+<li class="chapter" data-level="3.5" data-path="rstudio-basics.html"><a href="rstudio-basics.html#running-code"><i class="fa fa-check"></i><b>3.5</b> Running Code</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-notebooks"><i class="fa fa-check"></i><b>3.5.1</b> R Notebooks</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-notebooks-vs-r-scripts"><i class="fa fa-check"></i><b>3.6</b> R Notebooks vs R scripts</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-notebooks-1"><i class="fa fa-check"></i><b>3.6.1</b> R Notebooks</a></li>
+<li class="chapter" data-level="3.6.2" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-scripts"><i class="fa fa-check"></i><b>3.6.2</b> R Scripts</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="rstudio-basics.html"><a href="rstudio-basics.html#r-studio-projects"><i class="fa fa-check"></i><b>3.7</b> R Studio Projects</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="rstudio-basics.html"><a href="rstudio-basics.html#creating"><i class="fa fa-check"></i><b>3.7.1</b> Creating</a></li>
+<li class="chapter" data-level="3.7.2" data-path="rstudio-basics.html"><a href="rstudio-basics.html#organizing"><i class="fa fa-check"></i><b>3.7.2</b> Organizing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="rstudio-basics.html"><a href="rstudio-basics.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="r-syntax.html"><a href="r-syntax.html"><i class="fa fa-check"></i><b>4</b> R Syntax</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="r-syntax.html"><a href="r-syntax.html#reserved-words"><i class="fa fa-check"></i><b>4.1</b> Reserved Words</a></li>
+<li class="chapter" data-level="4.2" data-path="r-syntax.html"><a href="r-syntax.html#types"><i class="fa fa-check"></i><b>4.2</b> Types</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="r-syntax.html"><a href="r-syntax.html#comments"><i class="fa fa-check"></i><b>4.2.1</b> Comments</a></li>
+<li class="chapter" data-level="4.2.2" data-path="r-syntax.html"><a href="r-syntax.html#strings"><i class="fa fa-check"></i><b>4.2.2</b> Strings</a></li>
+<li class="chapter" data-level="4.2.3" data-path="r-syntax.html"><a href="r-syntax.html#numbers"><i class="fa fa-check"></i><b>4.2.3</b> Numbers</a></li>
+<li class="chapter" data-level="4.2.4" data-path="r-syntax.html"><a href="r-syntax.html#operators"><i class="fa fa-check"></i><b>4.2.4</b> Operators</a></li>
+<li class="chapter" data-level="4.2.5" data-path="r-syntax.html"><a href="r-syntax.html#variables"><i class="fa fa-check"></i><b>4.2.5</b> Variables</a></li>
+<li class="chapter" data-level="4.2.6" data-path="r-syntax.html"><a href="r-syntax.html#statements"><i class="fa fa-check"></i><b>4.2.6</b> Statements</a></li>
+<li class="chapter" data-level="4.2.7" data-path="r-syntax.html"><a href="r-syntax.html#functions"><i class="fa fa-check"></i><b>4.2.7</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="r-syntax.html"><a href="r-syntax.html#flow-control"><i class="fa fa-check"></i><b>4.3</b> Flow-Control</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="r-syntax.html"><a href="r-syntax.html#for-loop"><i class="fa fa-check"></i><b>4.3.1</b> For Loop</a></li>
+<li class="chapter" data-level="4.3.2" data-path="r-syntax.html"><a href="r-syntax.html#if-else"><i class="fa fa-check"></i><b>4.3.2</b> If-Else</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="r-syntax.html"><a href="r-syntax.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="r-objects.html"><a href="r-objects.html"><i class="fa fa-check"></i><b>5</b> R Objects</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="r-objects.html"><a href="r-objects.html#variable"><i class="fa fa-check"></i><b>5.1</b> Variable</a></li>
+<li class="chapter" data-level="5.2" data-path="r-objects.html"><a href="r-objects.html#vector"><i class="fa fa-check"></i><b>5.2</b> Vector</a></li>
+<li class="chapter" data-level="5.3" data-path="r-objects.html"><a href="r-objects.html#list"><i class="fa fa-check"></i><b>5.3</b> List</a></li>
+<li class="chapter" data-level="5.4" data-path="r-objects.html"><a href="r-objects.html#matrix"><i class="fa fa-check"></i><b>5.4</b> Matrix</a></li>
+<li class="chapter" data-level="5.5" data-path="r-objects.html"><a href="r-objects.html#data-frame"><i class="fa fa-check"></i><b>5.5</b> Data Frame</a></li>
+<li class="chapter" data-level="5.6" data-path="r-objects.html"><a href="r-objects.html#data-table"><i class="fa fa-check"></i><b>5.6</b> Data Table</a></li>
+<li class="chapter" data-level="5.7" data-path="r-objects.html"><a href="r-objects.html#tibbles"><i class="fa fa-check"></i><b>5.7</b> Tibbles</a></li>
+<li class="chapter" data-level="5.8" data-path="r-objects.html"><a href="r-objects.html#managing-objects"><i class="fa fa-check"></i><b>5.8</b> Managing Objects</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="r-objects.html"><a href="r-objects.html#examine-the-contents"><i class="fa fa-check"></i><b>5.8.1</b> Examine the Contents</a></li>
+<li class="chapter" data-level="5.8.2" data-path="r-objects.html"><a href="r-objects.html#converting-objects"><i class="fa fa-check"></i><b>5.8.2</b> Converting Objects</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="r-objects.html"><a href="r-objects.html#more-exercises"><i class="fa fa-check"></i>More Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tidyverse-1.html"><a href="tidyverse-1.html"><i class="fa fa-check"></i><b>6</b> Tidyverse</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#core-packages"><i class="fa fa-check"></i><b>6.1</b> Core Packages</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#magrittr"><i class="fa fa-check"></i><b>6.1.1</b> magrittr</a></li>
+<li class="chapter" data-level="6.1.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#tibble"><i class="fa fa-check"></i><b>6.1.2</b> tibble</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#importing"><i class="fa fa-check"></i><b>6.2</b> Importing</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#readr"><i class="fa fa-check"></i><b>6.2.1</b> readr</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#wrangling"><i class="fa fa-check"></i><b>6.3</b> Wrangling</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr"><i class="fa fa-check"></i><b>6.3.1</b> dplyr</a></li>
+<li class="chapter" data-level="6.3.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#tidyr"><i class="fa fa-check"></i><b>6.3.2</b> tidyr</a></li>
+<li class="chapter" data-level="6.3.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#purrr"><i class="fa fa-check"></i><b>6.3.3</b> purrr</a></li>
+<li class="chapter" data-level="6.3.4" data-path="tidyverse-1.html"><a href="tidyverse-1.html#glue"><i class="fa fa-check"></i><b>6.3.4</b> glue</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="tidyverse-1.html"><a href="tidyverse-1.html#data-types"><i class="fa fa-check"></i><b>6.4</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#stringr"><i class="fa fa-check"></i><b>6.4.1</b> stringr</a></li>
+<li class="chapter" data-level="6.4.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#lubridate"><i class="fa fa-check"></i><b>6.4.2</b> lubridate</a></li>
+<li class="chapter" data-level="6.4.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#forcats"><i class="fa fa-check"></i><b>6.4.3</b> forcats</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="tidyverse-1.html"><a href="tidyverse-1.html#summarizing"><i class="fa fa-check"></i><b>6.5</b> Summarizing</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr-1"><i class="fa fa-check"></i><b>6.5.1</b> dplyr</a></li>
+<li class="chapter" data-level="6.5.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#ggplot2"><i class="fa fa-check"></i><b>6.5.2</b> ggplot2</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr-in-more-detail"><i class="fa fa-check"></i><b>6.6</b> Dplyr in more Detail</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="tidyverse-1.html"><a href="tidyverse-1.html#mutate"><i class="fa fa-check"></i><b>6.6.1</b> <code>mutate</code></a></li>
+<li class="chapter" data-level="6.6.2" data-path="tidyverse-1.html"><a href="tidyverse-1.html#select"><i class="fa fa-check"></i><b>6.6.2</b> <code>select</code></a></li>
+<li class="chapter" data-level="6.6.3" data-path="tidyverse-1.html"><a href="tidyverse-1.html#filter"><i class="fa fa-check"></i><b>6.6.3</b> <code>filter</code></a></li>
+<li class="chapter" data-level="6.6.4" data-path="tidyverse-1.html"><a href="tidyverse-1.html#arrange"><i class="fa fa-check"></i><b>6.6.4</b> <code>arrange</code></a></li>
+<li class="chapter" data-level="6.6.5" data-path="tidyverse-1.html"><a href="tidyverse-1.html#group_by-summarize"><i class="fa fa-check"></i><b>6.6.5</b> <code>group_by</code> + <code>summarize</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="tidyverse-1.html"><a href="tidyverse-1.html#dplyr-data-pipelines"><i class="fa fa-check"></i><b>6.7</b> Dplyr Data Pipelines</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-1.html"><a href="tidyverse-1.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>7</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="data-wrangling.html"><a href="data-wrangling.html#tidy-data"><i class="fa fa-check"></i><b>7.1</b> Tidy Data</a></li>
+<li class="chapter" data-level="7.2" data-path="data-wrangling.html"><a href="data-wrangling.html#example-walkthrough"><i class="fa fa-check"></i><b>7.2</b> Example Walkthrough</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#read_"><i class="fa fa-check"></i>read_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#separate"><i class="fa fa-check"></i>separate</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#mutate-1"><i class="fa fa-check"></i>mutate</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#pivot_"><i class="fa fa-check"></i>pivot_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#write_"><i class="fa fa-check"></i>write_</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#non-pipe"><i class="fa fa-check"></i>Non-pipe</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#summarize"><i class="fa fa-check"></i>summarize</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#exercises-4"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>8</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="data-visualization.html"><a href="data-visualization.html#base-plot"><i class="fa fa-check"></i><b>8.1</b> Base: plot</a></li>
+<li class="chapter" data-level="8.2" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2-1"><i class="fa fa-check"></i><b>8.2</b> GGPlot2</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="data-visualization.html"><a href="data-visualization.html#syntax"><i class="fa fa-check"></i><b>8.2.1</b> Syntax</a></li>
+<li class="chapter" data-level="8.2.2" data-path="data-visualization.html"><a href="data-visualization.html#basic-data-plotting"><i class="fa fa-check"></i><b>8.2.2</b> Basic Data Plotting</a></li>
+<li class="chapter" data-level="8.2.3" data-path="data-visualization.html"><a href="data-visualization.html#data-distributions"><i class="fa fa-check"></i><b>8.2.3</b> Data Distributions</a></li>
+<li class="chapter" data-level="8.2.4" data-path="data-visualization.html"><a href="data-visualization.html#extended-syntax"><i class="fa fa-check"></i><b>8.2.4</b> Extended Syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="data-visualization.html"><a href="data-visualization.html#alternatives-1"><i class="fa fa-check"></i><b>8.3</b> Alternatives</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="data-visualization.html"><a href="data-visualization.html#lattice"><i class="fa fa-check"></i><b>8.3.1</b> lattice</a></li>
+<li class="chapter" data-level="8.3.2" data-path="data-visualization.html"><a href="data-visualization.html#plotly"><i class="fa fa-check"></i><b>8.3.2</b> plotly</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-visualization.html"><a href="data-visualization.html#exercises-5"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="sharing.html"><a href="sharing.html"><i class="fa fa-check"></i><b>9</b> Sharing</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="sharing.html"><a href="sharing.html#reproducibility-and-data-science-notebooks"><i class="fa fa-check"></i><b>9.1</b> Reproducibility and Data Science Notebooks</a></li>
+<li class="chapter" data-level="9.2" data-path="sharing.html"><a href="sharing.html#quarto"><i class="fa fa-check"></i><b>9.2</b> Quarto</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="sharing.html"><a href="sharing.html#yaml-headers"><i class="fa fa-check"></i><b>9.2.1</b> YAML Headers</a></li>
+<li class="chapter" data-level="9.2.2" data-path="sharing.html"><a href="sharing.html#text-blocks"><i class="fa fa-check"></i><b>9.2.2</b> Text Blocks</a></li>
+<li class="chapter" data-level="9.2.3" data-path="sharing.html"><a href="sharing.html#code-blocks"><i class="fa fa-check"></i><b>9.2.3</b> Code Blocks</a></li>
+<li class="chapter" data-level="9.2.4" data-path="sharing.html"><a href="sharing.html#rendering"><i class="fa fa-check"></i><b>9.2.4</b> Rendering</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="sharing.html"><a href="sharing.html#packrat"><i class="fa fa-check"></i><b>9.3</b> Packrat</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#initiating"><i class="fa fa-check"></i>Initiating</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#installing-1"><i class="fa fa-check"></i>Installing</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#loading"><i class="fa fa-check"></i>Loading</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#updating"><i class="fa fa-check"></i>Updating</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="sharing.html"><a href="sharing.html#github-1"><i class="fa fa-check"></i><b>9.4</b> GitHub</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-1"><i class="fa fa-check"></i>Sharing</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#sharing-2"><i class="fa fa-check"></i>Sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="sharing.html"><a href="sharing.html#docker"><i class="fa fa-check"></i><b>9.5</b> Docker</a></li>
+<li class="chapter" data-level="9.6" data-path="sharing.html"><a href="sharing.html#r-packages-1"><i class="fa fa-check"></i><b>9.6</b> R Packages</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-1"><i class="fa fa-check"></i>Creating</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#using"><i class="fa fa-check"></i>Using</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="sharing.html"><a href="sharing.html#r-shiny-applications"><i class="fa fa-check"></i><b>9.7</b> R Shiny Applications</a>
+<ul>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#creating-2"><i class="fa fa-check"></i>Creating</a></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#example"><i class="fa fa-check"></i>Example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sharing.html"><a href="sharing.html#exercises-6"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html"><i class="fa fa-check"></i><b>10</b> Mass Spectrometry</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#commercial"><i class="fa fa-check"></i><b>10.1</b> Commercial</a>
+<ul>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#raw-thermo"><i class="fa fa-check"></i>RAW (Thermo)</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#d-bruker-timstof-data"><i class="fa fa-check"></i>.d (Bruker) timsTOF data</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#wiff-sciex"><i class="fa fa-check"></i>WIFF (Sciex)</a></li>
+<li class="chapter" data-level="" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#d-agilent"><i class="fa fa-check"></i>D (Agilent)</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#open-access-data"><i class="fa fa-check"></i><b>10.2</b> Open Access Data</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#proteowizard"><i class="fa fa-check"></i><b>10.2.1</b> ProteoWizard</a></li>
+<li class="chapter" data-level="10.2.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzxml"><i class="fa fa-check"></i><b>10.2.2</b> mzXML</a></li>
+<li class="chapter" data-level="10.2.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzml"><i class="fa fa-check"></i><b>10.2.3</b> mzML</a></li>
+<li class="chapter" data-level="10.2.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzmlb"><i class="fa fa-check"></i><b>10.2.4</b> mzMLb</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-mass"><i class="fa fa-check"></i><b>10.3</b> R Mass</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#brain"><i class="fa fa-check"></i><b>10.3.1</b> BRAIN</a></li>
+<li class="chapter" data-level="10.3.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#envipat"><i class="fa fa-check"></i><b>10.3.2</b> enviPat</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-ms-data"><i class="fa fa-check"></i><b>10.4</b> R MS Data</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#rformassspectrometry"><i class="fa fa-check"></i><b>10.4.1</b> RforMassSpectrometry</a></li>
+<li class="chapter" data-level="10.4.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msnbase"><i class="fa fa-check"></i><b>10.4.2</b> MSnbase</a></li>
+<li class="chapter" data-level="10.4.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#mzr"><i class="fa fa-check"></i><b>10.4.3</b> mzR</a></li>
+<li class="chapter" data-level="10.4.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#xcms"><i class="fa fa-check"></i><b>10.4.4</b> xcms</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#r-ms-analysis"><i class="fa fa-check"></i><b>10.5</b> R MS Analysis</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msstats"><i class="fa fa-check"></i><b>10.5.1</b> MSstats</a></li>
+<li class="chapter" data-level="10.5.2" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#tidyproteomics"><i class="fa fa-check"></i><b>10.5.2</b> Tidyproteomics</a></li>
+<li class="chapter" data-level="10.5.3" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#assayr"><i class="fa fa-check"></i><b>10.5.3</b> AssayR</a></li>
+<li class="chapter" data-level="10.5.4" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#deqms"><i class="fa fa-check"></i><b>10.5.4</b> DEqMS</a></li>
+<li class="chapter" data-level="10.5.5" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#ms-empire"><i class="fa fa-check"></i><b>10.5.5</b> MS-EmpiRe</a></li>
+<li class="chapter" data-level="10.5.6" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#msgrob2"><i class="fa fa-check"></i><b>10.5.6</b> msgrob2</a></li>
+<li class="chapter" data-level="10.5.7" data-path="mass-spectrometry.html"><a href="mass-spectrometry.html#statspro"><i class="fa fa-check"></i><b>10.5.7</b> StatsPro</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html"><i class="fa fa-check"></i><b>11</b> Putting It All Together</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#test-scenario-1"><i class="fa fa-check"></i><b>11.1</b> Test Scenario 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#proteomics-optimization"><i class="fa fa-check"></i>Proteomics Optimization</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#the-data"><i class="fa fa-check"></i>The Data</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#other-observations"><i class="fa fa-check"></i>Other Observations</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#plan-your-approach"><i class="fa fa-check"></i>Plan Your Approach</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#test-scenario-2"><i class="fa fa-check"></i><b>11.2</b> Test Scenario 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#metabolomics-biomarker"><i class="fa fa-check"></i>Metabolomics Biomarker</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#the-data-1"><i class="fa fa-check"></i>The Data</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#other-observations-1"><i class="fa fa-check"></i>Other Observations</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#plan-your-approach-1"><i class="fa fa-check"></i>Plan Your Approach</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#some-pro-coding-tricks"><i class="fa fa-check"></i><b>11.3</b> Some Pro Coding Tricks</a>
+<ul>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#tidy-columns"><i class="fa fa-check"></i>Tidy Columns</a></li>
+<li class="chapter" data-level="" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html#nested-summary-stats"><i class="fa fa-check"></i>Nested Summary Stats</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html"><i class="fa fa-check"></i>Answers to Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#r-syntax-1"><i class="fa fa-check"></i><strong>4</strong> R Syntax</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#r-objects-1"><i class="fa fa-check"></i><strong>5</strong> R Objects</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#r-objects-more"><i class="fa fa-check"></i><strong>5</strong> R Objects <em>MORE</em></a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#tidyverse-2"><i class="fa fa-check"></i><strong>6</strong> Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-wrangling-1"><i class="fa fa-check"></i><strong>7</strong> Data Wrangling</a></li>
+<li class="chapter" data-level="" data-path="answers-to-exercises.html"><a href="answers-to-exercises.html#data-visualization-1"><i class="fa fa-check"></i><strong>8</strong> Data Visualization</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/jeffsocal/asms_r_intro" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Learning R for Mass Spectrometrists</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="answers-to-exercises" class="section level1 unnumbered hasAnchor">
+<h1>Answers to Exercises<a href="answers-to-exercises.html#answers-to-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+
+<div id="r-syntax-1" class="section level2 unnumbered hasAnchor">
+<h2><strong>4</strong> R Syntax<a href="answers-to-exercises.html#r-syntax-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="answers-to-exercises.html#cb340-1" tabindex="-1"></a><span class="co"># 3.  Calculate the sum of 2 and 3.</span></span>
+<span id="cb340-2"><a href="answers-to-exercises.html#cb340-2" tabindex="-1"></a></span>
+<span id="cb340-3"><a href="answers-to-exercises.html#cb340-3" tabindex="-1"></a></span>
+<span id="cb340-4"><a href="answers-to-exercises.html#cb340-4" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span></span>
+<span id="cb340-5"><a href="answers-to-exercises.html#cb340-5" tabindex="-1"></a></span>
+<span id="cb340-6"><a href="answers-to-exercises.html#cb340-6" tabindex="-1"></a></span>
+<span id="cb340-7"><a href="answers-to-exercises.html#cb340-7" tabindex="-1"></a><span class="co"># 4.  Evaluate if 0.5 is equal to 1 divided by 2.</span></span>
+<span id="cb340-8"><a href="answers-to-exercises.html#cb340-8" tabindex="-1"></a></span>
+<span id="cb340-9"><a href="answers-to-exercises.html#cb340-9" tabindex="-1"></a><span class="fl">0.5</span> <span class="sc">==</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb340-10"><a href="answers-to-exercises.html#cb340-10" tabindex="-1"></a></span>
+<span id="cb340-11"><a href="answers-to-exercises.html#cb340-11" tabindex="-1"></a><span class="co"># 5.  Define a variable that is is 98.6 degrees in Fahrenheit. </span></span>
+<span id="cb340-12"><a href="answers-to-exercises.html#cb340-12" tabindex="-1"></a></span>
+<span id="cb340-13"><a href="answers-to-exercises.html#cb340-13" tabindex="-1"></a>fahrenheit_temp <span class="ot">&lt;-</span> <span class="dv">101</span></span>
+<span id="cb340-14"><a href="answers-to-exercises.html#cb340-14" tabindex="-1"></a></span>
+<span id="cb340-15"><a href="answers-to-exercises.html#cb340-15" tabindex="-1"></a></span>
+<span id="cb340-16"><a href="answers-to-exercises.html#cb340-16" tabindex="-1"></a><span class="co"># 6.  Construct an if-else statement to determine if the temperature indicates a fever (temperature greater than or equal to 100). If it does print &quot;The temperature indicates a fever.&quot; If the temperature is less than 100, print &quot;The temperature does not indicate a fever.&quot; (hint: to print &quot;ok&quot;, the function is print(&quot;ok&quot;))</span></span>
+<span id="cb340-17"><a href="answers-to-exercises.html#cb340-17" tabindex="-1"></a></span>
+<span id="cb340-18"><a href="answers-to-exercises.html#cb340-18" tabindex="-1"></a><span class="cf">if</span> (fahrenheit_temp <span class="sc">&gt;=</span> <span class="dv">100</span>){</span>
+<span id="cb340-19"><a href="answers-to-exercises.html#cb340-19" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;The temperature indicates a fever.&quot;</span>)</span>
+<span id="cb340-20"><a href="answers-to-exercises.html#cb340-20" tabindex="-1"></a>}<span class="cf">else</span>{</span>
+<span id="cb340-21"><a href="answers-to-exercises.html#cb340-21" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;The temperature does not indicate a fever.&quot;</span>)</span>
+<span id="cb340-22"><a href="answers-to-exercises.html#cb340-22" tabindex="-1"></a>}</span>
+<span id="cb340-23"><a href="answers-to-exercises.html#cb340-23" tabindex="-1"></a></span>
+<span id="cb340-24"><a href="answers-to-exercises.html#cb340-24" tabindex="-1"></a></span>
+<span id="cb340-25"><a href="answers-to-exercises.html#cb340-25" tabindex="-1"></a><span class="co"># 8.  Create a function to test if a temperature is a fever called `fever_checker` the prints above, but can be reused</span></span>
+<span id="cb340-26"><a href="answers-to-exercises.html#cb340-26" tabindex="-1"></a></span>
+<span id="cb340-27"><a href="answers-to-exercises.html#cb340-27" tabindex="-1"></a></span>
+<span id="cb340-28"><a href="answers-to-exercises.html#cb340-28" tabindex="-1"></a>fever_checker <span class="ot">&lt;-</span> <span class="cf">function</span>(fahrenheit_temp) { </span>
+<span id="cb340-29"><a href="answers-to-exercises.html#cb340-29" tabindex="-1"></a>  <span class="cf">if</span> (fahrenheit_temp <span class="sc">&gt;=</span> <span class="dv">100</span>){</span>
+<span id="cb340-30"><a href="answers-to-exercises.html#cb340-30" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;The temperature indicates a fever.&quot;</span>)</span>
+<span id="cb340-31"><a href="answers-to-exercises.html#cb340-31" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb340-32"><a href="answers-to-exercises.html#cb340-32" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;The temperature does not indicate a fever.&quot;</span>)</span>
+<span id="cb340-33"><a href="answers-to-exercises.html#cb340-33" tabindex="-1"></a>  }</span>
+<span id="cb340-34"><a href="answers-to-exercises.html#cb340-34" tabindex="-1"></a>}</span>
+<span id="cb340-35"><a href="answers-to-exercises.html#cb340-35" tabindex="-1"></a></span>
+<span id="cb340-36"><a href="answers-to-exercises.html#cb340-36" tabindex="-1"></a></span>
+<span id="cb340-37"><a href="answers-to-exercises.html#cb340-37" tabindex="-1"></a></span>
+<span id="cb340-38"><a href="answers-to-exercises.html#cb340-38" tabindex="-1"></a></span>
+<span id="cb340-39"><a href="answers-to-exercises.html#cb340-39" tabindex="-1"></a><span class="co"># 9.  Use similar logic to print if a temperature is the homeostatic range for human beings (97.7–99.5).</span></span>
+<span id="cb340-40"><a href="answers-to-exercises.html#cb340-40" tabindex="-1"></a></span>
+<span id="cb340-41"><a href="answers-to-exercises.html#cb340-41" tabindex="-1"></a></span>
+<span id="cb340-42"><a href="answers-to-exercises.html#cb340-42" tabindex="-1"></a>homeostatic_range_check <span class="ot">&lt;-</span> <span class="cf">function</span>(fahrenheit_temp){</span>
+<span id="cb340-43"><a href="answers-to-exercises.html#cb340-43" tabindex="-1"></a>  <span class="cf">if</span> (fahrenheit_temp <span class="sc">&gt;=</span> <span class="fl">97.7</span> <span class="sc">&amp;&amp;</span> fahrenheit_temp <span class="sc">&lt;=</span> <span class="fl">99.5</span>){</span>
+<span id="cb340-44"><a href="answers-to-exercises.html#cb340-44" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;In homeostatic range!&quot;</span>)</span>
+<span id="cb340-45"><a href="answers-to-exercises.html#cb340-45" tabindex="-1"></a>  } <span class="cf">else</span>{</span>
+<span id="cb340-46"><a href="answers-to-exercises.html#cb340-46" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;Outside homeostatic range!&quot;</span>)</span>
+<span id="cb340-47"><a href="answers-to-exercises.html#cb340-47" tabindex="-1"></a>  }</span>
+<span id="cb340-48"><a href="answers-to-exercises.html#cb340-48" tabindex="-1"></a>}</span>
+<span id="cb340-49"><a href="answers-to-exercises.html#cb340-49" tabindex="-1"></a></span>
+<span id="cb340-50"><a href="answers-to-exercises.html#cb340-50" tabindex="-1"></a></span>
+<span id="cb340-51"><a href="answers-to-exercises.html#cb340-51" tabindex="-1"></a></span>
+<span id="cb340-52"><a href="answers-to-exercises.html#cb340-52" tabindex="-1"></a><span class="co"># 10. Advanced exercise... add TRUE / FALSE returns (i.e. return TRUE, return FALSE) to the functions and create a function that combines both called `temperature_check`. That gives us info on the what our temperature means (i.e., is it homeostatic, is it a fever, are we possibly dead (temperature way too low??)</span></span>
+<span id="cb340-53"><a href="answers-to-exercises.html#cb340-53" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div>
+
+</div>
+<div id="r-objects-1" class="section level2 unnumbered hasAnchor">
+<h2><strong>5</strong> R Objects<a href="answers-to-exercises.html#r-objects-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="answers-to-exercises.html#cb341-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
+<span id="cb341-2"><a href="answers-to-exercises.html#cb341-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
+<span id="cb341-3"><a href="answers-to-exercises.html#cb341-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
+<span id="cb341-4"><a href="answers-to-exercises.html#cb341-4" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb341-5"><a href="answers-to-exercises.html#cb341-5" tabindex="-1"></a><span class="co"># Data Object Exercises</span></span>
+<span id="cb341-6"><a href="answers-to-exercises.html#cb341-6" tabindex="-1"></a></span>
+<span id="cb341-7"><a href="answers-to-exercises.html#cb341-7" tabindex="-1"></a><span class="co"># 1.  Construct the following vector and store as a variable.</span></span>
+<span id="cb341-8"><a href="answers-to-exercises.html#cb341-8" tabindex="-1"></a></span>
+<span id="cb341-9"><a href="answers-to-exercises.html#cb341-9" tabindex="-1"></a>str_gbu <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;red&#39;</span>, <span class="st">&#39;green&#39;</span>, <span class="st">&#39;blue&#39;</span>)</span>
+<span id="cb341-10"><a href="answers-to-exercises.html#cb341-10" tabindex="-1"></a></span>
+<span id="cb341-11"><a href="answers-to-exercises.html#cb341-11" tabindex="-1"></a></span>
+<span id="cb341-12"><a href="answers-to-exercises.html#cb341-12" tabindex="-1"></a><span class="co"># 2.  Extract the 2nd element in the variable.</span></span>
+<span id="cb341-13"><a href="answers-to-exercises.html#cb341-13" tabindex="-1"></a></span>
+<span id="cb341-14"><a href="answers-to-exercises.html#cb341-14" tabindex="-1"></a>str_gbu[<span class="dv">2</span>]</span>
+<span id="cb341-15"><a href="answers-to-exercises.html#cb341-15" tabindex="-1"></a></span>
+<span id="cb341-16"><a href="answers-to-exercises.html#cb341-16" tabindex="-1"></a><span class="co"># 3.  Construct a numerical vector of length 5, containing the AREA of circles </span></span>
+<span id="cb341-17"><a href="answers-to-exercises.html#cb341-17" tabindex="-1"></a><span class="co">#     with integer RADIUS 1 to 5. Remember PEMDAS.</span></span>
+<span id="cb341-18"><a href="answers-to-exercises.html#cb341-18" tabindex="-1"></a></span>
+<span id="cb341-19"><a href="answers-to-exercises.html#cb341-19" tabindex="-1"></a>area <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi</span>
+<span id="cb341-20"><a href="answers-to-exercises.html#cb341-20" tabindex="-1"></a></span>
+<span id="cb341-21"><a href="answers-to-exercises.html#cb341-21" tabindex="-1"></a></span>
+<span id="cb341-22"><a href="answers-to-exercises.html#cb341-22" tabindex="-1"></a><span class="co"># 4.  Extract all AREA greater than 50.</span></span>
+<span id="cb341-23"><a href="answers-to-exercises.html#cb341-23" tabindex="-1"></a></span>
+<span id="cb341-24"><a href="answers-to-exercises.html#cb341-24" tabindex="-1"></a>area[<span class="fu">which</span>(area <span class="sc">&gt;</span> <span class="dv">50</span>)]</span>
+<span id="cb341-25"><a href="answers-to-exercises.html#cb341-25" tabindex="-1"></a></span>
+<span id="cb341-26"><a href="answers-to-exercises.html#cb341-26" tabindex="-1"></a></span>
+<span id="cb341-27"><a href="answers-to-exercises.html#cb341-27" tabindex="-1"></a><span class="co"># 5. Create a data.frame consisting of circles with integer RADIUS 1 to 5, and their AREA.</span></span>
+<span id="cb341-28"><a href="answers-to-exercises.html#cb341-28" tabindex="-1"></a></span>
+<span id="cb341-29"><a href="answers-to-exercises.html#cb341-29" tabindex="-1"></a>radius <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb341-30"><a href="answers-to-exercises.html#cb341-30" tabindex="-1"></a></span>
+<span id="cb341-31"><a href="answers-to-exercises.html#cb341-31" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb341-32"><a href="answers-to-exercises.html#cb341-32" tabindex="-1"></a>  <span class="at">radius =</span> radius,</span>
+<span id="cb341-33"><a href="answers-to-exercises.html#cb341-33" tabindex="-1"></a>  <span class="at">area =</span> (radius) <span class="sc">^</span> <span class="dv">2</span> <span class="sc">*</span> pi</span>
+<span id="cb341-34"><a href="answers-to-exercises.html#cb341-34" tabindex="-1"></a>)</span>
+<span id="cb341-35"><a href="answers-to-exercises.html#cb341-35" tabindex="-1"></a></span>
+<span id="cb341-36"><a href="answers-to-exercises.html#cb341-36" tabindex="-1"></a>df</span>
+<span id="cb341-37"><a href="answers-to-exercises.html#cb341-37" tabindex="-1"></a></span>
+<span id="cb341-38"><a href="answers-to-exercises.html#cb341-38" tabindex="-1"></a></span>
+<span id="cb341-39"><a href="answers-to-exercises.html#cb341-39" tabindex="-1"></a><span class="co"># 6.  Extract all AREA greater than 50 from the data.frame.</span></span>
+<span id="cb341-40"><a href="answers-to-exercises.html#cb341-40" tabindex="-1"></a></span>
+<span id="cb341-41"><a href="answers-to-exercises.html#cb341-41" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(df<span class="sc">$</span>area <span class="sc">&gt;</span> <span class="dv">50</span>)</span>
+<span id="cb341-42"><a href="answers-to-exercises.html#cb341-42" tabindex="-1"></a>df[w,]</span></code></pre></div>
+
+</div>
+<div id="r-objects-more" class="section level2 unnumbered hasAnchor">
+<h2><strong>5</strong> R Objects <em>MORE</em><a href="answers-to-exercises.html#r-objects-more" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="answers-to-exercises.html#cb342-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
+<span id="cb342-2"><a href="answers-to-exercises.html#cb342-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
+<span id="cb342-3"><a href="answers-to-exercises.html#cb342-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
+<span id="cb342-4"><a href="answers-to-exercises.html#cb342-4" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb342-5"><a href="answers-to-exercises.html#cb342-5" tabindex="-1"></a><span class="co"># More Data Object Exercises</span></span>
+<span id="cb342-6"><a href="answers-to-exercises.html#cb342-6" tabindex="-1"></a></span>
+<span id="cb342-7"><a href="answers-to-exercises.html#cb342-7" tabindex="-1"></a><span class="co"># Exercise #1 -- Working with Variables You are running an LC-MS experiment </span></span>
+<span id="cb342-8"><a href="answers-to-exercises.html#cb342-8" tabindex="-1"></a><span class="co">#     using a 60 min LC gradient</span></span>
+<span id="cb342-9"><a href="answers-to-exercises.html#cb342-9" tabindex="-1"></a></span>
+<span id="cb342-10"><a href="answers-to-exercises.html#cb342-10" tabindex="-1"></a><span class="co"># 1.1 Create a variable called gradient_min to hold the length of the gradient </span></span>
+<span id="cb342-11"><a href="answers-to-exercises.html#cb342-11" tabindex="-1"></a><span class="co">#     in minutes.</span></span>
+<span id="cb342-12"><a href="answers-to-exercises.html#cb342-12" tabindex="-1"></a></span>
+<span id="cb342-13"><a href="answers-to-exercises.html#cb342-13" tabindex="-1"></a>gradient_min <span class="ot">&lt;-</span> <span class="dv">60</span></span>
+<span id="cb342-14"><a href="answers-to-exercises.html#cb342-14" tabindex="-1"></a></span>
+<span id="cb342-15"><a href="answers-to-exercises.html#cb342-15" tabindex="-1"></a></span>
+<span id="cb342-16"><a href="answers-to-exercises.html#cb342-16" tabindex="-1"></a><span class="co"># 1.2 Using the gradient length variable you just created, convert it to seconds </span></span>
+<span id="cb342-17"><a href="answers-to-exercises.html#cb342-17" tabindex="-1"></a><span class="co">#     and assign it to a new variable with a meaningful name.</span></span>
+<span id="cb342-18"><a href="answers-to-exercises.html#cb342-18" tabindex="-1"></a></span>
+<span id="cb342-19"><a href="answers-to-exercises.html#cb342-19" tabindex="-1"></a>gradient_sec <span class="ot">&lt;-</span> gradient_min <span class="sc">*</span> <span class="dv">60</span></span>
+<span id="cb342-20"><a href="answers-to-exercises.html#cb342-20" tabindex="-1"></a></span>
+<span id="cb342-21"><a href="answers-to-exercises.html#cb342-21" tabindex="-1"></a></span>
+<span id="cb342-22"><a href="answers-to-exercises.html#cb342-22" tabindex="-1"></a><span class="co"># Exercise #2 -- Working with Vectors</span></span>
+<span id="cb342-23"><a href="answers-to-exercises.html#cb342-23" tabindex="-1"></a></span>
+<span id="cb342-24"><a href="answers-to-exercises.html#cb342-24" tabindex="-1"></a><span class="co"># Continuing from Exercise #1...</span></span>
+<span id="cb342-25"><a href="answers-to-exercises.html#cb342-25" tabindex="-1"></a></span>
+<span id="cb342-26"><a href="answers-to-exercises.html#cb342-26" tabindex="-1"></a><span class="co"># 2.1 Imagine you conducted additional experiments, one with a 15 minute gradient </span></span>
+<span id="cb342-27"><a href="answers-to-exercises.html#cb342-27" tabindex="-1"></a><span class="co">#     and one with a 30 min gradient. Create a vector to hold all three gradient </span></span>
+<span id="cb342-28"><a href="answers-to-exercises.html#cb342-28" tabindex="-1"></a><span class="co">#     times in minutes, and assign it to a new variable.</span></span>
+<span id="cb342-29"><a href="answers-to-exercises.html#cb342-29" tabindex="-1"></a></span>
+<span id="cb342-30"><a href="answers-to-exercises.html#cb342-30" tabindex="-1"></a>gradients_min <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">60</span>)</span>
+<span id="cb342-31"><a href="answers-to-exercises.html#cb342-31" tabindex="-1"></a></span>
+<span id="cb342-32"><a href="answers-to-exercises.html#cb342-32" tabindex="-1"></a></span>
+<span id="cb342-33"><a href="answers-to-exercises.html#cb342-33" tabindex="-1"></a><span class="co"># 2.2 Convert the vector of gradient times to seconds. How does this conversion </span></span>
+<span id="cb342-34"><a href="answers-to-exercises.html#cb342-34" tabindex="-1"></a><span class="co">#     compare to how you did the conversion in Exercise 1?</span></span>
+<span id="cb342-35"><a href="answers-to-exercises.html#cb342-35" tabindex="-1"></a></span>
+<span id="cb342-36"><a href="answers-to-exercises.html#cb342-36" tabindex="-1"></a>gradients_sec <span class="ot">&lt;-</span> gradients_min <span class="sc">*</span> <span class="dv">60</span></span>
+<span id="cb342-37"><a href="answers-to-exercises.html#cb342-37" tabindex="-1"></a></span>
+<span id="cb342-38"><a href="answers-to-exercises.html#cb342-38" tabindex="-1"></a></span>
+<span id="cb342-39"><a href="answers-to-exercises.html#cb342-39" tabindex="-1"></a><span class="co"># Exercise #3 -- More Practice with Vectors</span></span>
+<span id="cb342-40"><a href="answers-to-exercises.html#cb342-40" tabindex="-1"></a></span>
+<span id="cb342-41"><a href="answers-to-exercises.html#cb342-41" tabindex="-1"></a><span class="co"># 3.1 The following vector represents precursor m/z values for detected features</span></span>
+<span id="cb342-42"><a href="answers-to-exercises.html#cb342-42" tabindex="-1"></a><span class="co">#     from your experiment:</span></span>
+<span id="cb342-43"><a href="answers-to-exercises.html#cb342-43" tabindex="-1"></a></span>
+<span id="cb342-44"><a href="answers-to-exercises.html#cb342-44" tabindex="-1"></a>prec_mz <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">968.4759</span>, <span class="fl">812.1599</span>, <span class="fl">887.9829</span>, <span class="fl">338.5294</span>, <span class="fl">510.2720</span>, </span>
+<span id="cb342-45"><a href="answers-to-exercises.html#cb342-45" tabindex="-1"></a>             <span class="fl">775.3455</span>, <span class="fl">409.2369</span>, <span class="fl">944.0385</span>, <span class="fl">584.7687</span>, <span class="fl">1041.9523</span>)</span>
+<span id="cb342-46"><a href="answers-to-exercises.html#cb342-46" tabindex="-1"></a></span>
+<span id="cb342-47"><a href="answers-to-exercises.html#cb342-47" tabindex="-1"></a></span>
+<span id="cb342-48"><a href="answers-to-exercises.html#cb342-48" tabindex="-1"></a><span class="co"># -   How many values are there?</span></span>
+<span id="cb342-49"><a href="answers-to-exercises.html#cb342-49" tabindex="-1"></a></span>
+<span id="cb342-50"><a href="answers-to-exercises.html#cb342-50" tabindex="-1"></a><span class="fu">length</span>(prec_mz)</span>
+<span id="cb342-51"><a href="answers-to-exercises.html#cb342-51" tabindex="-1"></a></span>
+<span id="cb342-52"><a href="answers-to-exercises.html#cb342-52" tabindex="-1"></a></span>
+<span id="cb342-53"><a href="answers-to-exercises.html#cb342-53" tabindex="-1"></a><span class="co"># -   What is the minimum value? The maximum?</span></span>
+<span id="cb342-54"><a href="answers-to-exercises.html#cb342-54" tabindex="-1"></a></span>
+<span id="cb342-55"><a href="answers-to-exercises.html#cb342-55" tabindex="-1"></a><span class="fu">min</span>(prec_mz)</span>
+<span id="cb342-56"><a href="answers-to-exercises.html#cb342-56" tabindex="-1"></a><span class="fu">max</span>(prec_mz)</span>
+<span id="cb342-57"><a href="answers-to-exercises.html#cb342-57" tabindex="-1"></a></span>
+<span id="cb342-58"><a href="answers-to-exercises.html#cb342-58" tabindex="-1"></a></span>
+<span id="cb342-59"><a href="answers-to-exercises.html#cb342-59" tabindex="-1"></a><span class="co"># Exercise #4 -- Vectors and Conditional Expressions</span></span>
+<span id="cb342-60"><a href="answers-to-exercises.html#cb342-60" tabindex="-1"></a></span>
+<span id="cb342-61"><a href="answers-to-exercises.html#cb342-61" tabindex="-1"></a><span class="co"># 4.1 Using the above vector of precursor values, write a conditional expression</span></span>
+<span id="cb342-62"><a href="answers-to-exercises.html#cb342-62" tabindex="-1"></a><span class="co">#     to find the values with m/z \&lt; 600. What is returned by this expression? A</span></span>
+<span id="cb342-63"><a href="answers-to-exercises.html#cb342-63" tabindex="-1"></a><span class="co">#     single value or multiple values? A number or something else?</span></span>
+<span id="cb342-64"><a href="answers-to-exercises.html#cb342-64" tabindex="-1"></a></span>
+<span id="cb342-65"><a href="answers-to-exercises.html#cb342-65" tabindex="-1"></a>prec_mz <span class="sc">&lt;</span> <span class="dv">600</span></span>
+<span id="cb342-66"><a href="answers-to-exercises.html#cb342-66" tabindex="-1"></a></span>
+<span id="cb342-67"><a href="answers-to-exercises.html#cb342-67" tabindex="-1"></a></span>
+<span id="cb342-68"><a href="answers-to-exercises.html#cb342-68" tabindex="-1"></a><span class="co"># 4.2 Use this conditional expression to get the precursor values with m/z \&lt; 600</span></span>
+<span id="cb342-69"><a href="answers-to-exercises.html#cb342-69" tabindex="-1"></a></span>
+<span id="cb342-70"><a href="answers-to-exercises.html#cb342-70" tabindex="-1"></a>prec_mz[prec_mz <span class="sc">&lt;</span> <span class="dv">600</span>]</span>
+<span id="cb342-71"><a href="answers-to-exercises.html#cb342-71" tabindex="-1"></a></span>
+<span id="cb342-72"><a href="answers-to-exercises.html#cb342-72" tabindex="-1"></a></span>
+<span id="cb342-73"><a href="answers-to-exercises.html#cb342-73" tabindex="-1"></a><span class="co"># 4.3 Consider a new vector of data that contains the charge states of the same </span></span>
+<span id="cb342-74"><a href="answers-to-exercises.html#cb342-74" tabindex="-1"></a><span class="co">#     detected features from above:</span></span>
+<span id="cb342-75"><a href="answers-to-exercises.html#cb342-75" tabindex="-1"></a></span>
+<span id="cb342-76"><a href="answers-to-exercises.html#cb342-76" tabindex="-1"></a>prec_z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb342-77"><a href="answers-to-exercises.html#cb342-77" tabindex="-1"></a></span>
+<span id="cb342-78"><a href="answers-to-exercises.html#cb342-78" tabindex="-1"></a></span>
+<span id="cb342-79"><a href="answers-to-exercises.html#cb342-79" tabindex="-1"></a><span class="co"># -   Write a conditional expression to find which detected features that have </span></span>
+<span id="cb342-80"><a href="answers-to-exercises.html#cb342-80" tabindex="-1"></a><span class="co">#     a charge state of 2.</span></span>
+<span id="cb342-81"><a href="answers-to-exercises.html#cb342-81" tabindex="-1"></a></span>
+<span id="cb342-82"><a href="answers-to-exercises.html#cb342-82" tabindex="-1"></a>prec_z <span class="sc">==</span> <span class="dv">2</span></span>
+<span id="cb342-83"><a href="answers-to-exercises.html#cb342-83" tabindex="-1"></a></span>
+<span id="cb342-84"><a href="answers-to-exercises.html#cb342-84" tabindex="-1"></a></span>
+<span id="cb342-85"><a href="answers-to-exercises.html#cb342-85" tabindex="-1"></a><span class="co"># 4.4 Write an expression to get the precursor m/z values for features having </span></span>
+<span id="cb342-86"><a href="answers-to-exercises.html#cb342-86" tabindex="-1"></a><span class="co">#     charge states of 2?</span></span>
+<span id="cb342-87"><a href="answers-to-exercises.html#cb342-87" tabindex="-1"></a></span>
+<span id="cb342-88"><a href="answers-to-exercises.html#cb342-88" tabindex="-1"></a>prec_mz[prec_z <span class="sc">==</span> <span class="dv">2</span>]</span></code></pre></div>
+
+</div>
+<div id="tidyverse-2" class="section level2 unnumbered hasAnchor">
+<h2><strong>6</strong> Tidyverse<a href="answers-to-exercises.html#tidyverse-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Read in the <code>bacterial-metabolites_dose-simicillin_tidy.csv</code> data set.</li>
+</ol>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="answers-to-exercises.html#cb343-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-metabolites_dose-simicillin_tidy.csv&quot;</span></span>
+<span id="cb343-2"><a href="answers-to-exercises.html#cb343-2" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/bacterial-metabolites_dose-simicillin_tidy.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="answers-to-exercises.html#cb344-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb344-2"><a href="answers-to-exercises.html#cb344-2" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/bacterial-metabolites_dose-simicillin_tidy.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Rows: 180 Columns: 5
+## ── Column specification ──────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (2): Organism, Metabolite
+## dbl (3): Dose_mg, Time_min, Abundance
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>How many organisms, metabolites, dose levels, and time points are in the data? How many rows are in the data table? What is the overall study design?</li>
+</ol>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="answers-to-exercises.html#cb346-1" tabindex="-1"></a>orgs <span class="ot">&lt;-</span> <span class="fu">unique</span>(dat<span class="sc">$</span>Organism)</span>
+<span id="cb346-2"><a href="answers-to-exercises.html#cb346-2" tabindex="-1"></a>n_orgs <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(orgs))</span>
+<span id="cb346-3"><a href="answers-to-exercises.html#cb346-3" tabindex="-1"></a></span>
+<span id="cb346-4"><a href="answers-to-exercises.html#cb346-4" tabindex="-1"></a>metabs <span class="ot">&lt;-</span> <span class="fu">unique</span>(dat<span class="sc">$</span>Metabolite)</span>
+<span id="cb346-5"><a href="answers-to-exercises.html#cb346-5" tabindex="-1"></a>n_metabs <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(metabs))</span>
+<span id="cb346-6"><a href="answers-to-exercises.html#cb346-6" tabindex="-1"></a></span>
+<span id="cb346-7"><a href="answers-to-exercises.html#cb346-7" tabindex="-1"></a>doses <span class="ot">&lt;-</span> <span class="fu">unique</span>(dat<span class="sc">$</span>Dose_mg)</span>
+<span id="cb346-8"><a href="answers-to-exercises.html#cb346-8" tabindex="-1"></a>n_doses <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(doses))</span>
+<span id="cb346-9"><a href="answers-to-exercises.html#cb346-9" tabindex="-1"></a></span>
+<span id="cb346-10"><a href="answers-to-exercises.html#cb346-10" tabindex="-1"></a>time_pts <span class="ot">&lt;-</span> <span class="fu">unique</span>(dat<span class="sc">$</span>Time_min)</span>
+<span id="cb346-11"><a href="answers-to-exercises.html#cb346-11" tabindex="-1"></a>n_time_pts <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(time_pts))</span>
+<span id="cb346-12"><a href="answers-to-exercises.html#cb346-12" tabindex="-1"></a></span>
+<span id="cb346-13"><a href="answers-to-exercises.html#cb346-13" tabindex="-1"></a><span class="fu">nrow</span>(dat)</span></code></pre></div>
+<pre><code>## [1] 180</code></pre>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="answers-to-exercises.html#cb348-1" tabindex="-1"></a><span class="fu">nrow</span>(dat) <span class="sc">==</span> n_orgs <span class="sc">*</span> n_metabs <span class="sc">*</span> n_doses <span class="sc">*</span> n_time_pts</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Which metabolite has the highest overall mean abundance?</li>
+</ol>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="answers-to-exercises.html#cb350-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span></span>
+<span id="cb350-2"><a href="answers-to-exercises.html#cb350-2" tabindex="-1"></a>  <span class="fu">group_by</span>(Metabolite) <span class="sc">%&gt;%</span></span>
+<span id="cb350-3"><a href="answers-to-exercises.html#cb350-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_abundance =</span> <span class="fu">mean</span>(Abundance)) <span class="sc">%&gt;%</span></span>
+<span id="cb350-4"><a href="answers-to-exercises.html#cb350-4" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_abundance))</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 2
+##   Metabolite          mean_abundance
+##   &lt;chr&gt;                        &lt;dbl&gt;
+## 1 phosphatidylcholine      50221415.
+## 2 succinic acid             1855206.
+## 3 glutamate                 1817320.
+## 4 lysine                    1349963.</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Does this metabolite have the highest mean abundance for each organism, or is there differences between organisms?</li>
+</ol>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="answers-to-exercises.html#cb352-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span></span>
+<span id="cb352-2"><a href="answers-to-exercises.html#cb352-2" tabindex="-1"></a>  <span class="fu">group_by</span>(Organism, Metabolite) <span class="sc">%&gt;%</span></span>
+<span id="cb352-3"><a href="answers-to-exercises.html#cb352-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_abundance =</span> <span class="fu">mean</span>(Abundance)) <span class="sc">%&gt;%</span></span>
+<span id="cb352-4"><a href="answers-to-exercises.html#cb352-4" tabindex="-1"></a>  <span class="fu">arrange</span>(Organism, <span class="fu">desc</span>(mean_abundance))</span></code></pre></div>
+<pre><code>## `summarise()` has grouped output by &#39;Organism&#39;. You can override using the
+## `.groups` argument.</code></pre>
+<pre><code>## # A tibble: 12 × 3
+## # Groups:   Organism [3]
+##    Organism     Metabolite          mean_abundance
+##    &lt;chr&gt;        &lt;chr&gt;                        &lt;dbl&gt;
+##  1 e coli       phosphatidylcholine      67749754.
+##  2 e coli       glutamate                 2323045.
+##  3 e coli       succinic acid             1906850.
+##  4 e coli       lysine                    1519827.
+##  5 p aeruginosa phosphatidylcholine      77078132.
+##  6 p aeruginosa succinic acid             3525432.
+##  7 p aeruginosa glutamate                 2902178 
+##  8 p aeruginosa lysine                    2336119.
+##  9 staph aureus phosphatidylcholine       5836359.
+## 10 staph aureus glutamate                  226736.
+## 11 staph aureus lysine                     193944.
+## 12 staph aureus succinic acid              133337.</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Is there an overall trend of mean abundance values vs. time point? What about abundance vs. dose?</li>
+</ol>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="answers-to-exercises.html#cb355-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span></span>
+<span id="cb355-2"><a href="answers-to-exercises.html#cb355-2" tabindex="-1"></a>  <span class="fu">group_by</span>(Time_min) <span class="sc">%&gt;%</span></span>
+<span id="cb355-3"><a href="answers-to-exercises.html#cb355-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_abundance =</span> <span class="fu">mean</span>(Abundance))</span></code></pre></div>
+<pre><code>## # A tibble: 5 × 2
+##   Time_min mean_abundance
+##      &lt;dbl&gt;          &lt;dbl&gt;
+## 1        0      26639946.
+## 2       10      11726915.
+## 3       20      11929517.
+## 4       50       9389061.
+## 5      120       9369441.</code></pre>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="answers-to-exercises.html#cb357-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span></span>
+<span id="cb357-2"><a href="answers-to-exercises.html#cb357-2" tabindex="-1"></a>  <span class="fu">group_by</span>(Dose_mg) <span class="sc">%&gt;%</span></span>
+<span id="cb357-3"><a href="answers-to-exercises.html#cb357-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_abundance =</span> <span class="fu">mean</span>(Abundance))</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 2
+##   Dose_mg mean_abundance
+##     &lt;dbl&gt;          &lt;dbl&gt;
+## 1       0      24454975.
+## 2      10       9900030.
+## 3      20       7077924.</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Using the example code at the beginning of this Chapter (using the Dever climate data), compute a linear fit of log10 abundance vs. time point for each metabolite and plot the results.</li>
+</ol>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="answers-to-exercises.html#cb359-1" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb359-2"><a href="answers-to-exercises.html#cb359-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">log10_abundance =</span> <span class="fu">log10</span>(Abundance))</span>
+<span id="cb359-3"><a href="answers-to-exercises.html#cb359-3" tabindex="-1"></a></span>
+<span id="cb359-4"><a href="answers-to-exercises.html#cb359-4" tabindex="-1"></a>lm_func <span class="ot">&lt;-</span> <span class="cf">function</span>(data) {</span>
+<span id="cb359-5"><a href="answers-to-exercises.html#cb359-5" tabindex="-1"></a>  <span class="fu">lm</span>(log10_abundance <span class="sc">~</span> Time_min, <span class="at">data =</span> data)</span>
+<span id="cb359-6"><a href="answers-to-exercises.html#cb359-6" tabindex="-1"></a>}</span>
+<span id="cb359-7"><a href="answers-to-exercises.html#cb359-7" tabindex="-1"></a></span>
+<span id="cb359-8"><a href="answers-to-exercises.html#cb359-8" tabindex="-1"></a></span>
+<span id="cb359-9"><a href="answers-to-exercises.html#cb359-9" tabindex="-1"></a>dat_lm <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb359-10"><a href="answers-to-exercises.html#cb359-10" tabindex="-1"></a>  <span class="co"># dplyr</span></span>
+<span id="cb359-11"><a href="answers-to-exercises.html#cb359-11" tabindex="-1"></a>  <span class="fu">group_by</span>(Metabolite) <span class="sc">%&gt;%</span></span>
+<span id="cb359-12"><a href="answers-to-exercises.html#cb359-12" tabindex="-1"></a>  <span class="co"># tidyr</span></span>
+<span id="cb359-13"><a href="answers-to-exercises.html#cb359-13" tabindex="-1"></a>  <span class="fu">nest</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb359-14"><a href="answers-to-exercises.html#cb359-14" tabindex="-1"></a>  <span class="co"># dplyr, purrr: apply the function to each nested data frame</span></span>
+<span id="cb359-15"><a href="answers-to-exercises.html#cb359-15" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">model =</span> <span class="fu">map</span>(data, lm_func)) <span class="sc">%&gt;%</span></span>
+<span id="cb359-16"><a href="answers-to-exercises.html#cb359-16" tabindex="-1"></a>  <span class="co"># dplyr, broom, purrr: extract the coefficients from each model</span></span>
+<span id="cb359-17"><a href="answers-to-exercises.html#cb359-17" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">tidy =</span> <span class="fu">map</span>(model, broom<span class="sc">::</span>tidy)) <span class="sc">%&gt;%</span></span>
+<span id="cb359-18"><a href="answers-to-exercises.html#cb359-18" tabindex="-1"></a>  <span class="co"># tidyr</span></span>
+<span id="cb359-19"><a href="answers-to-exercises.html#cb359-19" tabindex="-1"></a>  <span class="fu">unnest</span>(tidy) <span class="sc">%&gt;%</span></span>
+<span id="cb359-20"><a href="answers-to-exercises.html#cb359-20" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb359-21"><a href="answers-to-exercises.html#cb359-21" tabindex="-1"></a>  <span class="co"># dplyr, stringr: clean-up the terms</span></span>
+<span id="cb359-22"><a href="answers-to-exercises.html#cb359-22" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">term =</span> term <span class="sc">%&gt;%</span> <span class="fu">str_replace_all</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">(|</span><span class="sc">\\</span><span class="st">)&quot;</span>, <span class="st">&quot;&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb359-23"><a href="answers-to-exercises.html#cb359-23" tabindex="-1"></a>  <span class="co"># dplyr: retain only specific columns</span></span>
+<span id="cb359-24"><a href="answers-to-exercises.html#cb359-24" tabindex="-1"></a>  <span class="fu">select</span>(Metabolite, term, estimate) <span class="sc">%&gt;%</span></span>
+<span id="cb359-25"><a href="answers-to-exercises.html#cb359-25" tabindex="-1"></a>  <span class="co"># tidyr: convert from a long table to a wide table</span></span>
+<span id="cb359-26"><a href="answers-to-exercises.html#cb359-26" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">&#39;term&#39;</span>, <span class="at">values_from =</span> <span class="st">&#39;estimate&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb359-27"><a href="answers-to-exercises.html#cb359-27" tabindex="-1"></a>  <span class="co"># dplyr: create a new column with the model slope (better name), just copy Time_min</span></span>
+<span id="cb359-28"><a href="answers-to-exercises.html#cb359-28" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">model_slope =</span> Time_min)</span>
+<span id="cb359-29"><a href="answers-to-exercises.html#cb359-29" tabindex="-1"></a></span>
+<span id="cb359-30"><a href="answers-to-exercises.html#cb359-30" tabindex="-1"></a></span>
+<span id="cb359-31"><a href="answers-to-exercises.html#cb359-31" tabindex="-1"></a><span class="co">#ggplot2</span></span>
+<span id="cb359-32"><a href="answers-to-exercises.html#cb359-32" tabindex="-1"></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(Time_min, log10_abundance)) <span class="sc">+</span> </span>
+<span id="cb359-33"><a href="answers-to-exercises.html#cb359-33" tabindex="-1"></a>  <span class="co"># represent the data as points</span></span>
+<span id="cb359-34"><a href="answers-to-exercises.html#cb359-34" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb359-35"><a href="answers-to-exercises.html#cb359-35" tabindex="-1"></a>  <span class="co"># use the linear model data to plot regression lines</span></span>
+<span id="cb359-36"><a href="answers-to-exercises.html#cb359-36" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">data =</span> dat_lm,</span>
+<span id="cb359-37"><a href="answers-to-exercises.html#cb359-37" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">slope =</span> model_slope, <span class="at">intercept =</span> Intercept)) <span class="sc">+</span></span>
+<span id="cb359-38"><a href="answers-to-exercises.html#cb359-38" tabindex="-1"></a>  <span class="co"># plot each year separately </span></span>
+<span id="cb359-39"><a href="answers-to-exercises.html#cb359-39" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Metabolite)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-272-1.png" width="672" /></p>
+
+</div>
+<div id="data-wrangling-1" class="section level2 unnumbered hasAnchor">
+<h2><strong>7</strong> Data Wrangling<a href="answers-to-exercises.html#data-wrangling-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="answers-to-exercises.html#cb360-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
+<span id="cb360-2"><a href="answers-to-exercises.html#cb360-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
+<span id="cb360-3"><a href="answers-to-exercises.html#cb360-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
+<span id="cb360-4"><a href="answers-to-exercises.html#cb360-4" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb360-5"><a href="answers-to-exercises.html#cb360-5" tabindex="-1"></a><span class="co"># Data Wrangling Exercises</span></span>
+<span id="cb360-6"><a href="answers-to-exercises.html#cb360-6" tabindex="-1"></a></span>
+<span id="cb360-7"><a href="answers-to-exercises.html#cb360-7" tabindex="-1"></a><span class="co"># 1. Download the data.</span></span>
+<span id="cb360-8"><a href="answers-to-exercises.html#cb360-8" tabindex="-1"></a></span>
+<span id="cb360-9"><a href="answers-to-exercises.html#cb360-9" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-Metabolites_dose-simicillin_messy.xlsx&quot;</span></span>
+<span id="cb360-10"><a href="answers-to-exercises.html#cb360-10" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/bacterial-Metabolites_dose-simicillin_messy.xlsx&quot;</span>)</span>
+<span id="cb360-11"><a href="answers-to-exercises.html#cb360-11" tabindex="-1"></a></span>
+<span id="cb360-12"><a href="answers-to-exercises.html#cb360-12" tabindex="-1"></a></span>
+<span id="cb360-13"><a href="answers-to-exercises.html#cb360-13" tabindex="-1"></a><span class="co"># 2. Read in the messy bacteria data and store it as a variable.</span></span>
+<span id="cb360-14"><a href="answers-to-exercises.html#cb360-14" tabindex="-1"></a></span>
+<span id="cb360-15"><a href="answers-to-exercises.html#cb360-15" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb360-16"><a href="answers-to-exercises.html#cb360-16" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb360-17"><a href="answers-to-exercises.html#cb360-17" tabindex="-1"></a></span>
+<span id="cb360-18"><a href="answers-to-exercises.html#cb360-18" tabindex="-1"></a>tbl_bac <span class="ot">&lt;-</span> <span class="st">&quot;data/bacterial-Metabolites_dose-simicillin_messy.xlsx&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_excel</span>(<span class="at">col_names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb360-19"><a href="answers-to-exercises.html#cb360-19" tabindex="-1"></a></span>
+<span id="cb360-20"><a href="answers-to-exercises.html#cb360-20" tabindex="-1"></a></span>
+<span id="cb360-21"><a href="answers-to-exercises.html#cb360-21" tabindex="-1"></a><span class="co"># *In all proceeding exercises, pipe results from previous exercise into current </span></span>
+<span id="cb360-22"><a href="answers-to-exercises.html#cb360-22" tabindex="-1"></a><span class="co">#    exercise creating a single lone pipe for data processing*</span></span>
+<span id="cb360-23"><a href="answers-to-exercises.html#cb360-23" tabindex="-1"></a></span>
+<span id="cb360-24"><a href="answers-to-exercises.html#cb360-24" tabindex="-1"></a><span class="co"># 3. Separate `Culture` column containing culture and dose into `culture` and </span></span>
+<span id="cb360-25"><a href="answers-to-exercises.html#cb360-25" tabindex="-1"></a><span class="co">#    `dose_mg_ml` columns.</span></span>
+<span id="cb360-26"><a href="answers-to-exercises.html#cb360-26" tabindex="-1"></a></span>
+<span id="cb360-27"><a href="answers-to-exercises.html#cb360-27" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span></span>
+<span id="cb360-28"><a href="answers-to-exercises.html#cb360-28" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg_ml&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose--&quot;</span>)</span>
+<span id="cb360-29"><a href="answers-to-exercises.html#cb360-29" tabindex="-1"></a></span>
+<span id="cb360-30"><a href="answers-to-exercises.html#cb360-30" tabindex="-1"></a></span>
+<span id="cb360-31"><a href="answers-to-exercises.html#cb360-31" tabindex="-1"></a><span class="co"># 4. Make `dose_mg_ml` column numeric by removing the text and change the column </span></span>
+<span id="cb360-32"><a href="answers-to-exercises.html#cb360-32" tabindex="-1"></a><span class="co">#    data type from character to numeric.</span></span>
+<span id="cb360-33"><a href="answers-to-exercises.html#cb360-33" tabindex="-1"></a></span>
+<span id="cb360-34"><a href="answers-to-exercises.html#cb360-34" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span></span>
+<span id="cb360-35"><a href="answers-to-exercises.html#cb360-35" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg_ml&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose--&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb360-36"><a href="answers-to-exercises.html#cb360-36" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">gsub</span>(<span class="st">&quot;-mg/ml&quot;</span>,<span class="st">&quot;&quot;</span>, dose_mg_ml)) <span class="sc">%&gt;%</span></span>
+<span id="cb360-37"><a href="answers-to-exercises.html#cb360-37" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">as.numeric</span>(dose_mg_ml))</span>
+<span id="cb360-38"><a href="answers-to-exercises.html#cb360-38" tabindex="-1"></a></span>
+<span id="cb360-39"><a href="answers-to-exercises.html#cb360-39" tabindex="-1"></a></span>
+<span id="cb360-40"><a href="answers-to-exercises.html#cb360-40" tabindex="-1"></a><span class="co"># 5. Pivot the table from wide to long creating `metabolite`, `time_hr` &amp; `abundance` columns.</span></span>
+<span id="cb360-41"><a href="answers-to-exercises.html#cb360-41" tabindex="-1"></a></span>
+<span id="cb360-42"><a href="answers-to-exercises.html#cb360-42" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span></span>
+<span id="cb360-43"><a href="answers-to-exercises.html#cb360-43" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg_ml&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose--&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb360-44"><a href="answers-to-exercises.html#cb360-44" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">gsub</span>(<span class="st">&quot;-mg/ml&quot;</span>,<span class="st">&quot;&quot;</span>, dose_mg_ml)) <span class="sc">%&gt;%</span></span>
+<span id="cb360-45"><a href="answers-to-exercises.html#cb360-45" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">as.numeric</span>(dose_mg_ml)) <span class="sc">%&gt;%</span></span>
+<span id="cb360-46"><a href="answers-to-exercises.html#cb360-46" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">13</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb360-47"><a href="answers-to-exercises.html#cb360-47" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>,<span class="st">&quot;time_hr&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_runtime_&quot;</span>)</span>
+<span id="cb360-48"><a href="answers-to-exercises.html#cb360-48" tabindex="-1"></a></span>
+<span id="cb360-49"><a href="answers-to-exercises.html#cb360-49" tabindex="-1"></a></span>
+<span id="cb360-50"><a href="answers-to-exercises.html#cb360-50" tabindex="-1"></a><span class="co"># 6. Make sure `time_hr` contains just hours and not a mixture of days and hours.</span></span>
+<span id="cb360-51"><a href="answers-to-exercises.html#cb360-51" tabindex="-1"></a></span>
+<span id="cb360-52"><a href="answers-to-exercises.html#cb360-52" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span></span>
+<span id="cb360-53"><a href="answers-to-exercises.html#cb360-53" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg_ml&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose--&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb360-54"><a href="answers-to-exercises.html#cb360-54" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">gsub</span>(<span class="st">&quot;-mg/ml&quot;</span>,<span class="st">&quot;&quot;</span>, dose_mg_ml)) <span class="sc">%&gt;%</span></span>
+<span id="cb360-55"><a href="answers-to-exercises.html#cb360-55" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">as.numeric</span>(dose_mg_ml)) <span class="sc">%&gt;%</span></span>
+<span id="cb360-56"><a href="answers-to-exercises.html#cb360-56" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">13</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb360-57"><a href="answers-to-exercises.html#cb360-57" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>,<span class="st">&quot;time_hr&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_runtime_&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb360-58"><a href="answers-to-exercises.html#cb360-58" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb360-59"><a href="answers-to-exercises.html#cb360-59" tabindex="-1"></a>    <span class="at">time_hr =</span> <span class="fu">case_when</span>(</span>
+<span id="cb360-60"><a href="answers-to-exercises.html#cb360-60" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_hr, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_hr)),</span>
+<span id="cb360-61"><a href="answers-to-exercises.html#cb360-61" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;day&quot;</span>, time_hr, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;day&quot;</span>, <span class="st">&quot;&quot;</span>, time_hr)) <span class="sc">*</span> <span class="dv">24</span></span>
+<span id="cb360-62"><a href="answers-to-exercises.html#cb360-62" tabindex="-1"></a>    )</span>
+<span id="cb360-63"><a href="answers-to-exercises.html#cb360-63" tabindex="-1"></a>  )</span>
+<span id="cb360-64"><a href="answers-to-exercises.html#cb360-64" tabindex="-1"></a></span>
+<span id="cb360-65"><a href="answers-to-exercises.html#cb360-65" tabindex="-1"></a></span>
+<span id="cb360-66"><a href="answers-to-exercises.html#cb360-66" tabindex="-1"></a><span class="co"># 7. Remove the `User` column. See the cheat-sheet here: </span></span>
+<span id="cb360-67"><a href="answers-to-exercises.html#cb360-67" tabindex="-1"></a><span class="co">#    https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf</span></span>
+<span id="cb360-68"><a href="answers-to-exercises.html#cb360-68" tabindex="-1"></a></span>
+<span id="cb360-69"><a href="answers-to-exercises.html#cb360-69" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span></span>
+<span id="cb360-70"><a href="answers-to-exercises.html#cb360-70" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg_ml&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose--&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb360-71"><a href="answers-to-exercises.html#cb360-71" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">gsub</span>(<span class="st">&quot;-mg/ml&quot;</span>,<span class="st">&quot;&quot;</span>, dose_mg_ml)) <span class="sc">%&gt;%</span></span>
+<span id="cb360-72"><a href="answers-to-exercises.html#cb360-72" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg_ml =</span> <span class="fu">as.numeric</span>(dose_mg_ml)) <span class="sc">%&gt;%</span></span>
+<span id="cb360-73"><a href="answers-to-exercises.html#cb360-73" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">13</span>, <span class="at">names_to =</span> <span class="st">&quot;metabolite_time&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;abundance&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb360-74"><a href="answers-to-exercises.html#cb360-74" tabindex="-1"></a>  <span class="fu">separate</span>(metabolite_time, <span class="fu">c</span>(<span class="st">&quot;metabolite&quot;</span>,<span class="st">&quot;time_hr&quot;</span>), <span class="at">sep=</span><span class="st">&quot;_runtime_&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb360-75"><a href="answers-to-exercises.html#cb360-75" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb360-76"><a href="answers-to-exercises.html#cb360-76" tabindex="-1"></a>    <span class="at">time_hr =</span> <span class="fu">case_when</span>(</span>
+<span id="cb360-77"><a href="answers-to-exercises.html#cb360-77" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;hr&quot;</span>, time_hr, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;hr&quot;</span>, <span class="st">&quot;&quot;</span>, time_hr)),</span>
+<span id="cb360-78"><a href="answers-to-exercises.html#cb360-78" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">&quot;day&quot;</span>, time_hr, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;day&quot;</span>, <span class="st">&quot;&quot;</span>, time_hr)) <span class="sc">*</span> <span class="dv">24</span></span>
+<span id="cb360-79"><a href="answers-to-exercises.html#cb360-79" tabindex="-1"></a>    )</span>
+<span id="cb360-80"><a href="answers-to-exercises.html#cb360-80" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb360-81"><a href="answers-to-exercises.html#cb360-81" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>User)</span></code></pre></div>
+
+</div>
+<div id="data-visualization-1" class="section level2 unnumbered hasAnchor">
+<h2><strong>8</strong> Data Visualization<a href="answers-to-exercises.html#data-visualization-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="answers-to-exercises.html#cb361-1" tabindex="-1"></a><span class="co"># John Doe</span></span>
+<span id="cb361-2"><a href="answers-to-exercises.html#cb361-2" tabindex="-1"></a><span class="co"># 2023-06-02</span></span>
+<span id="cb361-3"><a href="answers-to-exercises.html#cb361-3" tabindex="-1"></a><span class="co"># Institution Inc.</span></span>
+<span id="cb361-4"><a href="answers-to-exercises.html#cb361-4" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb361-5"><a href="answers-to-exercises.html#cb361-5" tabindex="-1"></a><span class="co"># Data Visualization Exercises</span></span>
+<span id="cb361-6"><a href="answers-to-exercises.html#cb361-6" tabindex="-1"></a></span>
+<span id="cb361-7"><a href="answers-to-exercises.html#cb361-7" tabindex="-1"></a><span class="co"># 1. If not already done, download *Bacterial Metabolite Data (tidy)* to use as </span></span>
+<span id="cb361-8"><a href="answers-to-exercises.html#cb361-8" tabindex="-1"></a><span class="co">#    an example data file.</span></span>
+<span id="cb361-9"><a href="answers-to-exercises.html#cb361-9" tabindex="-1"></a></span>
+<span id="cb361-10"><a href="answers-to-exercises.html#cb361-10" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/jeffsocal/ASMS_R_Basics/main/data/bacterial-Metabolites_dose-simicillin_tidy.csv&quot;</span></span>
+<span id="cb361-11"><a href="answers-to-exercises.html#cb361-11" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">&quot;./data/bacterial-Metabolites_dose-simicillin_tidy.csv&quot;</span>)</span>
+<span id="cb361-12"><a href="answers-to-exercises.html#cb361-12" tabindex="-1"></a></span>
+<span id="cb361-13"><a href="answers-to-exercises.html#cb361-13" tabindex="-1"></a></span>
+<span id="cb361-14"><a href="answers-to-exercises.html#cb361-14" tabindex="-1"></a><span class="co"># 2. Read in the dataset .csv using the `tidyverse` set of packages.</span></span>
+<span id="cb361-15"><a href="answers-to-exercises.html#cb361-15" tabindex="-1"></a></span>
+<span id="cb361-16"><a href="answers-to-exercises.html#cb361-16" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb361-17"><a href="answers-to-exercises.html#cb361-17" tabindex="-1"></a></span>
+<span id="cb361-18"><a href="answers-to-exercises.html#cb361-18" tabindex="-1"></a>tbl_bac <span class="ot">&lt;-</span> <span class="st">&quot;./data/bacterial-Metabolites_dose-simicillin_tidy.csv&quot;</span> <span class="sc">%&gt;%</span> <span class="fu">read_csv</span>()</span>
+<span id="cb361-19"><a href="answers-to-exercises.html#cb361-19" tabindex="-1"></a></span>
+<span id="cb361-20"><a href="answers-to-exercises.html#cb361-20" tabindex="-1"></a></span>
+<span id="cb361-21"><a href="answers-to-exercises.html#cb361-21" tabindex="-1"></a><span class="co"># 3. Create a Metabolite `Abundance` by `Time_min` ...</span></span>
+<span id="cb361-22"><a href="answers-to-exercises.html#cb361-22" tabindex="-1"></a></span>
+<span id="cb361-23"><a href="answers-to-exercises.html#cb361-23" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span> </span>
+<span id="cb361-24"><a href="answers-to-exercises.html#cb361-24" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Time_min, Abundance)) <span class="sc">+</span> </span>
+<span id="cb361-25"><a href="answers-to-exercises.html#cb361-25" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb361-26"><a href="answers-to-exercises.html#cb361-26" tabindex="-1"></a></span>
+<span id="cb361-27"><a href="answers-to-exercises.html#cb361-27" tabindex="-1"></a></span>
+<span id="cb361-28"><a href="answers-to-exercises.html#cb361-28" tabindex="-1"></a><span class="co"># 4. ... facet by `Organism` and `Metabolite`...</span></span>
+<span id="cb361-29"><a href="answers-to-exercises.html#cb361-29" tabindex="-1"></a></span>
+<span id="cb361-30"><a href="answers-to-exercises.html#cb361-30" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span> </span>
+<span id="cb361-31"><a href="answers-to-exercises.html#cb361-31" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Time_min, Abundance)) <span class="sc">+</span> </span>
+<span id="cb361-32"><a href="answers-to-exercises.html#cb361-32" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb361-33"><a href="answers-to-exercises.html#cb361-33" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Metabolite <span class="sc">~</span> Organism)</span>
+<span id="cb361-34"><a href="answers-to-exercises.html#cb361-34" tabindex="-1"></a></span>
+<span id="cb361-35"><a href="answers-to-exercises.html#cb361-35" tabindex="-1"></a></span>
+<span id="cb361-36"><a href="answers-to-exercises.html#cb361-36" tabindex="-1"></a><span class="co"># 4. ... adjust the y-axis to log10, color by `Dose_mg`, and add a 50% transparent line ...</span></span>
+<span id="cb361-37"><a href="answers-to-exercises.html#cb361-37" tabindex="-1"></a></span>
+<span id="cb361-38"><a href="answers-to-exercises.html#cb361-38" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span> </span>
+<span id="cb361-39"><a href="answers-to-exercises.html#cb361-39" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Dose_mg =</span> Dose_mg <span class="sc">%&gt;%</span> <span class="fu">as.factor</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb361-40"><a href="answers-to-exercises.html#cb361-40" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Time_min, Abundance)) <span class="sc">+</span> </span>
+<span id="cb361-41"><a href="answers-to-exercises.html#cb361-41" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Dose_mg)) <span class="sc">+</span></span>
+<span id="cb361-42"><a href="answers-to-exercises.html#cb361-42" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> Dose_mg), <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb361-43"><a href="answers-to-exercises.html#cb361-43" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Metabolite <span class="sc">~</span> Organism) <span class="sc">+</span></span>
+<span id="cb361-44"><a href="answers-to-exercises.html#cb361-44" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>()</span>
+<span id="cb361-45"><a href="answers-to-exercises.html#cb361-45" tabindex="-1"></a></span>
+<span id="cb361-46"><a href="answers-to-exercises.html#cb361-46" tabindex="-1"></a></span>
+<span id="cb361-47"><a href="answers-to-exercises.html#cb361-47" tabindex="-1"></a><span class="co"># 5. ... change the theme to something publishable, add a title, modify the x- </span></span>
+<span id="cb361-48"><a href="answers-to-exercises.html#cb361-48" tabindex="-1"></a><span class="co">#    and y-axis label, modify the legend title, adjust the y-axis ticks to show </span></span>
+<span id="cb361-49"><a href="answers-to-exercises.html#cb361-49" tabindex="-1"></a><span class="co">#    the actually measured time values, and pick a color scheme that highlights </span></span>
+<span id="cb361-50"><a href="answers-to-exercises.html#cb361-50" tabindex="-1"></a><span class="co">#    the dose value...</span></span>
+<span id="cb361-51"><a href="answers-to-exercises.html#cb361-51" tabindex="-1"></a></span>
+<span id="cb361-52"><a href="answers-to-exercises.html#cb361-52" tabindex="-1"></a>tbl_bac <span class="sc">%&gt;%</span> </span>
+<span id="cb361-53"><a href="answers-to-exercises.html#cb361-53" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Dose_mg =</span> Dose_mg <span class="sc">%&gt;%</span> <span class="fu">as.factor</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb361-54"><a href="answers-to-exercises.html#cb361-54" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Time_min, Abundance)) <span class="sc">+</span> </span>
+<span id="cb361-55"><a href="answers-to-exercises.html#cb361-55" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Dose_mg)) <span class="sc">+</span></span>
+<span id="cb361-56"><a href="answers-to-exercises.html#cb361-56" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> Dose_mg), <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb361-57"><a href="answers-to-exercises.html#cb361-57" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Metabolite <span class="sc">~</span> Organism) <span class="sc">+</span></span>
+<span id="cb361-58"><a href="answers-to-exercises.html#cb361-58" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;grey&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;red&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb361-59"><a href="answers-to-exercises.html#cb361-59" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span></span>
+<span id="cb361-60"><a href="answers-to-exercises.html#cb361-60" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">unique</span>(tbl_bac<span class="sc">$</span>Time_min)) <span class="sc">+</span></span>
+<span id="cb361-61"><a href="answers-to-exercises.html#cb361-61" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Bacterial Metabolite monitoring by LCMS in response to antibiotic&#39;</span>,</span>
+<span id="cb361-62"><a href="answers-to-exercises.html#cb361-62" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Conditions: metered dose of similicillin&#39;</span>,</span>
+<span id="cb361-63"><a href="answers-to-exercises.html#cb361-63" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Time (min)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;LCMS Abundance&quot;</span>,</span>
+<span id="cb361-64"><a href="answers-to-exercises.html#cb361-64" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Dose (mg)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb361-65"><a href="answers-to-exercises.html#cb361-65" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="putting-it-all-together.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/jeffsocal/asms_r_intro/edit/BRANCH/91_00-exercise_answers.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": [["ASMS_R_Basics.zip", "HTML"]],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
