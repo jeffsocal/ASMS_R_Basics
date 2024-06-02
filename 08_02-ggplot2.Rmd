@@ -24,7 +24,7 @@ To graph in GGPlot there are a few core embodiments that need to be considered.
 
 ```{r, eval=FALSE}
 # the basic structure
-ggplot(data, aes(x,y)) + geom_point() + coord_cartiesian()
+ggplot(data, aes(x,y)) + geom_point() + coord_cartesian()
 
 # combined with dplyr makes for a readable process
 data %>% ggplot(aes(x,y)) + geom_point()
