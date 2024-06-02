@@ -58,7 +58,7 @@ knitr::include_graphics("images/07_003_bacteria-table.png")
 Having a look at the data, we can see definitely that it is not tidy.
 
 Our goal will be to:
-* Read excel data with `readxl` library.
+* Read the data (in wide, untidy format)
 * In a single *dplyr* pipe create a tidy with `culture`, `dose_mg`, `metabolite`, `time_min`, `abundance` as our columns.
 
 ### read_ {-}
@@ -72,7 +72,7 @@ download.file(url, destfile = "./data/bacterial-metabolites_dose-simicillin_wide
 Let's start with the read-in.
 
 ```{r, message=FALSE, warning=FALSE}
-require(tidyverse)
+library(tidyverse)
 tbl_met <- read_csv("data/bacterial-metabolites_dose-simicillin_wide.csv")
 tbl_met
 ```
@@ -141,15 +141,6 @@ tbl_met %>%
   separate(metabolite_time, c("metabolite", "time_min"), sep="_")
 ```
 
-```{r, message=FALSE, warning=FALSE}
-tbl_met %>%
-  separate(Culture, c("culture", "dose_mg"), sep = " dose:") %>%
-  mutate(dose_mg = str_remove(dose_mg, "mg")) %>%
-  mutate(dose_mg = as.numeric(dose_mg)) %>%
-  pivot_longer(cols = 3:22, names_to = "metabolite_time", values_to = "abundance") %>%
-  separate(metabolite_time, c("metabolite", "time_min"), sep="_", convert = TRUE)
-```
-
 
 Almost there, but notice how `metabolite_time` has three items when we separate by `_`?
 glutamate_Time_0min -> `glutamate`_`Time`_`0min`
@@ -161,13 +152,7 @@ tbl_met %>%
   mutate(dose_mg = str_remove(dose_mg, "mg")) %>%
   mutate(dose_mg = as.numeric(dose_mg)) %>%
   pivot_longer(cols = 3:22, names_to = "metabolite_time", values_to = "abundance") %>%
-  separate(metabolite_time, c("metabolite", "time_min"), sep="_Time_") %>%
-  mutate(
-    time_min = case_when(
-      grepl("min", time_min, ignore.case = TRUE) ~ as.numeric(gsub("min", "", time_min)),
-      grepl("hr", time_min, ignore.case = TRUE) ~ as.numeric(gsub("hr", "", time_min)) * 60
-    )
-  )
+  separate(metabolite_time, c("metabolite", "time_min"), sep="_Time_")
 ```
 
 Ok a new problem has appeared: mixed time units in our `time_min` column. We have both "min" and "hr". We need to standardize to understand these as time units. We can `mutate` with `case_when`, which does specific things conditionally on particular observations in the tibble. This is a `dplyr` way of doing if statements. We will also advance it up by doing the "character" to "numeric" conversion in one go!
@@ -181,8 +166,8 @@ tbl_met_tidy <- tbl_met %>%
   separate(metabolite_time, c("metabolite", "time_min"), sep="_Time_") %>%
   mutate(
     time_min = case_when(
-      grepl("min", time_min, ignore.case = TRUE) ~ as.numeric(gsub("min", "", time_min)),
-      grepl("hr", time_min, ignore.case = TRUE) ~ as.numeric(gsub("hr", "", time_min)) * 60
+      str_detect(time_min, "min") ~ parse_number(time_min),
+      str_detect(time_min, "hr") ~ parse_number(time_min) * 60
     )
   )
 
@@ -202,8 +187,8 @@ tbl_met %>%
   separate(metabolite_time, c("metabolite", "time_min"), sep="_Time_") %>%
   mutate(
     time_min = case_when(
-      grepl("min", time_min, ignore.case = TRUE) ~ as.numeric(gsub("min", "", time_min)),
-      grepl("hr", time_min, ignore.case = TRUE) ~ as.numeric(gsub("hr", "", time_min)) * 60
+      str_detect(time_min, "min") ~ parse_number(time_min),
+      str_detect(time_min, "hr") ~ parse_number(time_min) * 60
     )
   ) %>%
   write_csv("data/tidyed-met-df.csv")
@@ -216,11 +201,8 @@ tbl_met %>%
 One thing you can notice is how the dplyr verbs add up. We can continually pipe one data frame through a series of wrangling steps until we are satisfied. Operating in this way organizes processes in a way that is easy to manage. We could also do this:
 
 ```{r, message=FALSE, warning=FALSE}
-# need an additional library for excel documents
-library(readxl)
-
-# read_excel can read portions of the excel
-no_pipe_tbl_met <- read_excel("data/bacterial-metabolites_dose-simicillin_wide.xlsx")
+# read the data
+no_pipe_tbl_met <- read_csv("data/bacterial-metabolites_dose-simicillin_wide.csv")
 
 no_pipe_tbl_met <- separate(no_pipe_tbl_met, Culture, c("culture", "dose_mg"), sep = " dose:")
 
@@ -234,8 +216,8 @@ no_pipe_tbl_met <- separate(no_pipe_tbl_met, metabolite_time, c("metabolite", "t
 
 no_pipe_tbl_met_tidy <-  mutate(no_pipe_tbl_met,
     time_min = case_when(
-      grepl("min", time_min, ignore.case = TRUE) ~ as.numeric(gsub("min", "", time_min)),
-      grepl("hr", time_min, ignore.case = TRUE) ~ as.numeric(gsub("hr", "", time_min)) * 60
+      str_detect(time_min, "min") ~ parse_number(time_min),
+      str_detect(time_min, "hr") ~ parse_number(time_min) * 60
     )
   )
 
