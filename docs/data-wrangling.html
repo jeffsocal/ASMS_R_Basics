@@ -535,24 +535,24 @@ Figure 7.3: Checking our messy data table.
 <span id="cb246-2"><a href="data-wrangling.html#cb246-2" tabindex="-1"></a>tbl_met <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/bacterial-metabolites_dose-simicillin_wide.csv&quot;</span>)</span>
 <span id="cb246-3"><a href="data-wrangling.html#cb246-3" tabindex="-1"></a>tbl_met</span></code></pre></div>
 <pre><code>## # A tibble: 9 × 21
-##   Culture  glutamate_Time_0min glutamate_Time_10min glutamate_Time_20min glutamate_Time_50min
-##   &lt;chr&gt;                  &lt;dbl&gt;                &lt;dbl&gt;                &lt;dbl&gt;                &lt;dbl&gt;
-## 1 e coli …              191666              2082823              1796910               846402
-## 2 staph a…              125210               132156               114445               117150
-## 3 p aerug…              978126               397012               267599               424183
-## 4 e coli …                1445              1017467             14456533               813321
-## 5 staph a…                 152               128683              1360154               102188
-## 6 p aerug…                  23              1612622             18282386               199374
-## 7 e coli …                 885                42356             11758951                22498
-## 8 staph a…                 136                 4276              1162855                 4841
-## 9 p aerug…                3098                68146             19333030               106262
-## # ℹ 16 more variables: glutamate_Time_2hr &lt;dbl&gt;, lysine_Time_0min &lt;dbl&gt;,
-## #   lysine_Time_10min &lt;dbl&gt;, lysine_Time_20min &lt;dbl&gt;, lysine_Time_50min &lt;dbl&gt;,
-## #   lysine_Time_2hr &lt;dbl&gt;, `succinic acid_Time_0min` &lt;dbl&gt;,
-## #   `succinic acid_Time_10min` &lt;dbl&gt;, `succinic acid_Time_20min` &lt;dbl&gt;,
-## #   `succinic acid_Time_50min` &lt;dbl&gt;, `succinic acid_Time_2hr` &lt;dbl&gt;,
-## #   phosphatidylcholine_Time_0min &lt;dbl&gt;, phosphatidylcholine_Time_10min &lt;dbl&gt;,
-## #   phosphatidylcholine_Time_20min &lt;dbl&gt;, phosphatidylcholine_Time_50min &lt;dbl&gt;, …</code></pre>
+##   Culture        glutamate_Time_0min glutamate_Time_10min glutamate_Time_20min
+##   &lt;chr&gt;                        &lt;dbl&gt;                &lt;dbl&gt;                &lt;dbl&gt;
+## 1 e coli dose:0…              191666              2082823              1796910
+## 2 staph aureus …              125210               132156               114445
+## 3 p aeruginosa …              978126               397012               267599
+## 4 e coli dose:1…                1445              1017467             14456533
+## 5 staph aureus …                 152               128683              1360154
+## 6 p aeruginosa …                  23              1612622             18282386
+## 7 e coli dose:2…                 885                42356             11758951
+## 8 staph aureus …                 136                 4276              1162855
+## 9 p aeruginosa …                3098                68146             19333030
+## # ℹ 17 more variables: glutamate_Time_50min &lt;dbl&gt;, glutamate_Time_2hr &lt;dbl&gt;,
+## #   lysine_Time_0min &lt;dbl&gt;, lysine_Time_10min &lt;dbl&gt;, lysine_Time_20min &lt;dbl&gt;,
+## #   lysine_Time_50min &lt;dbl&gt;, lysine_Time_2hr &lt;dbl&gt;,
+## #   `succinic acid_Time_0min` &lt;dbl&gt;, `succinic acid_Time_10min` &lt;dbl&gt;,
+## #   `succinic acid_Time_20min` &lt;dbl&gt;, `succinic acid_Time_50min` &lt;dbl&gt;,
+## #   `succinic acid_Time_2hr` &lt;dbl&gt;, phosphatidylcholine_Time_0min &lt;dbl&gt;,
+## #   phosphatidylcholine_Time_10min &lt;dbl&gt;, …</code></pre>
 </div>
 <div id="separate" class="section level3 unnumbered hasAnchor">
 <h3>separate<a href="data-wrangling.html#separate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -566,24 +566,24 @@ Figure 7.4: Separating columns in a tibble.
 <div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="data-wrangling.html#cb248-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
 <span id="cb248-2"><a href="data-wrangling.html#cb248-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 9 × 22
-##   culture      dose_mg glutamate_Time_0min glutamate_Time_10min glutamate_Time_20min
-##   &lt;chr&gt;        &lt;chr&gt;                 &lt;dbl&gt;                &lt;dbl&gt;                &lt;dbl&gt;
-## 1 e coli       0mg                  191666              2082823              1796910
-## 2 staph aureus 0mg                  125210               132156               114445
-## 3 p aeruginosa 0mg                  978126               397012               267599
-## 4 e coli       10mg                   1445              1017467             14456533
-## 5 staph aureus 10mg                    152               128683              1360154
-## 6 p aeruginosa 10mg                     23              1612622             18282386
-## 7 e coli       20mg                    885                42356             11758951
-## 8 staph aureus 20mg                    136                 4276              1162855
-## 9 p aeruginosa 20mg                   3098                68146             19333030
-## # ℹ 17 more variables: glutamate_Time_50min &lt;dbl&gt;, glutamate_Time_2hr &lt;dbl&gt;,
+##   culture      dose_mg glutamate_Time_0min glutamate_Time_10min
+##   &lt;chr&gt;        &lt;chr&gt;                 &lt;dbl&gt;                &lt;dbl&gt;
+## 1 e coli       0mg                  191666              2082823
+## 2 staph aureus 0mg                  125210               132156
+## 3 p aeruginosa 0mg                  978126               397012
+## 4 e coli       10mg                   1445              1017467
+## 5 staph aureus 10mg                    152               128683
+## 6 p aeruginosa 10mg                     23              1612622
+## 7 e coli       20mg                    885                42356
+## 8 staph aureus 20mg                    136                 4276
+## 9 p aeruginosa 20mg                   3098                68146
+## # ℹ 18 more variables: glutamate_Time_20min &lt;dbl&gt;,
+## #   glutamate_Time_50min &lt;dbl&gt;, glutamate_Time_2hr &lt;dbl&gt;,
 ## #   lysine_Time_0min &lt;dbl&gt;, lysine_Time_10min &lt;dbl&gt;, lysine_Time_20min &lt;dbl&gt;,
-## #   lysine_Time_50min &lt;dbl&gt;, lysine_Time_2hr &lt;dbl&gt;, `succinic acid_Time_0min` &lt;dbl&gt;,
-## #   `succinic acid_Time_10min` &lt;dbl&gt;, `succinic acid_Time_20min` &lt;dbl&gt;,
-## #   `succinic acid_Time_50min` &lt;dbl&gt;, `succinic acid_Time_2hr` &lt;dbl&gt;,
-## #   phosphatidylcholine_Time_0min &lt;dbl&gt;, phosphatidylcholine_Time_10min &lt;dbl&gt;,
-## #   phosphatidylcholine_Time_20min &lt;dbl&gt;, phosphatidylcholine_Time_50min &lt;dbl&gt;, …</code></pre>
+## #   lysine_Time_50min &lt;dbl&gt;, lysine_Time_2hr &lt;dbl&gt;,
+## #   `succinic acid_Time_0min` &lt;dbl&gt;, `succinic acid_Time_10min` &lt;dbl&gt;,
+## #   `succinic acid_Time_20min` &lt;dbl&gt;, `succinic acid_Time_50min` &lt;dbl&gt;,
+## #   `succinic acid_Time_2hr` &lt;dbl&gt;, phosphatidylcholine_Time_0min &lt;dbl&gt;, …</code></pre>
 </div>
 <div id="mutate-1" class="section level3 unnumbered hasAnchor">
 <h3>mutate<a href="data-wrangling.html#mutate-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -599,48 +599,48 @@ Figure 7.5: Mutate:Making new columns or changing existing ones.
 <span id="cb250-2"><a href="data-wrangling.html#cb250-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb250-3"><a href="data-wrangling.html#cb250-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Dose =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 9 × 23
-##   culture      dose_mg glutamate_Time_0min glutamate_Time_10min glutamate_Time_20min
-##   &lt;chr&gt;        &lt;chr&gt;                 &lt;dbl&gt;                &lt;dbl&gt;                &lt;dbl&gt;
-## 1 e coli       0mg                  191666              2082823              1796910
-## 2 staph aureus 0mg                  125210               132156               114445
-## 3 p aeruginosa 0mg                  978126               397012               267599
-## 4 e coli       10mg                   1445              1017467             14456533
-## 5 staph aureus 10mg                    152               128683              1360154
-## 6 p aeruginosa 10mg                     23              1612622             18282386
-## 7 e coli       20mg                    885                42356             11758951
-## 8 staph aureus 20mg                    136                 4276              1162855
-## 9 p aeruginosa 20mg                   3098                68146             19333030
-## # ℹ 18 more variables: glutamate_Time_50min &lt;dbl&gt;, glutamate_Time_2hr &lt;dbl&gt;,
+##   culture      dose_mg glutamate_Time_0min glutamate_Time_10min
+##   &lt;chr&gt;        &lt;chr&gt;                 &lt;dbl&gt;                &lt;dbl&gt;
+## 1 e coli       0mg                  191666              2082823
+## 2 staph aureus 0mg                  125210               132156
+## 3 p aeruginosa 0mg                  978126               397012
+## 4 e coli       10mg                   1445              1017467
+## 5 staph aureus 10mg                    152               128683
+## 6 p aeruginosa 10mg                     23              1612622
+## 7 e coli       20mg                    885                42356
+## 8 staph aureus 20mg                    136                 4276
+## 9 p aeruginosa 20mg                   3098                68146
+## # ℹ 19 more variables: glutamate_Time_20min &lt;dbl&gt;,
+## #   glutamate_Time_50min &lt;dbl&gt;, glutamate_Time_2hr &lt;dbl&gt;,
 ## #   lysine_Time_0min &lt;dbl&gt;, lysine_Time_10min &lt;dbl&gt;, lysine_Time_20min &lt;dbl&gt;,
-## #   lysine_Time_50min &lt;dbl&gt;, lysine_Time_2hr &lt;dbl&gt;, `succinic acid_Time_0min` &lt;dbl&gt;,
-## #   `succinic acid_Time_10min` &lt;dbl&gt;, `succinic acid_Time_20min` &lt;dbl&gt;,
-## #   `succinic acid_Time_50min` &lt;dbl&gt;, `succinic acid_Time_2hr` &lt;dbl&gt;,
-## #   phosphatidylcholine_Time_0min &lt;dbl&gt;, phosphatidylcholine_Time_10min &lt;dbl&gt;,
-## #   phosphatidylcholine_Time_20min &lt;dbl&gt;, phosphatidylcholine_Time_50min &lt;dbl&gt;, …</code></pre>
+## #   lysine_Time_50min &lt;dbl&gt;, lysine_Time_2hr &lt;dbl&gt;,
+## #   `succinic acid_Time_0min` &lt;dbl&gt;, `succinic acid_Time_10min` &lt;dbl&gt;,
+## #   `succinic acid_Time_20min` &lt;dbl&gt;, `succinic acid_Time_50min` &lt;dbl&gt;,
+## #   `succinic acid_Time_2hr` &lt;dbl&gt;, phosphatidylcholine_Time_0min &lt;dbl&gt;, …</code></pre>
 <p>Ok, the “mg” is removed but if we check the tibble, <code>Dose</code> is still <code>chr</code>, so it’s still computed as text by R! Let’s make it numeric.</p>
 <div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="data-wrangling.html#cb252-1" tabindex="-1"></a>tbl_met <span class="sc">%&gt;%</span></span>
 <span id="cb252-2"><a href="data-wrangling.html#cb252-2" tabindex="-1"></a>  <span class="fu">separate</span>(Culture, <span class="fu">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;dose_mg&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; dose:&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb252-3"><a href="data-wrangling.html#cb252-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">str_remove</span>(dose_mg, <span class="st">&quot;mg&quot;</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb252-4"><a href="data-wrangling.html#cb252-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose_mg =</span> <span class="fu">as.numeric</span>(dose_mg))</span></code></pre></div>
 <pre><code>## # A tibble: 9 × 22
-##   culture      dose_mg glutamate_Time_0min glutamate_Time_10min glutamate_Time_20min
-##   &lt;chr&gt;          &lt;dbl&gt;               &lt;dbl&gt;                &lt;dbl&gt;                &lt;dbl&gt;
-## 1 e coli             0              191666              2082823              1796910
-## 2 staph aureus       0              125210               132156               114445
-## 3 p aeruginosa       0              978126               397012               267599
-## 4 e coli            10                1445              1017467             14456533
-## 5 staph aureus      10                 152               128683              1360154
-## 6 p aeruginosa      10                  23              1612622             18282386
-## 7 e coli            20                 885                42356             11758951
-## 8 staph aureus      20                 136                 4276              1162855
-## 9 p aeruginosa      20                3098                68146             19333030
-## # ℹ 17 more variables: glutamate_Time_50min &lt;dbl&gt;, glutamate_Time_2hr &lt;dbl&gt;,
+##   culture      dose_mg glutamate_Time_0min glutamate_Time_10min
+##   &lt;chr&gt;          &lt;dbl&gt;               &lt;dbl&gt;                &lt;dbl&gt;
+## 1 e coli             0              191666              2082823
+## 2 staph aureus       0              125210               132156
+## 3 p aeruginosa       0              978126               397012
+## 4 e coli            10                1445              1017467
+## 5 staph aureus      10                 152               128683
+## 6 p aeruginosa      10                  23              1612622
+## 7 e coli            20                 885                42356
+## 8 staph aureus      20                 136                 4276
+## 9 p aeruginosa      20                3098                68146
+## # ℹ 18 more variables: glutamate_Time_20min &lt;dbl&gt;,
+## #   glutamate_Time_50min &lt;dbl&gt;, glutamate_Time_2hr &lt;dbl&gt;,
 ## #   lysine_Time_0min &lt;dbl&gt;, lysine_Time_10min &lt;dbl&gt;, lysine_Time_20min &lt;dbl&gt;,
-## #   lysine_Time_50min &lt;dbl&gt;, lysine_Time_2hr &lt;dbl&gt;, `succinic acid_Time_0min` &lt;dbl&gt;,
-## #   `succinic acid_Time_10min` &lt;dbl&gt;, `succinic acid_Time_20min` &lt;dbl&gt;,
-## #   `succinic acid_Time_50min` &lt;dbl&gt;, `succinic acid_Time_2hr` &lt;dbl&gt;,
-## #   phosphatidylcholine_Time_0min &lt;dbl&gt;, phosphatidylcholine_Time_10min &lt;dbl&gt;,
-## #   phosphatidylcholine_Time_20min &lt;dbl&gt;, phosphatidylcholine_Time_50min &lt;dbl&gt;, …</code></pre>
+## #   lysine_Time_50min &lt;dbl&gt;, lysine_Time_2hr &lt;dbl&gt;,
+## #   `succinic acid_Time_0min` &lt;dbl&gt;, `succinic acid_Time_10min` &lt;dbl&gt;,
+## #   `succinic acid_Time_20min` &lt;dbl&gt;, `succinic acid_Time_50min` &lt;dbl&gt;,
+## #   `succinic acid_Time_2hr` &lt;dbl&gt;, phosphatidylcholine_Time_0min &lt;dbl&gt;, …</code></pre>
 </div>
 <div id="pivot_" class="section level3 unnumbered hasAnchor">
 <h3>pivot_<a href="data-wrangling.html#pivot_" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -855,57 +855,63 @@ We only provided two column names, though. Perhaps we can rethink our separator.
 <li>Read in the messy bacteria data and store it as a variable.</li>
 </ol>
 <pre><code>## # A tibble: 9 × 12
-##   Culture           User  glutamate_runtime_0hr glutamate_runtime_24hr glutamate_runtime_2day
-##   &lt;chr&gt;             &lt;chr&gt;                 &lt;dbl&gt;                  &lt;dbl&gt;                  &lt;dbl&gt;
-## 1 e coli dose--0-m… Mass…                191666                2082823                1796910
-## 2 staph aureus dos… Mass…                125210                 132156                 114445
-## 3 p aeruginosa dos… Mass…                978126                 397012                 267599
-## 4 e coli dose--10-… Mass…                  1445                1017467               14456533
-## 5 staph aureus dos… Mass…                   152                 128683                1360154
-## 6 p aeruginosa dos… Mass…                    23                1612622               18282386
-## 7 e coli dose--20-… Mass…                   885                  42356               11758951
-## 8 staph aureus dos… Mass…                   136                   4276                1162855
-## 9 p aeruginosa dos… Mass…                  3098                  68146               19333030
-## # ℹ 7 more variables: glutamate_runtime_3day &lt;dbl&gt;, glutamate_runtime_5day &lt;dbl&gt;,
-## #   lysine_runtime_0hr &lt;dbl&gt;, lysine_runtime_24hr &lt;dbl&gt;, lysine_runtime_2day &lt;dbl&gt;,
-## #   lysine_runtime_3day &lt;dbl&gt;, lysine_runtime_5day &lt;dbl&gt;</code></pre>
+##   Culture                   User  glutamate_runtime_0hr glutamate_runtime_24hr
+##   &lt;chr&gt;                     &lt;chr&gt;                 &lt;dbl&gt;                  &lt;dbl&gt;
+## 1 e coli dose--0-mg/ml      Mass…                191666                2082823
+## 2 staph aureus dose--0-mg/… Mass…                125210                 132156
+## 3 p aeruginosa dose--0-mg/… Mass…                978126                 397012
+## 4 e coli dose--10-mg/ml     Mass…                  1445                1017467
+## 5 staph aureus dose--10-mg… Mass…                   152                 128683
+## 6 p aeruginosa dose--10-mg… Mass…                    23                1612622
+## 7 e coli dose--20-mg/ml     Mass…                   885                  42356
+## 8 staph aureus dose--20-mg… Mass…                   136                   4276
+## 9 p aeruginosa dose--20-mg… Mass…                  3098                  68146
+## # ℹ 8 more variables: glutamate_runtime_2day &lt;dbl&gt;,
+## #   glutamate_runtime_3day &lt;dbl&gt;, glutamate_runtime_5day &lt;dbl&gt;,
+## #   lysine_runtime_0hr &lt;dbl&gt;, lysine_runtime_24hr &lt;dbl&gt;,
+## #   lysine_runtime_2day &lt;dbl&gt;, lysine_runtime_3day &lt;dbl&gt;,
+## #   lysine_runtime_5day &lt;dbl&gt;</code></pre>
 <p><em>In all proceeding exercises, pipe results from previous exercise into current exercise creating a single lone pipe for data processing</em></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Separate <code>Culture</code> column containing culture and dose into <code>culture</code> and <code>dose_mg_ml</code> columns.</li>
 </ol>
 <pre><code>## # A tibble: 9 × 13
-##   culture      dose_mg_ml User                glutamate_runtime_0hr glutamate_runtime_24hr
-##   &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt;                               &lt;dbl&gt;                  &lt;dbl&gt;
-## 1 e coli       0-mg/ml    Mass Spectrometrist                191666                2082823
-## 2 staph aureus 0-mg/ml    Mass Spectrometrist                125210                 132156
-## 3 p aeruginosa 0-mg/ml    Mass Spectrometrist                978126                 397012
-## 4 e coli       10-mg/ml   Mass Spectrometrist                  1445                1017467
-## 5 staph aureus 10-mg/ml   Mass Spectrometrist                   152                 128683
-## 6 p aeruginosa 10-mg/ml   Mass Spectrometrist                    23                1612622
-## 7 e coli       20-mg/ml   Mass Spectrometrist                   885                  42356
-## 8 staph aureus 20-mg/ml   Mass Spectrometrist                   136                   4276
-## 9 p aeruginosa 20-mg/ml   Mass Spectrometrist                  3098                  68146
-## # ℹ 8 more variables: glutamate_runtime_2day &lt;dbl&gt;, glutamate_runtime_3day &lt;dbl&gt;,
-## #   glutamate_runtime_5day &lt;dbl&gt;, lysine_runtime_0hr &lt;dbl&gt;, lysine_runtime_24hr &lt;dbl&gt;,
-## #   lysine_runtime_2day &lt;dbl&gt;, lysine_runtime_3day &lt;dbl&gt;, lysine_runtime_5day &lt;dbl&gt;</code></pre>
+##   culture      dose_mg_ml User    glutamate_runtime_0hr glutamate_runtime_24hr
+##   &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt;                   &lt;dbl&gt;                  &lt;dbl&gt;
+## 1 e coli       0-mg/ml    Mass S…                191666                2082823
+## 2 staph aureus 0-mg/ml    Mass S…                125210                 132156
+## 3 p aeruginosa 0-mg/ml    Mass S…                978126                 397012
+## 4 e coli       10-mg/ml   Mass S…                  1445                1017467
+## 5 staph aureus 10-mg/ml   Mass S…                   152                 128683
+## 6 p aeruginosa 10-mg/ml   Mass S…                    23                1612622
+## 7 e coli       20-mg/ml   Mass S…                   885                  42356
+## 8 staph aureus 20-mg/ml   Mass S…                   136                   4276
+## 9 p aeruginosa 20-mg/ml   Mass S…                  3098                  68146
+## # ℹ 8 more variables: glutamate_runtime_2day &lt;dbl&gt;,
+## #   glutamate_runtime_3day &lt;dbl&gt;, glutamate_runtime_5day &lt;dbl&gt;,
+## #   lysine_runtime_0hr &lt;dbl&gt;, lysine_runtime_24hr &lt;dbl&gt;,
+## #   lysine_runtime_2day &lt;dbl&gt;, lysine_runtime_3day &lt;dbl&gt;,
+## #   lysine_runtime_5day &lt;dbl&gt;</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Make <code>dose_mg_ml</code> column numeric by removing the text and change the column data type from character to numeric.</li>
 </ol>
 <pre><code>## # A tibble: 9 × 13
-##   culture      dose_mg_ml User                glutamate_runtime_0hr glutamate_runtime_24hr
-##   &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;                               &lt;dbl&gt;                  &lt;dbl&gt;
-## 1 e coli                0 Mass Spectrometrist                191666                2082823
-## 2 staph aureus          0 Mass Spectrometrist                125210                 132156
-## 3 p aeruginosa          0 Mass Spectrometrist                978126                 397012
-## 4 e coli               10 Mass Spectrometrist                  1445                1017467
-## 5 staph aureus         10 Mass Spectrometrist                   152                 128683
-## 6 p aeruginosa         10 Mass Spectrometrist                    23                1612622
-## 7 e coli               20 Mass Spectrometrist                   885                  42356
-## 8 staph aureus         20 Mass Spectrometrist                   136                   4276
-## 9 p aeruginosa         20 Mass Spectrometrist                  3098                  68146
-## # ℹ 8 more variables: glutamate_runtime_2day &lt;dbl&gt;, glutamate_runtime_3day &lt;dbl&gt;,
-## #   glutamate_runtime_5day &lt;dbl&gt;, lysine_runtime_0hr &lt;dbl&gt;, lysine_runtime_24hr &lt;dbl&gt;,
-## #   lysine_runtime_2day &lt;dbl&gt;, lysine_runtime_3day &lt;dbl&gt;, lysine_runtime_5day &lt;dbl&gt;</code></pre>
+##   culture      dose_mg_ml User    glutamate_runtime_0hr glutamate_runtime_24hr
+##   &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;                  &lt;dbl&gt;
+## 1 e coli                0 Mass S…                191666                2082823
+## 2 staph aureus          0 Mass S…                125210                 132156
+## 3 p aeruginosa          0 Mass S…                978126                 397012
+## 4 e coli               10 Mass S…                  1445                1017467
+## 5 staph aureus         10 Mass S…                   152                 128683
+## 6 p aeruginosa         10 Mass S…                    23                1612622
+## 7 e coli               20 Mass S…                   885                  42356
+## 8 staph aureus         20 Mass S…                   136                   4276
+## 9 p aeruginosa         20 Mass S…                  3098                  68146
+## # ℹ 8 more variables: glutamate_runtime_2day &lt;dbl&gt;,
+## #   glutamate_runtime_3day &lt;dbl&gt;, glutamate_runtime_5day &lt;dbl&gt;,
+## #   lysine_runtime_0hr &lt;dbl&gt;, lysine_runtime_24hr &lt;dbl&gt;,
+## #   lysine_runtime_2day &lt;dbl&gt;, lysine_runtime_3day &lt;dbl&gt;,
+## #   lysine_runtime_5day &lt;dbl&gt;</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li>Pivot the table from wide to long creating <code>metabolite</code>, <code>time_hr</code> &amp; <code>abundance</code> columns.</li>
 </ol>

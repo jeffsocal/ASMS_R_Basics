@@ -655,7 +655,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="answers-to-exercises.html#cb344-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb344-2"><a href="answers-to-exercises.html#cb344-2" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/bacterial-metabolites_dose-simicillin_tidy.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 180 Columns: 5
-## ── Column specification ─────────────────────────────────────────────────────────────────────
+## ── Column specification ──────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (2): Organism, Metabolite
 ## dbl (3): Dose_mg, Time_min, Abundance
@@ -702,8 +702,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb352-2"><a href="answers-to-exercises.html#cb352-2" tabindex="-1"></a>  <span class="fu">group_by</span>(Organism, Metabolite) <span class="sc">%&gt;%</span></span>
 <span id="cb352-3"><a href="answers-to-exercises.html#cb352-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_abundance =</span> <span class="fu">mean</span>(Abundance)) <span class="sc">%&gt;%</span></span>
 <span id="cb352-4"><a href="answers-to-exercises.html#cb352-4" tabindex="-1"></a>  <span class="fu">arrange</span>(Organism, <span class="fu">desc</span>(mean_abundance))</span></code></pre></div>
-<pre><code>## `summarise()` has grouped output by &#39;Organism&#39;. You can override using the `.groups`
-## argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;Organism&#39;. You can override using the
+## `.groups` argument.</code></pre>
 <pre><code>## # A tibble: 12 × 3
 ## # Groups:   Organism [3]
 ##    Organism     Metabolite          mean_abundance
